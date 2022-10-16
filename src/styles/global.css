@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +7,7 @@
 *,
 *:before,
 *:after {
+  font-family: 'DM Sans', sans-serif;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
@@ -169,11 +172,15 @@ table {
 }
 
 :root {
-  --background-primary: #00020c;
-  --background-secondary: #001325;
+  --background-primary: #202020;
+  --background-secondary: #323232;
   --text-color-primary: #f4f4f4;
-  --text-color-secondary: #403b3b;
-  --text-color-tertiary: #8c8c8c;
+  --text-color-secondary: #d4d4d4;
+  --text-color-tertiary: #aaaaaa;
+  --button-color-primary: #ffffff;
+  --button-color-secondary: #ecfdff;
+  --button-color-tertiary: var(--background-secondary);
+  --button-color-confirmed: #1bbe00;
 
   --max-width: 83.5em;
   --max-width-bleed: 90%;
