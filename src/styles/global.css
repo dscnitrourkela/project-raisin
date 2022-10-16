@@ -119,7 +119,6 @@ section {
 }
 body {
   line-height: 1;
-  color: var(--text-color-primary);
   background: var(--background-primary);
   scroll-behavior: smooth;
 }
