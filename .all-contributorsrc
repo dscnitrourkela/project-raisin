@@ -1,0 +1,143 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dscnitrourkela",
+      "name": "DSC NIT Rourkela",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/51153443?v=4",
+      "profile": "http://dscnitrourkela.org",
+      "contributions": [
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "abhibhaw",
+      "name": "Abhibhaw Asthana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39991296?v=4",
+      "profile": "https://abhibhaw.co",
+      "contributions": [
+        "review",
+        "maintenance",
+        "code",
+        "infra",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "CIPHERTron",
+      "name": "Pritish Samal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56754747?v=4",
+      "profile": "https://github.com/CIPHERTron",
+      "contributions": [
+        "code",
+        "maintenance",
+        "mentoring",
+        "review",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "riteshsp2000",
+      "name": "Ritesh Patil",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56112399?v=4",
+      "profile": "http://riteshpatil.dev",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "projectManagement",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "DesignrKnight",
+      "name": "Abel Mathew",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27865704?v=4",
+      "profile": "https://github.com/DesignrKnight",
+      "contributions": [
+        "code",
+        "security",
+        "infra"
+      ]
+    },
+    {
+      "login": "padmajabhol",
+      "name": "Padmaja Bhol",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75530516?v=4",
+      "profile": "https://github.com/padmajabhol",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ratnakar5938",
+      "name": "Ratnakar Sahoo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80893583?v=4",
+      "profile": "https://www.linkedin.com/in/ratnakar-sahoo-a78401135",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "irsayvid",
+      "name": "Divya Sri Darimisetti",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56034618?v=4",
+      "profile": "https://irsayvid.azurewebsites.net/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sambit-sankalp",
+      "name": "sambit-sankalp",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82284130?v=4",
+      "profile": "https://github.com/sambit-sankalp",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Sonakshi1901",
+      "name": "Sonakshi Satpathy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76627480?v=4",
+      "profile": "https://github.com/Sonakshi1901",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nayakastha",
+      "name": "Astha Nayak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/58568514?v=4",
+      "profile": "https://github.com/nayakastha",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc",
+        "mentoring",
+        "eventOrganizing",
+        "review",
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "ORKO06",
+      "name": "Hemant Bajaj",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74568847?v=4",
+      "profile": "https://github.com/ORKO06",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "project-oregano",
+  "projectOwner": "dscnitrourkela",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
