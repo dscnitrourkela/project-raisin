@@ -1,7 +1,6 @@
 import React from 'react';
 import { flexData } from '../../../config/content';
-import { SectionContainer } from '../shared';
-import { BackgroundContainer, FlexText, InnerContainer } from './styles';
+import { BackgroundContainer, FlexSectionContainer, FlexText, InnerContainer } from './styles';
 
 let counter = 0;
 const FlexLogic = ({ id, tagText }) => {
@@ -10,20 +9,20 @@ const FlexLogic = ({ id, tagText }) => {
     return (
       <>
         <FlexText>{tagText}</FlexText>
-        <FlexText />
+        <FlexText className='desktop-only' />
       </>
     );
 
   return (
     <>
-      <FlexText />
+      <FlexText className='desktop-only' />
       <FlexText>{tagText}</FlexText>
     </>
   );
 };
 
 const FlexSection = () => (
-  <SectionContainer>
+  <FlexSectionContainer className='desktop-only'>
     <BackgroundContainer>
       <InnerContainer>
         {flexData.tags.map(({ id, tagText }) => (
@@ -31,7 +30,7 @@ const FlexSection = () => (
         ))}
       </InnerContainer>
     </BackgroundContainer>
-  </SectionContainer>
+  </FlexSectionContainer>
 );
 
 export default FlexSection;

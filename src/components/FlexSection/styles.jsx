@@ -2,6 +2,23 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { flexData } from '../../../config/content';
 
+export const FlexSectionContainer = styled.section`
+  ${tw`
+    w-full
+    h-auto
+    overflow-x-hidden
+    overflow-y-auto
+    flex
+    md:hidden
+    flex-col
+    items-start
+    justify-center
+    min-h-screen
+  `}
+  height: fit-content;
+  margin: 15% auto 10%;
+`;
+
 export const BackgroundContainer = styled.div`
   ${tw`
     w-full
@@ -15,6 +32,8 @@ export const InnerContainer = styled.div`
   ${tw`
     grid
     grid-cols-4
+    lg:grid-cols-2
+    lg:justify-center
     w-11/12
     max-w-7xl
     my-0
@@ -33,4 +52,12 @@ export const FlexText = styled.h3`
     uppercase
     text-3xl
   `}
+  &.desktop-only {
+    ${tw`           
+        lg:hidden
+    `}
+  }
+  @media (max-width: 1250px) {
+    ${tw`text-2xl`}
+  }
 `;
