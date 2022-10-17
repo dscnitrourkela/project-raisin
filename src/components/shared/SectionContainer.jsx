@@ -12,10 +12,9 @@ export const Container = styled.section`
     flex-col
     items-start
     justify-center
-    min-h-screen
   `}
   height: fit-content;
-  margin: 15% auto 10%;
+  margin: 5% auto 10%;
 `;
 
 const SectionContainer = ({ children }) => <Container>{children}</Container>;
