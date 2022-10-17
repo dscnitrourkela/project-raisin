@@ -11,8 +11,8 @@ module.exports = {
       },
       center: true,
     },
-    fontSize: {
-      xxs: ['10px', '14px'],
+    borderRadius: {
+      '4xl': '32px',
     },
     extend: {
       colors: {
