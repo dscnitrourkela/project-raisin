@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import HeroSection from '../components/HeroSection/HeroSection';
+import { FaqSection, FlexSection, HeroSection } from '../components';
 import DesktopNav from '../components/marginals/Navbar/DesktopNav';
 import { MenuContext } from '../components/marginals/Navbar/MenuContext';
 import MobileNav from '../components/marginals/Navbar/MobileNav';
@@ -15,6 +15,8 @@ const Playground = () => {
         {menuOpen && <MobileNav />}
       </MenuContext.Provider>
       <HeroSection />
+      <FaqSection />
+      <FlexSection />
     </>
   );
 };
