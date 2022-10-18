@@ -13,6 +13,7 @@ const ButtonContainer = styled.button`
     color: #000000;
   }
 
+  width: fit-content;
   ${tw`
     rounded-4xl
     px-9

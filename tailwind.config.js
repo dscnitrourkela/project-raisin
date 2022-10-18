@@ -13,6 +13,7 @@ module.exports = {
     },
     borderRadius: {
       '4xl': '32px',
+      full: '50%',
     },
     extend: {
       colors: {
