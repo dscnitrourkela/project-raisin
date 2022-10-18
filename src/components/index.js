@@ -8,3 +8,5 @@ export * from './shared';
 export { default as HeroSection } from './HeroSection/HeroSection';
 export { default as FaqSection } from './FAQSection/Faq';
 export { default as FlexSection } from './FlexSection/FlexSection';
+export { default as Footer } from './marginals/Footer/Footer';
+export { default as EventSection } from './Events/EventSection';

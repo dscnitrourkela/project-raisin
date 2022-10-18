@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { FaqSection, FlexSection, HeroSection } from '../components';
-import Footer from '../components/marginals/Footer/Footer';
+
+// components
+import { EventSection, FaqSection, FlexSection, Footer, HeroSection } from '../components';
 import DesktopNav from '../components/marginals/Navbar/DesktopNav';
 import { MenuContext } from '../components/marginals/Navbar/MenuContext';
 import MobileNav from '../components/marginals/Navbar/MobileNav';
 import About from '../components/shared/About';
-import EventSection from '../components/Events/EventSection';
 
 const Playground = () => {
   const [menuOpen, setMenuOpen] = useState(false);

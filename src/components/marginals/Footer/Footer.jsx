@@ -1,6 +1,6 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable max-len */
 import React from 'react';
+
+// Libraries
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -14,10 +14,13 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'gatsby';
 
+// Components
 import Heading4 from '../../shared/Typography/Heading4';
 import Body2 from '../../shared/Typography/Body2';
-import { Container, SectionContainer } from '../../shared';
-import footer from '../../../../config/content/Footer';
+import { Container } from '../../shared';
+
+// Assets
+import { footer } from '../../../../config/content';
 
 library.add(faFacebookSquare, faInstagramSquare, faTwitterSquare, faYoutubeSquare, faLinkedin);
 
@@ -29,6 +32,7 @@ const FooterContainer = styled.div`
         gap-16
         md:gap-8
         max-w-full
+        pb-6
     `}
 `;
 
@@ -100,7 +104,7 @@ const FooterRightContainer = styled.div`
 `}
 `;
 
-export const IconContainer = styled.div`
+const IconContainer = styled.div`
   ${tw`
     flex
     justify-between
@@ -113,13 +117,13 @@ const Footer = () => (
       <FooterLeftContainer>
         <FooterLogoContainer>
           <FooterLogo src={footer.innovision.img} alt={footer.innovision.alt} />
-          <Heading4>{footer.title}</Heading4>
+          <Heading4 bold>{footer.title}</Heading4>
         </FooterLogoContainer>
         <Body2>{footer.desc}</Body2>
       </FooterLeftContainer>
       <FooterCenterContainer>
         <FooterCenterSubContainer>
-          <Heading4>{footer.quicklinks.title}</Heading4>
+          <Heading4 bold>{footer.quicklinks.title}</Heading4>
           <FooterLinkContainer>
             {footer.quicklinks.list.map(({ link, name }) => (
               <Link key={link} to={link}>
@@ -130,7 +134,7 @@ const Footer = () => (
         </FooterCenterSubContainer>
       </FooterCenterContainer>
       <FooterRightContainer>
-        <Heading4>{footer.contactTitle}</Heading4>
+        <Heading4 bold>{footer.contactTitle}</Heading4>
         <FooterLocationContainer>
           {footer.contact.map(({ link, icon, text }) => (
             <a href={link} key={link}>

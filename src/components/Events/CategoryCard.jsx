@@ -54,7 +54,7 @@ const CategoryCard = ({ link, image, title, desc }) => (
     <CardImage src={image} />
     <Link to={link}>
       <CardHeadingContainer>
-        <CardHeading>{title}</CardHeading>
+        <CardHeading bold>{title}</CardHeading>
         <FontAwesomeIcon
           style={{ marginRight: 20 }}
           icon={faArrowRight}

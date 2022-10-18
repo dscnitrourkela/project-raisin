@@ -45,7 +45,7 @@ const About = () => (
     <Container>
       <AboutContainer>
         <AboutTextContainer>
-          <Heading2>{about.title}</Heading2>
+          <Heading2 bold>{about.title}</Heading2>
           <Body1>{about.desc}</Body1>
         </AboutTextContainer>
         <AboutImageContainer>
