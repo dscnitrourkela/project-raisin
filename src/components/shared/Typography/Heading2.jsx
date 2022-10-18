@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export default styled.h2`
-  font-style: ${(props) => (props.bold ? 'bold' : 'normal')};
+  font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
   ${tw`
         text-5xl
         xl:text-5xl
@@ -10,5 +10,8 @@ export default styled.h2`
         md:text-3xl
         sm:text-3xl
         text-color-primary
+        uppercase
+        mb-10
+        md:mb-6
     `};
 `;
