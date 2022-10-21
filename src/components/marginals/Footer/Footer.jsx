@@ -30,7 +30,7 @@ const FooterContainer = styled.div`
         grid-cols-12
         md:grid-cols-1
         gap-16
-        md:gap-8
+        md:gap-7
         max-w-full
         pb-6
     `}
@@ -48,6 +48,7 @@ const FooterLogoContainer = styled.div`
     flex
     gap-4
     mb-6
+    md:mb-3
   `}
 `;
 
@@ -70,6 +71,7 @@ const FooterCenterContainer = styled.div`
 const FooterLocationContainer = styled.div`
   ${tw`
     mt-6
+    md:mt-3
   `}
 `;
 
@@ -93,6 +95,7 @@ const FooterLinkContainer = styled.div`
     grid-cols-2
     md:grid-cols-3
     mt-6
+    md:mt-3
     gap-x-6
     gap-y-4
   `}

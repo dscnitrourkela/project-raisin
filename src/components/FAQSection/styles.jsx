@@ -30,6 +30,7 @@ export const Question = styled(Body1)`
     col-span-11
     border-2
     border-color-primary
+    cursor-pointer
   `}
 `;
 

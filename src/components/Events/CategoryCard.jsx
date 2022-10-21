@@ -11,14 +11,17 @@ library.add(faArrowRight);
 
 const CardContainer = styled.div`
   width: 400px;
-  min-width: 260px;
+  max-width: 260px;
   @media (min-width: 768px) {
-    min-width: 400px;
+    max-width: 400px;
   }
   border: 1px solid rgba(170, 170, 170, 1);
   ${tw`
     h-auto
     p-6
+    rounded-4xl
+    md:rounded-3xl
+    cursor-pointer
   `};
 `;
 
@@ -32,7 +35,10 @@ const CardHeadingContainer = styled(Link)`
     gap-4
     items-center
     justify-center
-    my-8
+    mt-8
+    md:mt-6
+    mb-6
+    md:mb-2
   `}
 `;
 
@@ -50,9 +56,9 @@ const CardDescription = styled(Body2)`
 `;
 
 const CategoryCard = ({ link, image, title, desc }) => (
-  <CardContainer>
-    <CardImage src={image} />
-    <Link to={link}>
+  <Link to={link}>
+    <CardContainer>
+      <CardImage src={image} />
       <CardHeadingContainer>
         <CardHeading bold>{title}</CardHeading>
         <FontAwesomeIcon
@@ -62,9 +68,9 @@ const CategoryCard = ({ link, image, title, desc }) => (
           size='2x'
         />
       </CardHeadingContainer>
-    </Link>
-    <CardDescription>{desc}</CardDescription>
-  </CardContainer>
+      <CardDescription>{desc}</CardDescription>
+    </CardContainer>
+  </Link>
 );
 
 export default CategoryCard;
