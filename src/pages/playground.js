@@ -10,9 +10,11 @@ import {
   Footer,
   HeroSection,
 } from '../components';
+import EventCard from '../components/Events/EventCard';
 import DesktopNav from '../components/marginals/Navbar/DesktopNav';
 import { MenuContext } from '../components/marginals/Navbar/MenuContext';
 import MobileNav from '../components/marginals/Navbar/MobileNav';
+import PerksCard from '../components/perks/PerksCard';
 import About from '../components/shared/About';
 
 const Playground = () => {
@@ -32,7 +34,9 @@ const Playground = () => {
       <FaqSection />
       <Footer />
       <CaHeroSection />
+      <EventCard />
       <CaFlexSection />
+      <PerksCard />
     </>
   );
 };
