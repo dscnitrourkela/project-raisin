@@ -5,3 +5,5 @@ export { default as flexData } from './FlexData';
 export { default as footer } from './Footer';
 export { default as about } from './About';
 export { default as events } from './Events';
+export { default as caHero } from './CaHero';
+export { default as caFlex } from './CaFlex';
