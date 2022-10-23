@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Wrapper = styled.div`
+  &::-webkit-scrollbar {
+    display: none;
+  }
   ${tw`
         w-11/12
         max-w-7xl

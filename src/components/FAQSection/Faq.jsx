@@ -6,19 +6,20 @@ import { QuestionContainer, QuestionTextContainer } from './styles';
 
 const Faq = () => {
   const [open, setOpen] = useState(-1);
+  const handleClick = (id) => (open === id ? setOpen(-1) : setOpen(id));
   return (
     <SectionContainer>
       <Container>
         <Heading2>FAQ&apos;S</Heading2>
         <QuestionContainer>
           {faq.data.map(({ id, question, answer }) => (
-            <QuestionTextContainer key={id}>
+            <QuestionTextContainer key={id} onClick={() => handleClick(id)}>
               <FaqSet
                 openState={open}
-                setOpenState={setOpen}
                 idNum={id}
                 question={question}
                 answer={answer}
+                handleClick={handleClick}
               />
             </QuestionTextContainer>
           ))}
