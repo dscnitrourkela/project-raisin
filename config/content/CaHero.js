@@ -10,7 +10,7 @@ export default {
     alt: 'campus ambassador',
   },
   text: {
-    title: 'CAMPPUS AMBASSADOR',
+    title: 'CAMPUS AMBASSADOR',
     head: 'Become A',
     eventName: 'The event INNOVISION 2K22',
   },
