@@ -15,3 +15,8 @@ export { default as EventSection } from './Events/EventSection';
 // Campus Ambassador Page section exports
 export { default as CaHeroSection } from './CaHeroSection/CaHeroSection';
 export { default as CaFlexSection } from './CaFlexSection/CaFlexSection';
+export { default as CaWorkFlowSection } from './CaWorkFlowSection/CaWorkFlowSection';
+export { default as CaEligibilty } from './CaEligibility/CaEligibility';
+
+// EventModal
+export { default as EventDetailsModal } from './EventDetailsModal/EventDetailsModal';

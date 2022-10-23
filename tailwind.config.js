@@ -12,8 +12,14 @@ module.exports = {
       center: true,
     },
     borderRadius: {
-      '4xl': '32px',
+      DEFAULT: '4px',
+      none: '0px',
+      sm: '2px',
+      lg: '8px',
+      xl: '12px',
+      '2xl': '16px',
       '3xl': '24px',
+      '4xl': '32px',
       full: '50%',
     },
     extend: {
