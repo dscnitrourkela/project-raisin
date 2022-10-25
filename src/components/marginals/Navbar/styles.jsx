@@ -27,7 +27,7 @@ export const NavSection = styled.header`
   background-color: var(--background-primary);
   padding-top: 1em;
   padding-bottom: 1em;
-  z-index: 99999;
+  z-index: 40;
   .navHomeLink {
     display: inline-flex;
     align-items: center;
