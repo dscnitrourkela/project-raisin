@@ -15,6 +15,9 @@ export const Container = styled.section`
   `}
   height: fit-content;
   margin: 5% auto;
+  @media (max-width: 760px) {
+    margin: 15% auto;
+  }
 `;
 
 const SectionContainer = ({ children }) => <Container>{children}</Container>;
