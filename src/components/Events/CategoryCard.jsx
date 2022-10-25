@@ -19,14 +19,16 @@ const CardContainer = styled.div`
   ${tw`
     h-auto
     p-6
-    rounded-4xl
-    md:rounded-3xl
+    rounded-xl
     cursor-pointer
   `};
 `;
 
 const CardImage = styled.img`
-  ${tw`w-full`}
+  ${tw`
+  w-full
+  rounded-lg
+  `}
 `;
 
 const CardHeadingContainer = styled(Link)`

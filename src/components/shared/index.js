@@ -10,3 +10,4 @@ export { default as Container } from './Container';
 export { default as LinkButton } from './LinkButton';
 export { default as SectionContainer } from './SectionContainer';
 export { default as ModalBox } from './ModalBox';
+export { default as Button2 } from './Button2';
