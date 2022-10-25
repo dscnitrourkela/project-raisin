@@ -15,12 +15,14 @@ const Container = styled.div`
     flex
     justify-center
     items-center
-    inset-0 z-50
+    inset-0 
+    z-50
     outline-none
     focus:outline-none
     bg-no-repeat
     bg-center
     bg-cover
+    backdrop-blur-lg
   `}
   min-width: 100vw;
 `;
@@ -46,11 +48,12 @@ const scaleDown = keyframes`
 const BackgroundContainer = styled.div`
   ${tw`
       absolute
-      bg-black
-      opacity-30
+      bg-black/50
       inset-0
       z-0
     `};
+  --tw-backdrop-blur: black;
+  backdrop-filter: blur(8px);
   animation: ${(isOpen) => (isOpen ? scaleDown : scaleUp)} 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)
     forwards;
 `;

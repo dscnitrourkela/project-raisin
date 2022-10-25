@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import tw from 'twin.macro';
 import { Body1 } from '../shared';
 
@@ -45,6 +45,7 @@ export const PlusIcon = styled.p`
     cursor-pointer
     text-4xl
     text-color-primary
+    duration-100
   `}
 `;
 
@@ -54,10 +55,31 @@ export const MinusIcon = styled(PlusIcon)`
   }
 `;
 
+const scaleUp = keyframes`
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-25%);
+  }
+`;
+
+const scaleDown = keyframes`
+  0% {
+    transform: translateY(-25%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`;
+
 export const Answer = styled(Body1)`
   flex: auto;
   user-select: none;
+  animation: ${(isOpen) => (isOpen ? scaleDown : scaleUp)} 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
+    forwards;
   ${tw`
     col-span-12
+    duration-200
   `}
 `;
