@@ -9,7 +9,7 @@ const FaqSet = ({ openState, question, answer, idNum, handleClick }) => (
     ) : (
       <PlusIcon onClick={() => handleClick(idNum)} />
     )}
-    {openState === idNum ? <Answer>{answer}</Answer> : <></>}
+    {openState === idNum ? <Answer isOpen={openState === idNum}>{answer}</Answer> : <></>}
   </>
 );
 

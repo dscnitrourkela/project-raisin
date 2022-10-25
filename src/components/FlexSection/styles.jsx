@@ -13,7 +13,6 @@ export const FlexSectionContainer = styled.section`
     flex-col
     items-start
     justify-center
-    min-h-screen
   `}
   height: fit-content;
   margin: 15% auto 10%;

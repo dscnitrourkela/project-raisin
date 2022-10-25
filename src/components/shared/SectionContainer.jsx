@@ -14,7 +14,7 @@ export const Container = styled.section`
     justify-center
   `}
   height: fit-content;
-  margin: 5% auto 10%;
+  margin: 5% auto;
 `;
 
 const SectionContainer = ({ children }) => <Container>{children}</Container>;

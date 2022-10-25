@@ -21,9 +21,12 @@ export const Logo = styled.img`
 `;
 
 export const NavSection = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--background-primary);
   padding-top: 1em;
   padding-bottom: 1em;
-  position: relative;
   z-index: 99999;
   .navHomeLink {
     display: inline-flex;
@@ -74,7 +77,7 @@ export const NavWrapper = styled.nav`
     flex
     items-center
     w-full
-    gap-5
+    gap-7
     lg:justify-between
     `}
 `;
