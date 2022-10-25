@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import Logo from '../../images/navLogo.png';
+import Logo from '../../images/navLogo.svg';
 
 export default {
   title: 'Navigation',

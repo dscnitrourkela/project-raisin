@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import mainImg from '../../images/Cahero.png';
-import settingLogo from '../../images/settingLogo.png';
-import laptopLogo from '../../images/laptopLogo.png';
-import statsLogo from '../../images/statsLogo.png';
+import settingLogo from '../../images/settingLogo.svg';
+import laptopLogo from '../../images/laptopLogo.svg';
+import statsLogo from '../../images/statsLogo.svg';
 
 export default {
   image: {
