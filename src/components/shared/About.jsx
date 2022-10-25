@@ -37,8 +37,7 @@ const AboutImage = styled.iframe`
   ${tw`
   w-full
   h-full
-  rounded-4xl
-  md:rounded-3xl  
+  rounded-xl
 `}
 `;
 

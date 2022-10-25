@@ -13,7 +13,6 @@ const ButtonContainer = styled.button`
     color: #000000;
   }
 
-  width: fit-content;
   ${tw`
     rounded-4xl
     px-9
@@ -21,11 +20,15 @@ const ButtonContainer = styled.button`
   `}
 `;
 
-const LinkButton = ({ link, text, outline = false }) => (
-  <ButtonContainer outline={outline}>
-    <Link to={link}>
+const LinkButton = ({ link, text, outline = false, method = undefined }) => (
+  <ButtonContainer onClick={method} outline={outline}>
+    {link ? (
+      <Link to={link}>
+        <ButtonText>{text}</ButtonText>
+      </Link>
+    ) : (
       <ButtonText>{text}</ButtonText>
-    </Link>
+    )}
   </ButtonContainer>
 );
 
