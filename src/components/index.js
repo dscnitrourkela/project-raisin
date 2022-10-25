@@ -17,6 +17,6 @@ export { default as CaHeroSection } from './CaHeroSection/CaHeroSection';
 export { default as CaFlexSection } from './CaFlexSection/CaFlexSection';
 export { default as CaWorkFlowSection } from './CaWorkFlowSection/CaWorkFlowSection';
 export { default as CaEligibilty } from './CaEligibility/CaEligibility';
-
+export { default as CaPerksSection } from './CaPerksSection/CaPerksSection';
 // EventModal
 export { default as EventDetailsModal } from './EventDetailsModal/EventDetailsModal';

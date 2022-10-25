@@ -7,6 +7,7 @@ export const SectionHeading = styled(Heading2)`
   ${tw`
     text-center
     uppercase
+    mb-0
   `}
 `;
 
