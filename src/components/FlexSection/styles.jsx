@@ -14,8 +14,6 @@ export const FlexSectionContainer = styled.section`
     items-start
     justify-center
   `}
-  height: fit-content;
-  margin: 15% auto 10%;
 `;
 
 export const BackgroundContainer = styled.div`
