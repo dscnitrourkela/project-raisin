@@ -1,6 +1,23 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+export const SectionContainer = styled.div`
+  ${tw`
+    min-h-screen
+    h-screen
+    w-full
+    overflow-x-hidden
+    overflow-y-hidden
+    flex
+    items-center
+    justify-center
+    relative
+    pt-[100px]
+    lg:pt-[90px]
+    sm:pt-[70px]
+  `}
+`;
+
 export const HeroContainer = styled.div`
   ${tw`
     grid
@@ -16,6 +33,7 @@ export const HeroTextContainer = styled.div`
     col-span-2
     flex
     flex-col
+    items-start
     gap-6
     text-color-primary
   `}

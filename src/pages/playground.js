@@ -13,6 +13,7 @@ import {
   HeroSection,
   CaEligibilty,
   CaPerksSection,
+  MerchCard,
 } from '../components';
 import EventCard from '../components/Events/EventCard';
 import DesktopNav from '../components/marginals/Navbar/DesktopNav';
@@ -42,6 +43,7 @@ const Playground = () => {
       <CaPerksSection />
       <CaEligibilty />
       <EventCard />
+      <MerchCard />
     </>
   );
 };

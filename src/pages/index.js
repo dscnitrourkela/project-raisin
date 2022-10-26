@@ -1,5 +1,14 @@
 import React from 'react';
+import { About, EventSection, FaqSection, FlexSection, HeroSection, Layout } from '../components';
 
 export default function Home() {
-  return <h1 className='text-3xl font-bold underline text-white'>Innovision 2022</h1>;
+  return (
+    <Layout>
+      <HeroSection />
+      <About />
+      <FlexSection />
+      <EventSection />
+      <FaqSection />
+    </Layout>
+  );
 }
