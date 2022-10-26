@@ -1,14 +1,6 @@
 import React from 'react';
 import { caHero } from '../../../config/content';
-import {
-  Body1,
-  Container,
-  Heading2,
-  Heading3,
-  Heading4,
-  LinkButton,
-  SectionContainer,
-} from '../shared';
+import { Body1, Container, Heading2, Heading3, Heading4, LinkButton } from '../shared';
 import {
   FlexCard,
   FlexContainer,
@@ -18,6 +10,7 @@ import {
   HeroImageContain,
   HeroImageContainer,
   HeroTextContainer,
+  SectionContainer,
 } from './styles';
 
 const CaHeroSection = () => (

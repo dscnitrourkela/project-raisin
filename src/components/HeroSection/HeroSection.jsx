@@ -15,6 +15,9 @@ const SectionContainer = styled.div`
     items-center
     justify-center
     relative
+    pt-[100px]
+    lg:pt-[90px]
+    sm:pt-[70px]
   `}
 `;
 

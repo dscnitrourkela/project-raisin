@@ -11,4 +11,5 @@ export { default as LinkButton } from './LinkButton';
 export { default as SectionContainer } from './SectionContainer';
 export { default as ModalBox } from './ModalBox';
 export { default as Button2 } from './Button2';
+export { default as About } from './About';
 export { default as Layout } from './Layout';
