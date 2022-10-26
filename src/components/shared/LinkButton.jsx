@@ -17,6 +17,7 @@ const ButtonContainer = styled.button`
     rounded-4xl
     px-9
     py-3
+    w-max
   `}
 `;
 
