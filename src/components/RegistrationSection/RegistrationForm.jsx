@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { AuthContext } from '../../utils/Auth';
 import { Body1, CaptionText, LinkButton } from '../shared';
-import DropDownInput from './DropDownInput';
 import TextInput from './TextInput';
 
 const InputContainer = styled.div`
@@ -38,17 +37,14 @@ const InfoText = styled(CaptionText)`
   `}
 `;
 
-const DropDownOptions = [
-  'Male',
-  'Female',
-  'Other',
-  'Male',
-  'Female',
-  'Other',
-  'Male',
-  'Female',
-  'Other',
-];
+const ButtonContainer = styled.div`
+  ${tw`
+    flex
+    flex-col
+    items-center
+    gap-3
+  `}
+`;
 
 const RegistrationForm = () => {
   const authContext = useContext(AuthContext);
@@ -64,6 +60,7 @@ const RegistrationForm = () => {
   const [mobile, setMobile] = useState('');
   const [referredId, setRefferedId] = useState('');
   const [rollNo, setRollNo] = useState('');
+  const [password, setPassword] = useState('');
   const [NITRStudent, setNITRStudent] = useState(false);
 
   useEffect(() => {
@@ -93,44 +90,28 @@ const RegistrationForm = () => {
           disabled
         />
         <TextInput title='Mobile No.' type={mobile} setType={setMobile} />
-        <DropDownInput options={DropDownOptions} title='Gender' type={gender} setType={setGender} />
+        <TextInput title='Gender' type={gender} setType={setGender} />
         {!NITRStudent ? (
           <>
-            <DropDownInput
-              options={DropDownOptions}
-              title='State'
-              type={state}
-              setType={setState}
-              other
-            />
-            <DropDownInput
-              options={DropDownOptions}
-              title='City'
-              type={city}
-              setType={setCity}
-              other
-            />
-            <DropDownInput
-              options={DropDownOptions}
-              title='College'
-              type={college}
-              setType={setCollege}
-              other
-            />
-            <DropDownInput
-              options={DropDownOptions}
-              title='Stream'
-              type={Stream}
-              setType={setStream}
-              other
-            />
+            <TextInput title='State' type={state} setType={setState} other />
+            <TextInput title='City' type={city} setType={setCity} other />
+            <TextInput title='College' type={college} setType={setCollege} other />
+            <TextInput title='Stream' type={Stream} setType={setStream} other />
             <TextInput title='Referred By' type={referredId} setType={setRefferedId} />
           </>
         ) : (
-          <TextInput title='Roll No.' type={rollNo} setType={setRollNo} />
+          <>
+            <TextInput title='Roll No.' type={rollNo} setType={setRollNo} />
+            <TextInput title='Password' type={password} setType={setPassword} />
+          </>
         )}
       </InputContainer>
-      <LinkButton type='submit' text='Register' />
+      <ButtonContainer>
+        <LinkButton type='submit' text={NITRStudent ? `Login with webmail` : `Proceed to pay`} />
+        <CaptionText>
+          {NITRStudent ? `Registration Fees: ₹0` : `Registration Fees: ₹700`}
+        </CaptionText>
+      </ButtonContainer>
     </>
   );
 };

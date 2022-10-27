@@ -45,7 +45,7 @@ function MobileNav() {
     <StyledMobileNav>
       <div className='mobile-nav-container'>
         <ul className='linkList'>
-          {nav.navItems.map(({ id, name, link, link }) => (
+          {nav.navItems.map(({ id, name, link }) => (
             <li
               key={id}
               id={name}

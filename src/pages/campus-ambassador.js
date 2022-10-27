@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  CaFlexSection,
-  CaHeroSection,
-  CaPerksSection,
-  CaWorkFlowSection,
-  Layout,
-} from '../components';
+import { CaHeroSection, CaPerksSection, CaWorkFlowSection, Layout } from '../components';
 
 export default function CaPage() {
   return (
     <Layout>
       <CaHeroSection />
-      <CaFlexSection />
+      {/* <CaFlexSection /> */}
       <CaWorkFlowSection />
       <CaPerksSection />
     </Layout>

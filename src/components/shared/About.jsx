@@ -19,6 +19,10 @@ const AboutContainer = styled.div`
 `;
 const AboutTextContainer = styled.div`
   ${tw`
+    flex
+    flex-col
+    items-center
+    justify-center
     col-span-1
     md:col-span-2
   `}
@@ -33,9 +37,10 @@ const AboutImageContainer = styled.div`
 `;
 
 const AboutVideo = styled.iframe`
+  height: 400px;
   ${tw`
   w-full
-  h-full
+  sm:h-full
   rounded-xl
 `}
 `;

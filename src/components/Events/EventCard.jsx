@@ -92,7 +92,7 @@ const EventCard = ({ data }) => {
             <CardHeading bold>{data.heading}</CardHeading>
             <EventDate>{data.dateTime ? `${data.dateTime}` : ''}</EventDate>
           </CardTitleContainer>
-          <EventClub>{data.subHeading}</EventClub>
+          <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
           <EventPrizes>
             {data.prizeAmount ? `CASH PRIZE UPTO ${data.prizeAmount}` : 'Cash Prize to be declared'}
           </EventPrizes>

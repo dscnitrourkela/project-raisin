@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Heading2, SectionContainer } from '../shared';
+import { Container, Heading2, SectionContainer } from '../shared';
 import CategoryCard from './CategoryCard';
 import { eventsCategory } from '../../../config/content';
 
@@ -23,9 +23,10 @@ const EventCardContainer = styled.div`
   }
   ${tw`
       py-5
-      flex 
-      gap-4
-      overflow-y-hidden
+      flex
+      flex-wrap
+      justify-center
+      gap-6
   `}
 `;
 
@@ -38,14 +39,14 @@ const EventHeading = styled(Heading2)`
 
 const EventSection = () => (
   <SectionContainer>
-    <EventContainer>
+    <Container>
       <EventHeading bold>{eventsCategory.title}</EventHeading>
       <EventCardContainer>
         {eventsCategory.categoryDetails.map(({ link, image, title, desc }) => (
           <CategoryCard key={link} link={link} image={image} title={title} desc={desc} />
         ))}
       </EventCardContainer>
-    </EventContainer>
+    </Container>
   </SectionContainer>
 );
 
