@@ -56,7 +56,7 @@ export const PlusIcon = styled.p`
     justify-end
     cursor-pointer
     text-4xl
-    text-color-primary
+    text-color-tertiary
     duration-100
   `}
   /* transition: 1s linear ease-in-out; */

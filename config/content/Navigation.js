@@ -10,9 +10,8 @@ export default {
   },
   navItems: [
     {
-      id: 'event1',
-      name: 'Event',
-      link: '/playground',
+      id: 'faq',
+      name: 'FAQ',
     },
     {
       id: 'event2',

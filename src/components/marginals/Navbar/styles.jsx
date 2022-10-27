@@ -24,7 +24,7 @@ export const NavSection = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 10px 2px var(--text-color-tertiary);
+  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
   background-color: var(--background-primary);
   padding-top: 1em;
   padding-bottom: 1em;

@@ -8,7 +8,7 @@ const FaqSet = ({ openState, question, answer, idNum, handleClick }) => (
         {question}
       </Question>
       <PlusIcon
-        className={`${openState === idNum ? 'open' : ''}`}
+        className={`question ${openState === idNum ? 'active open' : ''}`}
         onClick={() => handleClick(idNum)}
       >
         +

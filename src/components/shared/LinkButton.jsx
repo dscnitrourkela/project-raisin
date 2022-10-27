@@ -12,6 +12,7 @@ const ButtonContainer = styled.button`
     background: ${(props) => (props.outline ? '#ffffff' : '#ECFDFF')};
     color: #000000;
   }
+  transition: all 0.1s linear;
 
   ${tw`
     rounded-4xl

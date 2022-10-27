@@ -4,9 +4,9 @@ import tw from 'twin.macro';
 export default styled.p`
   font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
   ${tw`
-    text-lg
-    2xl:text-lg
-    lg:text-lg
+    text-base
+    2xl:text-base
+    lg:text-base
     md:text-sm
     sm:text-sm
     text-color-primary

@@ -8,7 +8,7 @@ export default function Home() {
       <About />
       <FlexSection />
       <EventSection />
-      <FaqSection />
+      <FaqSection id='faq' />
     </Layout>
   );
 }

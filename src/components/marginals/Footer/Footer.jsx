@@ -33,7 +33,7 @@ const FooterOuterContainer = styled.div`
     flex
     justify-center
   `}
-  box-shadow: 0 -1px 10px 2px var(--text-color-tertiary);
+  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
 `;
 
 const FooterContainer = styled.div`

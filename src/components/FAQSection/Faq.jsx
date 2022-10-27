@@ -8,7 +8,7 @@ const Faq = () => {
   const [open, setOpen] = useState(-1);
   const handleClick = (id) => (open === id ? setOpen(-1) : setOpen(id));
   return (
-    <SectionContainer>
+    <SectionContainer id='faq'>
       <Container>
         <Heading2>FAQ&apos;S</Heading2>
         <QuestionContainer>
