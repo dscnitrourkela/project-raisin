@@ -60,7 +60,7 @@ function DesktopNav() {
             </ul>
           </NavCenter>
           <NavRight>
-            <AuthButton />
+            <AuthButton outline />
           </NavRight>
         </NavWrapper>
       </Container>
