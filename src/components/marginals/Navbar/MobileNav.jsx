@@ -9,7 +9,8 @@ import { StyledMobileNav } from './styles';
 
 // Assets
 import { nav } from '../../../../config/content';
-import { LinkButton, NavText } from '../../shared';
+import { NavText } from '../../shared';
+import AuthButton from './AuthButton';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -60,7 +61,7 @@ function MobileNav() {
             </li>
           ))}
         </ul>
-        <LinkButton outline link='/' text='login' />
+        <AuthButton />
       </div>
     </StyledMobileNav>
   );

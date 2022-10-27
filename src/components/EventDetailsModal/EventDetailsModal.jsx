@@ -1,5 +1,5 @@
 import React from 'react';
-import { Body1, Heading3, Heading4, LinkButton } from '../shared';
+import { Body1, Heading3, Heading4 } from '../shared';
 import {
   AboutContainer,
   AboutText,

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import Heading2 from './Typography/Heading2';
 import Body1 from './Typography/Body1';
-import about from '../../../config/content/About';
 import SectionContainer from './SectionContainer';
 import Container from './Container';
 
@@ -20,6 +19,10 @@ const AboutContainer = styled.div`
 `;
 const AboutTextContainer = styled.div`
   ${tw`
+    flex
+    flex-col
+    items-center
+    justify-center
     col-span-1
     md:col-span-2
   `}
@@ -33,29 +36,41 @@ const AboutImageContainer = styled.div`
   `}
 `;
 
-const AboutImage = styled.iframe`
+const AboutVideo = styled.iframe`
+  height: 400px;
   ${tw`
   w-full
+  sm:h-full
+  rounded-xl
+`}
+`;
+
+const AboutImage = styled.img`
+  ${tw`
   h-full
   rounded-xl
 `}
 `;
 
-const About = () => (
+const About = ({ title, desc, image, link, alt }) => (
   <SectionContainer>
     <Container>
       <AboutContainer>
         <AboutTextContainer>
-          <Heading2 bold>{about.title}</Heading2>
-          <Body1>{about.desc}</Body1>
+          <Heading2 bold>{title}</Heading2>
+          <Body1>{desc}</Body1>
         </AboutTextContainer>
         <AboutImageContainer>
-          <AboutImage
-            src={about.link}
-            frameborder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowfullscreen
-          />
+          {!image ? (
+            <AboutVideo
+              src={link}
+              frameborder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowfullscreen
+            />
+          ) : (
+            <AboutImage src={link} alt={alt} />
+          )}
         </AboutImageContainer>
       </AboutContainer>
     </Container>

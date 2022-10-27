@@ -21,12 +21,8 @@ const CaWorkFlowSection = () => (
       <SectionHeading>What will you do </SectionHeading>
       <SectionSubHeading>In Our Campus Ambassador Programme?</SectionSubHeading>
       <CardContainer>
-        {caWorkFlow.workflow.map(({ id, title, desc }) => (
+        {caWorkFlow.workflow.map(({ id, desc }) => (
           <Card key={id}>
-            <CardHead>
-              <CardLogo icon={faShareAlt} />
-              <Heading4>{title}</Heading4>
-            </CardHead>
             <CardBody>{desc}</CardBody>
           </Card>
         ))}

@@ -6371,9 +6371,9 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-firebase@^9.1.3:
+firebase@^9.12.1:
   version "9.12.1"
-  resolved "https://repo.huaweicloud.com/repository/npm/firebase/-/firebase-9.12.1.tgz#f2ef2560a3a122bcf82dee09d5ae3a3805bb890a"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-9.12.1.tgz#f2ef2560a3a122bcf82dee09d5ae3a3805bb890a"
   integrity sha512-sBp4rvkCC7TUnGeneRNs6GVcajO+iSXmYjxqXN4FsrBzldJ5/AOnDXf4bi9OUZtQSl+EHDgUWShBieht15ijgQ==
   dependencies:
     "@firebase/analytics" "0.8.3"

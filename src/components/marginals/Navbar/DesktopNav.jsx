@@ -1,9 +1,10 @@
 import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { nav } from '../../../../config/content';
-import { Container, LinkButton, NavText } from '../../shared';
+import { Container, NavText } from '../../shared';
 import { Logo, NavCenter, NavRight, NavSection, NavWrapper, StyledHamburger } from './styles';
 import { MenuContext } from './MenuContext';
+import AuthButton from './AuthButton';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -38,10 +39,8 @@ function DesktopNav() {
               <Logo src={nav.logo.src} alt={nav.logo.alt} />
             </Link>
           </div>
-
           <NavCenter>
             <StyledHamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
-
             <ul className='navLinkList'>
               {nav.navItems.map(({ id, name, link }) => (
                 <li
@@ -60,9 +59,8 @@ function DesktopNav() {
               ))}
             </ul>
           </NavCenter>
-
           <NavRight>
-            <LinkButton outline link='/' text='login' />
+            <AuthButton />
           </NavRight>
         </NavWrapper>
       </Container>

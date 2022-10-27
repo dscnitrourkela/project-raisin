@@ -8,27 +8,27 @@ export default {
   tags: [
     {
       id: 0,
-      tagText: '8+ proshow',
+      tagText: '5+ pro shows',
     },
     {
       id: 1,
-      tagText: '40+ competitions',
+      tagText: '30+ Technical Events',
     },
     {
       id: 2,
-      tagText: '10+ workshops',
+      tagText: '10+ Fun Events',
     },
     {
       id: 3,
-      tagText: '40+ competitions',
+      tagText: '10+ Workshops',
     },
     {
       id: 4,
-      tagText: '40+ competitions',
+      tagText: '10+ Exhibitions',
     },
     {
       id: 5,
-      tagText: '40+ competitions',
+      tagText: '10+ Guest Lectures',
     },
   ],
 };

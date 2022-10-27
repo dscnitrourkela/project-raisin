@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import EventDetailsModal from '../EventDetailsModal/EventDetailsModal';
-import { Body1, Body2, Button2, ButtonText, Heading4, LinkButton, ModalBox } from '../shared';
+import { Body1, Body2, Button2, ButtonText, Heading4, ModalBox } from '../shared';
 
 const CardContainer = styled.div`
   width: 400px;
@@ -41,9 +41,20 @@ const CardTitleContainer = styled.div`
 `}
 `;
 
+const CardButtonContainer = styled.div`
+  ${tw` flex justify-center`}
+`;
+
 const EventDate = styled(Body1)`
   ${tw`
     text-color-secondary
+  `}
+`;
+
+const CardHeading = styled(Heading4)`
+  ${tw`
+  truncate
+  mr-2
   `}
 `;
 
@@ -69,28 +80,40 @@ const EventPrizes = styled(ButtonText)`
   `}
 `;
 
-const EventCard = () => {
+const EventCard = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
       <CardContainer>
-        <CardImage src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUoLJjZ41ReLUaOGGMJp1748jh1stdXSitPQ&usqp=CAU' />
+        <CardImage src={data.eventImage.imgSrc} alt={data.eventImage.alt} />
         <CardTextContainer>
           <CardTitleContainer>
-            <Heading4>RoboWars</Heading4>
-            <EventDate>11th November</EventDate>
+            <CardHeading bold>{data.heading}</CardHeading>
+            <EventDate>{data.dateTime ? `${data.dateTime}` : ''}</EventDate>
           </CardTitleContainer>
-          <EventClub>udaan club</EventClub>
-          <EventPrizes>CASH PRIZE UPTO 50K</EventPrizes>
-          <CardTitleContainer>
+          <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
+          <EventPrizes>
+            {data.prizeAmount ? `CASH PRIZE UPTO ${data.prizeAmount}` : 'Cash Prize to be declared'}
+          </EventPrizes>
+          <CardButtonContainer>
             <Button2 method={() => setModalOpen(true)} text='Know More' />
-            <LinkButton text='Book Slots' link='/register' />
-          </CardTitleContainer>
+            {/* <LinkButton text='Book Slots' link='/register' /> */}
+          </CardButtonContainer>
         </CardTextContainer>
       </CardContainer>
       <ModalBox isOpen={modalOpen} close={() => setModalOpen(false)}>
-        <EventDetailsModal />
+        <EventDetailsModal
+          heading={data.heading}
+          subHeading={data.subHeading}
+          imgSrc={data.eventImage.imgSrc}
+          alt={data.eventImage.alt}
+          dateTime={data.dateTime}
+          location={data.location}
+          prizeAmount={data.prizeAmount}
+          contactDetails={data.contactDetails}
+          aboutDetails={data.aboutDetails}
+        />
       </ModalBox>
     </>
   );

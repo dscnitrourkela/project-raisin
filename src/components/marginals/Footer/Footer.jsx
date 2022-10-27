@@ -12,17 +12,27 @@ import {
   faFacebookSquare,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 
 // Components
 import Heading4 from '../../shared/Typography/Heading4';
 import Body2 from '../../shared/Typography/Body2';
-import { Container } from '../../shared';
+import { Body1, Container } from '../../shared';
 
 // Assets
 import { footer } from '../../../../config/content';
 
-library.add(faFacebookSquare, faInstagramSquare, faTwitterSquare, faYoutubeSquare, faLinkedin);
+library.add(
+  faFacebookSquare,
+  faInstagramSquare,
+  faTwitterSquare,
+  faYoutubeSquare,
+  faLinkedin,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope,
+);
 
 const FooterOuterContainer = styled.div`
   ${tw`
@@ -51,7 +61,6 @@ const FooterContainer = styled.div`
 const FooterLeftContainer = styled.div`
   ${tw`
     col-span-4
-    text-justify
   `}
 `;
 
@@ -71,9 +80,10 @@ const FooterLogo = styled.img`
 `}
 `;
 
-const FooterDescription = styled(Body2)`
+const FooterDescription = styled(Body1)`
   ${tw`
-    text-color-secondary
+    text-color-tertiary
+    leading-6
   `}
 `;
 
@@ -114,7 +124,7 @@ const FooterLinkContainer = styled.div`
     md:grid-cols-3
     mt-6
     md:mt-3
-    gap-x-6
+    gap-x-8
     gap-y-4
   `}
 `;
@@ -128,8 +138,12 @@ const FooterRightContainer = styled.div`
 const IconContainer = styled.div`
   ${tw`
     flex
-    justify-between
+    gap-4
   `}
+`;
+
+const FooterSocialText = styled(Body2)`
+  word-break: break-all;
 `;
 
 const LinkText = styled(Body2)`
@@ -141,6 +155,15 @@ const LinkText = styled(Body2)`
       text-color-secondary
     `}
   }
+`;
+
+const FooterHeading = styled(Heading4)`
+  ${tw`
+    text-2xl
+    2xl:text-2xl
+    lg:text-2xl
+    md:text-xl
+    sm:text-xl`}
 `;
 
 const Footer = () => (
@@ -156,7 +179,7 @@ const Footer = () => (
         </FooterLeftContainer>
         <FooterCenterContainer>
           <FooterCenterSubContainer>
-            <Heading4 bold>{footer.quicklinks.title}</Heading4>
+            <FooterHeading bold>{footer.quicklinks.title}</FooterHeading>
             <FooterLinkContainer>
               {footer.quicklinks.list.map(({ link, name }) => (
                 <Link key={link} to={link}>
@@ -167,15 +190,13 @@ const Footer = () => (
           </FooterCenterSubContainer>
         </FooterCenterContainer>
         <FooterRightContainer>
-          <Heading4 bold>{footer.contactTitle}</Heading4>
+          <FooterHeading bold>{footer.contactTitle}</FooterHeading>
           <FooterLocationContainer>
-            {footer.contact.map(({ link, icon, text }) => (
-              <a href={link} key={link}>
-                <FooterLocationItem>
-                  <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='2x' />
-                  <Body2>{text}</Body2>
-                </FooterLocationItem>
-              </a>
+            {footer.contact.map(({ icon, text }) => (
+              <FooterLocationItem key={text}>
+                <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='lg' />
+                <FooterSocialText>{text}</FooterSocialText>
+              </FooterLocationItem>
             ))}
           </FooterLocationContainer>
           <IconContainer>

@@ -1,23 +1,13 @@
 import React from 'react';
-import {
-  CaEligibilty,
-  CaFlexSection,
-  CaHeroSection,
-  CaPerksSection,
-  CaWorkFlowSection,
-  FaqSection,
-  Layout,
-} from '../components';
+import { CaHeroSection, CaPerksSection, CaWorkFlowSection, Layout } from '../components';
 
 export default function CaPage() {
   return (
     <Layout>
       <CaHeroSection />
-      <CaFlexSection />
+      {/* <CaFlexSection /> */}
       <CaWorkFlowSection />
       <CaPerksSection />
-      <CaEligibilty />
-      <FaqSection />
     </Layout>
   );
 }

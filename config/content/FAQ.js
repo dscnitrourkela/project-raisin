@@ -3,45 +3,45 @@ export default {
   data: [
     {
       id: 0,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      question: 'What is Innovision?',
+      answer: `It's Eastern India's most prominent student' held techno-management fest in which college students from all over the country can participate to showcase their skills.
+        `,
     },
     {
       id: 1,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+      question: 'Who are we?',
+      answer: `INNOVISION is the techno-management fest of NIT Rourkela. We were awarded the best students' chapter in the Odisha region. So when it comes to organizing technical events, we always rule.`,
     },
     {
       id: 2,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+      question: 'Who can participate?',
+      answer: `If you are a college student interested in discovering science and tech in the real world, you're at the right place`,
     },
     {
       id: 3,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+      question: 'How to participate?',
+      answer: `Visit our website for registration, and you will be provided with all the details there.`,
     },
     {
       id: 4,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+      question: `Will it be conducted online?`,
+      answer: `No, it's a pure offline event.`,
     },
     {
       id: 5,
-      question: 'Is accommodation available for participants?',
+      question: 'What is the goal of the fest?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+        'It would be an excellent opportunity for everyone to learn technical aspects prevalent in the present-day scenario.',
     },
     {
       id: 6,
-      question: 'Is accommodation available for participants?',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere.',
+      question: 'How could I know if I got selected for any event?',
+      answer: `We'll mail you and let you know.`,
+    },
+    {
+      id: 7,
+      question: 'Cost for participation?',
+      answer: `Complete guidelines are given inside the brochure`,
     },
   ],
 };
