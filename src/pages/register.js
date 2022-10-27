@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import RegistrationForm from '../components/RegistrationSection/RegistrationForm';
@@ -24,14 +25,21 @@ const RegistrationContainer = styled.div`
 `;
 
 const Register = () => (
-  <Layout>
-    <SectionContainer>
-      <RegistrationContainer>
-        <Heading bold>Register</Heading>
-        <RegistrationForm />
-      </RegistrationContainer>
-    </SectionContainer>
-  </Layout>
+  <>
+    <Helmet>
+      <meta charset='utf-8' />
+      <title>Innovision | Register</title>
+      <meta name='description' content='This is register page' />
+    </Helmet>
+    <Layout>
+      <SectionContainer>
+        <RegistrationContainer>
+          <Heading bold>Register</Heading>
+          <RegistrationForm />
+        </RegistrationContainer>
+      </SectionContainer>
+    </Layout>
+  </>
 );
 
 export default Register;
