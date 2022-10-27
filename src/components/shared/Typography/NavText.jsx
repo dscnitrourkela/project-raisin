@@ -9,6 +9,8 @@ export default styled.p`
     lg:text-base
     md:text-sm
     sm:text-sm
+    leading-6
+    md:leading-5
     text-color-primary
   `}
 `;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Heading4, LinkButton } from '../shared';
 import { CardContainer, CardImage, CardTextContainer, CardTitleContainer } from './styles';
 
-const EventCard = ({ imgSrc, product, price, link }) => (
+const MerchCard = ({ imgSrc, product, price, link }) => (
   <CardContainer>
     <CardImage src={imgSrc} />
     <CardTextContainer>
@@ -16,4 +16,4 @@ const EventCard = ({ imgSrc, product, price, link }) => (
   </CardContainer>
 );
 
-export default EventCard;
+export default MerchCard;

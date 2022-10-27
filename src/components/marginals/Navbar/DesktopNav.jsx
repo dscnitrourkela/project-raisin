@@ -43,17 +43,17 @@ function DesktopNav() {
             <StyledHamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
 
             <ul className='navLinkList'>
-              {nav.navItems.map(({ id, name }) => (
+              {nav.navItems.map(({ id, name, link }) => (
                 <li
                   key={id}
-                  onClick={() => handleScroll(id)}
-                  onKeyPress={() => handleScroll(id)}
+                  onClick={() => !link && handleScroll(id)}
+                  onKeyPress={() => !link && handleScroll(id)}
                   id={name}
                   role='menuitem'
                   tabIndex='0'
                   className='navLinkItem'
                 >
-                  <Link style={{ textDecoration: 'none' }} to={`#${id}`}>
+                  <Link style={{ textDecoration: 'none' }} to={link}>
                     <NavText className='navLink'>{name}</NavText>
                   </Link>
                 </li>
@@ -62,7 +62,7 @@ function DesktopNav() {
           </NavCenter>
 
           <NavRight>
-            <LinkButton link='/' text='login' />
+            <LinkButton outline link='/' text='login' />
           </NavRight>
         </NavWrapper>
       </Container>

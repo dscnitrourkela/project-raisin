@@ -22,6 +22,17 @@ module.exports = {
       '4xl': '32px',
       full: '50%',
     },
+    fontSize: {
+      xs: ['12px', '16px'],
+      sm: ['14px', '20px'],
+      base: ['16px', '20px'],
+      lg: ['18px', '28px'],
+      xl: ['20px', '28px'],
+      '2xl': ['24px', '32px'],
+      '3xl': ['28px', '36px'],
+      '4xl': ['32px', '40px'],
+      '5xl': ['40px', '48px'],
+    },
     extend: {
       colors: {
         'color-primary': 'var(--text-color-primary)',

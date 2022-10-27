@@ -24,6 +24,7 @@ export const NavSection = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
   background-color: var(--background-primary);
   padding-top: 1em;
   padding-bottom: 1em;
@@ -63,6 +64,7 @@ export const NavSection = styled.header`
   @media (min-width: 1023px) {
     .navLinkList {
       display: flex;
+      justify-content: center;
     }
   }
   @media (max-width: 1023px) {
@@ -102,7 +104,7 @@ export const StyledMobileNav = styled.section`
   left: 0;
   right: 0;
   background-color: var(--background-primary);
-  z-index: 9999;
+  z-index: 30;
   animation: ${fadeDown} 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   .mobile-nav-container {
     display: flex;
