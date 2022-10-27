@@ -12,7 +12,7 @@ export default {
   text: {
     title: 'CAMPUS AMBASSADOR',
     head: 'Become A',
-    eventName: 'The event INNOVISION 2K22',
+    eventName: 'OF INNOVISION 2K22',
   },
   flex: [
     {
@@ -21,7 +21,7 @@ export default {
         src: settingLogo,
         alt: 'workshops',
       },
-      number: 30,
+      number: 10,
       title: 'Workshop',
     },
     {
@@ -39,7 +39,7 @@ export default {
         src: statsLogo,
         alt: 'sponsors',
       },
-      number: 30,
+      number: 20,
       title: 'Sponsors',
     },
   ],

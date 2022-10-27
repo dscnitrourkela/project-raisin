@@ -6,6 +6,7 @@ import {
   faFacebookSquare,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import logo from '../../images/logo.png';
 
 export default {
@@ -15,72 +16,60 @@ export default {
   },
   title: 'Innovision 2k22',
   desc: `
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima facilis vero neque laborum molestias quod saepe quisquam dolore molestiae. Dolores saepe ex fugiat labore iste, eos necessitatibus ullam magnam architecto tempora eveniet nesciunt esse illo accusantium cumque perferendis ipsum, quis tempore libero explicabo! Id, nisi porro! Totam ullam sapiente sint.`,
+  INNOVISION, one of the largest techno-management fest in eastern India, aims at providing a stage for young budding minds to exhibit their talents. Our primary goal is to create awareness for great ideas that would help humanity and society.`,
   quicklinks: {
     title: 'Quick Links',
     list: [
       {
-        name: 'Workshops',
-        link: '',
+        name: 'Technical Events',
+        link: '/technical-events',
+      },
+      {
+        name: 'Guest Lectures',
+        link: '/guest-lectures',
       },
       {
         name: 'C.A program',
-        link: '',
-      },
-      {
-        name: 'Competitions',
-        link: '',
-      },
-      {
-        name: `FAQ's`,
-        link: '',
-      },
-      {
-        name: 'Pro Shows',
-        link: '',
-      },
-      {
-        name: 'Sponsors',
-        link: '',
-      },
-      {
-        name: 'Exhibitions',
-        link: '',
-      },
-      {
-        name: 'Register',
-        link: '',
-      },
-      {
-        name: 'Lectures',
-        link: '',
-      },
-      {
-        name: 'Team',
-        link: '',
+        link: '/campus-ambassador',
       },
       {
         name: 'Fun Events',
-        link: '',
+        link: '/fun-events',
       },
+      {
+        name: 'Pro Shows',
+        link: '/proshows',
+      },
+      {
+        name: 'Workshops',
+        link: '/workshops',
+      },
+      // {
+      //   name: 'Register',
+      //   link: '/register',
+      // },
+      // {
+      //   name: 'Exhibition',
+      //   link: '/exhibition',
+      // },
     ],
   },
   contactTitle: "Let's Connect",
   contact: [
     {
-      icon: faFacebookSquare,
+      icon: faMapMarkerAlt,
       link: '',
-      text: 'NIT Rourkela, Odhisa - 769008',
+      text: 'SAC, NIT Rourkela, Odhisa - 769008',
     },
     {
-      icon: faFacebookSquare,
+      icon: faPhoneAlt,
       link: '',
-      text: 'H',
+      text: '+91 7655070696',
     },
     {
-      icon: faFacebookSquare,
+      icon: faEnvelope,
       link: '',
-      text: 'y',
+      text: 'innovision.nitrkl@gmail.com',
     },
   ],
   socials: [

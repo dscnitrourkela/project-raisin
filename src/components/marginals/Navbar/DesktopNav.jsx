@@ -1,9 +1,10 @@
 import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { nav } from '../../../../config/content';
-import { Container, LinkButton, NavText } from '../../shared';
+import { Container, NavText } from '../../shared';
 import { Logo, NavCenter, NavRight, NavSection, NavWrapper, StyledHamburger } from './styles';
 import { MenuContext } from './MenuContext';
+import AuthButton from './AuthButton';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -38,31 +39,28 @@ function DesktopNav() {
               <Logo src={nav.logo.src} alt={nav.logo.alt} />
             </Link>
           </div>
-
           <NavCenter>
             <StyledHamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
-
             <ul className='navLinkList'>
-              {nav.navItems.map(({ id, name }) => (
+              {nav.navItems.map(({ id, name, link }) => (
                 <li
                   key={id}
-                  onClick={() => handleScroll(id)}
+                  onClick={() => !link && handleScroll(id)}
                   onKeyPress={() => handleScroll(id)}
                   id={name}
                   role='menuitem'
                   tabIndex='0'
                   className='navLinkItem'
                 >
-                  <Link style={{ textDecoration: 'none' }} to={`#${id}`}>
+                  <Link style={{ textDecoration: 'none' }} to={`${link}`}>
                     <NavText className='navLink'>{name}</NavText>
                   </Link>
                 </li>
               ))}
             </ul>
           </NavCenter>
-
           <NavRight>
-            <LinkButton link='/' text='login' />
+            <AuthButton />
           </NavRight>
         </NavWrapper>
       </Container>

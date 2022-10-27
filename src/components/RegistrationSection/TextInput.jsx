@@ -12,7 +12,7 @@ const TextInputBox = styled.input`
   border-bottom: 1px solid white;
   cursor: ${(props) => (props.disabled ? 'no-drop' : 'auto')};
   ${tw`
-    mt-3
+    mt-2
     w-full
     p-1
     text-color-secondary 

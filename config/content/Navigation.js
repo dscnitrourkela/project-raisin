@@ -10,49 +10,28 @@ export default {
   },
   navItems: [
     {
-      id: 'event1',
-      name: 'Event',
-      link: '/playground',
+      name: 'Technical Events',
+      link: '/technical-events',
     },
     {
-      id: 'event2',
-      name: 'Event',
-      link: '/playground',
+      name: 'Fun Events',
+      link: '/fun-events',
     },
     {
-      id: 'event3',
-      name: 'Event',
-      link: '/playground',
+      name: 'Workshop',
+      link: '/workshops',
     },
     {
-      id: 'event4',
-      name: 'Event',
-      link: '/playground',
+      name: 'Guest Lectures',
+      link: '/guest-lectures',
     },
+    // {
+    //   name: 'Exhibition',
+    //   link: '/exhibition',
+    // },
     {
-      id: 'event5',
-      name: 'Event',
-      link: '/playground',
-    },
-    {
-      id: 'event6',
-      name: 'Event',
-      link: '/playground',
-    },
-    {
-      id: 'event7',
-      name: 'Event',
-      link: '/playground',
-    },
-    {
-      id: 'event8',
-      name: 'Event',
-      link: '/playground',
-    },
-    {
-      id: 'event9',
-      name: 'Event',
-      link: '/playground',
+      name: 'Pro Shows',
+      link: '/proshows',
     },
   ],
 };

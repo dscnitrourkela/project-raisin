@@ -1,6 +1,5 @@
 import React from 'react';
-import { eventModal } from '../../../config/content';
-import { Body1, Heading3, Heading4, LinkButton } from '../shared';
+import { Body1, Heading3, Heading4 } from '../shared';
 import {
   AboutContainer,
   AboutText,
@@ -15,39 +14,57 @@ import {
   SubHeading,
 } from './styles';
 
-const EventDetailsModal = () => (
+const EventDetailsModal = ({
+  imgSrc,
+  alt,
+  heading,
+  subHeading,
+  dateTime,
+  location,
+  prizeAmount,
+  contactDetails,
+  aboutDetails,
+}) => (
   <EventContainer>
     <LeftContainer>
-      <EventImage src={eventModal.eventImage.imgSrc} alt={eventModal.eventImage.alt} />
+      <EventImage src={imgSrc} alt={alt} />
       <CompositeContainer>
-        <Heading3 bold>{eventModal.heading}</Heading3>
-        <SubHeading>{eventModal.subHeading}</SubHeading>
+        <Heading3 bold>{heading}</Heading3>
+        <SubHeading>{subHeading}</SubHeading>
       </CompositeContainer>
       <CompositeContainer>
-        <Body1>{eventModal.dateTime}</Body1>
-        <Body1>{eventModal.location}</Body1>
+        <Body1>{dateTime ? `${dateTime}` : 'TBA'}</Body1>
+        <Body1>{location ? `${location}` : 'TBA'}</Body1>
       </CompositeContainer>
       <CompositeContainer>
         <Heading4 bold>Prizes</Heading4>
         <PrizesAmount>
-          Prizes worth <span>{eventModal.prizeAmount}</span>
+          {prizeAmount ? (
+            <>
+              CASH PRIZE UPTO <span>{prizeAmount}</span>
+            </>
+          ) : (
+            'TBA'
+          )}
         </PrizesAmount>
       </CompositeContainer>
-      <LinkButton text='Register' link='/' />
+      {/* <LinkButton text='Register' link='/' /> */}
     </LeftContainer>
     <RightContainer>
       <AboutContainer>
         <Heading4>About</Heading4>
-        {eventModal.aboutDetails.map(({ id, desc }) => (
+        {aboutDetails.map(({ id, desc }) => (
           <AboutText key={id}>{desc}</AboutText>
         ))}
       </AboutContainer>
       <ContactContainer>
         <Heading4 bold>Contact</Heading4>
         <ContactDetails>
-          {eventModal.contactDetails.map(({ id, contact }) => (
-            <Body1 key={id}>{contact}</Body1>
-          ))}
+          {contactDetails.length > 0 ? (
+            contactDetails.map(({ id, contact }) => <Body1 key={id}>{contact}</Body1>)
+          ) : (
+            <Body1>TBA</Body1>
+          )}
         </ContactDetails>
       </ContactContainer>
     </RightContainer>

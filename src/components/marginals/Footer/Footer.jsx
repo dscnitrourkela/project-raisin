@@ -12,6 +12,7 @@ import {
   faFacebookSquare,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 
 // Components
@@ -22,7 +23,16 @@ import { Container } from '../../shared';
 // Assets
 import { footer } from '../../../../config/content';
 
-library.add(faFacebookSquare, faInstagramSquare, faTwitterSquare, faYoutubeSquare, faLinkedin);
+library.add(
+  faFacebookSquare,
+  faInstagramSquare,
+  faTwitterSquare,
+  faYoutubeSquare,
+  faLinkedin,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faEnvelope,
+);
 
 const FooterContainer = styled.div`
   ${tw`
@@ -39,7 +49,6 @@ const FooterContainer = styled.div`
 const FooterLeftContainer = styled.div`
   ${tw`
     col-span-4
-    text-justify
   `}
 `;
 
@@ -110,8 +119,12 @@ const FooterRightContainer = styled.div`
 const IconContainer = styled.div`
   ${tw`
     flex
-    justify-between
+    gap-4
   `}
+`;
+
+const FooterSocialText = styled(Body2)`
+  word-break: break-all;
 `;
 
 const Footer = () => (
@@ -143,7 +156,7 @@ const Footer = () => (
             <a href={link} key={link}>
               <FooterLocationItem>
                 <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='2x' />
-                <Body2>{text}</Body2>
+                <FooterSocialText>{text}</FooterSocialText>
               </FooterLocationItem>
             </a>
           ))}

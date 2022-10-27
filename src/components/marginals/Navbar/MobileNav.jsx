@@ -9,7 +9,8 @@ import { StyledMobileNav } from './styles';
 
 // Assets
 import { nav } from '../../../../config/content';
-import { LinkButton, NavText } from '../../shared';
+import { NavText } from '../../shared';
+import AuthButton from './AuthButton';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -44,12 +45,12 @@ function MobileNav() {
     <StyledMobileNav>
       <div className='mobile-nav-container'>
         <ul className='linkList'>
-          {nav.navItems.map(({ id, name }) => (
+          {nav.navItems.map(({ id, name, link }) => (
             <li
               key={id}
               id={name}
               className='listItem'
-              onClick={() => onMenuClick(id)}
+              onClick={() => !link && handleScroll(id)}
               onKeyDown={() => onMenuClick(id)}
               role='menuitem'
               tabIndex='0'
@@ -60,7 +61,7 @@ function MobileNav() {
             </li>
           ))}
         </ul>
-        <LinkButton link='/' text='login' />
+        <AuthButton />
       </div>
     </StyledMobileNav>
   );

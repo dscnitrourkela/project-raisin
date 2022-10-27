@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Container, Heading2, SectionContainer } from '../shared';
 import CategoryCard from './CategoryCard';
-import { events } from '../../../config/content';
+import { eventsCategory } from '../../../config/content';
 
 const EventCardContainer = styled.div`
   &::-webkit-scrollbar {
@@ -19,9 +19,9 @@ const EventCardContainer = styled.div`
 const EventSection = () => (
   <SectionContainer>
     <Container>
-      <Heading2 bold>{events.title}</Heading2>
+      <Heading2 bold>{eventsCategory.title}</Heading2>
       <EventCardContainer>
-        {events.categoryDetails.map(({ link, image, title, desc }) => (
+        {eventsCategory.categoryDetails.map(({ link, image, title, desc }) => (
           <CategoryCard key={link} link={link} image={image} title={title} desc={desc} />
         ))}
       </EventCardContainer>

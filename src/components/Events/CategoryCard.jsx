@@ -52,6 +52,10 @@ const CardHeading = styled(Heading3)`
 `;
 
 const CardDescription = styled(Body2)`
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   ${tw`
   text-justify
   `}

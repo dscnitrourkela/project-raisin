@@ -7,7 +7,7 @@ export default {
     alt: 'Innovison 2022 the voyage through time',
   },
   title: 'Innovision 2022',
-  date: '11-13 November',
+  date: '12-14 November',
   register: {
     btnText: '',
     link: '',

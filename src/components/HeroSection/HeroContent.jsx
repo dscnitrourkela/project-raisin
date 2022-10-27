@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { hero } from '../../../config/content';
+import AuthButton from '../marginals/Navbar/AuthButton';
 import { LinkButton } from '../shared';
 
 const ContentContainer = styled.div`
@@ -35,7 +36,7 @@ const HeroContent = () => (
   <ContentContainer>
     <HeroImage src={hero.mainText.src} alt={hero.mainText.alt} />
     <HeroDates>{hero.date}</HeroDates>
-    <LinkButton link='/' text='register' />
+    <AuthButton text='REGISTER' />
   </ContentContainer>
 );
 

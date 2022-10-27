@@ -1,30 +1,19 @@
+/* eslint-disable max-len */
 export default {
   heading: 'What will you get',
   subHeading: 'In Our Campus Ambassador Program',
   perks: [
     {
-      title: 'merchandise',
-      desc: '1000+',
+      title: 'Certificate',
+      desc: 'From Innovision 2022',
     },
     {
-      title: 'Certificates',
-      desc: '100+',
+      title: 'Merchandise',
+      desc: `Prizes Worth 20k`,
     },
     {
-      title: 'merchandise',
-      desc: '1000+',
-    },
-    {
-      title: 'Certificates',
-      desc: '100+',
-    },
-    {
-      title: 'merchandise',
-      desc: '1000+',
-    },
-    {
-      title: 'Certificates',
-      desc: '100+',
+      title: `Top performing CAs`,
+      desc: 'Will get Free Workshops',
     },
   ],
 };

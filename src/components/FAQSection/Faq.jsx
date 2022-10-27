@@ -10,7 +10,7 @@ const Faq = () => {
   return (
     <SectionContainer>
       <Container>
-        <Heading2>FAQ&apos;S</Heading2>
+        <Heading2 bold>FAQ&apos;S</Heading2>
         <QuestionContainer>
           {faq.data.map(({ id, question, answer }) => (
             <QuestionTextContainer key={id} onClick={() => handleClick(id)}>

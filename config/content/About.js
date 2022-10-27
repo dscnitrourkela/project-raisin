@@ -1,11 +1,7 @@
 /* eslint-disable max-len */
 export default {
   title: 'Innovision 2k22',
-  desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tellus magna, finibus
-  viverra lacinia elementum, mollis eu mauris. Ut tristique elit in diam mollis posuere. Sed
-  commodo laoreet enim eu vestibulum. Nam sagittis diam nec tellus blandit, vel rutrum est
-  volutpat. Donec lacinia sit amet eros vitae condimentum. Mauris ultricies massa at tincidunt
-  pulvinar.Vivamus tellus magna, finibus viverra lacinia elementum, mollis eu mauris.
+  desc: `Innovision is one of the biggest technical fests in Eastern India. You can delve deeply into science and technology at this event. It is entirely run by the NIT Rourkela student body and provides a huge platform for many different activities, organized in the form of competitive events, guest lectures, technical workshops, and exhibitions. Technology enthusiasts can use it as a platform to show off their intelligence and ingenuity.
   `,
   link: 'https://www.youtube.com/embed/DrIwRpGM35I',
 };
