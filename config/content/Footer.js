@@ -6,7 +6,7 @@ import {
   faFacebookSquare,
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import logo from '../../images/logo.png';
+import logo from '../../images/navLogo.svg';
 
 export default {
   innovision: {

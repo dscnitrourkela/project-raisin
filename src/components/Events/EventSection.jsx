@@ -10,6 +10,7 @@ const EventCardContainer = styled.div`
     display: none;
   }
   ${tw`
+      pt-5
       flex 
       gap-4
       overflow-y-hidden
