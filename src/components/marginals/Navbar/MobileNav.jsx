@@ -45,17 +45,17 @@ function MobileNav() {
     <StyledMobileNav>
       <div className='mobile-nav-container'>
         <ul className='linkList'>
-          {nav.navItems.map(({ id, name, link }) => (
+          {nav.navItems.map(({ id, name, link, link }) => (
             <li
               key={id}
               id={name}
               className='listItem'
-              onClick={() => !link && handleScroll(id)}
-              onKeyDown={() => onMenuClick(id)}
+              onClick={() => !link && onMenuClick(id)}
+              onKeyDown={() => !link && onMenuClick(id)}
               role='menuitem'
               tabIndex='0'
             >
-              <Link to={`#${id}`} style={{ textDecoration: 'none' }}>
+              <Link to={link} style={{ textDecoration: 'none' }}>
                 <NavText className='link'>{name}</NavText>
               </Link>
             </li>

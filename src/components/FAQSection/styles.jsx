@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import tw from 'twin.macro';
-import { Body1 } from '../shared';
+import { Body1, Body2 } from '../shared';
 
 export const QuestionContainer = styled.div`
   ${tw`
@@ -16,43 +16,59 @@ export const QuestionContainer = styled.div`
 export const QuestionTextContainer = styled.div`
   border-top: 1px solid var(--text-color-primary);
   ${tw`
-    grid
-    grid-cols-12
+    flex
     justify-between
     items-center
     py-3
     gap-y-2
+    cursor-pointer
   `}
+  &:hover {
+    .question {
+      ${tw`
+        text-color-secondary
+      `}
+    }
+  }
+  & > .active {
+    ${tw`
+      text-color-secondary
+    `}
+  }
 `;
 
 export const Question = styled(Body1)`
+  user-select: none;
+  color: ${(props) => (props.open ? 'var(--text-color-primary)' : 'var(--text-color-tertiary)')};
   ${tw`
-    col-span-11
+    flex
     border-2
     border-color-primary
+    text-color-tertiary
     cursor-pointer
   `}
 `;
 
 export const PlusIcon = styled.p`
-  &::before {
-    content: '+';
-  }
   user-select: none;
   ${tw`
     flex
     justify-end
     cursor-pointer
     text-4xl
-    text-color-primary
+    text-color-tertiary
     duration-100
   `}
+  /* transition: 1s linear ease-in-out; */
+  &.open {
+    transform: rotate(45deg);
+    transition: 3s linear ease-in-out;
+  }
 `;
 
 export const MinusIcon = styled(PlusIcon)`
-  &::before {
-    content: '-';
-  }
+  transform: rotate(45deg);
+  transition: all 0.2s linear;
 `;
 
 const scaleUp = keyframes`
@@ -73,13 +89,15 @@ const scaleDown = keyframes`
   }
 `;
 
-export const Answer = styled(Body1)`
+export const Answer = styled(Body2)`
   flex: auto;
   user-select: none;
   animation: ${(isOpen) => (isOpen ? scaleDown : scaleUp)} 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)
     forwards;
   ${tw`
+    text-color-secondary
     col-span-12
     duration-200
+    pb-3
   `}
 `;

@@ -22,29 +22,25 @@ const SectionSubHeading = styled(Heading3)`
 
 const CardContainer = styled.div`
   ${tw`
-  flex
-  flex-wrap
-  gap-7
+  grid
+  grid-cols-3
+  lg:grid-cols-2
+  sm:grid-cols-1
+  gap-5
   mt-10
   justify-between
   `}
 `;
 
 const Card = styled.div`
-  width: 400px;
-  @media (max-width: 768px) {
-    min-width: 328px;
-    width: 100%;
-  }
   ${tw`
+   w-full
    h-auto
    py-8
    md:py-6
    bg-background-dark
    text-center
-   sm:rounded-2xl
-   lg:rounded-3xl
-   rounded-4xl
+   rounded-xl
  `};
 `;
 

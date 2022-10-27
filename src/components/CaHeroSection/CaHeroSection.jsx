@@ -1,11 +1,12 @@
 import React from 'react';
 import { caHero } from '../../../config/content';
-import { Body1, Container, Heading2, Heading3, Heading4, LinkButton } from '../shared';
+import { Body1, Container, Heading3, Heading4, LinkButton } from '../shared';
 import {
   FlexCard,
   FlexContainer,
   FlexLogo,
   HeroContainer,
+  HeroHeading,
   HeroImage,
   HeroImageContain,
   HeroImageContainer,
@@ -19,7 +20,7 @@ const CaHeroSection = () => (
       <HeroContainer>
         <HeroTextContainer>
           <Heading4 style={{ color: 'var(--text-color-tertiary)' }}>{caHero.text.head}</Heading4>
-          <Heading2 bold>{caHero.text.title}</Heading2>
+          <HeroHeading bold>{caHero.text.title}</HeroHeading>
           <Heading3>{caHero.text.eventName}</Heading3>
           <LinkButton link='/' text='sign up' />
           <FlexContainer>

@@ -46,13 +46,13 @@ function DesktopNav() {
                 <li
                   key={id}
                   onClick={() => !link && handleScroll(id)}
-                  onKeyPress={() => handleScroll(id)}
+                  onKeyPress={() => !link && handleScroll(id)}
                   id={name}
                   role='menuitem'
                   tabIndex='0'
                   className='navLinkItem'
                 >
-                  <Link style={{ textDecoration: 'none' }} to={`${link}`}>
+                  <Link style={{ textDecoration: 'none' }} to={link}>
                     <NavText className='navLink'>{name}</NavText>
                   </Link>
                 </li>

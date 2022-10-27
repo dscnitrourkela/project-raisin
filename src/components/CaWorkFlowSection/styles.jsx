@@ -27,7 +27,7 @@ export const CardContainer = styled.div`
     grid-cols-4
     justify-between
     mt-10
-    gap-4
+    gap-5
   `}
 `;
 
@@ -35,9 +35,7 @@ export const Card = styled.div`
   ${tw`
     flex
     flex-col
-    sm:rounded-2xl
-    lg:rounded-3xl
-    rounded-4xl
+    rounded-xl
     p-4
     bg-background-dark
     gap-1

@@ -34,6 +34,18 @@ library.add(
   faEnvelope,
 );
 
+const FooterOuterContainer = styled.div`
+  ${tw`
+    w-full
+    h-auto
+    overflow-x-hidden
+    overflow-y-auto
+    flex
+    justify-center
+  `}
+  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
+`;
+
 const FooterContainer = styled.div`
   ${tw`
         grid
@@ -42,7 +54,7 @@ const FooterContainer = styled.div`
         gap-16
         md:gap-7
         max-w-full
-        pb-6
+        py-16
     `}
 `;
 
@@ -66,6 +78,12 @@ const FooterLogo = styled.img`
   w-8
   h-8
 `}
+`;
+
+const FooterDescription = styled(Body2)`
+  ${tw`
+    text-color-secondary
+  `}
 `;
 
 const FooterCenterContainer = styled.div`
@@ -127,50 +145,63 @@ const FooterSocialText = styled(Body2)`
   word-break: break-all;
 `;
 
+const LinkText = styled(Body2)`
+  ${tw`
+   text-color-tertiary
+  `}
+  &:hover {
+    ${tw`
+      text-color-secondary
+    `}
+  }
+`;
+
 const Footer = () => (
-  <Container>
-    <FooterContainer>
-      <FooterLeftContainer>
-        <FooterLogoContainer>
-          <FooterLogo src={footer.innovision.img} alt={footer.innovision.alt} />
-          <Heading4 bold>{footer.title}</Heading4>
-        </FooterLogoContainer>
-        <Body2>{footer.desc}</Body2>
-      </FooterLeftContainer>
-      <FooterCenterContainer>
-        <FooterCenterSubContainer>
-          <Heading4 bold>{footer.quicklinks.title}</Heading4>
-          <FooterLinkContainer>
-            {footer.quicklinks.list.map(({ link, name }) => (
-              <Link key={link} to={link}>
-                <Body2>{name}</Body2>
-              </Link>
+  <FooterOuterContainer>
+    <Container>
+      <FooterContainer>
+        <FooterLeftContainer>
+          <FooterLogoContainer>
+            <FooterLogo src={footer.innovision.img} alt={footer.innovision.alt} />
+            <Heading4 bold>{footer.title}</Heading4>
+          </FooterLogoContainer>
+          <FooterDescription>{footer.desc}</FooterDescription>
+        </FooterLeftContainer>
+        <FooterCenterContainer>
+          <FooterCenterSubContainer>
+            <Heading4 bold>{footer.quicklinks.title}</Heading4>
+            <FooterLinkContainer>
+              {footer.quicklinks.list.map(({ link, name }) => (
+                <Link key={link} to={link}>
+                  <LinkText>{name}</LinkText>
+                </Link>
+              ))}
+            </FooterLinkContainer>
+          </FooterCenterSubContainer>
+        </FooterCenterContainer>
+        <FooterRightContainer>
+          <Heading4 bold>{footer.contactTitle}</Heading4>
+          <FooterLocationContainer>
+            {footer.contact.map(({ link, icon, text }) => (
+              <a href={link} key={link}>
+                <FooterLocationItem>
+                  <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='2x' />
+                  <Body2>{text}</Body2>
+                </FooterLocationItem>
+              </a>
             ))}
-          </FooterLinkContainer>
-        </FooterCenterSubContainer>
-      </FooterCenterContainer>
-      <FooterRightContainer>
-        <Heading4 bold>{footer.contactTitle}</Heading4>
-        <FooterLocationContainer>
-          {footer.contact.map(({ link, icon, text }) => (
-            <a href={link} key={link}>
-              <FooterLocationItem>
+          </FooterLocationContainer>
+          <IconContainer>
+            {footer.socials.map(({ icon, link }) => (
+              <a key={link} href={link} target='_blank' rel='noreferrer'>
                 <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='2x' />
-                <FooterSocialText>{text}</FooterSocialText>
-              </FooterLocationItem>
-            </a>
-          ))}
-        </FooterLocationContainer>
-        <IconContainer>
-          {footer.socials.map(({ icon, link }) => (
-            <a key={link} href={link} target='_blank' rel='noreferrer'>
-              <FontAwesomeIcon icon={icon} color=' rgba(255, 255, 255, 0.4)' size='2x' />
-            </a>
-          ))}
-        </IconContainer>
-      </FooterRightContainer>
-    </FooterContainer>
-  </Container>
+              </a>
+            ))}
+          </IconContainer>
+        </FooterRightContainer>
+      </FooterContainer>
+    </Container>
+  </FooterOuterContainer>
 );
 
 export default Footer;

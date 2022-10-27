@@ -7,7 +7,7 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import logo from '../../images/logo.png';
+import logo from '../../images/navLogo.svg';
 
 export default {
   innovision: {

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { Heading2 } from '../shared';
 
 export const SectionContainer = styled.div`
   ${tw`
@@ -36,6 +37,18 @@ export const HeroTextContainer = styled.div`
     items-start
     gap-6
     text-color-primary
+    sxm:items-center
+    sxm:text-center
+  `}/* &>.btn {
+    ${tw`
+      sxm:mt-3
+    `}
+  } */
+`;
+
+export const HeroHeading = styled(Heading2)`
+  ${tw`
+    sxm:mb-0
   `}
 `;
 
