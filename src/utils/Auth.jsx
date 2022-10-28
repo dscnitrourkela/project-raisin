@@ -56,7 +56,6 @@ const AuthContextProvider = ({ children }) => {
         setToken(accessToken);
         setUserData(users);
         navigate('/register');
-        console.log(accessToken);
       })
       .catch((error) => {
         // Handle Errors here.
@@ -67,7 +66,7 @@ const AuthContextProvider = ({ children }) => {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
-        console.log(errorCode, errorMessage, email, credential);
+        console.error(errorCode, errorMessage, email, credential);
       });
   };
 
