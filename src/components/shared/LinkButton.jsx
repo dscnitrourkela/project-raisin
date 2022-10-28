@@ -14,16 +14,15 @@ const ButtonContainer = styled.button`
   }
   transition: all 0.1s linear;
 
-  ${tw`
-    rounded-4xl
-    px-9
-    py-3
-    w-max
-  `}
+  &:disabled {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  ${tw`py-3 rounded-4xl px-9 w-max`}
 `;
 
-const LinkButton = ({ link, text, outline = false, method = undefined }) => (
-  <ButtonContainer onClick={method} outline={outline}>
+const LinkButton = ({ link, text, outline = false, method = undefined, disabled = false }) => (
+  <ButtonContainer onClick={method} outline={outline} disabled={disabled}>
     {link ? (
       <Link to={link}>
         <ButtonText>{text}</ButtonText>

@@ -15,18 +15,18 @@ const TextInputBox = styled.input`
     mt-2
     w-full
     p-1
-    text-color-secondary 
+    text-color-secondary
   `}
 `;
 
-const TextInput = ({ title, type, setType, disabled = false }) => (
+const TextInput = ({ title, type, setType, disabled = false, inputType, required }) => (
   <TextInputContainer>
     <Body1>{title}</Body1>
     <TextInputBox
       disabled={disabled}
       onChange={(e) => setType(e.target.value)}
-      type='text'
-      required
+      type={inputType || 'text'}
+      required={required}
       value={type}
     />
   </TextInputContainer>
