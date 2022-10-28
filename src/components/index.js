@@ -25,3 +25,6 @@ export { default as MerchCard } from './Merch/MerchCard';
 // EventModal
 export { default as EventDetailsModal } from './EventDetailsModal/EventDetailsModal';
 export { default as EventCard } from './Events/EventCard';
+
+// successcard
+export {default as SuccessCard} from './SuccessCard/SuccesssCard'
