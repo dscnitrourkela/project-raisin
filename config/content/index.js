@@ -13,3 +13,4 @@ export { default as eventModal } from './Events';
 export { default as caPerks } from './CaPerks';
 export { default as merch } from './Merch';
 export { default as events } from './Events';
+export { default as success } from './Success';
