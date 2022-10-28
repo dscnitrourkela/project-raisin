@@ -48,6 +48,14 @@ const CardButtonContainer = styled.div`
 const EventDate = styled(Body1)`
   ${tw`
     text-color-secondary
+    min-w-[80px]
+    text-right
+  `}
+`;
+
+const EventTime = styled(Body2)`
+  ${tw`
+    text-color-secondary
   `}
 `;
 
@@ -90,11 +98,14 @@ const EventCard = ({ data }) => {
         <CardTextContainer>
           <CardTitleContainer>
             <CardHeading bold>{data.heading}</CardHeading>
-            <EventDate>{data.dateTime ? `${data.dateTime}` : ''}</EventDate>
+            <EventDate>{data.dateTime ? `${data.dateTime.split(', ')[0]}` : 'TBA'}</EventDate>
           </CardTitleContainer>
-          <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
+          <CardTitleContainer>
+            <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
+            <EventTime>{data.dateTime ? `${data.dateTime.split(', ')[1]}` : 'TBA'}</EventTime>
+          </CardTitleContainer>
           <EventPrizes>
-            {data.prizeAmount ? `CASH PRIZE UPTO ${data.prizeAmount}` : 'Cash Prize to be declared'}
+            {data.prizeAmount ? `GOODIES WORTH UPTO ${data.prizeAmount}` : 'Prizes to be declared'}
           </EventPrizes>
           <CardButtonContainer>
             <Button2 method={() => setModalOpen(true)} text='Know More' />

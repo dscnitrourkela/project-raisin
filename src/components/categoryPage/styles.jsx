@@ -11,5 +11,6 @@ export const CategoryCardContainer = styled.div`
   flex-wrap
   gap-6
   mb-24
+  justify-center
   `}
 `;
