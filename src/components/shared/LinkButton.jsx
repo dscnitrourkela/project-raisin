@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -22,8 +23,8 @@ const ButtonContainer = styled.button`
   `}
 `;
 
-const LinkButton = ({ link, text, outline = false, method = undefined }) => (
-  <ButtonContainer onClick={method} outline={outline}>
+const LinkButton = ({ link, text, outline = false, method = undefined, disabled }) => (
+  <ButtonContainer disabled={disabled} onClick={method} outline={outline}>
     {link ? (
       <Link to={link}>
         <ButtonText>{text}</ButtonText>

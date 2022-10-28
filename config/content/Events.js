@@ -4,8 +4,8 @@ import eventImg from '../../images/coming-soon.png';
 export default {
   technicalEvents: {
     title: 'Technical Events',
-    desc: 'The Innovision fest is known for its colossal pool of events and competitions related to science and tech. These events, unlike monotonous textbook learning, offer you a scope to think outside the box',
-    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-06_yfbghv.jpg`,
+    desc: 'The Innovision fest is known for its colossal pool of events and competitions related to science and tech. These events, unlike monotonous textbook learning, offer you a scope to think outside the box. Technical events are an amalgamation of fun and learning where spectacular ideas are displayed, and students learn, feel inspired, discover and accomplish their goals and work towards finding the solution to the problems.',
+    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/technical_events_horizontal.jpg`,
     alt: 'Technical Events',
     list: [
       {
@@ -164,8 +164,8 @@ export default {
   },
   funEvents: {
     title: 'Fun Events',
-    desc: 'To break the stereotypical image of a technical fest, we at INNO bring you some light-hearted amusement events. From paintball fights to prom nights, we have it all for recreation.',
-    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-04_xvgwzt.jpg`,
+    desc: 'To break the stereotypical image of a technical fest, we at INNO bring you some light-hearted amusement events. From paintball fights to prom nights, we have it all for recreation. Take part in fun events, as they are able to create bonds that enable us to work harmoniously in achieving our dreams. Fun events are an important part of a broader engagement and appreciation strategy as it brings closeness to the working environment.',
+    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/fun_events_horizontal.jpg`,
     alt: '',
     list: [
       {
@@ -550,8 +550,8 @@ export default {
   },
   proshows: {
     title: 'Pro Shows',
-    desc: 'This a chance of a lifetime to meet and enjoy the shows and concerts of some of the most excellent musicians, stand-up comedians, and DJs’ to make you groove to their music',
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-05_dfhedz.jpg',
+    desc: 'This a chance of a lifetime to meet and enjoy the shows and concerts of some of the most excellent musicians, stand-up comedians, and DJs’ to make you groove to their music. Attending these shows gives you a chance to get out, meet new people, and get more involved in your community. Attending with friends and savouring the memories can provide happy memories and feelings and bring a little extra boost to your spirits.',
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952231/Innovision%202k22/Category/pro_show_horizontal.jpg',
     alt: '',
     list: [
       {
@@ -648,8 +648,8 @@ export default {
   },
   workshop: {
     title: 'Workshops',
-    desc: `These are one of the best ways to learn, discover or polish a new or an existing skill. It is a golden opportunity to meet professionals and learn from them.`,
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-03_htlduc.jpg',
+    desc: `These are one of the best ways to learn, discover or polish a new or an existing skill. It is a golden opportunity to meet professionals and learn from them. It may introduce a new idea and is a great way to teach hands-on skills as it allows you to try out new methods and fail in a safe environment. It will help you to develop a new skill set for a better future and learn about the latest information and new skills related to it.`,
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/worksop_horizontal.jpg',
     alt: '',
     list: [
       {
@@ -784,8 +784,8 @@ export default {
   },
   guestLecture: {
     title: 'Guest Lecture',
-    desc: `These would include informational and motivational talks from eminent personalities. Our past speakers include Padma Vibushan awardee Dr. Anil Kakodkar and Microsoft India's general manager, Priyadarshi Mahapatra.`,
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860503/Innovision%202k22/Category/website-01_rqdvkk.jpg',
+    desc: `These would include informational and motivational talks from eminent personalities. Our past speakers include Padma Vibushan awardee Dr. Anil Kakodkar and Microsoft India's general manager, Priyadarshi Mahapatra. Guest lecturers provide an important educational experience for students based on their real-world life experiences. You will get to see insight into the guest lecturers' specific fields and interact with them.`,
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/guest_lecture_horizontal.jpg',
     alt: '',
     list: [
       {

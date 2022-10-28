@@ -98,7 +98,7 @@ const CardDescription = styled(Body2)`
 const CategoryCard = ({ link, image, title, desc }) => (
   <Link to={link}>
     <CardContainer>
-      <CardImage src={image} />
+      <CardImage src={image} alt={title} />
       <CardHeadingContainer>
         <CardHeading bold className='left'>
           {title}

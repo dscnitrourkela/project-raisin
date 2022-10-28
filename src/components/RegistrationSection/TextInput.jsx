@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Body1 } from '../shared';
+import { Body1, CaptionText } from '../shared';
 
 const TextInputContainer = styled.div`
   ${tw``}
@@ -19,16 +19,32 @@ const TextInputBox = styled.input`
   `}
 `;
 
-const TextInput = ({ title, type, setType, disabled = false }) => (
+const ErrorText = styled(CaptionText)`
+  color: red;
+  ${tw`mt-1  `}
+`;
+
+const TextInput = ({
+  inputType = 'text',
+  title,
+  type,
+  onChange,
+  onBlur,
+  disabled = false,
+  error,
+}) => (
   <TextInputContainer>
     <Body1>{title}</Body1>
     <TextInputBox
       disabled={disabled}
-      onChange={(e) => setType(e.target.value)}
-      type='text'
+      onChange={onChange}
+      onBlur={onBlur}
+      type={inputType}
       required
       value={type}
+      error
     />
+    <ErrorText>{error}</ErrorText>
   </TextInputContainer>
 );
 

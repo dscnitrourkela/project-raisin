@@ -5,18 +5,6 @@ import { Container, Heading2, SectionContainer } from '../shared';
 import CategoryCard from './CategoryCard';
 import { eventsCategory } from '../../../config/content';
 
-const EventContainer = styled.div`
-  ${tw`
-        w-11/12
-        max-w-[1440px]
-        my-0
-        mx-auto
-        p-2.5
-        sm:p-0
-        overflow-y-hidden
-    `}
-`;
-
 const EventCardContainer = styled.div`
   &::-webkit-scrollbar {
     display: none;

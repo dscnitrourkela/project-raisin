@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import tw from 'twin.macro';
 import { hero } from '../../../config/content';
 import AuthButton from '../marginals/Navbar/AuthButton';
-import { LinkButton } from '../shared';
 
 const rotating = keyframes`
   from {
@@ -88,7 +87,7 @@ const HeroContent = () => (
       <HeroImage src={hero.mainText.src} alt={hero.mainText.alt} />
     </HeroImageOuterContainer>
     <HeroDates>{hero.date}</HeroDates>
-    <AuthButton text='REGISTER' />
+    <AuthButton text='REGISTER' link='/register' />
   </ContentContainer>
 );
 
