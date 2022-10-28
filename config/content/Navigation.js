@@ -25,10 +25,10 @@ export default {
       name: 'Guest Lectures',
       link: '/guest-lectures',
     },
-    // {
-    //   name: 'Exhibition',
-    //   link: '/exhibition',
-    // },
+    {
+      name: 'Exhibition',
+      link: '/exhibition',
+    },
     {
       name: 'Pro Shows',
       link: '/proshows',

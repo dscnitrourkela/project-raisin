@@ -27,12 +27,12 @@ export default {
       title: 'Workshops',
       desc: `These are one of the best ways to learn, discover or polish a new or an existing skill. It is a golden opportunity to meet professionals and learn from them.`,
     },
-    //    {
-    //      image: `https://encrypted-tbn0.gstatic.com/images?//q=tbn:ANd9GcQUoLJjZ41ReLUaOGGMJp1748jh1stdXSitPQ&usqp=CAU`,
-    //      link: '/',
-    //      title: 'Exhibition',
-    //      desc: `These connect the audience and bring like-minded people together in the best possible way. It is a place where people share their ideologies, leading to the growth of every //individual.`,
-    //    },
+    {
+      image: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860503/Innovision%202k22/Category/website-02_tnfjgl.jpg`,
+      link: '/exhibition',
+      title: 'Exhibition',
+      desc: `These connect the audience and bring like-minded people together in the best possible way. It is a place where people share their ideologies, leading to the growth of every //individual.`,
+    },
     {
       image: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860503/Innovision%202k22/Category/website-01_rqdvkk.jpg`,
       link: '/guest-lectures',

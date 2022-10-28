@@ -4,20 +4,20 @@ import eventImg from '../../images/coming-soon.png';
 export default {
   technicalEvents: {
     title: 'Technical Events',
-    desc: 'The Innovision fest is known for its colossal pool of events and competitions related to science and tech. These events, unlike monotonous textbook learning, offer you a scope to think outside the box',
-    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-06_yfbghv.jpg`,
+    desc: 'The Innovision fest is known for its colossal pool of events and competitions related to science and tech. These events, unlike monotonous textbook learning, offer you a scope to think outside the box. Technical events are an amalgamation of fun and learning where spectacular ideas are displayed, and students learn, feel inspired, discover and accomplish their goals and work towards finding the solution to the problems.',
+    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/technical_events_horizontal.jpg`,
     alt: 'Technical Events',
     list: [
       {
         eventImage: {
-          imgSrc: eventImg,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666964515/Innovision%202k22/Event%20Posters/Technical%20Events/deathrace_thpjax.jpg`,
           alt: 'Event image',
         },
         heading: 'Death Race 2022',
         subHeading: 'cyborg',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        dateTime: 'Nov 13, 9:00 am',
+        location: 'SAC',
+        prizeAmount: '40k',
         aboutDetails: [
           {
             id: 0,
@@ -28,14 +28,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: eventImg,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666964515/Innovision%202k22/Event%20Posters/Technical%20Events/Maneuver_chuyqf.jpg`,
           alt: 'Event image',
         },
         heading: 'MANEUVER 4.0',
         subHeading: 'aiche',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        dateTime: 'Nov 13, 2:00 pm',
+        location: 'LA',
+        prizeAmount: '15k',
         aboutDetails: [
           {
             id: 0,
@@ -54,32 +54,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: eventImg,
-          alt: 'Event image',
-        },
-        heading: 'Arduisome 2.0',
-        subHeading: 'short circuit',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `Arduisome 2.0, an event brought to you by Short Circuit (the Electrical and Electronic club of NITR), is the next edition of the flagship event of Innovision 2021. A problem-solving competition including Arduino. The whole competition would consist of several rounds each being an eliminator. In the initial rounds, participants would be given problems to solve in simulators and the finalists would be provided with Arduino boards. Exciting prizes await the winners.`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834718/Innovision%202k22/Event%20Posters/mazehunt1__genesis_w4rojl.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666964515/Innovision%202k22/Event%20Posters/Technical%20Events/mazehunt_qzof1b.jpg`,
           alt: 'Event image',
         },
         heading: 'Mazehunt',
         subHeading: 'genesys',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        dateTime: 'Nov 12, 2:30 pm',
+        location: 'LA Parking',
+        prizeAmount: '6k',
         aboutDetails: [
           {
             id: 0,
@@ -95,9 +77,9 @@ export default {
         },
         heading: 'PSI PHI',
         subHeading: 'axiom',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        dateTime: 'Nov 12, 2:00 pm',
+        location: 'LA',
+        prizeAmount: '15k',
         aboutDetails: [
           {
             id: 0,
@@ -108,14 +90,50 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `${eventImg}`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666964512/Innovision%202k22/Event%20Posters/Technical%20Events/arduisome_lxrxzd.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'Arduisome 2.0',
+        subHeading: 'short circuit',
+        dateTime: 'Nov 14, 9:00 am',
+        location: 'LA',
+        prizeAmount: '15k',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Arduisome 2.0, an event brought to you by Short Circuit (the Electrical and Electronic club of NITR), is the next edition of the flagship event of Innovision 2021. A problem-solving competition including Arduino. The whole competition would consist of several rounds each being an eliminator. In the initial rounds, participants would be given problems to solve in simulators and the finalists would be provided with Arduino boards. Exciting prizes await the winners.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965592/Innovision%202k22/Event%20Posters/Technical%20Events/rube_gold_yxzxly.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'THE RUBE GOLDBERG MACHINE CONTEST',
+        subHeading: 'sae & asme',
+        dateTime: 'Nov 12, 3:00 pm',
+        location: 'Mech Building',
+        prizeAmount: '15k',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Teams of 3 to 5 Participants will build a RubeGoldberg machine to complete the simple task of switching off an alarm clock. Each team will be provided with a limited random assortment of parts. The whole machine has to be assembled within 4 hours using a minimum of 15 steps. The criteria for winning would be to build the most innovative, aesthetic, and cost-effective machine using engineering principles showcasing their skills and creativity.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965591/Innovision%202k22/Event%20Posters/Technical%20Events/timelesssaga_cbqc7d.jpg`,
           alt: 'Event image',
         },
         heading: 'The Timeless Saga',
-        subHeading: 'aps',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        subHeading: 'Aps',
+        dateTime: 'Nov 13, 10:00 am',
+        location: 'LA',
+        prizeAmount: '15k',
         aboutDetails: [
           {
             id: 0,
@@ -126,12 +144,12 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834722/Innovision%202k22/Event%20Posters/AEROPRIX_Udaan_insta_rqlryw.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965591/Innovision%202k22/Event%20Posters/Technical%20Events/aeroprix_pwrzya.jpg`,
           alt: 'Event image',
         },
         heading: 'Aeroprix',
         subHeading: 'udaan',
-        dateTime: '',
+        dateTime: 'Nov 14, 2:00 pm',
         location: '',
         prizeAmount: '',
         aboutDetails: [
@@ -147,37 +165,29 @@ export default {
           imgSrc: eventImg,
           alt: 'Event image',
         },
-        heading: 'THE RUBE GOLDBERG MACHINE CONTEST',
-        subHeading: 'sae & asme',
+        heading: 'Robo-sumo-wars',
+        subHeading: 'Cyborg',
         dateTime: '',
         location: '',
         prizeAmount: '',
         aboutDetails: [
           {
             id: 0,
-            desc: `Teams of 3 to 5 Participants will build a RubeGoldberg machine to complete the simple task of switching off an alarm clock. Each team will be provided with a limited random assortment of parts. The whole machine has to be assembled within 4 hours using a minimum of 15 steps. The criteria for winning would be to build the most innovative, aesthetic, and cost-effective machine using engineering principles showcasing their skills and creativity.`,
+            desc: `Robo-Sumo-Wars is an event in which teams are required to prepare their bots to compete in a head-to-head match against another bot in a circular arena . The first one to push its component out of the arena , triumphs This battle between bots is utterly thrilling for the participants as well as the audience. `,
           },
         ],
         contactDetails: [],
       },
-    ],
-  },
-  funEvents: {
-    title: 'Fun Events',
-    desc: 'To break the stereotypical image of a technical fest, we at INNO bring you some light-hearted amusement events. From paintball fights to prom nights, we have it all for recreation.',
-    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-04_xvgwzt.jpg`,
-    alt: '',
-    list: [
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834721/Innovision%202k22/Event%20Posters/twist_a_tale_hourglass_ftksjf.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965866/Innovision%202k22/Event%20Posters/Technical%20Events/twist_a_tale_qwarfp.jpg`,
           alt: 'Event image',
         },
         heading: 'Twist A Tale',
-        subHeading: 'hourglass',
-        dateTime: '',
+        subHeading: 'Hourglass',
+        dateTime: 'Nov 14, 3:00 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '7k',
         aboutDetails: [
           {
             id: 0,
@@ -192,10 +202,10 @@ export default {
           alt: 'Event image',
         },
         heading: 'Shake it Off',
-        subHeading: 'cest',
-        dateTime: '',
+        subHeading: 'CEST',
+        dateTime: 'Nov 13, 4:45 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '10k',
         aboutDetails: [
           {
             id: 0,
@@ -206,14 +216,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834717/Innovision%202k22/Event%20Posters/DEBUGBATTLE_Webwiz_fzjol8.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965864/Innovision%202k22/Event%20Posters/Technical%20Events/debugbattle_oyvokv.jpg`,
           alt: 'Event image',
         },
         heading: 'Debug Battle',
-        subHeading: 'webwiz',
-        dateTime: '',
+        subHeading: 'Webwiz',
+        dateTime: 'Nov 12, 3:30 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '8k',
         aboutDetails: [
           {
             id: 0,
@@ -224,12 +234,12 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834723/Innovision%202k22/Event%20Posters/Hunt_For_Alien_Civilisations_1080_inspire_c39gp7.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965864/Innovision%202k22/Event%20Posters/Technical%20Events/Hunt_For_Alien_Civilisations_1080_inspire_1_ckzqti.jpg`,
           alt: 'Event image',
         },
         heading: 'Hunt for Alien Civilization',
         subHeading: 'Inspire',
-        dateTime: '',
+        dateTime: 'Nov 12, 5:30 pm',
         location: '',
         prizeAmount: '',
         aboutDetails: [
@@ -242,14 +252,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834719/Innovision%202k22/Event%20Posters/metalearning_stellun_nda61u.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965866/Innovision%202k22/Event%20Posters/Technical%20Events/metalearning_petrrz.jpg`,
           alt: 'Event image',
         },
         heading: 'Meta-Learning',
         subHeading: 'nitr ics',
-        dateTime: '',
+        dateTime: 'Nov 12, 2:00 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '7k',
         aboutDetails: [
           {
             id: 0,
@@ -260,14 +270,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834717/Innovision%202k22/Event%20Posters/intelligenttrader_cognizen_lowht6.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965865/Innovision%202k22/Event%20Posters/Technical%20Events/intelligenttrader_mw0bjx.jpg`,
           alt: 'Event image',
         },
         heading: 'Intelligent Trader 8.0',
         subHeading: '',
-        dateTime: '',
+        dateTime: 'Nov 14, 9:00 am',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '8k',
         aboutDetails: [
           {
             id: 0,
@@ -283,9 +293,9 @@ export default {
         },
         heading: 'Codezone',
         subHeading: '3d',
-        dateTime: '',
+        dateTime: 'Nov 14, 1:00 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '8k',
         aboutDetails: [
           {
             id: 0,
@@ -300,10 +310,10 @@ export default {
           alt: 'Event image',
         },
         heading: 'Omega',
-        subHeading: 'axiom',
-        dateTime: '',
+        subHeading: 'Axiom',
+        dateTime: 'Nov 13, 3:15 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '8k',
         aboutDetails: [
           {
             id: 0,
@@ -318,10 +328,10 @@ export default {
           alt: 'Event image',
         },
         heading: 'Kronoverse',
-        subHeading: '',
-        dateTime: '',
+        subHeading: 'Finance',
+        dateTime: 'Nov 14, 10:00 am',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '8k',
         aboutDetails: [
           {
             id: 0,
@@ -332,12 +342,12 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834721/Innovision%202k22/Event%20Posters/stellar_astronitr_cza1kc.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965865/Innovision%202k22/Event%20Posters/Technical%20Events/stellar_night_a5giv2.jpg`,
           alt: 'Event image',
         },
         heading: 'Stellar night',
-        subHeading: 'astronitr',
-        dateTime: '',
+        subHeading: 'Astro NITR',
+        dateTime: 'Nov 12, 10:30 pm',
         location: '',
         prizeAmount: '',
         aboutDetails: [
@@ -350,14 +360,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834720/Innovision%202k22/Event%20Posters/Mystique_of_the_Campus_A4_2__gta_re9ubd.jpg`,
+          imgSrc: `${eventImg}`,
           alt: 'Event image',
         },
         heading: 'Mystique of the Campus',
         subHeading: 'GTA',
-        dateTime: '',
+        dateTime: 'Nov 12, 9:00 am',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '6k',
         aboutDetails: [
           {
             id: 0,
@@ -368,14 +378,14 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834722/Innovision%202k22/Event%20Posters/autoshop_autoquest_c1oort.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666965864/Innovision%202k22/Event%20Posters/Technical%20Events/autoquest_mjn0ge.jpg`,
           alt: 'Event image',
         },
         heading: 'Auto Quest',
-        subHeading: 'sae & asme',
-        dateTime: '',
+        subHeading: 'SAE & ASME',
+        dateTime: 'Nov 14, 1:00 pm',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '9k',
         aboutDetails: [
           {
             id: 0,
@@ -391,9 +401,9 @@ export default {
         },
         heading: 'Brain n Brawns:CTF',
         subHeading: 'OpenCode',
-        dateTime: '',
+        dateTime: 'Nov 14, 9:00 am',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '15k',
         aboutDetails: [
           {
             id: 0,
@@ -402,52 +412,24 @@ export default {
         ],
         contactDetails: [],
       },
+    ],
+  },
+  funEvents: {
+    title: 'Fun Events',
+    desc: 'To break the stereotypical image of a technical fest, we at INNO bring you some light-hearted amusement events. From paintball fights to prom nights, we have it all for recreation. Take part in fun events, as they are able to create bonds that enable us to work harmoniously in achieving our dreams. Fun events are an important part of a broader engagement and appreciation strategy as it brings closeness to the working environment.',
+    img: `https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/fun_events_horizontal.jpg`,
+    alt: '',
+    list: [
       {
         eventImage: {
-          imgSrc: eventImg,
-          alt: 'Event image',
-        },
-        heading: 'Srijan 6.0',
-        subHeading: 'OpenCode',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `CONCEPT - Surprise: Unpredictability served with curiosity It begins with a surprise, generating curiosity with each step forward. As the name justifies, the exhibition will slowly reveal itself, where one object hides and again pops back into the view of the other, and says Peekaboo! As TIME is the theme for this year, the installations will have a timeless ever-changing essence as the day unfolds, catering to the soulful interaction of the public and the exhibits via the medium of TIME. MODE - A "protoconversation" - Includes words, sounds and gestures, that attempt to convey meaning before the onset of actual language arousing the sensory tactility of expression and building a conversation conveying a story with the freedom to perceive the spaces via their interpretation which will increase the inclusivity of the onlookers.`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: eventImg,
-          alt: 'Event image',
-        },
-        heading: 'Srijan 6.0',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `CONCEPT - Surprise: Unpredictability served with curiosity It begins with a surprise, generating curiosity with each step forward. As the name justifies, the exhibition will slowly reveal itself, where one object hides and again pops back into the view of the other, and says Peekaboo! As TIME is the theme for this year, the installations will have a timeless ever-changing essence as the day unfolds, catering to the soulful interaction of the public and the exhibits via the medium of TIME. MODE - A "protoconversation" - Includes words, sounds and gestures, that attempt to convey meaning before the onset of actual language arousing the sensory tactility of expression and building a conversation conveying a story with the freedom to perceive the spaces via their interpretation which will increase the inclusivity of the onlookers.`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834717/Innovision%202k22/Event%20Posters/Cyclothon_SDG_3_a9rq8v.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968720/Innovision%202k22/Event%20Posters/Fun%20Events/Cyclothon_kius2d.jpg`,
           alt: 'Event image',
         },
         heading: 'Cyclothon',
-        subHeading: 'sdg campus club',
-        dateTime: '',
+        subHeading: 'SDG Campus Club',
+        dateTime: 'Nov 14, 7:00 am',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '5K',
         aboutDetails: [
           {
             id: 0,
@@ -461,9 +443,9 @@ export default {
           imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834718/Innovision%202k22/Event%20Posters/Leo_-1080_1080-JOY_of_giving_1_l67qo7.jpg`,
           alt: 'Event image',
         },
-        heading: 'Old Clothes Collection Drive',
-        subHeading: 'leo',
-        dateTime: '',
+        heading: 'Joy Of Giving',
+        subHeading: 'LEO',
+        dateTime: 'Nov 12, 9:00 am',
         location: '',
         prizeAmount: '',
         aboutDetails: [
@@ -480,64 +462,46 @@ export default {
           alt: 'Event image',
         },
         heading: 'Stand Up',
-        subHeading: 'open mic club',
-        dateTime: '',
-        location: '',
+        subHeading: 'Open Mic Club',
+        dateTime: 'Nov 13, 5:30 pm',
+        location: 'DTS Stage',
         prizeAmount: '',
         aboutDetails: [
           {
             id: 0,
-            desc: `This event includes performances which revolve around the domain of stand-up comedy. Students from all years and branches perform their original sets on various themes. And, adding to the fun, a professor, displaying his skills in comedy.The sets are curated specifically for college audiences, using anecdotes and rumours (or are they). Join us for q guaranteed good time`,
+            desc: `This event includes performances which revolve around the domain of stand-up comedy. Students from all years and branches perform their original sets on various themes. And, adding to the fun, a professor, displaying his skills in comedy. The sets are curated specifically for college audiences, using anecdotes and rumours (or are they). Join us for a guaranteed good time`,
           },
         ],
         contactDetails: [],
       },
       {
         eventImage: {
-          imgSrc: eventImg,
-          alt: 'Event image',
-        },
-        heading: 'RORS + KTM',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `This show will be held in DTS following up a mass public gathering where superbikes will be showcased in an orientated sequence. The bike group will be performing a bike show with the utmost energy and enthusiasm! There will also be a superbike show under which the KTM bike groups will be performing various stunts and actions (under proper safety protocols of the individuals of the group).`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834721/Innovision%202k22/Event%20Posters/rotaolympics6-01_1__rotaract_dkxhvl.jpg`,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968721/Innovision%202k22/Event%20Posters/Fun%20Events/rotaolympics_x35t3r.jpg`,
           alt: 'Event image',
         },
         heading: 'Rota Olympics',
-        subHeading: '',
-        dateTime: '',
+        subHeading: 'Rotaract',
+        dateTime: 'Nov 12, TBA',
         location: '',
-        prizeAmount: '',
+        prizeAmount: '5K',
         aboutDetails: [
           {
             id: 0,
-            desc: `Rotaract,NITR in collaboration with Innovision is organising a sports-cum -fundraiser event, Rota Olympics. It will be a three-day event commencing from the evening of 11 Nov-13 Nov. It will comprise Basketball,Volleyball,Box Cricket,Tug of War,Badminton and Table tennis. Each participant has to pay a one-time registration fee(below Rs.50) to participate in any of the three sports.The amount will be collected through the QR code scanning of the SAC account and the fund raised will be utilised in one or all (depending on the amount)of the three causes,i.e. blanket donation, providing better education facility to Birsa Munda school(a charity run primary school), providing thenecessary commodities to Shanti Bhawan(an Old age home and Orphanage in Rourkela).`,
+            desc: `Rotaract, NITR in collaboration with Innovision is organising a sports-cum -fundraiser event, Rota Olympics. It will be a three-day event commencing from the evening of 11 Nov-13 Nov. It will comprise Basketball, Volleyball, Box Cricket, Tug of War, Badminton and Table tennis. Each participant has to pay a one-time registration fee (below Rs.50) to participate in any of the three sports. The amount will be collected through the QR code scanning of the SAC account and the fund raised will be utilised in one or all (depending on the amount)of the three causes,i.e. blanket donation, providing better education facility to Birsa Munda school(a charity run primary school), providing the necessary commodities to Shanti Bhawan(an Old age home and Orphanage in Rourkela).`,
           },
         ],
         contactDetails: [],
       },
       {
         eventImage: {
-          imgSrc: eventImg,
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968721/Innovision%202k22/Event%20Posters/Fun%20Events/G4E_q5v0ji.jpg`,
           alt: 'Event image',
         },
         heading: 'Esports',
         subHeading: 'G4E',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
+        dateTime: 'Nov 13, 4:00 pm',
+        location: 'LA',
+        prizeAmount: '15K',
         aboutDetails: [
           {
             id: 0,
@@ -546,12 +510,184 @@ export default {
         ],
         contactDetails: [],
       },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Dartain',
+        subHeading: 'SDG Campus Club',
+        dateTime: 'Nov 14, 1:00 pm',
+        location: 'LA',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `SDG Campus Club has planned to conduct a dart game in which participants have to throw darts on a board, which will be containing logos of the SDG Goals. Based on the accuracy of a throw( how close the dart strikes to the centre), the participants will be awarded a score. The logos in the inner circle will carry more points than those in the outer circle. Finally, the scores made in every throw will be added to calculate the total score. The top three scorers will be declared winners.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968718/Innovision%202k22/Event%20Posters/Fun%20Events/brainyescape_hrympa.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'Brainy Escape',
+        subHeading: 'TBS',
+        dateTime: 'Nov 12, 5:00 pm',
+        location: 'LA',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `The escape room will consist of 6-8 puzzles/riddles/critical thinking questions that participants must solve within 30 minutes. Each question will have 4-5 options written on an envelope, with a piece of a QR code inside each envelope. After completing all of the problems, participants will be able to find all of the correct pieces of the QR code and, by scanning, they will be able to obtain an 8-digit pin and win the game.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968720/Innovision%202k22/Event%20Posters/Fun%20Events/myBFF_vucszk.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'My BFF',
+        subHeading: 'Third Eye',
+        dateTime: 'Nov 14, 9:00 am',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `My-BFF is a recreational event wherein students are welcome to get their pictures clicked along with their best friends and have sweet memorabilia of their sojourn at NITR. The pictures are then put up on a poll on Third Eye’s social media handle  (Instagram or Facebook) and the one that receives  the most likes is printed, framed and gifted to the  respective person. Happy faces and goofy poses are welcome.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968721/Innovision%202k22/Event%20Posters/Fun%20Events/art_of_imagination_y3od6y.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'Art of Imagination',
+        subHeading: 'ML4E',
+        dateTime: 'Nov 12, 9:00 am',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `It would be an AI Art Competition using Midjourney 
+            AI Bot, by which the art would be done only by  using a prompt. This competition will showcase how fascinating AI  is and how much great things can be achieved  through AI, it would be great stepping stone for  beginners who'd like to enter this field and make a  career in it. The Competition would be of 24 hrs, Anyone can  take part in the competition within the stipulated  time and the competition would be completely  online.The Winners would be featured on our Insta handle  along with some cash prizes.
+            `,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Hot Wheels',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Hot wheels is a fun single or team event where  each team or person will be given a remote  controlled car to race against each other on a  challenging race track. The team crossing to the  finish line first will win.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Sumo Fighting',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `“Feat of strength-not of skill.”~ very rightly said by  George Preble. Yes we are indeed talking about  SUMO. A game that originated in the Land of  Rising Sun, Japan. Today years after its origination  , it has turned out to be a global fun and sporting  event , where the Rishiki wearing a Mawashi tries  to win by pushing the opponent outside the circle  or by making the opponent touch the ground. Here  , in INNO 2022, we have organised the very event ,  where the participants would be given the sumo  inflatable costumes and have to use their sheer  strength to win the game by pushing the opponent  outside the circle.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666968720/Innovision%202k22/Event%20Posters/Fun%20Events/paintball_bqrraf.jpg`,
+          alt: 'Event image',
+        },
+        heading: 'Paintball',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Paintball is a realtime combat between two teams of five.
+            • It is a competitive team shooting sport by shooting paintballs from (paintball markers)paintball guns.
+            • There are different modes of playing this-
+            • capture the flag
+            • elimination
+            • defending or attacking a particular point
+            • The time duration may vary from minutes to hours depending on the mode of play.
+            • players wear safety suits as protection from paintballs.
+            `,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Neon Cricket',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `It is a fun-filled event that involves two teams of five members each competing against each other in each match. Sticking to the traditional rules of cricket, neon cricket has a twist. It would be played in a dark room with a radium tennis ball. Only underarm bowling would be allowed.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Meltdown',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `In this game, the first pole comes swinging straight at your legs. As you quickly jump over it, you notice your brother falling onto the inflatable ring from the corner of your eye. There’s no time to react, the next pole swings at your face. In the nick of time, you duck the pole and roll away. Your reflexes seem lightning fast; you feel agile and light. You feel like you’re at the top of your game. And that’s when the pole swings the wrong way and catches you behind your legs. As you fall onto the soft padding, you can’t help joining in the roar of laughter around you.`,
+          },
+        ],
+        contactDetails: [],
+      },
     ],
   },
   proshows: {
     title: 'Pro Shows',
-    desc: 'This a chance of a lifetime to meet and enjoy the shows and concerts of some of the most excellent musicians, stand-up comedians, and DJs’ to make you groove to their music',
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-05_dfhedz.jpg',
+    desc: 'This a chance of a lifetime to meet and enjoy the shows and concerts of some of the most excellent musicians, stand-up comedians, and DJs’ to make you groove to their music. Attending these shows gives you a chance to get out, meet new people, and get more involved in your community. Attending with friends and savouring the memories can provide happy memories and feelings and bring a little extra boost to your spirits.',
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952231/Innovision%202k22/Category/pro_show_horizontal.jpg',
     alt: '',
     list: [
       {
@@ -628,7 +764,7 @@ export default {
       },
       {
         eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834720/Innovision%202k22/Event%20Posters/nritua_naad_Nrityunjay_Inno__k3nyva.jpg`,
+          imgSrc: `${eventImg}`,
           alt: 'Event image',
         },
         heading: 'Nritunjay',
@@ -644,12 +780,84 @@ export default {
         ],
         contactDetails: [],
       },
+      {
+        eventImage: {
+          imgSrc: `${eventImg}`,
+          alt: 'Event image',
+        },
+        heading: 'Trancenation',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Trancenation is a vivid set performed by our in houseDj’s, filled with chart topping hits, classic tunes and electronic bangers. It promises a groovy setlist, along with live.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `${eventImg}`,
+          alt: 'Event image',
+        },
+        heading: 'Comedy Night',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `${eventImg}`,
+          alt: 'Event image',
+        },
+        heading: 'EDM',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: `${eventImg}`,
+          alt: 'Event image',
+        },
+        heading: 'Bollywood Night',
+        subHeading: '',
+        dateTime: '',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
     ],
   },
   workshop: {
     title: 'Workshops',
-    desc: `These are one of the best ways to learn, discover or polish a new or an existing skill. It is a golden opportunity to meet professionals and learn from them.`,
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860502/Innovision%202k22/Category/website-03_htlduc.jpg',
+    desc: `These are one of the best ways to learn, discover or polish a new or an existing skill. It is a golden opportunity to meet professionals and learn from them. It may introduce a new idea and is a great way to teach hands-on skills as it allows you to try out new methods and fail in a safe environment. It will help you to develop a new skill set for a better future and learn about the latest information and new skills related to it.`,
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/worksop_horizontal.jpg',
     alt: '',
     list: [
       {
@@ -657,52 +865,15 @@ export default {
           imgSrc: eventImg,
           alt: 'Event image',
         },
-        heading: 'Intro to comedy pre-events:',
+        heading: 'Udaan',
         subHeading: '',
-        dateTime: '',
+        dateTime: 'Nov 14, 11:00 am',
         location: '',
         prizeAmount: '',
         aboutDetails: [
           {
             id: 0,
-            desc: `Workshop for Kids of class 11-12 to understand comedy and even do their own.`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834720/Innovision%202k22/Event%20Posters/MUN_Workshop_cognizen_gwbxsx.jpg`,
-          alt: 'Event image',
-        },
-        heading: 'Mun workshop',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `This is the age of dialogue and diplomacy. Diplomacy is the key that can unlock the most challenging situations, which even war can’t solve. So, during this era of shifting geopolitics, it is essential to have a taste of diplomacy and dialogue. To make the young minds get acquainted with the MUN sessions, our club will conduct a workshop on MUN, in which students can learn about diplomacy, international relations, and the United Nations.`,
-          },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834717/Innovision%202k22/Event%20Posters/K-12_aiche_xeta5d.jpg`,
-          alt: 'Event image',
-        },
-        heading: 'K-12 Mania:',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
-          {
-            id: 0,
-            desc: `It is a fun and interactive workshop for students of classes 9-12 with topics from the arena of STEM. The event shall consist of 2 experiments that revolve around essential and contemporary scientific topics that will be presented before them in a fun and practical way. For this workshop, we have tentatively chosen: 1. Heat transfer and 2. The beauty of colloids, as the topics. The modules shall be accompanied by interactive quizzing sessions and doubt-clearing sessions.
-            `,
+            desc: ``,
           },
         ],
         contactDetails: [],
@@ -712,70 +883,40 @@ export default {
           imgSrc: eventImg,
           alt: 'Event image',
         },
-        heading: 'Dance Workshop',
-        subHeading: '',
-        dateTime: '',
+        heading: 'Prathmesh Jaju',
+        subHeading: 'AstroNITR',
+        dateTime: 'Nov 13, 11:30 am',
         location: '',
         prizeAmount: '',
         aboutDetails: [
           {
             id: 0,
-            desc: `A Dance workshop will be conducted for the school students of Rourkela, to promote the performing arts, specifically dancing among the students. The objective of the workshop is to help them realise how extra-curricular activities like dancing can help them grow and develop a certain talent and how it can cumulatively help them to grow in other aspects like teamwork, and discipline. 
-            `,
+            desc: `You will leave this workshop with a thorough understanding of what it
+            takes to create breathtaking images of the Milky Way and the night sky.
+            Prathamesh Jaju will teach you everything you need to know, from
+            planning your shoots to successfully capturing your images, and how to
+            bring the images to life with post-processing software.`,
           },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834720/Innovision%202k22/Event%20Posters/SCIENCE_FANTASY__aiche_zv9vzr.jpg`,
-          alt: 'Event image',
-        },
-        heading: 'Science Fantasy',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
           {
-            id: 0,
-            desc: `Sci-Fi movies and the Marvel series have played a major role in our daily entertainment. Many of the concepts shown in these futuristic movies are based on real scientific theories. The “Science Fantasy” quiz organized by Inspire club is based on the science behind Sci-fi movies and marvel Characters. The quiz shall be held in two interesting rounds where many teams can participate and win prizes. Each team can have up to 3 players. `,
+            id: 1,
+            desc: `Understand the Night sky`,
           },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: `https://res.cloudinary.com/donmjeufi/image/upload/v1666834727/Innovision%202k22/Event%20Posters/debatemasterclass_Clarion_pcxmi6.jpg`,
-          alt: 'Event image',
-        },
-        heading: 'Debate workshop',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
           {
-            id: 0,
-            desc: `Clarion - The Literary and Debating Club is conducting a debate workshop that gives an insight into the importance of debating and how it improves one's communication skills. The workshop comprises 3 parts, starting with a brief introduction to the various formats of debating followed by a discussion on how to approach a particular topic or motion, and lastly, a contest (For and Against) where the winners will be provided certificates or goodies. E-certificates will be given to all attendees.`,
+            id: 2,
+            desc: `Learn how to properly set up with telescope for shooting the night
+            sky`,
           },
-        ],
-        contactDetails: [],
-      },
-      {
-        eventImage: {
-          imgSrc: eventImg,
-          alt: 'Event image',
-        },
-        heading: 'Vedic Maths Workshop:',
-        subHeading: '',
-        dateTime: '',
-        location: '',
-        prizeAmount: '',
-        aboutDetails: [
           {
-            id: 0,
-            desc: `The Vedic Maths workshop is for middle school students to help them learn the ancient tricks of mathematics developed in India that will help them calculate faster and more accurately, thus reducing the fear of mathematics among middle school students and helping them learn something new. Based on the theme of giving back to society.`,
+            id: 1,
+            desc: `Learn how to shoot Long Exposure Photos`,
+          },
+          {
+            id: 1,
+            desc: `Learn how to reduce noise in your images`,
+          },
+          {
+            id: 1,
+            desc: `Image Stacking and Stitching`,
           },
         ],
         contactDetails: [],
@@ -784,8 +925,8 @@ export default {
   },
   guestLecture: {
     title: 'Guest Lecture',
-    desc: `These would include informational and motivational talks from eminent personalities. Our past speakers include Padma Vibushan awardee Dr. Anil Kakodkar and Microsoft India's general manager, Priyadarshi Mahapatra.`,
-    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666860503/Innovision%202k22/Category/website-01_rqdvkk.jpg',
+    desc: `These would include informational and motivational talks from eminent personalities. Our past speakers include Padma Vibushan awardee Dr. Anil Kakodkar and Microsoft India's general manager, Priyadarshi Mahapatra. Guest lecturers provide an important educational experience for students based on their real-world life experiences. You will get to see insight into the guest lecturers' specific fields and interact with them.`,
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952232/Innovision%202k22/Category/guest_lecture_horizontal.jpg',
     alt: '',
     list: [
       {
@@ -793,9 +934,45 @@ export default {
           imgSrc: eventImg,
           alt: 'Event image',
         },
-        heading: 'Guest lecture by Ishan Sharma',
+        heading: 'Usha Rengaraju',
         subHeading: '',
-        dateTime: '',
+        dateTime: 'Nov 12, 3:00 pm',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Dr. Govinds Pahari',
+        subHeading: '',
+        dateTime: 'Nov 12, 3:30 pm',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Ishan Sharma',
+        subHeading: '',
+        dateTime: 'Nov 12, 6:00 pm',
         location: '',
         prizeAmount: '',
         aboutDetails: [
@@ -811,15 +988,114 @@ export default {
           imgSrc: eventImg,
           alt: 'Event image',
         },
-        heading: 'Dialogue with destiny',
+        heading: 'Sandeep jain',
         subHeading: '',
-        dateTime: '',
+        dateTime: 'Nov 14, 9:15 am',
         location: '',
         prizeAmount: '',
         aboutDetails: [
           {
             id: 0,
-            desc: `The guest speaker will be a renowned Indian scientist/Professor from a prestigious institution who will share his research field and notable works, as well as a lecturer on an emerging and interesting topic in the research field of Biosciences. Topics will be the latest research works, Neuroscience, Drug discovery, Vaccine development etc.`,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Abhisek Nandy',
+        subHeading: '',
+        dateTime: 'Nov 13, 3:00 pm',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: ``,
+          },
+        ],
+        contactDetails: [],
+      },
+    ],
+  },
+  exhibition: {
+    title: 'Exhibition',
+    desc: `These connect the audience and bring like-minded people together in the best possible way. It is a place where people share their ideologies, leading to the growth of every individual. It brings with it huge networking opportunities and lets you learn about the latest trends in the industry. An exhibition helps people to connect, thereby building bonds in the community and having interactions to build the best of contacts.`,
+    img: 'https://res.cloudinary.com/donmjeufi/image/upload/v1666952231/Innovision%202k22/Category/Exhibitions_horizontal.jpg',
+    alt: '',
+    list: [
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Radiance 4.0',
+        subHeading: 'Akriti',
+        dateTime: 'Nov 12, 9:00 am',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Craft, where every piece sings its unique tale, imbibing solace for the curious and wistful heart. It gets to steal your attention and plunge you into ruminative thoughts, paving the way for it to be hailed as a masterpiece. AKRITI brings to you Radiance 4.0, where each work of art blends the entire canvas to enchant your soul.
+            `,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Srijan 6.0 ',
+        subHeading: 'SSPA',
+        dateTime: 'Nov 12, 9:00 am',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Surprise: Unpredictability served with curiosity It begins with a surprise, generating curiosity with each step forward. As the name justifies, the exhibition will slowly reveal itself, where one object hides and again pops back into the view of the other, and says Peekaboo! As TIME is the theme for this year, the installations will have a timeless ever-changing essence as the day unfolds, catering to the soulful interaction of the public and the exhibits via the medium of TIME. MODE - A "protoconversation" - Includes words, sounds and gestures, that attempt to convey meaning before the onset of actual language arousing the sensory tactility of expression and building a conversation conveying a story with the freedom to perceive the spaces via their interpretation which will increase the inclusivity of the onlookers.`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'Super Bike Show',
+        subHeading: 'Bike Show',
+        dateTime: 'Nov 13, 4:00 pm',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `This show will be held in DTS following up a mass public gathering where in super bikes will be showcased in a orientated sequence. Bike group will be performing bike show with utmost energy and enthusiasm! There will also be a super bike show under which the KTM bike groups will be performing various stunts and actions (under proper safety protocols of the individuals of the group)`,
+          },
+        ],
+        contactDetails: [],
+      },
+      {
+        eventImage: {
+          imgSrc: eventImg,
+          alt: 'Event image',
+        },
+        heading: 'CAR SHOW',
+        subHeading: 'SAE & ASME',
+        dateTime: 'Nov 13, 5:00 pm',
+        location: '',
+        prizeAmount: '',
+        aboutDetails: [
+          {
+            id: 0,
+            desc: `Society of Automotive Engineers and American Society of Mechanical Engineers NIT Rourkela chapters present you with a glimpse of engineering by organizing a Car Show. With an ensemble of an all terrain vehicle, a formula racing car and a human powered vehicle we rule every terrain, be it off roading or speed racing`,
           },
         ],
         contactDetails: [],

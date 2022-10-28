@@ -48,10 +48,10 @@ export default {
       //   name: 'Register',
       //   link: '/register',
       // },
-      // {
-      //   name: 'Exhibition',
-      //   link: '/exhibition',
-      // },
+      {
+        name: 'Exhibition',
+        link: '/exhibition',
+      },
     ],
   },
   contactTitle: "Let's Connect",

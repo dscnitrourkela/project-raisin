@@ -41,7 +41,7 @@ const EventDetailsModal = ({
         <PrizesAmount>
           {prizeAmount ? (
             <>
-              CASH PRIZE UPTO <span>{prizeAmount}</span>
+              Goodies Worth Upto <span>{prizeAmount}</span>
             </>
           ) : (
             'TBA'
