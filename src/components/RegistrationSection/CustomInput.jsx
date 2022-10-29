@@ -32,6 +32,10 @@ const Input = styled.input`
   &:focus {
     outline: none !important;
   }
+
+  &:read-only {
+    background: #555555;
+  }
 `;
 
 const ErrorMsg = styled(Body2)`
@@ -52,7 +56,7 @@ const CustomInput = ({ values, onChange, objKey, onBlur }) => {
   } = values[objKey];
   return (
     <React.Fragment key={placeholder}>
-      <Body1 style={{ marginTop: '1.5rem' }}>{placeholder}</Body1>
+      <Body1 style={{ marginTop: '1.5rem', width: '100%' }}>{placeholder}</Body1>
       {type === 'select' ? (
         <CustomSelect
           value={value}

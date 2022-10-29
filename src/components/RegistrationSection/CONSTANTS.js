@@ -1,3 +1,11 @@
+/**
+ * Possible stages
+ * 1. selection if NITR student or not
+ * 2. registration for NITR student
+ * 3. registration for non NITR student
+ * 4. transaction successful screen
+ * 5. transaction unsuccessful screen
+ */
 export const STAGES = {
   TYPE_OF_USER: 'Are you an NITR Student?',
   NITR_STUDENT_FORM: 'NITR Student Register',
@@ -27,8 +35,8 @@ export const INPUTS = {
   },
   email: {
     ...INIT_STATE,
-    placeholder: 'Email',
-    readOnly: false,
+    placeholder: 'Email (same as your gmail)',
+    readOnly: true,
     type: 'text',
     inputMode: 'email',
     regex: '/^[w-.]+@([w-]+.)+[w-]{2,4}$/g',
@@ -42,7 +50,7 @@ export const INPUTS = {
     placeholder: 'Mobile Number',
     readOnly: false,
     type: 'text',
-    inputMode: 'tel',
+    inputMode: 'numeric',
     regex: /\D/g,
     key: 'mobile',
     show: 'both',
@@ -106,7 +114,7 @@ export const INPUTS = {
     inputMode: 'text',
     regex: /[^a-zA-Z_ ]/gi,
     key: 'stream',
-    show: 'non-nitr',
+    show: 'both',
     maxLength: 50,
     minLength: 1,
   },

@@ -1,42 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import styled from 'styled-components';
+import Lottie from 'react-lottie';
 import tw from 'twin.macro';
+import { ToastContainer, toast } from 'react-toastify';
+import { Link } from 'gatsby';
 
 import { Container, Heading3, CaptionText } from '../shared';
-// import { AuthContext } from '../../utils/Auth';
-// import { avenueApi } from '../../utils/api';
+import { AuthContext } from '../../utils/Auth';
+import { avenueApi } from '../../utils/api';
+
 import FailureIcon from './failure.svg';
 import SuccessIcon from './succuss.svg';
 import CustomInput from './CustomInput';
 import TxnCard from './TxnCard';
+import * as animationData from './register.json';
 
 import { STAGES, INPUTS } from './CONSTANTS';
+import 'react-toastify/dist/ReactToastify.css';
 
 const InfoText = styled(CaptionText)`
   ${tw`text-color-secondary`}
+  text-align: center;
 `;
 
 const RegistrationContainer = styled.div`
   width: 100%;
-  height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 8rem - 110px);
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
-  padding-top: 100px;
+  align-items: center;
+  padding-top: 5rem;
+
+  @media screen and (max-width: 990px) {
+    flex-direction: column;
+  }
 `;
 
 const RegisterFormContainer = styled.div`
-  width: 40%;
+  width: 50%;
+  height: calc(100vh - 8rem - 110px);
+  overflow-y: scroll;
   background: var(--background-secondary);
   border-radius: 7px;
   padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  @media screen and (max-width: 990px) {
+    width: 100%;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: 40%;
   height: 100%;
+
+  .image {
+    width: 30%;
+    height: auto;
+    aspect-ratio: 1.2/1;
+  }
+
+  @media screen and (max-width: 990px) {
+    width: 90%;
+    margin-top: 4rem;
+  }
 `;
 
 const NewButton = styled.button`
@@ -46,7 +78,7 @@ const NewButton = styled.button`
   color: ${(props) => (props.selected ? '#000000' : '#ECFDFF')};
   background: ${(props) => (props.selected ? '#ECFDFF' : 'transparent')};
   margin-right: 1rem;
-  margin-top: 4rem;
+  margin-top: 0.5rem;
   padding: 15px 20px;
   border-radius: 50px;
 
@@ -55,15 +87,6 @@ const NewButton = styled.button`
     background: #ecfdff;
   }
 `;
-
-/**
- * Possible stages
- * 1. selection if NITR student or not
- * 2. registration for NITR student
- * 3. registration for non NITR student
- * 4. transaction successful screen
- * 5. transaction unsuccessful screen
- */
 
 export const getURLParameter = (paramName, URLString = window.location.href) => {
   const regex = new RegExp(`[\\?&]${paramName}=([^&#]*)`);
@@ -80,7 +103,24 @@ const EventRegister = () => {
   const [values, setValues] = useState(INPUTS);
   const [isNitrStudent, setIsNitrStudent] = useState({ yes: false, no: false });
 
-  const setStageToNitrForm = () => setStage(STAGES.NITR_STUDENT_FORM);
+  const authContext = useContext(AuthContext);
+  const { userData, setUser } = authContext;
+
+  const setInputValue = (type, value) =>
+    setValues((current) => ({
+      ...current,
+      [type]: {
+        ...current[type],
+        value,
+      },
+    }));
+
+  const setStageToNitrForm = () => {
+    setStage(STAGES.NITR_STUDENT_FORM);
+    setInputValue('state', 'Odisha');
+    setInputValue('city', 'Rourkela');
+    setInputValue('college', 'National Institute of Technology Rourkela');
+  };
   const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
   const setStageToTxnSuccessful = () => setStage(STAGES.TXN_SUCCESSFUL);
   const setStageToTxnUnsuccessful = () => setStage(STAGES.TXN_UNSUCCESSFUL);
@@ -88,7 +128,6 @@ const EventRegister = () => {
     setStage(STAGES.TYPE_OF_USER);
     setIsNitrStudent({ yes: false, no: false });
   };
-
   const setNitrStudent = () => {
     setIsNitrStudent({ yes: true, no: false });
     setStageToNitrForm();
@@ -132,13 +171,116 @@ const EventRegister = () => {
     }
   };
 
-  // const onSubmitClick = () => {
-  //   if (!NITRStudent) {
-  //     return handleNonNitrUserRegistration();
-  //   }
+  const saveUser = async () => {
+    const payload = Object.keys(values).reduce(
+      (acc, curr) => ({
+        ...acc,
+        [curr]: values[curr].value,
+      }),
+      {},
+    );
+    payload.uid = userData.uid;
 
-  //   return handleNitrUserRegistration();
-  // };
+    try {
+      const { data: newUser } = await avenueApi.post('/user', payload, {
+        headers: {
+          Authorization: `Bearer ${userData.accessToken}`,
+        },
+      });
+
+      if (!newUser) {
+        throw new Error('Something went Wrong: failed to regsiter user');
+      }
+
+      setUser((current) => ({
+        ...current,
+        ...newUser,
+      }));
+      return newUser;
+    } catch (error) {
+      toast.error(error.message || 'Something went Wrong, please try again');
+      return null;
+    }
+  };
+
+  const initiatePayment = async () => {
+    try {
+      const { data: registrationLink } = await avenueApi.post(
+        '/payment/instamojo',
+        {
+          amount: 700,
+          purpose: 'INNOVISION-2022 | REGISTRATION',
+          buyerName: values.name.value,
+          email: values.email.value,
+          phone: values.mobile.value,
+          redirectUrl: 'https://inno.nitrkl.in/register',
+          webhook: 'https://avenue-api.nitrkl.in/payment/webhook',
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${userData.accessToken}`,
+          },
+        },
+      );
+
+      if (!registrationLink) {
+        throw new Error('Something went Wrong: failed to generate payment link');
+      }
+
+      window.location = registrationLink;
+    } catch (error) {
+      toast.error(error.message || 'Something went Wrong, please try again');
+    }
+  };
+
+  const verifyZimbraMail = async () => {
+    try {
+      const { status } = await avenueApi.get('/zimbra-login', {
+        params: {
+          username: `${values.rollNumber.value}@nitrkl.ac.in`,
+          password: values.password.value,
+        },
+      });
+
+      if (status === 401) {
+        throw new Error('Invalid Credentials');
+      }
+
+      return true;
+    } catch (error) {
+      toast.error(error.message || 'Something went Wrong, please try again');
+      return false;
+    }
+  };
+
+  // eslint-disable-next-line consistent-return
+  const onSubmitClick = async () => {
+    if (isNitrStudent.yes) {
+      const areAllFieldsValid = Object.keys(values)
+        .filter((key) => key !== 'referredBy')
+        .filter((key) => ['both', 'nitr'].includes(values[key].show))
+        .reduce((acc, curr) => !!values[curr].value && acc, true);
+
+      if (!areAllFieldsValid) {
+        return toast.error('Please fill in all the fields');
+      }
+
+      const isStudentVerified = await verifyZimbraMail();
+      if (isStudentVerified) return saveUser();
+    }
+
+    const areAllFieldsValid = Object.keys(values)
+      .filter((key) => key !== 'referredBy')
+      .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
+      .reduce((acc, curr) => !!values[curr].value && acc, true);
+
+    if (!areAllFieldsValid) {
+      return toast.error('Please fill in all the fields');
+    }
+
+    const user = await saveUser();
+    if (user) return initiatePayment();
+  };
 
   useEffect(() => {
     Object.values(values).forEach(({ errorVisibility, minLength, key, value }) => {
@@ -162,17 +304,23 @@ const EventRegister = () => {
 
     if (paymentId && paymentRequestId && paymentStatus === 'Credit') {
       setStageToTxnSuccessful();
-    } else {
+    } else if (paymentStatus === 'Failed') {
       setStageToTxnUnsuccessful();
     }
   }, []);
+
+  useEffect(() => {
+    setInputValue('name', userData.displayName);
+    setInputValue('email', userData.email);
+    setInputValue('mobile', userData.phoneNumber || '');
+  }, [userData]);
 
   const renderStage = () => {
     switch (stage) {
       case STAGES.NON_NITR_STUDENT_FORM:
         return (
           <RegisterFormContainer>
-            <Heading3 style={{ marginBottom: '10px' }}>{stage}</Heading3>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>
               Please fill up the form and pay a registration fees of ₹700 to proceed
             </InfoText>
@@ -187,15 +335,17 @@ const EventRegister = () => {
                   onBlur={onInputBlurChange}
                 />
               ))}
-            <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
-            <NewButton>Proceed to Pay</NewButton>
+            <div style={{ marginTop: '4rem', marginLeft: 0 }}>
+              <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
+              <NewButton onClick={onSubmitClick}>Proceed to Pay</NewButton>
+            </div>
           </RegisterFormContainer>
         );
 
       case STAGES.NITR_STUDENT_FORM:
         return (
           <RegisterFormContainer>
-            <Heading3 style={{ marginBottom: '10px' }}>{stage}</Heading3>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>
               We don&apos;t save your password. This is to just verify if you are an NITR student
             </InfoText>
@@ -210,8 +360,10 @@ const EventRegister = () => {
                   onBlur={onInputBlurChange}
                 />
               ))}
-            <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
-            <NewButton>Login with Webmail</NewButton>
+            <div style={{ marginTop: '4rem', marginLeft: 0 }}>
+              <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
+              <NewButton onClick={onSubmitClick}>Login with Webmail</NewButton>
+            </div>
           </RegisterFormContainer>
         );
 
@@ -222,12 +374,9 @@ const EventRegister = () => {
             icon={SuccessIcon}
             type='success'
             button={
-              <NewButton
-                onClick={setStageToTypeOfUser}
-                style={{ marginTop: '1rem', marginLeft: 0 }}
-              >
-                Continue
-              </NewButton>
+              <Link to='/'>
+                <NewButton style={{ marginTop: '1rem', marginLeft: 0 }}>Continue</NewButton>
+              </Link>
             }
           />
         );
@@ -253,14 +402,16 @@ const EventRegister = () => {
       default:
         return (
           <RegisterFormContainer>
-            <Heading3 style={{ marginBottom: '10px' }}>{stage}</Heading3>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>Registration for NIT Rourkela students is free</InfoText>
-            <NewButton selected={isNitrStudent.yes} onClick={setNitrStudent}>
-              Yes
-            </NewButton>
-            <NewButton selected={isNitrStudent.no} onClick={setNonNitrStudent}>
-              No
-            </NewButton>
+            <div style={{ marginTop: '4rem', marginLeft: 0 }}>
+              <NewButton selected={isNitrStudent.yes} onClick={setNitrStudent}>
+                Yes
+              </NewButton>
+              <NewButton selected={isNitrStudent.no} onClick={setNonNitrStudent}>
+                No
+              </NewButton>
+            </div>
           </RegisterFormContainer>
         );
     }
@@ -270,8 +421,20 @@ const EventRegister = () => {
     <Container>
       <RegistrationContainer>
         {renderStage()}
-        <ImageContainer />
+        <ImageContainer>
+          <Lottie
+            options={{
+              loop: true,
+              autoplay: true,
+              animationData,
+              rendererSettings: {
+                preserveAspectRatio: 'xMidYMid slice',
+              },
+            }}
+          />
+        </ImageContainer>
       </RegistrationContainer>
+      <ToastContainer />
     </Container>
   );
 };
