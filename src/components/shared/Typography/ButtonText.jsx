@@ -9,6 +9,6 @@ export default styled.p`
     lg:text-lg
     md:text-sm
     sm:text-sm
-    uppercase
+    capitalize
   `};
 `;

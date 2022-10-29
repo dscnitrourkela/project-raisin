@@ -7,7 +7,6 @@ import { CaptionText, Heading4, LinkButton } from '../shared';
 const SectionContainer = styled.div`
   ${tw`
     min-h-screen
-    h-screen
     w-full
     overflow-x-hidden
     overflow-y-hidden
@@ -24,12 +23,14 @@ const SectionContainer = styled.div`
 const Card = styled.div`
   ${tw`
     max-h-[660px]
+    sxm:max-h-[100%]
     h-full
     max-w-[536px]
+    sxm:max-w-[328px]
     w-full
     bg-background-dark
     rounded-3xl
-    sm:rounded-xl
+    sxm:rounded-2xl
     grid 
     grid-rows-2
     overflow-hidden
@@ -48,6 +49,7 @@ const UpperContainer = styled.div`
 const Image = styled.img`
   ${tw`
     w-auto
+    sxm:w-[72px]
     object-contain
   `}
 `;
@@ -55,11 +57,14 @@ const Image = styled.img`
 const LowerContainer = styled.div`
   ${tw`
     p-9
+    sxm:py-6
+    sxm:px-4
     flex
     flex-col
     items-center
     text-center
     gap-9
+    sxm:gap-6
   `}
 `;
 
@@ -75,7 +80,7 @@ const ButtonContainer = styled.div`
     flex
     flex-col
     items-center
-    gap-1
+    gap-2
   `}
 `;
 

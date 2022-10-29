@@ -48,6 +48,7 @@ export const FlexText = styled.h3`
     flex
     uppercase
     text-3xl
+    text-center
   `}
   &.desktop-only {
     ${tw`           

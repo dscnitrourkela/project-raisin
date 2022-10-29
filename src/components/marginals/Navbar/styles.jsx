@@ -62,6 +62,8 @@ export const NavSection = styled.header`
     align-items: center;
   }
   @media (min-width: 1023px) {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     .navLinkList {
       display: flex;
       justify-content: center;

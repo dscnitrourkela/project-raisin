@@ -87,7 +87,7 @@ const HeroContent = () => (
       <HeroImage src={hero.mainText.src} alt={hero.mainText.alt} />
     </HeroImageOuterContainer>
     <HeroDates>{hero.date}</HeroDates>
-    <AuthButton paddingY='18px' paddingX='64px' text='REGISTER' />
+    <AuthButton paddingY='18px' paddingX='64px' text={hero.register.btnText} />
   </ContentContainer>
 );
 
