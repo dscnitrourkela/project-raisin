@@ -11,9 +11,10 @@ const AboutContainer = styled.div`
   ${tw`
     grid
     grid-cols-2
-    md:grid-rows-2
+    md:flex
+    md:flex-col-reverse
     gap-7
-    md:gap-4
+    md:gap-5
     text-color-primary
   `}
 `;
@@ -52,12 +53,26 @@ const AboutImage = styled.img`
 `}
 `;
 
+const DesktopHeading = styled(Heading2)`
+  ${tw`
+    md:hidden
+  `}
+`;
+
+const MobileHeading = styled(Heading2)`
+  ${tw`
+    hidden
+    md:block
+    text-center
+  `}
+`;
+
 const About = ({ title, desc, image, link, alt }) => (
   <SectionContainer>
     <Container>
       <AboutContainer>
         <AboutTextContainer>
-          <Heading2 bold>{title}</Heading2>
+          <DesktopHeading bold>{title}</DesktopHeading>
           <Body1>{desc}</Body1>
         </AboutTextContainer>
         <AboutImageContainer>
@@ -72,6 +87,7 @@ const About = ({ title, desc, image, link, alt }) => (
             <AboutImage src={link} alt={alt} />
           )}
         </AboutImageContainer>
+        <MobileHeading bold>{title}</MobileHeading>
       </AboutContainer>
     </Container>
   </SectionContainer>

@@ -5,25 +5,41 @@ import tw from 'twin.macro';
 import ButtonText from './Typography/ButtonText';
 
 const ButtonContainer = styled.button`
-  background: ${(props) => (props.outline ? 'none' : '#ffffff')};
-  border: ${(props) => (props.outline ? '1px solid #ffffff' : 'none')};
-  color: ${(props) => (props.outline ? '#ffffff' : '#000000')};
+  background: ${(props) =>
+    (props.outline && 'none') || (props.disabled && 'rgba(74, 74, 74, 0.5)') || '#ffffff'};
+  border: ${(props) => (props.outline && '1px solid #ffffff') || 'none'};
+  color: ${(props) => (props.outline && '#ffffff') || (props.disabled && '#ffffff') || '#000000'};
+  padding: ${(props) => `${props.paddingY || '12px'} ${props.paddingX || '36px'}`};
+  cursor: ${(props) => (props.disabled && 'not-allowed') || 'pointer'};
   :hover {
-    background: ${(props) => (props.outline ? '#ffffff' : '#ECFDFF')};
-    color: #000000;
+    background: ${(props) =>
+      (props.outline && '#ffffff') || (props.disabled && 'rgba(74, 74, 74, 0.5)') || '#ECFDFF'};
+    color: ${(props) => (props.disabled && '#ffffff') || '#000000'};
   }
   transition: all 0.1s linear;
-
-  &:disabled {
-    background: rgba(255, 255, 255, 0.5);
-  }
-
-  ${tw`py-3 rounded-4xl px-9 w-max`}
+  ${tw`
+    rounded-4xl
+    w-max
+  `}
 `;
 
-const LinkButton = ({ link, text, outline = false, method = undefined, disabled = false }) => (
-  <ButtonContainer onClick={method} outline={outline} disabled={disabled}>
-    {link ? (
+const LinkButton = ({
+  link,
+  text,
+  paddingY,
+  paddingX,
+  disabled = false,
+  outline = false,
+  method = undefined,
+}) => (
+  <ButtonContainer
+    paddingY={paddingY}
+    paddingX={paddingX}
+    onClick={method}
+    disabled={disabled}
+    outline={outline}
+  >
+    {!disabled && link ? (
       <Link to={link}>
         <ButtonText>{text}</ButtonText>
       </Link>

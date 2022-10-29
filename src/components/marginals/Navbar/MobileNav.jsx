@@ -61,7 +61,7 @@ function MobileNav() {
             </li>
           ))}
         </ul>
-        <AuthButton />
+        <AuthButton outline />
       </div>
     </StyledMobileNav>
   );

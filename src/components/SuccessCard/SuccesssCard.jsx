@@ -38,7 +38,7 @@ const Card = styled.div`
 
 const UpperContainer = styled.div`
   ${tw`
-    bg-[#00A82F]
+    bg-[#04D263]
     flex
     justify-center
     items-center
@@ -64,7 +64,10 @@ const LowerContainer = styled.div`
 `;
 
 const SuccessText = styled(Heading4)`
-  ${tw`capitalize`}
+  ${tw`
+    capitalize
+    text-color-secondary
+  `}
 `;
 
 const ButtonContainer = styled.div`

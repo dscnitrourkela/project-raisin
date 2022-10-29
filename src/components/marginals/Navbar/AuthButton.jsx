@@ -2,15 +2,29 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../../utils/Auth';
 import { LinkButton } from '../../shared';
 
-const AuthButton = ({ text }) => {
+const AuthButton = ({ text, paddingY, paddingX, outline }) => {
   const authContext = useContext(AuthContext);
   const { login, logout, user } = authContext;
 
   return (
-    <LinkButton
-      method={user ? logout : login}
-      text={text || (user ? 'logout' : 'Login with Google')}
-    />
+    <>
+      {outline ? (
+        <LinkButton
+          outline
+          method={user ? logout : login}
+          text={text || (user ? 'logout' : 'Login')}
+          paddingY={paddingY}
+          paddingX={paddingX}
+        />
+      ) : (
+        <LinkButton
+          method={user ? logout : login}
+          text={text || (user ? 'logout' : 'Login')}
+          paddingY={paddingY}
+          paddingX={paddingX}
+        />
+      )}
+    </>
   );
 };
 

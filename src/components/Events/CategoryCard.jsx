@@ -28,9 +28,9 @@ const leftCome = keyframes`
 `;
 
 const CardContainer = styled.div`
-  width: 397px;
-  max-width: 260px;
-  @media (min-width: 768px) {
+  width: 100%;
+  max-width: 100%;
+  @media (min-width: 600px) {
     max-width: 400px;
   }
   border: 1px solid rgba(170, 170, 170, 1);
