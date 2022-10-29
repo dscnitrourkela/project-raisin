@@ -201,7 +201,7 @@ const RegistrationForm = () => {
             <TextInput required title='City' type={city} setType={setCity} other />
             <TextInput required title='College' type={college} setType={setCollege} other />
             <TextInput required title='Stream' type={stream} setType={setStream} other />
-            <TextInput required title='Referred By' type={referredBy} setType={setReferredBy} />
+            <TextInput required title='Referral Code' type={referredBy} setType={setReferredBy} />
           </>
         ) : (
           <>

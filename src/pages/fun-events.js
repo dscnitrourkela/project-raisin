@@ -25,7 +25,7 @@ export default function FunEvents() {
         <Container>
           <CategoryCardContainer>
             {events.funEvents.list.map((list) => (
-              <EventCard data={list} key={list.heading} />
+              <EventCard prize data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>
         </Container>

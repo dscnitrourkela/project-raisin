@@ -24,6 +24,7 @@ const EventDetailsModal = ({
   prizeAmount,
   contactDetails,
   aboutDetails,
+  prize = false,
 }) => (
   <EventContainer>
     <LeftContainer>
@@ -33,21 +34,23 @@ const EventDetailsModal = ({
         <SubHeading>{subHeading}</SubHeading>
       </CompositeContainer>
       <CompositeContainer>
-        <Body1>{dateTime ? `${dateTime}` : 'TBA'}</Body1>
-        <Body1>{location ? `${location}` : 'TBA'}</Body1>
+        <Body1>{dateTime ? `${dateTime}` : 'Date: TBA'}</Body1>
+        <Body1>{location ? `${location}` : 'location: TBA'}</Body1>
       </CompositeContainer>
-      <CompositeContainer>
-        <Heading4 bold>Prizes</Heading4>
-        <PrizesAmount>
-          {prizeAmount ? (
-            <>
-              Goodies Worth Upto <span>{prizeAmount}</span>
-            </>
-          ) : (
-            'TBA'
-          )}
-        </PrizesAmount>
-      </CompositeContainer>
+      {prize ? (
+        <CompositeContainer>
+          <Heading4 bold>Prizes</Heading4>
+          <PrizesAmount>
+            {prizeAmount ? (
+              <>
+                Goodies Worth Upto <span>{prizeAmount}</span>
+              </>
+            ) : (
+              'TBA'
+            )}
+          </PrizesAmount>
+        </CompositeContainer>
+      ) : null}
       {/* <LinkButton text='Register' link='/' /> */}
     </LeftContainer>
     <RightContainer>
