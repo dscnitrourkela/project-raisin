@@ -27,4 +27,7 @@ export { default as EventDetailsModal } from './EventDetailsModal/EventDetailsMo
 export { default as EventCard } from './Events/EventCard';
 
 // successcard
-export {default as SuccessCard} from './SuccessCard/SuccesssCard'
+export { default as SuccessCard } from './SuccessCard/SuccesssCard';
+
+// 404 card
+export { default as PageNotFoundCard } from './PageNotFoundCard/PageNotFoundCard';
