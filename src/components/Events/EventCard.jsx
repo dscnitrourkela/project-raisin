@@ -88,7 +88,7 @@ const EventPrizes = styled(ButtonText)`
   `}
 `;
 
-const EventCard = ({ data }) => {
+const EventCard = ({ data, prize = false }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -104,9 +104,13 @@ const EventCard = ({ data }) => {
             <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
             <EventTime>{data.dateTime ? `${data.dateTime.split(', ')[1]}` : 'TBA'}</EventTime>
           </CardTitleContainer>
-          <EventPrizes>
-            {data.prizeAmount ? `GOODIES WORTH UPTO ${data.prizeAmount}` : 'Prizes to be declared'}
-          </EventPrizes>
+          {prize ? (
+            <EventPrizes>
+              {data.prizeAmount
+                ? `GOODIES WORTH UPTO ${data.prizeAmount}`
+                : 'Prizes to be declared'}
+            </EventPrizes>
+          ) : null}
           <CardButtonContainer>
             <Button2 method={() => setModalOpen(true)} text='Know More' />
             {/* <LinkButton text='Book Slots' link='/register' /> */}
@@ -124,6 +128,7 @@ const EventCard = ({ data }) => {
           prizeAmount={data.prizeAmount}
           contactDetails={data.contactDetails}
           aboutDetails={data.aboutDetails}
+          prize={prize}
         />
       </ModalBox>
     </>

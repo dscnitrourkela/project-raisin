@@ -942,7 +942,7 @@ export default {
         aboutDetails: [
           {
             id: 0,
-            desc: ``,
+            desc: `Usha Rengaraju is a unicorn data scientist with strong foundations in Economics, Finance, business, business analytics and psychology. She is a specialist in Probabilistic Graphical Models. She is also a 3x kaggle grandmaster .To spread her knowledge about machine learning, she will enlighten us with a lecture on MLOps (Machine learning operations), which seeks to add discipline to the development and deployment of machine learning models by defining processes to make ML development more reliable and productive.`,
           },
         ],
         contactDetails: [],
@@ -960,7 +960,7 @@ export default {
         aboutDetails: [
           {
             id: 0,
-            desc: ``,
+            desc: `Govind Pahari, the General Manager, Head-Operation at Aditya Birla Chemicals. He has a dynamic career of 20 years that reflects rich experience & year-on-year success in Operation, Quality Control, R & D, Product Development etc. He is a man with expertise in every field, i.e., management, research, entrepreneurship, and many more—an ideal for every person—a man who is the actual definition of multi-talented`,
           },
         ],
         contactDetails: [],
@@ -978,7 +978,7 @@ export default {
         aboutDetails: [
           {
             id: 0,
-            desc: `Offline Seminar at NIT Rourkela on starting astartup and a youtube career while in college by Ishan Sharma, apopular social influencer, Finance content creator,Youtuber andCo-founder of MarkitUp.`,
+            desc: `Ishan Sharma, a well-known YouTuber with around 598k subscribers is a prominent personality. He is the right kind of person to go to when you want to learn about productivity, work-life balance, health, tech, career and more. It is all there on his YouTube channel. He is the co-founder of markitUp media, a content marketing agency. He also taught programming at Unacademy and has taken over 300 classes. Furthermore, he worked at GeeksforGeeks. He even published a book called "Crush It on LinkedIn, " a guide on how to use LinkedIn effectively to build your brand, get a job, or expand your business.`,
           },
         ],
         contactDetails: [],
@@ -996,7 +996,19 @@ export default {
         aboutDetails: [
           {
             id: 0,
-            desc: ``,
+            desc: `Mr. Sandeep Jain is the founder and CEO at GeeksforGeeks. He is an alumini of Indian Institute of Technology Roorkee. Founder and Host of 100x Entrepreneur podcast, a teacher to 10 million+ registered ‘Geeks’ from across the world through his startup ﻿GeeksforGeeks﻿.
+            `,
+          },
+          {
+            id: 1,
+            desc: `His platform GeeksforGeeks Launched in 2015, is well recognized among engineering students throughout all colleges in India. it offers aid and advice to engineering students preparing for job interviews, developers and useful content and solutions for IT problems and glitches.Recently, the website — awarded a global Internet engagement ranking of 285 by Alexa — expanded its menu to provide online study courses in computer science/IT.
+            `,
+          },
+          {
+            id: 0,
+            desc: `
+            He has kept it almost free for developers, so that any Tier III or IV developer or aspiring developers can learn to code and improve their prospects.
+            `,
           },
         ],
         contactDetails: [],
@@ -1014,7 +1026,7 @@ export default {
         aboutDetails: [
           {
             id: 0,
-            desc: ``,
+            desc: `Abhishek Nandy is an Intel Software Innovator, a principal engineer at Dynopii and the co-founder of Geek Monkey Studios. He has promoted AI learning at over 30 renowned universities in India including Colleges like IITR, IITG, IITD and major NIT's too with his fundamentals to advanced AI workshops. His areas of specialization include AI, Machine Learning, and Deep Learning.`,
           },
         ],
         contactDetails: [],
