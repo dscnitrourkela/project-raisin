@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Layout, PageNotFoundCard } from '../components';
 
-export default function CaPage() {
+export default function Error404() {
   return (
     <>
       <Helmet>
