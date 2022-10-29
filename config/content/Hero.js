@@ -19,7 +19,7 @@ export default {
   title: 'Innovision 2022',
   date: '12-14 November',
   register: {
-    btnText: '',
+    btnText: 'REGISTER',
     link: '',
   },
 };

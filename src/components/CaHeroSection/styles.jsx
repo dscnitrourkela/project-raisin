@@ -5,7 +5,6 @@ import { Heading2 } from '../shared';
 export const SectionContainer = styled.div`
   ${tw`
     min-h-screen
-    h-screen
     w-full
     overflow-x-hidden
     overflow-y-hidden

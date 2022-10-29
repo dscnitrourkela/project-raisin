@@ -37,6 +37,7 @@ const CardContainer = styled.div`
   ${tw`
     h-auto
     p-6
+    sxm:p-4
     rounded-xl
     cursor-pointer
   `};

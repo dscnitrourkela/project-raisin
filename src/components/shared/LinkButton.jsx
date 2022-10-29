@@ -28,6 +28,7 @@ const LinkButton = ({
   text,
   paddingY,
   paddingX,
+  bold,
   disabled = false,
   outline = false,
   method = undefined,
@@ -41,10 +42,10 @@ const LinkButton = ({
   >
     {!disabled && link ? (
       <Link to={link}>
-        <ButtonText>{text}</ButtonText>
+        <ButtonText bold={bold}>{text}</ButtonText>
       </Link>
     ) : (
-      <ButtonText>{text}</ButtonText>
+      <ButtonText bold={bold}>{text}</ButtonText>
     )}
   </ButtonContainer>
 );

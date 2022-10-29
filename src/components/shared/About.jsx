@@ -13,7 +13,7 @@ const AboutContainer = styled.div`
     grid-cols-2
     md:flex
     md:flex-col-reverse
-    gap-7
+    gap-12
     md:gap-5
     text-color-primary
   `}
@@ -22,7 +22,7 @@ const AboutTextContainer = styled.div`
   ${tw`
     flex
     flex-col
-    items-center
+    items-start
     justify-center
     col-span-1
     md:col-span-2
