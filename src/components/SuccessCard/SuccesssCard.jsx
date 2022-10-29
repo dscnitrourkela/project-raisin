@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { success } from '../../../config/content';
 import { CaptionText, Heading4, LinkButton } from '../shared';
 
 const SectionContainer = styled.div`
@@ -37,8 +36,8 @@ const Card = styled.div`
 `;
 
 const UpperContainer = styled.div`
+  background: ${(props) => (props.failure ? '#04D263' : '#d20404')};
   ${tw`
-    bg-[#04D263]
     flex
     justify-center
     items-center
@@ -79,20 +78,20 @@ const ButtonContainer = styled.div`
   `}
 `;
 
-const SuccesssCard = () => (
+const SuccesssCard = ({ data, failure }) => (
   <SectionContainer>
     <Card>
-      <UpperContainer>
-        <Image src={success.tick.imgSrc} alt={success.tick.alt} />
+      <UpperContainer failure={failure}>
+        <Image src={data.tick.imgSrc} alt={data.tick.alt} />
       </UpperContainer>
       <LowerContainer>
         <div>
-          <SuccessText>{success.success1}</SuccessText>
-          <SuccessText>{success.success2}</SuccessText>
+          <SuccessText>{data.success1}</SuccessText>
+          <SuccessText>{data.success2}</SuccessText>
         </div>
         <ButtonContainer>
-          <LinkButton text={success.btnText} link={success.link} />
-          <CaptionText>{success.caption}</CaptionText>
+          <LinkButton text={data.btnText} link={data.link} />
+          <CaptionText>{data.caption}</CaptionText>
         </ButtonContainer>
       </LowerContainer>
     </Card>
