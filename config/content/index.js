@@ -15,3 +15,4 @@ export { default as merch } from './Merch';
 export { default as events } from './Events';
 export { default as success } from './Success';
 export { default as pageNotFound } from './PageNotFound';
+export { default as profile } from './profile';

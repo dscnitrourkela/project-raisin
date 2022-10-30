@@ -120,7 +120,7 @@ export const INPUTS = {
   },
   referredBy: {
     ...INIT_STATE,
-    placeholder: 'Referred By',
+    placeholder: 'Referral Code',
     readOnly: false,
     type: 'text',
     inputMode: 'text',

@@ -16,8 +16,8 @@ const ButtonContainer = styled.button`
   `}
 `;
 
-const Button2 = ({ text, success = false, method = undefined }) => (
-  <ButtonContainer onClick={method} success={success}>
+const Button2 = ({ text, success = false, onClick = undefined }) => (
+  <ButtonContainer onClick={onClick} success={success}>
     <ButtonText>{text}</ButtonText>
   </ButtonContainer>
 );
