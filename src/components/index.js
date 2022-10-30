@@ -31,3 +31,4 @@ export { default as SuccessCard } from './SuccessCard/SuccesssCard';
 
 // 404 card
 export { default as PageNotFoundCard } from './PageNotFoundCard/PageNotFoundCard';
+export { default as ProfileCard } from './profile/profileCard';
