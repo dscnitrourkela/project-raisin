@@ -269,17 +269,19 @@ const EventRegister = () => {
       if (isStudentVerified) return saveUser();
     }
 
-    const areAllFieldsValid = Object.keys(values)
-      .filter((key) => key !== 'referredBy')
-      .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
-      .reduce((acc, curr) => !!values[curr].value && acc, true);
+    if (isNitrStudent.no) {
+      const areAllFieldsValid = Object.keys(values)
+        .filter((key) => key !== 'referredBy')
+        .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
+        .reduce((acc, curr) => !!values[curr].value && acc, true);
 
-    if (!areAllFieldsValid) {
-      return toast.error('Please fill in all the fields');
+      if (!areAllFieldsValid) {
+        return toast.error('Please fill in all the fields');
+      }
+
+      const user = await saveUser();
+      if (user) return initiatePayment();
     }
-
-    const user = await saveUser();
-    if (user) return initiatePayment();
   };
 
   useEffect(() => {
