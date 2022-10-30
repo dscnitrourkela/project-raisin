@@ -237,7 +237,7 @@ const EventRegister = () => {
     try {
       const { status } = await avenueApi.get('/zimbra-login', {
         params: {
-          username: `${values.rollNumber.value}@nitrkl.ac.in`,
+          username: values.rollNumber.value,
           password: values.password.value,
         },
       });
