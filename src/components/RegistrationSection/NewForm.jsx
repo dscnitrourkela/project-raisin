@@ -266,7 +266,10 @@ const EventRegister = () => {
       }
 
       const isStudentVerified = await verifyZimbraMail();
-      if (isStudentVerified) return saveUser();
+      if (isStudentVerified) {
+        const data = await saveUser();
+        if (data) return setStageToTxnSuccessful();
+      }
     }
 
     if (isNitrStudent.no) {
@@ -372,7 +375,7 @@ const EventRegister = () => {
       case STAGES.TXN_SUCCESSFUL:
         return (
           <TxnCard
-            text='your payment was successful you have successfully registered to innovison 2k22'
+            text='You have successfully registered for INNOVISION 2K22'
             icon={SuccessIcon}
             type='success'
             button={
