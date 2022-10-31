@@ -64,12 +64,10 @@ const HeroContent = () => {
   };
 
   useEffect(() => {
-    if (userData?.rollNumber || userData?.festID?.includes('innovision-2022')) {
-      setText('Registration Details');
-    }
-
     if (!user) {
       setText('Register');
+    } else {
+      setText('Registration Details');
     }
   }, [userData, user]);
 
