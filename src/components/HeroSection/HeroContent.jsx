@@ -53,7 +53,7 @@ const HeroDates = styled.h3`
 const HeroContent = () => {
   const authContext = useContext(AuthContext);
   const [text, setText] = useState('Register');
-  const { login, user, userData } = authContext;
+  const { login, user } = authContext;
 
   const onRegisterClick = () => {
     if (user) {
@@ -64,14 +64,12 @@ const HeroContent = () => {
   };
 
   useEffect(() => {
-    if (userData?.rollNumber || userData?.festID?.includes('innovision-2022')) {
-      setText('Registration Details');
-    }
-
     if (!user) {
       setText('Register');
+    } else {
+      setText('Registration Details');
     }
-  }, [userData, user]);
+  }, [user]);
 
   return (
     <ContentContainer>
