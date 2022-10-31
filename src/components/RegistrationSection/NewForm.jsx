@@ -99,14 +99,12 @@ export const getURLParameter = (paramName, URLString = window.location.href) => 
 };
 
 const EventRegister = () => {
-  const [stage, setStage] = useState(STAGES.TYPE_OF_USER);
+  const [stage, setStage] = useState();
   const [values, setValues] = useState(INPUTS);
   const [isNitrStudent, setIsNitrStudent] = useState({ yes: false, no: false });
 
   const authContext = useContext(AuthContext);
-  const { userData, setUser } = authContext;
-
-  console.log(userData);
+  const { userData, setUserData } = authContext;
 
   const setInputValue = (type, value) =>
     setValues((current) => ({
@@ -174,13 +172,30 @@ const EventRegister = () => {
   };
 
   const saveUser = async () => {
-    const payload = Object.keys(values).reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr]: values[curr].value,
-      }),
-      {},
-    );
+    let payload;
+
+    if (isNitrStudent.yes) {
+      payload = Object.keys(values)
+        .filter((key) => ['both', 'nitr'].includes(values[key].show))
+        .reduce(
+          (acc, curr) => ({
+            ...acc,
+            [curr]: values[curr].value,
+          }),
+          {},
+        );
+    } else {
+      payload = Object.keys(values)
+        .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
+        .reduce(
+          (acc, curr) => ({
+            ...acc,
+            [curr]: values[curr].value,
+          }),
+          {},
+        );
+    }
+
     payload.uid = userData.uid;
 
     try {
@@ -194,13 +209,13 @@ const EventRegister = () => {
         throw new Error('Something went Wrong: failed to regsiter user');
       }
 
-      setUser((current) => ({
+      setUserData((current) => ({
         ...current,
         ...newUser,
       }));
       return newUser;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
       return null;
     }
   };
@@ -212,11 +227,13 @@ const EventRegister = () => {
         {
           amount: 700,
           purpose: 'INNOVISION-2022 | REGISTRATION',
-          buyerName: values.name.value,
-          email: values.email.value,
-          phone: values.mobile.value,
+          buyerName: userData.name ? userData.name : values.name.value,
+          email: userData.email ? userData.email : values.email.value,
+          phone: userData.mobile ? userData.mobile : values.mobile.value,
           redirectUrl: 'https://inno.nitrkl.in/register',
+          // redirectUrl: 'http://localhost:8000/register',
           webhook: 'https://avenue-api.nitrkl.in/payment/webhook',
+          // webhook: 'http://1bcc-13-235-217-104.ngrok.io/payment/webhook',
         },
         {
           headers: {
@@ -231,7 +248,7 @@ const EventRegister = () => {
 
       window.location = registrationLink;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
     }
   };
 
@@ -250,7 +267,7 @@ const EventRegister = () => {
 
       return true;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
       return false;
     }
   };
@@ -303,6 +320,33 @@ const EventRegister = () => {
       }
     });
   }, [values]);
+
+  // eslint-disable-next-line consistent-return
+  useEffect(() => {
+    const paymentStatus = getURLParameter('payment_status');
+
+    if (!userData.accessToken) {
+      return setStage();
+    }
+
+    if (paymentStatus === 'Credit') {
+      return setStageToTxnSuccessful();
+    }
+
+    if (userData.id) {
+      if (userData.rollNumber) {
+        return setStageToTxnSuccessful();
+      }
+
+      if (userData.festID.includes('innovision-2022')) {
+        return setStageToTxnSuccessful();
+      }
+
+      return setStageToTxnUnsuccessful();
+    }
+
+    return setStageToTypeOfUser();
+  }, [userData]);
 
   useEffect(() => {
     const paymentStatus = getURLParameter('payment_status');
@@ -395,10 +439,7 @@ const EventRegister = () => {
             icon={FailureIcon}
             type='failure'
             button={
-              <NewButton
-                onClick={setStageToTypeOfUser}
-                style={{ marginTop: '1rem', marginLeft: 0 }}
-              >
+              <NewButton onClick={initiatePayment} style={{ marginTop: '1rem', marginLeft: 0 }}>
                 Retry
               </NewButton>
             }
@@ -406,9 +447,8 @@ const EventRegister = () => {
         );
 
       case STAGES.TYPE_OF_USER:
-      default:
         return (
-          <RegisterFormContainer>
+          <RegisterFormContainer style={{ justifyContent: 'center' }}>
             <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>Registration for NIT Rourkela students is free</InfoText>
             <div style={{ marginTop: '4rem', marginLeft: 0 }}>
@@ -419,6 +459,13 @@ const EventRegister = () => {
                 No
               </NewButton>
             </div>
+          </RegisterFormContainer>
+        );
+
+      default:
+        return (
+          <RegisterFormContainer>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>Loading</Heading3>
           </RegisterFormContainer>
         );
     }
@@ -447,3 +494,13 @@ const EventRegister = () => {
 };
 
 export default EventRegister;
+
+/**
+ * Simple Flow Logic
+ * 1. if user is new, show the registration form
+ * 2. if user is already created in database,
+ *    if nitr student, show successful transaction screen
+ *    if non nitr student
+ *        show successful transaction screen
+ *        show unsuccessful if transaction failed
+ */
