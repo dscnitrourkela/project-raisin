@@ -41,6 +41,7 @@ const Input = styled.input`
 const ErrorMsg = styled(Body2)`
   color: #e62b1e;
   margin-top: 10px;
+  width: 100%;
 `;
 
 const CustomInput = ({ values, onChange, objKey, onBlur }) => {

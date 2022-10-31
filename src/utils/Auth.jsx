@@ -5,6 +5,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged } from
 import { Redirect } from '@reach/router';
 import { navigate } from 'gatsby';
 import { app } from '../config/firebase';
+import { avenueApi } from './api';
 
 const provider = new GoogleAuthProvider();
 
@@ -30,6 +31,22 @@ const AuthContextProvider = ({ children }) => {
         setUser(true);
         setUserData(users);
         setToken(users.accessToken);
+
+        const fetchUser = async () => {
+          try {
+            const { data: avenueUser } = await avenueApi.get('/user', {
+              params: { uid: users.uid },
+              headers: { Authorization: `Bearer ${users.accessToken}` },
+            });
+            if (avenueUser) {
+              setUserData((current) => ({ ...current, ...avenueUser }));
+            }
+          } catch (error) {
+            console.error('unable to fetch user details', error);
+          }
+        };
+
+        fetchUser();
       } else {
         setUser(false);
         setUserData({});
@@ -83,7 +100,7 @@ const AuthContextProvider = ({ children }) => {
     token,
     login,
     logout,
-    setUser,
+    setUserData,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -40,7 +40,7 @@ const RegistrationContainer = styled.div`
 const RegisterFormContainer = styled.div`
   width: 50%;
   height: calc(100vh - 8rem - 110px);
-  overflow-y: scroll;
+  overflow-y: auto;
   background: var(--background-secondary);
   border-radius: 7px;
   padding: 2rem;
@@ -99,12 +99,12 @@ export const getURLParameter = (paramName, URLString = window.location.href) => 
 };
 
 const EventRegister = () => {
-  const [stage, setStage] = useState(STAGES.TYPE_OF_USER);
-  const [values, setValues] = useState(INPUTS);
-  const [isNitrStudent, setIsNitrStudent] = useState({ yes: false, no: false });
-
   const authContext = useContext(AuthContext);
-  const { userData, setUser } = authContext;
+  const { userData, setUserData } = authContext;
+
+  const [isNitrStudent, setIsNitrStudent] = useState({ yes: false, no: false });
+  const [stage, setStage] = useState();
+  const [values, setValues] = useState(INPUTS({}));
 
   const setInputValue = (type, value) =>
     setValues((current) => ({
@@ -171,15 +171,40 @@ const EventRegister = () => {
     }
   };
 
+  const onTxnBackClick = () => {
+    if (isNitrStudent.yes || userData?.rollNumber) {
+      setStageToNitrForm();
+    } else {
+      setStageToNonNitrForm();
+    }
+  };
+
   const saveUser = async () => {
-    const payload = Object.keys(values).reduce(
-      (acc, curr) => ({
-        ...acc,
-        [curr]: values[curr].value,
-      }),
-      {},
-    );
-    payload.uid = userData.uid;
+    let payload;
+
+    if (isNitrStudent.yes) {
+      payload = Object.keys(values)
+        .filter((key) => ['both', 'nitr'].includes(values[key].show))
+        .reduce(
+          (acc, curr) => ({
+            ...acc,
+            [curr]: values[curr].value,
+          }),
+          {},
+        );
+    } else {
+      payload = Object.keys(values)
+        .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
+        .reduce(
+          (acc, curr) => ({
+            ...acc,
+            [curr]: values[curr].value,
+          }),
+          {},
+        );
+    }
+
+    payload.uid = userData?.uid;
 
     try {
       const { data: newUser } = await avenueApi.post('/user', payload, {
@@ -192,13 +217,13 @@ const EventRegister = () => {
         throw new Error('Something went Wrong: failed to regsiter user');
       }
 
-      setUser((current) => ({
+      setUserData((current) => ({
         ...current,
         ...newUser,
       }));
       return newUser;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
       return null;
     }
   };
@@ -214,7 +239,9 @@ const EventRegister = () => {
           email: values.email.value,
           phone: values.mobile.value,
           redirectUrl: 'https://inno.nitrkl.in/register',
+          // redirectUrl: 'http://localhost:8000/register',
           webhook: 'https://avenue-api.nitrkl.in/payment/webhook',
+          // webhook: 'http://1bcc-13-235-217-104.ngrok.io/payment/webhook',
         },
         {
           headers: {
@@ -229,7 +256,7 @@ const EventRegister = () => {
 
       window.location = registrationLink;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
     }
   };
 
@@ -248,43 +275,50 @@ const EventRegister = () => {
 
       return true;
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
+      toast.error(error.response.data || 'Something went Wrong, please try again');
       return false;
     }
   };
 
   // eslint-disable-next-line consistent-return
-  const onSubmitClick = async () => {
-    if (isNitrStudent.yes) {
-      const areAllFieldsValid = Object.keys(values)
-        .filter((key) => key !== 'referredBy')
-        .filter((key) => ['both', 'nitr'].includes(values[key].show))
-        .reduce((acc, curr) => !!values[curr].value && acc, true);
+  const onNitrFormSubmit = async () => {
+    const areAllFieldsValid = Object.keys(values)
+      .filter((key) => key !== 'referredBy')
+      .filter((key) => ['both', 'nitr'].includes(values[key].show))
+      .reduce((acc, curr) => !!values[curr].value && acc, true);
 
-      if (!areAllFieldsValid) {
-        return toast.error('Please fill in all the fields');
-      }
-
-      const isStudentVerified = await verifyZimbraMail();
-      if (isStudentVerified) {
-        const data = await saveUser();
-        if (data) return setStageToTxnSuccessful();
-      }
+    if (!areAllFieldsValid) {
+      return toast.error('Please fill in all the fields');
     }
 
-    if (isNitrStudent.no) {
-      const areAllFieldsValid = Object.keys(values)
-        .filter((key) => key !== 'referredBy')
-        .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
-        .reduce((acc, curr) => !!values[curr].value && acc, true);
-
-      if (!areAllFieldsValid) {
-        return toast.error('Please fill in all the fields');
+    const isStudentVerified = await verifyZimbraMail();
+    if (isStudentVerified) {
+      if (userData?.id) {
+        return setStageToTxnSuccessful();
       }
 
-      const user = await saveUser();
-      if (user) return initiatePayment();
+      const data = await saveUser();
+      if (data) return setStageToTxnSuccessful();
     }
+  };
+
+  // eslint-disable-next-line consistent-return
+  const onNonNitrFormSubmit = async () => {
+    const areAllFieldsValid = Object.keys(values)
+      .filter((key) => key !== 'referredBy')
+      .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
+      .reduce((acc, curr) => !!values[curr].value && acc, true);
+
+    if (!areAllFieldsValid) {
+      return toast.error('Please fill in all the fields');
+    }
+
+    if (userData?.id) {
+      return initiatePayment();
+    }
+
+    const user = await saveUser();
+    if (user) return initiatePayment();
   };
 
   useEffect(() => {
@@ -302,6 +336,33 @@ const EventRegister = () => {
     });
   }, [values]);
 
+  // eslint-disable-next-line consistent-return
+  useEffect(() => {
+    const paymentStatus = getURLParameter('payment_status');
+
+    if (!userData?.accessToken) {
+      return setStage();
+    }
+
+    if (paymentStatus === 'Credit') {
+      return setStageToTxnSuccessful();
+    }
+
+    if (userData?.id) {
+      if (userData?.rollNumber) {
+        return setStageToTxnSuccessful();
+      }
+
+      if (userData?.festID.includes('innovision-2022')) {
+        return setStageToTxnSuccessful();
+      }
+
+      return setStageToTxnUnsuccessful();
+    }
+
+    return setStageToTypeOfUser();
+  }, [userData]);
+
   useEffect(() => {
     const paymentStatus = getURLParameter('payment_status');
     const paymentId = getURLParameter('payment_id');
@@ -315,9 +376,29 @@ const EventRegister = () => {
   }, []);
 
   useEffect(() => {
-    setInputValue('name', userData.displayName);
-    setInputValue('email', userData.email);
-    setInputValue('mobile', userData.phoneNumber || '');
+    setInputValue('name', userData?.displayName);
+    setInputValue('email', userData?.email);
+    setInputValue('mobile', userData?.phoneNumber || '');
+  }, [userData]);
+
+  useEffect(() => {
+    if (userData) {
+      setValues(
+        INPUTS({
+          name: userData?.name || '',
+          email: userData?.email || '',
+          mobile: userData?.mobile || '',
+          gender: userData?.gender || '',
+          state: userData?.state || '',
+          city: userData?.city || '',
+          college: userData?.college || '',
+          stream: userData?.stream || '',
+          referredBy: userData?.referredBy || '',
+          rollNumber: userData?.rollNumber || '',
+          password: userData?.password || '',
+        }),
+      );
+    }
   }, [userData]);
 
   const renderStage = () => {
@@ -342,7 +423,7 @@ const EventRegister = () => {
               ))}
             <div style={{ marginTop: '4rem', marginLeft: 0 }}>
               <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
-              <NewButton onClick={onSubmitClick}>Proceed to Pay</NewButton>
+              <NewButton onClick={onNonNitrFormSubmit}>Proceed to Pay</NewButton>
             </div>
           </RegisterFormContainer>
         );
@@ -367,7 +448,7 @@ const EventRegister = () => {
               ))}
             <div style={{ marginTop: '4rem', marginLeft: 0 }}>
               <NewButton onClick={setStageToTypeOfUser}>Back</NewButton>
-              <NewButton onClick={onSubmitClick}>Login with Webmail</NewButton>
+              <NewButton onClick={onNitrFormSubmit}>Login with Webmail</NewButton>
             </div>
           </RegisterFormContainer>
         );
@@ -393,20 +474,24 @@ const EventRegister = () => {
             icon={FailureIcon}
             type='failure'
             button={
-              <NewButton
-                onClick={setStageToTypeOfUser}
-                style={{ marginTop: '1rem', marginLeft: 0 }}
-              >
-                Retry
-              </NewButton>
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <NewButton
+                  style={{ marginRight: '1rem', marginTop: '1rem' }}
+                  onClick={onTxnBackClick}
+                >
+                  Back
+                </NewButton>
+                <NewButton onClick={initiatePayment} style={{ marginTop: '1rem', marginLeft: 0 }}>
+                  Retry
+                </NewButton>
+              </div>
             }
           />
         );
 
       case STAGES.TYPE_OF_USER:
-      default:
         return (
-          <RegisterFormContainer>
+          <RegisterFormContainer style={{ justifyContent: 'center' }}>
             <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>Registration for NIT Rourkela students is free</InfoText>
             <div style={{ marginTop: '4rem', marginLeft: 0 }}>
@@ -417,6 +502,13 @@ const EventRegister = () => {
                 No
               </NewButton>
             </div>
+          </RegisterFormContainer>
+        );
+
+      default:
+        return (
+          <RegisterFormContainer>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>Loading</Heading3>
           </RegisterFormContainer>
         );
     }
@@ -445,3 +537,13 @@ const EventRegister = () => {
 };
 
 export default EventRegister;
+
+/**
+ * Simple Flow Logic
+ * 1. if user is new, show the registration form
+ * 2. if user is already created in database,
+ *    if nitr student, show successful transaction screen
+ *    if non nitr student
+ *        show successful transaction screen
+ *        show unsuccessful if transaction failed
+ */
