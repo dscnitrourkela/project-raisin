@@ -127,7 +127,7 @@ export const INPUTS = {
     regex: /\D/g,
     key: 'referredBy',
     show: 'both',
-    maxLength: 50,
+    maxLength: 10,
     minLength: 1,
   },
   rollNumber: {
