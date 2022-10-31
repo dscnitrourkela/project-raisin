@@ -385,7 +385,7 @@ const EventRegister = () => {
     if (userData) {
       setValues(
         INPUTS({
-          name: userData?.name || '',
+          name: userData?.displayName || '',
           email: userData?.email || '',
           mobile: userData?.mobile || '',
           gender: userData?.gender || '',
