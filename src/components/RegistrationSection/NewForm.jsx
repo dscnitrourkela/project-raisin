@@ -40,7 +40,7 @@ const RegistrationContainer = styled.div`
 const RegisterFormContainer = styled.div`
   width: 50%;
   height: calc(100vh - 8rem - 110px);
-  overflow-y: scroll;
+  overflow-y: auto;
   background: var(--background-secondary);
   border-radius: 7px;
   padding: 2rem;
@@ -105,6 +105,8 @@ const EventRegister = () => {
 
   const authContext = useContext(AuthContext);
   const { userData, setUser } = authContext;
+
+  console.log(userData);
 
   const setInputValue = (type, value) =>
     setValues((current) => ({
