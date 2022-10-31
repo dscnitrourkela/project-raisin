@@ -20,9 +20,22 @@ export const INIT_STATE = {
   errorMessage: '',
 };
 
-export const INPUTS = {
+export const INPUTS = ({
+  name = '',
+  email = '',
+  mobile = '',
+  gender = '',
+  state = '',
+  city = '',
+  college = '',
+  stream = '',
+  referredBy = '',
+  rollNumber = '',
+  password = '',
+}) => ({
   name: {
     ...INIT_STATE,
+    value: name,
     placeholder: 'Name',
     readOnly: false,
     type: 'text',
@@ -35,6 +48,7 @@ export const INPUTS = {
   },
   email: {
     ...INIT_STATE,
+    value: email,
     placeholder: 'Email (same as your gmail)',
     readOnly: true,
     type: 'text',
@@ -47,6 +61,7 @@ export const INPUTS = {
   },
   mobile: {
     ...INIT_STATE,
+    value: mobile,
     placeholder: 'Mobile Number (10 digits)',
     readOnly: false,
     type: 'text',
@@ -59,6 +74,7 @@ export const INPUTS = {
   },
   gender: {
     ...INIT_STATE,
+    value: gender,
     placeholder: 'Gender',
     readOnly: false,
     type: 'select',
@@ -72,6 +88,7 @@ export const INPUTS = {
   },
   state: {
     ...INIT_STATE,
+    value: state,
     placeholder: 'State',
     readOnly: false,
     type: 'text',
@@ -84,6 +101,7 @@ export const INPUTS = {
   },
   city: {
     ...INIT_STATE,
+    value: city,
     placeholder: 'City',
     readOnly: false,
     type: 'text',
@@ -96,6 +114,7 @@ export const INPUTS = {
   },
   college: {
     ...INIT_STATE,
+    value: college,
     placeholder: 'College',
     readOnly: false,
     type: 'text',
@@ -108,6 +127,7 @@ export const INPUTS = {
   },
   stream: {
     ...INIT_STATE,
+    value: stream,
     placeholder: 'Stream',
     readOnly: false,
     type: 'text',
@@ -120,6 +140,7 @@ export const INPUTS = {
   },
   referredBy: {
     ...INIT_STATE,
+    value: referredBy,
     placeholder: 'Referred By (phone number of referrer)',
     readOnly: false,
     type: 'text',
@@ -132,6 +153,7 @@ export const INPUTS = {
   },
   rollNumber: {
     ...INIT_STATE,
+    value: rollNumber,
     placeholder: 'Roll Number',
     readOnly: false,
     type: 'text',
@@ -144,6 +166,7 @@ export const INPUTS = {
   },
   password: {
     ...INIT_STATE,
+    value: password,
     placeholder: 'Password',
     readOnly: false,
     type: 'password',
@@ -154,4 +177,4 @@ export const INPUTS = {
     maxLength: 50,
     minLength: 1,
   },
-};
+});
