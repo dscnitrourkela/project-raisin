@@ -1,10 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { events } from '../../config/content';
+import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
+import { useEvents } from '../utils/useEvents';
 
 export default function FunEvents() {
+  const [events, error, isLoading] = useEvents('fun');
+
+  if (isLoading) return <>Loading...</>;
+  if (error) return <>Something went wrong, please try again</>;
+
   return (
     <>
       <Helmet>
@@ -15,17 +21,17 @@ export default function FunEvents() {
       <Layout>
         <CategoryHeroContainer>
           <About
-            title={events.funEvents.title}
-            desc={events.funEvents.desc}
-            link={events.funEvents.img}
-            alt={events.funEvents.title}
+            title={eventDetails.funEvents.title}
+            desc={eventDetails.funEvents.desc}
+            link={eventDetails.funEvents.img}
+            alt={eventDetails.funEvents.title}
             image
           />
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.funEvents.list.map((list) => (
-              <EventCard prize data={list} key={list.heading} />
+            {events.map((list) => (
+              <EventCard data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>
         </Container>

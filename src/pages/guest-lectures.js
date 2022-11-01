@@ -1,10 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { events } from '../../config/content';
+import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
+import { useEvents } from '../utils/useEvents';
 
 export default function GuestLecture() {
+  const [events, error, isLoading] = useEvents('guest-lectures ');
+
+  if (isLoading) return <>Loading...</>;
+  if (error) return <>Something went wrong, please try again</>;
+
   return (
     <>
       <Helmet>
@@ -15,16 +21,16 @@ export default function GuestLecture() {
       <Layout>
         <CategoryHeroContainer>
           <About
-            desc={events.guestLecture.desc}
-            title={events.guestLecture.title}
-            alt={events.guestLecture.title}
-            link={events.guestLecture.img}
+            desc={eventDetails.guestLecture.desc}
+            title={eventDetails.guestLecture.title}
+            alt={eventDetails.guestLecture.title}
+            link={eventDetails.guestLecture.img}
             image
           />
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.guestLecture.list.map((list) => (
+            {events.map((list) => (
               <EventCard data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>

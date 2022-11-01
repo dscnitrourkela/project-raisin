@@ -1,10 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { events } from '../../config/content';
+import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
+import { useEvents } from '../utils/useEvents';
 
 export default function Proshows() {
+  const [events, error, isLoading] = useEvents('pro');
+
+  if (isLoading) return <>Loading...</>;
+  if (error) return <>Something went wrong, please try again</>;
+
   return (
     <>
       <Helmet>
@@ -15,15 +21,15 @@ export default function Proshows() {
       <Layout>
         <CategoryHeroContainer>
           <About
-            desc={events.proshows.desc}
-            title={events.proshows.title}
-            link={events.proshows.img}
+            desc={eventDetails.proshows.desc}
+            title={eventDetails.proshows.title}
+            link={eventDetails.proshows.img}
             image
           />
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.proshows.list.map((list) => (
+            {events.map((list) => (
               <EventCard data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>

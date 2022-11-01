@@ -1,10 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { events } from '../../config/content';
+import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
+import { useEvents } from '../utils/useEvents';
 
 export default function Workshop() {
+  const [events, error, isLoading] = useEvents('workshops');
+
+  if (isLoading) return <>Loading...</>;
+  if (error) return <>Something went wrong, please try again</>;
+
   return (
     <>
       <Helmet>
@@ -15,15 +21,15 @@ export default function Workshop() {
       <Layout>
         <CategoryHeroContainer>
           <About
-            desc={events.workshop.desc}
-            title={events.workshop.title}
-            link={events.workshop.img}
+            desc={eventDetails.workshop.desc}
+            title={eventDetails.workshop.title}
+            link={eventDetails.workshop.img}
             image
           />
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.workshop.list.map((list) => (
+            {events.map((list) => (
               <EventCard data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>
