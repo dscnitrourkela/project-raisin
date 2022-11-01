@@ -1,10 +1,30 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet';
-import { events } from '../../config/content';
+import { useQuery } from 'react-query';
+import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
+import { avenueApi } from '../utils/api';
+import { useEvents } from '../utils/useEvents';
+
+const fetchEvents = async () => {
+  try {
+    const data = await avenueApi.get('/events', {
+      params: { type: 'technical' },
+    });
+    return data;
+  } catch (error) {
+    return error;
+  }
+};
 
 export default function TechnicalEvents() {
+  const [events, error, isLoading] = useEvents('technical');
+
+  if (isLoading) return <>Loading...</>;
+  if (error) return <>Something went wrong, please try again</>;
+
   return (
     <>
       <Helmet>
@@ -15,16 +35,16 @@ export default function TechnicalEvents() {
       <Layout>
         <CategoryHeroContainer>
           <About
-            desc={events.technicalEvents.desc}
-            title={events.technicalEvents.title}
-            alt={events.technicalEvents.title}
-            link={events.technicalEvents.img}
+            desc={eventDetails.technicalEvents.desc}
+            title={eventDetails.technicalEvents.title}
+            alt={eventDetails.technicalEvents.title}
+            link={eventDetails.technicalEvents.img}
             image
           />
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.technicalEvents.list.map((list) => (
+            {events.map((list) => (
               <EventCard prize data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>

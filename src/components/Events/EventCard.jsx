@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import EventDetailsModal from '../EventDetailsModal/EventDetailsModal';
 import { Body1, Body2, Button2, ButtonText, Heading4, ModalBox } from '../shared';
+import eventImage from '../../../images/coming-soon.png';
 
 const CardContainer = styled.div`
   width: 400px;
@@ -11,38 +12,22 @@ const CardContainer = styled.div`
   @media (min-width: 768px) {
     max-width: 400px;
   }
-  ${tw`
-     h-auto
-     p-4
-     md:p-3
-     bg-background-dark
-     rounded-xl
-   `};
+  ${tw`h-auto p-4 md:p-3 bg-background-dark rounded-xl`};
 `;
 const CardImage = styled.img`
-  ${tw`
-  w-full
-  rounded-lg
-  `}
+  ${tw`w-full rounded-lg `}
 `;
 
 const CardTextContainer = styled.div`
-  ${tw`
-  mt-4
-  md:mt-3
-   `}
+  ${tw`mt-4 md:mt-3`}
 `;
 
 const CardTitleContainer = styled.div`
-  ${tw`
-    flex
-    justify-between
-    items-center
-`}
+  ${tw`flex items-center justify-between `}
 `;
 
 const CardButtonContainer = styled.div`
-  ${tw` flex justify-center`}
+  ${tw`flex justify-center `}
 `;
 
 const EventDate = styled(Body1)`
@@ -54,22 +39,15 @@ const EventDate = styled(Body1)`
 `;
 
 const EventTime = styled(Body2)`
-  ${tw`
-    text-color-secondary
-  `}
+  ${tw` text-color-secondary`}
 `;
 
 const CardHeading = styled(Heading4)`
-  ${tw`
-  truncate
-  mr-2
-  `}
+  ${tw`mr-2 truncate `}
 `;
 
 const EventClub = styled(Body2)`
-  ${tw`
-  text-color-secondary
-`}
+  ${tw` text-color-secondary`}
 `;
 
 const EventPrizes = styled(ButtonText)`
@@ -77,15 +55,7 @@ const EventPrizes = styled(ButtonText)`
   @media (max-width: 768px) {
     margin-left: -12px;
   }
-  ${tw`
-    my-4
-    text-color-primary
-    py-2
-    px-4
-    md:px-3
-    bg-background-darker
-    w-max
-  `}
+  ${tw`px-4 py-2 my-4 text-color-primary md:px-3 bg-background-darker w-max`}
 `;
 
 const EventCard = ({ data, prize = false }) => {
@@ -94,7 +64,7 @@ const EventCard = ({ data, prize = false }) => {
   return (
     <>
       <CardContainer>
-        <CardImage src={data.eventImage.imgSrc} alt={data.eventImage.alt} />
+        <CardImage src={data.eventImage.imgSrc || eventImage} alt={data.eventImage.alt} />
         <CardTextContainer>
           <CardTitleContainer>
             <CardHeading bold>{data.heading}</CardHeading>
