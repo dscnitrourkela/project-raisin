@@ -9,8 +9,12 @@ import { useEvents } from '../utils/useEvents';
 export default function TechnicalEvents() {
   const [events, error, isLoading] = useEvents('technical');
 
-  if (isLoading) return <>Loading...</>;
-  if (error) return <>Something went wrong, please try again</>;
+  const renderEvents = () => {
+    if (isLoading) return <>Loading...</>;
+    if (error) return <>Something went wrong, please try again</>;
+
+    return events?.map((list) => <EventCard prize data={list} key={list.id} />);
+  };
 
   return (
     <>
@@ -30,11 +34,7 @@ export default function TechnicalEvents() {
           />
         </CategoryHeroContainer>
         <Container>
-          <CategoryCardContainer>
-            {events?.map((list) => (
-              <EventCard prize data={list} key={list.id} />
-            ))}
-          </CategoryCardContainer>
+          <CategoryCardContainer>{renderEvents()}</CategoryCardContainer>
         </Container>
       </Layout>
     </>

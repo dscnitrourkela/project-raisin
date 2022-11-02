@@ -8,8 +8,12 @@ import { useEvents } from '../utils/useEvents';
 export default function Workshop() {
   const [events, error, isLoading] = useEvents('workshops');
 
-  if (isLoading) return <>Loading...</>;
-  if (error) return <>Something went wrong, please try again</>;
+  const renderEvents = () => {
+    if (isLoading) return <>Loading...</>;
+    if (error) return <>Something went wrong, please try again</>;
+
+    return events?.map((list) => <EventCard data={list} key={list.id} />);
+  };
 
   return (
     <>
@@ -28,11 +32,7 @@ export default function Workshop() {
           />
         </CategoryHeroContainer>
         <Container>
-          <CategoryCardContainer>
-            {events?.map((list) => (
-              <EventCard data={list} key={list.id} />
-            ))}
-          </CategoryCardContainer>
+          <CategoryCardContainer>{renderEvents()}</CategoryCardContainer>
         </Container>
       </Layout>
     </>
