@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React, { useState } from 'react';
+import { format } from 'date-fns';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import EventDetailsModal from '../EventDetailsModal/EventDetailsModal';
@@ -68,11 +69,15 @@ const EventCard = ({ data, prize = false }) => {
         <CardTextContainer>
           <CardTitleContainer>
             <CardHeading bold>{data.heading}</CardHeading>
-            <EventDate>{data.dateTime ? `${data.dateTime.split(', ')[0]}` : 'TBA'}</EventDate>
+            <EventDate>
+              {data.dateTime ? `${format(new Date(data.dateTime), 'MMM do')}` : 'TBA'}
+            </EventDate>
           </CardTitleContainer>
           <CardTitleContainer>
             <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
-            <EventTime>{data.dateTime ? `${data.dateTime.split(', ')[1]}` : 'TBA'}</EventTime>
+            <EventTime>
+              {data.dateTime ? `${format(new Date(data.dateTime), 'h:mm aaa')}` : 'TBA'}
+            </EventTime>
           </CardTitleContainer>
           {prize ? (
             <EventPrizes>

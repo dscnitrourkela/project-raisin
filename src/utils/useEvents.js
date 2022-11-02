@@ -3,19 +3,13 @@ import { useQuery } from '@tanstack/react-query';
 
 import { avenueApi } from './api';
 
-const fetchEvents = (type) => async () => {
-  try {
-    const data = await avenueApi.get('/events', {
-      params: { type },
-    });
-    return data;
-  } catch (error) {
-    return error;
-  }
-};
+const fetchEvents = (type) => () => avenueApi.get('/events', { params: { type } });
 
 export const useEvents = (type) => {
-  const { data, error, isLoading } = useQuery('events', fetchEvents(type));
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['events'],
+    queryFn: fetchEvents(type),
+  });
 
   const events = useMemo(
     () =>

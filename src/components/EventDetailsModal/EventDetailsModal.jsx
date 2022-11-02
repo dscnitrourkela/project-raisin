@@ -1,4 +1,5 @@
 import React from 'react';
+import { format } from 'date-fns';
 import { Body1, Heading3, Heading4 } from '../shared';
 import {
   AboutContainer,
@@ -34,7 +35,7 @@ const EventDetailsModal = ({
         <SubHeading>{subHeading}</SubHeading>
       </CompositeContainer>
       <CompositeContainer>
-        <Body1>{dateTime ? `${dateTime}` : 'Date: TBA'}</Body1>
+        <Body1>{dateTime ? `${format(new Date(dateTime), 'MMM do h:mm aaa')}` : 'Date: TBA'}</Body1>
         <Body1>{location ? `${location}` : 'location: TBA'}</Body1>
       </CompositeContainer>
       {prize ? (
