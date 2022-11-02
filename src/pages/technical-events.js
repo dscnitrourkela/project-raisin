@@ -32,7 +32,7 @@ export default function TechnicalEvents() {
         <Container>
           <CategoryCardContainer>
             {events?.map((list) => (
-              <EventCard prize data={list} key={list.heading} />
+              <EventCard prize data={list} key={list.id} />
             ))}
           </CategoryCardContainer>
         </Container>

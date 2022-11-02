@@ -31,6 +31,7 @@ export const useEvents = (type) => {
             aboutDetails: description,
             contactDetails: [],
             priority: event.priority,
+            id: event.id,
           };
         })
         .sort((a, b) => a.priority > b.priority),

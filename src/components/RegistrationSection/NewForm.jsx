@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import Lottie from 'react-lottie';
 import tw from 'twin.macro';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Link } from 'gatsby';
 
 import { Container, Heading3, CaptionText } from '../shared';
@@ -17,7 +17,6 @@ import TxnCard from './TxnCard';
 import * as animationData from './register.json';
 
 import { STAGES, INPUTS } from './CONSTANTS';
-import 'react-toastify/dist/ReactToastify.css';
 
 const InfoText = styled(CaptionText)`
   ${tw`text-color-secondary`}
@@ -531,7 +530,7 @@ const EventRegister = () => {
           />
         </ImageContainer>
       </RegistrationContainer>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </Container>
   );
 };

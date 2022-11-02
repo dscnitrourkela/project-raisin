@@ -15,7 +15,7 @@ const Container = styled.div`
     flex
     justify-center
     items-center
-    inset-0 
+    inset-0
     z-50
     outline-none
     focus:outline-none
@@ -104,7 +104,7 @@ const ModalBox = ({ isOpen, close, children }) => (
       <Container>
         <BackgroundContainer onClick={close} isOpen={isOpen} />
         <BodyContainer>
-          <ContentContainer>
+          <ContentContainer id='modal-content'>
             <Icon icon={faTimes} onClick={close} />
             <div>{children}</div>
           </ContentContainer>

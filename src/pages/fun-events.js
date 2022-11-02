@@ -31,7 +31,7 @@ export default function FunEvents() {
         <Container>
           <CategoryCardContainer>
             {events?.map((list) => (
-              <EventCard data={list} key={list.heading} />
+              <EventCard data={list} key={list.id} />
             ))}
           </CategoryCardContainer>
         </Container>
