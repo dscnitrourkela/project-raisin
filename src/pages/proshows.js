@@ -29,7 +29,7 @@ export default function Proshows() {
         </CategoryHeroContainer>
         <Container>
           <CategoryCardContainer>
-            {events.map((list) => (
+            {events?.map((list) => (
               <EventCard data={list} key={list.heading} />
             ))}
           </CategoryCardContainer>
