@@ -8,8 +8,12 @@ import { useEvents } from '../utils/useEvents';
 export default function FunEvents() {
   const [events, error, isLoading] = useEvents('fun');
 
-  if (isLoading) return <>Loading...</>;
-  if (error) return <>Something went wrong, please try again</>;
+  const renderEvents = () => {
+    if (isLoading) return <>Loading...</>;
+    if (error) return <>Something went wrong, please try again</>;
+
+    return events?.map((list) => <EventCard data={list} key={list.id} />);
+  };
 
   return (
     <>
@@ -29,11 +33,7 @@ export default function FunEvents() {
           />
         </CategoryHeroContainer>
         <Container>
-          <CategoryCardContainer>
-            {events.map((list) => (
-              <EventCard data={list} key={list.heading} />
-            ))}
-          </CategoryCardContainer>
+          <CategoryCardContainer>{renderEvents()}</CategoryCardContainer>
         </Container>
       </Layout>
     </>

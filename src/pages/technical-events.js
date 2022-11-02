@@ -1,29 +1,20 @@
 /* eslint-disable no-unused-vars */
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useQuery } from 'react-query';
 import { events as eventDetails } from '../../config/content';
 import { About, Container, EventCard, Layout } from '../components';
 import { CategoryCardContainer, CategoryHeroContainer } from '../components/categoryPage/styles';
-import { avenueApi } from '../utils/api';
 import { useEvents } from '../utils/useEvents';
-
-const fetchEvents = async () => {
-  try {
-    const data = await avenueApi.get('/events', {
-      params: { type: 'technical' },
-    });
-    return data;
-  } catch (error) {
-    return error;
-  }
-};
 
 export default function TechnicalEvents() {
   const [events, error, isLoading] = useEvents('technical');
 
-  if (isLoading) return <>Loading...</>;
-  if (error) return <>Something went wrong, please try again</>;
+  const renderEvents = () => {
+    if (isLoading) return <>Loading...</>;
+    if (error) return <>Something went wrong, please try again</>;
+
+    return events?.map((list) => <EventCard prize data={list} key={list.id} />);
+  };
 
   return (
     <>
@@ -43,11 +34,7 @@ export default function TechnicalEvents() {
           />
         </CategoryHeroContainer>
         <Container>
-          <CategoryCardContainer>
-            {events.map((list) => (
-              <EventCard prize data={list} key={list.heading} />
-            ))}
-          </CategoryCardContainer>
+          <CategoryCardContainer>{renderEvents()}</CategoryCardContainer>
         </Container>
       </Layout>
     </>

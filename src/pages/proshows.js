@@ -8,8 +8,12 @@ import { useEvents } from '../utils/useEvents';
 export default function Proshows() {
   const [events, error, isLoading] = useEvents('pro');
 
-  if (isLoading) return <>Loading...</>;
-  if (error) return <>Something went wrong, please try again</>;
+  const renderEvents = () => {
+    if (isLoading) return <>Loading...</>;
+    if (error) return <>Something went wrong, please try again</>;
+
+    return events?.map((list) => <EventCard data={list} key={list.id} />);
+  };
 
   return (
     <>
@@ -28,11 +32,7 @@ export default function Proshows() {
           />
         </CategoryHeroContainer>
         <Container>
-          <CategoryCardContainer>
-            {events.map((list) => (
-              <EventCard data={list} key={list.heading} />
-            ))}
-          </CategoryCardContainer>
+          <CategoryCardContainer>{renderEvents()}</CategoryCardContainer>
         </Container>
       </Layout>
     </>

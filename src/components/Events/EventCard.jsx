@@ -1,9 +1,22 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { format } from 'date-fns';
 import styled from 'styled-components';
+import { toast } from 'react-toastify';
 import tw from 'twin.macro';
 import EventDetailsModal from '../EventDetailsModal/EventDetailsModal';
-import { Body1, Body2, Button2, ButtonText, Heading4, ModalBox } from '../shared';
+import { AuthContext } from '../../utils/Auth';
+import { avenueApi } from '../../utils/api';
+import {
+  Body1,
+  Body2,
+  Button2,
+  ButtonText,
+  Heading3,
+  Heading4,
+  LinkButton,
+  ModalBox,
+} from '../shared';
 import eventImage from '../../../images/coming-soon.png';
 
 const CardContainer = styled.div`
@@ -58,8 +71,71 @@ const EventPrizes = styled(ButtonText)`
   ${tw`px-4 py-2 my-4 text-color-primary md:px-3 bg-background-darker w-max`}
 `;
 
+const RegisterContainer = styled.div`
+  background: var(--background-primary);
+  border-radius: 10px;
+  width: 100%;
+`;
+
+const ModalWrapper = styled.div`
+  #modal-content {
+    justify-content: center !important;
+  }
+`;
+
+const Button = styled.div`
+  width: auto;
+  min-width: 70px;
+  border-radius: 60px;
+  background: transparent;
+  border: 1px solid white;
+  margin-top: 4rem;
+  color: white;
+  padding: 15px 20px;
+
+  &:hover {
+    color: var(--background-primary);
+    background: white;
+    cursor: pointer;
+  }
+`;
+
 const EventCard = ({ data, prize = false }) => {
+  const authContext = useContext(AuthContext);
+  const { user, login, userData } = authContext;
+
   const [modalOpen, setModalOpen] = useState(false);
+  const [registerCheckModal, setRegisterCheckModal] = useState(false);
+
+  const handleRegisterClick = () => setRegisterCheckModal(true);
+
+  // eslint-disable-next-line consistent-return
+  const handleRegisterUser = async () => {
+    if (!user) return login();
+
+    try {
+      const { data: registrationData } = await avenueApi.post(
+        '/user/registration',
+        {
+          userID: userData?.id,
+          eventID: data.id,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${userData.accessToken}`,
+          },
+        },
+      );
+
+      if (registrationData) {
+        toast.success(`Successfully registered for the event ${data.heading}`);
+      }
+    } catch (error) {
+      toast.error(error.response.data || 'Something went Wrong, please try again');
+    }
+
+    setRegisterCheckModal(false);
+  };
 
   return (
     <>
@@ -68,11 +144,15 @@ const EventCard = ({ data, prize = false }) => {
         <CardTextContainer>
           <CardTitleContainer>
             <CardHeading bold>{data.heading}</CardHeading>
-            <EventDate>{data.dateTime ? `${data.dateTime.split(', ')[0]}` : 'TBA'}</EventDate>
+            <EventDate>
+              {data.dateTime ? `${format(new Date(data.dateTime), 'MMM do')}` : 'TBA'}
+            </EventDate>
           </CardTitleContainer>
           <CardTitleContainer>
             <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
-            <EventTime>{data.dateTime ? `${data.dateTime.split(', ')[1]}` : 'TBA'}</EventTime>
+            <EventTime>
+              {data.dateTime ? `${format(new Date(data.dateTime), 'h:mm aaa')}` : 'TBA'}
+            </EventTime>
           </CardTitleContainer>
           {prize ? (
             <EventPrizes>
@@ -83,7 +163,7 @@ const EventCard = ({ data, prize = false }) => {
           ) : null}
           <CardButtonContainer>
             <Button2 method={() => setModalOpen(true)} text='Know More' />
-            {/* <LinkButton text='Book Slots' link='/register' /> */}
+            <LinkButton text='Register' method={handleRegisterClick} />
           </CardButtonContainer>
         </CardTextContainer>
       </CardContainer>
@@ -101,6 +181,21 @@ const EventCard = ({ data, prize = false }) => {
           prize={prize}
         />
       </ModalBox>
+      <ModalWrapper>
+        <ModalBox isOpen={registerCheckModal} close={() => setRegisterCheckModal(false)}>
+          <RegisterContainer>
+            <Heading3>{user ? 'Registration Confirmation' : 'Login Required'}</Heading3>
+            <Body2 style={{ marginTop: '1rem' }}>
+              {user
+                ? `Please confirm that you want to register for the event ${data.heading}`
+                : 'Please login before your register for an event'}
+            </Body2>
+
+            <Button onClick={handleRegisterUser}>{user ? 'Register' : 'Login'}</Button>
+          </RegisterContainer>
+        </ModalBox>
+      </ModalWrapper>
+      {/* <ToastContainer /> */}
     </>
   );
 };
