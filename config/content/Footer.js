@@ -59,7 +59,7 @@ export default {
     {
       icon: faMapMarkerAlt,
       link: '',
-      text: 'SAC, NIT Rourkela, Odhisa - 769008',
+      text: 'SAC, NIT Rourkela, Odisha - 769008',
     },
     {
       icon: faPhoneAlt,
