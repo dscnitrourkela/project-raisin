@@ -40,7 +40,7 @@ const CardTitleContainer = styled.div`
 `;
 
 const CardButtonContainer = styled.div`
-  ${tw`flex justify-center `}
+  ${tw`flex justify-between mt-4`}
 `;
 
 const EventDate = styled(Body1)`
@@ -68,7 +68,7 @@ const EventPrizes = styled(ButtonText)`
   @media (max-width: 768px) {
     margin-left: -12px;
   }
-  ${tw`px-4 py-2 my-4 text-color-primary md:px-3 bg-background-darker w-max`}
+  ${tw`px-4 py-2 mt-4 text-color-primary md:px-3 bg-background-darker w-max`}
 `;
 
 const RegisterContainer = styled.div`
@@ -108,6 +108,8 @@ const EventCard = ({ data, prize = false }) => {
   const [registerCheckModal, setRegisterCheckModal] = useState(false);
 
   const handleRegisterClick = () => setRegisterCheckModal(true);
+
+  console.log(data);
 
   // eslint-disable-next-line consistent-return
   const handleRegisterUser = async () => {
