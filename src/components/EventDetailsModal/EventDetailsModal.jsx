@@ -14,6 +14,7 @@ import {
   RightContainer,
   SubHeading,
 } from './styles';
+import eventImg from '../../../images/coming-soon.png';
 
 const EventDetailsModal = ({
   imgSrc,
@@ -29,7 +30,7 @@ const EventDetailsModal = ({
 }) => (
   <EventContainer>
     <LeftContainer>
-      <EventImage src={imgSrc} alt={alt} />
+      <EventImage src={imgSrc || eventImg} alt={alt} />
       <CompositeContainer>
         <Heading3 bold>{heading}</Heading3>
         <SubHeading>{subHeading}</SubHeading>

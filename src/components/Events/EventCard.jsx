@@ -23,7 +23,10 @@ const CardContainer = styled.div`
   width: 400px;
   max-width: 328px;
   @media (min-width: 768px) {
-    max-width: 400px;
+    max-width: 380px;
+  }
+  @media (max-width: 375px) {
+    max-width: 100%;
   }
   ${tw`h-auto p-4 md:p-3 bg-background-dark rounded-xl`};
 `;
