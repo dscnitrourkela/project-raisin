@@ -12,6 +12,7 @@ export const STAGES = {
   NON_NITR_STUDENT_FORM: 'Register',
   TXN_SUCCESSFUL: 'Transaction Successful',
   TXN_UNSUCCESSFUL: 'Transaction Unsuccessful',
+  REGISTRATION_CLOSED: 'Registration Closed',
 };
 
 export const INIT_STATE = {
