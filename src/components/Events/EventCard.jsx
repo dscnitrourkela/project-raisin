@@ -112,8 +112,6 @@ const EventCard = ({ data, prize = false }) => {
 
   const handleRegisterClick = () => setRegisterCheckModal(true);
 
-  console.log(data);
-
   // eslint-disable-next-line consistent-return
   const handleRegisterUser = async () => {
     if (!user) return login();
