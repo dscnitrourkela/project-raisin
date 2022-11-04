@@ -120,7 +120,8 @@ const EventRegister = () => {
     setInputValue('city', 'Rourkela');
     setInputValue('college', 'National Institute of Technology Rourkela');
   };
-  const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
+  // const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
+  const setStageToClosedRegistration = () => setStage(STAGES.REGISTRATION_CLOSED);
   const setStageToTxnSuccessful = () => setStage(STAGES.TXN_SUCCESSFUL);
   const setStageToTxnUnsuccessful = () => setStage(STAGES.TXN_UNSUCCESSFUL);
   const setStageToTypeOfUser = () => {
@@ -133,7 +134,8 @@ const EventRegister = () => {
   };
   const setNonNitrStudent = () => {
     setIsNitrStudent({ yes: false, no: true });
-    setStageToNonNitrForm();
+    setStageToClosedRegistration();
+    // setStageToNonNitrForm();
   };
 
   const onInputChange = (event, objKey) => {
@@ -174,8 +176,14 @@ const EventRegister = () => {
     if (isNitrStudent.yes || userData?.rollNumber) {
       setStageToNitrForm();
     } else {
-      setStageToNonNitrForm();
+      // setStageToNonNitrForm();
+      setStageToClosedRegistration();
     }
+  };
+
+  const onRetryClick = () => {
+    // initiatePayment();
+    setStageToClosedRegistration();
   };
 
   const saveUser = async () => {
@@ -480,7 +488,7 @@ const EventRegister = () => {
                 >
                   Back
                 </NewButton>
-                <NewButton onClick={initiatePayment} style={{ marginTop: '1rem', marginLeft: 0 }}>
+                <NewButton onClick={onRetryClick} style={{ marginTop: '1rem', marginLeft: 0 }}>
                   Retry
                 </NewButton>
               </div>
@@ -501,6 +509,22 @@ const EventRegister = () => {
                 No
               </NewButton>
             </div>
+          </RegisterFormContainer>
+        );
+
+      case STAGES.REGISTRATION_CLOSED:
+        return (
+          <RegisterFormContainer style={{ justifyContent: 'center' }}>
+            <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
+            <InfoText>
+              Registrations have been temporarily halted. Stay tuned to get further updates.
+            </InfoText>
+            <NewButton
+              style={{ marginRight: '1rem', marginTop: '4rem' }}
+              onClick={setStageToTypeOfUser}
+            >
+              Back
+            </NewButton>
           </RegisterFormContainer>
         );
 
