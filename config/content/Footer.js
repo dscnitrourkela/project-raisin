@@ -94,4 +94,8 @@ export default {
       link: 'https://twitter.com/innonitr',
     },
   ],
+  devLink: {
+    link: 'https://github.com/dscnitrourkela',
+    linkText: 'GDSC NIT Rourkela',
+  },
 };
