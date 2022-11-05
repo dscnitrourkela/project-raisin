@@ -12,7 +12,7 @@ export default function FunEvents() {
     if (isLoading) return <>Loading...</>;
     if (error) return <>Something went wrong, please try again</>;
 
-    return events?.map((list) => <EventCard data={list} key={list.id} />);
+    return events?.map((list) => <EventCard prize data={list} key={list.id} />);
   };
 
   return (

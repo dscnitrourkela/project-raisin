@@ -9,6 +9,8 @@ export const CategoryCardContainer = styled.div`
   ${tw`
   flex
   flex-wrap
+  md:flex-col
+  md:items-center
   gap-6
   mb-24
   justify-center
