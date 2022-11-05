@@ -44,6 +44,25 @@ const FooterOuterContainer = styled.div`
     justify-center
   `}
   box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
+
+  .about-site {
+    grid-column: 1/7;
+    text-align: center;
+    margin-bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 2px solid lightgrey;
+    & > a {
+      ${tw`inline-block`}
+    }
+    & > a:hover {
+      ${tw`text-color-secondary`}
+    }
+  }
 `;
 
 const FooterContainer = styled.div`
@@ -208,6 +227,12 @@ const Footer = () => (
           </IconContainer>
         </FooterRightContainer>
       </FooterContainer>
+      <Body1 className='about-site'>
+        Designed and Developed with 💙 by{' '}
+        <a href={footer.devLink.link} target='_blank' rel='noreferrer noopener'>
+          {footer.devLink.linkText}
+        </a>
+      </Body1>
     </Container>
   </FooterOuterContainer>
 );
