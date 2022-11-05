@@ -120,8 +120,8 @@ const EventRegister = () => {
     setInputValue('city', 'Rourkela');
     setInputValue('college', 'National Institute of Technology Rourkela');
   };
-  // const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
-  const setStageToClosedRegistration = () => setStage(STAGES.REGISTRATION_CLOSED);
+  const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
+  // const setStageToClosedRegistration = () => setStage(STAGES.REGISTRATION_CLOSED);
   const setStageToTxnSuccessful = () => setStage(STAGES.TXN_SUCCESSFUL);
   const setStageToTxnUnsuccessful = () => setStage(STAGES.TXN_UNSUCCESSFUL);
   const setStageToTypeOfUser = () => {
@@ -134,8 +134,8 @@ const EventRegister = () => {
   };
   const setNonNitrStudent = () => {
     setIsNitrStudent({ yes: false, no: true });
-    setStageToClosedRegistration();
-    // setStageToNonNitrForm();
+    // setStageToClosedRegistration();
+    setStageToNonNitrForm();
   };
 
   const onInputChange = (event, objKey) => {
@@ -176,14 +176,14 @@ const EventRegister = () => {
     if (isNitrStudent.yes || userData?.rollNumber) {
       setStageToNitrForm();
     } else {
-      // setStageToNonNitrForm();
-      setStageToClosedRegistration();
+      setStageToNonNitrForm();
+      // setStageToClosedRegistration();
     }
   };
 
   const onRetryClick = () => {
-    // initiatePayment();
-    setStageToClosedRegistration();
+    initiatePayment();
+    // setStageToClosedRegistration();
   };
 
   const saveUser = async () => {
@@ -416,6 +416,19 @@ const EventRegister = () => {
             <Heading3 style={{ marginBottom: '10px', textAlign: 'center' }}>{stage}</Heading3>
             <InfoText>
               Please fill up the form and pay a registration fees of ₹700 to proceed
+            </InfoText>
+            <InfoText
+              style={{
+                width: '100%',
+                padding: '5px 10px',
+                border: '1px solid white',
+                borderRadius: '5px',
+                marginTop: '1rem',
+                fontWeight: 'bold',
+              }}
+            >
+              *Accomodation will be provided on the basis of registration number (earlier numbers
+              will be prioritized)
             </InfoText>
             {Object.keys(values)
               .filter((key) => ['both', 'non-nitr'].includes(values[key].show))
