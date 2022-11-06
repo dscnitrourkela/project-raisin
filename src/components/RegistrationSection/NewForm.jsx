@@ -120,8 +120,8 @@ const EventRegister = () => {
     setInputValue('city', 'Rourkela');
     setInputValue('college', 'National Institute of Technology Rourkela');
   };
-  const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
-  // const setStageToClosedRegistration = () => setStage(STAGES.REGISTRATION_CLOSED);
+  // const setStageToNonNitrForm = () => setStage(STAGES.NON_NITR_STUDENT_FORM);
+  const setStageToClosedRegistration = () => setStage(STAGES.REGISTRATION_CLOSED);
   const setStageToTxnSuccessful = () => setStage(STAGES.TXN_SUCCESSFUL);
   const setStageToTxnUnsuccessful = () => setStage(STAGES.TXN_UNSUCCESSFUL);
   const setStageToTypeOfUser = () => {
@@ -134,8 +134,8 @@ const EventRegister = () => {
   };
   const setNonNitrStudent = () => {
     setIsNitrStudent({ yes: false, no: true });
-    // setStageToClosedRegistration();
-    setStageToNonNitrForm();
+    setStageToClosedRegistration();
+    // setStageToNonNitrForm();
   };
 
   const onInputChange = (event, objKey) => {
@@ -176,14 +176,14 @@ const EventRegister = () => {
     if (isNitrStudent.yes || userData?.rollNumber) {
       setStageToNitrForm();
     } else {
-      setStageToNonNitrForm();
-      // setStageToClosedRegistration();
+      // setStageToNonNitrForm();
+      setStageToClosedRegistration();
     }
   };
 
   const onRetryClick = () => {
-    initiatePayment();
-    // setStageToClosedRegistration();
+    // initiatePayment();
+    setStageToClosedRegistration();
   };
 
   const saveUser = async () => {
