@@ -44,13 +44,25 @@ export default {
         name: 'Workshops',
         link: '/workshops',
       },
-      // {
-      //   name: 'Register',
-      //   link: '/register',
-      // },
       {
         name: 'Exhibition',
         link: '/exhibition',
+      },
+      {
+        name: 'Privacy Policy',
+        link: '/privacy',
+      },
+      {
+        name: 'Refund Policy',
+        link: '/refund',
+      },
+      {
+        name: 'Terms & Conditions',
+        link: '/terms',
+      },
+      {
+        name: 'Pricing',
+        link: '/pricing',
       },
     ],
   },
