@@ -148,13 +148,23 @@ const EventCard = ({ data, prize = false }) => {
           <CardTitleContainer>
             <CardHeading bold>{data.heading}</CardHeading>
             <EventDate>
-              {data.dateTime ? `${format(new Date(data.dateTime), 'MMM do')}` : 'TBA'}
+              {data.dateTime
+                ? `${format(
+                    new Date(new Date(data.dateTime).getTime() - 5.5 * 3600 * 1000),
+                    'MMM do',
+                  )}`
+                : 'TBA'}
             </EventDate>
           </CardTitleContainer>
           <CardTitleContainer>
             <EventClub>{data.subHeading ? data.subHeading : 'TBA'}</EventClub>
             <EventTime>
-              {data.dateTime ? `${format(new Date(data.dateTime), 'h:mm aaa')}` : 'TBA'}
+              {data.dateTime
+                ? `${format(
+                    new Date(new Date(data.dateTime).getTime() - 5.5 * 3600 * 1000),
+                    'h:mm aaa',
+                  )}`
+                : 'TBA'}
             </EventTime>
           </CardTitleContainer>
           {prize ? (
