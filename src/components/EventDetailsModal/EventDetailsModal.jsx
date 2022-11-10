@@ -36,7 +36,14 @@ const EventDetailsModal = ({
         <SubHeading>{subHeading}</SubHeading>
       </CompositeContainer>
       <CompositeContainer>
-        <Body1>{dateTime ? `${format(new Date(dateTime), 'MMM do h:mm aaa')}` : 'Date: TBA'}</Body1>
+        <Body1>
+          {dateTime
+            ? `${format(
+                new Date(new Date(dateTime).getTime() - 5.5 * 3600 * 1000),
+                'MMM do h:mm aaa',
+              )}`
+            : 'Date: TBA'}
+        </Body1>
         <Body1>{location ? `${location}` : 'location: TBA'}</Body1>
       </CompositeContainer>
       {prize ? (
