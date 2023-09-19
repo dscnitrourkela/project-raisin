@@ -42,16 +42,20 @@ jobs:
         name: Install Dependencies
         run: yarn install
 
+      - name: Create production ENV
+        run: |
+          touch .env.production
+          echo "GATSBY_FIREBASE_API_KEY=${{ secrets.GATSBY_FIREBASE_API_KEY }}" >> .env.production
+          echo "GATSBY_FIREBASE_AUTH_DOMAIN=${{ secrets.GATSBY_FIREBASE_AUTH_DOMAIN }}" >> .env.production
+          echo "GATSBY_FIREBASE_PROJECT_ID=${{ secrets.GATSBY_FIREBASE_PROJECT_ID }}" >> .env.production
+          echo "GATSBY_FIREBASE_STORAGE_BUCKET=${{ secrets.GATSBY_FIREBASE_STORAGE_BUCKET }}" >> .env.production
+          echo "GATSBY_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.GATSBY_FIREBASE_MESSAGING_SENDER_ID }}" >> .env.production
+          echo "GATSBY_FIREBASE_APP_ID=${{ secrets.GATSBY_FIREBASE_APP_ID }}" >> .env.production
+          echo "GATSBY_FIREBASE_MEASUREMENT_ID=${{ secrets.GATSBY_FIREBASE_MEASUREMENT_ID }}" >> .env.production
+          echo "GATSBY_API_URL=${{ secrets.GATSBY_API_URL }}" >> .env.production
+          cat .env.production
+
       - name: Build Check
         run: yarn build
-        env: 
-          GATSBY_FIREBASE_API_KEY: ${{ secrets.GATSBY_FIREBASE_API_KEY }}
-          GATSBY_FIREBASE_AUTH_DOMAIN: ${{ secrets.GATSBY_FIREBASE_AUTH_DOMAIN }}
-          GATSBY_FIREBASE_PROJECT_ID: ${{ secrets.GATSBY_FIREBASE_PROJECT_ID }}
-          GATSBY_FIREBASE_STORAGE_BUCKET: ${{ secrets.GATSBY_FIREBASE_STORAGE_BUCKET }}
-          GATSBY_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.GATSBY_FIREBASE_MESSAGING_SENDER_ID }}
-          GATSBY_FIREBASE_APP_ID: ${{ secrets.GATSBY_FIREBASE_APP_ID }}
-          GATSBY_FIREBASE_MEASUREMENT_ID: ${{ secrets.GATSBY_FIREBASE_MEASUREMENT_ID }}
-          GATSBY_API_URL: ${{ secrets.GATSBY_API_URL }}
         continue-on-error: ${{ !inputs.fail-on-error }}
         
