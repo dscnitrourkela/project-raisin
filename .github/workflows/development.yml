@@ -1,0 +1,24 @@
+name: Development CI/CD
+
+on:
+  pull_request: 
+    branches: [main]
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    with: 
+      fail-on-error: true
+    
+  prettier:
+    needs: build
+    uses: ./.github/workflows/prettier.yml
+    with: 
+      fail-on-error: true
+  
+  eslint:
+    needs: build
+    uses: ./.github/workflows/eslint.yml
+    with: 
+      fail-on-error: true
