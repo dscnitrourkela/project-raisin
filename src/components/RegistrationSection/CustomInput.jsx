@@ -65,7 +65,7 @@ const CustomInput = ({ values, onChange, objKey, onBlur }) => {
           placeholder='choose from the options'
         >
           <option value=''>--Please Choose an Option--</option>
-          {values[objKey]?.options.map((option) => (
+          {values[objKey].options.map((option) => (
             <option key={option} value={option.toUpperCase()}>
               {option}
             </option>

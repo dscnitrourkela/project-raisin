@@ -14,7 +14,7 @@ const FaqSet = ({ openState, question, answer, idNum, handleClick }) => (
         +
       </PlusIcon>
     </QuestionTextContainer>
-    {openState === idNum ? <Answer isOpen={openState === idNum}>{answer}</Answer> : <></>}
+    {openState === idNum ? <Answer isOpen={openState === idNum}>{answer}</Answer> : null}
   </>
 );
 

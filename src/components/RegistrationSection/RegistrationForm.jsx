@@ -114,7 +114,6 @@ const RegistrationForm = () => {
       }
     } catch (err) {
       setError(err.message);
-      console.error(err);
     }
   };
 
@@ -151,7 +150,6 @@ const RegistrationForm = () => {
       initializePayment();
     } catch (err) {
       setError(err);
-      console.error(err);
     }
 
     setLoading(false);

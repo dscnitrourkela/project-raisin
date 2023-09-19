@@ -9,7 +9,7 @@ trim_trailing_whitespace = false
 [*.js]
 trim_trailing_whitespace = true
 
-# Windows-style newlines with a newline ending every file
+# Linux-style end-of-line character with a newline at the end
 [*]
 indent_style = space
 indent_size = 2

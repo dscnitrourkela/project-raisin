@@ -39,8 +39,7 @@ const CaHeroSection = () => {
                 <FlexCard key={id}>
                   <FlexLogo src={logo.src} alt={logo.alt} />
                   <Body1 bold style={{ color: 'var(--text-color-secondary)' }}>
-                    {number}
-                    {'+'}
+                    {number}+
                   </Body1>
                   <Body1 style={{ color: 'var(--text-color-tertiary)' }}>{title}</Body1>
                 </FlexCard>

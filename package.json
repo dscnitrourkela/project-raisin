@@ -1,8 +1,8 @@
 {
-  "name": "innovision-2022",
+  "name": "innovision-2023",
   "private": true,
-  "description": "Official repository for Innovision 2022",
-  "version": "0.1.0",
+  "description": "Official repository for Innovision 2023",
+  "version": "1.2.0",
   "license": "MIT",
   "main": "src/pages/index.js",
   "keywords": [
@@ -82,8 +82,8 @@
     "yarn": "^1.22.19"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.22.15",
     "autoprefixer": "^10.4.15",
-    "babel-eslint": "^10.1.0",
     "eslint": "^8.49.0",
     "eslint-config": "^0.3.0",
     "eslint-config-airbnb": "^19.0.4",

@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Container, Heading2, Heading3, Body2, Layout, Body1 } from '../components';
+import { Container, Heading2, Heading3, Body2, Layout } from '../components';
 
 const Title = styled(Heading3)`
   ${tw`my-2`}
