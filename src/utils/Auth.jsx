@@ -26,6 +26,9 @@ const AuthContextProvider = ({ children }) => {
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState('');
 
+  // initializing auth
+  const auth = getAuth(app);
+
   // Setting user id on changing auth state
   useEffect(() => {
     onAuthStateChanged(auth, (users) => {
@@ -57,9 +60,6 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   }, [auth]);
-
-  // initializing auth
-  const auth = getAuth(app);
 
   const value = useMemo(() => {
     // login method
