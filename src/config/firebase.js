@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
 export const firebaseConfig = {
   apiKey: process.env.GATSBY_FIREBASE_API_KEY,
@@ -10,5 +11,6 @@ export const firebaseConfig = {
   measurementId: process.env.GATSBY_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+// Initialize Firebase or a dummy app if no config is provided
+export const app = initializeApp(process.env.GATSBY_FIREBASE_API_KEY ? firebaseConfig : {});
+export const auth = getAuth(app);

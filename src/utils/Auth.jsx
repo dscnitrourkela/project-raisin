@@ -1,10 +1,10 @@
 // eslint-disable-next-line react-hooks/exhaustive-deps
 /* eslint-disable no-console */
 import React, { createContext, useEffect, useMemo, useState } from 'react';
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { Redirect } from '@reach/router';
 import { navigate } from 'gatsby';
-import { app } from '../config/firebase';
+import { auth } from '../config/firebase';
 import { avenueApi } from './api';
 
 const provider = new GoogleAuthProvider();
@@ -25,9 +25,6 @@ const AuthContextProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState('');
-
-  // initializing auth
-  const auth = getAuth(app);
 
   // Setting user id on changing auth state
   useEffect(() => {
@@ -59,7 +56,7 @@ const AuthContextProvider = ({ children }) => {
         <Redirect to='/' />;
       }
     });
-  }, [auth]);
+  }, []);
 
   const value = useMemo(() => {
     // login method
@@ -105,7 +102,7 @@ const AuthContextProvider = ({ children }) => {
       logout,
       setUserData,
     };
-  }, [auth, authenticated, token, userData]);
+  }, [authenticated, token, userData]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
