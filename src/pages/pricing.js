@@ -21,7 +21,7 @@ const privacy = () => (
     <Container>
       <RefundContainer>
         <Title>Pricing</Title>
-        <Desc>The Registration fee for Innovision 2k22 is ₹700. Free for NITR Students</Desc>
+        <Desc>The Registration fee for Innovision 2k23 is ₹700. Free for NITR Students</Desc>
       </RefundContainer>
     </Container>
   </Layout>

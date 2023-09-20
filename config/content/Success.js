@@ -3,7 +3,7 @@ import Logo from '../../images/tick.svg';
 
 export default {
   success1: 'your payment was successful',
-  success2: 'you have successfully registered to innovison 2k22',
+  success2: 'you have been successfully registered for innovison 2k23',
   tick: {
     imgSrc: Logo,
     alt: 'success',
