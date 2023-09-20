@@ -1,4 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+/* Local Fonts */
+@font-face {
+  src:
+    url('/fonts/Roslindale/fonts/RoslindaleText-BoldItalic-Testing.woff2') format('woff2'),
+    url('/fonts/Roslindale/fonts/RoslindaleText-BoldItalic-Testing.woff') format('woff');
+  font-family: 'Roslindale';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  font-named-instance: 'Bold Italic';
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src:
+    url('/fonts/Roslindale/fonts/RoslindaleDeckNarrow-SemiBoldItalic-Testing.woff2') format('woff2'),
+    url('/fonts/Roslindale/fonts/RoslindaleDeckNarrow-SemiBoldItalic-Testing.woff') format('woff');
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  font-named-instance: 'SemiBold Italic';
+}
+
+@font-face {
+  font-family: 'Roslindale';
+  src:
+    url('/fonts/Roslindale/fonts/RoslindaleText-MediumItalic-Testing.woff2') format('woff2'),
+    url('/fonts/Roslindale/fonts/RoslindaleText-MediumItalic-Testing.woff') format('woff');
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  font-named-instance: 'Medium Italic';
+}
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +41,7 @@
 *,
 *:before,
 *:after {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
@@ -171,11 +205,20 @@ table {
 }
 
 :root {
-  --background-primary: #202020;
-  --background-secondary: #323232;
-  --text-color-primary: #f4f4f4;
-  --text-color-secondary: #d4d4d4;
-  --text-color-tertiary: #aaaaaa;
+  --background-primary: #1e1b1e;
+  --background-secondary: #2c2c2c;
+  --text-color-primary: #f6f6f6;
+  --text-color-secondary: #ededed;
+  --text-color-tertiary: #d6d6d6;
+
+  --brand-gradient: linear-gradient(88.29deg, #ffb8ff 1.56%, #b9cdff 94.54%);
+
+  --accent-color-primary: #e85cff; /* Accent/4 */
+  --accent-color-secondary: #735cff; /* Accent/2 */
+  --accent-color-tertiary: #5c9dff; /* Accent/1 */
+  --accent-success: #5cffa7; /* Accent/3 */
+
+  /* TODO After Confirmation from Design System */
   --button-color-primary: #ffffff;
   --button-color-secondary: #ecfdff;
   --button-color-tertiary: var(--background-secondary);

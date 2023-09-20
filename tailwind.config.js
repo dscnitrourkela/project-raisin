@@ -2,6 +2,10 @@
 module.exports = {
   content: [],
   theme: {
+    fontFamily: {
+      Inter: ['Inter', 'sans-serif'],
+      Roslindale: ['Roslindale', 'serif'],
+    },
     container: {
       padding: {
         default: '1rem',
@@ -25,13 +29,14 @@ module.exports = {
     fontSize: {
       xs: ['12px', '16px'],
       sm: ['14px', '20px'],
-      base: ['16px', '20px'],
+      base: ['16px', '26px'],
       lg: ['18px', '28px'],
       xl: ['20px', '28px'],
       '2xl': ['24px', '32px'],
-      '3xl': ['28px', '36px'],
+      '3xl': ['24px', '36px'],
       '4xl': ['32px', '40px'],
-      '5xl': ['40px', '48px'],
+      '5xl': ['48px', '64px'],
+      '6xl': ['64px', '96px'],
     },
     extend: {
       colors: {
@@ -40,11 +45,21 @@ module.exports = {
         'color-tertiary': 'var(--text-color-tertiary)',
         'background-dark': 'var(--background-secondary)',
         'background-darker': 'var(--background-primary)',
+
+        'accent-primary': 'var(--accent-color-primary)',
+        'accent-secondary': 'var(--accent-color-secondary)',
+        'accent-tertiary': 'var(--accent-color-tertiary)',
+
+        'accent-success': 'var(--accent-success)',
+
         'btn-primary': 'var(--button-color-primary)',
         'btn-secondary': 'var(--button-color-secondary)',
         'btn-tertiary': 'var(--button-color-tertiary)',
         'btn-confirmed': 'var(--button-color-confirmed)',
       },
+      backgroundImage: () => ({
+        'gradient-primary': 'var(--brand-primary)',
+      }),
     },
     screens: {
       '2xl': { max: '1535px' },

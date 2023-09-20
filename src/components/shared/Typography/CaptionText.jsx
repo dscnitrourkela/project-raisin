@@ -5,6 +5,7 @@ export default styled.p`
   font-weight: ${(props) => (props.bold ? 'bold' : 'normal')};
   ${tw`
     text-sm
+    font-Inter
     2xl:text-sm
     lg:text-sm
     md:text-xs

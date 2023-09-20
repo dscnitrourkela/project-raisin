@@ -1,0 +1,8 @@
+@font-face {
+  src:
+    url('fonts/RoslindaleText-BoldItalic-Testing.woff2') format('woff2'),
+    url('fonts/RoslindaleText-BoldItalic-Testing.woff') format('woff');
+  font-family: 'Roslindale';
+  font-style: italic;
+  font-weight: 700;
+}
