@@ -10,6 +10,7 @@ import {
   Heading4,
   NavText,
 } from '../components/shared';
+import Button from '../components/shared/Button';
 
 const Playground = () => (
   <>
@@ -26,6 +27,10 @@ const Playground = () => (
     <Body1> Body 1</Body1>
     <Body2> Body 2</Body2>
     <NavText> Nav Text</NavText>
+
+    <Button variant='outline' text='Outline' />
+    <Button variant='primary' text='Primary' />
+    <Button variant='filled' text='Filled' />
   </>
 );
 
