@@ -1,6 +1,14 @@
 name: Build Check
 
 on:
+  workflow_dispatch:
+    inputs:
+      fail-on-error:
+        description: 'Fail on error'
+        required: false
+        default: true
+        type: boolean
+
   workflow_call:
     inputs:
       fail-on-error:
@@ -38,9 +46,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
       
-      # - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
-      #   name: Install Dependencies
-      #   run: yarn install
+      - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
+        name: Install Dependencies
+        run: yarn install
 
       - name: Create production ENV
         env: 
@@ -55,7 +63,6 @@ jobs:
 
         run: |
           touch .env.production
-          echo "${{ vars.GATSBY_API_URL }}"
           echo "GATSBY_FIREBASE_API_KEY=${GATSBY_FIREBASE_API_KEY}"
           echo "GATSBY_FIREBASE_AUTH_DOMAIN=$GATSBY_FIREBASE_AUTH_DOMAIN"
           echo "GATSBY_FIREBASE_PROJECT_ID=$GATSBY_FIREBASE_PROJECT_ID"
@@ -64,10 +71,8 @@ jobs:
           echo "GATSBY_FIREBASE_APP_ID=$GATSBY_FIREBASE_APP_ID"
           echo "GATSBY_FIREBASE_MEASUREMENT_ID=$GATSBY_FIREBASE_MEASUREMENT_ID"
           echo "GATSBY_API_URL=$GATSBY_API_URL"
-          echo "repository variable : ${{ vars.REPOSITORY_VARIABLE }}"
-          cat .env.production
 
-      # - name: Build Check
-      #   run: yarn build
-      #   continue-on-error: ${{ !inputs.fail-on-error }}
+      - name: Build Check
+        run: yarn build
+        continue-on-error: ${{ !inputs.fail-on-error }}
         
