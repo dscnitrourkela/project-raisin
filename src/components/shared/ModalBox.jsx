@@ -98,20 +98,17 @@ const Icon = styled(FontAwesomeIcon)`
   }
 `;
 
-const ModalBox = ({ isOpen, close, children }) => (
-  <>
-    {isOpen && (
-      <Container>
-        <BackgroundContainer onClick={close} isOpen={isOpen} />
-        <BodyContainer>
-          <ContentContainer id='modal-content'>
-            <Icon icon={faTimes} onClick={close} />
-            <div>{children}</div>
-          </ContentContainer>
-        </BodyContainer>
-      </Container>
-    )}
-  </>
-);
+const ModalBox = ({ isOpen, close, children }) =>
+  isOpen && (
+    <Container>
+      <BackgroundContainer onClick={close} isOpen={isOpen} />
+      <BodyContainer>
+        <ContentContainer id='modal-content'>
+          <Icon icon={faTimes} onClick={close} />
+          <div>{children}</div>
+        </ContentContainer>
+      </BodyContainer>
+    </Container>
+  );
 
 export default ModalBox;

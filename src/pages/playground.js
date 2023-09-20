@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 // components
@@ -11,7 +11,8 @@ import MobileNav from '../components/marginals/Navbar/MobileNav';
 const Playground = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenuOpen = () => (menuOpen ? setMenuOpen(false) : setMenuOpen(true));
+  const toggleMenuOpen = useCallback(() => setMenuOpen((prev) => !prev), []);
+
   return (
     <>
       <Helmet>
@@ -19,6 +20,7 @@ const Playground = () => {
         <title>Playground</title>
         <meta name='description' content='This is playground' />
       </Helmet>
+      {/* eslint-disable-next-line react/jsx-no-constructed-context-values */}
       <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
         <DesktopNav />
         {menuOpen && <MobileNav />}

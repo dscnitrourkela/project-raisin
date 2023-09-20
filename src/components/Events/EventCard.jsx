@@ -105,7 +105,7 @@ const Button = styled.div`
 
 const EventCard = ({ data, prize = false }) => {
   const authContext = useContext(AuthContext);
-  const { user, login, userData } = authContext;
+  const { authenticated, login, userData } = authContext;
 
   const [modalOpen, setModalOpen] = useState(false);
   const [registerCheckModal, setRegisterCheckModal] = useState(false);
@@ -114,13 +114,13 @@ const EventCard = ({ data, prize = false }) => {
 
   // eslint-disable-next-line consistent-return
   const handleRegisterUser = async () => {
-    if (!user) return login();
+    if (!authenticated) return login();
 
     try {
       const { data: registrationData } = await avenueApi.post(
         '/user/registration',
         {
-          userID: userData?.id,
+          userID: userData.id,
           eventID: data.id,
         },
         {
@@ -197,14 +197,14 @@ const EventCard = ({ data, prize = false }) => {
       <ModalWrapper>
         <ModalBox isOpen={registerCheckModal} close={() => setRegisterCheckModal(false)}>
           <RegisterContainer>
-            <Heading3>{user ? 'Registration Confirmation' : 'Login Required'}</Heading3>
+            <Heading3>{authenticated ? 'Registration Confirmation' : 'Login Required'}</Heading3>
             <Body2 style={{ marginTop: '1rem' }}>
-              {user
+              {authenticated
                 ? `Please confirm that you want to register for the event ${data.heading}`
                 : 'Please login before your register for an event'}
             </Body2>
 
-            <Button onClick={handleRegisterUser}>{user ? 'Register' : 'Login'}</Button>
+            <Button onClick={handleRegisterUser}>{authenticated ? 'Register' : 'Login'}</Button>
           </RegisterContainer>
         </ModalBox>
       </ModalWrapper>

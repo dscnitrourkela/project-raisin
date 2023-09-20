@@ -173,7 +173,7 @@ const EventRegister = () => {
   };
 
   const onTxnBackClick = () => {
-    if (isNitrStudent.yes || userData?.rollNumber) {
+    if (isNitrStudent.yes || userData.rollNumber) {
       setStageToNitrForm();
     } else {
       // setStageToNonNitrForm();

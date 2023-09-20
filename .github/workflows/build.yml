@@ -1,0 +1,78 @@
+name: Build Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      fail-on-error:
+        description: 'Fail on error'
+        required: false
+        default: true
+        type: boolean
+
+  workflow_call:
+    inputs:
+      fail-on-error:
+        description: 'Fail on error'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  build:
+    name: Build Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+          cache-dependency-path: "**/yarn.lock"
+
+      - name: Use Dev Cache
+        id: dev-cache
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-dev
+        with:
+          # Path for node_modules 
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      
+      - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
+        name: Install Dependencies
+        run: yarn install
+
+      - name: Create production ENV
+        env: 
+          GATSBY_FIREBASE_API_KEY: ${{ vars.GATSBY_FIREBASE_API_KEY }}
+          GATSBY_FIREBASE_AUTH_DOMAIN: ${{ vars.GATSBY_FIREBASE_AUTH_DOMAIN }}
+          GATSBY_FIREBASE_PROJECT_ID: ${{ vars.GATSBY_FIREBASE_PROJECT_ID }}
+          GATSBY_FIREBASE_STORAGE_BUCKET: ${{ vars.GATSBY_FIREBASE_STORAGE_BUCKET }}
+          GATSBY_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.GATSBY_FIREBASE_MESSAGING_SENDER_ID }}
+          GATSBY_FIREBASE_APP_ID: ${{ vars.GATSBY_FIREBASE_APP_ID }}
+          GATSBY_FIREBASE_MEASUREMENT_ID: ${{ vars.GATSBY_FIREBASE_MEASUREMENT_ID }}
+          GATSBY_API_URL: ${{ vars.GATSBY_API_URL }}
+
+        run: |
+          touch .env.production
+          echo "GATSBY_FIREBASE_API_KEY=${GATSBY_FIREBASE_API_KEY}"
+          echo "GATSBY_FIREBASE_AUTH_DOMAIN=$GATSBY_FIREBASE_AUTH_DOMAIN"
+          echo "GATSBY_FIREBASE_PROJECT_ID=$GATSBY_FIREBASE_PROJECT_ID"
+          echo "GATSBY_FIREBASE_STORAGE_BUCKET=$GATSBY_FIREBASE_STORAGE_BUCKET"
+          echo "GATSBY_FIREBASE_MESSAGING_SENDER_ID=$GATSBY_FIREBASE_MESSAGING_SENDER_ID"
+          echo "GATSBY_FIREBASE_APP_ID=$GATSBY_FIREBASE_APP_ID"
+          echo "GATSBY_FIREBASE_MEASUREMENT_ID=$GATSBY_FIREBASE_MEASUREMENT_ID"
+          echo "GATSBY_API_URL=$GATSBY_API_URL"
+
+      - name: Build Check
+        run: yarn build
+        continue-on-error: ${{ !inputs.fail-on-error }}
+        

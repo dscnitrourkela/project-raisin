@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
   const toggleMenuOpen = () => (menuOpen ? setMenuOpen(false) : setMenuOpen(true));
   return (
     <>
+      {/* eslint-disable-next-line react/jsx-no-constructed-context-values */}
       <MenuContext.Provider value={{ menuOpen, toggleMenuOpen }}>
         <DesktopNav />
         {menuOpen && <MobileNav />}

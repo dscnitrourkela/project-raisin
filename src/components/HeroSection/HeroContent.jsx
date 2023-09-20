@@ -53,10 +53,10 @@ const HeroDates = styled.h3`
 const HeroContent = () => {
   const authContext = useContext(AuthContext);
   const [text, setText] = useState('Register');
-  const { login, user } = authContext;
+  const { login, authenticated } = authContext;
 
   const onRegisterClick = () => {
-    if (user) {
+    if (authenticated) {
       navigate('/register');
     } else {
       login();
@@ -64,12 +64,12 @@ const HeroContent = () => {
   };
 
   useEffect(() => {
-    if (!user) {
+    if (!authenticated) {
       setText('Register');
     } else {
       setText('Registration Details');
     }
-  }, [user]);
+  }, [authenticated]);
 
   return (
     <ContentContainer>

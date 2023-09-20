@@ -18,10 +18,10 @@
     <img src="images/logo.png" alt="Logo" width="130">
   </a>
 
-  <h3 align="center">Innovision 2022</h3>
+  <h3 align="center">Innovision 2023</h3>
 
   <p align="center">
-    The official repository for the website of Innovision 2022
+    The official repository for the website of Innovision 2023
     <br />
     <br />
     <a href="#">View Live</a>
@@ -60,7 +60,7 @@
 
 ## About The Project
 
-Innovision 2022
+Innovision 2023
 
 ## Built With
 

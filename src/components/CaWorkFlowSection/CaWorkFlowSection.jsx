@@ -2,16 +2,8 @@ import React from 'react';
 import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { caWorkFlow } from '../../../config/content';
-import { Container, Heading4, SectionContainer } from '../shared';
-import {
-  Card,
-  CardBody,
-  CardContainer,
-  CardHead,
-  CardLogo,
-  SectionHeading,
-  SectionSubHeading,
-} from './styles';
+import { Container, SectionContainer } from '../shared';
+import { Card, CardBody, CardContainer, SectionHeading, SectionSubHeading } from './styles';
 
 library.add(faShareAlt);
 
