@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { DesktopNav, Footer, MenuContext, MobileNav } from '../marginals';
+import { DesktopNav, Footer, MenuContext, MobileNav } from '../marginals/index';
 
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);

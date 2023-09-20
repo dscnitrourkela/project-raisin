@@ -7,6 +7,60 @@ import AuthContextProvider from './src/utils/Auth';
 
 const queryClient = new QueryClient();
 
+export const onRenderBody = ({ setHeadComponents }) => {
+  // @import url('fonts/Roslindale/font.css');
+  setHeadComponents([
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleText-BoldItalic-Testing.woff'
+      as='font'
+      type='font/woff'
+      crossOrigin='anonymous'
+      key='Roslindale'
+    />,
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleText-Bold-Testing.woff2'
+      as='font'
+      type='font/woff2'
+      crossOrigin='anonymous'
+      key='Roslindale2'
+    />,
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleText-MediumItalic-Testing.woff'
+      as='font'
+      type='font/woff'
+      crossOrigin='anonymous'
+      key='Roslindale3'
+    />,
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleText-MediumItalic-Testing.woff2'
+      as='font'
+      type='font/woff2'
+      crossOrigin='anonymous'
+      key='Roslindale4'
+    />,
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleDeckNarrow-SemiBoldItalic-Testing.woff'
+      as='font'
+      type='font/woff'
+      crossOrigin='anonymous'
+      key='Roslindale5'
+    />,
+    <link
+      rel='preload'
+      href='/fonts/Roslindale/fonts/RoslindaleDeckNarrow-SemiBoldItalic-Testing.woff2'
+      as='font'
+      type='font/woff2'
+      crossOrigin='anonymous'
+      key='Roslindale6'
+    />,
+  ]);
+};
+
 export const wrapRootElement = ({ element }) => (
   <QueryClientProvider client={queryClient}>
     <AuthContextProvider>{element}</AuthContextProvider>

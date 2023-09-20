@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { EventSection, Layout, SuccessCard } from '../components';
+import { Layout, SuccessCard } from '../components';
 
 export default function Successful() {
   return (
@@ -12,7 +12,6 @@ export default function Successful() {
       </Helmet>
       <Layout>
         <SuccessCard />
-        <EventSection />
       </Layout>
     </>
   );

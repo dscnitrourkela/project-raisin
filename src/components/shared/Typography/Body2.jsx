@@ -10,5 +10,5 @@ export default styled.p`
     md:text-sm
     sm:text-sm
     text-color-primary
-    `}
+  `}
 `;
