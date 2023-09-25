@@ -38,10 +38,10 @@ const BarTwo = styled.div`
 `;
 
 const PlusIcon = ({ active }) => (
-    <PlusContainer>
-      <BarOne active={active} />
-      <BarTwo active={active} />
-    </PlusContainer>
-  );
+  <PlusContainer>
+    <BarOne active={active} />
+    <BarTwo active={active} />
+  </PlusContainer>
+);
 
 export default PlusIcon;
