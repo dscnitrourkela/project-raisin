@@ -1,11 +1,11 @@
 name: Bug report
 description: Create a report to help us improve. Report bugs found while using the project
-title: "[BUG] <description>"
+title: '[BUG] <description>'
 labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: "Provide a general summary of the issue in the title above"
+      value: 'Provide a general summary of the issue in the title above'
   - type: textarea
     id: description
     attributes:
@@ -39,8 +39,8 @@ body:
     attributes:
       label: Steps to reproduce
       description: |
-         Provide a link to a live example, or an unambiguous set of steps to
-         reproduce this bug. Include code to reproduce, if relevant
+        Provide a link to a live example, or an unambiguous set of steps to
+        reproduce this bug. Include code to reproduce, if relevant
       placeholder: |
         1.
         2.

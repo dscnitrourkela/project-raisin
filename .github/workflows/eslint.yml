@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: "**/yarn.lock"
+          cache-dependency-path: '**/yarn.lock'
 
       - name: Use Dev Cache
         id: dev-cache
@@ -31,13 +31,13 @@ jobs:
           cache-name: cache-dev
         with:
           # Path for node_modules
-          path: "**/node_modules"
+          path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      
+
       - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
         name: Install Dependencies
         run: yarn install
@@ -45,4 +45,3 @@ jobs:
       - name: Eslint Check
         run: yarn lint:find
         continue-on-error: ${{ github.event.inputs.fail-on-error != 'true'}}
-        
