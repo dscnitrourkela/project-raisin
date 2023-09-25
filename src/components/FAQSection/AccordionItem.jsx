@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { AnswerContainer, AnswerWrap, QuestionContainer, FAQWrapper, QuestionText } from './styles';
 import PlusIcon from './PlusIcon';
 
@@ -12,18 +12,13 @@ const AccordionItem = ({ question, answer, index }) => {
 
   const active = clicked === key;
 
-  const contentEl = useRef();
   return (
     <FAQWrapper>
       <QuestionContainer onClick={handleToggle} active={active}>
         <QuestionText>{question}</QuestionText>
         <PlusIcon active={active} />
       </QuestionContainer>
-      <AnswerContainer
-        active={active}
-        ref={contentEl}
-        style={active ? { height: contentEl.current.scrollHeight } : { height: '0px' }}
-      >
+      <AnswerContainer active={active}>
         <AnswerWrap>{answer}</AnswerWrap>
       </AnswerContainer>
     </FAQWrapper>

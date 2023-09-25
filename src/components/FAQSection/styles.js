@@ -49,8 +49,9 @@ export const AnswerContainer = styled.div`
   ${tw`
   mb-4
    `}
+  max-height: ${(props) => (props.active ? '1000px' : '0px')};
   overflow: hidden;
-  transition: height 0.1s ease-in-out;
+  transition: max-height 0.1s ease-in-out;
 `;
 
 export const AnswerWrap = styled.div`

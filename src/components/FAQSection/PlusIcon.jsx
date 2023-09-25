@@ -20,7 +20,7 @@ const BarOne = styled.div`
   position: absolute;
   top: 7px;
   left: 0;
-  transition: transform 100ms;
+  transition: transform 100ms linear;
   transform: ${(props) => (props.active ? 'rotate(180deg)' : 'rotate(90deg)')};
 `;
 
