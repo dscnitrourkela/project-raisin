@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { avenueApi } from './Api';
 
-import { avenueApi } from './api';
+const fetchEvents = (event) =>
+  avenueApi.get('/events', { params: { type: event, orgID: '640892e9f785cdd0afcd8ccf' } });
 
-const fetchEvents = (type) => () => avenueApi.get('/events', { params: { type } });
-
-export const useEvents = (type) => {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ['events'],
-    queryFn: fetchEvents(type),
+const useEvents = (eventName) => {
+  const { data, isLoading } = useQuery({
+    queryKey: ['events', eventName],
+    queryFn: () => fetchEvents(eventName),
   });
 
   const events = useMemo(
@@ -17,26 +17,29 @@ export const useEvents = (type) => {
         ?.map((event) => {
           const name = JSON.parse(event.name);
           const description = JSON.parse(event.description);
+          const date = new Date(event.startDate);
 
           return {
-            eventImage: {
-              imgSrc: event.poster,
-              alt: name.heading,
-            },
-            heading: name.heading,
-            subHeading: name.subHeading,
-            dateTime: event.startDate,
-            location: 'SAC',
-            prizeAmount: name.prizeAmount,
-            aboutDetails: description,
-            contactDetails: [],
-            priority: event.priority,
             id: event.id,
+            title: name.heading,
+            club: name.subHeading,
+            date: date.getDate(),
+            month: date.toDateString().split(' ')[1],
+            time: `${date.getHours().toString().padStart(2, '0')}:${date
+              .getMinutes()
+              .toString()
+              .padStart(2, '0')}`,
+            description,
+            venue: 'LA',
+            prizes: name.prizeAmount,
+            poster: event.poster ? event.poster : 'TODO://link',
           };
         })
-        .sort((a, b) => a.priority > b.priority),
+        .sort((a, b) => +a.date - +b.date),
     [data],
   );
 
-  return [events, error, isLoading];
+  return { events, isLoading };
 };
+
+export default useEvents;
