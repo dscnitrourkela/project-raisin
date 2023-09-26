@@ -12,66 +12,60 @@ const fadeDown = keyframes`
     }
 `;
 
-export const Logo = styled.img`
-  height: 50px;
-  width: auto;
-  @media (max-width: 1023px) {
-    height: 40px;
-  }
-`;
-
 export const NavSection = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
   box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
   background-color: var(--background-primary);
-  padding-top: 1em;
-  padding-bottom: 1em;
   z-index: 40;
-  .navHomeLink {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    &:hover {
-    }
-  }
   .navLinkList {
     display: none;
     list-style: none;
   }
   .navLinkItem {
-    margin-right: 32px;
     text-decoration: none;
+    padding: 0px 28px;
+    position: relative;
+    display: inline-block;
     &:last-child {
       margin-right: 0;
     }
     &:hover {
       cursor: pointer;
     }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1.5px;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      background: linear-gradient(88.29deg, #ffb8ff 1.56%, #b9cdff 94.54%);
+      transition:
+        width 0.3s ease 0s,
+        left 0.3s ease 0s;
+    }
+    &:hover::before {
+      width: 100%;
+      left: 0;
+    }
   }
   .navLink {
     text-decoration: none;
+    padding: 12px 0px;
     color: var(--text-color-tertiary);
     &:hover {
       color: var(--text-color-secondary);
     }
   }
-  .no-underline {
-    display: flex;
-    align-items: center;
-  }
   @media (min-width: 1023px) {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0;
+    padding-bottom: 0;
     .navLinkList {
       display: flex;
       justify-content: center;
-    }
-  }
-  @media (max-width: 1023px) {
-    .sponsor-sec {
-      display: none;
     }
   }
 `;
@@ -83,6 +77,7 @@ export const NavWrapper = styled.nav`
     w-full
     gap-7
     lg:justify-between
+    h-[68px]
     `}
 `;
 
@@ -127,7 +122,7 @@ export const StyledMobileNav = styled.section`
     margin-bottom: 1em;
   }
   .link {
-    font-size: 1.2em;
+    font-size: 14px;
     text-decoration: none;
   }
 `;
