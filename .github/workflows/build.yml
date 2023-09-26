@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: "**/yarn.lock"
+          cache-dependency-path: '**/yarn.lock'
 
       - name: Use Dev Cache
         id: dev-cache
@@ -38,20 +38,20 @@ jobs:
         env:
           cache-name: cache-dev
         with:
-          # Path for node_modules 
-          path: "**/node_modules"
+          # Path for node_modules
+          path: '**/node_modules'
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      
+
       - if: ${{steps.dev-cache.outputs.cache-hit != 'true'}}
         name: Install Dependencies
         run: yarn install
 
       - name: Create production ENV
-        env: 
+        env:
           GATSBY_FIREBASE_API_KEY: ${{ vars.GATSBY_FIREBASE_API_KEY }}
           GATSBY_FIREBASE_AUTH_DOMAIN: ${{ vars.GATSBY_FIREBASE_AUTH_DOMAIN }}
           GATSBY_FIREBASE_PROJECT_ID: ${{ vars.GATSBY_FIREBASE_PROJECT_ID }}
@@ -75,4 +75,3 @@ jobs:
       - name: Build Check
         run: yarn build
         continue-on-error: ${{ !inputs.fail-on-error }}
-        
