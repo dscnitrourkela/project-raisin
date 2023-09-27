@@ -8,11 +8,12 @@ const Wrapper = styled.div`
   }
   ${tw`
         w-11/12
-        max-w-7xl
+        lg:max-w-7xl
+        max-w-full
         my-0
-        mx-auto
-        p-2.5
-        sm:p-0
+        mx-[60px]
+        lg:mx-auto
+        p-0
         overflow-y-hidden
     `}
 `;

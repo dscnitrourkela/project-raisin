@@ -5,12 +5,13 @@ import { Link } from 'gatsby';
 
 // Components
 import { MenuContext } from './MenuContext';
+import { AuthContext } from '../../../utils/Auth';
 import { StyledMobileNav } from './styles';
 
 // Assets
 import { nav } from '../../../../config/content';
 import { NavText } from '../../shared';
-import AuthButton from './AuthButton';
+import Button from '../../shared/Button';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -35,6 +36,8 @@ const handleScroll = (id) => {
 function MobileNav() {
   const menuContext = useContext(MenuContext);
   const { toggleMenuOpen } = menuContext;
+  const authContext = useContext(AuthContext);
+  const { authenticated } = authContext;
 
   const onMenuClick = (id) => {
     handleScroll(id);
@@ -61,7 +64,7 @@ function MobileNav() {
             </li>
           ))}
         </ul>
-        <AuthButton outline />
+        <Button variant='outline' text={authenticated ? 'logout' : 'Register'} />
       </div>
     </StyledMobileNav>
   );
