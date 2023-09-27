@@ -1,11 +1,12 @@
 import { Link } from 'gatsby';
 import React, { useContext } from 'react';
+import { AuthContext } from '../../../utils/Auth';
 import { nav } from '../../../../config/content';
 import Heading4 from '../../shared/Typography/Heading4';
 import { Container, NavText } from '../../shared';
 import { NavCenter, NavRight, NavSection, NavWrapper, StyledHamburger } from './styles';
 import { MenuContext } from './MenuContext';
-import AuthButton from './AuthButton';
+import Button from '../../shared/Button';
 
 // Function Returning new scroll object
 const newScrollObject = () => {
@@ -30,6 +31,8 @@ const handleScroll = (id) => {
 function DesktopNav() {
   const menuContext = useContext(MenuContext);
   const { toggleMenuOpen, menuOpen } = menuContext;
+  const authContext = useContext(AuthContext);
+  const { authenticated } = authContext;
 
   return (
     <NavSection>
@@ -61,7 +64,7 @@ function DesktopNav() {
             </ul>
           </NavCenter>
           <NavRight>
-            <AuthButton outline />
+            <Button variant='outline' text={authenticated ? 'logout' : 'Register'} />
           </NavRight>
         </NavWrapper>
       </Container>
