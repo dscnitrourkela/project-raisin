@@ -1,27 +1,23 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../utils/Auth';
-import { LinkButton } from '../../shared';
+import Button from '../../shared/Button';
 
-const AuthButton = ({ text, paddingY, paddingX, outline, bold }) => {
+const AuthButton = ({ text, outline, paddingX, paddingY }) => {
   const authContext = useContext(AuthContext);
   const { login, logout, authenticated } = authContext;
 
-  return outline ? (
-    <LinkButton
-      outline
-      method={authenticated ? logout : login}
+  return (
+    <Button
+      variant={outline ? 'outline' : 'primary'}
+      onClick={authenticated ? logout : login}
       text={text || (authenticated ? 'logout' : 'Login')}
-      paddingY={paddingY}
-      paddingX={paddingX}
-      bold={bold}
-    />
-  ) : (
-    <LinkButton
-      method={authenticated ? logout : login}
-      text={text || (authenticated ? 'logout' : 'Login')}
-      paddingY={paddingY}
-      paddingX={paddingX}
-      bold={bold}
+      style={
+        paddingX && paddingY
+          ? {
+              padding: `${paddingY}rem ${paddingX}rem`,
+            }
+          : {}
+      }
     />
   );
 };
