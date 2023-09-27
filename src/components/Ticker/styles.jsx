@@ -55,9 +55,9 @@ export const TickerMover = styled.div`
   &:hover {
     animation-play-state: paused;
   }
-  animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 70s linear infinite;
+  animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 160s linear infinite;
 
   @media (max-width: 720px) {
-    animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 50s linear infinite;
+    animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 110s linear infinite;
   }
 `;
