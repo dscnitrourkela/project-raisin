@@ -1,7 +1,7 @@
 name: Development CI/CD
 
 on:
-  pull_request: 
+  pull_request:
     branches: [main]
     types: [opened, synchronize, reopened, edited, ready_for_review]
 
@@ -9,17 +9,17 @@ jobs:
   # Currently, not needed as netlify is used for deployment
   # build:
   #   uses: ./.github/workflows/build.yml
-  #   with: 
+  #   with:
   #     fail-on-error: true
-    
+
   prettier:
     # needs: build
     uses: ./.github/workflows/prettier.yml
-    with: 
+    with:
       fail-on-error: true
-  
+
   eslint:
     # needs: build
     uses: ./.github/workflows/eslint.yml
-    with: 
+    with:
       fail-on-error: true
