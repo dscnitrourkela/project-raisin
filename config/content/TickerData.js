@@ -13,7 +13,7 @@ export const tickerData = [
   },
   {
     type: 'image',
-    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_3_x0pceh.png',
+    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_2_tuocil.png',
   },
   {
     type: 'text',
@@ -21,7 +21,7 @@ export const tickerData = [
   },
   {
     type: 'image',
-    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_3_x0pceh.png',
+    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_1_mlxhs3.png',
   },
   {
     type: 'text',
@@ -29,10 +29,14 @@ export const tickerData = [
   },
   {
     type: 'image',
-    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_3_x0pceh.png',
+    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_2_1_ddiagd.png',
   },
   {
     type: 'text',
     content: 'Lectures',
+  },
+  {
+    type: 'image',
+    content: 'https://res.cloudinary.com/dhnkuonev/image/upload/v1695746152/Group_3_x0pceh.png',
   },
 ];

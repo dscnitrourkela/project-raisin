@@ -13,10 +13,12 @@ export const ItemContainer = styled.div`
   ${tw`
     inline-block
     mx-12
-    h-10
+    h-16
+    mb-4
     `}
   @media (max-width: 768px) {
     margin: 0.5rem 0.5rem;
+    height: 2.5rem;
   }
 `;
 
