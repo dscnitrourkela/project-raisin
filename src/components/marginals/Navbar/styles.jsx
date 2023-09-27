@@ -42,7 +42,7 @@ export const NavSection = styled.header`
       bottom: 0;
       left: 50%;
       display: block;
-      background: linear-gradient(88.29deg, #ffb8ff 1.56%, #b9cdff 94.54%);
+      background: var(--brand-gradient);
       transition:
         width 0.3s ease 0s,
         left 0.3s ease 0s;
