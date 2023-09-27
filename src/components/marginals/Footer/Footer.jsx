@@ -68,7 +68,7 @@ const Footer = () => (
         </Link>
         <SocialsContainer>
           {socials.map(({ id, icon, alt, link }) => (
-            <a href={link} key={id} target='_blank' rel="noreferrer noopener">
+            <a href={link} key={id} target='_blank' rel='noreferrer noopener'>
               <SocialIcon src={icon} alt={alt} />
             </a>
           ))}
