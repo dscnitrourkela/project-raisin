@@ -166,7 +166,6 @@ export const RegEventTitle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  //font-weight: 600;
   line-height: normal;
   letter-spacing: 0.48px;
 `;
@@ -176,11 +175,8 @@ export const RegEventClubname = styled.p`
     text-[14px]
     font-[500]
   `}
-  //color: var(--text-tertiary, #D6D6D6);
   font-family: Noto Sans, sans-serif;
-  //font-size: 14px;
   font-style: normal;
-  //font-weight: 500;
   line-height: normal;
   letter-spacing: 0.28px;
 `;

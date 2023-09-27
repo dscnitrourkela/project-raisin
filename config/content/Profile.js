@@ -1,18 +1,18 @@
 export const UserData = [
   {
-    id: 1,
     fieldName: 'Name',
-    fieldValue: 'John Doe',
+    key: 'name',
+    fieldValue: '',
   },
   {
-    id: 2,
     fieldName: 'Email',
-    fieldValue: 'johndoe@inno.nitrkl.in',
+    key: 'email',
+    fieldValue: '',
   },
   {
-    id: 3,
     fieldName: 'Phone',
-    fieldValue: '555-5555-555',
+    key: 'mobile',
+    fieldValue: '',
   },
 ];
 
@@ -20,7 +20,7 @@ export const RegisteredEvents = [
   {
     id: 1,
     img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
-    title: 'A Feast for Crows',
+    title: 'A Feast for Crows Helloopooooo',
     clubName: 'House Frey',
     date: '17 July',
     location: 'LA',

@@ -37,10 +37,13 @@ const AuthContextProvider = ({ children }) => {
     const _cancelSubscription = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setAuthenticated(true);
-        setUserData(user);
         setToken(user.accessToken);
 
-        await api.fetchUserDetails({ uid: user.uid, accessToken: user.accessToken });
+        const avenueUser = await api.fetchUserDetails({
+          uid: user.uid,
+          accessToken: user.accessToken,
+        });
+        setUserData(avenueUser);
       } else {
         setAuthenticated(false);
         setUserData({});
