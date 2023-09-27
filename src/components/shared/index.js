@@ -12,3 +12,4 @@ export { default as SectionContainer } from './SectionContainer';
 export { default as ModalBox } from './ModalBox';
 export { default as About } from './About';
 export { default as Layout } from './Layout';
+export { default as Input } from './partials/Input';
