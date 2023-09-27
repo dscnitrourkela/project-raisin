@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { success } from '../../../config/content';
-import { CaptionText, Heading4, LinkButton } from '../shared';
+import { CaptionText, Heading4 } from '../shared';
+import Button from '../shared/Button';
 
 const SectionContainer = styled.div`
   ${tw`
@@ -96,7 +97,7 @@ const SuccesssCard = () => (
           <SuccessText>{success.success2}</SuccessText>
         </div>
         <ButtonContainer>
-          <LinkButton text={success.btnText} link={success.link} />
+          <Button text={success.btnText} link={success.link} />
           <CaptionText>{success.caption}</CaptionText>
         </ButtonContainer>
       </LowerContainer>
