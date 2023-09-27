@@ -1,0 +1,92 @@
+export const UserData = [
+  {
+    fieldName: 'Name',
+    key: 'name',
+    fieldValue: '',
+  },
+  {
+    fieldName: 'Email',
+    key: 'email',
+    fieldValue: '',
+  },
+  {
+    fieldName: 'Phone',
+    key: 'mobile',
+    fieldValue: '',
+  },
+];
+
+export const RegisteredEvents = [
+  {
+    id: 1,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Feast for Crows Helloopooooo',
+    clubName: 'House Frey',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 2,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Song of Ice and Fire',
+    clubName: 'House Targaryen',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 3,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'The Red Wedding',
+    clubName: 'House Lannister',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 4,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Game of Thrones',
+    clubName: 'House Stark',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 5,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'Clash of Kings',
+    clubName: 'House Baratheon',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 6,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Storm of Swords',
+    clubName: 'House Tyrell',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 7,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Dance with Dragons',
+    clubName: 'House Targaryen',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 8,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'The Winds of Winter',
+    clubName: 'House Stark',
+    date: '17 July',
+    location: 'LA',
+  },
+  {
+    id: 9,
+    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695674904/got_lungcp.jpg',
+    title: 'A Dream of Spring',
+    clubName: 'House Martell',
+    date: '17 July',
+    location: 'LA',
+  },
+];
