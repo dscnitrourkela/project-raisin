@@ -3,6 +3,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import FAQSection from '../components/FAQSection/FAQSection';
+import FeaturedEventCard from '../components/EventCard/FeaturedEventCard';
 
 const Playground = () => (
   <>
@@ -12,6 +13,7 @@ const Playground = () => (
       <meta name='description' content='This is playground' />
     </Helmet>
     <FAQSection />
+    <FeaturedEventCard />
   </>
 );
 
