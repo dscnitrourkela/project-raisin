@@ -3,7 +3,6 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
-import { navigate } from 'gatsby';
 import { toast } from 'react-toastify';
 import { auth } from '../config/firebase';
 import Api from './Api';
@@ -48,7 +47,6 @@ const AuthContextProvider = ({ children }) => {
         setAuthenticated(false);
         setUserData({});
         setToken('');
-        navigate('/');
       }
       setLoading(false);
     });
@@ -91,7 +89,6 @@ const AuthContextProvider = ({ children }) => {
       try {
         auth.signOut();
         setAuthenticated(false);
-        navigate('/');
         toast.success('Logged out successfully');
       } catch (error) {
         toast.error(error.message ?? 'Unable to logout');

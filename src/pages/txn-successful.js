@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout, SuccessCard } from '../components';
+import { SuccessCard } from '../components';
 
 export default function Successful() {
   return (
@@ -10,9 +10,7 @@ export default function Successful() {
         <title>Innovision | Success</title>
         <meta name='description' content='This is success page' />
       </Helmet>
-      <Layout>
-        <SuccessCard />
-      </Layout>
+      <SuccessCard />
     </>
   );
 }
