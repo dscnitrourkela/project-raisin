@@ -32,7 +32,7 @@ function DesktopNav() {
   const menuContext = useContext(MenuContext);
   const { toggleMenuOpen, menuOpen } = menuContext;
   const authContext = useContext(AuthContext);
-  const { authenticated } = authContext;
+  const { authenticated, login, logout } = authContext;
 
   return (
     <NavSection>
@@ -64,7 +64,11 @@ function DesktopNav() {
             </ul>
           </NavCenter>
           <NavRight>
-            <Button variant='outline' text={authenticated ? 'logout' : 'Register'} />
+            <Button
+              variant='outline'
+              text={authenticated ? 'logout' : 'Register'}
+              onClick={authenticated ? logout : login}
+            />
           </NavRight>
         </NavWrapper>
       </Container>

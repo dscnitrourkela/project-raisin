@@ -2,7 +2,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import { Layout } from '../components';
 import FAQSection from '../components/FAQSection/FAQSection';
 
 const Playground = () => (
@@ -12,10 +11,7 @@ const Playground = () => (
       <title>Playground</title>
       <meta name='description' content='This is playground' />
     </Helmet>
-    <User />
-    <Layout>
-      <FAQSection />
-    </Layout>
+    <FAQSection />
   </>
 );
 
