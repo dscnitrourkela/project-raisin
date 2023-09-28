@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Layout, PageNotFoundCard } from '../components';
+import { PageNotFoundCard } from '../components';
 
 export default function Error404() {
   return (
@@ -10,9 +10,7 @@ export default function Error404() {
         <title>Page not found</title>
         <meta name='description' content='This is 404 page' />
       </Helmet>
-      <Layout>
-        <PageNotFoundCard />
-      </Layout>
+      <PageNotFoundCard />
     </>
   );
 }
