@@ -52,9 +52,6 @@ export const TickerMover = styled.div`
     inline-block
     whitespace-nowrap
   `}
-  &:hover {
-    animation-play-state: paused;
-  }
   animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 160s linear infinite;
 
   @media (max-width: 720px) {
