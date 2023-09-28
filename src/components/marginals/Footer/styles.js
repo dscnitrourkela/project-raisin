@@ -6,12 +6,15 @@ export const InformationContainer = styled.div`
     flex
     flex-col
     gap-[15px]
-    md:gap-[16px]
     w-[208px]
-    md:w-[264px]
     overflow-hidden
-    md:mx-auto
   `}
+
+  @media (max-width: 890px) {
+    gap: 16px;
+    width: 264px;
+    margin: 0 auto;
+  }
 `;
 export const InformationTitle = styled.p`
   ${tw`
@@ -23,7 +26,7 @@ export const InformationTitle = styled.p`
   font-weight: 600;
   line-height: 28px;
 
-  @media (max-width: 760px) {
+  @media (max-width: 890px) {
     font-size: 16px;
     line-height: 20px;
   }
@@ -45,7 +48,7 @@ export const InformationName = styled.p`
   font-weight: 400;
   line-height: 28px;
 
-  @media (max-width: 760px) {
+  @media (max-width: 890px) {
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
@@ -60,31 +63,37 @@ export const InformationValue = styled.span`
 export const InformationWrapper = styled.div`
   ${tw`
     flex
-    md:flex-col
     gap-[32px]
-    md:gap-[24px]
   `}
+  @media (max-width: 890px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 export const QuickLinkContainer = styled.div`
   ${tw`
     flex
     flex-col
     gap-[15px]
-    md:gap-[16px]
     max-w-[208px]
-    md:max-w-[264px]
     overflow-hidden
-    md:mx-auto
   `}
+  @media (max-width: 890px) {
+    gap: 16px;
+    max-width: 264px;
+    margin: 0 auto;
+  }
 `;
 export const LinksContainer = styled.div`
   ${tw`
     flex
-    md:flex-col
     gap-[32px]
-    md:gap-[24px]
-    md:text-center
   `}
+  @media (max-width: 890px) {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
 `;
 export const LogoAndTitleContainer = styled.div`
   ${tw`
@@ -92,8 +101,10 @@ export const LogoAndTitleContainer = styled.div`
     flex-col
     gap-[16px]
     items-start
-    md:items-center
   `}
+  @media (max-width: 890px) {
+    align-items: center;
+  }
 `;
 export const Logo = styled.img`
   ${tw`
@@ -117,16 +128,19 @@ export const TitleText = styled.p`
 export const LinksWrapper = styled.div`
   ${tw`
         flex
-        md:flex-col
         justify-between
-        md:gap-[40px]
         pb-[72px]
-        md:pb-[40px]
         border-b-[2px]
         border-solid
         border-[rgba(255, 255, 255, 0.32)]
-        md:text-center
     `}
+
+  @media (max-width: 890px) {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
 `;
 export const DevText = styled.p`
   ${tw`
@@ -146,8 +160,10 @@ export const SocialsContainer = styled.div`
   ${tw`
         flex
         gap-[32px]
-        md:gap-[24px]
     `}
+  @media (max-width: 890px) {
+    gap: 24px;
+  }
 `;
 
 export const SocialIcon = styled.img`
@@ -161,11 +177,13 @@ export const DevAndSocialContainer = styled.div`
   ${tw`
         w-full
         flex
-        md:flex-col
         justify-between
-        md:items-center
-        md:gap-[16px]
     `}
+  @media (max-width: 890px) {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
 `;
 
 export const FooterContainer = styled.div`
@@ -173,12 +191,14 @@ export const FooterContainer = styled.div`
         flex
         flex-col
         gap-[34px]
-        md:gap-[24px]
         w-[92%]
-        md:w-[80%]
         mx-auto
         sm:w-full
     `}
+  @media (max-width: 890 px) {
+    gap: 24px;
+    width: 80%;
+  }
 `;
 
 export const FooterWrapper = styled.div`
@@ -186,9 +206,12 @@ export const FooterWrapper = styled.div`
         w-full
         bg-background-dark
         pt-[72px]
-        md:pt-[24px]
         pb-[40px]
-        md:pb-[24px]
-        md:text-center
     `}
+
+  @media (max-width: 890px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-align: center;
+  }
 `;

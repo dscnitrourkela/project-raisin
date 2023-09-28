@@ -63,12 +63,12 @@ const Footer = () => (
         </LinksContainer>
       </LinksWrapper>
       <DevAndSocialContainer>
-        <Link to={developers.link}>
+        <Link to={developers.link} target='_blank' rel='noreferrer noopener'>
           <DevText>{developers.text}</DevText>
         </Link>
         <SocialsContainer>
           {socials.map(({ id, icon, alt, link }) => (
-            <a href={link} key={id} target='_blank' rel="noreferrer noopener">
+            <a href={link} key={id} target='_blank' rel='noreferrer noopener'>
               <SocialIcon src={icon} alt={alt} />
             </a>
           ))}
