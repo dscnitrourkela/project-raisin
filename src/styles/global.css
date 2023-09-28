@@ -204,6 +204,24 @@ table {
   border-radius: 5px;
 }
 
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  z-index: 1;
+  &::-ms-expand {
+    display: none;
+  }
+  outline: none;
+}
+
 :root {
   --background-primary: #1e1b1e;
   --background-secondary: #2c2c2c;
@@ -217,6 +235,7 @@ table {
   --accent-color-secondary: #735cff; /* Accent/2 */
   --accent-color-tertiary: #5c9dff; /* Accent/1 */
   --accent-success: #5cffa7; /* Accent/3 */
+  --accent-error: #ff5c5c; /* Accent/5 */
 
   /* TODO After Confirmation from Design System */
   --button-color-primary: #ffffff;
