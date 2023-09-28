@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 // Libraries
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 // Components
 import { MenuContext } from './MenuContext';
@@ -29,6 +29,13 @@ const handleScroll = (id) => {
       const scroll = newScrollObject();
       const anchor = document.getElementById(id);
       scroll.animateScroll(anchor);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const scroll = newScrollObject();
+        const anchor = document.getElementById(id);
+        scroll.animateScroll(anchor);
+      }, 1000);
     }
   }
 };
@@ -37,7 +44,7 @@ function MobileNav() {
   const menuContext = useContext(MenuContext);
   const { toggleMenuOpen } = menuContext;
   const authContext = useContext(AuthContext);
-  const { authenticated } = authContext;
+  const { authenticated, login, logout } = authContext;
 
   const onMenuClick = (id) => {
     handleScroll(id);
@@ -64,7 +71,11 @@ function MobileNav() {
             </li>
           ))}
         </ul>
-        <Button variant='outline' text={authenticated ? 'logout' : 'Register'} />
+        <Button
+          variant='outline'
+          text={authenticated ? 'logout' : 'Register'}
+          onClick={authenticated ? logout : login}
+        />
       </div>
     </StyledMobileNav>
   );

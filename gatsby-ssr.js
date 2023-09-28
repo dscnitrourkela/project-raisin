@@ -4,6 +4,7 @@ import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import AuthContextProvider from './src/utils/Auth';
+import { Layout } from './src/components';
 
 const queryClient = new QueryClient();
 
@@ -63,7 +64,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
 
 export const wrapRootElement = ({ element }) => (
   <QueryClientProvider client={queryClient}>
-    <AuthContextProvider>{element}</AuthContextProvider>
+    <AuthContextProvider>
+      <Layout>{element}</Layout>
+    </AuthContextProvider>
     <ToastContainer />
   </QueryClientProvider>
 );
