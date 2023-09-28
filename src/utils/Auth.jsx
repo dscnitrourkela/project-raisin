@@ -1,11 +1,12 @@
 // eslint-disable-next-line react-hooks/exhaustive-deps
 /* eslint-disable no-console */
 import React, { createContext, useEffect, useMemo, useState } from 'react';
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
-import { Redirect } from '@reach/router';
+
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
 import { navigate } from 'gatsby';
+import { toast } from 'react-toastify';
 import { auth } from '../config/firebase';
-import { avenueApi } from './api';
+import Api from './Api';
 
 const provider = new GoogleAuthProvider();
 
@@ -25,38 +26,35 @@ const AuthContextProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState('');
+  const [loading, setLoading] = useState(true);
+
+  // Get the singleton instance of the API
+  const api = Api.getInstance();
 
   // Setting user id on changing auth state
   useEffect(() => {
-    onAuthStateChanged(auth, (users) => {
-      if (users) {
+    // eslint-disable-next-line no-underscore-dangle
+    const _cancelSubscription = onAuthStateChanged(auth, async (user) => {
+      if (user) {
         setAuthenticated(true);
-        setUserData(users);
-        setToken(users.accessToken);
+        setToken(user.accessToken);
 
-        const fetchUser = async () => {
-          try {
-            const { data: avenueUser } = await avenueApi.get('/user', {
-              params: { uid: users.uid },
-              headers: { Authorization: `Bearer ${users.accessToken}` },
-            });
-            if (avenueUser) {
-              setUserData((current) => ({ ...current, ...avenueUser }));
-            }
-          } catch (error) {
-            console.error('unable to fetch user details', error);
-          }
-        };
-
-        fetchUser();
+        const avenueUser = await api.fetchUserDetails({
+          uid: user.uid,
+          accessToken: user.accessToken,
+        });
+        setUserData(avenueUser);
       } else {
         setAuthenticated(false);
         setUserData({});
         setToken('');
-        <Redirect to='/' />;
+        navigate('/');
       }
+      setLoading(false);
     });
-  }, []);
+
+    return _cancelSubscription;
+  }, [api]);
 
   const value = useMemo(() => {
     // login method
@@ -67,12 +65,12 @@ const AuthContextProvider = ({ children }) => {
           const credential = GoogleAuthProvider.credentialFromResult(result);
           const { accessToken } = credential;
           // The signed-in user info.
-          const { users } = result;
+          const { user } = result;
+          console.log(accessToken, user);
           // ...
           setAuthenticated(true);
           setToken(accessToken);
-          setUserData(users);
-          navigate('/register');
+          setUserData(user);
         })
         .catch((error) => {
           // Handle Errors here.
@@ -84,25 +82,32 @@ const AuthContextProvider = ({ children }) => {
           const credential = GoogleAuthProvider.credentialFromError(error);
           // ...
           console.error(errorCode, errorMessage, email, credential);
+          toast.error(errorMessage);
         });
     };
 
     // logout method
     const logout = () => {
-      auth.signOut();
-      setAuthenticated(false);
-      navigate('/');
+      try {
+        auth.signOut();
+        setAuthenticated(false);
+        navigate('/');
+        toast.success('Logged out successfully');
+      } catch (error) {
+        toast.error(error.message ?? 'Unable to logout');
+      }
     };
 
     return {
-      user: authenticated,
+      authenticated,
       userData,
       token,
       login,
       logout,
       setUserData,
+      loading,
     };
-  }, [authenticated, token, userData]);
+  }, [authenticated, token, userData, loading]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

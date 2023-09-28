@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Footer } from '../components';
+import { FAQSection, Layout } from '../components';
 
 const Playground = () => (
   <>
@@ -10,7 +10,9 @@ const Playground = () => (
       <title>Playground</title>
       <meta name='description' content='This is playground' />
     </Helmet>
-    <Footer />
+    <Layout>
+      <FAQSection />
+    </Layout>
   </>
 );
 
