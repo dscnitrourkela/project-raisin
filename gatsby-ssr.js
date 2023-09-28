@@ -62,11 +62,14 @@ export const onRenderBody = ({ setHeadComponents }) => {
   ]);
 };
 
+export const wrapPageElement = ({ element, props }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <Layout {...props}>{element}</Layout>
+);
+
 export const wrapRootElement = ({ element }) => (
   <QueryClientProvider client={queryClient}>
-    <AuthContextProvider>
-      <Layout>{element}</Layout>
-    </AuthContextProvider>
+    <AuthContextProvider>{element}</AuthContextProvider>
     <ToastContainer />
   </QueryClientProvider>
 );
