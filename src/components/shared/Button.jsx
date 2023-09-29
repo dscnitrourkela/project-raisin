@@ -42,66 +42,23 @@ const StyledButton = styled.button`
       ? variants[props.variant].borderImageSlice
       : variants.primary.borderImageSlice};
 
-  width: ${({ width }) => width};
-
   ${tw`
-    relative
     px-9
     py-3
     text-color-primary
-    rounded-xl
-    sm:w-auto
   `}
   color: ${(props) =>
     variants[props.variant] ? variants[props.variant].color : variants.primary.color};
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-  }
-
-  &:before {
-    content: attr(data-tooltip);
-    padding: 0.2rem 1rem;
-    position: absolute;
-    top: -30%;
-    left: 50%;
-    background: var(--accent-error);
-    color: var(--text-primary);
-    border-radius: 2px;
-    opacity: 0;
-    transform: scale3d(0.5, 0.5, 0.5);
-    transform: translate(-50%, 50%) scale(0.5, 0.5);
-    transition:
-      opacity 0.2s ease-out,
-      transform 0.2s ease-out;
-    white-space: nowrap;
-  }
-
-  &:disabled:hover:before {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1, 1);
-  }
 `;
-
-const Button = ({ text, onClick, link, variant, tooltip, className, ...props }) =>
+const Button = ({ text, onClick, link, variant, ...props }) =>
   link ? (
     <Link to={link}>
-      <StyledButton variant={variant} {...props} className={className}>
+      <StyledButton variant={variant} {...props}>
         <ButtonText outline={variant === 'outline'}>{text}</ButtonText>
       </StyledButton>
     </Link>
   ) : (
-    <StyledButton
-      variant={variant}
-      {...props}
-      onClick={onClick}
-      data-tooltip={tooltip}
-      className={className}
-    >
+    <StyledButton variant={variant} {...props} onClick={onClick}>
       <ButtonText outline={variant === 'outline'}>{text}</ButtonText>
     </StyledButton>
   );

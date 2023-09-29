@@ -13,8 +13,7 @@ const fadeDown = keyframes`
 `;
 
 export const NavSection = styled.header`
-  position: sticky;
-  margin-bottom: 3rem;
+  position: fixed;
   top: 0;
   width: 100%;
   box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
@@ -96,8 +95,7 @@ export const NavRight = styled.div`
 `;
 
 export const StyledMobileNav = styled.section`
-  position: sticky;
-  margin-bottom: 2rem;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;

@@ -1,82 +1,113 @@
+/* eslint-disable max-len */
+import {
+  faTwitterSquare,
+  faInstagramSquare,
+  faYoutubeSquare,
+  faFacebookSquare,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../images/navLogo.svg';
+
 export default {
-  logo: {
-    img: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695818710/inno_logo_gjqvic.svg',
-    alt: 'Innovision 2k23',
+  innovision: {
+    img: logo,
+    alt: 'Innovision 2k22',
   },
-
-  title: 'Innovision 2k23',
-
+  title: 'Innovision 2k22',
+  desc: `
+  INNOVISION, one of the largest techno-management fest in eastern India, aims at providing a stage for young budding minds to exhibit their talents. Our primary goal is to create awareness for great ideas that would help humanity and society.`,
   quicklinks: {
     title: 'Quick Links',
     list: [
       {
-        id: 1,
+        name: 'Technical Events',
+        link: '/technical-events',
+      },
+      {
+        name: 'Guest Lectures',
+        link: '/guest-lectures',
+      },
+      {
+        name: 'C.A program',
+        link: '/campus-ambassador',
+      },
+      {
+        name: 'Fun Events',
+        link: '/fun-events',
+      },
+      {
+        name: 'Pro Shows',
+        link: '/proshows',
+      },
+      {
+        name: 'Workshops',
+        link: '/workshops',
+      },
+      {
+        name: 'Exhibition',
+        link: '/exhibition',
+      },
+      {
         name: 'Privacy Policy',
         link: '/privacy',
       },
       {
-        id: 2,
-        name: 'Team',
-        link: '/',
+        name: 'Refund Policy',
+        link: '/refund',
+      },
+      {
+        name: 'Terms & Conditions',
+        link: '/terms',
+      },
+      {
+        name: 'Pricing',
+        link: '/pricing',
       },
     ],
   },
-  information: [
+  contactTitle: "Let's Connect",
+  contact: [
     {
-      id: 1,
-      infoTitle: 'Opening Hours',
-      list: [
-        {
-          idx: 1,
-          infoName: 'Weekdays',
-          info: 'Timings',
-        },
-        {
-          idx: 2,
-          infoName: 'Saturday, Sunday',
-          info: 'Timings',
-        },
-      ],
+      icon: faMapMarkerAlt,
+      link: '',
+      text: 'SAC, NIT Rourkela, Odisha - 769008',
     },
     {
-      id: 2,
-      infoTitle: 'Opening Hours',
-      list: [
-        {
-          idx: 1,
-          infoName: 'Weekdays',
-          info: 'Timings',
-        },
-        {
-          idx: 2,
-          infoName: 'Saturday, Sunday',
-          info: 'Timings',
-        },
-      ],
+      icon: faPhoneAlt,
+      link: '',
+      text: '+91 7655070696',
+    },
+    {
+      icon: faEnvelope,
+      link: '',
+      text: 'innovision.nitrkl@gmail.com',
     },
   ],
   socials: [
     {
-      id: 1,
-      icon: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695819165/facebook_sxz0rs.svg',
-      alt: 'Facebook',
+      icon: faFacebookSquare,
       link: 'https://www.facebook.com/innonitr/',
     },
     {
-      id: 2,
-      icon: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695819152/instagram_jzbpcd.svg',
-      alt: 'Instagram',
+      icon: faInstagramSquare,
       link: 'https://www.instagram.com/inno.nitr/',
     },
     {
-      id: 3,
-      icon: 'https://res.cloudinary.com/dme9vltjf/image/upload/v1695819050/Twitter_xzkmus.svg',
-      alt: 'Twitter',
+      icon: faYoutubeSquare,
+      link: 'https://www.youtube.com/c/InnovisionNITRourkelaTech',
+    },
+    {
+      icon: faLinkedin,
+      link: 'https://www.linkedin.com/company/innovision-nitrkl/',
+    },
+    {
+      icon: faTwitterSquare,
       link: 'https://twitter.com/innonitr',
     },
   ],
-  developers: {
+  devLink: {
     link: 'https://github.com/dscnitrourkela',
-    text: 'Designed and Developed with 💜 by GDSC NIT Rourkela',
+    linkText: 'GDSC NIT Rourkela',
   },
 };

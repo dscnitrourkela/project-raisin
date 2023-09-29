@@ -1,7 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import RegistrationFlow from '../components/Registration';
+
+import FAQSection from '../components/FAQSection/FAQSection';
+import FeaturedEventCard from '../components/EventCard/FeaturedEventCard';
 
 const Playground = () => (
   <>
@@ -10,7 +12,8 @@ const Playground = () => (
       <title>Playground</title>
       <meta name='description' content='This is playground' />
     </Helmet>
-    <RegistrationFlow />
+    <FAQSection />
+    <FeaturedEventCard />
   </>
 );
 
