@@ -195,7 +195,7 @@ export const FooterContainer = styled.div`
         mx-auto
         sm:w-full
     `}
-  @media (max-width: 890 px) {
+  @media (max-width: 890px) {
     gap: 24px;
     width: 80%;
   }
@@ -203,6 +203,7 @@ export const FooterContainer = styled.div`
 
 export const FooterWrapper = styled.div`
   ${tw`
+        mt-12
         w-full
         bg-background-dark
         pt-[72px]
