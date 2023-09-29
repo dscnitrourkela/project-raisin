@@ -9,18 +9,11 @@ export const avenueApi = axios.create({
   timeoutErrorMessage: 'Request Timeout: Please try again',
 });
 
-export const zimbraApi = axios.create({
-  baseURL: 'https://mail.nitrkl.ac.in/home/~/',
-  timeout: 60000,
-  timeoutErrorMessage: 'Request Timeout: Please try again',
-});
-
 class Api {
   constructor() {
     if (!Api.instance) {
       Api.instance = this;
       this.avenueApi = avenueApi;
-      this.zimbraApi = zimbraApi;
     }
   }
 
@@ -120,7 +113,7 @@ class Api {
 
   async verifyZimbra({ rollNumber, password, sideEffects }) {
     try {
-      const { status } = await this.zimbraApi.post('zimbra-login', {
+      const { status } = await this.avenueApi.get('/zimbra-login', {
         params: {
           username: rollNumber,
           password,
@@ -132,6 +125,8 @@ class Api {
       } else {
         throw new Error('Invalid Credentials');
       }
+
+      return status;
     } catch (error) {
       throw new Error(error.message || 'Something went Wrong, please try again');
     }

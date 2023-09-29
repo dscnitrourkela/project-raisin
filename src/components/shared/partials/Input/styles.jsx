@@ -52,11 +52,11 @@ export const InputLabel = styled(Body2).attrs({ as: 'label' })`
   z-index: 1;
   pointer-events: none;
 
-  ${({ focused, color, errorVisible }) =>
+  ${({ focused, color, errorVisibility }) =>
     focused &&
     `
-    transform: translate(12px, -9px) scale(0.7);
-    color: ${errorVisible ? 'var(--accent-error)' : color};
+    transform: translate(10px, -9px) scale(0.7);
+    color: ${errorVisibility ? 'var(--accent-error)' : color};
   `}
 `;
 
@@ -92,11 +92,11 @@ export const InputFieldSet = styled.fieldset`
   border: 0.4px solid rgba(255, 255, 255, 0.23);
   transition: border 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
-  ${({ focused, color, errorVisible }) =>
+  ${({ focused, color, errorVisibility }) =>
     focused &&
     `
     border: 0.4px solid ${
-      errorVisible ? 'var(--accent-error)' : color || 'var(--text-secondary, #EDEDED)'
+      errorVisibility ? 'var(--accent-error)' : color || 'var(--text-secondary, #EDEDED)'
     };
   `}
 
@@ -140,12 +140,11 @@ export const CustomSelect = styled.select`
     outline: none;
   }
 
-  &::-ms-expand {
-    display: none;
-  }
-
-  &::slotted(option) {
-    display: none;
+  & > option {
+    background-color: var(--background-secondary);
+    color: var(--text-color-primary);
+    display: block;
+    padding: 18px 14px;
   }
 `;
 
@@ -187,7 +186,7 @@ export const CustomButton = styled.button`
   color: ${({ color }) => color || 'var(--text-color-primary)'};
   background: ${({ bgColor }) => bgColor || 'var(--background-secondary)'};
   padding: 16.5px 14px;
-  border: 0px;
+  border: 0.4px solid transparent;
   border-radius: 4px;
   cursor: pointer;
   position: absolute;

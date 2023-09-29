@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import {
   CustomButton,
   CustomInput,
-  CustomOption,
+  // CustomOption,
   CustomSelect,
   InputContainer,
   InputField,
   InputFieldSet,
   InputLabel,
-  OptionContainer,
+  // OptionContainer,
 } from './styles';
 import CaptionText from '../../Typography/CaptionText';
 
@@ -24,7 +24,7 @@ import CaptionText from '../../Typography/CaptionText';
  * @param {string} props.data.value
  * @param {boolean} props.data.readOnly
  * @param {string[]} props.data.options
- * @param {boolean} props.data.errorVisible
+ * @param {boolean} props.data.errorVisibility
  * @param {boolean} props.data.color
  * @param {object} props.data.button
  * @param {string} props.data.button.text
@@ -39,7 +39,7 @@ import CaptionText from '../../Typography/CaptionText';
  * @returns {JSX.Element}
  */
 
-const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
+const Input = ({ onChange, onBlur, onFocus, data, ...props }) => {
   const {
     caption,
     type,
@@ -48,12 +48,13 @@ const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
     value,
     readOnly,
     options,
-    errorVisible,
+    errorVisibility,
     color,
     button,
+    key,
   } = data;
 
-  const [focused, setFocused] = useState(false);
+  const [focused, setFocused] = useState(value !== '');
   const [showPassword, setShowPassword] = useState(false);
 
   const handlePassword = (e) => {
@@ -76,7 +77,7 @@ const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
   return (
     <InputContainer>
       <CustomInput select={type === 'select'} focused={focused}>
-        <InputLabel htmlFor={key} focused={focused} errorVisible={errorVisible} color={color}>
+        <InputLabel htmlFor={key} focused={focused} errorVisibility={errorVisibility} color={color}>
           {placeHolder}
         </InputLabel>
         {type === 'select' ? (
@@ -88,9 +89,17 @@ const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
             id={key}
             onBlur={handleBlur}
             onFocus={handleFocus}
+            onChange={onChange}
             focused={focused}
             {...props}
-          />
+          >
+            <option value='' disabled hidden aria-label='None' />
+            {options?.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </CustomSelect>
         ) : (
           <InputField
             value={value}
@@ -101,6 +110,7 @@ const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
             type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
             readOnly={readOnly}
             disabled={readOnly}
+            style={{ paddingRight: button || type === 'password' ? '70px' : '14px' }}
             {...props}
           />
         )}
@@ -116,29 +126,30 @@ const Input = ({ onChange, onBlur, onFocus, data, key, ...props }) => {
           </CustomButton>
         )}
 
-        <InputFieldSet focused={focused} errorVisible={errorVisible} color={color}>
+        <InputFieldSet focused={focused} errorVisibility={errorVisibility} color={color}>
           <legend>{placeHolder}</legend>
         </InputFieldSet>
       </CustomInput>
-      {caption && (
-        <CaptionText color={errorVisible ? 'var(--accent-error)' : null}>
-          {errorMessage ? (errorVisible ? errorMessage : null) : caption}
+      {(caption || errorMessage) && (
+        <CaptionText color={errorVisibility ? 'var(--accent-error)' : null}>
+          {errorMessage ? (errorVisibility ? errorMessage : null) : caption}
         </CaptionText>
       )}
 
-      {type === 'select' && (
-        <OptionContainer focused={focused}>
+      {/* TODO : AFTERWARDS CHNAGE THE SELECT TO BUTTON AND STYLE OPTIONS PROPERLY */}
+      {/* {type === 'select' && (
+        <OptionContainer focused={open}>
           {options?.map((option) => (
             <CustomOption
               key={option}
               value={option}
-              onClick={(e) => onChange({ target: { value: e.target.value, id: key } })}
+              onClick={() => onChange({ target: { value: option, id: key } })}
             >
               {option}
             </CustomOption>
           ))}
         </OptionContainer>
-      )}
+      )} */}
     </InputContainer>
   );
 };

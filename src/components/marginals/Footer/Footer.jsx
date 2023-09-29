@@ -36,6 +36,7 @@ library.add(
 
 const FooterOuterContainer = styled.div`
   ${tw`
+    mt-12
     w-full
     h-auto
     overflow-x-hidden

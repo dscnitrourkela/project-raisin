@@ -12,7 +12,5 @@ export default styled.h2`
     md:text-3xl
     sm:text-3xl
     text-color-primary
-    mb-10
-    md:mb-6
   `};
 `;
