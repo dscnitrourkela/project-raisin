@@ -1,17 +1,13 @@
 import React from 'react';
-import { Heading1 } from '../components';
+import { PrivateRoute, RegistrationSection } from '../components';
+import RegistrationProvider from '../components/Registration/RegistrationContext';
 
-const RegistrationPage = () => {
-  // eslint-disable-next-line no-console
-  console.log('Registration page');
-
-  return (
-    <>
-      <Heading1>Registration</Heading1>
-      {/* Registration form here */}
-      TODO - Registration form
-    </>
-  );
-};
+const RegistrationPage = () => (
+  <PrivateRoute>
+    <RegistrationProvider>
+      <RegistrationSection />
+    </RegistrationProvider>
+  </PrivateRoute>
+);
 
 export default RegistrationPage;

@@ -1,18 +1,18 @@
 export const UserData = [
   {
-    fieldName: 'Name',
+    placeHolder: 'Name',
     key: 'name',
-    fieldValue: '',
+    color: 'cyan',
   },
   {
-    fieldName: 'Email',
+    placeHolder: 'Email',
     key: 'email',
-    fieldValue: '',
+    color: 'cyan',
   },
   {
-    fieldName: 'Phone',
+    placeHolder: 'Phone',
     key: 'mobile',
-    fieldValue: '',
+    color: 'cyan',
   },
 ];
 

@@ -55,12 +55,12 @@ class Api {
     }
   }
 
-  async registerUser({ uid, accessToken, payload, sideEffects }) {
+  async registerUser({ accessToken, payload, sideEffects, uid }) {
     try {
-      const { data: newUser } = await this.avenueApi
+      const { data: newUser, status } = await this.avenueApi
         .post(
           '/user',
-          { uid, payload },
+          { uid, ...payload },
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           },
@@ -69,7 +69,7 @@ class Api {
           throw new Error(error.response.data);
         });
 
-      if (newUser) {
+      if (newUser.id && status === 200) {
         if (sideEffects) sideEffects(newUser);
       } else throw new Error('Error saving user');
     } catch (error) {

@@ -33,7 +33,7 @@ export const RegistrationContext = React.createContext({
 const RegistrationProvider = ({ children }) => {
   const [stage, setStage] = useState(STAGES.TYPE_OF_USER);
   const [inputData, setInputData] = useState(INPUTS({}));
-  const [isNITR, setIsNITR] = useState(true);
+  const [isNITR, setIsNITR] = useState(false);
   const [verified, setVerified] = useState(false);
   const { userData } = useContext(AuthContext);
   const api = Api.getInstance();
@@ -114,12 +114,20 @@ const RegistrationProvider = ({ children }) => {
       }));
     };
 
+    const customSetStage = (newStage) => {
+      // Add stage to query params
+      const url = new URL(window.location.href);
+      url.searchParams.set('stage', newStage);
+      window.history.pushState({}, '', url);
+      setStage(newStage);
+    };
+
     return {
       stage,
       inputData,
       isNITR,
       verified,
-      setStage,
+      setStage: customSetStage,
       setInputValue,
       setErrorMessage,
       setInputData,

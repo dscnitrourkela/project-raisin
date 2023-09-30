@@ -1,25 +1,11 @@
 import React, { useContext } from 'react';
-import {
-  DetailContainer,
-  Legend,
-  FieldSet,
-  DataValue,
-  DetailWrapper,
-  RegEventContainer,
-} from './styles';
+import { DetailContainer, DetailWrapper, RegEventContainer } from './styles';
 import { UserData, RegisteredEvents as RegEvents } from '../../../config/content/Profile';
-import { Heading2 } from '../shared';
+import { Heading2, Input } from '../shared';
 import RegisteredEventCard from './RegisteredEventCard';
 import { AuthContext } from '../../utils/Auth';
 
-const DataContainer = ({ name, value }) => (
-  <FieldSet>
-    <Legend align='left'>{name}</Legend>
-    <DataValue>{value}</DataValue>
-  </FieldSet>
-);
-
-const User = () => {
+const UserProfile = () => {
   const { userData } = useContext(AuthContext);
 
   return (
@@ -27,10 +13,13 @@ const User = () => {
       <Heading2>Your Details</Heading2>
       <DetailContainer>
         {UserData.map((item) => (
-          <DataContainer
+          <Input
+            data={{
+              ...item,
+              value: userData[item.key],
+              disabled: true,
+            }}
             key={item.key}
-            name={item.fieldName}
-            value={userData[item.key] || item.value}
           />
         ))}
       </DetailContainer>
@@ -51,4 +40,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default UserProfile;

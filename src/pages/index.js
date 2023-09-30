@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { FAQSection, Ticker } from '../components';
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
         <title>Innovision | Home</title>
         <meta name='description' content='This is home page' />
       </Helmet>
-      Hello Innovision 2023
+      <Ticker />
+      <FAQSection />
     </>
   );
 }

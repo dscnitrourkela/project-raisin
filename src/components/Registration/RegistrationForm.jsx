@@ -1,52 +1,57 @@
 import React, { useContext, useEffect } from 'react';
+import { navigate } from 'gatsby';
+import { toast } from 'react-toastify';
 import { RegistrationContext } from './RegistrationContext';
 import { Body2, ButtonText, Heading2, Input } from '../shared';
 import { InputContainer, RegistrationCard, RegistrationCardTitle } from './styles';
 import Button from '../shared/Button';
-
-// Define enum for show
-const SHOW = {
-  NITR: ['both', 'nitr'],
-  NON_NITR: ['both', 'non-nitr'],
-};
+import { SHOW, verify, verifyAll } from './utils';
+import Api from '../../utils/Api';
+import { AuthContext } from '../../utils/Auth';
 
 export const RegistrationForm = () => {
-  const { inputData, setInputValue, isNITR, setErrorMessage, verified } =
+  const { inputData, setInputValue, isNITR, setErrorMessage, verified, setIsNITR } =
     useContext(RegistrationContext);
+
+  const {
+    token,
+    userData: { uid },
+  } = useContext(AuthContext);
+
+  const api = Api.getInstance();
 
   const onBlur = (e) => {
     const { id, value } = e.target;
     const { minLength, maxLength, regex, type } = inputData[id];
 
-    if (!value || type === 'select') return;
-
-    if (value.length < minLength) {
-      setErrorMessage(id, `Minimum length is ${minLength}`, true);
-    } else if (value.length > maxLength) {
-      setErrorMessage(id, `Maximum length is ${maxLength}`, true);
-    } else if (regex && !regex.test(value)) {
-      setErrorMessage(id, 'Invalid input', true);
-    } else {
-      setErrorMessage(id, '', false);
-    }
+    verify({ minLength, maxLength, regex, value, type, id, setErrorMessage });
   };
 
   useEffect(() => {
     Object.values(inputData).forEach(({ minLength, maxLength, value, regex, key, type }) => {
-      if (!value || type === 'select') return;
-
-      if (value.length < minLength) {
-        setErrorMessage(key, `Minimum length is ${minLength}`, true);
-      } else if (value.length > maxLength) {
-        setErrorMessage(key, `Maximum length is ${maxLength}`, true);
-      } else if (!regex.test(value)) {
-        setErrorMessage(key, 'Invalid input', true);
-      } else {
-        setErrorMessage(key, '', false);
-      }
+      verify({ minLength, maxLength, value, regex, type, id: key, setErrorMessage });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const registerUser = async () => {
+    const payload = verifyAll({ inputData, isNITR, verified });
+    if (!payload) return;
+
+    const sideEffects = () => (isNITR ? navigate('/') : navigate('/payment'));
+
+    toast.promise(
+      api.registerUser({ accessToken: token, payload, sideEffects, uid }),
+      {
+        pending: 'Registering...',
+        success: 'Registered successfully',
+        error: 'Unable to register',
+      },
+      {
+        toastId: 'registerUser',
+      },
+    );
+  };
 
   return (
     <RegistrationCard>
@@ -54,7 +59,9 @@ export const RegistrationForm = () => {
         <Heading2 style={{ textTransform: 'none' }}>Registration form</Heading2>
         <Body2 style={{ display: 'flex', gap: '16px' }}>
           {isNITR ? 'Student from NIT Rourkela' : 'Student from other college'}
-          <ButtonText outline>Change</ButtonText>
+          <ButtonText onClick={() => setIsNITR((prev) => !prev)} className='cursor-pointer' outline>
+            Change
+          </ButtonText>
         </Body2>
       </RegistrationCardTitle>
 
@@ -93,6 +100,7 @@ export const RegistrationForm = () => {
         width='350px'
         disabled={!verified && isNITR}
         tooltip={verified ? '' : 'Verify your credentials'}
+        onClick={registerUser}
       />
     </RegistrationCard>
   );

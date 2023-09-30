@@ -47,11 +47,19 @@ export const QuestionText = styled.p`
 `;
 export const AnswerContainer = styled.div`
   ${tw`
-  mb-4
-   `}
-  max-height: ${(props) => (props.active ? '1000px' : '0px')};
+    mb-4
+  `}
+  max-height: 0.01px;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.1s ease-in-out;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  ${({ active }) =>
+    active &&
+    ` 
+      max-height: 1000px;
+      opacity: 1;
+    `}
 `;
 
 export const AnswerWrap = styled.div`

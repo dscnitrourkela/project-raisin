@@ -10,3 +10,12 @@ export { default as PageNotFoundCard } from './PageNotFoundCard/PageNotFoundCard
 
 // FAQ section
 export { default as FAQSection } from './FAQSection/FAQSection';
+
+// Registration
+export { default as RegistrationSection } from './Registration';
+
+// Ticker
+export { default as Ticker } from './Ticker';
+
+// Profile
+export { default as UserProfile } from './UserProfile/UserProfile';
