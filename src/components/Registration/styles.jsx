@@ -42,3 +42,19 @@ export const InputContainer = styled.div`
   grid-row-gap: 24px;
   grid-column-gap: 24px;
 `;
+
+export const ButtonContainer = styled.div`
+  ${tw`
+    flex
+    gap-4
+    items-center
+    justify-center
+    w-8/12
+  `}
+
+  button {
+    ${tw`
+      w-full
+    `}
+  }
+`;

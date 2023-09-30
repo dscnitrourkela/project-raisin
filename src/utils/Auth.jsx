@@ -42,7 +42,10 @@ const AuthContextProvider = ({ children }) => {
           uid: user.uid,
           accessToken: user.accessToken,
         });
-        setUserData(avenueUser);
+        setUserData({
+          uid: user.uid,
+          ...avenueUser,
+        });
       } else {
         setAuthenticated(false);
         setUserData({});
@@ -64,7 +67,6 @@ const AuthContextProvider = ({ children }) => {
           const { accessToken } = credential;
           // The signed-in user info.
           const { user } = result;
-          console.log(accessToken, user);
           // ...
           setAuthenticated(true);
           setToken(accessToken);

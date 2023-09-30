@@ -22,36 +22,6 @@ export const DetailContainer = styled.div`
   `}
 `;
 
-export const FieldSet = styled.fieldset`
-  ${tw`
-  col-span-1
-  `}
-  height: auto;
-  padding: 10px 8px;
-  display: flex;
-  align-items: flex-start;
-  border-radius: 4px;
-  border: 0.4px solid #b8fffb;
-`;
-export const Legend = styled.legend`
-  ${tw`
-    font-Inter
-    text-color-primary
-  `}
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 14px;
-`;
-
-export const DataValue = styled.p`
-  ${tw`
-    font-Inter
-    text-color-primary
-    text-[14px]
-  `}
-`;
-
 export const RegEventContainer = styled.div`
   ${tw`
     grid

@@ -14,14 +14,14 @@ const variants = {
   },
   primary: {
     background: 'var(--background-secondary)',
-    border: 'var(--background-secondary) 2px solid',
+    border: '2px solid var(--background-secondary))',
     borderImage: 'none',
     borderImageSlice: 0,
   },
   filled: {
     background: 'var(--brand-gradient)',
-    border: 'var(--brand-gradient) 2px solid',
-    borderImage: 'none',
+    border: '2px solid',
+    borderImage: 'var(--brand-gradient)',
     borderImageSlice: 0,
     color: 'var(--accent-primary)',
   },

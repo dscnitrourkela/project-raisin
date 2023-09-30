@@ -1,13 +1,9 @@
 import React, { useContext } from 'react';
-import RegistrationProvider, { RegistrationContext } from './RegistrationContext';
+import { RegistrationContext } from './RegistrationContext';
 import { RegistrationForm } from './RegistrationForm';
 import { STAGES } from '../../../config/content/Registration';
-
-const RegistrationFlow = () => (
-  <RegistrationProvider>
-    <RegistrationSection />
-  </RegistrationProvider>
-);
+import ChoiceStage from './Choice';
+import { Heading1 } from '../shared';
 
 const RegistrationSection = () => {
   const { stage } = useContext(RegistrationContext);
@@ -18,11 +14,15 @@ const RegistrationSection = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        width: '100%',
       }}
     >
-      {stage === STAGES.TYPE_OF_USER && <RegistrationForm />}
+      {stage === STAGES.TYPE_OF_USER && <ChoiceStage />}
+      {stage === STAGES.STUDENT_FORM && <RegistrationForm />}
+      {stage === STAGES.REGISTRATION_CLOSED && <Heading1>Registration Closed</Heading1>}
     </div>
   );
 };
 
-export default RegistrationFlow;
+export default RegistrationSection;
+export * from './RegistrationContext';

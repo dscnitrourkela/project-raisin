@@ -54,8 +54,10 @@ const Input = ({ onChange, onBlur, onFocus, data, ...props }) => {
     key,
   } = data;
 
-  const [focused, setFocused] = useState(value !== '');
+  const [focus, setFocus] = useState(value !== '');
   const [showPassword, setShowPassword] = useState(false);
+
+  const focused = focus || value !== '';
 
   const handlePassword = (e) => {
     e.preventDefault();
@@ -63,13 +65,13 @@ const Input = ({ onChange, onBlur, onFocus, data, ...props }) => {
   };
 
   const handleFocus = (e) => {
-    setFocused(true);
+    setFocus(true);
     if (onFocus) onFocus(e);
   };
 
   const handleBlur = (e) => {
     if (value === '') {
-      setFocused(false);
+      setFocus(false);
     }
     if (onBlur) onBlur(e);
   };
@@ -130,9 +132,11 @@ const Input = ({ onChange, onBlur, onFocus, data, ...props }) => {
           <legend>{placeHolder}</legend>
         </InputFieldSet>
       </CustomInput>
-      {(caption || errorMessage) && (
+      {caption && <CaptionText>{caption}</CaptionText>}
+
+      {errorMessage && (
         <CaptionText color={errorVisibility ? 'var(--accent-error)' : null}>
-          {errorMessage ? (errorVisibility ? errorMessage : null) : caption}
+          {errorVisibility ? errorMessage : null}
         </CaptionText>
       )}
 
