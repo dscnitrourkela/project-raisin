@@ -7,22 +7,15 @@ import Button from '../shared/Button';
 
 const SectionContainer = styled.div`
   ${tw`
-    min-h-screen
-    w-full
     overflow-x-hidden
     overflow-y-hidden
-    flex
-    items-center
-    justify-center
     relative
-    pt-[100px]
-    lg:pt-[90px]
-    sm:pt-[70px]
   `}
 `;
 
 const Card = styled.div`
   ${tw`
+    mx-auto
     max-h-[660px]
     sxm:max-h-[100%]
     h-full
@@ -85,7 +78,7 @@ const ButtonContainer = styled.div`
   `}
 `;
 
-const SuccesssCard = () => (
+const SuccessCard = () => (
   <SectionContainer>
     <Card>
       <UpperContainer>
@@ -97,7 +90,7 @@ const SuccesssCard = () => (
           <SuccessText>{success.success2}</SuccessText>
         </div>
         <ButtonContainer>
-          <Button text={success.btnText} link={success.link} />
+          <Button text={success.btnText} link={success.link} variant='filled' />
           <CaptionText>{success.caption}</CaptionText>
         </ButtonContainer>
       </LowerContainer>
@@ -105,4 +98,4 @@ const SuccesssCard = () => (
   </SectionContainer>
 );
 
-export default SuccesssCard;
+export default SuccessCard;
