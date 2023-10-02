@@ -80,7 +80,7 @@ export const INPUTS = ({
     regex: /\+?[0-9]{0,2} ?[0-9]{5} ?[0-9]{5}/i, // +91 12345 12345 or 1234512345
     key: 'mobile',
     show: 'both',
-    maxLength: 15,
+    maxLength: 10,
     minLength: 1,
     color: 'orange',
   },

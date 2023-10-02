@@ -35,6 +35,7 @@ const AuthContextProvider = ({ children }) => {
     // eslint-disable-next-line no-underscore-dangle
     const _cancelSubscription = onAuthStateChanged(auth, async (user) => {
       if (user) {
+        console.log(user.accessToken);
         setAuthenticated(true);
         setToken(user.accessToken);
 
@@ -42,10 +43,15 @@ const AuthContextProvider = ({ children }) => {
           uid: user.uid,
           accessToken: user.accessToken,
         });
-        setUserData({
-          uid: user.uid,
-          ...avenueUser,
-        });
+        if (avenueUser) {
+          setUserData(avenueUser);
+        } else {
+          setUserData({
+            name: user.displayName,
+            email: user.email,
+            uid: user.uid,
+          });
+        }
       } else {
         setAuthenticated(false);
         setUserData({});

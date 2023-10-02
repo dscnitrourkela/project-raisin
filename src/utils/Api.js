@@ -80,17 +80,17 @@ class Api {
     }
   }
 
-  async initiatePayment({ buyerName, email, phone, amount, sideEffects, accessToken }) {
+  async initiatePayment({ purpose, buyerName, email, phone, amount, sideEffects, accessToken }) {
     try {
       const { data: generatedLink } = await this.avenueApi.post(
         '/payment/instamojo',
         {
           amount,
-          purpose: 'NITRUTSAV-2023 | REGISTRATION',
+          purpose,
           buyerName,
           email,
           phone,
-          redirectUrl: process.env.GATSBY_AVENUE_REDIRECT_URL,
+          redirectUrl: process.env.GATSBY_AVENUE_REDIRECT_URL || 'http://localhost:8000/payment',
           webhook: 'https://avenue-api.nitrkl.in/payment/webhook',
         },
         {

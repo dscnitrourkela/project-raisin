@@ -9,6 +9,6 @@ export default {
     alt: 'success',
   },
   link: '/',
-  btnText: 'continue',
-  caption: 'this would redirect to homepage',
+  btnText: 'Continue',
+  caption: 'This would redirect to homepage',
 };
