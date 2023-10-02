@@ -26,6 +26,7 @@ export const NavSection = styled.header`
   }
   .navLinkItem {
     text-decoration: none;
+    cursor: pointer;
     padding: 0px 28px;
     position: relative;
     display: inline-block;
@@ -55,6 +56,7 @@ export const NavSection = styled.header`
   }
   .navLink {
     text-decoration: none;
+    cursor: pointer;
     padding: 12px 0px;
     color: var(--text-color-tertiary);
     &:hover {
@@ -96,7 +98,7 @@ export const NavRight = styled.div`
 `;
 
 export const StyledMobileNav = styled.section`
-  position: sticky;
+  position: fixed;
   margin-bottom: 2rem;
   top: 0;
   bottom: 0;
@@ -122,6 +124,7 @@ export const StyledMobileNav = styled.section`
   .listItem {
     text-align: center;
     margin-bottom: 1em;
+    cursor: pointer;
   }
   .link {
     font-size: 14px;
