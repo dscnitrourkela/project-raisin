@@ -26,7 +26,7 @@ export const CardTitleContainer = styled.div`
 `;
 
 export const EventTimeVenue = styled(Body2)`
-  ${tw`mr-2`}
+  ${tw` flex items-center`}
 `;
 
 export const Circle = styled.div`

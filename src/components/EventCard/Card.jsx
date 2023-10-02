@@ -23,7 +23,7 @@ const CardComponent = ({
   title,
   club,
   venue,
-  // time,
+  time,
   date,
   month,
   // prizes,
@@ -51,6 +51,8 @@ const CardComponent = ({
               <EventTimeVenue>
                 {date} {month}
                 <Circle />
+                {time}
+                <Circle />
                 {venue}
               </EventTimeVenue>
             </CardTitleContainer>
@@ -77,10 +79,14 @@ const CardComponent = ({
               {venue}
             </EventTimeVenue>
           </CardTitleContainer>
-          <BackDescription style={{ marginTop: '3rem', marginBottom: '2rem', fontSize: '12px' }}>
-            {description}
-          </BackDescription>
-          <Body2>Contact: {contact.join(', ')}</Body2>
+          <ul className='list-none p-0 flex flex-col gap-2'>
+            {description?.map((desc) => (
+              <li key={desc.id}>
+                <BackDescription>{desc.desc}</BackDescription>
+              </li>
+            ))}
+          </ul>
+          <Body2>Contact: {contact?.join(', ')}</Body2>
           <CardButtonContainer>
             <KnowButton text='Back' onClick={bringToFront} />
             <EventRegisterButton variant='outline' text='Register For Event' />
