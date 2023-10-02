@@ -10,7 +10,7 @@ export default {
       link: 'https://mlh.io/',
       width: '170px',
       alt: 'Major League Hacking',
-      color: '#5c9dff',
+      color: 'accent',
     },
   ],
   beta: [

@@ -26,6 +26,21 @@ const SponsorLogo = styled.div`
   }
 `;
 
+const SponsorTitle = styled(Heading3)`
+  ${tw`text-center font-Inter`}
+  color: ${(props) => props.color};
+
+  ${({ accent }) =>
+    accent
+      ? `
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    `
+      : ''}
+`;
+
 export const SponsorIcon = ({ pic, alt, size, link, margin, marginTop, title, color }) => (
   <SponsorLogo style={{ margin }}>
     {pic ? (
@@ -35,7 +50,9 @@ export const SponsorIcon = ({ pic, alt, size, link, margin, marginTop, title, co
     ) : (
       <div />
     )}
-    <Heading3 style={{ paddingTop: '2rem', color }}>{title}</Heading3>
+    <SponsorTitle color={color} accent={color === 'accent'}>
+      {title}
+    </SponsorTitle>
   </SponsorLogo>
 );
 
