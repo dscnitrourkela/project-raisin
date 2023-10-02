@@ -15,7 +15,6 @@ const AboutContainer = styled.div`
     md:flex-col-reverse
     gap-12
     md:gap-5
-    text-color-primary
   `}
 `;
 const AboutTextContainer = styled.div`
