@@ -9,6 +9,7 @@ export { default as ButtonText } from './Typography/ButtonText';
 export { default as CaptionText } from './Typography/CaptionText';
 export { default as Container } from './Container';
 export { default as SectionContainer } from './SectionContainer';
+export { default as SectionLayout } from './SectionLayout';
 export { default as ModalBox } from './ModalBox';
 export { default as About } from './About';
 export { default as Layout } from './Layout';

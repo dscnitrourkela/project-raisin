@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import Heading2 from './Typography/Heading2';
 import Body1 from './Typography/Body1';
-import SectionContainer from './SectionContainer';
 import Container from './Container';
+import SectionLayout from './SectionLayout';
 
 const AboutContainer = styled.div`
   ${tw`
@@ -15,7 +15,6 @@ const AboutContainer = styled.div`
     md:flex-col-reverse
     gap-12
     md:gap-5
-    text-color-primary
   `}
 `;
 const AboutTextContainer = styled.div`
@@ -68,7 +67,7 @@ const MobileHeading = styled(Heading2)`
 `;
 
 const About = ({ title, desc, image, link, alt }) => (
-  <SectionContainer>
+  <SectionLayout title='About Us' id='about' footer='Learn More' footerLink='/about'>
     <Container>
       <AboutContainer>
         <AboutTextContainer>
@@ -90,7 +89,7 @@ const About = ({ title, desc, image, link, alt }) => (
         <MobileHeading bold>{title}</MobileHeading>
       </AboutContainer>
     </Container>
-  </SectionContainer>
+  </SectionLayout>
 );
 
 export default About;

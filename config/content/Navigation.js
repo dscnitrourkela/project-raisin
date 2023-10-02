@@ -7,16 +7,16 @@ export default {
   },
   navItems: [
     {
-      name: 'Events',
-      link: '/',
+      name: 'About',
+      id: 'about',
     },
     {
       name: 'Events',
-      link: '/',
+      id: 'events',
     },
     {
-      name: 'Events',
-      link: '/',
+      name: 'FAQs',
+      id: 'faq',
     },
   ],
 };

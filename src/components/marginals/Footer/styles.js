@@ -191,7 +191,7 @@ export const FooterContainer = styled.div`
         flex
         flex-col
         gap-[34px]
-        w-[92%]
+        w-11/12
         mx-auto
         sm:w-full
     `}
