@@ -10,7 +10,7 @@ const FAQSection = () => {
   const secondHalf = FAQ.splice(-middleIndex);
 
   return (
-    <FAQSectionContainer>
+    <FAQSectionContainer id='faq'>
       <FAQGrid>
         <FAQFirstHalf>
           {firstHalf.map((item, index) => (
