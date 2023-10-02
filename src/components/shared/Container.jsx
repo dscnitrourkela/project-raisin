@@ -7,15 +7,15 @@ const Wrapper = styled.div`
     display: none;
   }
   ${tw`
-        w-11/12
-        lg:max-w-7xl
-        max-w-full
-        my-0
-        mx-[60px]
-        lg:mx-auto
-        p-0
-        overflow-y-hidden
-    `}
+    w-11/12
+    lg:max-w-7xl
+    max-w-full
+    my-0
+    mx-[60px]
+    lg:mx-auto
+    p-0
+    overflow-y-hidden
+  `}
 `;
 
 const Container = ({ children }) => <Wrapper>{children}</Wrapper>;
