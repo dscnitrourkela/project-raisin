@@ -15,12 +15,7 @@ export const CardImage = styled.img`
   }
 `;
 
-export const CardTextContainer = styled.div`
-  ${tw`
-    mt-4 
-    md:mt-3
-  `}
-`;
+export const CardTextContainer = styled.div``;
 
 export const CardTitleContainer = styled.div`
   ${tw`
@@ -47,7 +42,6 @@ export const Circle = styled.div`
 export const EventName = styled(Heading4)`
   text-transform: none;
   ${tw`
-    mt-4
     truncate
   `}
 
@@ -65,7 +59,6 @@ export const EventClub = styled(CaptionText)`
 export const CardButtonContainer = styled.div`
   ${tw`
     flex 
-    mt-4
     justify-between
     `};
 `;
@@ -83,31 +76,34 @@ export const EventRegisterButton = styled(Button)`
     py-1.5
   `}
 `;
-export const CardContainer = styled.div`
-  margin: auto;
-  width: 380px;
-  max-width: 400px;
-`;
 
 export const Card = styled.div`
   width: min-content;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s;
+  height: 512px;
+
+  @media (max-width: 768px) {
+    height: 480px;
+  }
 `;
 
 export const Front = styled.div`
   position: absolute;
   background-color: #2c2c2c;
   width: 400px;
+  height: 100%;
   max-width: 328px;
   backface-visibility: hidden;
   ${tw`
-    h-auto
     px-4
     mx-auto
     pt-4
     pb-6
+    flex
+    flex-col
+    justify-between
     gap-4 
     rounded-2xl
     text-color-secondary
@@ -116,14 +112,17 @@ export const Front = styled.div`
 
 export const Back = styled.div`
   width: 400px;
+  height: 100%;
   max-width: 328px;
   background-color: #2c2c2c;
   ${tw`
-    h-auto
     px-4
     mx-auto
     pt-4
     pb-6
+    flex
+    flex-col
+    justify-between
     gap-4 
     rounded-2xl
     text-color-secondary
@@ -131,11 +130,21 @@ export const Back = styled.div`
   backface-visibility: hidden;
   transform: rotateY(180deg);
 `;
+
+export const BackDescriptionContainer = styled.div`
+  ${tw`
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-1
+  `}
+`;
+
 export const BackDescription = styled(Body2)`
   color: #b9b9b9;
   display: -webkit-box;
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 1rem 0 2rem 0;
 `;
