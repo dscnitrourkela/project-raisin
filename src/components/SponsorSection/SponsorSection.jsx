@@ -10,30 +10,33 @@ import {
   TitleSponsorWrapper,
 } from './styles';
 import Sponsors from '../../../config/content/sponsors';
+import SectionLayout from '../shared/SectionLayout';
 
 const { titleSponsor, sponsors } = Sponsors;
 const SponsorSection = () => (
-  <SponsorSectionContainer>
-    <TitleSponsorWrapper>
-      {titleSponsor.map(({ id, logo, alt, link, color }) => (
-        <TitleSponsorContainer key={id}>
-          <a href={link} target='_blank noopener noreferer'>
-            <TitleSponsorLogo src={logo} alt={alt} />
+  <SectionLayout>
+    <SponsorSectionContainer>
+      <TitleSponsorWrapper>
+        {titleSponsor.map(({ id, logo, alt, link, color }) => (
+          <TitleSponsorContainer key={id}>
+            <a href={link} target='_blank noopener noreferer'>
+              <TitleSponsorLogo src={logo} alt={alt} />
+            </a>
             <SponsorText color={color}>Title Sponsor</SponsorText>
-          </a>
-        </TitleSponsorContainer>
-      ))}
-    </TitleSponsorWrapper>
-    <SponsorWrapper>
-      {sponsors.map(({ id, logo, alt, link, type, color }) => (
-        <SponsorContainer key={id}>
-          <a href={link} target='_blank noopener noreferer'>
-            <SponsorLogo src={logo} alt={alt} />
+          </TitleSponsorContainer>
+        ))}
+      </TitleSponsorWrapper>
+      <SponsorWrapper>
+        {sponsors.map(({ id, logo, alt, link, type, color }) => (
+          <SponsorContainer key={id}>
+            <a href={link} target='_blank noopener noreferer'>
+              <SponsorLogo src={logo} alt={alt} />
+            </a>
             <SponsorText color={color}>{type}</SponsorText>
-          </a>
-        </SponsorContainer>
-      ))}
-    </SponsorWrapper>
-  </SponsorSectionContainer>
+          </SponsorContainer>
+        ))}
+      </SponsorWrapper>
+    </SponsorSectionContainer>
+  </SectionLayout>
 );
 export default SponsorSection;

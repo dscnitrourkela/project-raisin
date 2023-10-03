@@ -27,6 +27,7 @@ export const TitleSponsorContainer = styled.div`
   `}
   @media (max-width: 1100px) {
     width: 240px;
+    gap: 16px;
   }
 `;
 
@@ -45,10 +46,8 @@ export const SponsorText = styled.p`
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 42px;
   width: 100%;
   @media (max-width: 1100px) {
-    line-height: 26px;
     text-align: center;
     font-size: 16px;
   }
@@ -59,7 +58,6 @@ export const SponsorWrapper = styled.div`
       grid
       grid-cols-3
       gap-[79px]
-
   `}
   row-gap: 42px;
   @media (max-width: 1100px) {
@@ -90,6 +88,7 @@ export const SponsorContainer = styled.div`
   @media (max-width: 780px) {
     width: 240px;
     margin-top: 32px;
+    gap: 6px;
   }
 
   @media (max-width: 580px) {
