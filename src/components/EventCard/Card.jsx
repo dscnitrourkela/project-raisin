@@ -71,7 +71,7 @@ const CardComponent = ({
             <EventName style={{ marginTop: 0 }}>{title}</EventName>
             <EventClub>{club}</EventClub>
           </CardTitleContainer>
-          <CardTitleContainer style={{ paddingTop: '0.6rem' }}>
+          <CardTitleContainer style={{ paddingTop: '1.2rem' }}>
             Prize - {prizes}
             <EventTimeVenue style={{ paddingTop: '0.1rem' }}>
               {date} {month}
