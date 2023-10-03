@@ -5,9 +5,13 @@ import Button from '../shared/Button';
 
 export const CardImage = styled.img`
   ${tw`
-    w-full 
     rounded-lg 
   `};
+  width: 21.25rem; 
+  
+  @media (max-width: 768px) {
+    width: 100%; 
+  }
 `;
 
 export const CardTextContainer = styled.div`
@@ -129,4 +133,9 @@ export const Back = styled.div`
 `;
 export const BackDescription = styled(Body2)`
   color: #b9b9b9;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 1rem 0 2rem 0;
 `;
