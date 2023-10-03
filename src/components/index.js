@@ -25,3 +25,6 @@ export { default as SuccessCard } from './Payment/SuccessCard';
 
 // Sponsor section
 export { default as SponsorSection } from './SponsorSection/SponsorSection';
+
+// Event section
+export { default as EventSection } from './EventSection';

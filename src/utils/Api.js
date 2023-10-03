@@ -132,24 +132,31 @@ class Api {
     }
   }
 
-  async bookEvent({ userID, eventID, accessToken, sideEffects }) {
-    const { data: registeredEvent } = await this.avenueApi.post(
-      '/user/registration',
-      {
-        userID,
-        eventID,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
+  async bookEvent({ userID, eventID, accessToken, sideEffects, final }) {
+    try {
+      const { data: registeredEvent } = await this.avenueApi.post(
+        '/user/registration',
+        {
+          userID,
+          eventID,
         },
-      },
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      );
 
-    if (registeredEvent.userID === userID) {
-      if (sideEffects) sideEffects(registeredEvent);
-    } else {
+      if (registeredEvent.userID === userID) {
+        if (sideEffects) sideEffects(registeredEvent);
+      } else {
+        throw new Error('Unable to register for event, please try again');
+      }
+    } catch (error) {
+      toast.error(error.message || 'Something went Wrong, please try again');
       throw new Error('Unable to register for event, please try again');
+    } finally {
+      final();
     }
   }
 }
