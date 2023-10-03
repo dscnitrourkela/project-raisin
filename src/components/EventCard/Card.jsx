@@ -71,11 +71,9 @@ const CardComponent = ({
             <EventName style={{ marginTop: 0 }}>{title}</EventName>
             <EventClub>{club}</EventClub>
           </CardTitleContainer>
-          <div style={{ padding: '0.6rem' }} />
-          <CardTitleContainer>
+          <CardTitleContainer style={{ paddingTop: '0.6rem' }}>
             Prize - {prizes}
-            <div style={{ padding: '0.1rem' }} />
-            <EventTimeVenue>
+            <EventTimeVenue style={{ paddingTop: '0.1rem' }}>
               {date} {month}
               <Circle />
               {venue}
