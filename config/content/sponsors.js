@@ -1,5 +1,8 @@
 export default {
   title: 'Sponsors',
+  footer: 'Want to sponsor us? Email us at dummy@gmail.com',
+  link: 'mailto:dummy@gmail.com',
+  id: 'sponsors',
 
   titleSponsor: [
     {

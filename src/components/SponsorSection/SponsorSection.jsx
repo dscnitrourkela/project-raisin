@@ -9,12 +9,12 @@ import {
   TitleSponsorLogo,
   TitleSponsorWrapper,
 } from './styles';
-import Sponsors from '../../../config/content/sponsors';
 import SectionLayout from '../shared/SectionLayout';
+import { _sponsor } from '../../../config/content';
 
-const { titleSponsor, sponsors } = Sponsors;
+const { titleSponsor, sponsors, title, link: footerLink, footer, id: sectionId } = _sponsor;
 const SponsorSection = () => (
-  <SectionLayout>
+  <SectionLayout title={title} footer={footer} footerLink={footerLink} id={sectionId}>
     <SponsorSectionContainer>
       <TitleSponsorWrapper>
         {titleSponsor.map(({ id, logo, alt, link, color }) => (
