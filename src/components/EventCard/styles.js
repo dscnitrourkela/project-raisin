@@ -8,9 +8,10 @@ export const CardImage = styled.img`
     rounded-lg 
   `};
   width: 21.25rem;
-
+  aspect-ratio: 1/1;
+  object-fit: cover;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 16.25;
   }
 `;
 
@@ -84,9 +85,8 @@ export const EventRegisterButton = styled(Button)`
 `;
 export const CardContainer = styled.div`
   margin: auto;
-  width: 420px;
+  width: 380px;
   max-width: 400px;
-  perspective: 1000px;
 `;
 
 export const Card = styled.div`
