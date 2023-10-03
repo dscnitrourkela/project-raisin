@@ -70,6 +70,6 @@ export const wrapPageElement = ({ element, props }) => (
 export const wrapRootElement = ({ element }) => (
   <QueryClientProvider client={queryClient}>
     <AuthContextProvider>{element}</AuthContextProvider>
-    <ToastContainer />
+    <ToastContainer position='bottom-right' autoClose={3000} />
   </QueryClientProvider>
 );
