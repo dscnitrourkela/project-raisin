@@ -74,14 +74,14 @@ const CardComponent = ({
           <div style={{ padding: '0.6rem' }} />
           <CardTitleContainer>
             Prize - {prizes}
-          <div style={{ padding: '0.1rem' }} />
+            <div style={{ padding: '0.1rem' }} />
             <EventTimeVenue>
               {date} {month}
               <Circle />
               {venue}
             </EventTimeVenue>
           </CardTitleContainer>
-            <BackDescription>{description}</BackDescription>
+          <BackDescription>{description}</BackDescription>
           <Body2>Contact: {contact?.join(', ')}</Body2>
           <CardButtonContainer>
             <KnowButton text='Back' onClick={bringToFront} />

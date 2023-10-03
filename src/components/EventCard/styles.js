@@ -7,10 +7,10 @@ export const CardImage = styled.img`
   ${tw`
     rounded-lg 
   `};
-  width: 21.25rem; 
-  
+  width: 21.25rem;
+
   @media (max-width: 768px) {
-    width: 100%; 
+    width: 100%;
   }
 `;
 
