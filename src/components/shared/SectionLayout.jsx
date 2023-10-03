@@ -49,10 +49,9 @@ const SectionHeader = ({ title }) => (
 const SectionFooter = ({ title, link }) => (
   <CustomHGroup>
     <Link to={link}>
-      {' '}
       <SectionTitle accent right>
         {title}
-      </SectionTitle>{' '}
+      </SectionTitle>
     </Link>
     <HorizontalLine />
   </CustomHGroup>
