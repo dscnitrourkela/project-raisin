@@ -13,10 +13,7 @@ export const RegistrationForm = () => {
   const { inputData, setInputValue, isNITR, setErrorMessage, verified, setIsNITR } =
     useContext(RegistrationContext);
 
-  const {
-    token,
-    userData: { uid },
-  } = useContext(AuthContext);
+  const { token, uid } = useContext(AuthContext);
 
   const api = Api.getInstance();
 

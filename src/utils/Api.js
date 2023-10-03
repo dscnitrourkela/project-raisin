@@ -27,7 +27,7 @@ class Api {
 
   async getEvents(event) {
     return this.avenueApi.get('/events', {
-      params: { type: event, orgID: '65133eb72c5708eb84bf53d6' },
+      params: { type: event, orgID: process.env.GATSBY_ORG_ID },
     });
   }
 

@@ -17,6 +17,7 @@ const defaultValues = {
   token: '',
   login: () => {},
   logout: () => {},
+  uid: '',
 };
 
 export const AuthContext = createContext(defaultValues);
@@ -26,6 +27,7 @@ const AuthContextProvider = ({ children }) => {
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState('');
   const [loading, setLoading] = useState(true);
+  const [uid, setUid] = useState('');
 
   // Get the singleton instance of the API
   const api = Api.getInstance();
@@ -38,6 +40,7 @@ const AuthContextProvider = ({ children }) => {
         console.log(user.accessToken);
         setAuthenticated(true);
         setToken(user.accessToken);
+        setUid(user.uid);
 
         const avenueUser = await api.fetchUserDetails({
           uid: user.uid,
@@ -111,8 +114,9 @@ const AuthContextProvider = ({ children }) => {
       logout,
       setUserData,
       loading,
+      uid,
     };
-  }, [authenticated, token, userData, loading]);
+  }, [authenticated, token, userData, loading, uid]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
