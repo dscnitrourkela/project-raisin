@@ -22,3 +22,6 @@ export { default as PaymentCard } from './Payment/PaymentCard';
 
 // Success Card
 export { default as SuccessCard } from './Payment/SuccessCard';
+
+// Sponsor section
+export { default as SponsorSection } from './SponsorSection/SponsorSection';
