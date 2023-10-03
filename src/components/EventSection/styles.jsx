@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 export const EventSectionContainer = styled.div`
   ${tw`
     w-full
+    px-14
     flex
     flex-wrap
     items-center

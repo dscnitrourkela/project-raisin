@@ -58,7 +58,7 @@ module.exports = {
         'btn-confirmed': 'var(--button-color-confirmed)',
       },
       backgroundImage: () => ({
-        'gradient-primary': 'var(--brand-primary)',
+        'gradient-primary': 'var(--brand-gradient)',
       }),
     },
     screens: {
