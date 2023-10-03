@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 
 export const FAQSectionContainer = styled.div`
   ${tw`
-    w-[90%]
+    w-11/12
     mx-auto
   `}
 `;

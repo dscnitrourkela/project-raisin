@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { FAQSection, Ticker } from '../components';
+import { About, FAQSection, Ticker } from '../components';
+import AboutUs from '../../config/content/AboutUs';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <meta name='description' content='This is home page' />
       </Helmet>
       <Ticker />
+      <About title={AboutUs.title} desc={AboutUs.desc} link={AboutUs.link} />
       <FAQSection />
     </>
   );
