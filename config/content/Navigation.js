@@ -15,6 +15,10 @@ export default {
       id: 'events',
     },
     {
+      name: 'Sponsors',
+      id: 'sponsors',
+    },
+    {
       name: 'FAQs',
       id: 'faq',
     },

@@ -17,8 +17,8 @@ export const NavSection = styled.header`
   margin-bottom: 3rem;
   top: 0;
   width: 100%;
-  box-shadow: 0 0 16px 0 rgba(255, 255, 255, 0.36);
-  background-color: var(--background-primary);
+  background-color: #2c2c2ccc;
+  backdrop-filter: blur(10px);
   z-index: 40;
   .navLinkList {
     display: none;

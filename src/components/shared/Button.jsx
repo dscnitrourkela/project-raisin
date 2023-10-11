@@ -63,7 +63,10 @@ const StyledButton = styled.button`
     cursor: not-allowed;
   }
 
-  &:before {
+  ${({ tooltip }) =>
+    tooltip &&
+    `
+     &:before {
     content: attr(data-tooltip);
     padding: 0.2rem 1rem;
     position: absolute;
@@ -85,6 +88,7 @@ const StyledButton = styled.button`
     opacity: 1;
     transform: translate(-50%, -50%) scale(1, 1);
   }
+  `}
 `;
 
 const Button = ({ text, onClick, link, variant, tooltip, className, ...props }) =>
@@ -99,6 +103,7 @@ const Button = ({ text, onClick, link, variant, tooltip, className, ...props }) 
       variant={variant}
       {...props}
       onClick={onClick}
+      tooltip={!!tooltip}
       data-tooltip={tooltip}
       className={className}
     >
