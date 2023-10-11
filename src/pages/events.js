@@ -25,7 +25,7 @@ const TypeSelector = styled.div`
     content: '';
     position: absolute;
     width: ${({ active }) => (active ? '100%' : '0')};
-    bottom: 10px;
+    bottom: -10px;
     left: ${({ active }) => (active ? '0' : '50%')};
     height: 2px;
     display: block;
