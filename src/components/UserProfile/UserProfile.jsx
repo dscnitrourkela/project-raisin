@@ -1,12 +1,27 @@
-import React, { useContext } from 'react';
-import { DetailContainer, DetailWrapper, RegEventContainer } from './styles';
-import { UserData, RegisteredEvents as RegEvents } from '../../../config/content/Profile';
+import React, { useContext, useEffect, useState } from 'react';
+import { DetailContainer, DetailWrapper } from './styles';
+import { UserData } from '../../../config/content/Profile';
 import { Heading2, Input } from '../shared';
-import RegisteredEventCard from './RegisteredEventCard';
 import { AuthContext } from '../../utils/Auth';
+import Api from '../../utils/Api';
+import EventCard from '../EventCard/Card';
+import { EventSectionContainer } from '../EventSection/styles';
 
 const UserProfile = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData, token, authenticated } = useContext(AuthContext);
+  const api = Api.getInstance();
+
+  const [registeredEvents, setRegisteredEvents] = useState([]);
+
+  useEffect(() => {
+    if (authenticated) {
+      api.fetchRegisteredEvents({
+        userID: userData.id,
+        accessToken: token,
+        sideEffects: (data) => setRegisteredEvents(data),
+      });
+    }
+  }, [authenticated, userData, token, api]);
 
   return (
     <DetailWrapper>
@@ -24,18 +39,11 @@ const UserProfile = () => {
         ))}
       </DetailContainer>
       <Heading2>Registered Events</Heading2>
-      <RegEventContainer>
-        {RegEvents.map(({ id, title, img, clubName, date, location }) => (
-          <RegisteredEventCard
-            key={id}
-            title={title}
-            img={img}
-            clubName={clubName}
-            date={date}
-            location={location}
-          />
+      <EventSectionContainer>
+        {registeredEvents?.map((event) => (
+          <EventCard event={event} key={event.id} registered />
         ))}
-      </RegEventContainer>
+      </EventSectionContainer>
     </DetailWrapper>
   );
 };

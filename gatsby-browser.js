@@ -1,6 +1,6 @@
 import './src/styles/global.css';
 import 'react-toastify/dist/ReactToastify.css';
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ToastContainer } from 'react-toastify';
 import AuthContextProvider from './src/utils/Auth';
@@ -69,8 +69,10 @@ export const wrapPageElement = ({ element, props }) => (
 );
 
 export const wrapRootElement = ({ element }) => (
-  <QueryClientProvider client={queryClient}>
-    <AuthContextProvider>{element}</AuthContextProvider>
-    <ToastContainer position='bottom-right' autoClose={5000} />
-  </QueryClientProvider>
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <AuthContextProvider>{element}</AuthContextProvider>
+      <ToastContainer position='bottom-right' autoClose={5000} />
+    </QueryClientProvider>
+  </StrictMode>
 );

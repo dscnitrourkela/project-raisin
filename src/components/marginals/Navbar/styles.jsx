@@ -130,6 +130,10 @@ export const StyledMobileNav = styled.section`
     font-size: 14px;
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const StyledHamburger = styled.button`
