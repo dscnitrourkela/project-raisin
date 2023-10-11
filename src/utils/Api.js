@@ -153,10 +153,63 @@ class Api {
         throw new Error('Unable to register for event, please try again');
       }
     } catch (error) {
-      toast.error(error.message || 'Something went Wrong, please try again');
-      throw new Error('Unable to register for event, please try again');
+      toast.error(
+        error?.response?.data || error.message || 'Something went Wrong, please try again',
+      );
+      throw new Error(
+        error?.response?.data || error.message || 'Something went Wrong, please try again',
+      );
     } finally {
       final();
+    }
+  }
+
+  async fetchRegisteredEvents({ accessToken, userID, sideEffects }) {
+    try {
+      const { data: registeredEvents } = await this.avenueApi.get('/user/registration', {
+        params: {
+          userID,
+        },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      const parsedEvents = registeredEvents
+        .filter((event) => event.orgID.includes(process.env.GATSBY_ORG_ID))
+        .map((event) => {
+          const description = JSON.parse(event.description);
+          const date = new Date(event.startDate);
+
+          return {
+            id: event.id,
+            title: event.name,
+            club: event.subHeading,
+            date: date.getDate(),
+            month: date.toDateString().split(' ')[1],
+            time: `${date.getHours().toString().padStart(2, '0')}:${date
+              .getMinutes()
+              .toString()
+              .padStart(2, '0')}`,
+            description,
+            contact: event.contact,
+            venue: 'LA',
+            prizes: event.prizeMoney,
+            poster: event.poster ? event.poster : 'TODO://link',
+          };
+        })
+        .sort((a, b) => +a.date - +b.date);
+
+      if (sideEffects) sideEffects(parsedEvents);
+
+      console.log(parsedEvents);
+
+      return parsedEvents;
+    } catch (error) {
+      toast.error(
+        error?.response?.data || error.message || 'Something went Wrong, please try again',
+      );
+      return [];
     }
   }
 }

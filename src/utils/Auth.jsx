@@ -37,7 +37,6 @@ const AuthContextProvider = ({ children }) => {
     // eslint-disable-next-line no-underscore-dangle
     const _cancelSubscription = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        console.log(user.accessToken);
         setAuthenticated(true);
         setToken(user.accessToken);
         setUid(user.uid);
@@ -74,11 +73,11 @@ const AuthContextProvider = ({ children }) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
           const credential = GoogleAuthProvider.credentialFromResult(result);
           const { accessToken } = credential;
+          console.log(accessToken);
           // The signed-in user info.
           const { user } = result;
           // ...
           setAuthenticated(true);
-          setToken(accessToken);
           setUserData(user);
         })
         .catch((error) => {

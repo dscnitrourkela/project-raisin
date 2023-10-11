@@ -22,7 +22,7 @@ import { Body2 } from '../shared';
 import { AuthContext } from '../../utils/Auth';
 import Api from '../../utils/Api';
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, registered }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const { authenticated, userData, token } = useContext(AuthContext);
   const [disabled, setDisabled] = useState(false);
@@ -90,9 +90,9 @@ const EventCard = ({ event }) => {
           <KnowButton text='Know More' onClick={flipCard} />
           <EventRegisterButton
             variant='outline'
-            text='Register For Event'
-            onClick={handleClick}
-            disabled={disabled || !authenticated}
+            text={registered ? 'Registered' : 'Register For Event'}
+            onClick={registered ? null : handleClick}
+            disabled={disabled || !authenticated || registered}
           />
         </CardButtonContainer>
       </Front>
@@ -119,9 +119,9 @@ const EventCard = ({ event }) => {
           <KnowButton text='Back' onClick={bringToFront} />
           <EventRegisterButton
             variant='outline'
-            text='Register For Event'
-            onClick={handleClick}
-            disabled={disabled || !authenticated}
+            text={registered ? 'Registered' : 'Register For Event'}
+            onClick={registered ? null : handleClick}
+            disabled={disabled || !authenticated || registered}
           />
         </CardButtonContainer>
       </Back>
