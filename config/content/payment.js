@@ -4,7 +4,7 @@ export const PaymentDetails = ({ email, name, mobile }) => {
   return {
     purpose: 'INNOVISION 2023 | Registration Fee',
     date: date.toDateString(),
-    amount: 10,
+    amount: 1000,
     email,
     buyerName: name,
     phone: mobile,
