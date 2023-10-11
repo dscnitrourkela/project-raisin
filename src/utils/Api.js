@@ -202,8 +202,6 @@ class Api {
 
       if (sideEffects) sideEffects(parsedEvents);
 
-      console.log(parsedEvents);
-
       return parsedEvents;
     } catch (error) {
       toast.error(

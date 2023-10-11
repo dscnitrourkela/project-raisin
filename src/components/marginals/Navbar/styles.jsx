@@ -131,7 +131,7 @@ export const StyledMobileNav = styled.section`
     text-decoration: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1023px) {
     display: none;
   }
 `;

@@ -18,6 +18,7 @@ const defaultValues = {
   login: () => {},
   logout: () => {},
   uid: '',
+  setUserData: () => {},
 };
 
 export const AuthContext = createContext(defaultValues);
