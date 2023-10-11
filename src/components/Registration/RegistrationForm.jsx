@@ -13,7 +13,7 @@ export const RegistrationForm = () => {
   const { inputData, setInputValue, isNITR, setErrorMessage, verified, setIsNITR } =
     useContext(RegistrationContext);
 
-  const { token, uid } = useContext(AuthContext);
+  const { token, uid, setUserData } = useContext(AuthContext);
 
   const api = Api.getInstance();
 
@@ -35,7 +35,13 @@ export const RegistrationForm = () => {
     const payload = verifyAll({ inputData, isNITR, verified });
     if (!payload) return;
 
-    const sideEffects = () => (isNITR ? navigate('/') : navigate('/payment'));
+    const sideEffects = (userData) => {
+      if (userData) {
+        setUserData(userData);
+      }
+      if (isNITR) navigate('/');
+      else navigate('/payment');
+    };
 
     toast.promise(
       api.registerUser({ accessToken: token, payload, sideEffects, uid }),
