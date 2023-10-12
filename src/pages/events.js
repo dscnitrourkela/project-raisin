@@ -9,12 +9,37 @@ import { _eventPage } from '../../config/content';
 import { Heading4 } from '../components/shared';
 
 const TypeSelectWrapper = styled.div`
-  ${tw` flex items-center space-x-4 pb-14 overflow-x-clip w-11/12 mx-auto`}
+  ${tw` flex space-x-4 pb-14 overflow-x-clip w-11/12 mx-auto`}
   overflow-x: auto;
+
+  /* Scrollbar Styling */
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #0e151c;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 10px;
+  }
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #5f676e;
+    border-radius: 5px;
+  }
 `;
 
 const TypeSelector = styled.div`
-  ${tw`flex justify-center items-center flex-col cursor-pointer gap-4 relative`}
+  ${tw`flex items-center flex-col cursor-pointer gap-4 relative text-center`}
   min-width: 208px;
 
   @media (max-width: 768px) {
@@ -51,12 +76,12 @@ const EventPage = () => {
   return (
     <div>
       <TypeSelectWrapper>
-        {_eventPage.map(({ type: _type, image }) => (
+        {_eventPage.map(({ type: _type, image, title }) => (
           <TypeSelector onClick={() => handleTypeChange(_type)} key={_type} active={_type === type}>
             <ImageContainer>
               <img src={image} alt={_type} />
             </ImageContainer>
-            <Heading4 style={{ textTransform: 'none' }}>{_type}</Heading4>
+            <Heading4 style={{ textTransform: 'none' }}>{title}</Heading4>
           </TypeSelector>
         ))}
       </TypeSelectWrapper>

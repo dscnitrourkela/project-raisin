@@ -1,22 +1,37 @@
 export default [
   {
+    title: 'Technical',
     type: 'Technical',
     image: 'https://placehold.co/80',
   },
   {
-    type: 'technical',
+    title: 'Pro Shows',
+    type: 'Pro',
     image: 'https://placehold.co/80',
   },
   {
-    type: 'TEchnical',
+    title: 'Workshops',
+    type: 'Workshop',
     image: 'https://placehold.co/80',
   },
   {
-    type: 'TecHnical',
+    title: 'Guest Lectures',
+    type: 'Guest-Lectures',
     image: 'https://placehold.co/80',
   },
   {
-    type: 'TechnCcal',
+    title: 'Exhibitions',
+    type: 'Exhibitions',
+    image: 'https://placehold.co/80',
+  },
+  {
+    title: 'Fun Events',
+    type: 'Fun',
+    image: 'https://placehold.co/80',
+  },
+  {
+    title: 'Others',
+    type: 'Other',
     image: 'https://placehold.co/80',
   },
 ];
