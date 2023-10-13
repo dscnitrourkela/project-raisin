@@ -2,41 +2,52 @@ const FAQContent = {
   FAQS: [
     {
       id: 1,
-      question: 'When would Innovision happen?',
+      question: 'What is INNOVISION? ',
       answer:
-        'INNOVISION is the largest ' +
-        'techno-management fest of Eastern India lorem ipsum dolor ' +
-        'ipsum dolor somethin lorem ipsum dolor somethin lorem ipsum dolor somethin',
+        'Innovision is one of the biggest ' +
+        'techno management fest organised by students of NITR,' +
+        ' with participation from all over India ',
     },
     {
       id: 2,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'Who are we?',
+      answer:
+        'Organised by students of NIT Rourkela, INNOVISION is the annual techno management.' +
+        'With our unrivalled ability to host such technical fests' +
+        "we were recognised as  Odisha's top student chapter",
     },
     {
       id: 3,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'Who can participate?',
+      answer:
+        'All science and technology enthusiasts currently' +
+        'studying in college are invited to participate.',
     },
     {
       id: 4,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'Will it be conducted online?',
+      answer: 'No the event will be conducted in offline mode.',
     },
     {
       id: 5,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'What is the goal of the fest? ',
+      answer:
+        'The major purpose of the fest is to bring together people ' +
+        'who share a passion for technology in order ' +
+        'to showcase their skills and give attendees' +
+        ' a fantastic chance to broaden their technical understandings.',
     },
     {
       id: 6,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'How could I know if I got selected for any event? ',
+      answer: "If you're chosen, we'll send you an email.",
     },
     {
       id: 7,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
+      question: 'Cost of registration? ',
+      answer:
+        'The cost of registration, including accommodation is Rs. 950,' +
+        ' and without accommodation, it is Rs. 500.',
     },
     {
       id: 8,
