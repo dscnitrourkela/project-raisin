@@ -161,13 +161,13 @@ export const StyledHamburger = styled.button`
     outline-color: #fff;
   }
   &::before {
-    top: ${({ menuOpen }) => (menuOpen ? '12px' : '8px')};
-    transform: ${({ menuOpen }) => (menuOpen ? 'rotate(40deg)' : null)};
+    top: ${({ menuopen }) => (menuopen ? '12px' : '8px')};
+    transform: ${({ menuopen }) => (menuopen ? 'rotate(40deg)' : null)};
   }
   &::after {
-    width: ${({ menuOpen }) => (menuOpen ? '100%' : '80%')};
-    bottom: ${({ menuOpen }) => (menuOpen ? '12px' : '8px')};
-    transform: ${({ menuOpen }) => (menuOpen ? 'rotate(-40deg)' : null)};
+    width: ${({ menuopen }) => (menuopen ? '100%' : '80%')};
+    bottom: ${({ menuopen }) => (menuopen ? '12px' : '8px')};
+    transform: ${({ menuopen }) => (menuopen ? 'rotate(-40deg)' : null)};
   }
   @media all and (min-width: 1023px) {
     display: none;
