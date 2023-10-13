@@ -11,7 +11,7 @@ const VideoContainer = styled.div`
 `;
 
 const VideoElement = styled.video`
-  ${tw`scale-[1.2] min-w-full min-h-full object-cover mt-[140px]`}
+  ${tw`scale-[1.2] min-w-full min-h-full object-cover mt-[140px] xl:ml-7`}
 `;
 
 function VideoBackground() {

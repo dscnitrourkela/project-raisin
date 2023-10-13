@@ -98,7 +98,6 @@ export const NavRight = styled.div`
 
 export const StyledMobileNav = styled.section`
   position: fixed;
-  margin-bottom: 2rem;
   top: 0;
   bottom: 0;
   left: 0;

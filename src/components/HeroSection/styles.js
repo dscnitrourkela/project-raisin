@@ -9,6 +9,7 @@ export const SectionContainer = styled.div`
     overflow-y-hidden
     flex
     relative
+    mb-20
   `}
   @media (min-width: 2560px) {
     align-items: center;
