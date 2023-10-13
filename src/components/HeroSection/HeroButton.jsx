@@ -22,10 +22,10 @@ const ButtonContainer = styled.button`
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 12px; /* Adjust padding as needed */
+  padding: 12px;
   border: none;
   background: none;
-  max-width: 100%;
+  width: 320px;
   cursor: pointer;
   &:hover {
     ${ButtonTop} {
@@ -35,8 +35,9 @@ const ButtonContainer = styled.button`
       transform: scaleY(0.3);
     }
   }
-  @media (min-width: 780px) {
+  @media (min-width: 576px) {
     max-width: 60%;
+    width: 100%;
   }
 `;
 

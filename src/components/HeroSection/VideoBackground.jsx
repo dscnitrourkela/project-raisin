@@ -3,15 +3,34 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Container = styled.div`
-  ${tw`h-[110%]`}
+  ${tw`
+  h-[110%]
+  `}
 `;
 
 const VideoContainer = styled.div`
-  ${tw`absolute -z-[10] top-0 left-0 w-screen h-full overflow-hidden`}
+  ${tw`
+  absolute
+  -z-[10]
+  top-0
+  left-0
+  w-screen
+  h-full
+  overflow-hidden
+  `}
 `;
 
 const VideoElement = styled.video`
-  ${tw`scale-[1.2] min-w-full min-h-full object-cover mt-[140px]`}
+  ${tw`
+  scale-[1.2]
+  min-w-full
+  min-h-full
+  object-cover
+  mt-[145px]
+  sm:mt-[30px]
+  translate-x-0
+  md:translate-x-[20px]
+  `}
 `;
 
 function VideoBackground() {
