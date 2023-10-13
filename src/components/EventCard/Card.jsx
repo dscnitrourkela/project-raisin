@@ -28,7 +28,7 @@ const EventCard = ({ event, registered }) => {
   const [disabled, setDisabled] = useState(false);
 
   const bookingAllowed =
-    authenticated && (userData?.rollNumber || userData.festID.includes('innovision-2023'));
+    authenticated && (userData?.rollNumber || userData?.festID?.includes('innovision-2023'));
 
   const api = Api.getInstance();
 
@@ -95,7 +95,8 @@ const EventCard = ({ event, registered }) => {
             variant='outline'
             text={registered ? 'Registered' : 'Register For Event'}
             onClick={registered ? null : handleClick}
-            disabled={disabled || !authenticated || registered}
+            disabled={disabled || !bookingAllowed || registered}
+            tooltip={!bookingAllowed ? 'Kindly register for the fest first' : ''}
           />
         </CardButtonContainer>
       </Front>
@@ -125,6 +126,7 @@ const EventCard = ({ event, registered }) => {
             text={registered ? 'Registered' : 'Register For Event'}
             onClick={registered ? null : handleClick}
             disabled={disabled || !bookingAllowed || registered}
+            tooltip={!bookingAllowed ? 'Kindly register for the fest first' : ''}
           />
         </CardButtonContainer>
       </Back>
