@@ -14,7 +14,6 @@ const fadeDown = keyframes`
 
 export const NavSection = styled.header`
   position: sticky;
-  margin-bottom: 3rem;
   top: 0;
   width: 100%;
   background-color: #2c2c2ccc;
