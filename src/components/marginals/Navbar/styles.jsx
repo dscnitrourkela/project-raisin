@@ -62,6 +62,11 @@ export const NavSection = styled.header`
       color: var(--text-color-secondary);
     }
   }
+
+  @media (max-width: 768px) {
+    position: fixed;
+  }
+
   @media (min-width: 1023px) {
     padding-top: 0;
     padding-bottom: 0;

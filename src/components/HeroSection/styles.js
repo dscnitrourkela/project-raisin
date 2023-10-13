@@ -63,7 +63,7 @@ export const DatesDiv = styled.div`
   xl:gap-[48px]
   md:gap-[24px]
   sm:gap-[12px]
-  mb-[40px]
+  mb-[20px]
   md:mb-[24px]
 `}
 `;

@@ -28,8 +28,7 @@ const VideoElement = styled.video`
   object-cover
   mt-[145px]
   sm:mt-[30px]
-  translate-x-0
-  md:translate-x-[20px]
+  translate-x-[20px]
   `}
 `;
 
