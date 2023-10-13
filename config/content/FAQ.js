@@ -13,14 +13,14 @@ const FAQContent = {
       question: 'Who are we?',
       answer:
         'Organised by students of NIT Rourkela, INNOVISION is the annual techno management.' +
-        'With our unrivalled ability to host such technical fests' +
+        'With our unrivalled ability to host such technical fests ' +
         "we were recognised as  Odisha's top student chapter",
     },
     {
       id: 3,
       question: 'Who can participate?',
       answer:
-        'All science and technology enthusiasts currently' +
+        'All science and technology enthusiasts currently ' +
         'studying in college are invited to participate.',
     },
     {
@@ -48,11 +48,6 @@ const FAQContent = {
       answer:
         'The cost of registration, including accommodation is Rs. 950,' +
         ' and without accommodation, it is Rs. 500.',
-    },
-    {
-      id: 8,
-      question: 'What is INNOVISION?',
-      answer: 'INNOVISION is the largest techno-management fest of Eastern India',
     },
   ],
   title: 'Frequently Asked Questions',
