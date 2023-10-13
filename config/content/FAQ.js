@@ -47,7 +47,7 @@ const FAQContent = {
       question: 'Cost of registration? ',
       answer:
         'The cost of registration, including accommodation is Rs. 950,' +
-        ' and without accommodation, it is Rs. 500.',
+        ' and without accommodation, it is Rs. 750.',
     },
   ],
   title: 'Frequently Asked Questions',
