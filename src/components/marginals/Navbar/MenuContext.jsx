@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
 export const MenuContext = createContext({
-  menuOpen: null,
+  menuopen: null,
   toggleMenuOpen: null,
 });

@@ -28,3 +28,6 @@ export { default as SponsorSection } from './SponsorSection/SponsorSection';
 
 // Event section
 export { default as EventSection } from './EventSection';
+
+// Hero section
+export { default as HeroSection } from './HeroSection/HeroSection';

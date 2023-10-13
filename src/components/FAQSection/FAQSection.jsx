@@ -1,15 +1,14 @@
 import React from 'react';
 import AccordionItem from './AccordionItem';
-import FAQContent from '../../../config/content/FAQ';
 import { FAQSectionContainer, FAQGrid, FAQFirstHalf, FAQSecondHalf } from './styles';
 import { SectionLayout } from '../shared';
+import { FAQContent, FAQS } from '../../../config/content';
 
 const FAQSection = () => {
-  const FAQ = FAQContent.FAQS;
-  const middleIndex = Math.ceil(FAQ.length / 2);
+  const middleIndex = Math.ceil(FAQS.length / 2);
 
-  const firstHalf = FAQ.splice(0, middleIndex);
-  const secondHalf = FAQ.splice(-middleIndex);
+  const firstHalf = FAQS.splice(0, middleIndex);
+  const secondHalf = FAQS.splice(-middleIndex);
 
   return (
     <SectionLayout
