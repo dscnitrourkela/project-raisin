@@ -12,7 +12,7 @@ const useEvents = (eventName) => {
 
   const events = useMemo(
     () =>
-      data?.data
+      data?.data?.filter((event) => event?.status === 'ACTIVE')
         ?.map((event) => {
           const description = JSON.parse(event.description);
           const date = new Date(event.startDate);
