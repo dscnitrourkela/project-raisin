@@ -9,7 +9,7 @@ import { _eventPage } from '../../config/content';
 import { Heading4 } from '../components/shared';
 
 const TypeSelectWrapper = styled.div`
-  ${tw` flex space-x-4 pb-14 overflow-x-clip w-11/12 mx-auto`}
+  ${tw` flex space-x-4 pt-6 pb-8 overflow-x-clip w-11/12 mx-auto`}
   overflow-x: auto;
 
   /* Scrollbar Styling */
@@ -79,7 +79,7 @@ const EventPage = () => {
         {_eventPage.map(({ type: _type, image, title }) => (
           <TypeSelector onClick={() => handleTypeChange(_type)} key={_type} active={_type === type}>
             <ImageContainer>
-              <img src={image} alt={_type} />
+              <img src={image} alt={_type} style={{ width: '100%', height: '100%' }} />
             </ImageContainer>
             <Heading4 style={{ textTransform: 'none' }}>{title}</Heading4>
           </TypeSelector>

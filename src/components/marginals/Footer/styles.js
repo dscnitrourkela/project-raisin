@@ -6,13 +6,14 @@ export const InformationContainer = styled.div`
     flex
     flex-col
     gap-[15px]
-    w-[208px]
+    max-w-[228px]
     overflow-hidden
   `}
 
   @media (max-width: 890px) {
     gap: 16px;
     width: 264px;
+    max-width: 290px;
     margin: 0 auto;
   }
 `;

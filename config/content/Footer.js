@@ -12,7 +12,9 @@ export default {
       {
         id: 1,
         name: 'Privacy Policy',
-        link: '/privacy',
+        link:
+          'https://res.cloudinary.com/dme9vltjf/raw/upload' +
+          '/v1697275542/INNOVISION_2K23_Policy_vwc8ct.docx',
       },
       {
         id: 2,
@@ -40,17 +42,17 @@ export default {
     },
     {
       id: 2,
-      infoTitle: 'Opening Hours',
+      infoTitle: 'Contact Us',
       list: [
         {
           idx: 1,
-          infoName: 'Weekdays',
-          info: 'Timings',
+          infoName: 'Snehasish',
+          info: '+91 98277 02030',
         },
         {
           idx: 2,
-          infoName: 'Saturday, Sunday',
-          info: 'Timings',
+          infoName: 'Medha',
+          info: '+91 97051 66433',
         },
       ],
     },
