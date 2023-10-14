@@ -15,6 +15,7 @@ const RegistrationSection = () => {
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
+        marginTop: '40px',
       }}
     >
       {stage === STAGES.TYPE_OF_USER && <ChoiceStage />}

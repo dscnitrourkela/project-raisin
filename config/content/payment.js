@@ -17,6 +17,7 @@ export const PaymentContent = {
   warning: 'Note: Registration fee is non-refundable.',
   info: 'Check your details before proceeding to payment.',
   endNote: 'For any queries, contact us at: +91 1234567890',
+  caption: 'Early Bird Registration Fee',
   proceed: 'Proceed to Payment',
   cancel: 'Cancel',
   termsLink: 'https://www.google.com/',
