@@ -18,7 +18,8 @@ import Button from '../shared/Button';
 
 const PaymentCard = () => {
   const { userData, token } = useContext(AuthContext);
-  const { title, description, endNote, info, proceed, termsLink, warning } = PaymentContent;
+  const { title, description, endNote, info, proceed, termsLink, warning, caption } =
+    PaymentContent;
   const [agreed, setAgreed] = useState(false);
 
   const api = Api.getInstance();
@@ -67,6 +68,20 @@ const PaymentCard = () => {
       </Consent>
 
       <Warning>{warning}</Warning>
+      {/* TODO: Remove afterwards */}
+      <Body2 style={{ margin: '8px', display: 'flex', gap: '8px', justifyContent: 'center' }}>
+        {caption}:<b style={{ textDecoration: 'line-through' }}> ₹1000</b>
+        <b
+          style={{
+            background: 'var(--brand-gradient)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          ₹750
+        </b>
+      </Body2>
 
       <Button
         type='submit'

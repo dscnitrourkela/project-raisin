@@ -30,7 +30,7 @@ const handleScroll = (id) => {
 
 function DesktopNav() {
   const menuContext = useContext(MenuContext);
-  const { toggleMenuOpen, menuOpen } = menuContext;
+  const { toggleMenuOpen, menuopen } = menuContext;
   const authContext = useContext(AuthContext);
   const { authenticated, login, logout } = authContext;
 
@@ -44,7 +44,7 @@ function DesktopNav() {
             </Link>
           </div>
           <NavCenter>
-            <StyledHamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
+            <StyledHamburger menuopen={menuopen} onClick={toggleMenuOpen} />
             <ul className='navLinkList'>
               {nav.navItems.map(({ id, name, link }) => (
                 <li

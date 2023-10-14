@@ -13,8 +13,7 @@ const fadeDown = keyframes`
 `;
 
 export const NavSection = styled.header`
-  position: sticky;
-  margin-bottom: 3rem;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: #2c2c2ccc;
@@ -63,6 +62,11 @@ export const NavSection = styled.header`
       color: var(--text-color-secondary);
     }
   }
+
+  @media (max-width: 768px) {
+    position: fixed;
+  }
+
   @media (min-width: 1023px) {
     padding-top: 0;
     padding-bottom: 0;
@@ -99,7 +103,6 @@ export const NavRight = styled.div`
 
 export const StyledMobileNav = styled.section`
   position: fixed;
-  margin-bottom: 2rem;
   top: 0;
   bottom: 0;
   left: 0;
@@ -163,13 +166,13 @@ export const StyledHamburger = styled.button`
     outline-color: #fff;
   }
   &::before {
-    top: ${({ menuOpen }) => (menuOpen ? '12px' : '8px')};
-    transform: ${({ menuOpen }) => (menuOpen ? 'rotate(40deg)' : null)};
+    top: ${({ menuopen }) => (menuopen ? '12px' : '8px')};
+    transform: ${({ menuopen }) => (menuopen ? 'rotate(40deg)' : null)};
   }
   &::after {
-    width: ${({ menuOpen }) => (menuOpen ? '100%' : '80%')};
-    bottom: ${({ menuOpen }) => (menuOpen ? '12px' : '8px')};
-    transform: ${({ menuOpen }) => (menuOpen ? 'rotate(-40deg)' : null)};
+    width: ${({ menuopen }) => (menuopen ? '100%' : '80%')};
+    bottom: ${({ menuopen }) => (menuopen ? '12px' : '8px')};
+    transform: ${({ menuopen }) => (menuopen ? 'rotate(-40deg)' : null)};
   }
   @media all and (min-width: 1023px) {
     display: none;
