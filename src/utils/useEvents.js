@@ -12,7 +12,8 @@ const useEvents = (eventName) => {
 
   const events = useMemo(
     () =>
-      data?.data?.filter((event) => event?.status === 'ACTIVE')
+      data?.data
+        ?.filter((event) => event?.status === 'ACTIVE')
         ?.map((event) => {
           const description = JSON.parse(event.description);
           const date = new Date(event.startDate);
@@ -32,9 +33,16 @@ const useEvents = (eventName) => {
             venue: 'LA',
             prizes: event.prizeMoney,
             poster: event.poster ? event.poster : 'TODO://link',
+            priority: event.priority,
           };
         })
-        .sort((a, b) => +a.date - +b.date),
+        // sort by priority and then by date
+        ?.sort((a, b) => {
+          if (a.priority === b.priority) {
+            return a.date - b.date;
+          }
+          return b.priority - a.priority;
+        }),
     [data],
   );
 
