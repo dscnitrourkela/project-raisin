@@ -40,6 +40,7 @@ const PaymentPage = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+            marginTop: '7rem',
           }}
         >
           {paymentStatus ? <SuccessCard /> : <PaymentCard />}
