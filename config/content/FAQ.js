@@ -53,6 +53,6 @@ export const FAQS = [
 export const FAQContent = Object.freeze({
   title: 'Frequently Asked Questions',
   footer: 'Still have questions? Feel free to contact us',
-  footerLink: 'contact-us',
+  footerLink: 'mailto:reachus.inno@gmail.com',
   id: 'faq',
 });
