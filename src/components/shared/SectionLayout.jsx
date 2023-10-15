@@ -22,12 +22,13 @@ export const SectionTitle = styled(Body1)`
   ${({ accent }) =>
     accent
       ? `
-    background: var(--brand-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #EABCFF;
   `
-      : ''}
+      : ''}//background: var(--brand-gradient);
+  //-webkit-background-clip: text;
+  //
+  //background-clip: text;
+  //-webkit-text-fill-color: transparent;
 `;
 
 export const CustomHGroup = styled.hgroup`
@@ -48,12 +49,12 @@ const SectionHeader = ({ title }) => (
 
 const SectionFooter = ({ title, link }) => (
   <CustomHGroup>
+    <HorizontalLine />
     <Link to={link}>
       <SectionTitle accent right>
         {title}
       </SectionTitle>
     </Link>
-    <HorizontalLine />
   </CustomHGroup>
 );
 
