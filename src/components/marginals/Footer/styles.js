@@ -115,12 +115,9 @@ export const Logo = styled.img`
 `;
 
 export const TitleText = styled.p`
-  ${tw`
-    font-Roslindale
-  `}
-  color: #FFF;
+  font-family: var(--font-family-stardos);
+  color: #fff;
   font-size: 24px;
-  font-style: italic;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
