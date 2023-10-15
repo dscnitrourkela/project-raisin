@@ -52,9 +52,9 @@ export const TickerMover = styled.div`
     inline-block
     whitespace-nowrap
   `}
-  animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 160s linear infinite;
+  animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 260s linear infinite;
 
   @media (max-width: 720px) {
-    animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 110s linear infinite;
+    animation: ${({ reverse }) => (reverse ? reverseTicker : ticker)} 200s linear infinite;
   }
 `;

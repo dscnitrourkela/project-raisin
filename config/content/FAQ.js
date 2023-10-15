@@ -3,50 +3,56 @@ export const FAQS = [
     id: 1,
     question: 'What is INNOVISION? ',
     answer:
-      'Innovision is one of the biggest ' +
-      'techno management fest organised by students of NITR,' +
-      ' with participation from all over India ',
+      'Innovision is one of the biggest techno ' +
+      'management fest organised by students of NITR, ' +
+      'with participation from all over India. ',
   },
   {
     id: 2,
-    question: 'Who are we?',
+    question: 'Who can participate? ',
     answer:
-      'Organised by students of NIT Rourkela, INNOVISION is the annual techno management.' +
-      'With our unrivalled ability to host such technical fests ' +
-      "we were recognised as  Odisha's top student chapter",
+      'All science and technology enthusiasts currently ' +
+      'studying in college are invited to participate. ',
   },
   {
     id: 3,
-    question: 'Who can participate?',
-    answer:
-      'All science and technology enthusiasts currently ' +
-      'studying in college are invited to participate.',
+    question: 'How to participate?',
+    answer: 'You can acquire all the information you need by registering on the website for this.',
   },
   {
     id: 4,
-    question: 'Will it be conducted online?',
-    answer: 'No the event will be conducted in offline mode.',
+    question: 'Cost of registration? ',
+    answer: 'The cost of registration, including accommodation is Rs. 1000. ',
   },
   {
     id: 5,
-    question: 'What is the goal of the fest? ',
+    question: 'Will there be any proshows?',
     answer:
-      'The major purpose of the fest is to bring together people ' +
-      'who share a passion for technology in order ' +
-      'to showcase their skills and give attendees' +
-      ' a fantastic chance to broaden their technical understandings.',
+      'All the attendees will ' +
+      'have the opportunity to enjoy a lifetime of experiences, including DJ Night, stand-up ' +
+      'comedy shows, and more, creating lasting memories.',
   },
   {
     id: 6,
-    question: 'How could I know if I got selected for any event? ',
-    answer: "If you're chosen, we'll send you an email.",
+    question: 'Will I have to pay anything extra for the events?',
+    answer: 'Most of the events are free of cost apart from few fun events and workshops.',
   },
   {
     id: 7,
-    question: 'Cost of registration? ',
+    question: 'Starting from which date will accommodation be provided?',
     answer:
-      'The cost of registration, including accommodation is Rs. 950,' +
-      ' and without accommodation, it is Rs. 750.',
+      'Accommodation will strictly be provided ' +
+      'from 3rd November 2023 to 5th November 2023. Please note that accommodation will ' +
+      'not be provided on 2nd November 2023 or 6th November 2023.',
+  },
+  {
+    id: 8,
+    question: 'Will I have to pay anything extra for accommodation?',
+    answer:
+      "No, you don't have to pay anything " +
+      'extra for accommodation. The registration fees ' +
+      'includes 3-day accommodation. Please note that meals will not be provided by us. ' +
+      'However, you can buy your meals at eateries and restaurants.',
   },
 ];
 

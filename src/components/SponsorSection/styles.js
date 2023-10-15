@@ -21,13 +21,11 @@ export const TitleSponsorContainer = styled.div`
   ${tw`
     flex
     flex-col
-    gap-[32px]
     text-center
     w-[320px]
   `}
   @media (max-width: 1100px) {
     width: 240px;
-    gap: 16px;
   }
 `;
 
@@ -77,7 +75,7 @@ export const SponsorContainer = styled.div`
   ${tw`
     flex
     flex-col
-    gap-[32px]
+    gap-[20px]
     text-center
     w-[320px]
     col-span-1
@@ -99,7 +97,6 @@ export const SponsorContainer = styled.div`
 
 export const SponsorLogo = styled.img`
   ${tw`
-    w-full
-    my-auto
+    h-full
   `}
 `;

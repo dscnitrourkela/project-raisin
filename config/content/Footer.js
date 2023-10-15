@@ -12,12 +12,22 @@ export default {
       {
         id: 1,
         name: 'Privacy Policy',
-        link: '/privacy',
+        link: 'https://drive.google.com/file/d/1mQqqUzHdR-56cmrKLMCANlrrT22FVkgk/view',
       },
       {
         id: 2,
-        name: 'Team',
-        link: '/',
+        name: 'Code of Conduct',
+        link: 'https://drive.google.com/file/d/1Nr38t6s37FQQ5edU8biloQdl3EsdGns-/view',
+      },
+      {
+        id: 3,
+        name: 'Terms and Conditions',
+        link: 'https://drive.google.com/file/d/1bg9NMoJV80vdaoNRTpQIKVt-QGQtkpy5/view',
+      },
+      {
+        id: 4,
+        name: 'Refund Policy',
+        link: 'https://drive.google.com/file/d/1cLnuEBtt7yFfC1dQeFVOP0Oxf_hsCTzb/view',
       },
     ],
   },
@@ -29,28 +39,28 @@ export default {
         {
           idx: 1,
           infoName: 'Weekdays',
-          info: 'Timings',
+          info: '9:00AM - 10:00PM',
         },
         {
           idx: 2,
           infoName: 'Saturday, Sunday',
-          info: 'Timings',
+          info: '9:00AM - 10:00PM',
         },
       ],
     },
     {
       id: 2,
-      infoTitle: 'Opening Hours',
+      infoTitle: 'Contact Us',
       list: [
         {
           idx: 1,
-          infoName: 'Weekdays',
-          info: 'Timings',
+          infoName: 'Snehasish',
+          info: '+91 98277 02030',
         },
         {
           idx: 2,
-          infoName: 'Saturday, Sunday',
-          info: 'Timings',
+          infoName: 'Medha',
+          info: '+91 97051 66433',
         },
       ],
     },

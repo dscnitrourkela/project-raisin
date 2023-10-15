@@ -67,7 +67,12 @@ const MobileHeading = styled(Heading2)`
 `;
 
 const About = ({ title, desc, image, link, alt }) => (
-  <SectionLayout title='About Us' id='about' footer='Learn More' footerLink='/about'>
+  <SectionLayout
+    title='About Us'
+    id='about'
+    footer='Learn More'
+    footerLink='https://www.instagram.com/inno.nitr/'
+  >
     <Container>
       <AboutContainer>
         <AboutTextContainer>

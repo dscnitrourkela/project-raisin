@@ -93,7 +93,7 @@ const PaymentCard = () => {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          ₹750
+          ₹899
         </b>
       </Body2>
 
