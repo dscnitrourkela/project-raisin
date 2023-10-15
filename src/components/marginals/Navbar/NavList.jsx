@@ -28,7 +28,7 @@ const onClick = (id, link, toggleMenuOpen) => {
   if (!link) {
     handleScroll(id);
   }
-  toggleMenuOpen();
+  if (toggleMenuOpen) toggleMenuOpen();
 };
 
 const NavList = ({ toggleMenuOpen }) => {
