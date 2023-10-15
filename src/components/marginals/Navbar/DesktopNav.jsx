@@ -2,9 +2,8 @@ import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../utils/Auth';
 import { nav } from '../../../../config/content';
-import Heading4 from '../../shared/Typography/Heading4';
 import { Container } from '../../shared';
-import { NavCenter, NavRight, NavSection, NavWrapper, StyledHamburger } from './styles';
+import { NavCenter, NavRight, NavSection, NavWrapper, StyledHamburger, TitleText } from './styles';
 import { MenuContext } from './MenuContext';
 import Button from '../../shared/Button';
 import NavList from './NavList';
@@ -21,7 +20,7 @@ function DesktopNav() {
         <NavWrapper>
           <div className='navLeft'>
             <Link to='/'>
-              <Heading4>{nav.logo.text}</Heading4>
+              <TitleText>{nav.logo.text}</TitleText>
             </Link>
           </div>
           <NavCenter>

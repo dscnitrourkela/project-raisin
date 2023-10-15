@@ -3,7 +3,7 @@
 export default {
   title: 'Navigation',
   logo: {
-    text: 'Innovision 2k23',
+    text: 'INNOVISION 2023',
   },
   navItems: [
     {

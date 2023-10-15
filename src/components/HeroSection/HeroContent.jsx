@@ -6,7 +6,7 @@ function HeroContent() {
   return (
     <HeroContainer>
       <HeroTitle>INNOVISION</HeroTitle>
-      <Year>2K23</Year>
+      <Year>2023</Year>
       <DatesDiv>
         <Line />
         <Dates>3rd-5th November 2023</Dates>
