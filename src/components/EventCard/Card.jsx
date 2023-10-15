@@ -81,7 +81,6 @@ const EventCard = ({ event, registered }) => {
               <Circle />
               {time}
               <Circle />
-              {venue}
             </EventTimeVenue>
           </CardTitleContainer>
           <CardTitleContainer>
@@ -118,7 +117,7 @@ const EventCard = ({ event, registered }) => {
             <BackDescription key={id}>{desc}</BackDescription>
           ))}
         </BackDescriptionContainer>
-        <Body2>Contact: {contact?.join(', ')}</Body2>
+        {contact ? <Body2>Contact: {contact?.join(', ')}</Body2> : null}
         <CardButtonContainer>
           <KnowButton text='Back' onClick={bringToFront} />
           <EventRegisterButton

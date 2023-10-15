@@ -118,13 +118,13 @@ export const StyledMobileNav = styled.section`
     min-height: 100%;
     gap: 10px;
   }
-  .linkList {
+  .navLinkList {
     display: flex;
     flex-direction: column;
     gap: 10px;
     list-style-type: none;
   }
-  .listItem {
+  .navLinkItem {
     text-align: center;
     margin-bottom: 1em;
     cursor: pointer;
