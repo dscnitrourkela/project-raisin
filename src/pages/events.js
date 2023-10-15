@@ -74,7 +74,7 @@ const EventPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: '100px' }}>
       <TypeSelectWrapper>
         {_eventPage.map(({ type: _type, image, title }) => (
           <TypeSelector onClick={() => handleTypeChange(_type)} key={_type} active={_type === type}>

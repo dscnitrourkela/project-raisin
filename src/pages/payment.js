@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { navigate } from 'gatsby';
 import { PaymentCard, PrivateRoute, SuccessCard } from '../components';
+import { AuthContext } from '../utils/Auth';
 
 const PaymentPage = () => {
   const [paymentStatus, setPaymentStatus] = useState(false);
+  const { userData } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (!userData) {
+      toast.error('Please register first');
+      navigate('/register');
+    }
+  }, [userData]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -23,16 +33,19 @@ const PaymentPage = () => {
   return (
     <PrivateRoute>
       {/* Payment form here */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        {paymentStatus ? <SuccessCard /> : <PaymentCard />}
-      </div>
+      {userData && (
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: '7rem',
+          }}
+        >
+          {paymentStatus ? <SuccessCard /> : <PaymentCard />}
+        </div>
+      )}
     </PrivateRoute>
   );
 };

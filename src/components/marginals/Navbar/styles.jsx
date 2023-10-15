@@ -13,7 +13,7 @@ const fadeDown = keyframes`
 `;
 
 export const NavSection = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: #2c2c2ccc;
@@ -118,13 +118,13 @@ export const StyledMobileNav = styled.section`
     min-height: 100%;
     gap: 10px;
   }
-  .linkList {
+  .navLinkList {
     display: flex;
     flex-direction: column;
     gap: 10px;
     list-style-type: none;
   }
-  .listItem {
+  .navLinkItem {
     text-align: center;
     margin-bottom: 1em;
     cursor: pointer;

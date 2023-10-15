@@ -5,6 +5,7 @@ export const DetailWrapper = styled.div`
   ${tw`
     w-[90%]
     mx-[auto]
+    mt-28
   `}
 `;
 export const DetailContainer = styled.div`
