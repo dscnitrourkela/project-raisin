@@ -39,7 +39,9 @@ const Footer = () => (
             <InformationListContainer>
               {quicklinks.list.map(({ id, name, link }) => (
                 <InformationName style={{ cursor: 'pointer' }} key={id}>
-                  <Link to={link}>{name}</Link>
+                  <Link to={link} target='_blank'>
+                    {name}
+                  </Link>
                 </InformationName>
               ))}
             </InformationListContainer>

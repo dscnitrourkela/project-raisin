@@ -6,7 +6,7 @@ export const InformationContainer = styled.div`
     flex
     flex-col
     gap-[15px]
-    max-w-[228px]
+    max-w-[308px]
     overflow-hidden
   `}
 

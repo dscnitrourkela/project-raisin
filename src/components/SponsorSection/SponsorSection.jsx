@@ -29,7 +29,7 @@ const SponsorSection = () => (
       <SponsorWrapper>
         {sponsors.map(({ id, logo, alt, link, type, color }) => (
           <SponsorContainer key={id}>
-            <a href={link} target='_blank noopener noreferer'>
+            <a href={link} target='_blank noopener noreferer' style={{ height: '90%' }}>
               <SponsorLogo src={logo} alt={alt} />
             </a>
             <SponsorText color={color}>{type}</SponsorText>
