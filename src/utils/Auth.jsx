@@ -72,9 +72,8 @@ const AuthContextProvider = ({ children }) => {
       signInWithPopup(auth, provider)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const { accessToken } = credential;
-          console.log(accessToken);
+          // const credential = GoogleAuthProvider.credentialFromResult(result);
+          // const { accessToken } = credential;
           // The signed-in user info.
           const { user } = result;
           // ...

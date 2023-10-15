@@ -6,7 +6,7 @@ import useEvents from '../../utils/useEvents';
 import { _event } from '../../../config/content';
 
 const EventSection = () => {
-  const { events } = useEvents('Technical');
+  const { events } = useEvents();
 
   return (
     <SectionLayout

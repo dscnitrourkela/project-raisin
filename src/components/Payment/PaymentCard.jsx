@@ -18,11 +18,22 @@ import Button from '../shared/Button';
 
 const PaymentCard = () => {
   const { userData, token } = useContext(AuthContext);
-  const { title, description, endNote, info, proceed, termsLink, warning } = PaymentContent;
-  const [agreed, setAgreed] = useState(false);
+  const { title, description, endNote, info, proceed, terms, warning, caption } = PaymentContent;
+  const [checkboxValues, setCheckboxValues] = useState(
+    terms.reduce((acc, { id }) => ({ ...acc, [id]: false }), {}),
+  );
 
   const api = Api.getInstance();
   const details = useMemo(() => PaymentDetails(userData), [userData]);
+
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setCheckboxValues((prev) => {
+      const newValues = { ...prev };
+      newValues[name] = checked;
+      return newValues;
+    });
+  };
 
   const handlePayment = () => {
     toast.promise(
@@ -52,30 +63,52 @@ const PaymentCard = () => {
           </PaymentDetailsListItem>
         ))}
       </PaymentDetailsList>
-      <Consent>
-        <input
-          type='checkbox'
-          id='consent'
-          name='consent'
-          onClick={() => setAgreed((prev) => !prev)}
-          value={agreed}
-        />
-        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor='consent' aria-label='consent' aria-selected={agreed}>
-          I agree to the <Link to={termsLink}>terms and conditions</Link>
-        </label>
-      </Consent>
+
+      <ul style={{ listStyle: 'none', padding: '0', marginTop: '20px', marginBottom: '20px' }}>
+        {terms.map(({ id, term, linkText, link }) => (
+          <Consent key={id}>
+            <input
+              type='checkbox'
+              id={id}
+              name={id}
+              onClick={handleCheckboxChange}
+              value={checkboxValues[id]}
+            />
+            <label htmlFor={id} aria-label={id} aria-selected={checkboxValues[id]}>
+              {term} <Link to={link}>{linkText}</Link>
+            </label>
+          </Consent>
+        ))}
+      </ul>
 
       <Warning>{warning}</Warning>
+      {/* TODO: Remove afterwards */}
+      <Body2 style={{ margin: '8px', display: 'flex', gap: '8px', justifyContent: 'center' }}>
+        {caption}:<b style={{ textDecoration: 'line-through' }}> ₹1000</b>
+        <b
+          style={{
+            background: 'var(--brand-gradient)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          ₹750
+        </b>
+      </Body2>
 
       <Button
         type='submit'
         variant='filled'
         text={proceed}
         width='350px'
-        disabled={!agreed}
+        disabled={!Object.values(checkboxValues).every((value) => value)}
         onClick={handlePayment}
-        tooltip={!agreed ? 'Please agree to the terms and conditions' : ''}
+        tooltip={
+          !Object.values(checkboxValues).every((value) => value)
+            ? 'Please agree to the terms and conditions'
+            : ''
+        }
       />
 
       <CaptionText style={{ marginTop: '16px' }}>{endNote}</CaptionText>

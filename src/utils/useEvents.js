@@ -33,9 +33,16 @@ const useEvents = (eventName) => {
             venue: 'LA',
             prizes: event.prizeMoney,
             poster: event.poster ? event.poster : 'TODO://link',
+            priority: event.priority,
           };
         })
-        .sort((a, b) => +a.date - +b.date),
+        // sort by priority and then by date
+        ?.sort((a, b) => {
+          if (a.priority === b.priority) {
+            return a.date - b.date;
+          }
+          return b.priority - a.priority;
+        }),
     [data],
   );
 

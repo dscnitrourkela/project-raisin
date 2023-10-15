@@ -3,7 +3,7 @@
 export default {
   title: 'Navigation',
   logo: {
-    text: 'Innovision 2k23',
+    text: 'INNOVISION 2023',
   },
   navItems: [
     {
@@ -12,7 +12,7 @@ export default {
     },
     {
       name: 'Events',
-      id: 'events',
+      link: '/events',
     },
     {
       name: 'Sponsors',
@@ -21,6 +21,26 @@ export default {
     {
       name: 'FAQs',
       id: 'faq',
+    },
+  ],
+  otherPagesNavItems: [
+    {
+      name: 'Home',
+      link: '/',
+    },
+    {
+      name: 'Events',
+      link: '/events',
+    },
+    {
+      name: 'Register',
+      link: '/register',
+      authenticated: false,
+    },
+    {
+      name: 'Profile',
+      link: '/profile',
+      authenticated: true,
     },
   ],
 };

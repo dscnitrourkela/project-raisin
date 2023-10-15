@@ -1,9 +1,10 @@
 export default {
   title: 'Past Sponsors',
-  footer: 'Want to sponsor us?',
+
+  footer: 'Want to sponsor us? ',
   link:
-    'https://docs.google.com/forms/d/e/' +
-    '1FAIpQLSfV6ZclXiO7K5vVWFjR6_ZtqjrQ1HpTQ4-Lk9WAu4VA9PuI_g/viewform?usp=sharing',
+    'https://docs.google.com/forms/d/e/1FAIpQLSfV6ZclXiO7K5vVWFjR6_' +
+    'ZtqjrQ1HpTQ4-Lk9WAu4VA9PuI_g/viewform?usp=sharing',
   id: 'sponsors',
 
   titleSponsor: [
