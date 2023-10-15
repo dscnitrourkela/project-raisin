@@ -28,15 +28,15 @@ export const HeroContainer = styled.div`
 export const HeroTitle = styled.h1`
   ${tw`
     mt-[89px]
-    text-[128px]
-    lg:text-[90px]
-    md:text-[80px]
+    text-[150px]
+    lg:text-[120px]
+    md:text-[90px]
     sm:text-[48px]
     leading-[110px]
     md:leading-[60px]
-    font-Roslindale
     text-color-primary
   `};
+  font-family: var(--font-family-stardos);
 `;
 
 export const Year = styled.h1`
@@ -48,9 +48,9 @@ export const Year = styled.h1`
     leading-[110px]
     md:leading-[64px]
     sm:leading-[36px]
-    font-Roslindale
     text-color-primary
   `};
+  font-family: var(--font-family-stardos);
 `;
 
 export const DatesDiv = styled.div`
@@ -82,13 +82,14 @@ export const Line = styled.div`
 export const Dates = styled.p`
   ${tw`
     inline-block
-    text-[24px]
-    xl:text-[20px]
-    md:text-[18px]
-    sm:text-[14px]
+    text-[32px]
+    xl:text-[26px]
+    md:text-[20px]
+    sm:text-[16px]
     leading-[64px]
     md:leading-[50px]
     font-Roslindale
     text-color-primary
-`}
+`};
+  font-family: var(--font-family-stardos);
 `;

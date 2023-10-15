@@ -178,3 +178,15 @@ export const StyledHamburger = styled.button`
     display: none;
   }
 `;
+
+export const TitleText = styled.h4`
+  ${tw`
+    text-3xl
+    2xl:text-3xl
+    lg:text-3xl
+    md:text-xl
+    sm:text-xl
+    text-color-primary
+  `};
+  font-family: var(--font-family-stardos);
+`;
