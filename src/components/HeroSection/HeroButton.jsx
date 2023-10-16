@@ -58,10 +58,11 @@ const enumButtonText = {
   registered: 'Go to Profile',
   paymentPending: 'Pay Now',
   notRegistered: 'Register Now',
+  notLoggedIn: 'Login to Register',
 };
 
 function HeroButton() {
-  const { userData } = useContext(AuthContext);
+  const { userData, authenticated, login } = useContext(AuthContext);
 
   const isRegistered = userData?.rollNumber || userData?.festID?.includes('innovision-2023');
   const isPaymentPending =
@@ -80,8 +81,12 @@ function HeroButton() {
     buttonLink = '/payment';
   }
 
+  if (!authenticated) {
+    buttonText = enumButtonText.notLoggedIn;
+  }
+
   return (
-    <ButtonContainer type='submit' onClick={() => navigate(buttonLink)}>
+    <ButtonContainer type='submit' onClick={() => (authenticated ? navigate(buttonLink) : login())}>
       <ButtonTop>
         <ButtonText>
           {buttonText}
