@@ -26,10 +26,11 @@ export const ItemsContainer = styled.div`
 
 export const ButtonContainer = styled.div`
   ${tw`
-    md:w-[20%]
+    md:w-[50%]
     mx-auto
     w-[40%]
     flex
     justify-center
+    mt-[20px]
   `}
 `;

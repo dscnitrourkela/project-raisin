@@ -6,8 +6,18 @@ import Button from '../shared/Button';
 
 const CAProgram = () => (
   <SectionLayout>
-    <Heading2>{CADetails.title}</Heading2>
-    <ItemsContainer>
+    <Heading2
+      style={{
+        marginLeft: '15px',
+      }}
+    >
+      {CADetails.title}
+    </Heading2>
+    <ItemsContainer
+      style={{
+        marginLeft: '15px',
+      }}
+    >
       {CADetails.content.map((item) => (
         <div
           key={item.title}

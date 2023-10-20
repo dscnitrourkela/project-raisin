@@ -26,7 +26,7 @@ export const CADetails = {
     },
   ],
   button: {
-    text: 'Register as Campus Ambassador',
+    text: 'Register as CA',
     link: 'https://forms.gle/i1tzjmebnmySJsLb9',
   },
 };

@@ -32,7 +32,7 @@ export default {
       {
         id: 5,
         name: 'CA Program',
-        link: '/ca',
+        link: '/campus-ambassador',
       },
     ],
   },

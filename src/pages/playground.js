@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import HeroSection from '../components/HeroSection/HeroSection';
+import CAProgram from '../components/CAProgram/CAProgram';
 
 const Playground = () => (
   <>
@@ -10,7 +10,7 @@ const Playground = () => (
       <title>Playground</title>
       <meta name='description' content='This is playground' />
     </Helmet>
-    <HeroSection />
+    <CAProgram />
   </>
 );
 
