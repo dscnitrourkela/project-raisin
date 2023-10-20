@@ -29,6 +29,11 @@ export default {
         name: 'Refund Policy',
         link: 'https://drive.google.com/file/d/1cLnuEBtt7yFfC1dQeFVOP0Oxf_hsCTzb/view',
       },
+      {
+        id: 5,
+        name: 'CA Program',
+        link: '/campus-ambassador',
+      },
     ],
   },
   information: [
