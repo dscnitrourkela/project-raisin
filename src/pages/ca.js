@@ -1,7 +1,12 @@
 /* eslint-disable max-len */
 import React from 'react';
 import CAProgram from '../components/CAProgram/CAProgram';
+import { PrivateRoute } from '../components';
 
-const Playground = () => <CAProgram />;
+const CA = () => (
+  <PrivateRoute>
+    <CAProgram />
+  </PrivateRoute>
+);
 
-export default Playground;
+export default CA;
