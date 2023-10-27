@@ -18,7 +18,7 @@ import {
   Front,
   KnowButton,
 } from './styles';
-import { Body2 } from '../shared';
+import { Body2, ButtonText } from '../shared';
 import { AuthContext } from '../../utils/Auth';
 import Api from '../../utils/Api';
 
@@ -60,7 +60,7 @@ const EventCard = ({ event, registered }) => {
     );
   };
 
-  const { title, club, venue, time, date, month, prizes, description, contact, poster } = event;
+  const { title, club, time, date, month, prizes, description, contact, poster, rules } = event;
 
   const flipCard = () => {
     setIsFlipped(!isFlipped);
@@ -80,7 +80,17 @@ const EventCard = ({ event, registered }) => {
               {date} {month}
               <Circle />
               {time}
-              <Circle />
+              {rules ? (
+                <>
+                  {' '}
+                  <Circle />{' '}
+                  <ButtonText outline>
+                    <a href={rules} target='_blank' rel='noreferrer'>
+                      Rules
+                    </a>
+                  </ButtonText>
+                </>
+              ) : null}
             </EventTimeVenue>
           </CardTitleContainer>
           <CardTitleContainer>
@@ -105,11 +115,20 @@ const EventCard = ({ event, registered }) => {
           <EventClub>{club}</EventClub>
         </CardTitleContainer>
         <CardTitleContainer>
-          Prize - {prizes}
+          {prizes ? `Prize - ${prizes}` : null}
           <EventTimeVenue style={{ paddingTop: '0.1rem' }}>
             {date} {month}
-            <Circle />
-            {venue}
+            {rules ? (
+              <>
+                {' '}
+                <Circle />{' '}
+                <ButtonText outline>
+                  <a href={rules} target='_blank' rel='noreferrer'>
+                    Rules
+                  </a>
+                </ButtonText>
+              </>
+            ) : null}
           </EventTimeVenue>
         </CardTitleContainer>
         <BackDescriptionContainer>
@@ -117,7 +136,7 @@ const EventCard = ({ event, registered }) => {
             <BackDescription key={id}>{desc}</BackDescription>
           ))}
         </BackDescriptionContainer>
-        {contact ? <Body2>Contact: {contact?.join(', ')}</Body2> : null}
+        {contact.length ? <Body2>Contact: {contact?.join(', ')}</Body2> : null}
         <CardButtonContainer>
           <KnowButton text='Back' onClick={bringToFront} />
           <EventRegisterButton
