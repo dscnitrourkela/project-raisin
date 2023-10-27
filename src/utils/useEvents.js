@@ -32,6 +32,7 @@ const useEvents = (eventName) => {
             contact: event.contact,
             venue: 'LA',
             prizes: event.prizeMoney,
+            rules: event.rules,
             poster: event.poster ? event.poster : 'TODO://link',
             priority: event.priority,
           };
