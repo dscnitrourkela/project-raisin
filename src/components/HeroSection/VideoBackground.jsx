@@ -34,7 +34,7 @@ const VideoElement = styled.video`
 
 function VideoBackground() {
   const vid =
-    'https://res.cloudinary.com/dmofs5r4h/video/upload/v1697105601/screen-capture_2__2_ttrxjt.mp4';
+    'https://res.cloudinary.com/dre1cttiu/video/upload/v1698253837/Innovision/Website_gsr1wl.mp4';
   return (
     <Container>
       <VideoContainer>
