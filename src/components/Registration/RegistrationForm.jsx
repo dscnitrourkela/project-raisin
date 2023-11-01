@@ -80,9 +80,7 @@ export const RegistrationForm = () => {
         <>
           <InputContainer>
             {Object.entries(inputData)
-              .filter(([, value]) =>
-                isNITR ? SHOW.NITR.includes(value.show) : SHOW.NON_NITR.includes(value.show),
-              )
+              .filter(([, value]) => SHOW.NITR.includes(value.show))
               .map(([key, value], index, array) => {
                 let gridCols;
                 if (array.length <= 4) {
@@ -119,9 +117,11 @@ export const RegistrationForm = () => {
       ) : (
         <>
           <Heading4 font='Inter' style={{ textAlign: 'center', maxWidth: '500px' }}>
-            Registration for non-NITR students has been closed for this year. Please come back next
-            year.
+            Registration for non-NITR students has been closed.
           </Heading4>
+          <Body2 style={{ textAlign: 'center', maxWidth: '500px' }}>
+            If you have any queries reach out to innovision team at reachus.inno@gmail.com
+          </Body2>
           <Body1 style={{ display: 'flex', gap: '16px' }}>
             Are you a student from NIT Rourkela?{' '}
             <ButtonText onClick={() => setIsNITR(true)} className='cursor-pointer' outline>
