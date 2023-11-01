@@ -4,7 +4,7 @@ import { navigate } from 'gatsby';
 // import { Body1, ButtonText, PaymentCard, PrivateRoute, SuccessCard } from '../components';
 import { AuthContext } from '../utils/Auth';
 import { PaymentCardContainer } from '../components/Payment/styles';
-import { Heading4, PrivateRoute } from '../components/shared';
+import { Body2, Heading4, PrivateRoute } from '../components/shared';
 
 const PaymentPage = () => {
   // const [paymentStatus, setPaymentStatus] = useState(false);
@@ -45,11 +45,23 @@ const PaymentPage = () => {
             marginTop: '7rem',
           }}
         >
-          <PaymentCardContainer>
-            <Heading4 font='Inter' style={{ textAlign: 'center', maxWidth: '500px' }}>
-              Registration for non-NITR students has been closed for this year. Please come back
-              next year.
+          <PaymentCardContainer
+            style={{
+              maxWidth: '600px',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '1rem',
+            }}
+          >
+            <Heading4 font='Inter'>
+              Registration for non-NITR students has been closed for this year.
             </Heading4>
+            <Body2>
+              If you have any queries reach out to innovision team at reachus.inno@gmail.com
+            </Body2>
           </PaymentCardContainer>
         </div>
       )}
