@@ -13,4 +13,6 @@ export default styled.h4`
     sm:text-xl
     text-color-primary
   `};
+
+  ${(props) => props.font && `font-family: ${props.font};`};
 `;

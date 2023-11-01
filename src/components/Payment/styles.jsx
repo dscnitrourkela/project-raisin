@@ -7,6 +7,7 @@ export const PaymentCardContainer = styled.div`
     p-9
     bg-background-dark
     text-center
+    rounded-xl
   `}
 `;
 
