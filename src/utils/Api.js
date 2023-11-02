@@ -39,10 +39,10 @@ class Api {
       });
 
       if (avenueUser) {
-        // if (!avenueUser.festID.includes('innovision-2023') && !avenueUser.rollNumber) {
-        //   toast.error('Kindly do the payment');
-        //   navigate('/payment');
-        // }
+        if (!avenueUser.festID.includes('innovision-2023') && !avenueUser.rollNumber) {
+          toast.error('Kindly do the payment');
+          navigate('/payment');
+        }
       } else {
         toast.info('You are not registered for Innovision 2023. Please register to continue.');
         navigate('/register');
