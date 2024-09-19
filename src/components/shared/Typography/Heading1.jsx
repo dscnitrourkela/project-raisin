@@ -4,6 +4,7 @@ const Heading1 = styled.h1`
   font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
+  color: red;
   margin: 0;
 `;
 

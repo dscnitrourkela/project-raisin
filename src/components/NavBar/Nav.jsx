@@ -1,6 +1,6 @@
 import React from "react";
 import { NavContainer, NavItem } from "./styles";
-import { NavData } from "@/app/config/content/NavData";
+import { NavData } from "@/config/content/NavData";
 
 export const NavBar = () => {
   return (

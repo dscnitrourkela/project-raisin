@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Heading1 from "../components/shared/Typography/Heading1";
-import { NavBar } from "../components/NavBar/Nav";
+import Heading1 from "@/components/shared/Typography/Heading1";
+import { NavBar } from "@/components/NavBar/Nav";
 
 const Playground = () => {
   return (
