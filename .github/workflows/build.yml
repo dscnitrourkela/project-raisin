@@ -52,25 +52,12 @@ jobs:
 
       - name: Create production ENV
         env:
-          GATSBY_FIREBASE_API_KEY: ${{ vars.GATSBY_FIREBASE_API_KEY }}
-          GATSBY_FIREBASE_AUTH_DOMAIN: ${{ vars.GATSBY_FIREBASE_AUTH_DOMAIN }}
-          GATSBY_FIREBASE_PROJECT_ID: ${{ vars.GATSBY_FIREBASE_PROJECT_ID }}
-          GATSBY_FIREBASE_STORAGE_BUCKET: ${{ vars.GATSBY_FIREBASE_STORAGE_BUCKET }}
-          GATSBY_FIREBASE_MESSAGING_SENDER_ID: ${{ vars.GATSBY_FIREBASE_MESSAGING_SENDER_ID }}
-          GATSBY_FIREBASE_APP_ID: ${{ vars.GATSBY_FIREBASE_APP_ID }}
-          GATSBY_FIREBASE_MEASUREMENT_ID: ${{ vars.GATSBY_FIREBASE_MEASUREMENT_ID }}
-          GATSBY_API_URL: ${{ vars.GATSBY_API_URL }}
+          SAMPLE_VAR: ${{ secrets.SAMPLE_VAR }}
+          # GATSBY_FIREBASE_API_KEY: ${{ vars.GATSBY_FIREBASE_API_KEY }}
 
         run: |
           touch .env.production
           echo "GATSBY_FIREBASE_API_KEY=${GATSBY_FIREBASE_API_KEY}" >> .env.production
-          echo "GATSBY_FIREBASE_AUTH_DOMAIN=$GATSBY_FIREBASE_AUTH_DOMAIN" >> .env.production
-          echo "GATSBY_FIREBASE_PROJECT_ID=$GATSBY_FIREBASE_PROJECT_ID" >> .env.production
-          echo "GATSBY_FIREBASE_STORAGE_BUCKET=$GATSBY_FIREBASE_STORAGE_BUCKET" >> .env.production
-          echo "GATSBY_FIREBASE_MESSAGING_SENDER_ID=$GATSBY_FIREBASE_MESSAGING_SENDER_ID" >> .env.production
-          echo "GATSBY_FIREBASE_APP_ID=$GATSBY_FIREBASE_APP_ID" >> .env.production
-          echo "GATSBY_FIREBASE_MEASUREMENT_ID=$GATSBY_FIREBASE_MEASUREMENT_ID" >> .env.production
-          echo "GATSBY_API_URL=$GATSBY_API_URL" >> .env.production
 
       - name: Build Check
         run: yarn build

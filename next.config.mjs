@@ -1,8 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  }
-};
+import withTwin from './withTwin.mjs'
 
-export default nextConfig;
+/**
+ * @type {import('next').NextConfig}
+ */
+export default withTwin({
+  reactStrictMode: true,
+})

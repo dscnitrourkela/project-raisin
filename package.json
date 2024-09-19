@@ -29,6 +29,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@babel/core": "^7.25.2",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
@@ -36,11 +37,14 @@
     "twin.macro": "^3.4.1"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.12",
     "autoprefixer": "^10.4.15",
+    "babel-loader": "^9.2.1",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.1.4",
+    "eslint": "^8",
     "eslint-config": "^0.3.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "14.2.12",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest": "^27.4.0",
@@ -51,7 +55,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.12"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,md}": [
@@ -61,5 +65,10 @@
     "*.{css,scss,json}": [
       "prettier --write"
     ]
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
   }
 }
