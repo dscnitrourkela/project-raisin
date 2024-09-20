@@ -1,13 +1,8 @@
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 export const NavContainer = styled.nav`
-  background-color: #005566;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  padding: 1vw 5vw;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  ${tw` bg-[#005566] flex flex-row items-center justify-end py-[1vw] px-[5vw]`};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -15,10 +10,8 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavItem = styled.span`
-  display: flex;
-  align-items: center;
-  margin: 0vw 6vw;
-  padding: 0.5vw 2vw;
+  ${tw`text-white flex items-center my-0 mx-[6vw] py-[0.5vw] px-[2vw]`};
+
   &:hover {
     cursor: pointer;
     color: #007bff;
