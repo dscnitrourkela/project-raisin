@@ -53,12 +53,27 @@ export const MainBar = styled.nav`
   border-slate-500 
   border-[0.5px] 
   py-4
-  bg-slate-950
   `}
+  background-color: rgba(15, 23, 42, 0.95);
 `;
 
 export const MainBarItems = styled.div`
   ${tw`mt-1 transition-all duration-300 text-slate-500 hover:text-slate-200`}
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #94a3b8;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 export const RegisterButton = styled.button`
@@ -95,5 +110,21 @@ export const ResList = styled.ul`
   ${tw`fixed top-[250px] left-0 flex flex-col items-center justify-center w-full h-full gap-10`}
 `;
 export const ResItem = styled.li`
-  ${tw`mb-1 cursor-pointer hover:border`}
+  ${tw`mb-1 cursor-pointer`}
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
