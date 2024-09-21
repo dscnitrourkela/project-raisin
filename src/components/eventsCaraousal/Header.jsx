@@ -7,3 +7,11 @@ export const DescriptionHeader = ({ label }) => {
     </>
   );
 };
+
+export const SectionHeader = ({ label }) => {
+  return (
+    <>
+      <Heading1>{label}</Heading1>
+    </>
+  );
+};

@@ -32,8 +32,8 @@ export const SliderEventsWrapper = () => {
   }, [currentIndex, animate, scope]);
 
   return (
-    <div className='w-full min-h-screen h-auto p-10 flex flex-col items-center'>
-      <div className='w-full overflow-x-hidden overflow-y-visible relative'>
+    <div className='w-full min-h-screen h-auto  flex flex-col items-center'>
+      <div className='w-full pb-5 overflow-x-hidden overflow-y-visible relative'>
         <div
           ref={scope}
           className='flex items-center justify-center gap-10 mt-64 transition-transform'

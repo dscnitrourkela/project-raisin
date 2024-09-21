@@ -20,3 +20,7 @@ export const SubLogoText = styled.h1`
   -webkit-text-stroke: 2px #ffffffe6;
   text-shadow: none;
 `;
+
+export const EventHead = styled.h2`
+  ${tw`text-[48px] font-orbitron mb-3 font-bold text-[#00FFD1]`}
+`;
