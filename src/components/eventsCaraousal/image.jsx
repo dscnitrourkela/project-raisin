@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import { StyledImageContainer } from './imageContsiner.style';
 
-export const EventImage = ({ imgurl }) => {
+export const EventImage = ({ imgurl, alt }) => {
   return (
     <StyledImageContainer>
-      <Image src={imgurl} alt='im' width={416.15} height={267.34} />
+      <Image src={imgurl} alt={alt} width={416.15} height={267.34} />
     </StyledImageContainer>
   );
 };

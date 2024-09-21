@@ -54,7 +54,7 @@ const Page = () => {
           <NavbarLink>Link 3</NavbarLink>
           <NavbarLink>Link 4</NavbarLink>
         </div>
-      </div>{' '}
+      </div>
       <EventCarousalMain />
     </>
   );

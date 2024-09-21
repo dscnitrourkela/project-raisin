@@ -11,3 +11,6 @@ export const GradientOverlay = styled.div`
 export const InnerBackground = styled.div`
   ${tw`w-full h-full bg-[#04081A] rounded-[22.76px]`}
 `;
+export const ChildContainer = styled.div`
+  ${tw`relative z-10`}
+`;

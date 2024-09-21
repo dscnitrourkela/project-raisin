@@ -1,4 +1,4 @@
-import { GradientOverlay, InnerBackground, StyledParentCard } from './parent.Style';
+import { ChildContainer, GradientOverlay, InnerBackground, StyledParentCard } from './parent.Style';
 
 export const ParentEventCardComponent = ({ children }) => {
   return (
@@ -6,7 +6,7 @@ export const ParentEventCardComponent = ({ children }) => {
       <GradientOverlay aria-hidden='true'>
         <InnerBackground />
       </GradientOverlay>
-      <div className='relative z-10'>{children}</div>
+      <ChildContainer>{children}</ChildContainer>
     </StyledParentCard>
   );
 };
