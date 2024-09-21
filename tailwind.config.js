@@ -1,3 +1,5 @@
+const { Share_Tech_Mono } = require('next/font/google');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -24,6 +26,7 @@ module.exports = {
         orbitron: 'var(--font-orbitron)',
         montserrat: 'var(--font-montserrat)',
         prompt: 'var(--font-prompt)',
+        share_tech: 'var(--font-share_tech)', // Changed to lowercase to match your variable
       },
     },
   },

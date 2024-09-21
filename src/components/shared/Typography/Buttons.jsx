@@ -17,3 +17,21 @@ export const SecondaryButton = styled.button`
 
   ${tw`p-4 text-[#fff] text-[16px] rounded-full font-montserrat font-medium cursor-pointer border-[0.9px] border-[#ffffff66] hover:opacity-90 transition-all duration-300 bg-[#ffffff0d]`}
 `;
+
+export const CarouselButton = styled.div`
+  ${tw`flex justify-center font-share_tech items-center text-black`}
+  width: 125.89px;
+  height: 42.94px;
+  gap: 0px;
+  border-radius: 7.59px 7.59px 7.59px 7.59px;
+  border-width: 0.76px 0.76px 0.76px 0.76px;
+  background: rgba(255, 61, 127, 1); /* Background color */
+  border: 0.76px solid rgba(137, 137, 137, 1); /* Border */
+  box-shadow:
+    inset 0px 2.28px 0.68px 0px rgba(255, 255, 255, 0.33),
+    0px 3.03px 8.04px 0px rgba(195, 195, 195, 0.21),
+    0px 0px 0.83px 3.32px rgba(255, 255, 255, 0.1),
+    0px 10px 149.47px 0px rgba(255, 227, 105, 0.48),
+    inset 0px 1.66px 0.83px 0px rgba(255, 255, 255, 0.25),
+    inset 0px -3.32px 1.66px 0px rgba(0, 0, 0, 0.25);
+`;

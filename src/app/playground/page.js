@@ -5,6 +5,8 @@ import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/B
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import { NavBar } from '@/components/NavBar/Nav';
 
+import { EventCarousalMain } from '@/components/eventsCaraousal/main';
+
 const Page = () => {
   return (
     <>
@@ -52,7 +54,8 @@ const Page = () => {
           <NavbarLink>Link 3</NavbarLink>
           <NavbarLink>Link 4</NavbarLink>
         </div>
-      </div>
+      </div>{' '}
+      <EventCarousalMain />
     </>
   );
 };

@@ -34,11 +34,13 @@
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
+    "framer-motion": "^11.5.6",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.1.13",
-    "twin.macro": "^3.4.1"
+    "twin.macro": "^3.4.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
