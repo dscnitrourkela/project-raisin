@@ -22,7 +22,8 @@ module.exports = {
       fontFamily: {
         techno: 'var(--font-techno)',
         orbitron: 'var(--font-orbitron)',
-        montserrat: "var('--font-montserrat')",
+        montserrat: 'var(--font-montserrat)',
+        prompt: 'var(--font-prompt)',
       },
     },
   },

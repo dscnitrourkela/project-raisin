@@ -31,12 +31,18 @@ const Page = () => {
       <div style={styles.con2}>
         <PrimaryButton>Get Started</PrimaryButton>
         <SecondaryButton>
-          <img src='/static/hi.svg' alt='' />
+          <img
+            src='https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png'
+            alt=''
+            style={{ width: '20px', height: '20px' }}
+            className='invert'
+          />
         </SecondaryButton>
       </div>
 
       <div style={styles.con2}>
-        <NavbarLink isActive={true}>Link 1</NavbarLink>
+        {/* important use $isActive or any other custom props with a $ before for styled-components */}
+        <NavbarLink $isActive={true}>Link 1</NavbarLink>
         <NavbarLink>Link 2</NavbarLink>
         <NavbarLink>Link 3</NavbarLink>
         <NavbarLink>Link 4</NavbarLink>
@@ -51,6 +57,7 @@ const styles = {
     justifyContent: 'between',
     alignItems: 'center',
     width: 'full',
+    height: 'full',
     gap: '10px',
     margin: '20px 0',
   },

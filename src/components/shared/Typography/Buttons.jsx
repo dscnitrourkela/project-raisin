@@ -12,7 +12,7 @@ export const PrimaryButton = styled.button`
     0px 1.661px 0.83px 0px rgba(255, 255, 255, 0.25) inset;
   display: flex;
   line-height: 140%;
-  ${tw`px-6 py-4 text-white text-base not-italic font-medium flex text-white hover:opacity-90 transition-all duration-300 cursor-pointer`}
+  ${tw`px-6 py-4 text-white font-montserrat text-base not-italic font-medium flex text-white hover:opacity-90 transition-all duration-300 cursor-pointer`}
 `;
 
 export const SecondaryButton = styled.button`
@@ -20,5 +20,5 @@ export const SecondaryButton = styled.button`
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(11.075665473937988px);
 
-  ${tw`p-4 text-[#fff] text-[16px] rounded-full`}
+  ${tw`p-4 text-[#fff] text-[16px] rounded-full font-montserrat font-medium cursor-pointer`}
 `;
