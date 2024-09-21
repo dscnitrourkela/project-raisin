@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   HamburgerContainer,
@@ -9,6 +10,9 @@ import {
   NavContainer,
   NavCover,
   RegisterButton,
+  ResItem,
+  ResList,
+  ResMen,
   ResponsiveMenu,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
@@ -18,6 +22,10 @@ import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleToggle() {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <NavContainer>
@@ -40,16 +48,19 @@ const Navbar = () => {
         <RegisterButton>Register</RegisterButton>
 
         <HamburgerContainer>
-          <Hamburger toggled={isOpen} toggle={setIsOpen}></Hamburger>
-          {isOpen ? (
-            <ResponsiveMenu>
-              {MainNavData.map((item, index) => (
-                <MainBarItems key={index}>{item}</MainBarItems>
-              ))}
-            </ResponsiveMenu>
-          ) : null}
+          <Hamburger toggled={isOpen} toggle={handleToggle}></Hamburger>
         </HamburgerContainer>
       </NavCover>
+
+      {isOpen ? (
+        <ResMen>
+          <ResList>
+            {MainNavData.map((item, index) => (
+              <ResItem key={index}>{item}</ResItem>
+            ))}
+          </ResList>
+        </ResMen>
+      ) : null}
     </NavContainer>
   );
 };

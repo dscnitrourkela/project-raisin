@@ -2,7 +2,12 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const NavContainer = styled.nav`
-  ${tw`sticky w-full h-10 max-w-6xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7`}
+  ${tw`w-full h-10 max-w-6xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7`}
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 `;
 
 export const NavCover = styled.div`
@@ -10,7 +15,7 @@ export const NavCover = styled.div`
 `;
 
 export const Logos = styled.div`
-  ${tw`flex mt-4 space-x-4 justify-evenly`}
+  ${tw`flex mt-3.5 space-x-4 justify-evenly`}
 `;
 
 export const LogoItem = styled.div`
@@ -38,7 +43,7 @@ export const MainBar = styled.nav`
   flex 
   justify-evenly 
   w-full 
-  max-[693px]:hidden 
+  max-[930px]:hidden 
   max-w-xs 
   md:max-w-lg 
   lg:max-w-2xl 
@@ -53,7 +58,7 @@ export const MainBar = styled.nav`
 `;
 
 export const MainBarItems = styled.div`
-  ${tw`transition-all duration-300 text-slate-500 hover:text-slate-200`}
+  ${tw`mt-1 transition-all duration-300 text-slate-500 hover:text-slate-200`}
 `;
 
 export const RegisterButton = styled.button`
@@ -73,20 +78,22 @@ export const RegisterButton = styled.button`
   hover:border-slate-500 
   transition-all 
   duration-300
-  mt-1
+  mt-2.5
+  lg:ml-0
+  md:ml-[-7rem]
   `}
 `;
 
 export const HamburgerContainer = styled.div`
-  ${tw`min-[693px]:hidden`}
+  ${tw`min-[930px]:hidden`}
 `;
 
-export const ResponsiveMenu = styled.div`
-  ${tw`
-  min-[693px]:hidden 
-  flex-col 
-  justify-center 
-  mt-4 
-  space-y-4
-  `}
+export const ResMen = styled.div`
+  ${tw` z-10 grid w-full h-screen place-items-center bg-slate-900 opacity-95 min-[930px]:hidden`}
+`;
+export const ResList = styled.ul`
+  ${tw`fixed top-[250px] left-0 flex flex-col items-center justify-center w-full h-full gap-10`}
+`;
+export const ResItem = styled.li`
+  ${tw`mb-1 cursor-pointer hover:border`}
 `;
