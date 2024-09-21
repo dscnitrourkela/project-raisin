@@ -10,7 +10,5 @@ export const SubParagraph = styled.p`
 `;
 
 export const SmallParagraph = styled.p`
-  ${tw`text-[12px] xsm:text-[14px] md:text-[16px] lg:text-[18px] mb-2 leading-relaxed text-center text-white font-montserrat`}
-  font-weight: 400;
-  line-height: 150%;
+  ${tw`text-[12px] xsm:text-[14px] md:text-[16px] lg:text-[18px] mb-2 text-center text-white font-montserrat font-[400] leading-[150%]`}
 `;
