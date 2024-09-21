@@ -3,12 +3,14 @@ import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/T
 import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
-import { NavBar } from '@/components/NavBar/Nav';
+import Navbar from '@/components/Marginals/navbar/navbar';
+// import { NavBar } from '@/components/NavBar/Nav';
 
 const Page = () => {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
+      <Navbar />
       <div style={styles.mainContainer}>
         <LogoText>innovision</LogoText>
         <SubLogoText>24</SubLogoText>
