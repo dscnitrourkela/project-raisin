@@ -19,19 +19,5 @@ export const SecondaryButton = styled.button`
 `;
 
 export const CarouselButton = styled.div`
-  ${tw`flex justify-center font-share_tech items-center text-black`}
-  width: 125.89px;
-  height: 42.94px;
-  gap: 0px;
-  border-radius: 7.59px 7.59px 7.59px 7.59px;
-  border-width: 0.76px 0.76px 0.76px 0.76px;
-  background: rgba(255, 61, 127, 1); /* Background color */
-  border: 0.76px solid rgba(137, 137, 137, 1); /* Border */
-  box-shadow:
-    inset 0px 2.28px 0.68px 0px rgba(255, 255, 255, 0.33),
-    0px 3.03px 8.04px 0px rgba(195, 195, 195, 0.21),
-    0px 0px 0.83px 3.32px rgba(255, 255, 255, 0.1),
-    0px 10px 149.47px 0px rgba(255, 227, 105, 0.48),
-    inset 0px 1.66px 0.83px 0px rgba(255, 255, 255, 0.25),
-    inset 0px -3.32px 1.66px 0px rgba(0, 0, 0, 0.25);
+  ${tw`flex justify-center items-center text-black font-share_tech bg-[rgba(255,61,127,1)] border-[0.76px] border-[rgba(137,137,137,1)] rounded-[7.59px] w-[125.89px] h-[42.94px] shadow-[inset_0px_2.28px_0.68px_0px_rgba(255,255,255,0.33),0px_3.03px_8.04px_0px_rgba(195,195,195,0.21),0px_0px_0.83px_3.32px_rgba(255,255,255,0.1),0px_10px_149.47px_0px_rgba(255,227,105,0.48),inset_0px_1.66px_0.83px_0px_rgba(255,255,255,0.25),inset_0px_-3.32px_1.66px_0px_rgba(0,0,0,0.25)]`}
 `;
