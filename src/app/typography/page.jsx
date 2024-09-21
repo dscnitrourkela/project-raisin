@@ -1,5 +1,5 @@
 'use client';
-import { Logo, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
+import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
@@ -7,7 +7,8 @@ import { NavbarLink } from '@/components/shared/Typography/Links';
 const Page = () => {
   return (
     <div style={styles.mainContainer}>
-      <Logo>innovision</Logo>
+      <LogoText>innovision</LogoText>
+      <SubLogoText>24</SubLogoText>
 
       <Heading1>ABOUT US</Heading1>
       <Heading2>SubHeading</Heading2>
@@ -66,7 +67,6 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '20px',
     padding: '20px',
     width: 'full',
     height: 'full',

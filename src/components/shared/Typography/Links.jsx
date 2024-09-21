@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 
 export const NavbarLink = styled.span`
   line-height: 140%;
-  opacity: ${({ isActive }) => (isActive ? '1' : '0.3')};
+  opacity: ${({ $isActive }) => ($isActive ? '1' : '0.3')};
   &:hover {
     opacity: 1;
   }
