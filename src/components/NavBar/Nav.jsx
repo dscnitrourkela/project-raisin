@@ -12,9 +12,6 @@ export const NavBar = () => {
           <a href={item.path}>{item.text}</a>
         </NavItem>
       ))}
-      <Link href={'/typography'}>
-        <NavbarLink $isActive={true}>Typography</NavbarLink>
-      </Link>
     </NavContainer>
   );
 };
