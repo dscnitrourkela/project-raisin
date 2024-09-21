@@ -30,10 +30,17 @@ export const CarouselMapping = ({ currentIndex, setCurrentIndex }) => {
         const isCurrent = index === currentIndex;
         const isPrev = index === (currentIndex - 1 + sliderData.length) % sliderData.length;
         const isNext = index === (currentIndex + 1) % sliderData.length;
+        const isPrevToPrev = index === (currentIndex - 2 + sliderData.length) % sliderData.length;
+        const isNextToNext = index === (currentIndex + 2) % sliderData.length;
 
         let transform = 'translateY(-50px) translateX(-150px)';
         let opacity = 0.3;
         let zIndex = 1;
+
+        if (isPrevToPrev || isNextToNext) {
+          opacity = 0;
+          zIndex = 0;
+        }
 
         if (isPrev) {
           transform = 'translateY(-50px) translateX(150px)';
