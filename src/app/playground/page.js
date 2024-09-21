@@ -1,13 +1,17 @@
 'use client';
 import React from 'react';
-import Heading1 from '../components/shared/Typography/Heading1';
-import { NavBar } from '../components/NavBar/Nav';
+import { NavbarLink } from '@/components/shared/Typography/Links';
+import Link from 'next/link';
+import { NavBar } from '@/components/NavBar/Nav';
 
 const Playground = () => {
   return (
     <div>
       <NavBar />
-      <Heading1>This is Heading1</Heading1>
+      <Link href={'/typography'}>
+        <NavbarLink isActive={true}>Checkout Typography</NavbarLink>
+      </Link>
+      <br />
       Playground
     </div>
   );

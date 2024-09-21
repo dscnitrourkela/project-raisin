@@ -1,0 +1,69 @@
+'use client';
+import { Logo, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
+import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
+import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
+import { NavbarLink } from '@/components/shared/Typography/Links';
+
+const Page = () => {
+  return (
+    <div style={styles.mainContainer}>
+      <Logo>innovision</Logo>
+
+      <Heading1>ABOUT US</Heading1>
+      <Heading2>SubHeading</Heading2>
+
+      <Paragraph>
+        HackNITR 5.0 is a hackathon to encourage you to use your imagination and invention to
+        develop cutting-edge technology-based solutions to challenges in the real world. It was put
+        together by a large group of tech enthusiasts from Google Developer Student Club (GDSC)
+      </Paragraph>
+      <SubParagraph>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus voluptas optio, aliquam
+        molestiae iure fuga animi beatae dolore magni odio. Odio eius vel vitae aut in quia.
+        Maiores, sit nobis.
+      </SubParagraph>
+      <SmallParagraph>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae impedit quidem qui nihil
+        sunt aspernatur eligendi? Dolorum, sequi, ratione impedit animi laboriosam quod doloremque,
+        ipsam quia voluptas qui perspiciatis earum.
+      </SmallParagraph>
+
+      <div style={styles.con2}>
+        <PrimaryButton>Get Started</PrimaryButton>
+        <SecondaryButton>
+          <img src='/static/hi.svg' alt='' />
+        </SecondaryButton>
+      </div>
+
+      <div style={styles.con2}>
+        <NavbarLink isActive={true}>Link 1</NavbarLink>
+        <NavbarLink>Link 2</NavbarLink>
+        <NavbarLink>Link 3</NavbarLink>
+        <NavbarLink>Link 4</NavbarLink>
+      </div>
+    </div>
+  );
+};
+
+const styles = {
+  con2: {
+    display: 'flex',
+    justifyContent: 'between',
+    alignItems: 'center',
+    width: 'full',
+    gap: '10px',
+    margin: '20px 0',
+  },
+  mainContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '20px',
+    padding: '20px',
+    width: 'full',
+    height: 'full',
+  },
+};
+
+export default Page;
