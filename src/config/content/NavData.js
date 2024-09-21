@@ -7,8 +7,4 @@ export const NavData = [
     text: 'Playground',
     path: '/playground',
   },
-  {
-    text: 'Typography',
-    path: '/typography',
-  },
 ];
