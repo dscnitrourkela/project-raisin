@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,yarn,firebase
 
 register.json
+withTwin.mjs
 
 ### Firebase ###
 .idea
