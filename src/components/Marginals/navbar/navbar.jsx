@@ -14,10 +14,11 @@ import {
   ResList,
   ResMen,
   ResponsiveMenu,
+  HamburgerRegisterButton,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
-import { logos, MainNavData } from '../../../config/content/navbar.content';
+import { logos, MainNavData } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -42,7 +43,7 @@ const Navbar = () => {
             <Image src={logos[0].link} alt='Inno' width='30' height='30' />
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
-            <MainBarItems key={index}>{item}</MainBarItems>
+            <MainBarItems key={index}>{item.title}</MainBarItems>
           ))}
         </MainBar>
         <RegisterButton>Register</RegisterButton>
@@ -56,9 +57,10 @@ const Navbar = () => {
         <ResMen>
           <ResList>
             {MainNavData.map((item, index) => (
-              <ResItem key={index}>{item}</ResItem>
+              <ResItem key={index}>{item.title}</ResItem>
             ))}
           </ResList>
+          <HamburgerRegisterButton>Register</HamburgerRegisterButton>
         </ResMen>
       ) : null}
     </NavContainer>
