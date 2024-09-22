@@ -4,6 +4,7 @@ import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typ
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import { NavBar } from '@/components/NavBar/Nav';
+import { Footer } from '@/components/Footer/Footer';
 
 const Page = () => {
   return (
@@ -53,6 +54,7 @@ const Page = () => {
           <NavbarLink>Link 4</NavbarLink>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
