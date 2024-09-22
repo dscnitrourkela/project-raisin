@@ -10,6 +10,7 @@ import './swiper.css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { EventCard } from './eventCard';
+import { SliderContainer, SwiperConatiner, Wrapper } from './eventWrapper.styles';
 
 export const SliderEventsWrapper = () => {
   const [scope, animate] = useAnimate();
@@ -66,8 +67,8 @@ export const SliderEventsWrapper = () => {
   }, [currentIndex, animate, scope]);
 
   return !isMobile ? (
-    <div className='w-[100%] min-h-screen h-auto flex flex-col'>
-      <div className='pb-5 overflow-x-hidden overflow-y-visible relative'>
+    <Wrapper>
+      <SliderContainer>
         <div
           ref={scope}
           className='flex mt-64 transition-transform'
@@ -78,11 +79,11 @@ export const SliderEventsWrapper = () => {
         >
           <CarouselMapping currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
         </div>
-      </div>
+      </SliderContainer>
       <SButtons fn1={handlePrev} fn2={handleNext} currentindex={currentIndex} />
-    </div>
+    </Wrapper>
   ) : (
-    <div className='flex flex-col gap-10'>
+    <SwiperConatiner>
       <Swiper
         ref={swiperRef}
         slidesPerView={1}
@@ -103,6 +104,6 @@ export const SliderEventsWrapper = () => {
         ))}
       </Swiper>
       <SButtons fn1={handlePrev} fn2={handleNext} currentindex={currentIndex} />
-    </div>
+    </SwiperConatiner>
   );
 };
