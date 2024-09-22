@@ -14,5 +14,5 @@ export const SmallParagraph = styled.p`
 `;
 
 export const EventCaraouselParagraph = styled.p`
-  ${tw`w-[414.1px] h-[76px] font-montserrat text-[rgba(224, 229, 237, 0.75)] mt-5 text-[12.66px] font-[400] leading-[18.99px] text-left`}
+  ${tw`max-w-[414.1px] h-[76px] font-montserrat text-[rgba(224, 229, 237, 0.75)]  mt-5 text-[12.66px] font-[400] leading-[18.99px] text-left flex text-wrap max-w-[500px]`}
 `;

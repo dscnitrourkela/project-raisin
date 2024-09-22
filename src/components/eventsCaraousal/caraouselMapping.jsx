@@ -48,7 +48,7 @@ export const CarouselMapping = ({ currentIndex, setCurrentIndex }) => {
         return (
           <motion.div
             key={index}
-            className={`w-[456.74px] relative transition-all duration-700 ease-[0.25, 0.1, 0.25, 1] left-[5%] md:left-[8%] lg:left-[12%]`}
+            className={`w-[456.74px] relative transition-all duration-700 ease-[0.25, 0.1, 0.25, 1] left-[5%] md:left-[8%] lg:left-[12%] xl:left-[19.5%]`}
             style={{ transform, opacity, zIndex }}
             transition={{ type: 'tween' }}
             animate={controls}
