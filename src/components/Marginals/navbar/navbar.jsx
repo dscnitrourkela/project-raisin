@@ -18,7 +18,7 @@ import {
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
 import { useState } from 'react';
-import { logos, MainNavData } from '../../../config/content/NavbarData/NavData';
+import { ButtonData, logos, MainNavData } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
             <MainBarItems key={index}>{item.title}</MainBarItems>
           ))}
         </MainBar>
-        <RegisterButton>Register</RegisterButton>
+        <RegisterButton>{ButtonData.title}</RegisterButton>
 
         <HamburgerContainer>
           <Hamburger toggled={isOpen} toggle={handleToggle}></Hamburger>
@@ -60,7 +60,7 @@ const Navbar = () => {
               <ResItem key={index}>{item.title}</ResItem>
             ))}
           </ResList>
-          <HamburgerRegisterButton>Register</HamburgerRegisterButton>
+          <HamburgerRegisterButton>{ButtonData.title}</HamburgerRegisterButton>
         </ResMen>
       ) : null}
     </NavContainer>

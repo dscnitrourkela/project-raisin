@@ -35,3 +35,8 @@ export const MainNavData = [
     link: 'contact',
   },
 ];
+
+export const ButtonData = {
+  title: 'Register',
+  link: 'register',
+};
