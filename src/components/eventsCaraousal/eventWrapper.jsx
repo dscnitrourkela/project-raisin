@@ -48,7 +48,7 @@ export const SliderEventsWrapper = () => {
 
   // This function will update the currentIndex based on the active slide
   const onSlideChange = (swiper) => {
-    setCurrentIndex(swiper.activeIndex);
+    setCurrentIndex(swiper.realIndex);
   };
 
   useEffect(() => {
