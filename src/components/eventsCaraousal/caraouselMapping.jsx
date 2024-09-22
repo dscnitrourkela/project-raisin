@@ -3,7 +3,7 @@ import { sliderData } from '@/config/content/eventsCarauselData';
 import { EventCard } from './eventCard';
 import { motion, useAnimation } from 'framer-motion';
 
-export const CarouselMapping = ({ currentIndex, setCurrentIndex }) => {
+export const CarouselMapping = ({ currentIndex }) => {
   const controls = useAnimation();
 
   return (

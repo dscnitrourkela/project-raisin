@@ -6,7 +6,7 @@ import { CarouselMapping } from './caraouselMapping';
 import { sliderData } from '@/config/content/eventsCarauselData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './index.css';
+import './swiper.css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { EventCard } from './eventCard';
@@ -15,7 +15,7 @@ export const SliderEventsWrapper = () => {
   const [scope, animate] = useAnimate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const swiperRef = useRef(null); // Ref for Swiper instance
+  const swiperRef = useRef(null);
 
   const updateScreenSize = () => {
     setIsMobile(window.innerWidth < 700);
@@ -46,7 +46,6 @@ export const SliderEventsWrapper = () => {
     }
   };
 
-  // This function will update the currentIndex based on the active slide
   const onSlideChange = (swiper) => {
     setCurrentIndex(swiper.realIndex);
   };
@@ -93,7 +92,7 @@ export const SliderEventsWrapper = () => {
         pagination={{
           clickable: true,
         }}
-        onSlideChange={onSlideChange} // Update currentIndex on slide change
+        onSlideChange={onSlideChange}
         modules={[Pagination]}
         className='mySwiper'
       >
