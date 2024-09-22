@@ -30,7 +30,7 @@ export const MainBar = styled.nav`
 `;
 
 export const MainBarItems = styled.div`
-  ${tw` relative  mt-1  transition-all  duration-300  cursor-pointer  text-slate-500  hover:text-slate-200  hover:after:content-['']  hover:after:absolute  hover:after:bottom-0  hover:after:left-0  hover:after:h-px  hover:after:bg-gray-400  hover:after:w-0  hover:after:transition-all  hover:after:duration-300  hover:after:ease-in-out  hover:after:hover:w-full
+  ${tw` relative  mt-1  transition-all  duration-300  cursor-pointer  text-slate-500  hover:text-slate-200  hover:after:content-['']  hover:after:absolute  hover:after:bottom-0  hover:after:left-0  hover:after:h-px  hover:after:bg-gray-400  hover:after:w-0  hover:after:transition-all  hover:after:duration-[400ms]  hover:after:ease-in-out  hover:after:hover:w-full
   `}
 `;
 
@@ -51,10 +51,10 @@ export const ResList = styled.ul`
 `;
 
 export const ResItem = styled.li`
-  ${tw`relative mb-1 cursor-pointer hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:h-px hover:after:bg-current hover:after:transition-all hover:after:duration-300 hover:after:ease-in-out hover:after:w-0 hover:after:hover:w-full`}
+  ${tw`relative mb-1 cursor-pointer hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:h-px hover:after:bg-current hover:after:transition-all hover:after:duration-[400ms] hover:after:ease-in-out hover:after:w-0 hover:after:hover:w-full`}
 `;
 
 export const HamburgerRegisterButton = styled.button`
-  ${tw`bg-gradient-to-bl  min-[930px]:hidden from-[#FF8DFF]  from-[20%]  via-[#FF5CA0]  via-[40%]  to-[#FF3C7F]  to-[80%]  w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]
+  ${tw`bg-gradient-to-bl  min-[693px]:hidden from-[#FF8DFF]  from-[20%]  via-[#FF5CA0]  via-[40%]  to-[#FF3C7F]  to-[80%]  w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]
   `}
 `;
