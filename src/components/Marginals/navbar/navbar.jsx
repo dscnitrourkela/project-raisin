@@ -42,7 +42,7 @@ const Navbar = () => {
         </Logos>
         <MainBar>
           <MenuLogoItem>
-            <Image src={logos[0].link} alt='Inno' width='30' height='30' />
+            <Image src={logos[0].link} alt='Inno' width='40' height='40' />
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
             <NavbarLink key={index}>{item.title}</NavbarLink>

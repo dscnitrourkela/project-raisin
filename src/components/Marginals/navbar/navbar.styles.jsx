@@ -22,6 +22,7 @@ export const LogoItem = styled.div`
 export const MenuLogoItem = styled.div`
   ${tw`flex items-center justify-center`}
 `;
+
 export const MainBar = styled.nav`
   display: inline-flex;
   align-items: center;
@@ -32,7 +33,7 @@ export const MainBar = styled.nav`
   backdrop-filter: blur(13.681711196899414px);
 
   ${tw`
-    flex justify-evenly w-full max-[930px]:hidden max-w-xs md:max-w-lg lg:max-w-2xl space-x-1 rounded-md border-[0.5px] py-4 lg:mr-0 md:mr-[90px]
+    flex justify-evenly w-full max-[930px]:hidden max-w-xs md:max-w-lg lg:max-w-2xl space-x-1 rounded-md border-[0.5px] py-2 lg:mr-0 md:mr-[90px]
   `}
 `;
 
