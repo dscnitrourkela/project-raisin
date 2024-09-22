@@ -20,6 +20,8 @@ import Hamburger from 'hamburger-react';
 import { useState } from 'react';
 import { ButtonData, logos, MainNavData } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
+import { NavbarLink } from '@/components/shared/Typography/Links';
+import { SecondaryButton } from '@/components/shared/Typography/Buttons';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,9 +35,9 @@ const Navbar = () => {
       <NavCover>
         <Logos>
           {logos.slice(1).map((logo, index) => (
-            <LogoItem key={index}>
+            <SecondaryButton key={index}>
               <Image src={logo.link} alt={logo.name} width='20' height='20' />
-            </LogoItem>
+            </SecondaryButton>
           ))}
         </Logos>
         <MainBar>
@@ -43,7 +45,7 @@ const Navbar = () => {
             <Image src={logos[0].link} alt='Inno' width='30' height='30' />
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
-            <MainBarItems key={index}>{item.title}</MainBarItems>
+            <NavbarLink key={index}>{item.title}</NavbarLink>
           ))}
         </MainBar>
         <RegisterButton>{ButtonData.title}</RegisterButton>

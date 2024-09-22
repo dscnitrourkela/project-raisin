@@ -22,10 +22,17 @@ export const LogoItem = styled.div`
 export const MenuLogoItem = styled.div`
   ${tw`flex items-center justify-center`}
 `;
-
 export const MainBar = styled.nav`
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  border-radius: 11.401px;
+  border: 1.14px solid var(--Button-color, #ff3c7f);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(13.681711196899414px);
+
   ${tw`
-  flex  justify-evenly w-full  max-[930px]:hidden max-w-xs  md:max-w-lg  lg:max-w-2xl space-x-1 rounded-md border  border-slate-500  border-[0.5px]  py-4 bg-[#0f172af2]
+    flex justify-evenly w-full max-[930px]:hidden max-w-xs md:max-w-lg lg:max-w-2xl space-x-1 rounded-md border-[0.5px] py-4 lg:mr-0 md:mr-[90px]
   `}
 `;
 
@@ -35,12 +42,19 @@ export const MainBarItems = styled.div`
 `;
 
 export const RegisterButton = styled.button`
-  ${tw`bg-gradient-to-bl  max-[693px]:hidden  from-[#FF8DFF]  from-[20%]  via-[#FF5CA0]  via-[40%]  to-[#FF3C7F]  to-[80%]  w-[150px]  h-[45px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 md:ml-[-7rem]
+  background: radial-gradient(219.1% 188.15% at 52.58% -68.5%, #ff8dff 30.52%, #ff3c7f 53.85%);
+  box-shadow:
+    0px 10px 149.474px 0px #ffe3697a,
+    0px 0px 0.83px 3.322px #ffffff1a,
+    0px -3.322px 1.661px 0px #00000040 inset,
+    0px 1.661px 0.83px 0px #ffffff40 inset;
+
+  ${tw` max-[930px]:hidden w-[150px]  h-[45px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 md:ml-[-7rem]
   `}
 `;
 
 export const HamburgerContainer = styled.div`
-  ${tw`min-[930px]:hidden`}
+  ${tw`min-[930px]:hidden max-[500px]:mt-[10px] mt-[15px]`}
 `;
 
 export const ResMen = styled.div`
@@ -55,6 +69,13 @@ export const ResItem = styled.li`
 `;
 
 export const HamburgerRegisterButton = styled.button`
-  ${tw`bg-gradient-to-bl  min-[693px]:hidden from-[#FF8DFF]  from-[20%]  via-[#FF5CA0]  via-[40%]  to-[#FF3C7F]  to-[80%]  w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]
+  background: radial-gradient(219.1% 188.15% at 52.58% -68.5%, #ff8dff 30.52%, #ff3c7f 53.85%);
+  box-shadow:
+    0px 10px 149.474px 0px #ffe3697a,
+    0px 0px 0.83px 3.322px #ffffff1a,
+    0px -3.322px 1.661px 0px #00000040 inset,
+    0px 1.661px 0.83px 0px #ffffff40 inset;
+
+  ${tw`min-[930px]:hidden w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]
   `}
 `;
