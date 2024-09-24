@@ -1,9 +1,8 @@
 import Image from 'next/image';
-import { socials, secondcol, thirdcol } from '@/config/content/Footer';
+import { socials, secondcol, thirdcol, footerBottom } from '@/config/content/Footer';
 import Link from 'next/link';
 import MapModal from '@/components/Footer/MapModal';
-import { List } from '../shared/Typography/Lists';
-import { SmallParagraph } from '../shared/Typography/Paragraphs';
+import { List, SmallList } from '../shared/Typography/Lists';
 
 import {
   FooterContainer,
@@ -17,6 +16,9 @@ import {
   GetInTouch,
   SocialList,
   ItemList,
+  FooterTopBackground,
+  FooterTopGradient,
+  FooterBottomContent,
 } from '@/components/Footer/styles';
 
 export const Footer = () => {
@@ -24,6 +26,8 @@ export const Footer = () => {
     <FooterContainer>
       <FooterWrapper>
         <FooterTop>
+          <FooterTopBackground />
+          <FooterTopGradient />
           <FooterContent>
             <FooterColumn1>
               <GetInTouch>GET IN TOUCH</GetInTouch>
@@ -35,7 +39,7 @@ export const Footer = () => {
                       alt={item.id}
                       width={50}
                       height={50}
-                      className='w-[40px] md:w-[50px]'
+                      className='w-[50px] md:w-[60px]'
                     />
                   </Link>
                 ))}
@@ -48,10 +52,10 @@ export const Footer = () => {
               <ItemList>
                 <List className='flex gap-[20px]'>
                   <Image
-                    src='https://res.cloudinary.com/dpmlrxlzr/image/upload/v1726824130/Subtract_1_cvoqo3.svg'
+                    src='https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/Subtract_3_odnejs.svg'
                     alt='map'
-                    width={25}
-                    height={25}
+                    width={35}
+                    height={35}
                   />
                   <MapModal />
                 </List>
@@ -61,10 +65,13 @@ export const Footer = () => {
           </FooterContent>
         </FooterTop>
         <FooterBottom>
-          <SmallParagraph className='ml-2'>
-            Copyright @2024 Innovision,{' '}
-            <span className='text-[#FF3C7F]'>National Institute of Technology Rourkela</span>
-          </SmallParagraph>
+          <FooterBottomContent>
+            {footerBottom.map((item) => (
+              <SmallList key={item.id} className='flex gap-[20px]'>
+                <Link href={item.url}>{item.title}</Link>
+              </SmallList>
+            ))}
+          </FooterBottomContent>
         </FooterBottom>
       </FooterWrapper>
     </FooterContainer>
@@ -73,8 +80,8 @@ export const Footer = () => {
 
 const RenderList = (listItems) =>
   listItems.map((item) => (
-    <List key={item.id} className='flex gap-[20px]'>
-      <Image src={item.img} alt={item.id} width={25} height={25} />
+    <List key={item.id} className='flex gap-[20px] items-center'>
+      <Image src={item.img} alt={item.id} width={35} height={35} />
       <Link href={item.url}>{item.title}</Link>
     </List>
   ));
