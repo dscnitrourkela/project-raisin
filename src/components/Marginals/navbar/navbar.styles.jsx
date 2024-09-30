@@ -21,9 +21,7 @@ export const LogoItem = styled.div`
   `}
 
   &:hover {
-    box-shadow:
-      0 0 8px rgba(255, 255, 255, 0.4),
-      0 0 12px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px #ffffff66 0 0 12px #ffffff4d;
   }
 `;
 
