@@ -4,7 +4,6 @@ import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typ
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import Navbar from '@/components/Marginals/navbar/navbar';
-// import { NavBar } from '@/components/NavBar/Nav';
 
 const Page = () => {
   return (

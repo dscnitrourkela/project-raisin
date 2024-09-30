@@ -21,7 +21,6 @@ import { useState } from 'react';
 import { ButtonData, logos, MainNavData } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
 import { NavbarLink } from '@/components/shared/Typography/Links';
-import { SecondaryButton } from '@/components/shared/Typography/Buttons';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,14 +34,14 @@ const Navbar = () => {
       <NavCover>
         <Logos>
           {logos.slice(1).map((logo, index) => (
-            <SecondaryButton key={index}>
+            <LogoItem key={index}>
               <Image src={logo.link} alt={logo.name} width='20' height='20' />
-            </SecondaryButton>
+            </LogoItem>
           ))}
         </Logos>
         <MainBar>
           <MenuLogoItem>
-            <Image src={logos[0].link} alt='Inno' width='40' height='40' />
+            <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
             <NavbarLink key={index}>{item.title}</NavbarLink>

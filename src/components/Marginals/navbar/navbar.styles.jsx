@@ -6,17 +6,25 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavCover = styled.div`
-  ${tw`flex justify-between`}
+  ${tw`flex justify-between gap-[80px]`}
 `;
 
 export const Logos = styled.div`
-  ${tw`flex mt-3.5 space-x-4 justify-evenly`}
+  ${tw`flex mt-3 space-x-4 justify-evenly`}
 `;
 
 export const LogoItem = styled.div`
+  backdrop-filter: blur(11.075665473937988px);
+
   ${tw`
-  flex items-center justify-center bg-slate-900 w-10 h-10 border border-slate-600 shadow-[0_0_10px_#ffffff4d]  rounded-[50%]  border-solid  hover:shadow-[0_0_8px_#ffffff80]  hover:scale-110  transition-all  duration-300   ease-out
-`}
+    w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white text-[14px] rounded-full font-montserrat font-medium cursor-pointer border-[0.9px] border-[#ffffff66] bg-[#ffffff0d] flex justify-center items-center transition-all duration-300 hover:scale-110 hover:shadow-md
+  `}
+
+  &:hover {
+    box-shadow:
+      0 0 8px rgba(255, 255, 255, 0.4),
+      0 0 12px rgba(255, 255, 255, 0.3);
+  }
 `;
 
 export const MenuLogoItem = styled.div`
@@ -24,22 +32,15 @@ export const MenuLogoItem = styled.div`
 `;
 
 export const MainBar = styled.nav`
-  display: inline-flex;
-  align-items: center;
-  gap: 35px;
-  border-radius: 11.401px;
-  border: 1.14px solid var(--Button-color, #ff3c7f);
-  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(13.681711196899414px);
 
   ${tw`
-    flex justify-evenly w-full max-[930px]:hidden max-w-xs md:max-w-lg lg:max-w-2xl space-x-1 rounded-md border-[0.5px] py-2 lg:mr-0 md:mr-[90px]
+    inline-flex items-center gap-5 rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] flex justify-evenly w-full max-[930px]:hidden max-w-xs md:max-w-md lg:max-w-xl space-x-0.5 rounded-md border-[0.5px] py-1 lg:mr-0 md:mr-[50px] /* Reduced max width and padding */
   `}
 `;
 
 export const MainBarItems = styled.div`
-  ${tw` relative  mt-1  transition-all  duration-300  cursor-pointer  text-slate-500  hover:text-slate-200  hover:after:content-['']  hover:after:absolute  hover:after:bottom-0  hover:after:left-0  hover:after:h-px  hover:after:bg-gray-400  hover:after:w-0  hover:after:transition-all  hover:after:duration-[400ms]  hover:after:ease-in-out  hover:after:hover:w-full
-  `}
+  ${tw` relative  mt-1  transition-all  duration-300  cursor-pointer  text-slate-500  hover:text-slate-200  hover:after:content-['']  hover:after:absolute  hover:after:bottom-0  hover:after:left-0  hover:after:h-px  hover:after:bg-gray-400  hover:after:w-0  hover:after:transition-all  hover:after:duration-[400ms]  hover:after:ease-in-out  hover:after:hover:w-full`}
 `;
 
 export const RegisterButton = styled.button`
@@ -50,8 +51,7 @@ export const RegisterButton = styled.button`
     0px -3.322px 1.661px 0px #00000040 inset,
     0px 1.661px 0.83px 0px #ffffff40 inset;
 
-  ${tw` max-[930px]:hidden w-[150px]  h-[45px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 md:ml-[-7rem]
-  `}
+  ${tw` max-[930px]:hidden w-[150px]  h-[45px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2 lg:ml-0 md:ml-[-7rem]`}
 `;
 
 export const HamburgerContainer = styled.div`
@@ -61,6 +61,7 @@ export const HamburgerContainer = styled.div`
 export const ResMen = styled.div`
   ${tw` z-10 grid w-full h-screen place-items-center bg-slate-900 opacity-95 min-[930px]:hidden`}
 `;
+
 export const ResList = styled.ul`
   ${tw`fixed top-[250px] left-0 flex flex-col items-center justify-center w-full h-full gap-10`}
 `;
@@ -77,6 +78,5 @@ export const HamburgerRegisterButton = styled.button`
     0px -3.322px 1.661px 0px #00000040 inset,
     0px 1.661px 0.83px 0px #ffffff40 inset;
 
-  ${tw`min-[930px]:hidden w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]
-  `}
+  ${tw`min-[930px]:hidden w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 mt-2.5 lg:ml-0 sm:mt-[100px] max-[655px]:mt-[150px]`}
 `;
