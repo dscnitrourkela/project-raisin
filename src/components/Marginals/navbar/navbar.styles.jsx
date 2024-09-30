@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const NavContainer = styled.nav`
-  ${tw`fixed top-0 w-full h-10 max-w-6xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
+  ${tw`fixed top-0 w-full h-10 max-w-7xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
 `;
 
 export const NavCover = styled.div`
-  ${tw`flex justify-between gap-[80px]`}
+  ${tw`flex justify-between gap-[150px]`}
 `;
 
 export const Logos = styled.div`
@@ -40,7 +40,9 @@ export const MainBar = styled.nav`
 `;
 
 export const MainBarItems = styled.div`
-  ${tw` relative  mt-1  transition-all  duration-300  cursor-pointer  text-slate-500  hover:text-slate-200  hover:after:content-['']  hover:after:absolute  hover:after:bottom-0  hover:after:left-0  hover:after:h-px  hover:after:bg-gray-400  hover:after:w-0  hover:after:transition-all  hover:after:duration-[400ms]  hover:after:ease-in-out  hover:after:hover:w-full`}
+  opacity: ${({ $isActive }) => ($isActive ? '1' : '0.3')};
+
+  ${tw` text-xs md:text-sm not-italic font-medium transition-all duration-300 cursor-pointer text-white font-montserrat leading-[140%] hover:opacity-100 pt-1`}
 `;
 
 export const RegisterButton = styled.button`

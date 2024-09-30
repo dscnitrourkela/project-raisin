@@ -44,7 +44,7 @@ const Navbar = () => {
             <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
-            <NavbarLink key={index}>{item.title}</NavbarLink>
+            <MainBarItems key={index}>{item.title}</MainBarItems>
           ))}
         </MainBar>
         <RegisterButton>{ButtonData.title}</RegisterButton>
