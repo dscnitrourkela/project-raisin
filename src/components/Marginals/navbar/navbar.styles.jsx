@@ -28,7 +28,9 @@ export const LogoItem = styled.div`
 `;
 
 export const MenuLogoItem = styled.div`
-  ${tw`flex items-center justify-center`}
+  ${tw`
+    w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white text-[14px] rounded-full font-montserrat font-medium cursor-pointer flex justify-center items-center transition-all duration-300 hover:scale-110 hover:shadow-md
+  `}
 `;
 
 export const MainBar = styled.nav`
