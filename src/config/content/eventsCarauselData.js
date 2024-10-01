@@ -1,4 +1,4 @@
-export const sliderData = [
+export const SliderData = [
   {
     head: 'Pro Show',
     url: 'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1726738180/Image_Wrapper_vrcj01.png',

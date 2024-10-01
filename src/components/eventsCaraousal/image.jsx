@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { StyledImageContainer } from './imageContsiner.style';
+import { StyledImageContainer } from './imageContainer.style';
 
 export const EventImage = ({ imgurl, alt }) => {
   return (

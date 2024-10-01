@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
 import { SButtons } from './sliderButtons';
 import { CarouselMapping } from './caraouselMapping';
-import { sliderData } from '@/config/content/eventsCarauselData';
+import { SliderData } from '@/config/content/eventsCarauselData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import './swiper.css';
@@ -35,7 +35,7 @@ export const SliderEventsWrapper = () => {
     if (isMobile && swiperRef.current) {
       swiperRef.current.swiper.slideNext();
     } else {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % SliderData.length);
     }
   };
 
@@ -43,7 +43,7 @@ export const SliderEventsWrapper = () => {
     if (isMobile && swiperRef.current) {
       swiperRef.current.swiper.slidePrev();
     } else {
-      setCurrentIndex((prevIndex) => (prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1));
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? SliderData.length - 1 : prevIndex - 1));
     }
   };
 
@@ -58,8 +58,8 @@ export const SliderEventsWrapper = () => {
         scope.current,
         { x: xOffset },
         {
-          duration: 0.4,
-          ease: [0.25, 0.1, 0.25, 1],
+          duration: 0.3,
+          ease: [0.42, 0, 0.58, 1],
           type: 'tween',
         },
       );
@@ -73,7 +73,7 @@ export const SliderEventsWrapper = () => {
           ref={scope}
           className='flex mt-64 transition-transform'
           style={{
-            width: `${sliderData.length * slideWidth}px`,
+            width: `${SliderData.length * slideWidth}px`,
             transform: `translateX(calc(50% - ${slideWidth / 2}px))`,
           }}
         >
@@ -97,7 +97,7 @@ export const SliderEventsWrapper = () => {
         modules={[Pagination]}
         className='mySwiper'
       >
-        {sliderData.map((item, index) => (
+        {SliderData.map((item, index) => (
           <SwiperSlide key={index}>
             <EventCard head={item.head} desc={item.desc} url={item.url} />
           </SwiperSlide>
