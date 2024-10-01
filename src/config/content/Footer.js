@@ -84,3 +84,11 @@ export const footerBottom = [
     url: '/',
   },
 ];
+
+export const closeIcon =
+  'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1726844038/icons8-close_cydpjh.svg';
+
+export const mapSize = '5xl';
+
+export const mapIcon =
+  'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/Subtract_3_odnejs.svg';

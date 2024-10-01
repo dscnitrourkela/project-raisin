@@ -31,7 +31,7 @@ export const FooterBottom = styled.div`
   ${tw`h-auto pt-2 bg-black w-full flex items-center `}
 `;
 
-export const FooterBottomContent = styled.div`
+export const FooterBottomContent = styled.ul`
   ${tw`py-4 sm:py-3 w-full flex flex-col sm:flex-row gap-[30px] sm:gap-[40px] flex-wrap sm:justify-center items-center`}
 `;
 

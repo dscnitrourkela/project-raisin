@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { socials, secondcol, thirdcol, footerBottom } from '@/config/content/Footer';
+import { socials, secondcol, thirdcol, footerBottom, mapIcon } from '@/config/content/Footer';
 import Link from 'next/link';
 import MapModal from '@/components/Footer/MapModal';
 import { List, SmallList } from '../shared/Typography/Lists';
@@ -33,15 +33,17 @@ export const Footer = () => {
               <GetInTouch>GET IN TOUCH</GetInTouch>
               <SocialList>
                 {socials.map((item) => (
-                  <Link key={item.id} href={item.url}>
-                    <Image
-                      src={item.img}
-                      alt={item.id}
-                      width={50}
-                      height={50}
-                      className='w-[50px] md:w-[60px]'
-                    />
-                  </Link>
+                  <li key={item.id}>
+                    <Link key={item.id} href={item.url}>
+                      <Image
+                        src={item.img}
+                        alt={item.id}
+                        width={50}
+                        height={50}
+                        className='w-[50px] md:w-[60px]'
+                      />
+                    </Link>
+                  </li>
                 ))}
               </SocialList>
             </FooterColumn1>
@@ -50,15 +52,8 @@ export const Footer = () => {
             </FooterColumn2>
             <FooterColumn3>
               <ItemList>
-                <List className='flex gap-[20px]'>
-                  <Image
-                    src='https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/Subtract_3_odnejs.svg'
-                    alt='map'
-                    width={35}
-                    height={35}
-                  />
-                  <MapModal />
-                </List>
+                <MapModal />
+
                 {RenderList(thirdcol)}
               </ItemList>
             </FooterColumn3>
