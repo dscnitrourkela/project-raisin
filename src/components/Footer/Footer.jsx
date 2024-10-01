@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { socials, secondcol, thirdcol, footerBottom, mapIcon } from '@/config/content/Footer';
+import { socials, secondcol, thirdcol, footerBottom } from '@/config/content/Footer';
 import Link from 'next/link';
-import MapModal from '@/components/Footer/MapModal';
+import MapModal from './MapModal';
 import { List, SmallList } from '../shared/Typography/Lists';
 
 import {
@@ -13,13 +13,13 @@ import {
   FooterColumn1,
   FooterColumn2,
   FooterColumn3,
-  GetInTouch,
   SocialList,
   ItemList,
   FooterTopBackground,
   FooterTopGradient,
   FooterBottomContent,
-} from '@/components/Footer/styles';
+} from './styles';
+import { LogoText2 } from '../shared/Typography/Headings';
 
 export const Footer = () => {
   return (
@@ -30,11 +30,11 @@ export const Footer = () => {
           <FooterTopGradient />
           <FooterContent>
             <FooterColumn1>
-              <GetInTouch>GET IN TOUCH</GetInTouch>
+              <LogoText2>GET IN TOUCH</LogoText2>
               <SocialList>
                 {socials.map((item) => (
                   <li key={item.id}>
-                    <Link key={item.id} href={item.url}>
+                    <Link href={item.url}>
                       <Image
                         src={item.img}
                         alt={item.id}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Modal, ModalContent, ModalBody, Button } from '@nextui-org/react';
 import Image from 'next/image';
 import { List } from '../shared/Typography/Lists';

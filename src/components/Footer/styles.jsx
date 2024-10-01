@@ -51,10 +51,6 @@ export const FooterColumn3 = styled.div`
   ${tw`tracking-wider flex-1 flex justify-start md:justify-end pt-[30px] order-2 md:order-3`}
 `;
 
-export const GetInTouch = styled.span`
-  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold`}
-`;
-
 export const SocialList = styled.ul`
   ${tw` flex gap-[30px] lg:ml-[25px] mb-5`}
 `;

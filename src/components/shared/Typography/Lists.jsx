@@ -7,6 +7,5 @@ export const List = styled.li`
 `;
 
 export const SmallList = styled.li`
-  ${tw`text-[12px] md:text-[14px] lg:text-[16px] tracking-wider font-orbitron
-    `}
+  ${tw`text-[12px] md:text-[14px] lg:text-[16px] tracking-wider font-orbitron`}
 `;
