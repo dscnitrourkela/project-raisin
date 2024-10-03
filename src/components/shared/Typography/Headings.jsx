@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const Heading1 = styled.h1`
-  ${tw`text-2xl md:text-3xl lg:text-5xl font-orbitron mb-4 font-bold text-[#00FFD1]`}
+  ${tw`text-2xl md:text-3xl lg:text-5xl font-orbitron mb-4 font-bold text-2xl md:text-3xl rounded-xl lg:text-5xl font-orbitron my-28 mx-10 font-semibold text-center text-[#00FFD1]  py-16  text-[#00FFD1]`}
 `;
 
 export const Heading2 = styled.h2`

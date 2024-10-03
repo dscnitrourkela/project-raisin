@@ -11,23 +11,22 @@ const Page = () => {
     <>
       <NavBar />
       <div className='relative z-10' style={styles.mainContainer}>
-        <div className='absolute -z-10 h-full w-full top-[50vh] overflow-hidden flex mx-auto pt-20'>
+        <div className='absolute -z-10 h-full w-full overflow-hidden flex mx-auto pt-20'>
           <div
             style={{
-              background:
-                'linear-gradient(to bottom, linear-gradient(to bottom, #C5D0FF 0%, #C5D0FF 4%, #152A7E 100%)',
-              backgroundBlendMode: 'darken',
+              backgroundImage:
+                'linear-gradient(to bottom, rgba(197, 208, 255, 0.6) 0%, rgba(197, 208, 255, 0.4) 4%, rgba(21, 42, 126, 0.3) 50%,rgba(21, 42, 126, 0) 100%)',
               boxShadow:
                 'inset 0 0 30px 30px rgba(11, 19, 42, 1), 0 0 50px 50px rgba(11, 19, 70, 0.5)',
             }}
-            className='border border-[#070c23] drop-shadow-2xl rounded-full w-full h-full '
+            className='border border-[#070c23] drop-shadow-2xl rounded-full w-full h-full mt-64 '
           ></div>
         </div>
         <section className='h-screen'>
           <LogoText>innovision</LogoText>
           <SubLogoText>24</SubLogoText>
         </section>
-        <section className='h-screen relative z-10 '>
+        <section className='h-screen relative z-10 mb-52'>
           <div className='absolute -z-10 w-full h-full -top-44'>
             <Image
               className='mx-auto'
@@ -37,16 +36,15 @@ const Page = () => {
               alt='Galaxy Background'
             />
           </div>
-          <h1
+          <Heading1
             style={{
               backgroundColor: 'rgba(0, 0, 0, 0.4)',
               backgroundBlendMode: 'darken',
               boxShadow: '0px 0px 30px 30px rgba(0, 0, 0, 0.4)',
             }}
-            className='text-2xl md:text-3xl rounded-xl lg:text-5xl font-orbitron my-28 mx-10 font-semibold text-center text-[#00FFD1]  py-16 '
           >
             ABOUT US
-          </h1>
+          </Heading1>
           {/* <h2 className='text-base md:text-lg lg:text-xl font-orbitron mb-3 font-medium text-white'>
             SubHeading
           </h2> */}
@@ -107,10 +105,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '20px',
-    width: 'full',
-    height: 'full',
+    height: '100%',
     backgroundColor: '#070c23',
     backgroundImage: 'url(/static/images/noise&texture.png)',
+    backgroundSize: 'cover',
     backgroundRepeat: 'repeat',
   },
 };
