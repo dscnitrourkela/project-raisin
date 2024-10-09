@@ -4,6 +4,7 @@ import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typ
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import { NavBar } from '@/components/NavBar/Nav';
+import Hero from '@/components/Hero Section/Hero';
 
 import { EventCarousalMain } from '@/components/eventsCaraousal/main';
 
@@ -11,10 +12,8 @@ const Page = () => {
   return (
     <>
       <NavBar />
+      <Hero />
       <div style={styles.mainContainer}>
-        <LogoText>innovision</LogoText>
-        <SubLogoText>24</SubLogoText>
-
         <Heading1>ABOUT US</Heading1>
         <Heading2>SubHeading</Heading2>
 
