@@ -5,7 +5,7 @@ import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/B
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import { NavBar } from '@/components/NavBar/Nav';
 
-import { EventCarousalMain } from '@/components/eventsCaraousal/main';
+import { EventCarousalMain } from '@/components/eventsCarousel/layoutComponents/Main';
 
 const Page = () => {
   return (

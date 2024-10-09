@@ -1,4 +1,4 @@
-import { ChildContainer, GradientOverlay, InnerBackground, StyledParentCard } from './parent.Style';
+import { ChildContainer, GradientOverlay, InnerBackground, StyledParentCard } from './Parent.Style';
 
 export const ParentEventCardComponent = ({ children }) => {
   return (

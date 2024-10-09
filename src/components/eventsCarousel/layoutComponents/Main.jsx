@@ -1,5 +1,5 @@
-import { Heading1 } from '../shared/Typography/Headings';
-import { SliderEventsWrapper } from './eventWrapper';
+import { Heading1 } from '../../shared/Typography/Headings';
+import { SliderEventsWrapper } from '../wrapperComponents/EventWrapper';
 
 export const EventCarousalMain = () => {
   return (

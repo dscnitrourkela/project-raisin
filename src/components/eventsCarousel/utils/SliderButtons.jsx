@@ -1,5 +1,5 @@
-import { SecondaryButton } from '../shared/Typography/Buttons';
-import { PaBullets } from './paginationBullet';
+import { SecondaryButton } from '../../shared/Typography/Buttons';
+import { PaBullets } from './PaginationBullet';
 
 export const SButtons = ({ fn1, fn2, currentindex }) => {
   return (

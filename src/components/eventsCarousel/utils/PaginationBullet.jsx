@@ -1,6 +1,6 @@
 // import { sliderData } from '@/app/config/content/sliderData';
 
-import { SliderData } from '../../config/content/eventsCarauselData';
+import { SliderData } from '../../../config/content/eventsCarauselData';
 
 export const PaBullets = ({ currentindex }) => {
   return (

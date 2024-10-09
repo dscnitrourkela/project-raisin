@@ -1,16 +1,16 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
-import { SButtons } from './sliderButtons';
-import { CarouselMapping } from './caraouselMapping';
+import { SButtons } from '../utils/SliderButtons';
+import { CarouselMapping } from './CaraouselMapping';
 import { SliderData } from '@/config/content/eventsCarauselData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import './swiper.css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
-import { EventCard } from './eventCard';
-import { SliderContainer, SwiperConatiner, Wrapper } from './eventWrapper.styles';
+import { EventCard } from '../eventCardComponents/EventCard';
+import { SliderContainer, SwiperConatiner, Wrapper } from './EventWrapper.styles';
 
 export const SliderEventsWrapper = () => {
   const [scope, animate] = useAnimate();

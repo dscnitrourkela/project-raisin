@@ -1,6 +1,6 @@
 import { SliderData } from '@/config/content/eventsCarauselData';
-import { EventCard } from './eventCard';
-import { motion, useAnimation } from 'framer-motion';
+import { EventCard } from '../eventCardComponents/EventCard';
+import { motion } from 'framer-motion';
 
 export const CarouselMapping = ({ currentIndex }) => {
   return (
@@ -55,7 +55,7 @@ export const CarouselMapping = ({ currentIndex }) => {
             }}
             transition={{
               type: 'tween',
-              duration: 0.5,
+              duration: 0.3,
               ease: [0.42, 0, 0.58, 1],
             }}
           >
