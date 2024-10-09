@@ -1,9 +1,15 @@
+const { Share_Tech_Mono } = require('next/font/google');
+
 /** @type {import('tailwindcss').Config} */
+
+const { nextui } = require('@nextui-org/theme');
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -24,8 +30,9 @@ module.exports = {
         orbitron: 'var(--font-orbitron)',
         montserrat: 'var(--font-montserrat)',
         prompt: 'var(--font-prompt)',
+        share_tech: 'var(--font-share_tech)', // Changed to lowercase to match your variable
       },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 };

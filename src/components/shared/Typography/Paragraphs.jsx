@@ -12,3 +12,7 @@ export const SubParagraph = styled.p`
 export const SmallParagraph = styled.p`
   ${tw`text-[12px] xsm:text-[14px] md:text-[16px] lg:text-[18px] mb-2 text-center text-white font-montserrat font-[400] leading-[150%]`}
 `;
+
+export const EventCaraouselParagraph = styled.p`
+  ${tw`max-w-[414.1px] h-[76px] font-montserrat text-[rgba(224, 229, 237, 0.75)]  mt-5 text-[12.66px] font-[400] leading-[18.99px] text-left flex text-wrap max-w-[500px]`}
+`;

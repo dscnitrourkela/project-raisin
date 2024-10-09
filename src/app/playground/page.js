@@ -4,16 +4,19 @@ import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/T
 import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
+import Navbar from '@/components/Marginals/navbar/navbar';
 import { NavBar } from '@/components/NavBar/Nav';
+import { Footer } from '@/components/Footer/Footer';
+import Hero from '@/components/Hero Section/Hero';
+
+import { EventCarousalMain } from '@/components/eventsCaraousal/main';
 
 const Page = () => {
   return (
     <>
       <NavBar />
+      <Hero />
       <div style={styles.mainContainer}>
-        <LogoText>innovision</LogoText>
-        <SubLogoText>24</SubLogoText>
-
         <Heading1>ABOUT US</Heading1>
         <Heading2>SubHeading</Heading2>
 
@@ -54,6 +57,8 @@ const Page = () => {
           <NavbarLink>Link 4</NavbarLink>
         </div>
       </div>
+      <EventCarousalMain />
+      <Footer />
     </>
   );
 };
