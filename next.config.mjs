@@ -6,7 +6,7 @@ import withTwin from './withTwin.mjs';
 const nextConfig = withTwin({
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com'], // Allow images from Cloudinary
+    domains: ['res.cloudinary.com'],
   },
 });
 
