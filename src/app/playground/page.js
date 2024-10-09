@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
@@ -36,7 +37,7 @@ const Page = () => {
         <div style={styles.con2}>
           <PrimaryButton>Get Started</PrimaryButton>
           <SecondaryButton>
-            <img
+            <Image
               src='https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png'
               alt=''
               style={{ width: '20px', height: '20px' }}
