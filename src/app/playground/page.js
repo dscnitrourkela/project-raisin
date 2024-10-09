@@ -5,15 +5,14 @@ import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/B
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import { NavBar } from '@/components/NavBar/Nav';
 import { Footer } from '@/components/Footer/Footer';
+import Hero from '@/components/Hero Section/Hero';
 
 const Page = () => {
   return (
     <>
       <NavBar />
+      <Hero />
       <div style={styles.mainContainer}>
-        <LogoText>innovision</LogoText>
-        <SubLogoText>24</SubLogoText>
-
         <Heading1>ABOUT US</Heading1>
         <Heading2>SubHeading</Heading2>
 
