@@ -1,6 +1,7 @@
-"use client";
-import { NavBar } from "./components/NavBar/Nav";
-import Heading1 from "./components/shared/Typography/Heading1";
+'use client';
+import { NavBar } from '@/components/NavBar/Nav';
+import { Heading1 } from '@/components/shared/Typography/Headings';
+
 export default function Home() {
   return (
     <div>

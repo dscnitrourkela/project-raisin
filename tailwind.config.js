@@ -1,97 +1,38 @@
+const { Share_Tech_Mono } = require('next/font/google');
+
 /** @type {import('tailwindcss').Config} */
+
+const { nextui } = require('@nextui-org/theme');
+
 module.exports = {
-  content: ['./src/**/*.html', './src/**/*.{js,jsx,ts,tsx,vue}'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
-    fontFamily: {
-      Inter: ['Inter', 'sans-serif'],
-      Roslindale: ['Roslindale', 'serif'],
-    },
-    container: {
-      padding: {
-        default: '1rem',
-        sm: '2rem',
-        lg: '4rem',
-        xl: '5rem',
-      },
-      center: true,
-    },
-    borderRadius: {
-      DEFAULT: '4px',
-      none: '0px',
-      sm: '2px',
-      lg: '8px',
-      xl: '12px',
-      '2xl': '16px',
-      '3xl': '24px',
-      '4xl': '32px',
-      full: '50%',
-    },
-    fontSize: {
-      xs: ['12px', '16px'],
-      sm: ['14px', '20px'],
-      base: ['16px', '26px'],
-      lg: ['18px', '28px'],
-      xl: ['20px', '28px'],
-      '2xl': ['24px', '32px'],
-      '3xl': ['24px', '36px'],
-      '4xl': ['32px', '40px'],
-      '5xl': ['48px', '64px'],
-      '6xl': ['64px', '96px'],
-    },
     extend: {
       colors: {
-        'color-primary': 'var(--text-color-primary)',
-        'color-secondary': 'var(--text-color-secondary)',
-        'color-tertiary': 'var(--text-color-tertiary)',
-        'background-dark': 'var(--background-secondary)',
-        'background-darker': 'var(--background-primary)',
-
-        'accent-primary': 'var(--accent-color-primary)',
-        'accent-secondary': 'var(--accent-color-secondary)',
-        'accent-tertiary': 'var(--accent-color-tertiary)',
-
-        'accent-success': 'var(--accent-success)',
-
-        'btn-primary': 'var(--button-color-primary)',
-        'btn-secondary': 'var(--button-color-secondary)',
-        'btn-tertiary': 'var(--button-color-tertiary)',
-        'btn-confirmed': 'var(--button-color-confirmed)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
-      backgroundImage: () => ({
-        'gradient-primary': 'var(--brand-gradient)',
-      }),
-    },
-    screens: {
-      '2xl': { max: '1535px' },
-      // => @media (max-width: 1535px) { ... }
-
-      xl: { max: '1279px' },
-      // => @media (max-width: 1279px) { ... }
-
-      mid: { max: '1150px' },
-      // => @media (max-width: 1150px) { ... }
-
-      lg: { max: '1023px' },
-      // => @media (max-width: 1023px) { ... }
-
-      md: { max: '760px' },
-      // => @media (max-width: 767px) { ... }
-
-      sm: { max: '639px' },
-      // => @media (max-width: 639px) { ... }
-
-      sxm: { max: '600px' },
-      // => @media {max-width: 600px}{...}
-
-      '1xsm': { max: '540px' },
-      // => @media {max-width: 540px}{...}
-
-      '2xsm': { max: '500px' },
-      // => @media {max-width: 500px}{...}
-
-      '3xsm': { max: '400px' },
-      // => @media {max-width: 500px}{...}
+      screens: {
+        xsm: '480px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+      fontFamily: {
+        techno: 'var(--font-techno)',
+        orbitron: 'var(--font-orbitron)',
+        montserrat: 'var(--font-montserrat)',
+        prompt: 'var(--font-prompt)',
+        share_tech: 'var(--font-share_tech)', // Changed to lowercase to match your variable
+      },
     },
   },
-  plugins: [],
+  plugins: [nextui()],
 };
