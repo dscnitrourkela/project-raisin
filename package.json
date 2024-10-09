@@ -43,9 +43,8 @@
     "styled-components": "^6.1.13",
     "swiper": "^11.1.14",
     "twin.macro": "^3.4.1",
-    "yarn": "^1.22.22"
     "three": "^0.168.0",
-    "twin.macro": "^3.4.1"
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.15",
