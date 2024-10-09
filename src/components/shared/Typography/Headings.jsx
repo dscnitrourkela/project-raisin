@@ -20,3 +20,7 @@ export const SubLogoText = styled.h1`
   -webkit-text-stroke: 2px #ffffffe6;
   text-shadow: none;
 `;
+
+export const LogoText2 = styled.h1`
+  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold`}
+`;
