@@ -1,17 +1,17 @@
 'use client';
+import Image from 'next/image';
 import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import Navbar from '@/components/Marginals/navbar/navbar';
-import { NavBar } from '@/components/NavBar/Nav';
 import { Footer } from '@/components/Footer/Footer';
 import Hero from '@/components/Hero Section/Hero';
 
 const Page = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Hero />
       <div style={styles.mainContainer}>
         <Heading1>ABOUT US</Heading1>
@@ -37,7 +37,7 @@ const Page = () => {
         <div style={styles.con2}>
           <PrimaryButton>Get Started</PrimaryButton>
           <SecondaryButton>
-            <img
+            <Image
               src='https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png'
               alt=''
               style={{ width: '20px', height: '20px' }}
