@@ -4,14 +4,13 @@ import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typ
 import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import Navbar from '@/components/Marginals/navbar/navbar';
-import { NavBar } from '@/components/NavBar/Nav';
 import { Footer } from '@/components/Footer/Footer';
 import Hero from '@/components/Hero Section/Hero';
 
 const Page = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <Hero />
       <div style={styles.mainContainer}>
         <Heading1>ABOUT US</Heading1>
