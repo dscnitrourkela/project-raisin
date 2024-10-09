@@ -23,4 +23,8 @@ export const SubLogoText = styled.h1`
 
 export const EventHead = styled.h2`
   ${tw`text-[48px] font-orbitron mb-3 font-bold text-[#00FFD1]`}
+ `;
+  
+export const LogoText2 = styled.h1`
+  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold`}
 `;
