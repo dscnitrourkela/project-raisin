@@ -1,6 +1,6 @@
 import { Body } from './Body';
 
-export const HeroMain = () => {
+export const AboutUsMain = () => {
   return (
     <>
       <Body />
