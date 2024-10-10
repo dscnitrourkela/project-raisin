@@ -2,7 +2,13 @@ import localFont from 'next/font/local';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import GlobalStyles from '@/GlobalStyles';
-import { Montserrat, Orbitron, Prompt, Inter } from 'next/font/google';
+import {
+  Montserrat,
+  Inter,
+  Orbitron,
+  Prompt,
+  Share_Tech_Mono as ShareTechMono,
+} from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import Hoc from '@/components/HOC/Hoc';
 
@@ -10,6 +16,12 @@ const techno = localFont({
   src: '../fonts/Techno.otf',
   variable: '--font-techno',
   weight: '100 900',
+});
+
+const shareTechMono = ShareTechMono({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-share_tech',
 });
 
 const orbitron = Orbitron({
@@ -45,7 +57,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${techno.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
+        className={`${techno.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
       >
         <StyledComponentsRegistry>
           <GlobalStyles />
