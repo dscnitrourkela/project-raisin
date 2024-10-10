@@ -1,6 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { Heading1 } from '@/components/shared/Typography/Headings';
+import { useState } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -12,10 +11,9 @@ import SelectField from '@/components/Register/SelectField/SelectField';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import { formFields } from '@/config/content/Registration/details';
-import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
-import toast from 'react-hot-toast';
 import handleLoadingAndToast from '../utils/handleLoadingToast';
+import { userSchema } from '@/config/zodd/userDetailsSchema';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -30,6 +28,7 @@ function Page() {
     campusAmbassador: false,
   });
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -65,11 +64,18 @@ function Page() {
   }
 
   function validateForm() {
-    const { name, email, phone, college, rollNumber, idCard } = userDetails;
-    if (!name || !email || !phone || !college || !rollNumber || !idCard) {
-      toast.error('Please fill all the fields');
+    const validationResult = userSchema.safeParse(userDetails);
+    if (!validationResult.success) {
+      const fieldErrors = validationResult.error.errors.reduce((acc, err) => {
+        acc[err.path[0]] = err.message;
+        return acc;
+      }, {});
+      console.log(fieldErrors);
+      setErrors(fieldErrors);
       return false;
     }
+
+    setErrors({});
     return true;
   }
 
