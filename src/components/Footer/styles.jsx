@@ -9,11 +9,6 @@ export const FooterWrapper = styled.div`
   ${tw`bg-[#222020] w-full min-h-[350px] h-auto flex flex-col `}
 `;
 
-// export const FooterBackgroundGrain = styled.div`
-//   ${tw`h-auto inset-0 z-10  bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728545370/Noise_Texture_1_nlzacd.svg')] bg-cover  absolute  `}
-
-// `;
-
 export const FooterBackgroundGrain = styled.div`
   ${tw`h-auto inset-0 z-10 bg-cover absolute`}
 

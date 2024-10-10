@@ -9,6 +9,9 @@
 # testing
 /coverage
 
+#lockfile
+yarn.lock
+
 # next.js
 /.next/
 /out/
@@ -34,3 +37,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+yarn.lock
+
+.env

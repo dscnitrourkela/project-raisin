@@ -9,7 +9,7 @@ export const PrimaryButton = styled.button`
     0px -3.322px 1.661px 0px #00000040 inset,
     0px 1.661px 0.83px 0px #ffffff40 inset;
 
-  ${tw`px-6 py-4 text-white font-montserrat text-base not-italic font-medium flex hover:opacity-90 transition-all duration-300 cursor-pointer rounded-[11.401px] border-[1px] border-[#ffffff66] leading-[140%]`}
+  ${tw`px-6 py-4 text-white font-montserrat text-base not-italic font-medium flex hover:opacity-90 transition-all duration-300 cursor-pointer items-center justify-center  rounded-[11.401px] border-[1px] border-[#ffffff66] leading-[140%]`}
 `;
 
 export const SecondaryButton = styled.button`
