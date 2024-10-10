@@ -47,7 +47,7 @@ export const FooterColumn1 = styled.div`
 `;
 
 export const FooterColumn2 = styled.div`
-  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] order-1 md:order-2`}
+  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] md:mx-[20px] order-1 md:order-2`}
 `;
 
 export const FooterColumn3 = styled.div`
