@@ -24,7 +24,7 @@ export const MainNavData = [
   },
   {
     title: 'Events',
-    link: 'events',
+    link: '/events',
   },
   {
     title: 'Sponsors',
