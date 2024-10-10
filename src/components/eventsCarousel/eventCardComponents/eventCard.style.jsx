@@ -5,7 +5,7 @@ import { Heading2 } from '@/components/shared/Typography/Headings';
 import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 
 export const CarouselButton = styled(PrimaryButton)`
-  ${tw` w-[125.89px] h-[42.94px] flex justify-center items-center text-black font-share_tech rounded-[7.59px]`}
+  ${tw` w-[125.89px] h-[42.94px] flex justify-center items-center text-black font-share_tech rounded-[7.59px] `}
 `;
 
 export const CarouselHead = styled(Heading2)`

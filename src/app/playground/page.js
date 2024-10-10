@@ -18,25 +18,4 @@ const Page = () => {
   );
 };
 
-const styles = {
-  con2: {
-    display: 'flex',
-    justifyContent: 'between',
-    alignItems: 'center',
-    width: 'full',
-    height: 'full',
-    gap: '10px',
-    margin: '20px 0',
-  },
-  mainContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
-    width: 'full',
-    height: 'full',
-  },
-};
-
 export default Page;

@@ -5,7 +5,7 @@ import { ParentEventCardComponent } from './Parent';
 
 import { CarouselButton, CarouselHead, CarouselParagraph } from './eventCard.style';
 
-export const EventCard = ({ head, url, desc }) => {
+export const EventCard = ({ head, url, desc, isCurrent }) => {
   return (
     <>
       <div
@@ -20,7 +20,12 @@ export const EventCard = ({ head, url, desc }) => {
           <CarouselHead>{head}</CarouselHead>
           <CarouselParagraph>{desc}</CarouselParagraph>
           <div className='flex justify-end mt-16'>
-            <CarouselButton>REGISTER</CarouselButton>
+            <CarouselButton
+              disabled={!isCurrent}
+              className={isCurrent ? '' : 'cursor-not-allowed hover:opacity-100'}
+            >
+              REGISTER
+            </CarouselButton>
           </div>
         </ParentEventCardComponent>
       </div>

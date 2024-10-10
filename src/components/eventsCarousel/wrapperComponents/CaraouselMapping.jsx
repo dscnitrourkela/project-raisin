@@ -63,15 +63,19 @@ export const CarouselMapping = ({ currentIndex }) => {
 
   return (
     <>
-      {SliderData.map((item, index) => (
-        <div
-          key={index}
-          className={`w-[456.74px] relative transition-all duration-700 ease-[0.25, 0.1, 0.25, 1] left-[5%] md:left-[8%] lg:left-[12%] xl:left-[19.5%]`}
-          ref={(el) => (refs.current[index] = el)}
-        >
-          <EventCard head={item.head} desc={item.desc} url={item.url} />
-        </div>
-      ))}
+      {SliderData.map((item, index) => {
+        const isCurrent = index === currentIndex;
+
+        return (
+          <div
+            key={index}
+            className={`w-[456.74px] relative transition-all duration-700 ease-[0.25, 0.1, 0.25, 1] left-[5%] md:left-[8%] lg:left-[12%] xl:left-[19.5%]`}
+            ref={(el) => (refs.current[index] = el)}
+          >
+            <EventCard head={item.head} desc={item.desc} url={item.url} isCurrent={isCurrent} />
+          </div>
+        );
+      })}
     </>
   );
 };
