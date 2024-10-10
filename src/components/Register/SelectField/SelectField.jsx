@@ -1,10 +1,12 @@
 import { SelectFieldContainer, SelectFieldInput } from './SelectField.styles';
 
-function SelectField({ options, onSelect, placeholder, value }) {
+function SelectField({ options = [], onSelect, placeholder, value, className }) {
   return (
-    <SelectFieldContainer>
-      <SelectFieldInput onChange={onSelect} value={value}>
-        <option disabled>{placeholder}</option>
+    <SelectFieldContainer className={className}>
+      <SelectFieldInput onChange={(e) => onSelect(e.target.value)} value={value}>
+        <option disabled value={placeholder}>
+          {placeholder}
+        </option>
         {options.map((option, index) => (
           <option key={index} value={option.value}>
             {option.label}

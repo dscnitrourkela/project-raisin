@@ -1,42 +1,21 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
-
 export const SelectFieldContainer = styled.div`
   position: relative;
-  display: flex;
-  width: 20em;
-  height: 4.5em;
-  border-radius: 0.25em;
-  overflow: hidden;
-  width: 100%;
+  ${tw`flex px-4 py-3 sm:py-4 md:py-5 lg:py-6 items-center w-full rounded-lg border-2 border-solid border-[#999494] bg-transparent focus:outline-none focus:border-[#00FFD1] focus:ring-opacity-50 font-[Inter] text-base sm:text-lg duration-300 ease-in-out`}
 
-  ::after { content: '\25BC';
-  position: absolute;
-  height: 100%;
-  top: 8px;
-  right: 0;
-  padding: 1em;
-  transition: 0.25s all ease;
-  pointer-events: none;
+  ::after {
+    content: '\u25BC';
+    position: absolute;
+    ${tw`top-1/2 right-4 transform -translate-y-1/2 pointer-events-none transition-all duration-300 ease-in-out`}
   }
-
   :hover::after {
-  color: #00ffd1;
-}
+    ${tw`text-[#00ffd1]`}
+  }
 `;
 
 export const SelectFieldInput = styled.select`
-  appearance: none;
-  outline: 10px red;
-  border: 0;
-  box-shadow: none;
-  flex: 1;
-  padding: 0 1em;
-  color: #fff;
-  background: #050b17;
-  cursor: pointer;
-  width: 100%;
-
+  ${tw`appearance-none outline-none border-0 shadow-none flex-1 px-4 text-white bg-[#050b17] cursor-pointer w-full`}
   ::-ms-expand {
     display: none;
   }
