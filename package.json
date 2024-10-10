@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
+    "ajv": "^8.17.1",
     "hamburger-react": "^2.5.1",
     "@nextui-org/react": "^2.4.8",
     "framer-motion": "^11.5.6",
