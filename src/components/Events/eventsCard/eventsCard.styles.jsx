@@ -29,7 +29,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const ContentAndButtonWrapper = styled.div`
-  ${tw`flex flex-col gap-y-16 max-w-3xl max-h-[375px] justify-center items-start`}
+  ${tw`flex flex-col gap-y-14 max-w-3xl max-h-[375px] justify-center items-start`}
 `;
 export const ContentContainer = styled.div`
   ${tw`flex flex-col justify-center items-start gap-y-5`}
@@ -59,7 +59,7 @@ export const RegisterButton = styled(PrimaryButton)`
     0px 0px 0px 0px #00000040 inset,
     0px 0px 0px 0px #ffffff40 inset;
 
-  ${tw`text-black text-lg font-normal font-share_tech`}
+  ${tw`text-black text-xl font-normal font-share_tech py-4 px-8`} /* Increased font size and padding */
 
   &:hover {
     box-shadow: 0 0 10px 2px #ff3c7f;
@@ -76,7 +76,7 @@ export const RuleBookButton = styled(PrimaryButton)`
     0px 0px 0px 0px #00000040 inset,
     0px 0px 0px 0px #ffffff40 inset;
 
-  ${tw` text-white text-lg font-normal font-share_tech border-[1px] border-[#ffffff66]`}
+  ${tw`text-white text-xl font-normal font-share_tech border-[1px] border-[#ffffff66] py-4 px-8`} /* Increased font size and padding */
 
   &:hover {
     box-shadow: 0 0 10px 2px #ffffff66;
