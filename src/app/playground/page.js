@@ -38,9 +38,11 @@ const Page = () => {
           <PrimaryButton>Get Started</PrimaryButton>
           <SecondaryButton>
             <Image
-              src='https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png'
+              src='https://res.cloudinary.com/dqqyuvg1v/image/upload/v1726908562/X_logo_seqxxb.png'
               alt=''
-              style={{ width: '20px', height: '20px' }}
+              // style={{ width: '20px', height: '20px' }}
+              width={20}
+              height={20}
               className='invert'
             />
           </SecondaryButton>

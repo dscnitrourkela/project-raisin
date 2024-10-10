@@ -30,7 +30,7 @@ export const MenuLogoItem = styled.div`
 `;
 
 export const MainBar = styled.nav`
-  backdrop-filter: blur(13.681711196899414px);
+  backdrop-filter: blur(18px);
 
   ${tw`
     inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-2 pr-6 flex justify-between  w-full max-[930px]:hidden max-w-xs md:max-w-md lg:max-w-xl space-x-0.5 rounded-md border-[0.5px] py-1 lg:mr-0 md:mr-[50px]
