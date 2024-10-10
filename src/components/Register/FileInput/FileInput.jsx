@@ -14,8 +14,8 @@ export default function FileInput({
 
   return (
     <FileUploadContainer className={className}>
-      <Label htmlFor={id}>{label}</Label>
-      <StyledFileInput type='file' placeholder={placeholder} onChange={handleChange} id={id} />
+      <Label>{label}</Label>
+      <StyledFileInput type='file' placeholder={placeholder} onChange={handleChange} />
     </FileUploadContainer>
   );
 }

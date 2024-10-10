@@ -1,6 +1,6 @@
 import { InputFieldContainer } from './InputField.styles';
 
-function InputField({ placeholder, type, onChange, value, className }) {
+function InputField({ placeholder, type, onChange, value, className, name }) {
   return (
     <InputFieldContainer
       value={value}
@@ -8,6 +8,7 @@ function InputField({ placeholder, type, onChange, value, className }) {
       type={type}
       onChange={onChange}
       className={className}
+      name={name}
     />
   );
 }

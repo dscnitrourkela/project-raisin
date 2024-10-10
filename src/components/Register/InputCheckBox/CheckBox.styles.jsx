@@ -9,6 +9,6 @@ export const CheckBoxInput = styled.input`
   ${tw`h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 accent-[#65558F]`}
 `;
 
-export const CheckBoxLabel = styled.label`
+export const CheckBoxLabel = styled.span`
   ${tw`font-prompt text-base sm:text-lg`}
 `;

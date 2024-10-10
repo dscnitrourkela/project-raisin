@@ -6,7 +6,7 @@ const FileUploadContainer = styled.div`
   ${tw`flex flex-col gap-5`}
 `;
 
-const Label = styled.label`
+const Label = styled.span`
   ${tw`font-prompt text-lg`}
 `;
 
