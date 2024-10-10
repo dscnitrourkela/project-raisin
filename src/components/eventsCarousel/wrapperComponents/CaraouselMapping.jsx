@@ -5,7 +5,7 @@ import { useAnimate } from 'framer-motion';
 
 export const CarouselMapping = ({ currentIndex }) => {
   const [scope, animate] = useAnimate();
-  const refs = useRef([]); // Store refs for each carousel item
+  const refs = useRef([]);
 
   useEffect(() => {
     SliderData.forEach((_, index) => {
