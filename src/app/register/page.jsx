@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { Heading1 } from '@/components/shared/Typography/Headings';
-import { RegisterContainer, RegisterForm } from './Register.styles';
+import { RegisterContainer, RegisterForm } from './register.styles';
 import InputField from '@/components/Register/InputField/InputField';
 import SelectField from '@/components/Register/SelectField/SelectField';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
