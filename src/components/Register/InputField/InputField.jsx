@@ -1,7 +1,7 @@
 import { Label } from '../FileInput/FileInput.styles';
-import { InputFieldContainer, InputFieldParentContainer } from './InputField.styles';
+import { InputFieldContainer, InputFieldParentContainer, ErrorMessage } from './InputField.styles';
 
-function InputField({ placeholder, type, onChange, value, className, name, label }) {
+function InputField({ placeholder, type, onChange, value, className, name, label, error }) {
   return (
     <InputFieldParentContainer>
       <Label>{label}</Label>
@@ -12,7 +12,9 @@ function InputField({ placeholder, type, onChange, value, className, name, label
         onChange={onChange}
         className={className}
         name={name}
+        $hasError={error && true}
       />
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputFieldParentContainer>
   );
 }

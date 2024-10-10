@@ -15,8 +15,8 @@ import {
   FooterColumn3,
   SocialList,
   ItemList,
+  FooterBackgroundGrain,
   FooterTopBackground,
-  FooterTopGradient,
   FooterBottomContent,
 } from './styles';
 import { LogoText2 } from '../shared/Typography/Headings';
@@ -26,8 +26,6 @@ export const Footer = () => {
     <FooterContainer>
       <FooterWrapper>
         <FooterTop>
-          <FooterTopBackground />
-          <FooterTopGradient />
           <FooterContent>
             <FooterColumn1>
               <LogoText2>GET IN TOUCH</LogoText2>
@@ -38,9 +36,9 @@ export const Footer = () => {
                       <Image
                         src={item.img}
                         alt={item.id}
-                        width={50}
-                        height={50}
-                        className='w-[50px] md:w-[60px]'
+                        width={45}
+                        height={45}
+                        className=' w-[35px] md:w-[40px]'
                       />
                     </Link>
                   </li>
@@ -76,7 +74,7 @@ export const Footer = () => {
 const RenderList = (listItems) =>
   listItems.map((item) => (
     <List key={item.id} className='flex gap-[20px] items-center'>
-      <Image src={item.img} alt={item.id} width={35} height={35} />
+      <Image src={item.img} alt={item.id} width={25} height={25} />
       <Link href={item.url}>{item.title}</Link>
     </List>
   ));

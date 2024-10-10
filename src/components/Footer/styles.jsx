@@ -6,21 +6,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  ${tw`bg-[#222020] w-full min-h-[350px] h-auto flex flex-col `}
-`;
-
-export const FooterTopBackground = styled.div`
-  ${tw`h-auto inset-0 opacity-40 bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727151375/image_15_benmmg.svg')] bg-cover bg-center absolute `}
-`;
-
-export const FooterTopGradient = styled.div`
-  ${tw`h-auto inset-0 z-10 absolute opacity-90 `}
-  background: linear-gradient(
-    to bottom right, 
-    #000000, 
-    #0b132e88 55%,
-    #000000 80% 
-  );
+  ${tw` w-full min-h-[350px] h-auto flex flex-col `}
 `;
 
 export const FooterTop = styled.div`
@@ -40,11 +26,11 @@ export const FooterContent = styled.div`
 `;
 
 export const FooterColumn1 = styled.div`
-  ${tw`flex-1 pt-[30px] flex flex-col gap-[30px] order-3 md:order-1 `}
+  ${tw`flex-1 flex flex-col gap-[30px] order-3 md:order-1 my-auto`}
 `;
 
 export const FooterColumn2 = styled.div`
-  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] order-1 md:order-2`}
+  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] md:mx-[20px] order-1 md:order-2`}
 `;
 
 export const FooterColumn3 = styled.div`
@@ -52,7 +38,7 @@ export const FooterColumn3 = styled.div`
 `;
 
 export const SocialList = styled.ul`
-  ${tw` flex gap-[30px] lg:ml-[25px] mb-5`}
+  ${tw` flex gap-[30px] mb-5 justify-center items-center`}
 `;
 
 export const ItemList = styled.ul`
