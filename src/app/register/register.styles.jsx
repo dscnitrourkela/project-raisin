@@ -6,5 +6,5 @@ export const RegisterContainer = styled.div`
 `;
 
 export const RegisterForm = styled.div`
-  ${tw`w-full flex flex-col gap-10 items-center justify-center`}
+  ${tw`w-full flex flex-col gap-10`}
 `;

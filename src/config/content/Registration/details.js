@@ -33,7 +33,7 @@ export const formFields = [
   {
     label: 'Upload your college ID Card',
     type: 'file',
-    id: 'id',
+    id: 'idCard',
   },
   {
     label: 'Select your gender',

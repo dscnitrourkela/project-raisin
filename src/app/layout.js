@@ -3,6 +3,7 @@ import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import GlobalStyles from '@/GlobalStyles';
 import { Montserrat, Orbitron, Prompt, Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 const techno = localFont({
   src: '../fonts/Techno.otf',
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
       >
         <StyledComponentsRegistry>
           <GlobalStyles />
+          <Toaster position='top-center' reverseOrder={false} />
           {children}
         </StyledComponentsRegistry>
       </body>

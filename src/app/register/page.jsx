@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Heading1 } from '@/components/shared/Typography/Headings';
 import { RegisterContainer, RegisterForm } from './Register.styles';
 import InputField from '@/components/Register/InputField/InputField';
@@ -8,6 +8,8 @@ import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import { formFields } from '@/config/content/Registration/details';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { uploadToCloudinary } from '../utils/uploadToCloudinary';
+import toast from 'react-hot-toast';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -21,11 +23,31 @@ function Page() {
     accomodation: false,
     campusAmbassador: false,
   });
-  const [idCardImage, setIdCardImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  function handleChange(event) {
+  async function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    console.log(name, value, type, checked);
+    if (type === 'file') {
+      setLoading(true);
+      const toastId = toast.loading('Uploading Image...');
+      try {
+        const imageUrl = await uploadToCloudinary(event.target.files[0]);
+        setUserDetails((prev) => ({
+          ...prev,
+          [name]: imageUrl,
+        }));
+        toast.dismiss(toastId);
+        toast.success('Image uploaded successfully');
+        setLoading(false);
+        return;
+      } catch (error) {
+        setLoading(false);
+        toast.dismiss(toastId);
+        toast.error('Image upload failed');
+        return;
+      }
+    }
+
     setUserDetails((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -33,7 +55,18 @@ function Page() {
   }
 
   function handleSubmit() {
+    const isFormValid = validateForm();
+    if (!isFormValid) return;
     console.log(userDetails);
+  }
+
+  function validateForm() {
+    const { name, email, phone, college, rollNumber, idCard } = userDetails;
+    if (!name || !email || !phone || !college || !rollNumber || !idCard) {
+      toast.error('Please fill all the fields');
+      return false;
+    }
+    return true;
   }
 
   function returnFormFields(field) {
@@ -92,6 +125,7 @@ function Page() {
             key={field.id}
             label={field.label}
             className={field?.className}
+            handleChange={handleChange}
           />
         );
       case 'checkbox':
@@ -117,7 +151,7 @@ function Page() {
           return returnFormFields(field);
         })}
       </RegisterForm>
-      <PrimaryButton onClick={handleSubmit} className='w-96 mt-16'>
+      <PrimaryButton onClick={handleSubmit} className='w-96 mt-16' disabled={loading}>
         Submit
       </PrimaryButton>
     </RegisterContainer>
