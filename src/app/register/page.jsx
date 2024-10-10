@@ -45,12 +45,13 @@ function Page() {
           ...prev,
           [name]: imageUrl,
         }));
+        setErrors((prev) => ({ ...prev, [name]: '' }));
       } catch (error) {
         console.error(error);
       }
       return;
     }
-
+    setErrors((prev) => ({ ...prev, [name]: '' }));
     setUserDetails((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
@@ -70,7 +71,6 @@ function Page() {
         acc[err.path[0]] = err.message;
         return acc;
       }, {});
-      console.log(fieldErrors);
       setErrors(fieldErrors);
       return false;
     }
@@ -82,41 +82,19 @@ function Page() {
   function returnFormFields(field) {
     switch (field.type) {
       case 'text':
-        return (
-          <InputField
-            key={field.id}
-            name={field.id}
-            placeholder={field.label}
-            onChange={handleChange}
-            value={userDetails[field.id]}
-            className={field?.className}
-            label={field.label}
-          />
-        );
       case 'email':
-        return (
-          <InputField
-            key={field.id}
-            name={field.id}
-            placeholder={field.label}
-            type='email'
-            onChange={handleChange}
-            value={userDetails[field.id]}
-            className={field?.className}
-            label={field.label}
-          />
-        );
       case 'tel':
         return (
           <InputField
             key={field.id}
             name={field.id}
             placeholder={field.label}
-            type='tel'
+            type={field.type}
             onChange={handleChange}
             value={userDetails[field.id]}
             className={field?.className}
             label={field.label}
+            error={errors[field.id]}
           />
         );
       case 'select':
@@ -130,6 +108,7 @@ function Page() {
             onChange={handleChange}
             className={field?.className}
             label={field.label}
+            error={errors[field.id]}
           />
         );
       case 'file':
@@ -140,6 +119,7 @@ function Page() {
             label={field.label}
             className={field?.className}
             handleChange={handleChange}
+            error={errors[field.id]}
           />
         );
       case 'checkbox':
@@ -150,6 +130,7 @@ function Page() {
             key={field.id}
             label={field.label}
             className={field?.className}
+            error={errors[field.id]}
           />
         );
       default:
@@ -158,7 +139,7 @@ function Page() {
   }
 
   return (
-    <RegisterContainer className='py-20 px-5 xsm:px-10 md:px-20'>
+    <RegisterContainer className='pt-20 pb-16 px-5 xsm:px-10 md:px-20'>
       <RegisterHeading>Register</RegisterHeading>
       <RegisterForm className='mt-20 w-full'>
         {formFields.map((field) => {
