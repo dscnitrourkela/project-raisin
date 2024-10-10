@@ -13,7 +13,6 @@ const Page = () => {
       <Hero />
       <AboutUsMain />
       <EventCarousalMain />
-      <Footer />
     </>
   );
 };
