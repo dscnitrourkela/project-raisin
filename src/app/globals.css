@@ -21,6 +21,7 @@ body {
     url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728490468/Noise_Texture_wexi5v.png')
       50% / cover no-repeat,
     linear-gradient(180deg, #0c1425 0%, #00050f 100%);
+  min-height: 100vh;
 }
 
 @layer utilities {
