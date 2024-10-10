@@ -7,7 +7,7 @@ import { NavbarLink } from '@/components/shared/Typography/Links';
 import Navbar from '@/components/Marginals/navbar/navbar';
 import { Footer } from '@/components/Footer/Footer';
 import Hero from '@/components/Hero Section/Hero';
-import { AboutUsMain } from '@/components/AboutUsSection/Main';
+import { AboutUsMain } from '@/components/AboutUs/Main';
 
 const Page = () => {
   return (

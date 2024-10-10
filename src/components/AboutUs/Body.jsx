@@ -19,7 +19,6 @@ export const Body = () => {
         <BackgroundDiv>
           <CircleDiv />
         </BackgroundDiv>
-        <Section></Section>
         <SectionWithBgImage>
           <HeroImage />
           <AboutUsHeading>ABOUT US</AboutUsHeading>

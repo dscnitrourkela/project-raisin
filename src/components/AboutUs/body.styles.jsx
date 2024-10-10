@@ -8,11 +8,11 @@ export const MainContainer = styled.div`
 `;
 
 export const BackgroundDiv = styled.div`
-  ${tw`absolute -z-10 h-full w-full overflow-hidden flex mx-auto pt-20`}
+  ${tw`absolute -z-10 -top-52 h-auto w-full overflow-hidden`}
 `;
 
 export const CircleDiv = styled.div`
-  ${tw`border border-[#070c23] drop-shadow-2xl rounded-full w-full h-full mt-64`}
+  ${tw`border border-[#070c23] drop-shadow-2xl rounded-full h-[100vw] w-screen mt-32`}
   background-image: linear-gradient(to bottom, rgba(197, 208, 255, 0.6) 0%, rgba(197, 208, 255, 0.4) 4%, rgba(21, 42, 126, 0.3) 50%, rgba(21, 42, 126, 0) 100%);
   box-shadow:
     inset 0 0 30px 30px rgba(11, 19, 42, 1),

@@ -103,8 +103,16 @@ const Scene = () => {
 
 const Hero = () => {
   return (
-    <div className='relative h-auto md:h-screen mx-auto p-4'>
-      <Canvas dpr={[1, 2]}>
+    <div className='relative h-auto md:h-screen mx-auto'>
+      <Canvas
+        dpr={[1, 2]}
+        style={{
+          backgroundColor: '#070c23',
+          backgroundImage: 'url(/static/images/noise&texture.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <Scene />
       </Canvas>
     </div>
