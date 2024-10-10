@@ -7,10 +7,10 @@ import {
   CircleDiv,
   MainContainer,
   Paragraph1,
-  Section,
   SectionWithBgImage,
 } from './body.styles';
 import { HeroImage } from './Image';
+import { aboutUsData } from '../../config/content/AboutUs/AboutUs';
 
 export const Body = () => {
   return (
@@ -19,16 +19,10 @@ export const Body = () => {
         <BackgroundDiv>
           <CircleDiv />
         </BackgroundDiv>
-        <Section></Section>
         <SectionWithBgImage>
           <HeroImage />
           <AboutUsHeading>ABOUT US</AboutUsHeading>
-          <Paragraph1>
-            HackNITR 5.0 is a hackathon to encourage you to use your imagination and invention to
-            develop cutting-edge technology-based solutions to challenges in the real world. It was
-            put together by a large group of tech enthusiasts from Google Developer Student Club
-            (GDSC)
-          </Paragraph1>
+          <Paragraph1>{aboutUsData}</Paragraph1>
         </SectionWithBgImage>
       </MainContainer>
     </>

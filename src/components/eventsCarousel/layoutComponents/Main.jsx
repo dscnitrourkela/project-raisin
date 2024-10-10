@@ -4,7 +4,7 @@ import { SliderEventsWrapper } from '../wrapperComponents/EventWrapper';
 export const EventCarousalMain = () => {
   return (
     <>
-      <div className='pt-64 min-h-screen w-full flex flex-col pb-64'>
+      <div className='-mt-32 min-h-screen w-full flex flex-col mb-44'>
         <div className='ml-10'>
           <Heading1>EVENTS</Heading1>
         </div>

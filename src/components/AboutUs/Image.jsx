@@ -6,7 +6,7 @@ export const HeroImage = () => {
     <>
       <MainContainer>
         <Image
-          className='mx-auto'
+          className='mx-auto mt-0 lg:mt-44'
           src='/static/images/about_bg.png'
           height={1200}
           width={1200}
