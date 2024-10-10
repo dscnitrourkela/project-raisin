@@ -10,6 +10,7 @@ import { formFields } from '@/config/content/Registration/details';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
 import toast from 'react-hot-toast';
+import handleLoadingAndToast from '../utils/handleLoadingToast';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -28,24 +29,22 @@ function Page() {
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
     if (type === 'file') {
-      setLoading(true);
-      const toastId = toast.loading('Uploading Image...');
       try {
-        const imageUrl = await uploadToCloudinary(event.target.files[0]);
+        const imageUrl = await handleLoadingAndToast(
+          uploadToCloudinary(event.target.files[0]),
+          'Uploading Image...',
+          'Image uploaded successfully',
+          'Image upload failed',
+          setLoading,
+        );
         setUserDetails((prev) => ({
           ...prev,
           [name]: imageUrl,
         }));
-        toast.dismiss(toastId);
-        toast.success('Image uploaded successfully');
-        setLoading(false);
-        return;
       } catch (error) {
-        setLoading(false);
-        toast.dismiss(toastId);
-        toast.error('Image upload failed');
-        return;
+        console.error(error);
       }
+      return;
     }
 
     setUserDetails((prev) => ({

@@ -40,16 +40,16 @@ export const formFields = [
     type: 'select',
     options: [
       {
-        value: 'Female',
-        label: 'female',
+        value: 'female',
+        label: 'Female',
       },
       {
-        value: 'Male',
-        label: 'male',
+        value: 'male',
+        label: 'Male',
       },
       {
-        value: 'Others',
-        label: 'others',
+        value: 'others',
+        label: 'Others',
       },
     ],
     id: 'gender',
