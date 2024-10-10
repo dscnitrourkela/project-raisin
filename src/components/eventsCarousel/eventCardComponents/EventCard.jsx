@@ -1,4 +1,3 @@
-import { EventCardBg } from '@/config/content/eventsCarauselData';
 import { EventImage } from '../utils/Image';
 import { ParentEventCardComponent } from './Parent';
 // import { CarouselButton } from '../../shared/Typography/Buttons';
