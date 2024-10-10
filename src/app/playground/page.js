@@ -37,12 +37,14 @@ const Page = () => {
         <div style={styles.con2}>
           <PrimaryButton>Get Started</PrimaryButton>
           <SecondaryButton>
-            <Image
+            {/* <Image
               src='https://about.x.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.1920.png'
               alt=''
-              style={{ width: '20px', height: '20px' }}
+              // style={{ width: '20px', height: '20px' }}
+              width={20}
+              height={20}
               className='invert'
-            />
+            /> */}
           </SecondaryButton>
         </div>
 

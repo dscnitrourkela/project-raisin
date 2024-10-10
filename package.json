@@ -33,12 +33,11 @@
     "prettier:fix": "prettier --write \"./**/*.{ts,tsx,js,jsx,css,scss,md}\" --ignore-pattern node_modules/"
   },
   "dependencies": {
-    "@babel/core": "^7.25.2",
-    "hamburger-react": "^2.5.1",
     "@nextui-org/react": "^2.4.8",
-    "framer-motion": "^11.5.6",
     "@react-three/drei": "^9.112.1",
     "@react-three/fiber": "^8.17.7",
+    "framer-motion": "^11.5.6",
+    "hamburger-react": "^2.5.1",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
@@ -47,6 +46,8 @@
     "twin.macro": "^3.4.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.7",
+    "@babel/preset-react": "^7.25.7",
     "autoprefixer": "^10.4.15",
     "babel-loader": "^9.2.1",
     "babel-plugin-macros": "^3.1.0",
@@ -54,7 +55,7 @@
     "eslint": "^8",
     "eslint-config": "^0.3.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "14.2.12",
+    "eslint-config-next": "^14.2.12",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest": "^27.4.0",
