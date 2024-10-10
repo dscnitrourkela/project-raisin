@@ -1,11 +1,14 @@
 'use client';
-
-// import { NavBar } from '@/components/NavBar/Nav';
-import Hero from '@/components/Hero Section/Hero';
-import Navbar from '@/components/Marginals/navbar/navbar';
-
 import { EventCarousalMain } from '@/components/eventsCarousel/layoutComponents/Main';
-// import { Footer } from '@/components/Footer/Footer';
+import Image from 'next/image';
+import { LogoText, SubLogoText, Heading1, Heading2 } from '@/components/shared/Typography/Headings';
+import { Paragraph, SubParagraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
+import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
+import { NavbarLink } from '@/components/shared/Typography/Links';
+import Navbar from '@/components/Marginals/navbar/navbar';
+import { Footer } from '@/components/Footer/Footer';
+import Hero from '@/components/Hero Section/Hero';
+import { AboutUsMain } from '@/components/AboutUsSection/Main';
 
 const Page = () => {
   return (
@@ -13,30 +16,10 @@ const Page = () => {
       <Navbar />
       <Hero />
       <EventCarousalMain />
-      {/* <Footer /> */}
+      <AboutUsMain />
+      <Footer />
     </>
   );
-};
-
-const styles = {
-  con2: {
-    display: 'flex',
-    justifyContent: 'between',
-    alignItems: 'center',
-    width: 'full',
-    height: 'full',
-    gap: '10px',
-    margin: '20px 0',
-  },
-  mainContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '20px',
-    width: 'full',
-    height: 'full',
-  },
 };
 
 export default Page;

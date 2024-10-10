@@ -34,6 +34,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.25.2",
+    "ajv": "^8.17.1",
+    "hamburger-react": "^2.5.1",
     "@nextui-org/react": "^2.4.8",
     "@react-three/drei": "^9.112.1",
     "@react-three/fiber": "^8.17.7",
