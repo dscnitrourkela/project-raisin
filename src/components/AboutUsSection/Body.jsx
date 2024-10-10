@@ -19,10 +19,7 @@ export const Body = () => {
         <BackgroundDiv>
           <CircleDiv />
         </BackgroundDiv>
-        <Section>
-          <LogoText>innovision</LogoText>
-          <SubLogoText>24</SubLogoText>
-        </Section>
+        <Section></Section>
         <SectionWithBgImage>
           <HeroImage />
           <AboutUsHeading>ABOUT US</AboutUsHeading>
