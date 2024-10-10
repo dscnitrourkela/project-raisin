@@ -38,5 +38,5 @@ export const MainNavData = [
 
 export const ButtonData = {
   title: 'Register',
-  link: 'register',
+  link: '/register',
 };

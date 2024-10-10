@@ -20,7 +20,7 @@ import Hamburger from 'hamburger-react';
 import { useState } from 'react';
 import { ButtonData, logos, MainNavData } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
-import { NavbarLink } from '@/components/shared/Typography/Links';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,13 +41,17 @@ const Navbar = () => {
         </Logos>
         <MainBar>
           <MenuLogoItem>
-            <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
+            <Link href='/playground'>
+              <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
+            </Link>
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
             <MainBarItems key={index}>{item.title}</MainBarItems>
           ))}
         </MainBar>
-        <RegisterButton>{ButtonData.title}</RegisterButton>
+        <RegisterButton>
+          <Link href={ButtonData.link}>{ButtonData.title}</Link>
+        </RegisterButton>
 
         <HamburgerContainer>
           <Hamburger toggled={isOpen} toggle={handleToggle}></Hamburger>
@@ -61,7 +65,9 @@ const Navbar = () => {
               <ResItem key={index}>{item.title}</ResItem>
             ))}
           </ResList>
-          <HamburgerRegisterButton>{ButtonData.title}</HamburgerRegisterButton>
+          <HamburgerRegisterButton>
+            <Link href={ButtonData.link}>{ButtonData.title}</Link>
+          </HamburgerRegisterButton>
         </ResMen>
       ) : null}
     </NavContainer>
