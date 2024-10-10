@@ -3,16 +3,19 @@ export const formFields = [
     label: 'Name',
     type: 'text',
     id: 'name',
+    className: 'w-full sm:w-96',
   },
   {
     label: 'Email',
     type: 'email',
     id: 'email',
+    className: 'w-full sm:w-96',
   },
   {
     label: 'Phone Number',
     type: 'tel',
     id: 'phone',
+    className: 'w-full sm:w-96',
   },
   {
     label: 'Select your college',

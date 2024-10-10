@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckBoxContainer, CheckBoxInput, CheckBoxLabel } from './CheckBox.styles';
+import { Label } from '../FileInput/FileInput.styles';
 
 function CheckBox({ label, checked, onChange, className, name }) {
   return (

@@ -1,19 +1,27 @@
-import { SelectFieldContainer, SelectFieldInput } from './SelectField.styles';
+import { Label } from '../FileInput/FileInput.styles';
+import {
+  SelectFieldContainer,
+  SelectFieldInput,
+  SelectFieldParentContainer,
+} from './SelectField.styles';
 
-function SelectField({ options = [], onChange, placeholder, value, className, name }) {
+function SelectField({ options = [], onChange, placeholder, value, className, name, label }) {
   return (
-    <SelectFieldContainer className={className}>
-      <SelectFieldInput onChange={onChange} value={value} name={name}>
-        <option disabled value=''>
-          {placeholder}
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.label}
+    <SelectFieldParentContainer>
+      <Label>{label}</Label>
+      <SelectFieldContainer className={className}>
+        <SelectFieldInput onChange={onChange} value={value} name={name}>
+          <option disabled value=''>
+            {placeholder}
           </option>
-        ))}
-      </SelectFieldInput>
-    </SelectFieldContainer>
+          {options.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </SelectFieldInput>
+      </SelectFieldContainer>
+    </SelectFieldParentContainer>
   );
 }
 

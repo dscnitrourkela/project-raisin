@@ -1,7 +1,12 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { Heading1 } from '@/components/shared/Typography/Headings';
-import { RegisterContainer, RegisterForm } from './register.styles';
+import {
+  RegisterContainer,
+  RegisterForm,
+  RegisterHeading,
+  RegsiterButton,
+} from './register.styles';
 import InputField from '@/components/Register/InputField/InputField';
 import SelectField from '@/components/Register/SelectField/SelectField';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
@@ -79,6 +84,7 @@ function Page() {
             onChange={handleChange}
             value={userDetails[field.id]}
             className={field?.className}
+            label={field.label}
           />
         );
       case 'email':
@@ -91,6 +97,7 @@ function Page() {
             onChange={handleChange}
             value={userDetails[field.id]}
             className={field?.className}
+            label={field.label}
           />
         );
       case 'tel':
@@ -103,6 +110,7 @@ function Page() {
             onChange={handleChange}
             value={userDetails[field.id]}
             className={field?.className}
+            label={field.label}
           />
         );
       case 'select':
@@ -115,6 +123,7 @@ function Page() {
             value={userDetails[field.id]}
             onChange={handleChange}
             className={field?.className}
+            label={field.label}
           />
         );
       case 'file':
@@ -144,15 +153,15 @@ function Page() {
 
   return (
     <RegisterContainer className='py-20 px-5 xsm:px-10 md:px-20'>
-      <Heading1>Register</Heading1>
-      <RegisterForm className='mt-20'>
+      <RegisterHeading>Register</RegisterHeading>
+      <RegisterForm className='mt-20 w-full'>
         {formFields.map((field) => {
           return returnFormFields(field);
         })}
       </RegisterForm>
-      <PrimaryButton onClick={handleSubmit} className='w-96 mt-16' disabled={loading}>
+      <RegsiterButton onClick={handleSubmit} disabled={loading}>
         Submit
-      </PrimaryButton>
+      </RegsiterButton>
     </RegisterContainer>
   );
 }

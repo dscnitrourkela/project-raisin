@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { InputFieldContainer } from '../InputField/InputField.styles';
 
 const FileUploadContainer = styled.div`
-  ${tw`flex flex-col gap-5`}
+  ${tw`flex flex-col gap-5 w-full md:w-[35rem]`}
 `;
 
 const Label = styled.span`
@@ -11,7 +11,7 @@ const Label = styled.span`
 `;
 
 const StyledFileInput = styled(InputFieldContainer)`
-  ${tw`md:w-96 w-auto`}
+  ${tw`w-full`}
 `;
 
 export { FileUploadContainer, Label, StyledFileInput };
