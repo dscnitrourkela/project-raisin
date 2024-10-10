@@ -9,20 +9,17 @@ export const FooterWrapper = styled.div`
   ${tw`bg-[#222020] w-full min-h-[350px] h-auto flex flex-col `}
 `;
 
-export const FooterBackgroundGrain = styled.div`
-  ${tw`h-auto inset-0 z-10 bg-cover absolute`}
-
-  background-image: url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728545370/Noise_Texture_1_nlzacd.svg');
-
-  @media (max-width: 763px) {
-    background-image: url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728555143/Random_static_co3b09.png');
-    opacity: 36%;
-  }
+export const FooterTopBackground = styled.div`
+  ${tw`h-auto inset-0 opacity-40 bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727151375/image_15_benmmg.svg')] bg-cover bg-center absolute `}
 `;
 
-export const FooterTopBackground = styled.div`
-  ${tw`h-auto inset-0  absolute bg-[#00040F]  `}
-
+export const FooterTopGradient = styled.div`
+  ${tw`h-auto inset-0 z-10 absolute opacity-90 `}
+  background: linear-gradient(
+    to bottom right, 
+    #000000, 
+    #0b132e88 55%,
+    #000000 80% 
   );
 `;
 
@@ -47,7 +44,7 @@ export const FooterColumn1 = styled.div`
 `;
 
 export const FooterColumn2 = styled.div`
-  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] md:mx-[20px] order-1 md:order-2`}
+  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] order-1 md:order-2`}
 `;
 
 export const FooterColumn3 = styled.div`
