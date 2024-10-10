@@ -71,7 +71,7 @@ export const SliderEventsWrapper = () => {
       <SliderContainer>
         <div
           ref={scope}
-          className='flex mt-64 transition-transform'
+          className='flex mt-16 transition-transform'
           style={{
             width: `${SliderData.length * slideWidth}px`,
             transform: `translateX(calc(50% - ${slideWidth / 2}px))`,
