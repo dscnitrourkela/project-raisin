@@ -6,24 +6,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  ${tw`bg-[#222020] w-full min-h-[350px] h-auto flex flex-col `}
-`;
-
-export const FooterBackgroundGrain = styled.div`
-  ${tw`h-auto inset-0 z-10 bg-cover absolute`}
-
-  background-image: url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728545370/Noise_Texture_1_nlzacd.svg');
-
-  @media (max-width: 763px) {
-    background-image: url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728555143/Random_static_co3b09.png');
-    opacity: 36%;
-  }
-`;
-
-export const FooterTopBackground = styled.div`
-  ${tw`h-auto inset-0  absolute bg-[#00040F]  `}
-
-  );
+  ${tw` w-full min-h-[350px] h-auto flex flex-col `}
 `;
 
 export const FooterTop = styled.div`
@@ -43,7 +26,7 @@ export const FooterContent = styled.div`
 `;
 
 export const FooterColumn1 = styled.div`
-  ${tw`flex-1 pt-[30px] flex flex-col gap-[30px] order-3 md:order-1 `}
+  ${tw`flex-1 flex flex-col gap-[30px] order-3 md:order-1 my-auto`}
 `;
 
 export const FooterColumn2 = styled.div`
@@ -55,7 +38,7 @@ export const FooterColumn3 = styled.div`
 `;
 
 export const SocialList = styled.ul`
-  ${tw` flex gap-[30px] lg:ml-[25px] mb-5`}
+  ${tw` flex gap-[30px] mb-5 justify-center items-center`}
 `;
 
 export const ItemList = styled.ul`

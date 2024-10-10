@@ -22,5 +22,5 @@ export const SubLogoText = styled.h1`
 `;
 
 export const LogoText2 = styled.h1`
-  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold`}
+  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold pt-20 md:pt-0 `}
 `;
