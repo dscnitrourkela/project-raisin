@@ -3,5 +3,5 @@ import styled from 'styled-components';
 import { SecondaryButton } from '@/components/shared/Typography/Buttons';
 
 export const SliderButton = styled(SecondaryButton)`
-  ${tw`hidden lg:block`}
+  ${tw`hidden sm:block`}
 `;
