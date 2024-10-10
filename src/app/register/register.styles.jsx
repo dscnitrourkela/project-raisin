@@ -4,11 +4,11 @@ import { Heading1 } from '@/components/shared/Typography/Headings';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const RegisterHeading = styled(Heading1)`
-  ${tw`text-center text-4xl md:text-5xl lg:text-6xl`}
+  ${tw`text-center text-4xl md:text-5xl lg:text-6xl my-0 py-0`}
 `;
 
 export const RegisterContainer = styled.div`
-  ${tw`min-h-screen flex flex-col items-center justify-center`}
+  ${tw`min-h-screen flex flex-col items-center justify-center py-[14rem]`}
 `;
 
 export const RegisterForm = styled.div`
@@ -16,5 +16,5 @@ export const RegisterForm = styled.div`
 `;
 
 export const RegsiterButton = styled(PrimaryButton)`
-  ${tw`w-[15rem] md:w-96 mt-16`}
+  ${tw`w-[15rem] md:w-96 mt-20`}
 `;
