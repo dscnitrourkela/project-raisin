@@ -4,12 +4,22 @@ import {
   SelectFieldInput,
   SelectFieldParentContainer,
 } from './SelectField.styles';
+import { ErrorMessage } from '../InputField/InputField.styles';
 
-function SelectField({ options = [], onChange, placeholder, value, className, name, label }) {
+function SelectField({
+  options = [],
+  onChange,
+  placeholder,
+  value,
+  className,
+  name,
+  label,
+  error,
+}) {
   return (
     <SelectFieldParentContainer>
       <Label>{label}</Label>
-      <SelectFieldContainer className={className}>
+      <SelectFieldContainer className={className} $hasError={error && true}>
         <SelectFieldInput onChange={onChange} value={value} name={name}>
           <option disabled value=''>
             {placeholder}
@@ -21,6 +31,7 @@ function SelectField({ options = [], onChange, placeholder, value, className, na
           ))}
         </SelectFieldInput>
       </SelectFieldContainer>
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </SelectFieldParentContainer>
   );
 }
