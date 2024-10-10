@@ -49,7 +49,22 @@ export default function RootLayout({ children }) {
       >
         <StyledComponentsRegistry>
           <GlobalStyles />
-          <Toaster position='top-center' reverseOrder={false} />
+          <Toaster
+            position='top-center'
+            reverseOrder={false}
+            toastOptions={{
+              style: {
+                background: 'rgba(4, 10, 22, 0.5)',
+                color: '#ffffff',
+                padding: '16px',
+                borderRadius: '20px',
+                boxShadow: '0 4px 15px rgba(0, 5, 15, 0.8)',
+                backdropFilter: 'blur(50px)',
+                fontFamily: 'var(--font-prompt)',
+              },
+            }}
+          />
+
           <Hoc>{children}</Hoc>
         </StyledComponentsRegistry>
       </body>
