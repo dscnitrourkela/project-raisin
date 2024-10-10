@@ -15,7 +15,6 @@ const Page = () => {
       <Navbar />
       <Hero />
       <AboutUsMain />
-      <Footer />
     </>
   );
 };

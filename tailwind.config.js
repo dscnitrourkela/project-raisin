@@ -28,6 +28,7 @@ module.exports = {
         orbitron: 'var(--font-orbitron)',
         montserrat: 'var(--font-montserrat)',
         prompt: 'var(--font-prompt)',
+        inter: 'var(--font-inter)',
       },
     },
   },
