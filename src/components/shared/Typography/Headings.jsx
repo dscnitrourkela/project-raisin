@@ -15,8 +15,12 @@ export const LogoText = styled.h1`
   text-shadow: 0px 0px 18.006px #FFFFFF66;
 `;
 export const SubLogoText = styled.h1`
-  ${tw`text-[80px] xsm:text-[30px] md:text-[50px] lg:text-[75px] not-italic font-normal text-transparent font-techno flex w-fit ml-auto -mt-[4.5rem]`}
+  ${tw`text-[60px] xsm:text-[70px] md:text-[80px] lg:text-[100px] not-italic font-normal font-techno text-transparent`}
 
   -webkit-text-stroke: 1px #ffffffe6;
   text-shadow: none;
+`;
+
+export const LogoText2 = styled.h1`
+  ${tw`xsm:text-[40px] text-[35px] tracking-widest font-techno font-semibold`}
 `;
