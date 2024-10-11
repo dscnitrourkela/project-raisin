@@ -61,6 +61,8 @@ export default function RootLayout({ children }) {
       >
         <StyledComponentsRegistry>
           <GlobalStyles />
+
+          {/* Toaster for notifications */}
           <Toaster
             position='top-center'
             reverseOrder={false}
@@ -77,6 +79,7 @@ export default function RootLayout({ children }) {
             }}
           />
 
+          <div id='modal-root'></div>
           <Hoc>{children}</Hoc>
         </StyledComponentsRegistry>
       </body>

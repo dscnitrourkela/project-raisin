@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const SliderContainer = styled.div`
-  ${tw`pb-5 overflow-x-hidden overflow-y-visible relative`}
+  ${tw`pb-5  overflow-x-hidden overflow-y-visible relative`}
 `;
 
 export const SwiperConatiner = styled.div`
