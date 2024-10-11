@@ -7,7 +7,7 @@ export const socials = [
   {
     id: 'whatsapp',
     img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558434/Group_1_ugt8xt.svg',
-    url: '/',
+    url: 'https://whatsapp.com/channel/0029VaoagEPBlHpfApX5Ep1v',
   },
   {
     id: 'mail',
