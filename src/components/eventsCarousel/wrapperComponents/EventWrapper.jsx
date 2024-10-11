@@ -4,13 +4,9 @@ import { useAnimate } from 'framer-motion';
 import { SButtons } from '../utils/SliderButtons';
 import { CarouselMapping } from './CaraouselMapping';
 import { SliderData } from '@/config/content/eventsCarauselData';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-import './swiper.css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import { EventCard } from '../eventCardComponents/EventCard';
-import { SliderContainer, SwiperConatiner, Wrapper } from './EventWrapper.styles';
+import { SliderContainer, Wrapper } from './EventWrapper.styles';
+import { MobileViewSwipe } from '../utils/SwiperforPhone/ForMobileview';
 
 export const SliderEventsWrapper = () => {
   const [scope, animate] = useAnimate();
@@ -58,7 +54,7 @@ export const SliderEventsWrapper = () => {
         scope.current,
         { x: xOffset },
         {
-          duration: 0.3,
+          duration: 0.1,
           ease: [0.42, 0, 0.58, 1],
           type: 'tween',
         },
@@ -71,7 +67,7 @@ export const SliderEventsWrapper = () => {
       <SliderContainer>
         <div
           ref={scope}
-          className='flex mt-64 transition-transform'
+          className='flex gap-8 mt-64 transition-transform'
           style={{
             width: `${SliderData.length * slideWidth}px`,
             transform: `translateX(calc(50% - ${slideWidth / 2}px))`,
@@ -83,27 +79,12 @@ export const SliderEventsWrapper = () => {
       <SButtons fn1={handlePrev} fn2={handleNext} currentindex={currentIndex} />
     </Wrapper>
   ) : (
-    <SwiperConatiner>
-      <Swiper
-        ref={swiperRef}
-        slidesPerView={1}
-        centeredSlides={true}
-        loop={true}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        onSlideChange={onSlideChange}
-        modules={[Pagination]}
-        className='mySwiper'
-      >
-        {SliderData.map((item, index) => (
-          <SwiperSlide key={index}>
-            <EventCard head={item.head} desc={item.desc} url={item.url} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <SButtons fn1={handlePrev} fn2={handleNext} currentindex={currentIndex} />
-    </SwiperConatiner>
+    <MobileViewSwipe
+      handlePrev={handlePrev}
+      handleNext={handleNext}
+      onSlideChange={onSlideChange}
+      swiperRef={swiperRef}
+      currentIndex={currentIndex}
+    />
   );
 };

@@ -1,0 +1,17 @@
+.mySwiper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  flex: 0 0 auto;
+}
+.swiper-wrapper {
+  display: flex;
+}
