@@ -5,7 +5,7 @@ import { Heading1 } from '@/components/shared/Typography/Headings';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const EventsCardContainer = styled.div`
-  ${tw`max-w-7xl max-h-[394px] flex items-center justify-start gap-16 pt-11 pb-11 pl-12 mb-28`}
+  ${tw`max-w-7xl max-h-[394px] flex items-center justify-start gap-16 pt-11 pb-11 pl-12 mb-32`}
   background: transparent;
 `;
 
@@ -85,5 +85,5 @@ export const RuleBookButton = styled(PrimaryButton)`
 `;
 
 export const EventsPageHeading = styled(Heading1)`
-  ${tw`text-center text-[64px] pt-20 mb-12`}
+  ${tw`text-center text-[64px] pt-20 pb-24`}
 `;
