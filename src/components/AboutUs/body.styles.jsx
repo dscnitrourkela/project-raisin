@@ -3,7 +3,7 @@ import { Heading1 } from '../shared/Typography/Headings';
 import { Paragraph } from '../shared/Typography/Paragraphs';
 
 export const MainContainer = styled.div`
-  ${tw`relative flex flex-col items-center z-10 justify-center p-5 h-[130vh] md:h-[180vh] lg:h-[230vh] -mt-20`}
+  ${tw`relative flex flex-col items-center z-10 justify-center p-5 h-[100vh] md:h-[130vh] lg:h-[230vh] -mt-20`}
 `;
 
 export const BackgroundDiv = styled.div`
@@ -23,7 +23,7 @@ export const Section = styled.section`
 `;
 
 export const SectionWithBgImage = styled(Section)`
-  ${tw`content-center -mt-20`}
+  ${tw`content-center h-fit -mt-52`}
 `;
 
 export const AboutHeading = styled(Heading1)`
