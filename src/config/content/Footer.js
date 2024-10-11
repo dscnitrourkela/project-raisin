@@ -2,7 +2,7 @@ export const socials = [
   {
     id: 'instagram',
     img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558416/Group_mpfchb.svg',
-    url: '/',
+    url: 'https://www.instagram.com/inno.nitr_official?igsh=dWZ2cHlwM3N1ZHl2',
   },
   {
     id: 'whatsapp',
@@ -12,7 +12,7 @@ export const socials = [
   {
     id: 'mail',
     img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558449/EMAIL_jljrpt.svg',
-    url: '/',
+    url: 'mailto:innovision2024.nitr@gmail.com',
   },
 ];
 

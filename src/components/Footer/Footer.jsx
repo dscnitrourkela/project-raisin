@@ -32,13 +32,17 @@ export const Footer = () => {
               <SocialList>
                 {socials.map((item) => (
                   <li key={item.id}>
-                    <Link href={item.url}>
+                    <Link
+                      href={item.url.includes('@') ? `mailto:${item.url}` : item.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
                       <Image
                         src={item.img}
                         alt={item.id}
                         width={45}
                         height={45}
-                        className=' w-[35px] md:w-[40px]'
+                        className='w-[35px] md:w-[40px]'
                       />
                     </Link>
                   </li>
