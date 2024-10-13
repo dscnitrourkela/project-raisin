@@ -12,7 +12,6 @@ const Page = () => {
       <Navbar />
       <Hero />
       <AboutUsMain />
-      <EventCarousalMain />
       <Footer />
     </>
   );

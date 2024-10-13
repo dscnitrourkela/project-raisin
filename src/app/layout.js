@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${techno.variable} ${bulgatti.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
+        className={`${techno.variable} ${bulgatti.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} ${spaceX.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <StyledComponentsRegistry>
           <GlobalStyles />

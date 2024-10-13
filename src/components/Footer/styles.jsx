@@ -10,7 +10,8 @@ export const FooterWrapper = styled.div`
 `;
 
 export const FooterGradient = styled.div`
-  ${tw`absolute inset-0 top-[-1700px] left-[-1000px] right-[-1000px] `}
+  ${tw`absolute inset-0 top-[-1400px] left-[-400px] right-[-400px] llg:top-[-1700px] llg:left-[-1000px] llg:right-[-1000px] -z-10 
+    `}
   background: conic-gradient(
    from 180deg,
     #0B0B0B 0%,
