@@ -12,6 +12,12 @@ import {
 import { Toaster } from 'react-hot-toast';
 import Hoc from '@/components/HOC/Hoc';
 
+const spaceX = localFont({
+  src: '../fonts/SpaceX.ttf',
+  variable: '--font-spacex',
+  weight: '400',
+});
+
 const techno = localFont({
   src: '../fonts/Techno.otf',
   variable: '--font-techno',
@@ -57,7 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${techno.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
+        className={`${techno.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} ${spaceX.variable} antialiased`}
       >
         <StyledComponentsRegistry>
           <GlobalStyles />

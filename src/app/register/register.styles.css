@@ -1,0 +1,20 @@
+body {
+  /* background: var(
+    --Bg-Gradient,
+    conic-gradient(
+      from 180deg at 50% -72.31%,
+      #0e2c33 38.50904077291489deg,
+      #000 109.09801483154297deg,
+      #000 246.437029838562deg,
+      #4e0e48 292.59334087371826deg,
+      #0b0b0b 360deg
+    )
+  );
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden; */
+}
+
+.moon {
+}
