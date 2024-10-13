@@ -5,7 +5,7 @@ export const SubHeader = () => {
         <div className='font-orbitron font-normal text-[17px] xsm:text-[24px] leading-[36,67] text-white'>
           TOTAL EVENTS 43
         </div>
-        <div className='font-orbitron font-normal text-[17px] xsm:text-[24px] leading-[36,67] text-white'>
+        <div className='font-spaceX font-normal text-[17px] xsm:text-[24px] leading-[36,67] text-white'>
           TOTAL DAYS 43
         </div>
       </div>
