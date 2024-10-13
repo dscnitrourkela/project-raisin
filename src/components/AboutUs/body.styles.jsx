@@ -1,50 +1,42 @@
 import tw, { styled } from 'twin.macro';
-import { Heading1 } from '../shared/Typography/Headings';
-import { Paragraph } from '../shared/Typography/Paragraphs';
 
 export const MainContainer = styled.div`
-  ${tw`relative flex flex-col items-center z-10 justify-center p-5 h-[100vh] md:h-[130vh] lg:h-[230vh] -mt-20`}
+  ${tw`relative flex flex-col items-center z-10 justify-center h-[100vh] md:h-[130vh] lg:h-[230vh] -mt-20`}
 `;
 
-export const BackgroundDiv = styled.div`
-  ${tw`absolute -z-10 h-auto w-full overflow-hidden -top-20`}
+export const BodyWrapper = styled.div`
+  ${tw`overflow-clip relative h-auto w-auto llg:py-[100px] py-[50px]`}
 `;
 
-export const CircleDiv = styled.div`
-  ${tw`border border-[#070c23] drop-shadow-2xl rounded-full h-[100vw] w-screen my-32`}
-  background-image: linear-gradient(to bottom, rgba(197, 208, 255, 0.4) 0%, rgba(35, 70, 101, 0.7) 20% , rgba(21, 42, 126, 0.3) 50%, rgba(21, 42, 126, 0) 100%);
-  box-shadow:
-    inset 0 0 30px 30px rgba(11, 19, 42, 1),
-    0 0 50px 50px rgba(11, 19, 70, 0.5);
+export const BodyTitle = styled.h1`
+  ${tw`text-2xl md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
 `;
 
-export const Section = styled.section`
-  ${tw``}
+export const BodyContent = styled.div`
+  ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]`}
 `;
 
-export const SectionWithBgImage = styled(Section)`
-  ${tw`content-center h-fit -mt-52`}
+export const BodyContentColumn = styled.div`
+  ${tw`flex-1`}
 `;
 
-export const AboutHeading = styled(Heading1)`
-  ${tw`my-0 py-16 lg:py-20 md:my-10 lg:my-32`}
-  background-color: rgba(0, 0, 0, 0.4);
-  background-blend-mode: darken;
-  box-shadow: 0px 0px 30px 30px rgba(0, 0, 0, 0.4);
+export const BodyColumnHeading = styled.h2`
+  ${tw`text-center font-bold font-spaceX text-[27px] md:text-[25px] lg:text-[30px] opacity-50 mb-[10px] llg:mb-[20px]`}
 `;
 
-export const AboutSection = styled(Section)`
-  ${tw`h-fit py-5 lg:py-10 `}
-  background-image: url('/static/images/about_bg.png');
-  background-size: 550px 350px;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @media (min-width: 768px) {
-    background-size: 900px 600px;
-  }
+export const BodyColumnText = styled.p`
+  ${tw`text-[12px] xsm:text-[14px] md:text-[16px] lg:text-[18px] mb-2 text-justify text-white font-prompt font-[400] leading-[250%]`}
 `;
 
-export const Paragraph1 = styled(Paragraph)`
-  ${tw`-mt-10 lg:mx-16 text-xs sm:text-sm md:text-lg lg:text-2xl leading-5 lg:leading-9`}
+export const BodyGradient = styled.div`
+  ${tw`absolute inset-0 top-[-1700px] left-[-1000px] right-[-1000px] -z-10 `}
+  background: conic-gradient(
+   from 180deg,
+    #0B0B0B 0%,
+    #0E2C33 23%, 
+    #000000 30%, 
+    #000000 65%, 
+    #4E0E48 70%, 
+    #0B0B0B 98% 
+  );
 `;

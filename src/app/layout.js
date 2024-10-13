@@ -8,6 +8,7 @@ import {
   Orbitron,
   Prompt,
   Share_Tech_Mono as ShareTechMono,
+  Space_Grotesk as SpaceGrotesk,
 } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import Hoc from '@/components/HOC/Hoc';
@@ -58,6 +59,12 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-inter',
+});
+
+const spaceGrotesk = SpaceGrotesk({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-space_grotesk',
 });
 
 export const metadata = {

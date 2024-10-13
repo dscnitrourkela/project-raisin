@@ -1,44 +1,47 @@
 export const socials = [
   {
     id: 'instagram',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558416/Group_mpfchb.svg',
-    url: '/',
+    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728758002/ic_baseline-discord_hdmbcy.svg',
+    url: 'https://www.instagram.com/inno.nitr_official?igsh=dWZ2cHlwM3N1ZHl2',
   },
   {
     id: 'whatsapp',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558434/Group_1_ugt8xt.svg',
-    url: '/',
+    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728758003/Vector_pqlfht.svg',
+    url: 'https://whatsapp.com/channel/0029VaoagEPBlHpfApX5Ep1v',
   },
   {
     id: 'mail',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728558449/EMAIL_jljrpt.svg',
-    url: '/',
+    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728758002/Vector_1_xsbtsk.svg',
+    url: 'mailto:innovision2024.nitr@gmail.com',
   },
 ];
+
+export const firstcol = {
+  img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728757879/INNO_LOGO_1_azmcbd.svg',
+  title: 'INNOVISION',
+  year: '24',
+  text: 'Innovision, the techno-management festival at the National Institute of Technology, Rourkela, is a highly anticipated event that captivates science and technology enthusiasts throughout Eastern India. It offers a vibrant mix of competitive events, insightful guest lectures, immersive technical workshops, and innovative exhibitions. Innovision seeks to convene the most brilliant minds, fostering creativity and collaboration to develop solutions for critical societal, environmental, and technological challenges.',
+};
 
 export const secondcol = [
   {
     id: 1,
     title: 'About US',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727149000/about_us_1_rcqfuh.svg',
-    url: 'https://docs.google.com/document/d/1dbRFb9JgPgkOikY76DmCO_wIAMOtQV2l/edit?usp=sharing&ouid=114191783687744728508&rtpof=true&sd=true',
+    url: 'https://drive.google.com/file/d/1z2lSdyugt6fLWitAviynK55juQxd0jkb/view?usp=sharing',
   },
   {
     id: 2,
     title: 'Prizes',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148994/prizes_1_oxez07.svg',
     url: '/',
   },
   {
     id: 3,
     title: 'Sponsors',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148994/Sponsers_1_fgs73i.svg',
     url: '/',
   },
   {
     id: 4,
     title: 'FAQs',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148994/Subtract_2_epz3ud.svg',
     url: '/',
   },
 ];
@@ -46,13 +49,11 @@ export const thirdcol = [
   {
     id: 1,
     title: 'Event Brouchere',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/book_1_zlaos0.svg',
-    url: '/',
+    url: 'https://drive.google.com/file/d/1jWXT8ShzBW5KTn50DrTsgSqLgmSJMwTO/view?usp=sharing',
   },
   {
     id: 2,
     title: 'Event Schedule',
-    img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/schedule_1_pk3kfd.svg',
     url: '/',
   },
 ];
@@ -61,12 +62,12 @@ export const footerBottom = [
   {
     id: 1,
     title: 'Privacy & Cookies',
-    url: 'https://drive.google.com/file/d/1gJ8cz_sgs3U17TYthCZssws_CaOSFXrM/view?usp=sharing',
+    url: 'https://drive.google.com/file/d/1GN47p63xmXZgmY3wQrT6CpZuwkdVbZPH/view?usp=sharing',
   },
   {
     id: 2,
     title: 'Terms & Conditions',
-    url: 'https://drive.google.com/file/d/1CSNMzy7PiU2URJrTUgB4GdqDG5xR2lwe/view?usp=sharing',
+    url: 'https://drive.google.com/file/d/15K3TloImWe4F7dTWdyGhLPnt1iz0xFfW/view?usp=sharing',
   },
   {
     id: 3,
@@ -76,7 +77,7 @@ export const footerBottom = [
   {
     id: 4,
     title: 'Payment Policy',
-    url: 'https://drive.google.com/file/d/1-kF-c3REVAMdmuyfCsW6rwqgqf2cTcpa/view?usp=sharing',
+    url: 'https://drive.google.com/file/d/1IyMLFfKceBJz5B3qzw6O4xQmeJOp37pm/view?usp=sharing',
   },
   {
     id: 5,
