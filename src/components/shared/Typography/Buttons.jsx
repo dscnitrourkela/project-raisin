@@ -7,6 +7,12 @@ export const PrimaryButton = styled.button`
   ${tw`px-6 py-4 text-white font-montserrat text-base not-italic font-medium flex hover:opacity-90 transition-all duration-300 cursor-pointer items-center justify-center  rounded-[11.401px] border-[1px] border-[#ffffff66] leading-[140%]`}
 `;
 
+export const GreenPrimaryButton = styled.button`
+  background: radial-gradient(210.3% 210.59% at 52.58% -68.5%, #23757e 30.52%, #0f4d54 53.85%);
+  background-blend-mode: screen;
+  ${tw`px-6 py-4 text-white font-montserrat text-base not-italic font-medium flex hover:opacity-90 transition-all duration-300 cursor-pointer items-center justify-center rounded-[11.401px] border-[1px] border-[#ffffff66] leading-[140%]`}
+`;
+
 export const SecondaryButton = styled.button`
   backdrop-filter: blur(11.075665473937988px);
 
