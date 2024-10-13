@@ -3,8 +3,8 @@
 import Navbar from '@/components/Marginals/navbar/navbar';
 import Hero from '@/components/Hero Section/Hero';
 import { AboutUsMain } from '@/components/AboutUs/Main';
-import { EventCarousalMain } from '@/components/eventsCarousel/layoutComponents/Main';
 import { Footer } from '@/components/Footer/Footer';
+import { EventSectionMain } from '@/components/EventsSection/wrapperComponents/Main';
 
 const Page = () => {
   return (
@@ -12,6 +12,7 @@ const Page = () => {
       <Navbar />
       <Hero />
       <AboutUsMain />
+      <EventSectionMain />
       <Footer />
     </>
   );
