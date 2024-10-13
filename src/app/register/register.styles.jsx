@@ -14,9 +14,10 @@ export const RegisterContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 `;
 export const RegisterInnerContainer = styled.div`
-  ${tw`w-full grid place-items-center gap-10 py-10 px-1 xxxs:px-3 xxs:px-5 xsm:px-10`}
+  ${tw`w-full grid place-items-center gap-10 py-10 md:py-20 px-1 xxxs:px-3 xxs:px-5 xsm:px-10`}
   border-radius: 12px;
   background-image: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728798262/grad2_mcspr0.png'),
     url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728797925/registration_si85oa.png');
@@ -43,7 +44,6 @@ export const Moon = styled.div`
   transform: rotate(18deg);
   filter: blur(10px) brightness(0.9);
   flex-shrink: 0;
-
   z-index: 5;
   border-radius: 450px;
   ${tw` top-[-50px] right-[-50px] ssm:top-[-100px] ssm:right-[-100px] w-[150px] xsm:w-[200px] h-[150px] xsm:h-[200px] ssm:w-[250px] ssm:h-[250px] md:w-[300px]  md:h-[300px] slg:w-[350px] slg:h-[350px] llg:w-[400px] llg:h-[400px] xl:w-[450px]  xl:h-[450px]`}

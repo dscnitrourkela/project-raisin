@@ -58,13 +58,15 @@ export const formFields = [
     id: 'gender',
     className: '',
   },
-
-  {
-    label: 'Wish to be campus ambassador?',
-    type: 'checkbox',
-    id: 'campusAmbassador',
-  },
 ];
+
+export const campusAmbassadorInput = {
+  label: 'Wish to be campus ambassador?',
+  type: 'checkbox',
+  id: 'campusAmbassador',
+};
 
 export const buttonImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728800884/uploadButton_wvzexw.png';
+export const beamImage =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';

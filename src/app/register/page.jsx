@@ -16,7 +16,7 @@ import { formFields } from '@/config/content/Registration/details';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
-import CustomSelect from '@/components/Register/SelectField/SelectField2';
+import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -101,7 +101,7 @@ function Page() {
         );
       case 'select':
         return (
-          <CustomSelect
+          <SelectField
             key={field.id}
             name={field.id}
             options={field.options}
@@ -150,6 +150,7 @@ function Page() {
             return returnFormFields(field);
           })}
         </RegisterForm>
+        <CampusAmbassador handleChange={handleChange} />
         <RegsiterButton onClick={handleSubmit} disabled={loading}>
           Submit
         </RegsiterButton>

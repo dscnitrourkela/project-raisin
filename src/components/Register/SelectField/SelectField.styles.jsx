@@ -1,27 +1,62 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { ChevronDown } from 'lucide-react';
 
-export const SelectFieldParentContainer = styled.div`
-  ${tw`flex flex-col gap-10 w-full md:w-[35rem]`}
+const SelectFieldParentContainer = styled.div`
+  ${tw`flex flex-col items-start`}
 `;
 
-export const SelectFieldContainer = styled.div`
+const LabelAndInputContainer = styled.div`
+  ${tw`flex flex-col xxs:flex-row items-center justify-start gap-[38px] w-auto md:w-[35rem]`}
+`;
+
+const SelectFieldContainer = styled.div`
   position: relative;
-  ${tw`flex px-4 py-3 md:py-4 items-center rounded-lg border-2 border-solid bg-transparent font-[Inter] text-base sm:text-lg duration-300 ease-in-out w-full`}
-  border: 2px solid ${({ $hasError }) => ($hasError ? '#ef4444' : '#999494')};
-  box-shadow: ${({ $hasError }) =>
-    $hasError ? '0 3px 3px 0 rgba(239, 68, 68, 0.3)' : '0 3px 3px 0 rgba(0, 255, 209, 0.3)'};
-
-  &:focus-within {
-    border-color: #00ffd1;
-    box-shadow: 0 4px 4px 0 rgba(0, 255, 209, 0.5);
-  }
+  border: 2px solid ${({ $hasError }) => ($hasError ? '#ef4444' : '##BDBDBD')};
+  background: rgba(255, 255, 255, 0.11);
+  padding: 3.9px 2.925px 3.9px 11.7px;
+  align-items: center;
+  gap: 7.8px;
+  flex-shrink: 0;
+  align-self: stretch;
+  display: flex;
+  height: 40px;
+  border-radius: 5.85px;
+  border: 0.975px solid #bdbdbd;
 `;
 
-export const SelectFieldInput = styled.select`
-  ${tw`appearance-none outline-none border-0 shadow-none flex-1 px-4 text-white bg-[#050b17] cursor-pointer w-full`}
-
-  ::-ms-expand {
-    display: none;
-  }
+const SelectFieldInput = styled.div`
+  ${tw`appearance-none capitalize outline-none border-0 shadow-none flex-1  cursor-pointer w-32`}
 `;
+
+const DropdownIcon = styled(ChevronDown)`
+  ${tw` mr-2`}
+`;
+
+const DropdownList = styled.ul`
+  ${tw`absolute w-96 mt-1 bg-transparent backdrop-blur-sm rounded-md z-10 max-h-60 overflow-auto`}
+`;
+
+const DropdownItem = styled.li`
+  ${tw`px-4 py-2 hover:bg-[#1a2636] cursor-pointer  capitalize`}
+`;
+
+const ErrorText = styled.p`
+  ${tw`mt-5 text-sm text-red-600`}
+`;
+
+const Label = styled.label`
+  ${tw`text-lg font-prompt`}
+`;
+
+export {
+  SelectFieldParentContainer,
+  LabelAndInputContainer,
+  SelectFieldContainer,
+  SelectFieldInput,
+  DropdownIcon,
+  DropdownList,
+  DropdownItem,
+  ErrorText,
+  Label,
+};
