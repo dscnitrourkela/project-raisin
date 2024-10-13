@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Modal, ModalContent, ModalBody, Button } from '@nextui-org/react';
 import Image from 'next/image';
 import { List } from '../shared/Typography/Lists';
-import { closeIcon, mapSize, mapIcon } from '@/config/content/Footer';
+import { closeIcon, mapSize } from '@/config/content/Footer';
 
 export default function MapModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,6 @@ export default function MapModal() {
   return (
     <>
       <List onClick={onOpen} className='cursor-pointer flex gap-[20px]'>
-        <Image src={mapIcon} alt='map' width={25} height={25} />
         NITR Map
       </List>
       <Modal
