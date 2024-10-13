@@ -14,7 +14,7 @@ import {
 } from './SelectField.styles';
 function SelectField({
   options = [],
-  onChange,
+  handleSelect,
   placeholder,
   value,
   className,
@@ -31,10 +31,10 @@ function SelectField({
 
   const handleToggle = () => setIsOpen(!isOpen);
 
-  const handleSelect = (option) => {
+  const handleSelectChange = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
-    console.log(option);
+    handleSelect((prevState) => ({ ...prevState, [name]: option }));
   };
   return (
     <SelectFieldParentContainer>
@@ -47,14 +47,14 @@ function SelectField({
         {isOpen && (
           <DropdownList>
             {options.map((option, index) => (
-              <DropdownItem key={index} onClick={() => handleSelect(option.value)}>
+              <DropdownItem key={index} onClick={() => handleSelectChange(option.value)}>
                 {option.label}
               </DropdownItem>
             ))}
           </DropdownList>
         )}
       </LabelAndInputContainer>
-      {error && <ErrorMessage>{error}</ErrorMessage>}
+      {error && <ErrorMessage className='mt-5'>{error}</ErrorMessage>}
       <input type='hidden' name={name} value={selectedOption} />
     </SelectFieldParentContainer>
   );

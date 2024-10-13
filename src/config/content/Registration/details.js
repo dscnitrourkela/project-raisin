@@ -34,9 +34,9 @@ export const formFields = [
     id: 'idCard',
   },
   {
-    label: 'Do you want accomodation in NIT Rourkela?',
+    label: 'Do you want accommodation in NIT Rourkela?',
     type: 'checkbox',
-    id: 'accomodation',
+    id: 'accommodation',
   },
   {
     label: 'Gender',

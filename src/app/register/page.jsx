@@ -26,7 +26,7 @@ function Page() {
     rollNumber: '',
     idCard: '',
     gender: '',
-    accomodation: false,
+    accommodation: false,
     campusAmbassador: false,
   });
   const [loading, setLoading] = useState(false);
@@ -107,7 +107,7 @@ function Page() {
             options={field.options}
             placeholder={field.label}
             value={userDetails[field.id]}
-            onChange={handleChange}
+            handleSelect={setUserDetails}
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
