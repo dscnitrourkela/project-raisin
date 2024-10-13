@@ -25,6 +25,12 @@ const techno = localFont({
   weight: '100 900',
 });
 
+const bulgatti = localFont({
+  src: '../fonts/Bulgatti.ttf',
+  variable: '--font-bulgatti',
+  weight: '100 900',
+});
+
 const shareTechMono = ShareTechMono({
   subsets: ['latin'],
   weight: ['400'],
@@ -70,7 +76,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${techno.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} ${spaceX.variable} ${spaceGrotesk.variable} antialiased`}
+        className={`${techno.variable} ${bulgatti.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
       >
         <StyledComponentsRegistry>
           <GlobalStyles />

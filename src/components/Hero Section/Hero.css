@@ -1,0 +1,12 @@
+.bg-hero-primary {
+  background: conic-gradient(
+    from 179.71deg at 51.08% 32.13%,
+    #131313 0deg,
+    #0f4d54 55.26deg,
+    #21415c 136.44deg,
+    #682762 308.84deg,
+    #170b15 359.8deg,
+    #131313 360deg
+  );
+  background-blend-mode: normal, difference;
+}
