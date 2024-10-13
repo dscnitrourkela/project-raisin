@@ -3,30 +3,25 @@ export const formFields = [
     label: 'Name',
     type: 'text',
     id: 'name',
-    className: 'w-full sm:w-96',
+    className: 'w-full',
   },
   {
     label: 'Email',
     type: 'email',
     id: 'email',
-    className: 'w-full sm:w-96',
+    className: 'w-full',
   },
   {
     label: 'Phone Number',
     type: 'tel',
     id: 'phone',
-    className: 'w-full sm:w-96',
+    className: 'w-full',
   },
   {
-    label: 'Select your college',
-    type: 'select',
-
-    options: [
-      { value: '1', label: 'College 1' },
-      { value: '2', label: 'College 2' },
-      { value: '3', label: 'College 3' },
-    ],
+    label: 'Your College',
+    type: 'text',
     id: 'college',
+    className: 'w-full',
   },
   {
     label: 'Roll Number',
@@ -34,12 +29,17 @@ export const formFields = [
     id: 'rollNumber',
   },
   {
-    label: 'Upload your college ID Card',
+    label: 'Upload College ID',
     type: 'file',
     id: 'idCard',
   },
   {
-    label: 'Select your gender',
+    label: 'Do you want accommodation in NIT Rourkela?',
+    type: 'checkbox',
+    id: 'accommodation',
+  },
+  {
+    label: 'Gender',
     type: 'select',
     options: [
       {
@@ -56,16 +56,17 @@ export const formFields = [
       },
     ],
     id: 'gender',
-    className: 'w-full sm:w-96',
-  },
-  {
-    label: 'Do you want accomodation in NIT Rourkela?',
-    type: 'checkbox',
-    id: 'accomodation',
-  },
-  {
-    label: 'Wish to be campus ambassador?',
-    type: 'checkbox',
-    id: 'campusAmbassador',
+    className: '',
   },
 ];
+
+export const campusAmbassadorInput = {
+  label: 'Wish to be campus ambassador?',
+  type: 'checkbox',
+  id: 'campusAmbassador',
+};
+
+export const buttonImage =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728800884/uploadButton_wvzexw.png';
+export const beamImage =
+  'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';
