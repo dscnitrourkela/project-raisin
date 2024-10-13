@@ -8,6 +8,7 @@ import {
   Orbitron,
   Prompt,
   Share_Tech_Mono as ShareTechMono,
+  Space_Grotesk as SpaceGrotesk,
 } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import Hoc from '@/components/HOC/Hoc';
@@ -18,10 +19,22 @@ const techno = localFont({
   weight: '100 900',
 });
 
+const spacex = localFont({
+  src: '../fonts/SpaceX.ttf',
+  variable: '--font-spacex',
+  weight: '100 900',
+});
+
 const shareTechMono = ShareTechMono({
   subsets: ['latin'],
   weight: ['400'],
   variable: '--font-share_tech',
+});
+
+const spaceGrotesk = SpaceGrotesk({
+  subsets: ['latin'],
+  weight: ['500'],
+  variable: '--font-space_grotesk',
 });
 
 const orbitron = Orbitron({
@@ -57,7 +70,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${techno.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
+        className={`${techno.variable} ${spacex.variable} ${shareTechMono.variable} ${orbitron.variable} ${montserrat.variable} ${prompt.variable} ${inter.variable} antialiased`}
       >
         <StyledComponentsRegistry>
           <GlobalStyles />

@@ -6,7 +6,20 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterWrapper = styled.div`
-  ${tw` w-full min-h-[350px] h-auto flex flex-col `}
+  ${tw` w-full min-h-[350px] h-auto flex flex-col relative overflow-clip`}
+`;
+
+export const FooterGradient = styled.div`
+  ${tw`absolute inset-0 top-[-1700px] left-[-1000px] right-[-1000px] `}
+  background: conic-gradient(
+   from 180deg,
+    #0B0B0B 0%,
+    #0E2C33 23%, 
+    #000000 30%, 
+    #000000 65%, 
+    #4E0E48 70%, 
+    #0B0B0B 98% 
+  );
 `;
 
 export const FooterTop = styled.div`
@@ -14,27 +27,39 @@ export const FooterTop = styled.div`
 `;
 
 export const FooterBottom = styled.div`
-  ${tw`h-auto pt-2 bg-black w-full flex items-center `}
+  ${tw`h-auto pt-2 bg-black w-full flex items-center z-20`}
 `;
 
 export const FooterBottomContent = styled.ul`
-  ${tw`py-4 sm:py-3 w-full flex flex-col sm:flex-row gap-[30px] sm:gap-[40px] flex-wrap sm:justify-center items-center`}
+  ${tw`py-4 sm:py-3 px-[10px] w-full flex flex-col sm:flex-row gap-[30px] sm:gap-[40px] flex-wrap sm:justify-center items-center`}
 `;
 
 export const FooterContent = styled.div`
-  ${tw`flex min-h-[243px] h-auto w-[1100px] flex-col md:flex-row z-20`}
+  ${tw`flex min-h-[243px] h-auto w-full flex-col 2lg:flex-row 2lg:justify-center 2lg:gap-[30px] xl:gap-[50px] 2xl:gap-[140px] 2xl:px-[50px] z-20 `}
 `;
 
 export const FooterColumn1 = styled.div`
-  ${tw`flex-1 flex flex-col gap-[30px] order-3 md:order-1 my-auto`}
+  ${tw`2lg:max-w-[400px] justify-center pt-[20px]`}
 `;
 
 export const FooterColumn2 = styled.div`
-  ${tw`md:border-x-3 border-[#9A9A9A] flex-1 pt-[30px] flex justify-start md:justify-center lg:px-0 md:px-[30px] md:mx-[20px] order-1 md:order-2`}
+  ${tw`  pt-[20px] flex justify-start 2lg:px-0 w-auto   `}
 `;
 
 export const FooterColumn3 = styled.div`
-  ${tw`tracking-wider flex-1 flex justify-start md:justify-end pt-[30px] order-2 md:order-3`}
+  ${tw`tracking-wider  flex justify-start pt-[20px] `}
+`;
+
+export const FooterColumn4 = styled.div`
+  ${tw` flex flex-col items-center gap-[30px] pt-[50px] 2lg:pt-[20px] mb-auto`}
+`;
+
+export const FooterColumn1Logo = styled.div`
+  ${tw`flex items-start gap-5 justify-center mb-[20px] 2lg:mb-[10px]`}
+`;
+
+export const FooterColumn1Title = styled.div`
+  ${tw`flex flex-col items-end`}
 `;
 
 export const SocialList = styled.ul`
@@ -43,4 +68,26 @@ export const SocialList = styled.ul`
 
 export const ItemList = styled.ul`
   ${tw`flex flex-col gap-[30px]`}
+`;
+
+export const VSmallParagraph = styled.p`
+  ${tw`text-[12px] xsm:text-[14px] md:text-[16px] lg:text-[14px] mb-2 text-justify text-white font-prompt font-[400] leading-[150%]`}
+`;
+
+export const FooterLogoText = styled.span`
+  ${tw`text-[36px] md:text-[40px] lg:text-[50px] 2xl:text-[57px] not-italic font-normal font-techno text-[#FFFFFFE6]`}
+
+  text-shadow: 0px 0px 18.006px #FFFFFF66;
+  line-height: 1;
+`;
+export const FooterSubLogoText = styled.span`
+  ${tw`text-[27px] md:text-[29px] lg:text-[40px] 2xl:text-[45px]  not-italic font-normal font-techno text-transparent`}
+
+  -webkit-text-stroke: 0.5px #ffffffe6;
+  text-shadow: none;
+  line-height: 1;
+`;
+
+export const ListTitle = styled.li`
+  ${tw`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[23px] tracking-wider  font-spacex list-none `}
 `;

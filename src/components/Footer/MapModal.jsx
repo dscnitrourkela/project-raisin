@@ -18,7 +18,7 @@ export default function MapModal() {
   return (
     <>
       <List onClick={onOpen} className='cursor-pointer flex gap-[20px]'>
-        <Image src={mapIcon} alt='map' width={25} height={25} />
+        {/* <Image src={mapIcon} alt='map' width={25} height={25} /> */}
         NITR Map
       </List>
       <Modal
