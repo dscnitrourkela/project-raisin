@@ -1,7 +1,7 @@
 import tw, { styled } from 'twin.macro';
 
 export const MainContainer = styled.div`
-  ${tw`relative flex flex-col items-center z-10 justify-center h-[100vh] md:h-[130vh] lg:h-[230vh] -mt-20`}
+  ${tw`flex flex-col items-center justify-center h-auto`}
 `;
 
 export const BodyWrapper = styled.div`
@@ -11,7 +11,6 @@ export const BodyWrapper = styled.div`
 export const BodyTitle = styled.h1`
   ${tw`text-2xl md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
 `;
-
 export const BodyContent = styled.div`
   ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]`}
 `;
@@ -29,7 +28,7 @@ export const BodyColumnText = styled.p`
 `;
 
 export const BodyGradient = styled.div`
-  ${tw`absolute inset-0 top-[-1700px] left-[-1000px] right-[-1000px] -z-10 `}
+  ${tw`absolute inset-0 top-[-1400px] left-[-400px] right-[-400px] llg:top-[-1700px] llg:left-[-1000px] llg:right-[-1000px] -z-10 `}
   background: conic-gradient(
    from 180deg,
     #0B0B0B 0%,
