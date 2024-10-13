@@ -37,6 +37,7 @@ module.exports = {
         share_tech: 'var(--font-share_tech)',
         inter: 'var(--font-inter)',
         spaceX: 'var(--font-spacex)',
+        spaceGrotesk: 'var(--font-space_grotesk)',
       },
     },
   },
