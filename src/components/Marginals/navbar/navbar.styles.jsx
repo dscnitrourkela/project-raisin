@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const NavContainer = styled.nav`
-  ${tw`fixed top-0 w-full h-10 max-w-[1400px] p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
+  ${tw`fixed top-0 h-10 max-w-[1400px] p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-20 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
 `;
 
 export const NavCover = styled.div`
@@ -25,7 +25,7 @@ export const LogoItem = styled(SecondaryButton)`
 
 export const MenuLogoItem = styled.div`
   ${tw`
-    w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white text-[14px] rounded-full font-montserrat font-medium cursor-pointer flex justify-center items-center transition-all duration-300 hover:scale-110 hover:shadow-md
+    w-10 h-10 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white text-[14px] rounded-full font-montserrat font-medium cursor-pointer flex justify-center items-center transition-all duration-300 hover:scale-110 hover:shadow-md ml-1
   `}
 `;
 
@@ -33,7 +33,7 @@ export const MainBar = styled.nav`
   backdrop-filter: blur(30px);
 
   ${tw`
-    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-2 pr-6 flex justify-between  w-full max-[930px]:hidden max-w-xs md:max-w-md lg:max-w-xl space-x-0.5 rounded-md border-[0.5px] py-1 lg:mr-0 md:mr-[50px]
+    inline-flex items-center border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-2 pr-6 flex justify-between  w-[1054px] max-[930px]:hidden max-w-xs md:max-w-md lg:max-w-[1053px] h-[79px] space-x-0.5 rounded-2xl border-[0.5px] py-1 lg:mr-0 md:mr-[50px] pr-[77px] 
   `}
 `;
 
