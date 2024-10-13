@@ -7,10 +7,10 @@ export const Header = () => {
         <div className='w-1/3  max-sm:hidden '>
           <JetImage />
         </div>
-        <div className='text-center xsm:text-left text-[32px] sm:text-[40px] md:text-[50px] lg:text-[64px] font-normal lg:leading-[97.78px] text-transparent bg-clip-text bg-gradient-to-r from-[#188FC3] to-[#0B445D] font-spaceX'>
+        <div className='text-center w-full text-[32px] sm:text-[40px] md:text-[50px] lg:text-[64px] font-normal lg:leading-[97.78px] text-transparent bg-clip-text bg-gradient-to-r from-[#188FC3] to-[#0B445D] font-spaceX'>
           STATISTICS
         </div>
-        <div className='w-1/3'></div>
+        <div className='max-sm:hidden w-1/3'></div>
       </div>
     </>
   );
