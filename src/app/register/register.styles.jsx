@@ -4,24 +4,29 @@ import { Heading1 } from '@/components/shared/Typography/Headings';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const RegisterHeading = styled(Heading1)`
-  ${tw`text-center text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
+  ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
 `;
 
 export const RegisterContainer = styled.div`
   ${tw`min-h-screen flex flex-col items-center justify-center relative`};
   background: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728797925/registration_si85oa.png');
-  filter: brightness(1.2);
+  filter: brightness(1.1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
 `;
-
 export const RegisterInnerContainer = styled.div`
-  ${tw`w-full flex flex-col items-center justify-center gap-10 p-10 md:p-20 relative z-10`}
+  ${tw`w-full flex flex-col items-center justify-center gap-10 p-10 md:p-20 relative`}
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(153, 153, 153, 0.03) 100%);
-  backdrop-filter: blur(20px);
+  background-image: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728798262/grad2_mcspr0.png'),
+    url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728797925/registration_si85oa.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  filter: brightness(0.85);
+  z-index: 2;
 `;
 
 export const RegisterForm = styled.div`
@@ -34,15 +39,13 @@ export const RegsiterButton = styled(PrimaryButton)`
 
 export const Moon = styled.div`
   position: absolute;
-  top: -80px;
-  right: -80px;
   background: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728747927/unsplash_yOIT88xWkbg_oj7o7e.png')
     lightgray 50% / cover no-repeat;
   transform: rotate(18deg);
-  filter: blur(10px) brightness(0.8);
+  filter: blur(10px) brightness(0.9);
   flex-shrink: 0;
-  width: 491.622px;
-  height: 491.622px;
-  z-index: 1;
-  border-radius: 491.622px;
+
+  z-index: 5;
+  border-radius: 450px;
+  ${tw` top-[-50px] right-[-50px] ssm:top-[-100px] ssm:right-[-100px] w-[150px] xsm:w-[200px] h-[150px] xsm:h-[200px] ssm:w-[250px] ssm:h-[250px] md:w-[300px]  md:h-[300px] slg:w-[350px] slg:h-[350px] llg:w-[400px] llg:h-[400px] xl:w-[450px]  xl:h-[450px]`}
 `;

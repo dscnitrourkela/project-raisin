@@ -16,7 +16,6 @@ import { formFields } from '@/config/content/Registration/details';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
-import './register.styles.css';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
