@@ -42,7 +42,7 @@ const Navbar = () => {
         <MainBar>
           <MenuLogoItem>
             <Link href='/playground'>
-              <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
+              <Image src={logos[0].link} alt={logos[0].name} width='50' height='50' />
             </Link>
           </MenuLogoItem>
           {MainNavData.map((item, index) => (
