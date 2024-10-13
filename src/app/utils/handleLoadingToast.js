@@ -13,7 +13,8 @@ export default async function handleLoadingAndToast(
     toast.success(successMessage);
     return result;
   } catch (error) {
-    toast.error(errorMessage);
+    console.error(error);
+    toast.error(error.response?.data?.error?.message || error.message || errorMessage);
     throw error;
   } finally {
     toast.dismiss(toastId);
