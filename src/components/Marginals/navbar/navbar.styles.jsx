@@ -38,7 +38,7 @@ export const MainBar = styled.nav`
 `;
 
 export const MainBarItems = styled(NavbarLink)`
-  ${tw`text-xs opacity-60 md:text-sm`}
+  ${tw`text-xs opacity-60 md:text-sm pb-1`}
 `;
 
 export const RegisterButton = styled(PrimaryButton)`
