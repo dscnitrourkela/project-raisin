@@ -6,7 +6,7 @@ import {
   Title,
   Description,
   CheckBoxWrapper,
-} from './campusAmbassador.styles';
+} from './CampusAmbassador.styles';
 function CampusAmbassador({ handleChange }) {
   return (
     <Container>
