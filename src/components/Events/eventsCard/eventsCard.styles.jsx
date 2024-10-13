@@ -21,10 +21,6 @@ export const ImageWrapper = styled.div`
   ${tw`w-[567px] h-[400px] px-3 py-3 rounded-[22.41px] justify-center items-center`}
 `;
 
-export const ImageParentContainer = styled.div`
-  ${tw`grow shrink basis-0 self-stretch rounded-3xl flex justify-start items-center`}
-`;
-
 export const ImageContainer = styled.div`
   background-image: url(${(props) => props.bgimage});
   ${tw`w-[543px] h-[378px] rounded-3xl bg-cover bg-center`}

@@ -1,7 +1,6 @@
 import {
   EventsCardContainer,
   ImageWrapper,
-  ImageParentContainer,
   ImageContainer,
   ContentAndButtonWrapper,
   ContentContainer,
@@ -16,9 +15,7 @@ export const EventCardType1 = ({ bgImage, eventTitle, eventDescription }) => {
   return (
     <EventsCardContainer>
       <ImageWrapper>
-        <ImageParentContainer>
-          <ImageContainer bgimage={bgImage} />
-        </ImageParentContainer>
+        <ImageContainer bgimage={bgImage} />
       </ImageWrapper>
       <ContentAndButtonWrapper>
         <ContentContainer>
@@ -48,9 +45,7 @@ export const EventCardType2 = ({ bgImage, eventHeading, eventDescription }) => {
         </ButtonContainer>
       </ContentAndButtonWrapper>
       <ImageWrapper>
-        <ImageParentContainer>
-          <ImageContainer bgimage={bgImage} />
-        </ImageParentContainer>
+        <ImageContainer bgimage={bgImage} />
       </ImageWrapper>
     </EventsCardContainer>
   );
