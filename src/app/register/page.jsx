@@ -16,6 +16,7 @@ import { formFields } from '@/config/content/Registration/details';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
+import CustomSelect from '@/components/Register/SelectField/SelectField2';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -39,7 +40,7 @@ function Page() {
           uploadToCloudinary(event.target.files[0]),
           'Uploading Image...',
           'Image uploaded successfully',
-          'Image upload failed',
+          'Image upload failed!',
           setLoading,
         );
         setUserDetails((prev) => ({
@@ -100,7 +101,7 @@ function Page() {
         );
       case 'select':
         return (
-          <SelectField
+          <CustomSelect
             key={field.id}
             name={field.id}
             options={field.options}
@@ -140,11 +141,11 @@ function Page() {
   }
 
   return (
-    <RegisterContainer className='pt-20 pb-16 px-5 xsm:px-10 md:px-20'>
+    <RegisterContainer>
       <Moon />
       <RegisterInnerContainer>
         <RegisterHeading>Register</RegisterHeading>
-        <RegisterForm className='mt-10 w-full'>
+        <RegisterForm>
           {formFields.map((field) => {
             return returnFormFields(field);
           })}

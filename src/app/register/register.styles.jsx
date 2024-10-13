@@ -8,16 +8,15 @@ export const RegisterHeading = styled(Heading1)`
 `;
 
 export const RegisterContainer = styled.div`
-  ${tw`min-h-screen flex flex-col items-center justify-center relative`};
+  ${tw`min-h-screen flex flex-col items-center w-full justify-center pt-20 pb-16 px-2 xxs:px-5 xsm:px-10 md:px-20`};
   background: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728797925/registration_si85oa.png');
   filter: brightness(1.1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden;
 `;
 export const RegisterInnerContainer = styled.div`
-  ${tw`w-full flex flex-col items-center justify-center gap-10 p-10 md:p-20 relative`}
+  ${tw`w-full grid place-items-center gap-10 py-10 px-1 xxxs:px-3 xxs:px-5 xsm:px-10`}
   border-radius: 12px;
   background-image: url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728798262/grad2_mcspr0.png'),
     url('https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728797925/registration_si85oa.png');

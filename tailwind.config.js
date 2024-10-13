@@ -16,7 +16,9 @@ module.exports = {
         foreground: 'var(--foreground)',
       },
       screens: {
-        xxs: '350px',
+        xxxs: '334px',
+        xxs: '380px',
+        '2xs': '425px',
         xsm: '480px',
         ssm: '560px',
         sm: '640px',
