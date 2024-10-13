@@ -1,6 +1,7 @@
 import axios from 'axios';
 export const uploadToCloudinary = async (image) => {
-  if (!isImageValid(image)) throw new Error('Please select a valid image!');
+  if (!isImageValid(image))
+    throw new Error('Invalid image type. Only JPEG, PNG, and JPG are allowed.');
 
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
@@ -18,7 +19,7 @@ export const uploadToCloudinary = async (image) => {
     return response.data.url;
   } catch (err) {
     console.error(err);
-    throw new Error('Failed to upload image!');
+    throw err;
   }
 };
 

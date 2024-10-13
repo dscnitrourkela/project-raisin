@@ -5,6 +5,8 @@ import {
   RegisterForm,
   RegisterHeading,
   RegsiterButton,
+  RegisterInnerContainer,
+  Moon,
 } from './register.styles';
 import InputField from '@/components/Register/InputField/InputField';
 import SelectField from '@/components/Register/SelectField/SelectField';
@@ -14,8 +16,7 @@ import { formFields } from '@/config/content/Registration/details';
 import { uploadToCloudinary } from '../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
-import toast from 'react-hot-toast';
-
+import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -25,7 +26,7 @@ function Page() {
     rollNumber: '',
     idCard: '',
     gender: '',
-    accomodation: false,
+    accommodation: false,
     campusAmbassador: false,
   });
   const [loading, setLoading] = useState(false);
@@ -39,7 +40,7 @@ function Page() {
           uploadToCloudinary(event.target.files[0]),
           'Uploading Image...',
           'Image uploaded successfully',
-          'Image upload failed',
+          'Image upload failed!',
           setLoading,
         );
         setUserDetails((prev) => ({
@@ -106,7 +107,7 @@ function Page() {
             options={field.options}
             placeholder={field.label}
             value={userDetails[field.id]}
-            onChange={handleChange}
+            handleSelect={setUserDetails}
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
@@ -140,16 +141,20 @@ function Page() {
   }
 
   return (
-    <RegisterContainer className='pt-20 pb-16 px-5 xsm:px-10 md:px-20'>
-      <RegisterHeading>Register</RegisterHeading>
-      <RegisterForm className='mt-20 w-full'>
-        {formFields.map((field) => {
-          return returnFormFields(field);
-        })}
-      </RegisterForm>
-      <RegsiterButton onClick={handleSubmit} disabled={loading}>
-        Submit
-      </RegsiterButton>
+    <RegisterContainer>
+      <Moon />
+      <RegisterInnerContainer>
+        <RegisterHeading>Register</RegisterHeading>
+        <RegisterForm>
+          {formFields.map((field) => {
+            return returnFormFields(field);
+          })}
+        </RegisterForm>
+        <CampusAmbassador handleChange={handleChange} />
+        <RegsiterButton onClick={handleSubmit} disabled={loading}>
+          Submit
+        </RegsiterButton>
+      </RegisterInnerContainer>
     </RegisterContainer>
   );
 }

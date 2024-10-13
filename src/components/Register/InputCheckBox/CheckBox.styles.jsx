@@ -10,5 +10,5 @@ export const CheckBoxInput = styled.input`
 `;
 
 export const CheckBoxLabel = styled.span`
-  ${tw`font-prompt text-base sm:text-lg`}
+  ${tw`font-prompt text-base w-3/4 2xs:w-auto sm:text-lg`}
 `;
