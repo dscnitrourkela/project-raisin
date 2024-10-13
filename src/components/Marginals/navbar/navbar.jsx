@@ -32,13 +32,6 @@ const Navbar = () => {
   return (
     <NavContainer>
       <NavCover>
-        <Logos>
-          {logos.slice(1).map((logo, index) => (
-            <LogoItem key={index}>
-              <Image src={logo.link} alt={logo.name} width='20' height='20' />
-            </LogoItem>
-          ))}
-        </Logos>
         <MainBar>
           <MenuLogoItem>
             <Link href='/playground'>
@@ -49,10 +42,6 @@ const Navbar = () => {
             <MainBarItems key={index}>{item.title}</MainBarItems>
           ))}
         </MainBar>
-        <RegisterButton>
-          <Link href={ButtonData.link}>{ButtonData.title}</Link>
-        </RegisterButton>
-
         <HamburgerContainer>
           <Hamburger toggled={isOpen} toggle={handleToggle}></Hamburger>
         </HamburgerContainer>
@@ -64,10 +53,11 @@ const Navbar = () => {
             {MainNavData.map((item, index) => (
               <ResItem key={index}>{item.title}</ResItem>
             ))}
+
+            <HamburgerRegisterButton>
+              <Link href={ButtonData.link}>{ButtonData.title}</Link>
+            </HamburgerRegisterButton>
           </ResList>
-          <HamburgerRegisterButton>
-            <Link href={ButtonData.link}>{ButtonData.title}</Link>
-          </HamburgerRegisterButton>
         </ResMen>
       ) : null}
     </NavContainer>
