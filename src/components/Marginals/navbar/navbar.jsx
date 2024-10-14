@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   HamburgerContainer,
   MainBar,
@@ -13,7 +13,6 @@ import {
   HamburgerRegisterButton,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
-import { useState } from 'react';
 import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,6 +24,34 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
 
+  useEffect(() => {
+    const smoothScroll = (e) => {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute('href').slice(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => {
+      link.addEventListener('click', smoothScroll);
+    });
+
+    return () => {
+      links.forEach((link) => {
+        link.removeEventListener('click', smoothScroll);
+      });
+    };
+  }, [isOpen]);
+
   return (
     <NavContainer>
       <NavCover>
@@ -35,7 +62,9 @@ const Navbar = () => {
             </Link>
           </MenuLogoItem>
           {navLinks.map((navLink) => (
-            <MainBarItems key={navLink.id}>{navLink.name}</MainBarItems>
+            <MainBarItems key={navLink.id}>
+              <a href={`#${navLink.id}`}>{navLink.name}</a>
+            </MainBarItems>
           ))}
         </MainBar>
         <HamburgerContainer>
@@ -47,7 +76,9 @@ const Navbar = () => {
         <ResMen>
           <ResList>
             {navLinks.map((navLink) => (
-              <ResItem key={navLink.id}>{navLink.name}</ResItem>
+              <ResItem key={navLink.id}>
+                <a href={`#${navLink.id}`}>{navLink.name}</a>
+              </ResItem>
             ))}
 
             <HamburgerRegisterButton>
