@@ -9,7 +9,7 @@ export const BodyWrapper = styled.div`
 `;
 
 export const BodyTitle = styled.h1`
-  ${tw`text-2xl md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
+  ${tw`text-[25px] md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
 `;
 export const BodyContent = styled.div`
   ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]`}
@@ -20,7 +20,7 @@ export const BodyContentColumn = styled.div`
 `;
 
 export const BodyColumnHeading = styled.h2`
-  ${tw`text-center font-bold font-spaceX text-[27px] md:text-[25px] lg:text-[30px] opacity-50 mb-[10px] llg:mb-[20px]`}
+  ${tw`text-center font-bold font-spaceX text-[23px] md:text-[25px] lg:text-[30px] opacity-50 mb-[10px] llg:mb-[20px]`}
 `;
 
 export const BodyColumnText = styled.p`
@@ -28,9 +28,9 @@ export const BodyColumnText = styled.p`
 `;
 
 export const BodyGradient = styled.div`
-  ${tw`absolute inset-0 top-[-1400px] left-[-400px] right-[-400px] llg:top-[-1700px] llg:left-[-1000px] llg:right-[-1000px] -z-10 `}
+  ${tw`absolute inset-0 top-[-1250px] left-[-50px] right-[-50px] llg:top-[-1600px] llg:left-[-1000px] llg:right-[-1000px] -z-10 `}
   background: conic-gradient(
-   from 180deg,
+    from 180deg,
     #0B0B0B 0%,
     #0E2C33 23%, 
     #000000 30%, 
