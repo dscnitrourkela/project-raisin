@@ -14,12 +14,12 @@ export const FooterGradient = styled.div`
     `}
   background: conic-gradient(
    from 180deg,
-    #0B0B0B 0%,
-    #0E2C33 23%, 
-    #000000 30%, 
-    #000000 65%, 
-    #4E0E48 70%, 
-    #0B0B0B 98% 
+    #1a1a1a 0%,    
+    #1c4953 23%,   
+    #1a1a1a 27%,
+    #1a1a1a 65%,   
+    #8e1e78 70%,  
+    #1a1a1a 98% 
   );
 `;
 
@@ -48,19 +48,22 @@ export const FooterColumn2 = styled.div`
 `;
 
 export const FooterColumn3 = styled.div`
-  ${tw`tracking-wider  flex justify-start pt-[20px] `}
+  ${tw`tracking-wider  flex justify-start pt-[30px] llg:pt-[20px] `}
 `;
-
 export const FooterColumn4 = styled.div`
   ${tw` flex flex-col items-center gap-[30px] pt-[50px] llg:pt-[20px] mb-auto`}
 `;
 
 export const FooterColumn1Logo = styled.div`
-  ${tw`flex items-start gap-5 justify-center mb-[20px] llg:mb-[10px]`}
+  ${tw`flex items-start gap-[9px] justify-center mb-[20px] llg:mb-[10px]`}
 `;
 
 export const FooterColumn1Title = styled.div`
   ${tw`flex flex-col items-end`}
+`;
+
+export const SocialImageContainer = styled.div`
+  ${tw`rounded-full border-t-[3px] border-l-[2px] border-b-[1px] border-[#5A5059] w-[50px] md:w-[60px] h-[50px] md:h-[60px]  flex justify-center items-center backdrop-blur-3xl hover:brightness-200 transition-all duration-[200ms] transform hover:scale-110`}
 `;
 
 export const SocialList = styled.ul`
