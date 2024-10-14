@@ -17,23 +17,11 @@ export const logos = [
   },
 ];
 
-export const MainNavData = [
-  {
-    title: 'About us',
-    link: 'about',
-  },
-  {
-    title: 'Events',
-    link: 'events',
-  },
-  {
-    title: 'Sponsors',
-    link: 'sponsors',
-  },
-  {
-    title: 'Contact us',
-    link: 'contact',
-  },
+export const navLinks = [
+  { name: 'About us', id: 'about us' },
+  { name: 'Events', id: 'events' },
+  { name: 'Sponsers', id: 'sponsers' },
+  { name: 'Contact Us', id: 'contact' },
 ];
 
 export const ButtonData = {
