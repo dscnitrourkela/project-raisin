@@ -15,4 +15,4 @@ export const CardWrapper = () => {
     </>
   );
 };
-const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS'];
+const item = ['FLaGSHIP', 'GUEST LECTURE', 'MaIN EvENTS'];
