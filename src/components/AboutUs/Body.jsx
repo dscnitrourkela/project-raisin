@@ -43,7 +43,7 @@ export const Body = () => {
 
   return (
     <>
-      <MainContainer>
+      <MainContainer id='about us'>
         <BodyWrapper>
           <BodyGradient />
           <BodyTitle>aBOUT US</BodyTitle>
@@ -54,7 +54,7 @@ export const Body = () => {
                 {trimmedFirstCol}
                 {isMobile && (
                   <button
-                    className='underline mx-2'
+                    className='mx-2 underline'
                     onClick={() => setReadMoreFirstCol(!readMoreFirstCol)}
                   >
                     {readMoreFirstCol ? 'See Less' : 'See More'}
