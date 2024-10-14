@@ -27,8 +27,9 @@ export const MainBarItems = styled(NavbarLink)`
   ${tw`text-xs transition-opacity transition-transform duration-300 opacity-70 md:text-sm hover:opacity-100 hover:scale-105`}
 `;
 
-export const HamburgerContainer = styled.div`
-  ${tw`min-[930px]:hidden max-[500px]:mt-[10px] mt-[15px]`}
+export const HamburgerContainer = styled.button`
+  backdrop-filter: blur(18px);
+  ${tw`min-[930px]:hidden max-[500px]:mt-[10px] mt-[15px] p-2 rounded-[50%] `}
 `;
 
 export const ResMen = styled.div`
