@@ -60,7 +60,7 @@ const Scene = () => {
     }
   });
 
-  const mainFontSize = Math.min(viewport.width * 0.15, 3.5);
+  const mainFontSize = Math.min(viewport.width * 0.19, 3.5);
   const subFontSize = Math.min(viewport.width * 0.12, 2.5);
 
   return (
@@ -112,7 +112,7 @@ const Hero = () => {
       <div className='absolute inset-0 z-0 bg-hero-primary' />
 
       <div className='absolute inset-0 z-10 flex items-end justify-center'>
-        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 md:-translate-x-0 h-[70dvh] md:h-auto'>
+        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
           <Image
             src='/assets/images/robot.png'
             alt='Robot image'
@@ -127,7 +127,13 @@ const Hero = () => {
           <Scene />
         </Canvas>
         <div className='h-[40dvh] flex flex-col justify-center items-center relative gap-2 mb-12 md:mb-0'>
-          <Image src='/assets/images/pfp.png' alt='hello' width={200} height={100} />
+          <Image
+            src='/assets/images/pfp.png'
+            alt='hello'
+            width={200}
+            height={100}
+            className='hidden sm:block'
+          />
           <div className='text-2xl font-bold text-center font-prompt'>
             Navigating the tech cosmos and shaping the future landscape
           </div>
