@@ -14,8 +14,6 @@ export default function Page() {
       <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} />
       <Heading3>FLAGSHIP EVENTS</Heading3>
       <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} />
-      <Heading3>FLAGSHIP EVENTS</Heading3>
-      <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} />
       <Heading3>MAIN EVENTS</Heading3>
       <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} />
       <Heading3>EXHIBITION</Heading3>
