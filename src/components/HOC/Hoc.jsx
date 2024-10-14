@@ -4,9 +4,9 @@ import Navbar from '../Marginals/navbar/navbar';
 function Hoc({ children }) {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

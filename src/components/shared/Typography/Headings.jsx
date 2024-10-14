@@ -9,6 +9,10 @@ export const Heading2 = styled.h2`
   ${tw`text-base md:text-lg lg:text-xl font-orbitron mb-3 font-medium text-white`}
 `;
 
+export const Heading3 = styled.h1`
+  ${tw`text-white/50 text-[70px] font-normal font-spaceX tracking-[3.50px] pt-36`}
+`;
+
 export const LogoText = styled.h1`
   ${tw`text-[80px] xsm:text-[120px] md:text-[150px] lg:text-[170px] not-italic font-normal font-techno text-[#FFFFFFE6]`}
 
