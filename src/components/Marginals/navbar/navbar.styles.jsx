@@ -1,6 +1,7 @@
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const NavContainer = styled.nav`
   ${tw`fixed top-0 w-full h-10 max-w-7xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
@@ -43,13 +44,6 @@ export const ResItem = styled.li`
   ${tw`mt-4 cursor-pointer`}
 `;
 
-export const HamburgerRegisterButton = styled.button`
-  background: radial-gradient(219.1% 188.15% at 52.58% -68.5%, #ff8dff 30.52%, #ff3c7f 53.85%);
-  box-shadow:
-    0px 10px 149.474px 0px #ffe3697a,
-    0px 0px 0.83px 3.322px #ffffff1a,
-    0px -3.322px 1.661px 0px #00000040 inset,
-    0px 1.661px 0.83px 0px #ffffff40 inset;
-
-  ${tw`min-[930px]:hidden w-[100px]  h-[35px]  rounded-md  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 lg:ml-0 `}
+export const HamburgerRegisterButton = styled(PrimaryButton)`
+  ${tw`min-[930px]:hidden  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 `}
 `;
