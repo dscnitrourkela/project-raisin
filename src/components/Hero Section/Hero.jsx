@@ -129,7 +129,7 @@ const Hero = () => {
         <div className='h-[40dvh] flex flex-col justify-center items-center relative gap-2 mb-12 md:mb-0'>
           <Image src='/assets/images/pfp.png' alt='hello' width={200} height={100} />
           <div className='text-2xl font-bold text-center font-prompt'>
-            2000+ students have already registered
+            Navigating the tech cosmos and shaping the future landscape
           </div>
           <div className='font-bulgatti absolute bottom-0 right-0 translate-x-[20%] md:translate-x-1/2 scale-[60%] sm:scale-80 md:scale-100 translate-y-1/2 md:translate-y-[20%]'>
             <Image src='/assets/images/are_u_ready.svg' alt='' width={300} height={100} />
