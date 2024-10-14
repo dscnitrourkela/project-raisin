@@ -14,12 +14,12 @@ export const FooterGradient = styled.div`
     `}
   background: conic-gradient(
    from 180deg,
-    #0B0B0B 0%,
-    #0E2C33 23%, 
-    #000000 30%, 
-    #000000 65%, 
-    #4E0E48 70%, 
-    #0B0B0B 98% 
+    #1a1a1a 0%,    
+    #1c4953 23%,   
+    #1a1a1a 27%,
+    #1a1a1a 65%,   
+    #8e1e78 70%,  
+    #1a1a1a 98% 
   );
 `;
 

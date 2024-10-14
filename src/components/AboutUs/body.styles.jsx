@@ -31,10 +31,10 @@ export const BodyGradient = styled.div`
   ${tw`absolute inset-0 top-[-1370px] left-[-50px] right-[-50px] llg:top-[-1600px] llg:left-[-1000px] llg:right-[-1000px] -z-10`}
   background: conic-gradient(
     from 180deg,
-    #0B0B0B 0%,
-    #0E2C33 23%, 
-    #000000 50%, 
-    #4E0E48 77%, 
-    #0B0B0B 98% 
+    #1a1a1a 0%,    
+    #1c4953 23%,   
+    #1a1a1a 50%,  
+    #8e1e78 70%,  
+    #1a1a1a 98%    
   );
 `;
