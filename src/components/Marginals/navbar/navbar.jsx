@@ -66,13 +66,7 @@ const Navbar = () => {
                   {navLink.name}
                 </Link>
               ) : (
-                <span
-                  role='button'
-                  tabIndex={0}
-                  onClick={() => onClick(navLink.id)}
-                  onKeyPress={(e) => e.key === 'Enter' && onClick(navLink.id)}
-                  style={{ cursor: 'pointer' }}
-                >
+                <span role='button' tabIndex={0} onClick={() => onClick(navLink.id)}>
                   {navLink.name}
                 </span>
               )}
