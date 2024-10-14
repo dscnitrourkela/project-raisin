@@ -30,7 +30,7 @@ import { LogoText2 } from '../shared/Typography/Headings';
 
 export const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id='contact'>
       <FooterWrapper>
         <FooterGradient />
         <FooterTop>

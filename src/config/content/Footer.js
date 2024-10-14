@@ -81,7 +81,7 @@ export const footerBottom = [
   },
   {
     id: 5,
-    title: 'Architected with ❤️ by GDG NITR',
+    title: 'Architected with 💖 by DSC NIT Rourkela',
     url: '#',
   },
 ];

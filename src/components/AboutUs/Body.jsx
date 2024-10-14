@@ -43,7 +43,7 @@ export const Body = () => {
 
   return (
     <>
-      <MainContainer>
+      <MainContainer id='about us'>
         <BodyWrapper>
           <BodyGradient />
           <div className="bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728916828/Random_static_7_tdouie.png')] bg-cover bg-center z-0 h-full opacity-90 absolute inset-0" />
@@ -55,7 +55,7 @@ export const Body = () => {
                 {trimmedFirstCol}
                 {isMobile && (
                   <button
-                    className='underline mx-2'
+                    className='mx-2 underline'
                     onClick={() => setReadMoreFirstCol(!readMoreFirstCol)}
                   >
                     {readMoreFirstCol ? 'See Less' : 'See More'}
