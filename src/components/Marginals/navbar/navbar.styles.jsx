@@ -18,7 +18,7 @@ export const MainBar = styled.nav`
   backdrop-filter: blur(30px);
 
   ${tw`
-    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-20 flex justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl space-x-0.5 rounded-md border-[0.5px] py-1 lg:mr-0 md:mr-[50px]
+    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-20 justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl lg:mr-0 md:mr-[50px]
   `}
 `;
 
