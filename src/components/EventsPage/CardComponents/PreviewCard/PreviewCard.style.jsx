@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const PreviewCardContainer = styled.div`
-  ${tw`w-[456.74px] h-[605.44px] relative bg-gradient-to-b from-[#22002b] to-[#002929] rounded-[5px] shadow border border-[#074870] flex flex-col justify-between items-center pt-11 pb-8 mb-16`}
+  ${tw`w-[456.74px] h-[605.44px] relative bg-gradient-to-b from-[#002929] to-[#22002b] rounded-[5px] shadow border border-[#074870] flex flex-col justify-between items-center pt-11 pb-8 mb-16`}
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 `;
 
 export const PreviewCardImage = styled.div`
@@ -18,10 +19,17 @@ export const PreviewCardContent = styled.div`
 export const PreviewMoreInfoButton = styled(PrimaryButton)`
   ${tw`text-black text-lg font-normal font-share_tech`}
 
+  box-shadow:
+    0 0 5px #ff3d7f,
+    0 0 3px #ff3d7f,
+    0 0 5px #ff3d7f;
+
   &:hover {
     box-shadow:
-      0 0 5px #ff3d7f,
-      0 0 10px #ff3d7f,
+      0 0 3px #ff3d7f,
+      0 0 6px #ff3d7f,
+      0 0 9px #ff3d7f,
+      0 0 12px #ff3d7f,
       0 0 15px #ff3d7f;
   }
 `;

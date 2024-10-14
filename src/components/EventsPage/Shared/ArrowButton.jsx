@@ -1,5 +1,5 @@
-// components/EventsPage/Shared/ArrowButton.jsx
-import tw, { styled } from 'twin.macro';
+import tw from 'twin.macro';
+import styled from 'styled-components';
 
 const commonStyles = tw`absolute top-1/4 transform -translate-y-1/2 bg-cover bg-no-repeat w-11 h-16 cursor-pointer transition-all duration-200 ease-in-out`;
 
@@ -11,7 +11,7 @@ const LeftArrowButton = styled.div`
   z-index: 10;
 
   &:active {
-    transform: scale(0.95) translateY(-50%); /* Scale down slightly for pressing effect */
+    transform: scale(0.95) translateY(-50%);
   }
 `;
 
@@ -23,7 +23,7 @@ const RightArrowButton = styled.div`
   z-index: 10;
 
   &:active {
-    transform: scale(0.95) translateY(-50%); /* Scale down slightly for pressing effect */
+    transform: scale(0.95) translateY(-50%);
   }
 `;
 
