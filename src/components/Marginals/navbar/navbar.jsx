@@ -13,7 +13,6 @@ import {
   HamburgerRegisterButton,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
-// import SmoothScroll from 'smooth-scroll';
 import { useState } from 'react';
 import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
@@ -36,11 +35,7 @@ const Navbar = () => {
             </Link>
           </MenuLogoItem>
           {navLinks.map((navLink) => (
-            <MainBarItems key={navLink.id}>
-              {/* <Link href={navLink.href}> */}
-              {navLink.name}
-              {/* </Link> */}
-            </MainBarItems>
+            <MainBarItems key={navLink.id}>{navLink.name}</MainBarItems>
           ))}
         </MainBar>
         <HamburgerContainer>
@@ -52,11 +47,7 @@ const Navbar = () => {
         <ResMen>
           <ResList>
             {navLinks.map((navLink) => (
-              <ResItem key={navLink.id}>
-                {/* <Link href={navLink.href} tabIndex={0}> */}
-                {navLink.name}
-                {/* </Link> */}
-              </ResItem>
+              <ResItem key={navLink.id}>{navLink.name}</ResItem>
             ))}
 
             <HamburgerRegisterButton>

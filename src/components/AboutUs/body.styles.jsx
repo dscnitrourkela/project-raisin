@@ -9,7 +9,7 @@ export const BodyWrapper = styled.div`
 `;
 
 export const BodyTitle = styled.h1`
-  ${tw`text-2xl md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
+  ${tw`py-16 mx-10 mb-4 text-2xl font-bold text-center text-white md:text-3xl lg:text-5xl font-spaceX rounded-xl`}
 `;
 export const BodyContent = styled.div`
   ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]`}
@@ -30,12 +30,12 @@ export const BodyColumnText = styled.p`
 export const BodyGradient = styled.div`
   ${tw`absolute inset-0 top-[-1400px] left-[-400px] right-[-400px] llg:top-[-1700px] llg:left-[-1000px] llg:right-[-1000px] -z-10 `}
   background: conic-gradient(
-   from 180deg,
-    #0B0B0B 0%,
-    #0E2C33 23%, 
-    #000000 30%, 
-    #000000 65%, 
-    #4E0E48 70%, 
-    #0B0B0B 98% 
+    from 180deg,
+    #1a1a1a 0%,    
+    #1c4953 23%,   
+    #1a1a1a 30%,  
+    #1a1a1a 65%,   
+    #8e1e78 70%,  
+    #1a1a1a 98%    
   );
 `;
