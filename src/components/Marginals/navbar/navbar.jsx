@@ -24,34 +24,6 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
 
-  useEffect(() => {
-    const smoothScroll = (e) => {
-      e.preventDefault();
-      const targetId = e.currentTarget.getAttribute('href').slice(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-      if (isOpen) {
-        setIsOpen(false);
-      }
-    };
-
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      link.addEventListener('click', smoothScroll);
-    });
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener('click', smoothScroll);
-      });
-    };
-  }, [isOpen]);
-
   return (
     <NavContainer>
       <div>
@@ -63,8 +35,8 @@ const Navbar = () => {
               </Link>
             </MenuLogoItem>
             {navLinks.map((navLink) => (
-              <MainBarItems key={navLink.id}>
-                <a href={`#${navLink.id}`}>{navLink.name}</a>
+              <MainBarItems key={navLink.link}>
+                <Link href={`${navLink.link}`}>{navLink.name}</Link>
               </MainBarItems>
             ))}
           </MainBar>
@@ -74,13 +46,13 @@ const Navbar = () => {
         </NavCover>
       </div>
 
-      {isOpen ? (
+      {isOpen && (
         <div className='h-[80vh] flex items-center justify-center'>
           <ResMen>
             <ResList>
               {navLinks.map((navLink) => (
-                <ResItem key={navLink.id}>
-                  <a href={`#${navLink.id}`}>{navLink.name}</a>
+                <ResItem key={navLink.link}>
+                  <Link href={`${navLink.link}`}>{navLink.name}</Link>
                 </ResItem>
               ))}
 
@@ -90,7 +62,7 @@ const Navbar = () => {
             </ResList>
           </ResMen>
         </div>
-      ) : null}
+      )}
     </NavContainer>
   );
 };
