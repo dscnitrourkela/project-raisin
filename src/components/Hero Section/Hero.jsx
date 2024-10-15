@@ -90,7 +90,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className='flex gap-8 mt-[70px]'
+          className='flex gap-8 mt-[50px]'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
