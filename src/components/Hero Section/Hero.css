@@ -10,3 +10,62 @@
   );
   background-blend-mode: normal, difference;
 }
+@keyframes flicker {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #ffffff;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #ffffffe6;
+    text-shadow:
+      0px 0px 10px #ffffff5a,
+      0px 0px 20px #ffffff5a,
+      0px 0px 50px #ffffff5a;
+  }
+}
+.flicker {
+  animation: flicker 3s linear infinite;
+}
+.haloGlow {
+  box-shadow: 0 0 100px #ffd00174;
+}
+@media (max-width: 900px) {
+  .bg-hero-primary {
+    background-position: center 50%;
+  }
+}
+svg text {
+  font-size: 10vw;
+  font-weight: 900;
+  stroke-width: 4px;
+  fill: transparent;
+  stroke: #ffffff;
+  letter-spacing: 4px;
+  animation: effect 2.5s alternate;
+}
+@keyframes effect {
+  0% {
+    stroke-dasharray: 0 70%;
+  }
+  100% {
+    stroke-dasharray: 40% 0%;
+    stroke-dashoffset: 30%;
+  }
+}
