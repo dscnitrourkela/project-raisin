@@ -46,7 +46,6 @@ export const Body = () => {
       <MainContainer id='about us'>
         <BodyWrapper>
           <BodyGradient />
-
           <BodyTitle>aBOUT US</BodyTitle>
           <BodyContent>
             <BodyContentColumn>
