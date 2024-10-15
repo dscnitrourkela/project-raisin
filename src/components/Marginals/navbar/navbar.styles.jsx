@@ -12,7 +12,9 @@ export const NavCover = styled.div`
 `;
 
 export const MenuLogoItem = styled.div`
-  ${tw`w-10 h-10 mr-10 transition-all duration-300 cursor-pointer md:w-8 md:h-8 lg:w-16 lg:h-10 hover:scale-110`}
+  ${tw`w-10 h-10  transition-all duration-300 cursor-pointer md:w-8 md:h-8 lg:w-11 lg:h-11 flex items-center justify-center hover:scale-110`}
+  border-radius: 11.061px;
+  background: rgba(255, 255, 255, 0.05);
 `;
 
 export const MainBar = styled.nav`
@@ -29,12 +31,12 @@ export const MainBarItems = styled(NavbarLink)`
 
 export const HamburgerContainer = styled.button`
   backdrop-filter: blur(18px);
-  ${tw`min-[930px]:hidden max-[500px]:mt-[10px] mt-[15px] p-2 rounded-[50%] `}
+  ${tw`min-[930px]:hidden  rounded-md bg-white/[0.02] border-[1.14px] border-solid border-white/[0.06] cursor-pointer hover:scale-110 transition-all duration-300 flex items-center justify-center 
+  `}
 `;
 
 export const ResMen = styled.div`
-  backdrop-filter: blur(10px);
-  ${tw`z-10 grid w-full h-max place-items-center bg-white/[0.2] rounded-3xl opacity-95 min-[930px]:hidden`}
+  ${tw`z-10 grid w-full h-max backdrop-blur-3xl place-items-center  rounded-3xl  min-[930px]:hidden`}
 `;
 
 export const ResList = styled.ul`
@@ -42,7 +44,7 @@ export const ResList = styled.ul`
 `;
 
 export const ResItem = styled.li`
-  ${tw`mt-4 cursor-pointer`}
+  ${tw`mt-4 cursor-pointer font-montserrat`}
 `;
 
 export const HamburgerRegisterButton = styled(PrimaryButton)`

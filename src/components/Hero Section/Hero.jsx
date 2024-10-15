@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
         </div>
         <div className='h-auto py-[50px] flex flex-col justify-center items-center relative gap-2 mb-12 md:mb-0 px-[10px]'>
-          <div className='text-2xl font-thin text-center font-prompt pb-[20px]'>
+          <div className='text-base sm:text-xl md:text-2xl font-thin text-center font-prompt pb-[20px]'>
             Navigating the tech cosmos and shaping the future landscape
           </div>
           <div className='font-bulgatti absolute bottom-0 right-20 lg:right-10 translate-x-[20%] md:translate-x-1/2 scale-[70%] md:scale-80 lg:scale-100 translate-y-1/2 md:translate-y-[20%]'>

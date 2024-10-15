@@ -68,24 +68,26 @@ const Navbar = () => {
           ))}
         </MainBar>
         <HamburgerContainer>
-          <Hamburger toggled={isOpen} toggle={handleToggle} />
+          <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
         </HamburgerContainer>
       </NavCover>
 
       {isOpen ? (
-        <ResMen>
-          <ResList>
-            {navLinks.map((navLink) => (
-              <ResItem key={navLink.id}>
-                <a href={`#${navLink.id}`}>{navLink.name}</a>
-              </ResItem>
-            ))}
+        <div className='h-[80vh] flex items-center justify-center'>
+          <ResMen>
+            <ResList>
+              {navLinks.map((navLink) => (
+                <ResItem key={navLink.id}>
+                  <a href={`#${navLink.id}`}>{navLink.name}</a>
+                </ResItem>
+              ))}
 
-            <HamburgerRegisterButton>
-              <Link href={ButtonData.link}>{ButtonData.title}</Link>
-            </HamburgerRegisterButton>
-          </ResList>
-        </ResMen>
+              <HamburgerRegisterButton>
+                <Link href={ButtonData.link}>{ButtonData.title}</Link>
+              </HamburgerRegisterButton>
+            </ResList>
+          </ResMen>
+        </div>
       ) : null}
     </NavContainer>
   );

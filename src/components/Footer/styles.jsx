@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const FooterContainer = styled.div`
-  ${tw`flex justify-center w-full `}
+  ${tw`flex justify-center w-full bg-black bg-opacity-30`}
 `;
 
 export const FooterWrapper = styled.div`
