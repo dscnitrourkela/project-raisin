@@ -11,13 +11,11 @@ import SponsorSection from '@/components/Sponsers/sponsors';
 const Page = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <AboutUsMain />
       <StatisticsMain />
       <EventSectionMain />
       <SponsorSection />
-      <Footer />
     </>
   );
 };
