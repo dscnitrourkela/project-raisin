@@ -25,7 +25,7 @@ export const formFields = [
     className: 'w-full',
   },
   {
-    label: 'Name of the Univercity (Full Name) ',
+    label: 'Name of the University (Full Name) ',
     type: 'text',
     id: 'university',
     className: 'w-full',
