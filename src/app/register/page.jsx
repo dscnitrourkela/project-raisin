@@ -22,11 +22,14 @@ function Page() {
     name: '',
     email: '',
     phone: '',
-    college: '',
+    institute: '',
+    university: '',
     rollNumber: '',
     idCard: '',
     gender: '',
-    accommodation: false,
+    permission: '',
+    payment: '',
+    undertaking: false,
     campusAmbassador: false,
   });
   const [loading, setLoading] = useState(false);
@@ -39,8 +42,8 @@ function Page() {
         const imageUrl = await handleLoadingAndToast(
           uploadToCloudinary(event.target.files[0]),
           'Uploading Image...',
-          'Image uploaded successfully',
-          'Image upload failed!',
+          `${name.toUpperCase()} uploaded successfully`,
+          `${name.toUpperCase()} upload failed!`,
           setLoading,
         );
         setUserDetails((prev) => ({
