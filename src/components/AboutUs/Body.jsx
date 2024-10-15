@@ -46,7 +46,7 @@ export const Body = () => {
       <MainContainer id='about us'>
         <BodyWrapper>
           <BodyGradient />
-          <div className="bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728916828/Random_static_7_tdouie.png')] bg-cover bg-center -z-10 h-full opacity-90 absolute inset-0" />
+
           <BodyTitle>aBOUT US</BodyTitle>
           <BodyContent>
             <BodyContentColumn>

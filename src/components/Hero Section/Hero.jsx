@@ -5,9 +5,9 @@ import { HeroGreenPrimaryButton, HeroLogoText, HeroPrimaryButton, HeroSubLogoTex
 
 const Hero = () => {
   return (
-    <div className='relative h-screen p-4 mx-auto overflow-hidden md:h-screen flex-col justify-center items-center'>
+    <div className='relative h-screen overflow-hidden md:h-[105vh] flex-col justify-center items-center'>
       <div className='absolute inset-0 -z-10 bg-hero-primary bottom-[-32%] lg:bottom-0' />
-      <div className="bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728916828/Random_static_7_tdouie.png')] bg-cover bg-center inset-0 z-0 h-full opacity-90" />
+
       <div className='absolute inset-0 z-10 flex items-end justify-center'>
         <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 transition-all duration-200 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
           <Image
@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='absolute inset-0 z-20 flex flex-col items-center justify-center my-12'>
+      <div className='absolute inset-0 z-20 flex flex-col items-center justify-center mt-32'>
         <div className='flex flex-col items-end leading-none '>
           <HeroLogoText className='flicker'>INNOVISION</HeroLogoText>
           <div className=''>
@@ -35,7 +35,7 @@ const Hero = () => {
             </svg>
           </div>
         </div>
-        <div className='h-auto py-[50px] flex flex-col justify-center items-center relative gap-2 mt-[50px] mb-12 md:mb-0 px-[10px]'>
+        <div className='h-auto py-[50px] flex flex-col justify-center items-center relative gap-2 mb-12 md:mb-0 px-[10px]'>
           <div className='text-2xl font-thin text-center font-prompt pb-[20px]'>
             Navigating the tech cosmos and shaping the future landscape
           </div>
