@@ -9,9 +9,9 @@ const Hero = () => {
       <div className='absolute inset-0 -z-10 bg-hero-primary bottom-[-32%] lg:bottom-0' />
       <div className="bg-[url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728916828/Random_static_7_tdouie.png')] bg-cover bg-center inset-0 z-0 h-full opacity-90" />
       <div className='absolute inset-0 z-10 flex items-end justify-center'>
-        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
+        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 transition-all duration-200 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
           <Image
-            src='/assets/images/robot.png'
+            src='https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728970226/robot_embkcs.png'
             alt='Robot image'
             fill
             style={{ objectFit: 'contain' }}

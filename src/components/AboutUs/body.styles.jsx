@@ -28,7 +28,7 @@ export const BodyColumnText = styled.p`
 `;
 
 export const BodyGradient = styled.div`
-  ${tw`absolute inset-0 top-[-1370px] left-[-50px] right-[-50px] llg:top-[-1600px] llg:left-[-1000px] llg:right-[-1000px] -z-10`}
+  ${tw`absolute inset-0 top-[-1370px] left-[-50px] right-[-50px] llg:top-[-1600px] llg:left-[-1000px] llg:right-[-1000px] -z-20`}
   background: conic-gradient(
     from 180deg,
     #1a1a1a 0%,    
