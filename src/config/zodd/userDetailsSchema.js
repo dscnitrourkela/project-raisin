@@ -8,13 +8,19 @@ export const userSchema = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   phone: z
     .string()
-    .min(10, 'Phone number must be 10 digits')
-    .max(10, 'Phone number must be 10 digits')
+    .length(10, 'Phone number must be exactly 10 digits')
     .regex(/^\d{10}$/, 'Invalid phone number'),
-  college: z.string().min(1, 'College selection is required'),
+  institute: z.string().min(1, 'Institute name is required'),
+  university: z.string().min(1, 'University name is required'),
   rollNumber: z.string().min(1, 'Roll number is required'),
-  idCard: z.string().url('ID Card Not uploaded'),
-  gender: z.string().min(1, 'Gender selection is required'),
-  accommodation: z.boolean(),
-  campusAmbassador: z.boolean(),
+  idCard: z.string().url('Invalid ID card URL'),
+  payment: z.string().url('Invalid payment URL'),
+  permission: z.string().url('Invalid permission URL'),
+  gender: z.enum(['male', 'female'], {
+    errorMap: () => ({ message: 'Gender selection is required and must be either male or female' }),
+  }),
+  undertaking: z.boolean().refine((val) => val === true, {
+    message: 'You must agree to the terms and conditions',
+  }),
+  campusAmbassador: z.boolean().optional(),
 });
