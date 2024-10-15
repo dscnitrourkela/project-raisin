@@ -1,43 +1,20 @@
 import { CardLabel } from '../eventCardComponents/Cardlabel';
 import { EventCard } from '../eventCardComponents/EventCard';
-import { motion } from 'framer-motion';
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
-
-const itemAnimation = {
-  hidden: { y: 100, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.5, type: 'spring', stiffness: 150 } },
-};
 
 export const CardWrapper = () => {
   return (
     <>
-      <motion.div
-        variants={staggerContainer}
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.6 }}
-        className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-20'
-      >
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-12 xl:gap-20'>
         {item.map((items, index) => (
-          <motion.div
+          <div
             key={index}
-            variants={itemAnimation}
-            className='p-20 flex flex-col items-center gap-10'
+            className='p-4 md:p-10 xl:p-20 flex flex-col items-center gap-4 md:gap-6 xl:gap-10'
           >
             <EventCard label={items} />
             <CardLabel />
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 };

@@ -11,7 +11,7 @@ export const Graph = () => {
         transition={{ duration: 0.5 }}
         viewport={{ once: true, amount: 0.7 }}
       >
-        <Image width={697} height={766} src={GraphUrl} alt='graphurl' />
+        <Image width={697} height={766} src={GraphUrl} alt='graphurl' className='min-w-72' />
       </motion.div>
     </>
   );
