@@ -16,6 +16,7 @@ import Hamburger from 'hamburger-react';
 import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/NavData';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence, animate, easeIn, delay, spring } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,25 +53,33 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  const variants = {
+    start: { y: -100, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    transition: { duration: 1, delay: 1.5, type: 'spring', stiffness: 100 },
+  };
+
   return (
     <NavContainer>
-      <NavCover>
-        <MainBar>
-          <MenuLogoItem>
-            <Link href='/'>
-              <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
-            </Link>
-          </MenuLogoItem>
-          {navLinks.map((navLink) => (
-            <MainBarItems key={navLink.id}>
-              <a href={`#${navLink.id}`}>{navLink.name}</a>
-            </MainBarItems>
-          ))}
-        </MainBar>
-        <HamburgerContainer>
-          <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
-        </HamburgerContainer>
-      </NavCover>
+      <motion.div initial>
+        <NavCover>
+          <MainBar>
+            <MenuLogoItem>
+              <Link href='/'>
+                <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
+              </Link>
+            </MenuLogoItem>
+            {navLinks.map((navLink) => (
+              <MainBarItems key={navLink.id}>
+                <a href={`#${navLink.id}`}>{navLink.name}</a>
+              </MainBarItems>
+            ))}
+          </MainBar>
+          <HamburgerContainer>
+            <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
+          </HamburgerContainer>
+        </NavCover>
+      </motion.div>
 
       {isOpen ? (
         <div className='h-[80vh] flex items-center justify-center'>

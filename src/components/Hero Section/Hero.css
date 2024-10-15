@@ -58,7 +58,7 @@ svg text {
   fill: transparent;
   stroke: #ffffff;
   letter-spacing: 4px;
-  animation: effect 2.5s alternate;
+  animation: effect 8s alternate;
 }
 @keyframes effect {
   0% {

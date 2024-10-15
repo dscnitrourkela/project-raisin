@@ -8,7 +8,6 @@ export const HeroLogoText = styled.h1`
 
 export const HeroSubLogoText = styled.h1`
   ${tw`text-[50px] 2xs:text-[55px] sm:text-[80px] md:text-[110px] lg:text-[150px] not-italic font-normal font-techno text-transparent`}
-
   -webkit-text-stroke: 1px #ffffffe6;
   text-shadow: none;
 `;

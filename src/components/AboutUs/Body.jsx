@@ -11,6 +11,8 @@ import {
   BodyGradient,
 } from './body.styles';
 
+import { easeIn, easeInOut, motion } from 'framer-motion';
+
 export const Body = () => {
   const [trimmedFirstCol, setTrimmedFirstCol] = useState(firstcol.text);
   const [readMoreFirstCol, setReadMoreFirstCol] = useState(false);
@@ -45,26 +47,37 @@ export const Body = () => {
     <>
       <MainContainer id='about us'>
         <BodyWrapper>
-          <BodyGradient />
-          <BodyTitle>ABOUT US</BodyTitle>
+          <BodyGradient /> <BodyTitle>aBOUT US</BodyTitle>
           <BodyContent>
             <BodyContentColumn>
               <BodyColumnHeading>{firstcol.title}</BodyColumnHeading>
-              <BodyColumnText>
-                {trimmedFirstCol}
-                {isMobile && (
-                  <button
-                    className='mx-2 underline'
-                    onClick={() => setReadMoreFirstCol(!readMoreFirstCol)}
-                  >
-                    {readMoreFirstCol ? 'See Less' : 'See More'}
-                  </button>
-                )}
-              </BodyColumnText>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: easeInOut }}
+              >
+                <BodyColumnText>
+                  {trimmedFirstCol}
+                  {isMobile && (
+                    <button
+                      className={`mx-2 underline ${!readMoreFirstCol ? 'text-green-500' : 'text-[#ff8dff]'} `}
+                      onClick={() => setReadMoreFirstCol(!readMoreFirstCol)}
+                    >
+                      {readMoreFirstCol ? 'See Less' : 'See More'}
+                    </button>
+                  )}
+                </BodyColumnText>
+              </motion.div>
             </BodyContentColumn>
             <BodyContentColumn>
               <BodyColumnHeading>{secondcol.title}</BodyColumnHeading>
-              <BodyColumnText>{secondcol.text}</BodyColumnText>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: easeInOut }}
+              >
+                <BodyColumnText>{secondcol.text}</BodyColumnText>
+              </motion.div>
             </BodyContentColumn>
           </BodyContent>
         </BodyWrapper>

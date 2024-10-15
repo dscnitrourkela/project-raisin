@@ -15,6 +15,5 @@ export const GreenPrimaryButton = styled.button`
 
 export const SecondaryButton = styled.button`
   backdrop-filter: blur(11.075665473937988px);
-
   ${tw`p-4 text-[#fff] text-[16px] rounded-full font-montserrat font-medium cursor-pointer border-[0.9px] border-[#ffffff66] hover:opacity-90 transition-all duration-300 bg-[#ffffff0d]`}
 `;
