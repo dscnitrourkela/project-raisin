@@ -1,7 +1,7 @@
 export const logos = [
   {
     name: 'inno',
-    link: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1728826246/Frame_2087326348_opiovp.png',
+    link: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728999260/INNO_LOGO_1_ubaeai.png',
   },
 ];
 

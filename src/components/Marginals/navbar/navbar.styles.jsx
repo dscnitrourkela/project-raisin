@@ -12,7 +12,7 @@ export const NavCover = styled.div`
 `;
 
 export const MenuLogoItem = styled.div`
-  ${tw`w-10 h-10  transition-all duration-300 cursor-pointer md:w-8 md:h-8 lg:w-11 lg:h-11 flex items-center justify-center hover:scale-110`}
+  ${tw`w-10 h-10  transition-all duration-300 cursor-pointer md:w-11 md:h-11 p-2 flex items-center justify-center hover:scale-110`}
   border-radius: 11.061px;
   background: rgba(255, 255, 255, 0.05);
 `;
