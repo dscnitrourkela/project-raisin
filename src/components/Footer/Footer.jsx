@@ -18,20 +18,19 @@ import {
   FooterColumn1Title,
   SocialList,
   ItemList,
-  FooterBackgroundGrain,
-  FooterTopBackground,
   FooterBottomContent,
   VSmallParagraph,
   FooterLogoText,
   FooterSubLogoText,
   FooterGradient,
   ListTitle,
+  SocialImageContainer,
 } from './styles';
 import { LogoText2 } from '../shared/Typography/Headings';
 
 export const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id='contact'>
       <FooterWrapper>
         <FooterGradient />
         <FooterTop>
@@ -71,7 +70,7 @@ export const Footer = () => {
                 {socials.map((item) => (
                   <li key={item.id}>
                     <Link href={item.url}>
-                      <div className='imageList rounded-full border-t-[3px] border-l-[2px] border-b-[1px] border-[#5A5059] w-[50px] md:w-[60px] h-[50px] md:h-[60px]  flex justify-center items-center backdrop-blur-3xl hover:brightness-200 transition-all duration-300 transform hover:scale-110 '>
+                      <SocialImageContainer>
                         <Image
                           src={item.img}
                           alt={item.id}
@@ -79,7 +78,7 @@ export const Footer = () => {
                           height={45}
                           className=' w-[30px] md:w-[36px] hover:brightness-200 transition-all duration-300 '
                         />
-                      </div>
+                      </SocialImageContainer>
                     </Link>
                   </li>
                 ))}

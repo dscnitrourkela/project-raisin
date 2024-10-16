@@ -6,16 +6,16 @@ import { AboutUsMain } from '@/components/AboutUs/Main';
 import { Footer } from '@/components/Footer/Footer';
 import { EventSectionMain } from '@/components/EventsSection/wrapperComponents/Main';
 import { StatisticsMain } from '@/components/Statistics/wrapper/Main';
+import SponsorSection from '@/components/Sponsers/sponsors';
 
 const Page = () => {
   return (
     <>
-      <Navbar />
       <Hero />
       <AboutUsMain />
       <StatisticsMain />
       <EventSectionMain />
-      <Footer />
+      <SponsorSection />
     </>
   );
 };

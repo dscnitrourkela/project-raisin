@@ -1,15 +1,19 @@
-import { SubHeader } from './SubHeader';
+import { BodyTitle } from '@/components/AboutUs/body.styles';
 
 export const Header = () => {
   return (
     <>
-      <div>
-        <div className='bg-[#131313] h-[80px] sm:h-[100px] md:h-[110px] lg:h-[150px] w-full flex items-center overflow-hidden'>
-          <div className='font-spaceX font-bold text-[32px] sm:text-[40px] md:text-[50px] lg:text-[64px] lg:leading-[97.78] w-full text-center text-[#188FC3]'>
+      <div id='events'>
+        <div className='w-full flex items-center overflow-hidden'>
+          <BodyTitle
+            className='w-full'
+            style={{
+              marginBottom: '0px',
+            }}
+          >
             EVENTS
-          </div>
+          </BodyTitle>
         </div>
-        <SubHeader />
       </div>
     </>
   );

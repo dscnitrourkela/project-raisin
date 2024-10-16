@@ -1,14 +1,15 @@
 import { Header } from '../Header.jsx/header';
+import { SubHeader } from '../Header.jsx/SubHeader';
 import { Body } from './Body';
 
 export const EventSectionMain = () => {
   return (
     <>
       <div
-        className='min-h-screen h-auto min-w-screen overflow-x-auto w-auto flex flex-col gap-20 pb-64'
+        className='flex flex-col w-auto h-auto min-h-screen overflow-x-auto min-w-screen'
         style={{
           background:
-            'conic-gradient(from 180deg at 50% -72.31%, #0B0B0B 0deg, #0E2C33 38.51deg, #000000 109.1deg, #000000 246.44deg, #4E0E48 292.59deg, #0B0B0B 360deg)',
+            "url('https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728916828/Random_static_7_tdouie.png'), conic-gradient(from 180deg, #1a1a1a 0%, #1c4953 23%, #1a1a1a 50%, #8e1e78 70%, #1a1a1a 98%)",
         }}
       >
         <Header />
