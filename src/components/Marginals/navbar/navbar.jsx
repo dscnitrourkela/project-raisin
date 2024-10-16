@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className='h-[80vh] flex items-center justify-center'>
+        <div className='h-[73vh] flex items-center justify-center'>
           <ResMen>
             <ResList>
               {navLinks.map((navLink) => (
