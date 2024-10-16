@@ -19,8 +19,30 @@ export const formFields = [
   },
 
   {
-    label: 'Name of the Institute  (Full Name) ',
-    type: 'text',
+    label: 'Name of the Institute',
+    type: 'select',
+    options: [
+      {
+        label: 'NIT Rourkela',
+        value: 'NIT Rourkela',
+      },
+      {
+        label: 'NIT Trichy',
+        value: 'NIT Trichy',
+      },
+      {
+        label: 'NIT Warangal',
+        value: 'NIT Warangal',
+      },
+      {
+        label: 'NIT Surathkal',
+        value: 'NIT Surathkal',
+      },
+      {
+        label: 'Others',
+        value: 'others',
+      },
+    ],
     id: 'institute',
     className: 'w-full',
   },
@@ -34,6 +56,11 @@ export const formFields = [
     label: 'Roll Number',
     type: 'text',
     id: 'rollNumber',
+  },
+  {
+    label: 'Referral Code',
+    type: 'text',
+    id: 'referralCode',
   },
   {
     label: 'Upload College ID',
@@ -55,7 +82,7 @@ export const formFields = [
       },
     ],
     id: 'gender',
-    className: '',
+    className: 'oneliner',
   },
   {
     label: 'Authorisation/Permission by Institute',

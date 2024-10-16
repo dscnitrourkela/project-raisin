@@ -7,7 +7,11 @@ import {
   Description,
   CheckBoxWrapper,
 } from './CampusAmbassador.styles';
-function CampusAmbassador({ handleChange }) {
+function CampusAmbassador({ handleChange, userReferral }) {
+  function isUserRefferalCorrect(referralCode) {
+    return referralCode.length === 10 && /^\d+$/.test(String(referralCode));
+  }
+
   return (
     <Container>
       <BeamImage src={beamImage} alt='Campus Ambassador' height={500} width={500} />
@@ -24,6 +28,16 @@ function CampusAmbassador({ handleChange }) {
           css={campusAmbassadorInput?.className}
         />
       </CheckBoxWrapper>
+
+      {isUserRefferalCorrect(userReferral) && (
+        <Description
+          style={{
+            marginTop: '3rem',
+          }}
+        >
+          Your referral code is <strong>{userReferral}</strong>
+        </Description>
+      )}
     </Container>
   );
 }

@@ -36,9 +36,12 @@ function SelectField({
     setIsOpen(false);
     handleSelect((prevState) => ({ ...prevState, [name]: option }));
   };
+  const isOneLine = className?.includes('oneliner');
   return (
     <SelectFieldParentContainer>
-      <LabelAndInputContainer>
+      <LabelAndInputContainer
+        className={isOneLine ? 'flex-col xxs:flex-row items-center' : 'flex-col items-start'}
+      >
         {label && <Label>{label}</Label>}
         <SelectFieldContainer $hasError={!!error} onClick={handleToggle}>
           <SelectFieldInput>{selectedOption || placeholder || 'Select an option'}</SelectFieldInput>

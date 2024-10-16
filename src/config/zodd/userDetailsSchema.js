@@ -13,7 +13,12 @@ export const userSchema = z.object({
   institute: z.string().min(1, 'Institute name is required'),
   university: z.string().min(1, 'University name is required'),
   rollNumber: z.string().min(1, 'Roll number is required'),
-  idCard: z.string().url('Invalid ID card URL'),
+  referralCode: z
+    .string()
+    .regex(/^\d+$/, 'Invalid referral code')
+    .min(10, 'Invalid referral code')
+    .optional()
+    .or(z.literal('')),
   payment: z.string().url('Invalid payment URL'),
   permission: z.string().url('Invalid permission URL'),
   gender: z.enum(['male', 'female'], {
