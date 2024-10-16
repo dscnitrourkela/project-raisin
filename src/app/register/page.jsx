@@ -101,6 +101,7 @@ function Page() {
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
+            setErrors={setErrors}
           />
         );
       case 'select':

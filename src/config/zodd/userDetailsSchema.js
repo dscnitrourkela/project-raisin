@@ -19,8 +19,8 @@ export const userSchema = z.object({
     .min(10, 'Invalid referral code')
     .optional()
     .or(z.literal('')),
-  payment: z.string().url('Invalid payment URL'),
-  permission: z.string().url('Invalid permission URL'),
+  // payment: z.string().url('Invalid payment URL'),
+  // permission: z.string().url('Invalid permission URL'),
   gender: z.enum(['male', 'female'], {
     errorMap: () => ({ message: 'Gender selection is required and must be either male or female' }),
   }),

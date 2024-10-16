@@ -85,16 +85,6 @@ export const formFields = [
     className: 'oneliner',
   },
   {
-    label: 'Authorisation/Permission by Institute',
-    type: 'file',
-    id: 'permission',
-  },
-  {
-    label: 'Screenshot of payment',
-    type: 'file',
-    id: 'payment',
-  },
-  {
     label: 'By proceeding, you agree to our terms and conditions.',
     type: 'checkbox',
     id: 'undertaking',
