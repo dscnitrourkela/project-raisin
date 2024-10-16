@@ -65,5 +65,5 @@ export const HamburgerRegisterButton = styled(PrimaryButton)`
 `;
 
 export const RegisterButton = styled(PrimaryButton)`
-  ${tw`hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 ml-10 h-12 mt-2`}
+  ${tw`hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 ml-10 h-12 mt-2 max-[930px]:hidden`}
 `;
