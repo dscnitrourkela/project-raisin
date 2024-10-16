@@ -17,10 +17,17 @@ export const formFields = [
     id: 'phone',
     className: 'w-full',
   },
+
   {
-    label: 'Your College',
+    label: 'Name of the Institute  (Full Name) ',
     type: 'text',
-    id: 'college',
+    id: 'institute',
+    className: 'w-full',
+  },
+  {
+    label: 'Name of the University (Full Name) ',
+    type: 'text',
+    id: 'university',
     className: 'w-full',
   },
   {
@@ -33,11 +40,7 @@ export const formFields = [
     type: 'file',
     id: 'idCard',
   },
-  {
-    label: 'Do you want accommodation in NIT Rourkela?',
-    type: 'checkbox',
-    id: 'accommodation',
-  },
+
   {
     label: 'Gender',
     type: 'select',
@@ -50,13 +53,24 @@ export const formFields = [
         value: 'male',
         label: 'Male',
       },
-      {
-        value: 'others',
-        label: 'Others',
-      },
     ],
     id: 'gender',
     className: '',
+  },
+  {
+    label: 'Authorisation/Permission by Institute',
+    type: 'file',
+    id: 'permission',
+  },
+  {
+    label: 'Screenshot of payment',
+    type: 'file',
+    id: 'payment',
+  },
+  {
+    label: 'By proceeding, you agree to our terms and conditions.',
+    type: 'checkbox',
+    id: 'undertaking',
   },
 ];
 

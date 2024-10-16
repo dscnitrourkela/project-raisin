@@ -1,15 +1,15 @@
 export const logos = [
   {
     name: 'inno',
-    link: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1728826246/Frame_2087326348_opiovp.png',
+    link: 'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728999260/INNO_LOGO_1_ubaeai.png',
   },
 ];
 
 export const navLinks = [
-  { name: 'About us', id: 'about us' },
-  { name: 'Events', id: 'events' },
-  { name: 'Sponsers', id: 'sponsers' },
-  { name: 'Contact Us', id: 'contact' },
+  { name: 'About us', link: '/playground#aboutus' },
+  { name: 'Events', link: '/playground#events' },
+  { name: 'Sponsers', link: '/playground#sponsers' },
+  { name: 'Contact Us', link: '/playground#contact' },
 ];
 
 export const ButtonData = {

@@ -24,69 +24,45 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   }
 
-  useEffect(() => {
-    const smoothScroll = (e) => {
-      e.preventDefault();
-      const targetId = e.currentTarget.getAttribute('href').slice(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-      if (isOpen) {
-        setIsOpen(false);
-      }
-    };
-
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      link.addEventListener('click', smoothScroll);
-    });
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener('click', smoothScroll);
-      });
-    };
-  }, [isOpen]);
-
   return (
     <NavContainer>
-      <NavCover>
-        <MainBar>
-          <MenuLogoItem>
-            <Link href='/'>
-              <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
-            </Link>
-          </MenuLogoItem>
-          {navLinks.map((navLink) => (
-            <MainBarItems key={navLink.id}>
-              <a href={`#${navLink.id}`}>{navLink.name}</a>
-            </MainBarItems>
-          ))}
-        </MainBar>
-        <HamburgerContainer>
-          <Hamburger toggled={isOpen} toggle={handleToggle} />
-        </HamburgerContainer>
-      </NavCover>
-
-      {isOpen ? (
-        <ResMen>
-          <ResList>
+      <div>
+        <NavCover>
+          <MainBar>
+            <MenuLogoItem>
+              <Link href='/'>
+                <Image src={logos[0].link} alt={logos[0].name} width='40' height='40' />
+              </Link>
+            </MenuLogoItem>
             {navLinks.map((navLink) => (
-              <ResItem key={navLink.id}>
-                <a href={`#${navLink.id}`}>{navLink.name}</a>
-              </ResItem>
+              <MainBarItems key={navLink.link}>
+                <Link href={`${navLink.link}`}>{navLink.name}</Link>
+              </MainBarItems>
             ))}
+          </MainBar>
+          <HamburgerContainer>
+            <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
+          </HamburgerContainer>
+        </NavCover>
+      </div>
 
-            <HamburgerRegisterButton>
-              <Link href={ButtonData.link}>{ButtonData.title}</Link>
-            </HamburgerRegisterButton>
-          </ResList>
-        </ResMen>
-      ) : null}
+      {isOpen && (
+        <div className='h-[80vh] flex items-center justify-center'>
+          <ResMen>
+            <ResList>
+              {navLinks.map((navLink) => (
+                <ResItem key={navLink.link}>
+                  <Link href={`${navLink.link}`}>{navLink.name}</Link>
+                </ResItem>
+              ))}
+
+              <HamburgerRegisterButton>
+                <Link href={ButtonData.link}>{ButtonData.title}</Link>
+              </HamburgerRegisterButton>
+            </ResList>
+          </ResMen>
+        </div>
+      )}
     </NavContainer>
   );
 };
