@@ -12,7 +12,7 @@ export const NavCover = styled.div`
 `;
 
 export const MenuLogoItem = styled.div`
-  ${tw`w-10 h-10  transition-all duration-300 cursor-pointer md:w-11 md:h-11 p-2 flex items-center justify-center hover:scale-110`}
+  ${tw`flex items-center justify-center w-10 h-10 p-2 transition-all duration-300 cursor-pointer md:w-11 md:h-11 hover:scale-110`}
   border-radius: 11.061px;
   background: rgba(255, 255, 255, 0.05);
 `;
@@ -26,7 +26,20 @@ export const MainBar = styled.nav`
 `;
 
 export const MainBarItems = styled(NavbarLink)`
-  ${tw`text-xs transition-opacity transition-transform duration-300 opacity-70 md:text-sm hover:opacity-100 hover:scale-105`}
+  ${tw`relative text-xs transition-all duration-300 opacity-70 md:text-sm hover:opacity-100`}
+
+  &::after {
+    content: '';
+    ${tw`absolute bottom-0 left-0 w-full h-[1.5px] transition-all duration-300 bg-white opacity-0 hover:relative top-10`}
+    box-shadow: 0px -5px 20px 2px hsla(0, 0%, 100%, 0.7);
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+
+  &:hover::after {
+    ${tw`opacity-100`}
+    transform: scaleX(1);
+  }
 `;
 
 export const HamburgerContainer = styled.button`

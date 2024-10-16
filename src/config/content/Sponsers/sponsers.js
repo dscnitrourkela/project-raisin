@@ -92,7 +92,7 @@ export const sponsorData = {
     },
     {
       name: 'Polygon',
-      src: '/https://res.cloudinary.com/dqqyuvg1v/image/upload/v1728921809/image_10_1_wteplu.png',
+      src: 'https://res.cloudinary.com/dqqyuvg1v/image/upload/v1728921809/image_10_1_wteplu.png',
       width: 100,
       height: 40,
     },
