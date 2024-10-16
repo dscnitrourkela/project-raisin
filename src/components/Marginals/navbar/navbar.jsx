@@ -11,6 +11,7 @@ import {
   ResList,
   ResMen,
   HamburgerRegisterButton,
+  RegisterButton,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
 import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/NavData';
@@ -40,6 +41,9 @@ const Navbar = () => {
               </MainBarItems>
             ))}
           </MainBar>
+          <RegisterButton>
+            <Link href='/register'>{ButtonData.title}</Link>
+          </RegisterButton>
           <HamburgerContainer>
             <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
           </HamburgerContainer>

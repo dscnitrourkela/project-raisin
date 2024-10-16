@@ -21,7 +21,7 @@ export const MainBar = styled.nav`
   backdrop-filter: blur(30px);
 
   ${tw`
-    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-20 justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl lg:mr-0 md:mr-[50px]
+    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-8 justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl lg:mr-0 md:mr-[50px]
   `}
 `;
 
@@ -62,4 +62,8 @@ export const ResItem = styled.li`
 
 export const HamburgerRegisterButton = styled(PrimaryButton)`
   ${tw`min-[930px]:hidden  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 `}
+`;
+
+export const RegisterButton = styled(PrimaryButton)`
+  ${tw`hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 ml-10 h-12 mt-2`}
 `;
