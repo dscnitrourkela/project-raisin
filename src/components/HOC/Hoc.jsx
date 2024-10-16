@@ -1,14 +1,15 @@
 'use client';
+import { AuthProvider } from '@/context/auth-context';
 import { Footer } from '../Footer/Footer';
 import Navbar from '../Marginals/navbar/navbar';
 
 function Hoc({ children }) {
   return (
-    <>
+    <AuthProvider>
       <Navbar />
-      <div className=''>{children}</div>
+      <div>{children}</div>
       <Footer />
-    </>
+    </AuthProvider>
   );
 }
 
