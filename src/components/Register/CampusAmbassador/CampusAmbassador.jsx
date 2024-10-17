@@ -1,5 +1,9 @@
 import CheckBox from '../InputCheckBox/CheckBox';
-import { beamImage, campusAmbassadorInput } from '@/config/content/Registration/details';
+import {
+  beamImage,
+  campusAmbassadorInput,
+  campusAbassadorPara,
+} from '@/config/content/Registration/details';
 import {
   Container,
   BeamImage,
@@ -16,10 +20,7 @@ function CampusAmbassador({ handleChange, userReferral }) {
     <Container>
       <BeamImage src={beamImage} alt='Campus Ambassador' height={500} width={500} />
       <Title>Campus Ambassador</Title>
-      <Description>
-        Become a Campus Ambassador and unlock exclusive perks, leadership opportunities, and
-        unforgettable experiences!
-      </Description>
+      <Description>{campusAbassadorPara}</Description>
       <CheckBoxWrapper>
         <CheckBox
           name={campusAmbassadorInput.id}

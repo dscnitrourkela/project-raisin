@@ -57,17 +57,17 @@ export const formFields = [
     type: 'text',
     id: 'rollNumber',
   },
-  {
-    label: 'Referral Code',
-    type: 'text',
-    id: 'referralCode',
-  },
+
   {
     label: 'Upload College ID',
     type: 'file',
     id: 'idCard',
   },
-
+  {
+    label: 'Referral Code',
+    type: 'text',
+    id: 'referralCode',
+  },
   {
     label: 'Gender',
     type: 'select',
@@ -101,3 +101,5 @@ export const buttonImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728800884/uploadButton_wvzexw.png';
 export const beamImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';
+
+export const campusAbassadorPara = `Campus ambassadors need to get minimum of 50 registrations from their institute in order to be eligible for perks`;

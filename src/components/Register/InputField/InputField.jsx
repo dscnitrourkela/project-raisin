@@ -11,6 +11,7 @@ function InputField({
   label,
   error,
   setErrors,
+  showReferral,
 }) {
   function handleBlur() {
     const validationResult = userSchema.safeParse({ [name]: value });
@@ -24,7 +25,7 @@ function InputField({
     }
   }
 
-  return (
+  return name === 'referralCode' && !showReferral ? null : (
     <InputFieldParentContainer>
       <Label>{label}</Label>
       <InputFieldContainer

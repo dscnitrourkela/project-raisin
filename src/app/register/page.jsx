@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -85,6 +85,10 @@ function Page() {
     return true;
   }
 
+  useEffect(() => {
+    console.log(userDetails);
+  }, [userDetails]);
+
   function returnFormFields(field) {
     switch (field.type) {
       case 'text':
@@ -102,6 +106,7 @@ function Page() {
             label={field.label}
             error={errors[field.id]}
             setErrors={setErrors}
+            showReferral={userDetails.undertaking}
           />
         );
       case 'select':
@@ -116,6 +121,7 @@ function Page() {
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
+            setErrors={setErrors}
           />
         );
       case 'file':
