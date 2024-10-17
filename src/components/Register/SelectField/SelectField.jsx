@@ -12,6 +12,7 @@ import {
   SelectFieldInput,
   SelectFieldParentContainer,
 } from './SelectField.styles';
+
 function SelectField({
   options = [],
   handleSelect,
@@ -27,7 +28,10 @@ function SelectField({
   const [selectedOption, setSelectedOption] = useState(value || '');
   const [otherInstituteName, setOtherInstituteName] = useState('');
   const isOneLine = className?.includes('oneliner');
-  const isOthers = selectedOption === 'others';
+
+  const isOthers =
+    (!options.some((option) => option.value === selectedOption) && selectedOption !== '') ||
+    selectedOption === 'others';
 
   useEffect(() => {
     setSelectedOption(value || '');
@@ -38,10 +42,18 @@ function SelectField({
   const handleSelectChange = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
-    handleSelect((prevState) => ({
-      ...prevState,
-      [name]: option,
-    }));
+
+    if (option === '') {
+      handleSelect((prevState) => ({
+        ...prevState,
+        [name]: otherInstituteName,
+      }));
+    } else {
+      handleSelect((prevState) => ({
+        ...prevState,
+        [name]: option,
+      }));
+    }
   };
 
   useEffect(() => {
@@ -79,6 +91,7 @@ function SelectField({
         {error && !isOthers && <ErrorMessage className='mt-5'>{error}</ErrorMessage>}
         <input type='hidden' name={name} value={selectedOption} />
       </SelectFieldParentContainer>
+
       {isOthers && (
         <div className='mt-5'>
           <InputField

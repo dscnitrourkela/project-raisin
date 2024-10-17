@@ -85,10 +85,6 @@ function Page() {
     return true;
   }
 
-  useEffect(() => {
-    console.log(userDetails);
-  }, [userDetails]);
-
   function returnFormFields(field) {
     switch (field.type) {
       case 'text':
