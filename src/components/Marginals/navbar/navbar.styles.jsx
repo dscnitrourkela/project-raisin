@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const NavContainer = styled.nav`
-  ${tw`fixed top-0 w-full h-10 max-w-7xl p-3 mx-auto mt-4 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-6 md:mt-7 left-[50%] z-[1000] translate-x-[-50%]`}
+  ${tw`fixed top-0 w-full h-10 max-w-7xl p-3 mx-auto mt-0 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-4 md:mt-6 left-[50%] z-[1000] translate-x-[-50%]`}
 `;
 
 export const NavCover = styled.div`
@@ -21,7 +21,7 @@ export const MainBar = styled.nav`
   backdrop-filter: blur(30px);
 
   ${tw`
-    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-20 justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl lg:mr-0 md:mr-[50px]
+    inline-flex items-center rounded-md border-[1.14px] border-solid border-white/[0.06] bg-white/[0.02] p-5 py-2 pr-8 justify-between  w-full max-[930px]:hidden max-w-xl md:max-w-2xl lg:max-w-4xl lg:mr-0 md:mr-[50px]
   `}
 `;
 
@@ -62,4 +62,8 @@ export const ResItem = styled.li`
 
 export const HamburgerRegisterButton = styled(PrimaryButton)`
   ${tw`min-[930px]:hidden  hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 `}
+`;
+
+export const RegisterButton = styled(PrimaryButton)`
+  ${tw`hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 ml-10 h-12 mt-2 max-[930px]:hidden`}
 `;
