@@ -19,8 +19,30 @@ export const formFields = [
   },
 
   {
-    label: 'Name of the Institute  (Full Name) ',
-    type: 'text',
+    label: 'Name of the Institute',
+    type: 'select',
+    options: [
+      {
+        label: 'NIT Rourkela',
+        value: 'NIT Rourkela',
+      },
+      {
+        label: 'NIT Trichy',
+        value: 'NIT Trichy',
+      },
+      {
+        label: 'NIT Warangal',
+        value: 'NIT Warangal',
+      },
+      {
+        label: 'NIT Surathkal',
+        value: 'NIT Surathkal',
+      },
+      {
+        label: 'Others',
+        value: 'others',
+      },
+    ],
     id: 'institute',
     className: 'w-full',
   },
@@ -35,12 +57,17 @@ export const formFields = [
     type: 'text',
     id: 'rollNumber',
   },
+
   {
     label: 'Upload College ID',
     type: 'file',
     id: 'idCard',
   },
-
+  {
+    label: 'Referral Code',
+    type: 'text',
+    id: 'referralCode',
+  },
   {
     label: 'Gender',
     type: 'select',
@@ -55,22 +82,18 @@ export const formFields = [
       },
     ],
     id: 'gender',
-    className: '',
-  },
-  {
-    label: 'Authorisation/Permission by Institute',
-    type: 'file',
-    id: 'permission',
-  },
-  {
-    label: 'Screenshot of payment',
-    type: 'file',
-    id: 'payment',
+    className: 'oneliner',
   },
   {
     label: 'By proceeding, you agree to our terms and conditions.',
     type: 'checkbox',
     id: 'undertaking',
+  },
+  {
+    label:
+      'I have obtained authorization/permission from the institute and will bring it with me to the fest.',
+    type: 'checkbox',
+    id: 'permission',
   },
 ];
 
@@ -84,3 +107,14 @@ export const buttonImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728800884/uploadButton_wvzexw.png';
 export const beamImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';
+
+export const campusAbassadorPara = `Campus ambassadors need to get minimum of 50 registrations from their institute in order to be eligible for perks`;
+
+export const notAllowedInstitutes = [
+  "Siksha 'O' Anusandhan ",
+  'SOA',
+  'ITER',
+  'Institute of Technical Education and Research',
+  'Institute of Technical Education and Research SOA',
+  'ITER SOA',
+];

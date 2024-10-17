@@ -7,7 +7,7 @@ const SelectFieldParentContainer = styled.div`
 `;
 
 const LabelAndInputContainer = styled.div`
-  ${tw`flex flex-col xxs:flex-row items-center justify-start gap-[38px] w-auto md:w-[35rem]`}
+  ${tw` flex justify-start gap-[38px] w-auto md:w-[35rem]`}
 `;
 
 const SelectFieldContainer = styled.div`
