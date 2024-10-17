@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -118,6 +118,7 @@ function Page() {
             label={field.label}
             error={errors[field.id]}
             setErrors={setErrors}
+            allowedRegistrations={0}
           />
         );
       case 'file':
