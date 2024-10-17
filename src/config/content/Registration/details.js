@@ -109,3 +109,12 @@ export const beamImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';
 
 export const campusAbassadorPara = `Campus ambassadors need to get minimum of 50 registrations from their institute in order to be eligible for perks`;
+
+export const notAllowedInstitutes = [
+  "Siksha 'O' Anusandhan ",
+  'SOA',
+  'ITER',
+  'Institute of Technical Education and Research',
+  'Institute of Technical Education and Research SOA',
+  'ITER SOA',
+];
