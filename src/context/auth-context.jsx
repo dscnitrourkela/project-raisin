@@ -1,39 +1,24 @@
 import { createContext, useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
-import { auth, signInWithGoogle, signOutUser } from '@/firebase/auth';
+import { signInWithGoogle, signOutUser } from '@/firebase/auth';
+import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [userInfo, setUserData] = useState({});
-
-  // const listenForAuthChanges = () => {
-  //   onAuthStateChanged(auth, async (user) => {
-  //     if (user) {
-  //       const idToken = await user.getIdToken();
-  //       localStorage.setItem('auth-token', idToken);
-  //       const userData = {
-  //         name: user.displayName,
-  //         email: user.email,
-  //         uid: user.uid,
-  //       };
-  //       setUserData(userData);
-  //     } else {
-  //       setUserData({});
-  //     }
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   listenForAuthChanges();
-  // }, []);
+  const [authLoading, setAuthLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
+    setAuthLoading(true);
     try {
       const user = await signInWithGoogle();
       if (user) {
         const userData = { name: user.displayName, email: user.email, uid: user.uid };
+        Cookies.set('userData', JSON.stringify(userData), {
+          expires: 7,
+          sameSite: 'strict',
+        });
         setUserData(userData);
         toast.success('Successfully signed in with Google.');
       } else {
@@ -42,6 +27,8 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       console.error('Error signing in with Google:', error);
       toast.error('Error signing in with Google. Please try again.');
+    } finally {
+      setAuthLoading(false);
     }
   };
 
@@ -49,6 +36,7 @@ export const AuthProvider = ({ children }) => {
     try {
       await signOutUser();
       setUserData({});
+      Cookies.remove('userData');
       toast.success('Successfully signed out.');
     } catch (error) {
       console.error('Error signing out:', error);
@@ -57,7 +45,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ userInfo, setUserData, handleGoogleSignIn, handleSignOut }}>
+    <AuthContext.Provider
+      value={{ userInfo, setUserData, handleGoogleSignIn, handleSignOut, authLoading }}
+    >
       {children}
     </AuthContext.Provider>
   );

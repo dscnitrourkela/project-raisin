@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useLayoutEffect, useContext } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -13,10 +13,13 @@ import SelectField from '@/components/Register/SelectField/SelectField';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import { formFields } from '@/config/content/Registration/details';
-import { uploadToCloudinary } from '../utils/uploadToCloudinary';
-import handleLoadingAndToast from '../utils/handleLoadingToast';
+import { uploadToCloudinary } from '../../utils/uploadToCloudinary';
+import handleLoadingAndToast from '../../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
+import { useUserDetails } from '@/hooks/useUserDetails';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
+import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { AuthContext } from '@/context/auth-context';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -34,6 +37,16 @@ function Page() {
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const getUserDetails = useUserDetails();
+  const { handleGoogleSignIn, userInfo, authLoading } = useContext(AuthContext);
+
+  useLayoutEffect(() => {
+    const userDetails = getUserDetails();
+    if (userDetails.name) {
+      setIsLoggedIn(true);
+    }
+  }, [getUserDetails, userInfo]);
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -146,18 +159,24 @@ function Page() {
   return (
     <RegisterContainer>
       <Moon />
-      <RegisterInnerContainer>
-        <RegisterHeading>Register</RegisterHeading>
-        <RegisterForm>
-          {formFields.map((field) => {
-            return returnFormFields(field);
-          })}
-        </RegisterForm>
-        <CampusAmbassador handleChange={handleChange} />
-        <RegsiterButton onClick={handleSubmit} disabled={loading}>
-          Submit
-        </RegsiterButton>
-      </RegisterInnerContainer>
+      {isLoggedIn ? (
+        <RegisterInnerContainer>
+          <RegisterHeading>Register</RegisterHeading>
+          <RegisterForm>
+            {formFields.map((field) => {
+              return returnFormFields(field);
+            })}
+          </RegisterForm>
+          <CampusAmbassador handleChange={handleChange} />
+          <RegsiterButton onClick={handleSubmit} disabled={loading}>
+            Submit
+          </RegsiterButton>
+        </RegisterInnerContainer>
+      ) : (
+        <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading}>
+          {authLoading ? 'Loading...' : 'Sign In with Google'}
+        </PrimaryButton>
+      )}
     </RegisterContainer>
   );
 }
