@@ -28,7 +28,7 @@ function Page() {
     idCard: '',
     referralCode: '',
     gender: '',
-    permission: '',
+    permission: false,
     payment: '',
     undertaking: false,
     campusAmbassador: false,
@@ -161,7 +161,11 @@ function Page() {
             return returnFormFields(field);
           })}
         </RegisterForm>
-        <CampusAmbassador handleChange={handleChange} userReferral={userDetails.phone} />
+        <CampusAmbassador
+          handleChange={handleChange}
+          userReferral={userDetails.phone}
+          isCampusAmbassador={userDetails.campusAmbassador}
+        />
         <RegsiterButton onClick={handleSubmit} disabled={loading}>
           Submit
         </RegsiterButton>

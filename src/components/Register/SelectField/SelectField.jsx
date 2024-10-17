@@ -40,9 +40,18 @@ function SelectField({
     setIsOpen(false);
     handleSelect((prevState) => ({
       ...prevState,
-      [name]: option === 'others' ? otherInstituteName : option,
+      [name]: option,
     }));
   };
+
+  useEffect(() => {
+    if (isOthers) {
+      handleSelect((prevState) => ({
+        ...prevState,
+        [name]: otherInstituteName,
+      }));
+    }
+  }, [otherInstituteName]);
 
   return (
     <div>

@@ -11,7 +11,7 @@ import {
   Description,
   CheckBoxWrapper,
 } from './CampusAmbassador.styles';
-function CampusAmbassador({ handleChange, userReferral }) {
+function CampusAmbassador({ handleChange, userReferral, isCampusAmbassador }) {
   function isUserRefferalCorrect(referralCode) {
     return referralCode.length === 10 && /^\d+$/.test(String(referralCode));
   }
@@ -30,13 +30,15 @@ function CampusAmbassador({ handleChange, userReferral }) {
         />
       </CheckBoxWrapper>
 
-      {isUserRefferalCorrect(userReferral) && (
+      {isCampusAmbassador && isUserRefferalCorrect(userReferral) && (
         <Description
           style={{
             marginTop: '3rem',
           }}
         >
           Your referral code is <strong>{userReferral}</strong>
+          <br />
+          <code className='text-lg'>Use this while referring to your peers.</code>
         </Description>
       )}
     </Container>

@@ -89,6 +89,12 @@ export const formFields = [
     type: 'checkbox',
     id: 'undertaking',
   },
+  {
+    label:
+      'I have obtained authorization/permission from the institute and will bring it with me to the fest.',
+    type: 'checkbox',
+    id: 'permission',
+  },
 ];
 
 export const campusAmbassadorInput = {
