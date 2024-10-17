@@ -14,7 +14,7 @@ export const userSchema = z.object({
   institute: z
     .string()
     .min(1, 'Institute name is required')
-    .refine((val) => notAllowedInstitutes.indexOf(val) === -1, {
+    .refine((val) => notAllowedInstitutes.indexOf(val.toUpperCase()) === -1, {
       message: 'Students from this institute are not allowed to participate',
     }),
   university: z.string().min(1, 'University name is required'),

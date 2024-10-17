@@ -42,7 +42,10 @@ function SelectField({
   const handleSelectChange = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
-
+    setErrors((prevState) => ({
+      ...prevState,
+      [name]: '',
+    }));
     if (option === '') {
       handleSelect((prevState) => ({
         ...prevState,
@@ -57,6 +60,10 @@ function SelectField({
   };
 
   useEffect(() => {
+    setErrors((prevState) => ({
+      ...prevState,
+      [name]: '',
+    }));
     if (isOthers) {
       handleSelect((prevState) => ({
         ...prevState,
