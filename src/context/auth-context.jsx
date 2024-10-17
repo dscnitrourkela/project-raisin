@@ -1,9 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-
 import { onAuthStateChanged } from 'firebase/auth';
-import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
-
 import { auth, signInWithGoogle, signOutUser } from '@/firebase/auth';
 
 export const AuthContext = createContext();
@@ -11,26 +8,26 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [userInfo, setUserData] = useState({});
 
-  const listenForAuthChanges = () => {
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const idToken = await user.getIdToken();
-        localStorage.setItem('auth-token', idToken);
-        const userData = {
-          name: user.displayName,
-          email: user.email,
-          uid: user.uid,
-        };
-        setUserData(userData);
-      } else {
-        setUserData({});
-      }
-    });
-  };
+  // const listenForAuthChanges = () => {
+  //   onAuthStateChanged(auth, async (user) => {
+  //     if (user) {
+  //       const idToken = await user.getIdToken();
+  //       localStorage.setItem('auth-token', idToken);
+  //       const userData = {
+  //         name: user.displayName,
+  //         email: user.email,
+  //         uid: user.uid,
+  //       };
+  //       setUserData(userData);
+  //     } else {
+  //       setUserData({});
+  //     }
+  //   });
+  // };
 
-  useEffect(() => {
-    listenForAuthChanges();
-  }, []);
+  // useEffect(() => {
+  //   listenForAuthChanges();
+  // }, []);
 
   const handleGoogleSignIn = async () => {
     try {
@@ -64,8 +61,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-};
-
-AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };
