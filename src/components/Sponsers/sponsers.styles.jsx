@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 export const SponsorWrapper = styled.div`
-  ${tw`min-h-screen p-4 sm:p-6 md:p-8 bg-black bg-opacity-50`}
+  ${tw`min-h-screen p-4 bg-black bg-opacity-50 sm:p-6 md:p-8`}
 `;
 
 export const SponsorContainer = styled.div`
