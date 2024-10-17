@@ -42,3 +42,5 @@ next-env.d.ts
 yarn.lock
 
 .env
+
+/src/app/test
