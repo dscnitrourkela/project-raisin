@@ -39,6 +39,15 @@ module.exports = {
         spaceX: 'var(--font-spacex)',
         spaceGrotesk: 'var(--font-space_grotesk)',
       },
+      keyframes: {
+        glow: {
+          '0%': { boxShadow: '0 0 0px #fef08a' },
+          '100%': { boxShadow: '0 4px 15px #fef08a' },
+        },
+      },
+      animation: {
+        glow: 'glow 1s ease-in-out infinite alternate',
+      },
     },
   },
   plugins: [nextui()],

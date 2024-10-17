@@ -29,8 +29,9 @@ function Page() {
     university: '',
     rollNumber: '',
     idCard: '',
+    referralCode: '',
     gender: '',
-    permission: '',
+    permission: false,
     payment: '',
     undertaking: false,
     campusAmbassador: false,
@@ -113,6 +114,8 @@ function Page() {
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
+            setErrors={setErrors}
+            showReferral={userDetails.undertaking}
           />
         );
       case 'select':
@@ -127,6 +130,8 @@ function Page() {
             className={field?.className}
             label={field.label}
             error={errors[field.id]}
+            setErrors={setErrors}
+            allowedRegistrations={0}
           />
         );
       case 'file':
@@ -167,7 +172,11 @@ function Page() {
               return returnFormFields(field);
             })}
           </RegisterForm>
-          <CampusAmbassador handleChange={handleChange} />
+          <CampusAmbassador
+            handleChange={handleChange}
+            userReferral={userDetails.phone}
+            isCampusAmbassador={userDetails.campusAmbassador}
+          />
           <RegsiterButton onClick={handleSubmit} disabled={loading}>
             Submit
           </RegsiterButton>

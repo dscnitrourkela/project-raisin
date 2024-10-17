@@ -18,7 +18,6 @@ const Hero = () => {
   const buttonVariants = {
     hover: {
       scale: 1.1,
-      boxShadow: '0px 0px 10px rgba(0, 255, 0, 0.8)',
       transition: { yoyo: Infinity },
     },
   };

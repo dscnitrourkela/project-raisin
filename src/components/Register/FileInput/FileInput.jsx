@@ -4,14 +4,7 @@ import { ErrorMessage } from '../InputField/InputField.styles';
 import Image from 'next/image';
 import { buttonImage } from '@/config/content/Registration/details';
 import { useRef, useState } from 'react';
-export default function FileInput({
-  label = 'Upload File',
-  placeholder = 'Choose a file',
-  handleChange,
-  name,
-  className,
-  error,
-}) {
+export default function FileInput({ label = 'Upload File', handleChange, name, className, error }) {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState('');
 
