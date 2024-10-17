@@ -5,14 +5,14 @@ export const MainContainer = styled.div`
 `;
 
 export const BodyWrapper = styled.div`
-  ${tw`overflow-clip relative h-auto w-auto `}
+  ${tw`relative w-auto h-auto bg-black bg-opacity-20 overflow-clip`}
 `;
 
 export const BodyTitle = styled.h1`
-  ${tw`text-[25px] md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center  py-16  text-white`}
+  ${tw`text-[25px] md:text-3xl lg:text-5xl mb-4 font-bold font-spaceX  rounded-xl mx-10 text-center pt-20 pb-10  text-white  `}
 `;
 export const BodyContent = styled.div`
-  ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px] bg-black bg-opacity-50 py-20`}
+  ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]  pb-16  `}
 `;
 
 export const BodyContentColumn = styled.div`
