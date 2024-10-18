@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <>
       <div id='events'>
-        <div className='w-full flex items-center overflow-hidden'>
+        <div className='flex items-center w-full overflow-hidden bg-black bg-opacity-50'>
           <BodyTitle
             className='w-full'
             style={{
