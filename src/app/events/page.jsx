@@ -15,6 +15,8 @@ import {
 import { ME_descriptionItems } from '@/config/content/EventsPage/MainEvents/Data';
 import { DTS_previewItems } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { Exhibition_previewItems } from '@/config/content/EventsPage/Exhibition/Data';
+import Gallery from '@/components/EventsPage/Gallery/Gallery';
+import { galleryImages } from '@/config/content/EventsPage/Gallery/const';
 
 export default function Page() {
   return (
@@ -30,6 +32,7 @@ export default function Page() {
       <Heading3>SHOWS AT DTS</Heading3>
       <MainCarousel previewItems={DTS_previewItems} descriptionItems={GL_descriptionItems} />
       <Heading3>GALLERY</Heading3>
+      <Gallery images={galleryImages} />
     </EventsContainer>
   );
 }
