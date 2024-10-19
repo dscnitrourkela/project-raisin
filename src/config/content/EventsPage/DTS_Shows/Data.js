@@ -34,6 +34,7 @@ export const DTS_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'DTS Stage',
     Date: '',
+    Time: '',
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ export const DTS_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'DTS Stage',
     Date: '',
+    Time: '',
   },
   {
     id: 3,
@@ -52,6 +54,7 @@ export const DTS_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'DTS Stage',
     Date: '',
+    Time: '',
   },
   {
     id: 4,
@@ -61,5 +64,6 @@ export const DTS_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'DTS Stage',
     Date: '',
+    Time: '',
   },
 ];

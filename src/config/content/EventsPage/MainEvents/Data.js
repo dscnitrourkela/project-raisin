@@ -306,6 +306,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'LA-104',
     Date: 'Day 1',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -317,6 +318,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179005/inno-2024/Event%20Posters/DesignTab/q2cmztmsuzffzzhw1oqo.png',
     Location: 'Online',
     Date: '',
+    Time: '',
     Prizes: '₹2000',
   },
   {
@@ -328,6 +330,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179007/inno-2024/Event%20Posters/omc/punchline%20panchayat/dwp4xyq08fcemqn9nxtj.png',
     Location: 'BBA',
     Date: 'Day 2',
+    Time: '',
     Prizes: '',
   },
   {
@@ -338,6 +341,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'LA1-122',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -349,6 +353,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179013/inno-2024/Event%20Posters/STEELLUN%20-%20The%20Material%20Advantage%20Chapter%2C%20NITR/midccr2zknd4zbezvj6j.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -360,6 +365,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179006/inno-2024/Event%20Posters/E-Cell%20-%20IPL%20Auction/rjt0ynbdwdap7hj3unqt.png',
     Location: 'PPA',
     Date: 'Day 3',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -371,6 +377,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179007/inno-2024/Event%20Posters/Bears%20and%20Bulls/gdmjrwrzmbnmvgpzzpqf.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -382,6 +389,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179011/inno-2024/Event%20Posters/The%20Bioscience%20Society%20-%20Brainy%20Escape%203.0/ddcl3drtik9setdlkxlf.png',
     Location: 'LA1-114,104',
     Date: 'Day 1',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -391,6 +399,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -401,6 +410,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -411,6 +421,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -421,6 +432,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -432,6 +444,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179010/inno-2024/Event%20Posters/Sci%20Savior-Inspire%20Club/ofq0fs5l9vtzdbfu2p33.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -443,6 +456,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179016/inno-2024/Event%20Posters/Webclone%20mania_Webwiz/yobeoxuxwbxm1mwvdtes.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -454,6 +468,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179003/inno-2024/Event%20Posters/BrainBoxed%202.0%20%28AnC%29/evl3gsfmephbdm18zqta.png',
     Location: '',
     Date: 'Day 2 & 3',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -465,6 +480,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179015/inno-2024/Event%20Posters/Short%20Circuit/ra3gzjbnsqgv32hn1nva.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -476,6 +492,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729178999/inno-2024/Event%20Posters/ASME/xqnzvvsjy5dtxftyvvbn.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -486,6 +503,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
     Location: 'Open Place in BBA',
     Date: 'Day 1,2 & 3',
+    Time: '',
     Prizes: '',
   },
   {
@@ -496,6 +514,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //aiche TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -507,6 +526,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179011/inno-2024/Event%20Posters/Tiburon%20-%20Shark%20Hunt/jkkha9t3e91hhbdwgetu.png',
     Location: '',
     Date: 'Day 2',
+    Time: '',
     Prizes: '₹2000',
   },
   {
@@ -518,6 +538,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179009/inno-2024/Event%20Posters/Jnanagni%20-%20Inquizzitive/bb8thtrztcbxikvjjgjo.png',
     Location: '',
     Date: 'Day 2',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -529,6 +550,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729178999/inno-2024/Event%20Posters/jv2umrted9dx0jcgfrvb.png',
     Location: 'PPA',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -539,6 +561,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
     Location: '',
     Date: 'Day 2',
+    Time: '',
     Prizes: '',
   },
   {
@@ -550,6 +573,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179000/inno-2024/Event%20Posters/tl0i8idt3sozlan2s7cy.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹2000',
   },
   {
@@ -560,6 +584,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //cyborg TBA
     Location: 'Hall in LA (Infront of Elevator)',
     Date: 'Day 2',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -571,6 +596,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179016/inno-2024/Event%20Posters/Shake%20It%20Off-%20CEST/axcxc1bg60cyvv6cdunn.jpg',
     Location: 'SAC (Infront of SAC Stairs)',
     Date: 'Day 2 & 3',
+    Time: '',
     Prizes: '₹5000',
   },
   {
@@ -581,6 +607,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹10000',
   },
   {
@@ -592,6 +619,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179009/inno-2024/Event%20Posters/Business%20Pictionary%20-%20Grapevine/dedx2sfes6oib1gv7keo.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹2000',
   },
   {
@@ -603,6 +631,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179013/inno-2024/Event%20Posters/UDAAN/d6xoa6vlebahnb7q86gv.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -613,6 +642,7 @@ export const ME_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179011/inno-2024/Event%20Posters/FTS/xk2bx2rmqkqu5lmvzgpd.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹3000',
   },
   {
@@ -623,6 +653,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -633,6 +664,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -643,6 +675,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'PPA',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -653,6 +686,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'LA1-117',
     Date: 'DAY 2',
+    Time: '',
     Prizes: '',
   },
   {
@@ -663,6 +697,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: 'DAY 1',
+    Time: '',
     Prizes: '',
   },
   {
@@ -673,6 +708,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'BBA',
     Date: 'DAY 3',
+    Time: '',
     Prizes: '',
   },
   {
@@ -683,6 +719,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: 'DAY 1',
+    Time: '',
     Prizes: '',
   },
   {
@@ -693,6 +730,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -703,6 +741,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -713,6 +752,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -723,6 +763,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -733,6 +774,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -743,6 +785,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -753,6 +796,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'NCC Ground',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -763,6 +807,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: 'STS Ground',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -773,6 +818,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -783,6 +829,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -793,6 +840,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -803,6 +851,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -813,6 +862,7 @@ export const ME_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
 ];

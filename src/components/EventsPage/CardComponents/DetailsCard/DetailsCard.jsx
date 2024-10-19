@@ -6,9 +6,8 @@ import {
   DescriptionCardContent,
   DescriptionCardBottom,
 } from './DetailsCard.style';
-// import { MainBar, MenuLogoItem } from '@/components/Marginals/navbar/navbar.styles';
 
-function DetailsCard({ ImageURL, Heading, Description }) {
+function DetailsCard({ ImageURL, Heading, Description, Location, Date, Time, Prizes }) {
   return (
     <div className='flex flex-col items-center gap-5'>
       <DescriptionCardContainer>
@@ -33,7 +32,16 @@ function DetailsCard({ ImageURL, Heading, Description }) {
               width={60}
               height={60}
             />
-            <div className='font-bold'>BBA </div>
+            <div className='font-bold'>{Location} </div>
+          </div>
+          <div className='flex gap-1 items-center '>
+            <Image
+              src='https://res.cloudinary.com/dhv234qct/image/upload/v1729337575/ywb8h5oubo7hlqrmtjxa.svg'
+              alt='img'
+              width={60}
+              height={60}
+            />
+            <div className='font-bold'>{Prizes} </div>
           </div>
           <div className='flex gap-4 items-center '>
             <Image
@@ -44,8 +52,8 @@ function DetailsCard({ ImageURL, Heading, Description }) {
               className='w-[48px] h-[48px] xsm:w-[60px] xsm:h-[60px]'
             />
             <div className='flex flex-col '>
-              <div className='font-bold'>19th OCT</div>
-              <div className='font-semibold text-xs xsm:text-xl text-white/[0.5]'>4:00 AM</div>
+              <div className='font-bold'>{Date}</div>
+              <div className='font-semibold text-xs xsm:text-xl text-white'>{Time}</div>
             </div>
           </div>
         </DescriptionCardBottom>
