@@ -7,7 +7,7 @@ const SelectFieldParentContainer = styled.div`
 `;
 
 const LabelAndInputContainer = styled.div`
-  ${tw`flex flex-col xxs:flex-row items-center justify-start gap-[38px] w-auto md:w-[35rem]`}
+  ${tw` flex justify-start gap-[38px] w-auto md:w-[35rem]`}
 `;
 
 const SelectFieldContainer = styled.div`
@@ -26,7 +26,7 @@ const SelectFieldContainer = styled.div`
 `;
 
 const SelectFieldInput = styled.div`
-  ${tw`appearance-none capitalize outline-none border-0 shadow-none flex-1  cursor-pointer w-32`}
+  ${tw`appearance-none capitalize outline-none border-0 shadow-none flex-1  cursor-pointer w-32 truncate`}
 `;
 
 const DropdownIcon = styled(ChevronDown)`

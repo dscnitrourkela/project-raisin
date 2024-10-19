@@ -4,12 +4,12 @@ import { JetImage } from './JetImage';
 export const Header = () => {
   return (
     <>
-      <div className='w-full flex justify-center sm:justify-between items-center overflow-hidden'>
-        <div className='w-1/3  max-sm:hidden '>
+      <div className='flex items-center justify-center w-full overflow-hidden bg-black bg-opacity-50 sm:justify-between'>
+        <div className='w-1/3 max-sm:hidden bg-opacity-20'>
           <JetImage />
         </div>
-        <BodyTitle className='flex justify-center items-center'>STATISTICS</BodyTitle>
-        <div className='w-1/3  sm:block hidden'></div>
+        <BodyTitle className='flex items-center justify-center '>STATISTICS</BodyTitle>
+        <div className='hidden w-1/3 sm:block'></div>
       </div>
     </>
   );
