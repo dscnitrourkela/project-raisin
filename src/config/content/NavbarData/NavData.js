@@ -6,10 +6,10 @@ export const logos = [
 ];
 
 export const navLinks = [
-  { name: 'About us', link: '/playground#aboutus' },
-  { name: 'Events', link: '/playground#events' },
-  { name: 'Sponsers', link: '/playground#sponsers' },
-  { name: 'Contact Us', link: '/playground#contact' },
+  { name: 'About us', link: '/#aboutus' },
+  { name: 'Events', link: '/#events' },
+  { name: 'Sponsers', link: '/#sponsers' },
+  { name: 'Contact Us', link: '/#contact' },
 ];
 
 export const ButtonData = {
