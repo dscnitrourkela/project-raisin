@@ -20,6 +20,7 @@ import { useUserDetails } from '@/hooks/useUserDetails';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
+import { RegistrationModal } from './RegistrationModal';
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -161,10 +162,21 @@ function Page() {
     }
   }
 
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  function handleSubmit() {
+    const isFormValid = validateForm();
+    if (!isFormValid) return;
+    setModalOpen(true);
+    console.log(userDetails);
+  }
+
   return (
     <RegisterContainer>
       <Moon />
-      {isLoggedIn ? (
+
+      {/* //---------------------commented out google auth part--------------------- */}
+      {/* {isLoggedIn ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
@@ -185,7 +197,26 @@ function Page() {
         <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading}>
           {authLoading ? 'Loading...' : 'Sign In with Google'}
         </PrimaryButton>
-      )}
+      )} */}
+      {/* //---------------------commented out google auth part--------------------- */}
+
+      <RegisterInnerContainer>
+        <RegisterHeading>Register</RegisterHeading>
+        <RegisterForm>
+          {formFields.map((field) => {
+            return returnFormFields(field);
+          })}
+        </RegisterForm>
+        <CampusAmbassador
+          handleChange={handleChange}
+          userReferral={userDetails.phone}
+          isCampusAmbassador={userDetails.campusAmbassador}
+        />
+        <RegsiterButton onClick={handleSubmit} disabled={loading}>
+          Submit
+        </RegsiterButton>
+      </RegisterInnerContainer>
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </RegisterContainer>
   );
 }
