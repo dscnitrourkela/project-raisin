@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { socials, secondcol, thirdcol, footerBottom, firstcol } from '@/config/content/Footer';
 import Link from 'next/link';
 import MapModal from './MapModal';
-import { List, SmallList } from '../shared/Typography/Lists';
+import { List, SmallList } from '../../shared/Typography/Lists';
 
 import {
   FooterContainer,
@@ -28,7 +28,7 @@ import {
   Overlay,
   Modal,
 } from './styles';
-import { LogoText2 } from '../shared/Typography/Headings';
+import { LogoText2 } from '../../shared/Typography/Headings';
 // import { createPortal } from 'react-dom';
 import { PaymentPolicyModal } from './PaymentPolicyModel';
 import { useEffect, useState } from 'react';

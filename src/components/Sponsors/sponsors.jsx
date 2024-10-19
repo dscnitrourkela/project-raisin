@@ -1,10 +1,10 @@
 import React from 'react';
-import { sponsorData } from '@/config/content/Sponsers/sponsers';
-import { SponsorWrapper, SponsorContainer, SponsorRow, HalfColumn } from './sponsers.styles';
+import { sponsorData } from '@/config/content/Sponsors/sponsors';
+import { SponsorWrapper, SponsorContainer, SponsorRow, HalfColumn } from './sponsors.styles';
 import { SponsorCategory } from './sponsorCategory';
 import { Header } from './Header';
 
-const SponsorSection = () => {
+export const SponsorSection = () => {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ const SponsorSection = () => {
       }}
     >
       <Header />
-      <SponsorWrapper id='sponsers'>
+      <SponsorWrapper id='sponsors'>
         <SponsorContainer>
           <SponsorCategory title='Past Sponsors' sponsors={sponsorData.alpha} />
           {/* <SponsorCategory title='Beta Sponsors' sponsors={sponsorData.beta} /> */}
@@ -22,5 +22,3 @@ const SponsorSection = () => {
     </div>
   );
 };
-
-export default SponsorSection;
