@@ -11,7 +11,7 @@ import {
   Space_Grotesk as SpaceGrotesk,
 } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
-import Hoc from '@/components/HOC/Hoc';
+import Hoc from '@/components/shared/HOC/Hoc';
 
 const spaceX = localFont({
   src: '../fonts/SpaceX.ttf',

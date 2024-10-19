@@ -26,7 +26,7 @@ const SelectFieldContainer = styled.div`
 `;
 
 const SelectFieldInput = styled.div`
-  ${tw`appearance-none capitalize outline-none border-0 shadow-none flex-1  cursor-pointer w-32`}
+  ${tw`appearance-none capitalize outline-none border-0 shadow-none flex-1  cursor-pointer w-32 truncate`}
 `;
 
 const DropdownIcon = styled(ChevronDown)`
