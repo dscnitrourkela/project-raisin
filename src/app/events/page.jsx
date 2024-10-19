@@ -19,12 +19,12 @@ export default function Page() {
     <EventsContainer>
       <Heading3>FLAGSHIP EVENTS</Heading3>
       <MainCarousel previewItems={FE_previewItems} descriptionItems={FE_descriptionItems} />
-      <Heading3>GUEST LECTURES</Heading3>
-      <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} />
+      {/* <Heading3>GUEST LECTURES</Heading3>
+      <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} /> */}
       <Heading3>MAIN EVENTS</Heading3>
       <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} />
-      <Heading3>SHOWS AT DTS</Heading3>
-      <MainCarousel previewItems={DTS_previewItems} descriptionItems={DTS_descriptionItems} />
+      {/* <Heading3>SHOWS AT DTS</Heading3>
+      <MainCarousel previewItems={DTS_previewItems} descriptionItems={DTS_descriptionItems} /> */}
       <Heading3>EXHIBITION</Heading3>
       <MainCarousel
         previewItems={Exhibition_previewItems}
