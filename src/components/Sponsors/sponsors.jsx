@@ -4,7 +4,7 @@ import { SponsorWrapper, SponsorContainer, SponsorRow, HalfColumn } from './spon
 import { SponsorCategory } from './sponsorCategory';
 import { Header } from './Header';
 
-const SponsorSection = () => {
+export const SponsorSection = () => {
   return (
     <div
       style={{
@@ -22,5 +22,3 @@ const SponsorSection = () => {
     </div>
   );
 };
-
-export default SponsorSection;
