@@ -8,7 +8,7 @@ export const logos = [
 export const navLinks = [
   { name: 'About us', link: '/#aboutus' },
   { name: 'Events', link: '/#events' },
-  { name: 'Sponsers', link: '/#sponsers' },
+  { name: 'Sponsors', link: '/#sponsors' },
   { name: 'Contact Us', link: '/#contact' },
 ];
 
