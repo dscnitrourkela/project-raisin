@@ -6,7 +6,7 @@ import { ModalText, Para } from './styles';
 export const PaymentPolicyModal = ({ isOpen, onClose }) => {
   return (
     <Modal
-      size='md'
+      size='lg'
       isOpen={isOpen}
       onClose={onClose}
       backdrop='opaque'
