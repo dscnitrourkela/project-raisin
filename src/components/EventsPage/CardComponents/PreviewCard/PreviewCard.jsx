@@ -2,14 +2,14 @@ import Image from 'next/image';
 import {
   PreviewCardContainer,
   PreviewCardContent,
-  PreviewCardImage,
   PreviewMoreInfoButton,
+  PreviewMoreInfoButton2,
 } from './PreviewCard.style';
 
 function PreviewCard({ ImageURL, PreviewDescription = '' }) {
   const words = PreviewDescription?.split(' ') || [];
   const truncatedDescription =
-    words.length > 20 ? words.slice(0, 38).join(' ') + '...' : PreviewDescription;
+    words.length > 20 ? words.slice(0, 30).join(' ') + '...' : PreviewDescription;
 
   return (
     <PreviewCardContainer>
@@ -18,10 +18,15 @@ function PreviewCard({ ImageURL, PreviewDescription = '' }) {
         alt='CardImage'
         width={338}
         height={250}
-        className='h-[150px] xxs:h-[165px] 2xs:h-[175px] xsm:h-[199px] ssm:h-[214px] sm:h-[235px] md:h-[260px] w-full md:w-[305px]  lg:w-[338px] lg:h-[300px] mb-2 rounded-[17.82px]'
+        className='rounded-[17.82px] h-[170px] xxs:h-[180px] 2xs:h-[190px] xsm:h-[199px] ssm:h-[214px] sm:h-[235px] md:h-[260px] w-full md:w-[305px]  lg:w-[338px] lg:h-[240px] '
       />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
-      <PreviewMoreInfoButton>MORE</PreviewMoreInfoButton>
+      <div className='flex justify-center gap-4 mt-4'>
+        {' '}
+        {/* Reduced gap for symmetry */}
+        <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
+        <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
+      </div>
     </PreviewCardContainer>
   );
 }

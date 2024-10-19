@@ -4,7 +4,7 @@ import { Heading1 } from '@/components/shared/Typography/Headings';
 import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 
 export const DescriptionCardContainer = styled.div`
-  ${tw`w-full flex flex-col-reverse slg:flex-row justify-between bg-transparent pl-2 pr-2 xxs:pl-4 xxs:pr-4 2xs:pl-8 2xs:pr-8 xsm:pl-12 xsm:pr-12 ssm:pl-16 ssm:pr-16 sm:pl-24 sm:pr-24`}
+  ${tw`w-full flex flex-col-reverse slg:flex-row justify-between items-center bg-transparent pl-2 pr-2 xxs:pl-4 xxs:pr-4 2xs:pl-8 2xs:pr-8 xsm:pl-12 xsm:pr-12 ssm:pl-16 ssm:pr-16 sm:pl-24 sm:pr-24`}
 `;
 
 export const DescriptionCardHeading = styled(Heading1)`
@@ -12,7 +12,7 @@ export const DescriptionCardHeading = styled(Heading1)`
 `;
 
 export const DescriptionCardInner = styled.div`
-  ${tw`flex flex-col max-w-[812px]`}
+  ${tw`flex flex-col max-w-[812px] `}
 `;
 
 export const DescriptionCardContent = styled(SmallParagraph)`
@@ -29,4 +29,13 @@ export const DescriptionCardContent = styled(SmallParagraph)`
   @media (min-width: 1280px) {
     ${tw`w-full`}
   }
+`;
+export const DescriptionCardBottom = styled.div`
+  ${tw`flex gap-10 justify-between   h-auto xsm:h-[100px] bg-white/[0.05] items-center p-5 xsm:p-10 text-xs xxxs:text-base xsm:text-2xl rounded-2xl border-[1px] border-white/[0.4]`};
+
+  backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.05);
+
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.2));
+  background-size: 35px 35px;
 `;

@@ -96,6 +96,7 @@ export default function RootLayout({ children }) {
             }}
           />
 
+          <div id='modal-root'></div>
           <Hoc>{children}</Hoc>
         </StyledComponentsRegistry>
       </body>
