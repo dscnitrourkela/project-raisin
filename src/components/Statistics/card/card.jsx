@@ -10,7 +10,7 @@ export const Card = () => {
         className='w-auto md:max-w-[1200px] min-h-[400px] md:min-h-[548px] h-auto bg-[#091123] rounded-[16px] md:rounded-[24px] p-4 md:p-12 lg:p-24 mx-auto content-center'
       >
         <div className='w-full text-center font-orbitron mb-6 md:mb-12 font-semibold text-[14px] sm:text-[16px] md:text-[24px] lg:text-[32px] leading-[22px] md:leading-[40.13px]'>
-          Top College Students Registered for Innovision
+          Top College Registered for Innovision
         </div>
 
         <Table className='w-full'>
@@ -33,9 +33,6 @@ export const Card = () => {
                 </Table.Cell>
                 <Table.Cell className='font-montserrat text-center font-medium text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px] leading-[12px] sm:leading-[18px] md:leading-[22px]'>
                   {item.college}
-                </Table.Cell>
-                <Table.Cell className='font-montserrat text-center font-medium text-[8px] sm:text-[10px] md:text-[14px] lg:text-[16px] leading-[12px] sm:leading-[18px] md:leading-[22px]'>
-                  {item.Students}
                 </Table.Cell>
               </Table.Row>
             ))}

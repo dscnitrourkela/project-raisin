@@ -44,7 +44,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
       swiperRef.current.swiper.slideNext();
-    }, 3000);
+    }, 6000);
   };
 
   const resetAutoSlide = () => {
@@ -81,7 +81,15 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   return !isMobile ? (
     <Wrapper>
       <div className='relative flex justify-center items-center h-auto'>
-        <LeftArrowButton onClick={handlePrev} className='absolute top-[50%] left-5 z-10' />
+        <LeftArrowButton
+          onClick={handlePrev}
+          style={{
+            position: 'absolute',
+            left: '10px',
+            top: '50%',
+            zIndex: 10,
+          }}
+        />
         <LargeScreenView
           onSlideChange={onSlideChange}
           swiperRef={swiperRef}
@@ -89,7 +97,15 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
           previewItems={previewItems}
           descriptionItems={descriptionItems}
         />
-        <RightArrowButton onClick={handleNext} className='absolute right-5 z-10' />
+        <RightArrowButton
+          onClick={handleNext}
+          style={{
+            position: 'absolute',
+            right: '10px',
+            top: '50%',
+            zIndex: 10,
+          }}
+        />
       </div>
       <DescriptionCarousel descriptionItems={descriptionItems} currentIndex={currentIndex} />
     </Wrapper>

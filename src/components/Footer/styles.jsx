@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import { Heading1 } from '../shared/Typography/Headings';
+import { PrimaryButton } from '../shared/Typography/Buttons';
+import { SmallParagraph } from '../shared/Typography/Paragraphs';
 
 export const FooterContainer = styled.div`
   ${tw`flex justify-center w-full bg-black bg-opacity-50`}
@@ -94,4 +97,27 @@ export const FooterSubLogoText = styled.span`
 
 export const ListTitle = styled.li`
   ${tw`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[23px] tracking-wider  font-spaceX list-none `}
+`;
+
+export const Overlay = styled.div`
+  ${tw`fixed top-0 left-0 bottom-0 flex justify-center bg-[#04081A]/[0.4] backdrop-blur bg-cover items-center w-full z-50`};
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+`;
+
+export const Modal = styled.div`
+  ${tw`pl-3 pr-3 rounded-2xl shadow-lg max-w-[400px] flex flex-col items-start gap-5 max-h-[550px] overflow-auto w-full border-[1px] pt-5 pb-5 border-[#00FFD1] bg-[#04081A]`}
+  transition: transform 0.3s ease, opacity 0.3s ease;
+`;
+
+export const ModalText = styled(Heading1)`
+  ${tw`font-bold text-left text-[20px] border-none m-0 p-0`}
+`;
+
+export const ModalExit = styled(PrimaryButton)`
+  ${tw`font-normal hover:scale-105 `}
+`;
+export const Para = styled(SmallParagraph)`
+  ${tw`text-left `}
 `;

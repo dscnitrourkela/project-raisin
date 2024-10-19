@@ -6,6 +6,6 @@ import withTwin from './withTwin.mjs';
 export default withTwin({
   reactStrictMode: true,
   images: {
-    domains: ['res.cloudinary.com', 'picsum.photos'], // Add Cloudinary or any other external image host here
+    domains: ['res.cloudinary.com', 'picsum.photos', 'socialcry.com'], // Add Cloudinary or any other external image host here
   },
 });
