@@ -32,7 +32,7 @@ export const secondcol = [
   {
     id: 2,
     title: 'Prizes',
-    url: '/',
+    url: 'https://drive.google.com/file/d/1kwkj8uHLu1PDOtLjf1HdVVuxZz8DMl9m/view?usp=sharing',
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const secondcol = [
   {
     id: 4,
     title: 'FAQs',
-    url: '/',
+    url: 'https://drive.google.com/file/d/1XF11Db5JgnlxZWXu5MUOR4r-oKCcO3Kd/view?usp=sharing',
   },
 ];
 export const thirdcol = [
@@ -54,7 +54,7 @@ export const thirdcol = [
   {
     id: 2,
     title: 'Event Schedule',
-    url: '/',
+    url: 'https://drive.google.com/file/d/1dq7-cyXq_3VqDcx7liDbaRhOyFAXQzjf/view?usp=sharing',
   },
 ];
 

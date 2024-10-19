@@ -37,7 +37,7 @@ const Hero = () => {
         initial='hidden'
         animate='visible'
       >
-        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 transition-all duration-200 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
+        <div className='relative aspect-square md:w-[90%] max-h-[90%] -translate-x-8 transition-all duration-1000 md:-translate-x-0 h-[87dvh] xxxs:h-[85dvh]'>
           <Image
             src='https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728970226/robot_embkcs.png'
             alt='Robot image'
