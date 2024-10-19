@@ -62,6 +62,7 @@ export const FE_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179008/inno-2024/Event%20Posters/Cyborg/DeathRace/ljimi3k8z9jb1ee75jgr.jpg',
     Location: 'SAC (In front of SAC stairs)',
     Date: 'Day 2, Day 3',
+    Time: '',
     Prizes: '₹40000',
   },
   {
@@ -73,6 +74,7 @@ export const FE_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179013/inno-2024/Event%20Posters/UDAAN/v4yhrdzyfrok0vnweijv.png',
     Location: 'STS Ground',
     Date: 'Day 2',
+    Time: '',
     Prizes: '₹15000',
   },
   {
@@ -83,6 +85,7 @@ export const FE_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png600', // GTA To be updated
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹6000',
   },
   {
@@ -93,6 +96,7 @@ export const FE_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // GENESYS To be updated
     Location: 'LA-1 Cycle Parking',
     Date: '',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -103,6 +107,7 @@ export const FE_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // AXIOM To be updated
     Location: 'LA Lawns, LA 004, LA 009, Academic Area',
     Date: 'Day 2',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -113,6 +118,7 @@ export const FE_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // APS To be updated
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '₹8000',
   },
   {
@@ -124,6 +130,7 @@ export const FE_descriptionItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179001/inno-2024/Event%20Posters/Astro_NITR/clqps60ndso26fmw101a.png',
     Location: '',
     Date: '',
+    Time: '',
     Prizes: '',
   },
   {
@@ -132,9 +139,9 @@ export const FE_descriptionItems = [
     Description:
       '"Chemistry has energy and it\'s meant to be felt." In this thrilling event, teams of up to 5 students are challenged to design and construct a miniature car powered solely by chemical reactions. From the moment it starts to its final stop, every aspect of the car\'s motion must be driven by chemical processes, with no electricity or manual intervention. This event challenges you to merge chemistry with engineering and problem-solving skills. Come experience the thrill of innovation as your creation races into action. ',
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', // TBA
-    Location:
-      'LA-Room for Day 01(for workshop) , Chemical Eng. Dept New Seminar Hall for Day 03: Chem-E-Car Test Run',
-    Date: 'Day 01(workshop)(02:00 PM - 05:00 PM), Day 03(Car Testing) (11:00 AM - 01:00 PM)',
+    Location: 'Day 1: LA-Room , Day 3: Chemical Eng. Dept New Seminar Hall',
+    Date: 'Day 1: 02:00 PM - 05:00 PM, Day 3: 11:00 AM - 01:00 PM',
+    Time: '',
     Prizes: '',
   },
 ];

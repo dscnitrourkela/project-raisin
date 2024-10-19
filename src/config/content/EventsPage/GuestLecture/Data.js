@@ -46,6 +46,7 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'BBA',
     Date: 'DAY 2',
+    Time: '',
   },
   {
     id: 2,
@@ -55,6 +56,7 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: '',
     Date: '',
+    Time: '',
   },
   {
     id: 3,
@@ -64,6 +66,7 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: '',
     Date: '',
+    Time: '',
   },
   {
     id: 4,
@@ -73,6 +76,7 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'PPA',
     Date: '',
+    Time: '',
   },
   {
     id: 5,
@@ -82,6 +86,7 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: '',
     Date: '',
+    Time: '',
   },
   {
     id: 6,
@@ -91,5 +96,6 @@ export const GL_descriptionItems = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png',
     Location: 'BBA',
     Date: 'DAY 3',
+    Time: '',
   },
 ];
