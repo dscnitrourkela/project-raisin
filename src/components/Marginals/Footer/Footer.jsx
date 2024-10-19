@@ -25,29 +25,15 @@ import {
   FooterGradient,
   ListTitle,
   SocialImageContainer,
-  Overlay,
-  Modal,
 } from './styles';
 import { LogoText2 } from '../../shared/Typography/Headings';
-// import { createPortal } from 'react-dom';
 import { PaymentPolicyModal } from './PaymentPolicyModel';
-import { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
-// import { Modal } from 'flowbite-react';
+import { useState } from 'react';
 
 export const Footer = () => {
   const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
-  const [modalRoot, setModalRoot] = useState(null);
-
   const handleRegisterModalOpen = () => setIsRegisterModalOpen(true);
   const handleRegisterModalClose = () => setIsRegisterModalOpen(false);
-
-  useEffect(() => {
-    const root = document.getElementById('modal-root');
-    if (root) {
-      setModalRoot(root);
-    }
-  }, []);
   return (
     <>
       <FooterContainer id='contact'>
@@ -123,17 +109,7 @@ export const Footer = () => {
           </FooterBottom>
         </FooterWrapper>
       </FooterContainer>
-
-      {modalRoot &&
-        isRegisterModalOpen &&
-        createPortal(
-          <Overlay>
-            <Modal>
-              <PaymentPolicyModal isClose={handleRegisterModalClose} />
-            </Modal>
-          </Overlay>,
-          modalRoot,
-        )}
+      <PaymentPolicyModal isOpen={isRegisterModalOpen} onClose={handleRegisterModalClose} />
     </>
   );
 };
