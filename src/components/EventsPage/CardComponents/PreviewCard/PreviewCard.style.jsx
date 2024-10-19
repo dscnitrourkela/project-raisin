@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 import styled from 'styled-components';
-import { HeroGreenPrimaryButton, HeroPrimaryButton } from '@/components/Hero Section/styles';
+import { HeroGreenPrimaryButton, HeroPrimaryButton } from '@/components/HeroSection/styles';
 
 export const PreviewCardContainer = styled.div`
   ${tw`w-full h-auto max-w-[390px] max-h-[500px] xl:h-[606px] bg-gradient-to-b from-[#002929] to-[#22002b] rounded-lg shadow-lg border border-[#074870] flex flex-col justify-between items-center p-5 mb-16 gap-y-4`}

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HeroGreenPrimaryButton, HeroLogoText, HeroPrimaryButton } from './styles';
 
-const Hero = () => {
+export const Hero = () => {
   const container = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
@@ -112,5 +112,3 @@ const Hero = () => {
     </div>
   );
 };
-
-export default Hero;
