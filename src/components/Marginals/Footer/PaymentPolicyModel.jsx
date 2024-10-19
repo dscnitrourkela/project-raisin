@@ -2,7 +2,7 @@
 // import { ModalExit, ModalText } from './registerModal.styles';
 
 // import { Modal } from "flowbite-react";
-import { Paragraph, SmallParagraph } from '../shared/Typography/Paragraphs';
+import { Paragraph, SmallParagraph } from '../../shared/Typography/Paragraphs';
 import { Modal, ModalExit, ModalText, Overlay, Para } from './styles';
 
 export const PaymentPolicyModal = ({ isClose }) => {
