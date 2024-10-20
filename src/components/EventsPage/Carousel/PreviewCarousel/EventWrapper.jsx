@@ -70,7 +70,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
         scope.current,
         { x: xOffset },
         {
-          duration: 0.3,
+          duration: 7,
           ease: [0.42, 0, 0.58, 1],
           type: 'tween',
         },
