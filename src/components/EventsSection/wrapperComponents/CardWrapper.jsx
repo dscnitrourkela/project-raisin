@@ -145,4 +145,4 @@ export const CardWrapper = ({ items }) => {
   );
 };
 
-const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS'];
+const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS', 'SHOWS AT DTS', 'EXHIBITION'];

@@ -8,7 +8,7 @@ export const Body = () => {
         <div className='flex justify-center items-center'>
           <Card />
         </div>
-        <GraphMain />
+        {/* <GraphMain /> */}
       </div>
     </>
   );
