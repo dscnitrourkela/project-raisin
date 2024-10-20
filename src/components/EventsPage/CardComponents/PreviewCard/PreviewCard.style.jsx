@@ -32,7 +32,7 @@ export const PreviewMoreInfoButton = styled(HeroPrimaryButton)`
 `;
 
 export const PreviewMoreInfoButton2 = styled(HeroGreenPrimaryButton)`
-  ${tw`flex justify-center items-center w-auto h-auto p-4 `}
+  ${tw`flex justify-center items-center w-auto h-auto p-3 `}
 
   box-shadow: 0 0 5px #ffffff0d, 0 0 3px #ffffff0d, 0 0 5px #ffffff0d;
 

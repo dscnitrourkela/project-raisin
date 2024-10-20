@@ -31,7 +31,7 @@ export const DescriptionCardContent = styled(SmallParagraph)`
   }
 `;
 export const DescriptionCardBottom = styled.div`
-  ${tw`flex gap-10 justify-between   h-auto xsm:h-[100px] bg-white/[0.05] items-center p-5 xsm:p-10 text-xs xxxs:text-base xsm:text-2xl rounded-2xl border-[1px] border-white/[0.4]`};
+  ${tw`flex gap-10 justify-between   h-auto xsm:h-[85px] bg-white/[0.05] items-center p-5 xsm:p-10 text-xs xxxs:text-base xsm:text-2xl rounded-2xl border-[1px] border-white/[0.4]`};
 
   backdrop-filter: blur(30px);
   background-color: rgba(255, 255, 255, 0.05);

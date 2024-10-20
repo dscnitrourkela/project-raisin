@@ -10,3 +10,7 @@ export const EventsContainer = styled.div`
 export const Heading3 = styled(Heading2)`
   ${tw`text-white/50 text-2xl mb-32 xsm:text-4xl md:text-6xl font-normal font-spaceX  text-center`}
 `;
+
+export const Heading4 = styled(Heading2)`
+  ${tw`text-white text-xl mb-32 xsm:text-2xl md:text-4xl font-normal font-spaceX  text-center`}
+`;

@@ -22,13 +22,13 @@ export const SubHeader = () => {
       }, 23);
 
       const daysInterval = setInterval(() => {
-        if (daysStart < 43) {
+        if (daysStart < 3) {
           daysStart += 1;
           setDaysCount(daysStart);
         } else {
           clearInterval(daysInterval);
         }
-      }, 40);
+      }, 1);
 
       return () => {
         clearInterval(eventsInterval);
