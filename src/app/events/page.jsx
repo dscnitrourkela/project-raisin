@@ -23,13 +23,12 @@ export default function Page() {
   return (
     <div className='overflow-hidden'>
       <EventsContainer>
-        <Heading3>GUEST LECTURES</Heading3>
-        {/* <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} /> */}
-        <ComingSoon />
         <Heading3>FLAGSHIP EVENTS</Heading3>
         <MainCarousel previewItems={FE_previewItems} descriptionItems={FE_descriptionItems} />
         <Heading3>MAIN EVENTS</Heading3>
         <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} />
+        <Heading3>FUN EVENTS</Heading3>
+        <ComingSoon />
         <Heading3>EXHIBITION</Heading3>
         <MainCarousel
           previewItems={Exhibition_previewItems}
@@ -37,6 +36,9 @@ export default function Page() {
         />
         <Heading3>SHOWS AT DTS</Heading3>
         {/* <MainCarousel previewItems={DTS_previewItems} descriptionItems={GL_descriptionItems} /> */}
+        <ComingSoon />
+        <Heading3>GUEST LECTURES</Heading3>
+        {/* <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} /> */}
         <ComingSoon />
         <Heading3>GALLERY</Heading3>
         <Gallerywrapper />

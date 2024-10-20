@@ -13,11 +13,12 @@ export const SubHeader = () => {
       let daysStart = 0;
 
       const eventsInterval = setInterval(() => {
-        if (eventsStart < 43) {
+        if (eventsStart < 59) {
           eventsStart += 1;
           setEventsCount(eventsStart);
         } else {
           clearInterval(eventsInterval);
+          setEventsCount('60+');
         }
       }, 23);
 
