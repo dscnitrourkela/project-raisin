@@ -8,4 +8,6 @@ export const AllEvents = [
   ...FE_descriptionItems,
   ...ME_descriptionItems,
   ...Exhibition_descriptionItems,
+  ...DTS_descriptionItems,
+  ...GL_descriptionItems,
 ];

@@ -14,7 +14,7 @@ import {
   Exhibition_descriptionItems,
   Exhibition_previewItems,
 } from '@/config/content/EventsPage/Exhibition/Data';
-import { DTS_previewItems } from '@/config/content/EventsPage/DTS_Shows/Data';
+import { DTS_previewItems, DTS_descriptionItems } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
 import { Gallerywrapper } from '@/components/EventsPage/Gallery/CardWrapper';
 import { ComingSoon } from '@/components/EventsPage/ComingSoon';
