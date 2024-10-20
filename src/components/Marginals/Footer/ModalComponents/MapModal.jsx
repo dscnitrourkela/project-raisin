@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Modal, ModalContent, ModalBody, Button } from '@nextui-org/react';
 import Image from 'next/image';
-import { List } from '../../shared/Typography/Lists';
+import { List } from '../../../shared/Typography/Lists';
 import { closeIcon, mapSize } from '@/config/content/Footer';
 
 export default function MapModal() {

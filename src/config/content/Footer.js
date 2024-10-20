@@ -111,3 +111,39 @@ export const PaymentPolicyModalData = [
       'There will be no refund of the registration fees under any circumstances unless the fest is cancelled by team Innovision.',
   },
 ];
+
+export const CodeOfConductModalData = [
+  {
+    title: 'CODE OF CONDUCT FOR INNOVISION 2024',
+    description:
+      '• Participants must comply with the event schedule and rules. • Consumption of alcohol or any narcotic substance is strictly prohibited. • All attendees are expected to behave respectfully and professionally. Any instance of a misdemeanour will not be tolerated.• If the actions of any individual are found destructive to property or any individual, rightful action would be taken. • All the participants must carry an ID card and necessary identification documents. • Any disrespectful remark or abuse would be liable to severe punishment. • The conference must not be used as a platform for promotion or any event unless determined by the fest organisers. • Buying and selling of things, equipment, or substances is prohibited. If any participant is found not complying with any of the aforementioned points, they will be subject to action according to the guidelines of NIT Rourkela.',
+  },
+  {
+    title: 'CANCELLATION AND REFUNDS',
+    description:
+      '• The event organisers reserve the right to cancel or reschedule any event.• All the monetary transactions are non-refundable at all points in time.',
+  },
+  {
+    title: 'CHANGES TO TERMS AND CONDITIONS',
+    description:
+      'The event organisers may modify these terms and conditions at their discretion. Attendees will be notified of any changes.',
+  },
+];
+
+export const TermsAndConditionsModalData = [
+  {
+    title: 'Welcome to Innovision 2024!',
+    description:
+      'The website linked gives you the outline of our protocols. If you agree to the set of terms and conditions you are welcomed as an entrant and will be redirected to proceed further.',
+  },
+  {
+    title: 'Licence',
+    description:
+      'Unless otherwise stated, Innovision and/or its licensors own the intellectual property rights for all material on Innovision 2024. All intellectual property rights are reserved. You may access this from Innovision 2024 for your personal use subject to restrictions set in these terms and conditions.You must not: ● Copy or republish material from Innovision 2024 ● Sell, rent, or sub-license material from Innovision 2024 ● Reproduce, duplicate or copy material from Innovision 2024 ● Redistribute content from Innovision 2024.This Agreement shall begin on the date hereof.',
+  },
+  {
+    title: 'Disclaimer',
+    description:
+      'To the maximum permitted visitors conduct, nothing in this disclaimer will: limit or exclude our or your liability for death or personal injury; limit or exclude our or your liability for fraud or fraudulent misrepresentation; limit any of our or your liabilities in any way that is not permitted under applicable law; or exclude any of our or your liabilities that may not be excluded under applicable law. The limitations and prohibitions of liability set in this section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty. As the website can be accessed by all verified visitors, we shall not uphold any liability for any damage.',
+  },
+];

@@ -1,7 +1,7 @@
 import { Modal, ModalContent, ModalBody, Button } from '@nextui-org/react';
 import { closeIcon, PaymentPolicyModalData } from '@/config/content/Footer';
 import Image from 'next/image';
-import { ModalText, Para } from './styles';
+import { ModalText, Para } from '.././styles';
 
 export const PaymentPolicyModal = ({ isOpen, onClose }) => {
   return (
