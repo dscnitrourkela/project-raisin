@@ -136,5 +136,3 @@ export const CardWrapper = () => {
     </>
   );
 };
-
-const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS'];
