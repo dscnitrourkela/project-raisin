@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { socials, secondcol, thirdcol, footerBottom, firstcol } from '@/config/content/Footer';
 import Link from 'next/link';
-import MapModal from './MapModal';
+import MapModal from './ModalComponents/MapModal';
 import { List, SmallList } from '../../shared/Typography/Lists';
 
 import {
@@ -27,13 +27,25 @@ import {
   SocialImageContainer,
 } from './styles';
 import { LogoText2 } from '../../shared/Typography/Headings';
-import { PaymentPolicyModal } from './PaymentPolicyModel';
+import { PaymentPolicyModal } from './ModalComponents/PaymentPolicyModel';
+import { CodeOfConductModal } from './ModalComponents/CodeOfConductModal';
+import { TermAndConditionModal } from './ModalComponents/TermAndConditionsModal';
 import { useState } from 'react';
 
 export const Footer = () => {
-  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
-  const handleRegisterModalOpen = () => setIsRegisterModalOpen(true);
-  const handleRegisterModalClose = () => setIsRegisterModalOpen(false);
+  const [isCodeOfConductModalOpen, setIsCodeOfConductModalOpen] = useState(false);
+  const [isPaymentPolicyModalOpen, setIsPaymentPolicyModalOpen] = useState(false);
+  const [isTermsAndConditionsModalOpen, setIsTermsAndConditionsModalOpen] = useState(false);
+
+  const handleCodeOfConductModalOpen = () => setIsCodeOfConductModalOpen(true);
+  const handleCodeOfConductModalClose = () => setIsCodeOfConductModalOpen(false);
+
+  const handlePaymentPolicyModalOpen = () => setIsPaymentPolicyModalOpen(true);
+  const handlePaymentPolicyModalClose = () => setIsPaymentPolicyModalOpen(false);
+
+  const handleTermsAndConditionsModalOpen = () => setIsTermsAndConditionsModalOpen(true);
+  const handleTermsAndConditionsModalClose = () => setIsTermsAndConditionsModalOpen(false);
+
   return (
     <>
       <FooterContainer id='contact'>
@@ -96,8 +108,12 @@ export const Footer = () => {
             <FooterBottomContent>
               {footerBottom.map((item) => (
                 <SmallList key={item.id} className='flex gap-[20px]'>
-                  {item.id === 4 ? (
-                    <button onClick={handleRegisterModalOpen}>{item.title}</button>
+                  {item.id === 2 ? (
+                    <button onClick={handleTermsAndConditionsModalOpen}>{item.title}</button>
+                  ) : item.id === 3 ? (
+                    <button onClick={handleCodeOfConductModalOpen}>{item.title}</button>
+                  ) : item.id === 4 ? (
+                    <button onClick={handlePaymentPolicyModalOpen}>{item.title}</button>
                   ) : (
                     <a href={item.url} target='_blank' rel='noopener noreferrer'>
                       {item.title}
@@ -109,7 +125,18 @@ export const Footer = () => {
           </FooterBottom>
         </FooterWrapper>
       </FooterContainer>
-      <PaymentPolicyModal isOpen={isRegisterModalOpen} onClose={handleRegisterModalClose} />
+      <TermAndConditionModal
+        isOpen={isTermsAndConditionsModalOpen}
+        onClose={handleTermsAndConditionsModalClose}
+      />
+      <CodeOfConductModal
+        isOpen={isCodeOfConductModalOpen}
+        onClose={handleCodeOfConductModalClose}
+      />
+      <PaymentPolicyModal
+        isOpen={isPaymentPolicyModalOpen}
+        onClose={handlePaymentPolicyModalClose}
+      />
     </>
   );
 };

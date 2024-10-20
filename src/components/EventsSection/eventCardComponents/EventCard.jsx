@@ -13,7 +13,7 @@ export const EventCard = ({ label, isTranslatedUp }) => {
         }}
         className=' w-[270px] xxsm:w-[310px] xsm:w-[347px] h-[416px]  flex justify-center items-center text-[24px] font-spaceX leading-[37px] break-words text-center rounded-3xl'
       >
-        <Image src={label} alt='alt' fill style={{ objectFit: 'cover', borderRadius: '4px' }} />
+        <Image src={label} alt='alt' fill style={{ objectFit: 'fill', borderRadius: '4px' }} />
       </div>
     </>
   );
