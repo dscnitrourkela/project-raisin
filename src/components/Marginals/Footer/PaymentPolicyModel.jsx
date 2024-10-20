@@ -1,5 +1,5 @@
 import { Modal, ModalContent, ModalBody, Button } from '@nextui-org/react';
-import { closeIcon } from '@/config/content/Footer';
+import { closeIcon, PaymentPolicyModalData } from '@/config/content/Footer';
 import Image from 'next/image';
 import { ModalText, Para } from './styles';
 
@@ -25,21 +25,12 @@ export const PaymentPolicyModal = ({ isOpen, onClose }) => {
           <Image src={closeIcon} alt='close' width={30} height={30} />
         </Button>
         <ModalBody className='px-[30px] py-[50px] text-monteserrat h-full flex flex-col justify-center items-center'>
-          <ModalText>Pricing</ModalText>
-          <Para>
-            The registration fees for Innovision 2024 is ₹899 for all the students from outside NIT
-            Rourkela. There are no registration fees for students of NIT Rourkela.
-          </Para>
-          <ModalText>Refund Policy</ModalText>
-          <Para>
-            Thank you for registering at Innovision 2024. If, for any reason, you are not entirely
-            satisfied with your purchase, we encourage you to review our refund and return policy.
-          </Para>
-          <ModalText>Your Registration Cancellation Rights</ModalText>
-          <Para>
-            There will be no refund of the registration fees under any circumstances unless the fest
-            is cancelled by team Innovision.
-          </Para>
+          {PaymentPolicyModalData.map((items, index) => (
+            <div key={index}>
+              <ModalText>{items.title}</ModalText>
+              <Para>{items.description}</Para>
+            </div>
+          ))}
         </ModalBody>
       </ModalContent>
     </Modal>

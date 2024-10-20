@@ -112,7 +112,7 @@ export const Modal = styled.div`
 `;
 
 export const ModalText = styled(Heading1)`
-  ${tw`font-bold text-left text-[20px] border-none m-0 p-0`}
+  ${tw`font-bold text-left text-[20px] mb-3 border-none m-0 p-0`}
 `;
 
 export const ModalExit = styled(PrimaryButton)`

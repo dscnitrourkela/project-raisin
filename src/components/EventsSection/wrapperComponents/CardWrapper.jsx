@@ -1,19 +1,14 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
-// import { SliderData } from '@/config/content/eventsCarauselData';
-// import { LeftArrowButton, RightArrowButton } from '../../Shared/ArrowButton';
-// import { MobileView } from './MobileView';
-// import { LargeScreenView } from './BigScreenView';
-// import { Wrapper } from './EventWrapper.styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { EventCard } from '../eventCardComponents/EventCard';
-// import { CardLabel } from '../eventCardComponents/Cardlabel';
-// import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 import '../../EventsPage/Carousel/PreviewCarousel/swiper.css';
+import { AllEvents } from './AllEvents';
+import { CardLabel } from '../eventCardComponents/Cardlabel';
 
-export const CardWrapper = ({ items }) => {
+export const CardWrapper = () => {
   const [scope, animate] = useAnimate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
@@ -22,7 +17,7 @@ export const CardWrapper = ({ items }) => {
   const slideWidth = 456.74;
 
   const updateScreenSize = () => {
-    setIsMobile(window.innerWidth < 800);
+    setIsMobile(window.innerWidth < 768);
   };
 
   useEffect(() => {
@@ -33,14 +28,14 @@ export const CardWrapper = ({ items }) => {
   }, []);
 
   const handleNext = () => {
-    if (isMobile) {
+    if (swiperRef.current?.swiper) {
       swiperRef.current.swiper.slideNext();
       resetAutoSlide();
     }
   };
 
   const handlePrev = () => {
-    if (!isMobile) {
+    if (swiperRef.current?.swiper) {
       swiperRef.current.swiper.slidePrev();
       resetAutoSlide();
     }
@@ -52,7 +47,9 @@ export const CardWrapper = ({ items }) => {
 
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
-      swiperRef.current.swiper.slidePrev();
+      if (swiperRef.current?.swiper) {
+        swiperRef.current.swiper.slideNext();
+      }
     }, 5000);
   };
 
@@ -64,13 +61,15 @@ export const CardWrapper = ({ items }) => {
   };
 
   useEffect(() => {
-    !isMobile ? startAutoSlide() : '';
+    if (!isMobile) {
+      startAutoSlide();
+    }
     return () => {
       if (autoSlideIntervalRef.current && !isMobile) {
         clearInterval(autoSlideIntervalRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     if (scope.current) {
@@ -79,18 +78,17 @@ export const CardWrapper = ({ items }) => {
         scope.current,
         { x: xOffset },
         {
-          duration: 0.3,
+          duration: 6,
           ease: [0.42, 0, 0.58, 1],
           type: 'tween',
         },
       );
     }
   }, [currentIndex, animate, scope]);
-
   return (
     <>
-      <div className='overflow-hidden'>
-        {!isMobile ? (
+      {!isMobile ? (
+        <div className=''>
           <Swiper
             ref={swiperRef}
             slidesPerView={'auto'}
@@ -99,50 +97,44 @@ export const CardWrapper = ({ items }) => {
             spaceBetween={0}
             modules={[Pagination]}
             onSlideChange={onSlideChange}
-            // autoplay={{ delay: 2000, disableOnInteraction: false }} // Autoplay with 3s delay
-            className='mySwiper3'
+            className='mySwiper3 '
           >
-            {item.map((singleItem, index) => (
-              <SwiperSlide
-                key={index}
-                className={`slide ${index === currentIndex ? 'active-slide' : ''}`}
-              >
-                <div className=' p-4 md:p-10 xl:p-20 flex flex-col items-center gap-4 md:gap-6 xl:gap-10'>
-                  <EventCard label={singleItem} />
-                  {/* <CardLabel /> */}
+            {AllEvents.map((item, index) => (
+              <SwiperSlide key={index}>
+                <div className='p-4 md:p-10 xl:p-20 flex flex-col items-center gap-4 md:gap-6 xl:gap-10'>
+                  <EventCard label={item.ImageURL} />
+                  <CardLabel title={item.Heading} />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : (
-          <Swiper
-            ref={swiperRef}
-            slidesPerView={1}
-            centeredSlides={true}
-            loop={true}
-            spaceBetween={30}
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            onSlideChange={onSlideChange}
-            autoplay={{ delay: 1000, disableOnInteraction: false }}
-            className='mySwiper4'
-          >
-            {item.map((singleItem, index) => (
-              <SwiperSlide
-                key={index}
-                // className={`slide ${index === currentIndex ? 'active-slide' : ''}`}
-              >
-                <div className=' p-4 md:p-10 xl:p-20 flex flex-col items-center gap-4 md:gap-6 xl:gap-10'>
-                  <EventCard label={singleItem} />
-                  {/* <CardLabel /> */}
+        </div>
+      ) : (
+        <Swiper
+          ref={swiperRef}
+          slidesPerView={1}
+          centeredSlides={true}
+          loop={true}
+          spaceBetween={30}
+          modules={[Pagination]}
+          onSlideChange={onSlideChange}
+          // autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className='mySwiper4'
+        >
+          {AllEvents.map((item, index) => (
+            <div key={index}>
+              <SwiperSlide>
+                <div className='p-2 md:p-10 xl:p-20 flex flex-col items-center gap-4 md:gap-6 xl:gap-10'>
+                  <EventCard label={item.ImageURL} />
+                  <CardLabel title={item.Heading} />
                 </div>
               </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
-      </div>
+            </div>
+          ))}
+        </Swiper>
+      )}
     </>
   );
 };
 
-const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS', 'SHOWS AT DTS', 'EXHIBITION'];
+const item = ['FLAGSHIP', 'GUEST LECTURE', 'MAIN EVENTS'];

@@ -93,3 +93,21 @@ export const mapSize = '5xl';
 
 export const mapIcon =
   'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1727148993/Subtract_3_odnejs.svg';
+
+export const PaymentPolicyModalData = [
+  {
+    title: 'Pricing',
+    description:
+      'The registration fees for Innovision 2024 is ₹899 for all the students from outside NIT Rourkela. There are no registration fees for students of NIT Rourkela.',
+  },
+  {
+    title: 'Refund Policy',
+    description:
+      ' Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your purchase, we encourage you to review our refund and return policy.',
+  },
+  {
+    title: 'Your Registration Cancellation Rights',
+    description:
+      'There will be no refund of the registration fees under any circumstances unless the fest is cancelled by team Innovision.',
+  },
+];
