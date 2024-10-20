@@ -11,5 +11,3 @@ export const AllEvents = [
   ...DTS_descriptionItems,
   ...GL_descriptionItems,
 ];
-
-console.log(AllEvents);
