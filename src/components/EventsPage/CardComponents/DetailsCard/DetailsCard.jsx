@@ -25,12 +25,13 @@ function DetailsCard({ ImageURL, Heading, Description, Location, Date, Time, Pri
       </DescriptionCardContainer>
       <div className='max-w-[1550px] w-[100%] pl-2 pr-2 xxs:pl-4 xxs:pr-4 2xs:pl-8 2xs:pr-8 xsm:pl-12 xsm:pr-12 ssm:pl-16 ssm:pr-16 sm:pl-24 sm:pr-24'>
         <DescriptionCardBottom>
-          <div className='flex gap-2 items-center '>
+          <div className='flex gap-2 items-center'>
             <Image
               src='https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729309788/352521_location_on_icon_u8d6am.png'
               alt='img'
               width={60}
               height={60}
+              className='w-8 h-8 sm:w-14 sm:h-14 md:w-[60px] md:h-[60px]'
             />
             <div className='font-bold'>{Location} </div>
           </div>
@@ -40,6 +41,7 @@ function DetailsCard({ ImageURL, Heading, Description, Location, Date, Time, Pri
               alt='img'
               width={60}
               height={60}
+              className='w-8 h-8 sm:w-14 sm:h-14 md:w-[60px] md:h-[60px]'
             />
             <div className='font-bold'>{Prizes} </div>
           </div>
@@ -49,7 +51,7 @@ function DetailsCard({ ImageURL, Heading, Description, Location, Date, Time, Pri
               alt='img'
               width={60}
               height={60}
-              className='w-[48px] h-[48px] xsm:w-[60px] xsm:h-[60px]'
+              className='w-8 h-8 sm:w-14 sm:h-14 md:w-[60px] md:h-[60px]'
             />
             <div className='flex flex-col '>
               <div className='font-bold'>{Date}</div>

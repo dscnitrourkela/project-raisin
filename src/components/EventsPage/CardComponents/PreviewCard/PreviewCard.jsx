@@ -21,7 +21,7 @@ function PreviewCard({ ImageURL, PreviewDescription = '' }) {
         className='rounded-[17.82px] h-[170px] xxs:h-[180px] 2xs:h-[190px] xsm:h-[199px] ssm:h-[214px] sm:h-[235px] md:h-[260px] w-full md:w-[305px]  lg:w-[338px] lg:h-[240px] '
       />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
-      <div className='flex justify-center gap-24 mt-4'>
+      <div className='flex justify-center gap-10 sm:gap-24 mt-4'>
         {/* Reduced gap for symmetry */}
         <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
         <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
