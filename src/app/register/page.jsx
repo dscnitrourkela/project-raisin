@@ -165,7 +165,7 @@ function Page() {
     }
   }
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(true);
 
   function handleSubmit() {
     const isFormValid = validateForm();

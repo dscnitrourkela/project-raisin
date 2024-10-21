@@ -240,7 +240,7 @@ export const buttonImage =
 export const beamImage =
   'https://res.cloudinary.com/dmvdbpyqk/image/upload/v1728811020/Line_10_aeg3tc.png';
 
-export const campusAbassadorPara = `To become a Campus Ambassador for Innovision 2024, use the referall code below to get 50+ registrations and earn a certificate along with exclusive goodies!!`;
+export const campusAbassadorPara = `To become a Campus Ambassador for Innovision 2024, use the referral code below to get 50+ registrations and earn a certificate along with exclusive goodies!!`;
 
 export const notAllowedInstitutes = [
   "Siksha 'O' Anusandhan ",
