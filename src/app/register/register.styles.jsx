@@ -48,3 +48,7 @@ export const Moon = styled.div`
   border-radius: 450px;
   ${tw` top-[-50px] right-[-50px] ssm:top-[-100px] ssm:right-[-100px] w-[150px] xsm:w-[200px] h-[150px] xsm:h-[200px] ssm:w-[250px] ssm:h-[250px] md:w-[300px]  md:h-[300px] slg:w-[350px] slg:h-[350px] llg:w-[400px] llg:h-[400px] xl:w-[450px]  xl:h-[450px]`}
 `;
+
+export const UndertakingLink = styled.a`
+  ${tw`text-base font-prompt font-semibold  hover:underline transition-all duration-200 ease-in-out`}
+`;

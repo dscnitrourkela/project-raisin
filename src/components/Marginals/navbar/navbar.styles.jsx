@@ -49,7 +49,7 @@ export const HamburgerContainer = styled.button`
 `;
 
 export const ResMen = styled.div`
-  ${tw`z-10 grid w-full h-max backdrop-blur-3xl place-items-center  rounded-3xl  min-[930px]:hidden`}
+  ${tw`z-10 grid w-full h-max place-items-center  rounded-3xl  min-[930px]:hidden`}
 `;
 
 export const ResList = styled.ul`
