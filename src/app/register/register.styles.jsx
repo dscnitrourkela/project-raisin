@@ -52,3 +52,7 @@ export const Moon = styled.div`
 export const UndertakingLink = styled.a`
   ${tw`text-base font-prompt font-semibold  hover:underline transition-all duration-200 ease-in-out`}
 `;
+
+export const PaymentPolicyInfo = styled.div`
+  ${tw`text-base font-prompt font-semibold  hover:underline transition-all duration-200 ease-in-out text-center`}
+`;

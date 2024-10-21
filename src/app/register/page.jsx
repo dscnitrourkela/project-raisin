@@ -8,6 +8,7 @@ import {
   RegisterInnerContainer,
   Moon,
   UndertakingLink,
+  PaymentPolicyInfo,
 } from './register.styles';
 import Link from 'next/link';
 import InputField from '@/components/Register/InputField/InputField';
@@ -220,6 +221,9 @@ function Page() {
         <UndertakingLink href={undertakingContent.link} target='_blank' className=''>
           {undertakingContent.text}
         </UndertakingLink>
+        <PaymentPolicyInfo>
+          <Link href='/refundPolicy'>Please review the Payment Policy before registering.</Link>
+        </PaymentPolicyInfo>
 
         <CampusAmbassador
           handleChange={handleChange}

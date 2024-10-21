@@ -113,7 +113,9 @@ export const Footer = () => {
                   ) : item.id === 3 ? (
                     <button onClick={handleCodeOfConductModalOpen}>{item.title}</button>
                   ) : item.id === 4 ? (
-                    <button onClick={handlePaymentPolicyModalOpen}>{item.title}</button>
+                    <a href={item.url} rel='noopener noreferrer'>
+                      {item.title}
+                    </a>
                   ) : (
                     <a href={item.url} target='_blank' rel='noopener noreferrer'>
                       {item.title}
