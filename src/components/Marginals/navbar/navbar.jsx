@@ -18,6 +18,7 @@ import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,27 +65,40 @@ const Navbar = () => {
         </NavCover>
       </div>
 
-      {isOpen && (
-        <div className='h-[73vh] flex items-center justify-center'>
-          <ResMen>
-            <ResList>
-              {navLinks.map((navLink) => (
-                <ResItem key={navLink.link}>
-                  <Link href={`${navLink.link}`} onClick={handleCloseMenu}>
-                    {navLink.name}
-                  </Link>
-                </ResItem>
-              ))}
+      <AnimatePresence mode='wait'>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              backdropFilter: 'blur(50px)',
+              borderRadius: '20px',
+              marginTop: '10px',
+            }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, type: 'tween' }}
+            className='h-[73vh] flex items-center justify-center'
+          >
+            <ResMen>
+              <ResList>
+                {navLinks.map((navLink, idx) => (
+                  <ResItem key={navLink.link}>
+                    <Link href={`${navLink.link}`} onClick={handleCloseMenu}>
+                      {navLink.name}
+                    </Link>
+                  </ResItem>
+                ))}
 
-              <HamburgerRegisterButton>
-                <Link href={ButtonData.link} onClick={handleCloseMenu}>
-                  {ButtonData.title}
-                </Link>
-              </HamburgerRegisterButton>
-            </ResList>
-          </ResMen>
-        </div>
-      )}
+                <HamburgerRegisterButton>
+                  <Link href={ButtonData.link} onClick={handleCloseMenu}>
+                    {ButtonData.title}
+                  </Link>
+                </HamburgerRegisterButton>
+              </ResList>
+            </ResMen>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </NavContainer>
   );
 };

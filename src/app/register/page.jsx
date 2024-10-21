@@ -7,12 +7,14 @@ import {
   RegsiterButton,
   RegisterInnerContainer,
   Moon,
+  UndertakingLink,
 } from './register.styles';
+import Link from 'next/link';
 import InputField from '@/components/Register/InputField/InputField';
 import SelectField from '@/components/Register/SelectField/SelectField';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import FileInput from '@/components/Register/FileInput/FileInput';
-import { formFields } from '@/config/content/Registration/details';
+import { formFields, undertakingContent } from '@/config/content/Registration/details';
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
@@ -21,6 +23,7 @@ import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbas
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
 import { RegistrationModal } from './RegistrationModal';
+
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
@@ -162,7 +165,7 @@ function Page() {
     }
   }
 
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(true);
 
   function handleSubmit() {
     const isFormValid = validateForm();
@@ -184,6 +187,13 @@ function Page() {
               return returnFormFields(field);
             })}
           </RegisterForm>
+          <UndertakingLink
+          href={undertakingContent.link}
+          target='_blank'
+          
+        >
+          {undertakingContent.text}
+        </UndertakingLink>
           <CampusAmbassador
             handleChange={handleChange}
             userReferral={userDetails.phone}
@@ -207,6 +217,10 @@ function Page() {
             return returnFormFields(field);
           })}
         </RegisterForm>
+        <UndertakingLink href={undertakingContent.link} target='_blank' className=''>
+          {undertakingContent.text}
+        </UndertakingLink>
+
         <CampusAmbassador
           handleChange={handleChange}
           userReferral={userDetails.phone}
