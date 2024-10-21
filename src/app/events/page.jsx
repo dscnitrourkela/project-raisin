@@ -16,6 +16,11 @@ import {
 } from '@/config/content/EventsPage/Exhibition/Data';
 // import { DTS_previewItems, DTS_descriptionItems } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
+<
+import {
+  FunEvents_previewItems,
+  FunEvents_descriptionItems,
+} from '@/config/content/EventsPage/FunEvents/Data';
 import { ComingSoon } from '@/components/EventsPage/ComingSoon';
 import { GalleryWrapper, Gallerywrapper } from '@/components/EventsPage/Gallery/CardWrapper';
 // import { GalleryWrapper } from '@/components/EventsPage/Gallery/CardWrapper';
@@ -29,7 +34,10 @@ export default function Page() {
         <Heading3>MAIN EVENTS</Heading3>
         <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} />
         <Heading3>FUN EVENTS</Heading3>
-        <ComingSoon />
+        <MainCarousel
+          previewItems={FunEvents_previewItems}
+          descriptionItems={FunEvents_descriptionItems}
+        />
         <Heading3>EXHIBITION</Heading3>
         <MainCarousel
           previewItems={Exhibition_previewItems}
