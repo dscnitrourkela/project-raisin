@@ -252,6 +252,6 @@ export const notAllowedInstitutes = [
 ];
 
 export const undertakingContent = {
-  link: 'https://www.google.com/',
+  link: 'https://drive.google.com/file/d/1rHV-eF4Z5ihY1VwqYg97FAEiVAYQ3g8E/view?usp=sharing',
   text: 'Undertaking Form for Authorization/Permission Letter',
 };
