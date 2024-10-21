@@ -1,6 +1,6 @@
 'use client';
 import { Label } from '../FileInput/FileInput.styles';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import InputField from '../InputField/InputField';
 import { ErrorMessage } from '../InputField/InputField.styles';
 import {
@@ -27,6 +27,7 @@ function SelectField({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(value || '');
   const [otherInstituteName, setOtherInstituteName] = useState('');
+  const ref = useRef(null);
   const isOneLine = className?.includes('oneliner');
 
   const isOthers =
@@ -72,8 +73,19 @@ function SelectField({
     }
   }, [otherInstituteName]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
   return (
-    <div>
+    <div ref={ref}>
       <SelectFieldParentContainer>
         <LabelAndInputContainer
           className={isOneLine ? 'flex-col xxs:flex-row items-center' : 'flex-col items-start'}
