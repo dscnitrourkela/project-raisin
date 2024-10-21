@@ -17,7 +17,8 @@ import {
 // import { DTS_previewItems, DTS_descriptionItems } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
 import { ComingSoon } from '@/components/EventsPage/ComingSoon';
-import { GalleryWrapper, Gallerywrapper } from '@/components/EventsPage/Gallery/CardWrapper';
+import { GalleryWrapper } from '@/components/EventsPage/Gallery/CardWrapper';
+// import { GalleryWrapper, Gallerywrapper } from '@/components/EventsPage/Gallery/CardWrapper';
 // import { GalleryWrapper } from '@/components/EventsPage/Gallery/CardWrapper';
 
 export default function Page() {
@@ -41,7 +42,7 @@ export default function Page() {
         <Heading3>GUEST LECTURES</Heading3>
         {/* <MainCarousel previewItems={GL_previewItems} descriptionItems={GL_descriptionItems} /> */}
         <ComingSoon />
-        <Heading3 className='mb-0'>GALLERY</Heading3>
+        <Heading3>GALLERY</Heading3>
         <GalleryWrapper />
       </EventsContainer>
     </div>
