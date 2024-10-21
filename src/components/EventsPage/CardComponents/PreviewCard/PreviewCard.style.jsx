@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { HeroGreenPrimaryButton, HeroPrimaryButton } from '@/components/HeroSection/styles';
 
 export const PreviewCardContainer = styled.div`
-  ${tw`w-full h-auto max-w-[390px] max-h-[500px] xl:h-[606px] bg-gradient-to-b from-[#002929] to-[#22002b] rounded-lg shadow-lg border border-[#074870] flex flex-col justify-between items-center p-5 mb-16 gap-y-4`}
+  ${tw`w-full h-[450px] xxs:h-[500px] sm:h-auto max-w-[390px] xl:h-[500px] bg-gradient-to-b from-[#002929] to-[#22002b] rounded-lg shadow-lg border border-[#074870] flex flex-col justify-between items-center p-5  mb-16 gap-y-4`}
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.4);
