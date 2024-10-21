@@ -16,7 +16,7 @@ import {
 } from '@/config/content/EventsPage/Exhibition/Data';
 // import { DTS_previewItems, DTS_descriptionItems } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
-<
+
 import {
   FunEvents_previewItems,
   FunEvents_descriptionItems,
