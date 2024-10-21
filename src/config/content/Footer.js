@@ -77,7 +77,7 @@ export const footerBottom = [
   {
     id: 4,
     title: 'Payment Policy',
-    url: 'https://drive.google.com/file/d/1IyMLFfKceBJz5B3qzw6O4xQmeJOp37pm/view?usp=sharing',
+    url: '/refundPolicy',
   },
   {
     id: 5,
@@ -145,5 +145,28 @@ export const TermsAndConditionsModalData = [
     title: 'Disclaimer',
     description:
       'To the maximum permitted visitors conduct, nothing in this disclaimer will: limit or exclude our or your liability for death or personal injury; limit or exclude our or your liability for fraud or fraudulent misrepresentation; limit any of our or your liabilities in any way that is not permitted under applicable law; or exclude any of our or your liabilities that may not be excluded under applicable law. The limitations and prohibitions of liability set in this section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty. As the website can be accessed by all verified visitors, we shall not uphold any liability for any damage.',
+  },
+];
+
+export const PaymentPolicyPageData = [
+  {
+    title: 'Pricing',
+    description:
+      'The registration fees for Innovision 2024 apply to all students from outside NIT Rourkela. This fee grants access to all events, workshops, and exhibitions during the fest. For students of NIT Rourkela, registration is completely free. Registration covers participation in most events, though some workshops may require additional fees for materials. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity.',
+  },
+  {
+    title: 'Refund Policy',
+    description:
+      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy. Please note that refunds are only applicable in very limited circumstances. We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
+  },
+  {
+    title: 'Your Registration Cancellation Rights',
+    description:
+      'There will be no refund of the registration fees under any circumstances unless the fest is cancelled by Team Innovision. This policy is in place to ensure the smooth planning and execution of the event. In case of fest cancellation by the organizing team, all registered participants will be eligible for a full refund. However, in any other case, the registration fees are non-refundable. We highly recommend double-checking your availability before confirming your registration.',
+  },
+  {
+    title: 'Contact for Help',
+    description:
+      'If you have any questions or need assistance with your registration, please feel free to reach out to our support team at innovision2024.nitr@gmail.com. We are here to help with any queries related to registration, event details, or technical issues. Our team will respond within 24-48 hours to ensure you have all the information you need to enjoy Innovision 2024 to the fullest.',
   },
 ];
