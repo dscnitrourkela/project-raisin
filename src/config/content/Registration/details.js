@@ -250,3 +250,8 @@ export const notAllowedInstitutes = [
   'Institute of Technical Education and Research SOA',
   'ITER SOA',
 ];
+
+export const undertakingContent = {
+  link: 'https://www.google.com/',
+  text: 'Undertaking Form for Authorization/Permission Letter',
+};
