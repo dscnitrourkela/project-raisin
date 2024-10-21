@@ -76,25 +76,17 @@ const Navbar = () => {
               marginTop: '10px',
             }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.3, type: 'tween' }}
             className='h-[73vh] flex items-center justify-center'
           >
             <ResMen>
               <ResList>
                 {navLinks.map((navLink, idx) => (
-                  <motion.div
-                    initial={{ x: -100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -100, opacity: 0 }}
-                    transition={{ duration: 0.3, delay: idx * 0.1 }}
-                    key={navLink.link}
-                  >
-                    <ResItem key={navLink.link}>
-                      <Link href={`${navLink.link}`} onClick={handleCloseMenu}>
-                        {navLink.name}
-                      </Link>
-                    </ResItem>
-                  </motion.div>
+                  <ResItem key={navLink.link}>
+                    <Link href={`${navLink.link}`} onClick={handleCloseMenu}>
+                      {navLink.name}
+                    </Link>
+                  </ResItem>
                 ))}
 
                 <HamburgerRegisterButton>
