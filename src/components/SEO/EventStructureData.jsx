@@ -25,7 +25,6 @@ const EventStructuredData = ({
     },
   };
 
-  console.log(structuredData);
   return (
     <Head>
       <script
