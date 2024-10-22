@@ -15,14 +15,13 @@ function PreviewCard({ ImageURL, PreviewDescription = '' }) {
     <PreviewCardContainer>
       <Image
         src={ImageURL}
-        alt='CardImage'
-        width={338}
-        height={250}
-        className='rounded-[17.82px] h-[200px] xxs:h-[225px] 2xs:h-[235px] ssm:h-[240px] sm:h-[250px] md:h-[260px] w-full md:w-[305px]  lg:w-[338px] lg:h-[240px] '
+        alt='image'
+        width={500}
+        height={500}
+        className='w-full lg:w-[416px] xlg:w-[372px] object-cover rounded-2xl'
       />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
-      <div className='flex justify-center gap-10 sm:gap-24 mt-2 md:mt-4'>
-        {/* Reduced gap for symmetry */}
+      <div className='flex justify-center gap-10 sm:gap-24 xlg:gap-10 mt-2 md:mt-4'>
         <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
         <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
       </div>

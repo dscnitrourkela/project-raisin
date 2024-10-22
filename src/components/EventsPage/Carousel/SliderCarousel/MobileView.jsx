@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import PreviewCard from '../../CardComponents/PreviewCard/PreviewCard';
+import PreviewCard from '../../CardComponents/PreviewCard';
 import { Pagination } from 'swiper/modules';
 import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 import 'swiper/css/pagination';

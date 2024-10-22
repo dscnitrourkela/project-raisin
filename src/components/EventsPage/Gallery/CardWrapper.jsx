@@ -4,10 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { GalleryData } from '@/config/content/EventsPage/GalleryData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-// import 'swiper/css'; // Ensure Swiper CSS is imported
-// import 'swiper/css/bundle'; // Or import specific parts like:
 import 'swiper/css/pagination';
-// import 'swiper/css/pagination'; // Import pagination CSS if needed
 
 export const GalleryWrapper = () => {
   const [cardSizes, setCardSizes] = useState([]);

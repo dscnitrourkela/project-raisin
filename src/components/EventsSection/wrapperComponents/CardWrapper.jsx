@@ -4,7 +4,7 @@ import { useAnimate } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { EventCard } from '../eventCardComponents/EventCard';
-import '../../EventsPage/Carousel/PreviewCarousel/swiper.css';
+import '../../EventsPage/Carousel/SliderCarousel/swiper.css';
 import { AllEvents } from './AllEvents';
 import { CardLabel } from '../eventCardComponents/Cardlabel';
 
