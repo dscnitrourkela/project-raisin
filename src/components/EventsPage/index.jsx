@@ -1,17 +1,20 @@
-// import DualCarousel from './Carousel/DualCarousel/DualCarousel';
+import EventStructuredData from '@/components/SEO/EventStructureData';
 import { SliderEventsWrapper } from './Carousel/PreviewCarousel/EventWrapper';
-import SEO from '../SEO';
-
 const MainCarousel = ({ previewItems, descriptionItems }) => {
   return (
     <>
-      <SEO
-        title='Awesome College Event 2024 | Your College Name'
-        description='Join us for the biggest college event of the year! Featuring workshops, competitions, and networking opportunities.'
-        ogImage='https://yourcollege.edu/event-image.jpg'
-        ogUrl='https://yourcollege.edu/awesome-event-2024'
-      />
-
+      {descriptionItems.length !== 0 &&
+        descriptionItems.map((eventData) => (
+          <EventStructuredData
+            description={eventData.Description}
+            endDate={'2024-11-10T23:59:59+00:00'}
+            location={eventData.Location}
+            name={eventData.Heading}
+            organizerName={'INNOVISION'}
+            startDate={'2024-11-08T00:00:00+00:00'}
+            key={eventData.Heading}
+          />
+        ))}
       <SliderEventsWrapper previewItems={previewItems} descriptionItems={descriptionItems} />
     </>
   );

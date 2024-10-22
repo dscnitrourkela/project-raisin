@@ -69,7 +69,7 @@ const spaceGrotesk = SpaceGrotesk({
 
 export const metadata = {
   title: 'Innovision 2024',
-  description: 'Created by GDSC NIT Rourkela',
+  description: 'Crafted by GDSC NIT Rourkela',
 };
 
 export default function RootLayout({ children }) {
