@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { EventCard } from '../eventCardComponents/EventCard';
 import '../../EventsPage/Carousel/PreviewCarousel/swiper.css';
 import { AllEvents } from './AllEvents';
@@ -116,9 +116,9 @@ export const CardWrapper = () => {
           centeredSlides={true}
           loop={true}
           spaceBetween={30}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           onSlideChange={onSlideChange}
-          // autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           className='mySwiper4'
         >
           {AllEvents.map((item, index) => (
