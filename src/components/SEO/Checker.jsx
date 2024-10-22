@@ -28,6 +28,7 @@ const SEOChecker = () => {
     // Check meta description
     const description = document.querySelector('meta[name="description"]')?.content;
 
+    console.log(document.querySelector('meta[name="url"]'));
     // Check OG tags
     const ogTitle = document.querySelector('meta[property="og:title"]')?.content;
     const ogDescription = document.querySelector('meta[property="og:description"]')?.content;
@@ -81,7 +82,7 @@ const SEOChecker = () => {
   };
 
   return (
-    <div className='max-w-2xl mx-auto my-8 p-6 bg-white rounded-lg shadow-lg'>
+    <div className='max-w-2xl mx-auto my-8 p-6 bg-white rounded-lg shadow-lg text-black'>
       <div className='flex items-center gap-2 mb-6'>
         <AlertCircle className='w-5 h-5 text-blue-500' />
         <h2 className='text-xl font-bold'>SEO Check Results</h2>
