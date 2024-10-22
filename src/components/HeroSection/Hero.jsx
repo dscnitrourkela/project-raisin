@@ -100,7 +100,7 @@ export const Hero = () => {
             </motion.div>
           </Link>
           <Link
-            href='https://drive.google.com/file/d/1jWXT8ShzBW5KTn50DrTsgSqLgmSJMwTO/view?usp=sharing'
+            href='https://drive.google.com/file/d/1jglpl2SzbmpRc73ML80zREhnpxxQF4qx/view?usp=sharing'
             target='_blank'
           >
             <motion.div variants={buttonVariants} whileHover='hover'>
