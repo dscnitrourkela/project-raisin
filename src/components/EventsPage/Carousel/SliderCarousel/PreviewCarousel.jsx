@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LeftArrowButton, RightArrowButton } from '../../Shared/ArrowButton';
-import PreviewCard from '../../CardComponents/PreviewCard/PreviewCard';
+import PreviewCard from '../../CardComponents/PreviewCard';
 import tw, { styled } from 'twin.macro';
 
 const PreviewCarouselContainer = styled.div`
@@ -15,13 +15,13 @@ const PreviewSlideContainer = styled(motion.div)`
 `;
 
 const PreviewCarousel = ({ items, onSlideChange }) => {
-  const [current, setCurrent] = useState(0); // Initialize current as a single number
-  const [direction, setDirection] = useState(0); // Initialize direction separately
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const paginate = (newDirection) => {
     const newIndex = (current + newDirection + items.length) % items.length;
     setCurrent(newIndex);
-    setDirection(newDirection); // Update the direction separately
+    setDirection(newDirection);
     onSlideChange(newIndex);
   };
 
