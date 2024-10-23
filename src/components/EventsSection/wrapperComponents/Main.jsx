@@ -1,5 +1,4 @@
 import { Header } from '../Header.jsx/header';
-import { SubHeader } from '../Header.jsx/SubHeader';
 import { Body } from './Body';
 
 export const EventSectionMain = () => {

@@ -12,6 +12,7 @@ import {
 } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 import Hoc from '@/components/shared/HOC/Hoc';
+import { description, metadataBase, title, url, images } from '@/config/SEO/config';
 
 const spaceX = localFont({
   src: '../fonts/SpaceX.ttf',
@@ -68,8 +69,14 @@ const spaceGrotesk = SpaceGrotesk({
 });
 
 export const metadata = {
-  title: 'Innovision 2024',
-  description: 'Created by GDSC NIT Rourkela',
+  metadataBase: metadataBase,
+  title: title,
+  openGraph: {
+    url: url,
+    description: description,
+    images: images,
+  },
+  description: description,
 };
 
 export default function RootLayout({ children }) {

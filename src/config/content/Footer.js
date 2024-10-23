@@ -48,7 +48,7 @@ export const secondcol = [
 export const thirdcol = [
   {
     id: 1,
-    title: 'Event Brouchere',
+    title: 'Event Brochure',
     url: 'https://drive.google.com/file/d/1jWXT8ShzBW5KTn50DrTsgSqLgmSJMwTO/view?usp=sharing',
   },
   {
