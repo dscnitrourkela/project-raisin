@@ -48,7 +48,7 @@ export const Hero = () => {
       </motion.div>
 
       <motion.div
-        className='absolute inset-0 z-20 flex flex-col items-center justify-center mt-32'
+        className='absolute inset-0 z-20 flex flex-col items-center justify-center xsm:mt-20 md:mt-32'
         initial='hidden'
         animate='visible'
         variants={container}

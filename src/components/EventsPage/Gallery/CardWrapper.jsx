@@ -28,27 +28,33 @@ export const Gallerywrapper = () => {
   }, []);
 
   return (
-    <div
-      className='relative w-full'
-      style={{
-        padding: '1rem',
-      }}
-    >
+    <div className='relative w-full p-4'>
       <div
         className={
           isMobile
-            ? 'grid grid-cols-1 xsm:grid-cols-2 gap-3 xsm:gap-6 -mt-24'
+            ? 'flex overflow-x-auto gap-4 pb-4 -mt-24 snap-x snap-mandatory scrollbar-hide'
             : 'flex flex-wrap gap-6 justify-start'
+        }
+        style={
+          isMobile
+            ? {
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                WebkitOverflowScrolling: 'touch',
+              }
+            : {}
         }
       >
         {GalleryData.map((item, index) => (
           <div
             key={index}
-            className='rounded-lg overflow-hidden'
+            className={`rounded-lg overflow-hidden ${isMobile ? 'snap-center flex-none' : ''}`}
             style={
               isMobile
                 ? {
+                    width: '80vw',
                     minHeight: '300px',
+                    maxWidth: '400px',
                   }
                 : {
                     width: `${cardSizes[index]?.width === 2 ? '32%' : '16%'}`,
