@@ -4,7 +4,7 @@ import { useAnimate } from 'framer-motion';
 // import { SliderData } from '@/config/content/eventsCarauselData';
 import { LeftArrowButton, RightArrowButton } from '../../Shared/ArrowButton';
 import { MobileView } from './MobileView';
-import { LargeScreenView } from './BigScreenView';
+import { LargeScreenView } from './DesktopView';
 import { Wrapper } from './EventWrapper.styles';
 import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 
@@ -44,7 +44,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
       swiperRef.current.swiper.slideNext();
-    }, 6000);
+    }, 10000);
   };
 
   const resetAutoSlide = () => {
