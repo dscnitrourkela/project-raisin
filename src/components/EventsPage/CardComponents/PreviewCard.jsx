@@ -18,15 +18,14 @@ function PreviewCard({ ImageURL, PreviewDescription = '', link = '' }) {
       <PreviewCardImage src={ImageURL} alt='image' width={500} height={500} />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
       <PreviewButtonContainer>
-        <PreviewMoreInfoButton2>
-          {link === '' ? (
-            'Coming soon'
-          ) : (
+        {link === '' ? null : (
+          <PreviewMoreInfoButton2>
             <Link href={link} target='_blank' rel='noopener noreferrer'>
               Rulebook
-            </Link>
-          )}
-        </PreviewMoreInfoButton2>
+            </Link>{' '}
+          </PreviewMoreInfoButton2>
+        )}
+
         <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>
