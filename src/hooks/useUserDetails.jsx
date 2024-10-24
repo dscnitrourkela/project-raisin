@@ -15,6 +15,7 @@ export const useUserDetails = () => {
         console.error('Error parsing userData from cookie:', error);
       }
     }
+
     return userInfo;
   }, [userInfo]);
 

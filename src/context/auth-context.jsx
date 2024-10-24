@@ -1,25 +1,29 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { signInWithGoogle, signOutUser } from '@/firebase/auth';
 import Cookies from 'js-cookie';
+import { auth } from '@/firebase/firebase';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [userInfo, setUserData] = useState({});
+  const [userInfo, setUserInfo] = useState({});
   const [authLoading, setAuthLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
     setAuthLoading(true);
     try {
       const user = await signInWithGoogle();
+
+      const token = await auth.currentUser.getIdToken();
+      console.log(`Bearer ${token}`);
       if (user) {
-        const userData = { name: user.displayName, email: user.email, uid: user.uid };
+        const userData = { name: user.displayName, email: user.email, uid: user.uid, token: token };
         Cookies.set('userData', JSON.stringify(userData), {
           expires: 7,
           sameSite: 'strict',
         });
-        setUserData(userData);
+        setUserInfo(userData);
         toast.success('Successfully signed in with Google.');
       } else {
         toast.error('Google sign-in failed. Please try again.');
@@ -35,7 +39,7 @@ export const AuthProvider = ({ children }) => {
   const handleSignOut = async () => {
     try {
       await signOutUser();
-      setUserData({});
+      setUserInfo({});
       Cookies.remove('userData');
       toast.success('Successfully signed out.');
     } catch (error) {
@@ -46,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ userInfo, setUserData, handleGoogleSignIn, handleSignOut, authLoading }}
+      value={{ userInfo, setUserInfo, handleGoogleSignIn, handleSignOut, authLoading }}
     >
       {children}
     </AuthContext.Provider>
