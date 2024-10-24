@@ -19,7 +19,7 @@ import { formFields, undertakingContent } from '@/config/content/Registration/de
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
-import { useUserDetails } from '@/hooks/useUserDetails';
+import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
@@ -44,18 +44,9 @@ function Page() {
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const getUserDetails = useUserDetails();
-  const { handleGoogleSignIn, userInfo, authLoading } = useContext(AuthContext);
+  const isLoggedIn = useIsLoggedIn();
 
-  useLayoutEffect(() => {
-    const userDetails = getUserDetails();
-    if (userDetails.name) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [getUserDetails, userInfo]);
+  const { handleGoogleSignIn, userInfo, authLoading } = useContext(AuthContext);
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;

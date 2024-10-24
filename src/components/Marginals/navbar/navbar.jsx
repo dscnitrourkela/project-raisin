@@ -20,13 +20,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AuthContext } from '@/context/auth-context';
-import { useUserDetails } from '@/hooks/useUserDetails';
+import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const { handleSignOut, userInfo } = useContext(AuthContext);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { handleSignOut } = useContext(AuthContext);
+  const isLoggedIn = useIsLoggedIn();
 
   function handleToggle() {
     setIsOpen(!isOpen);
@@ -39,16 +39,6 @@ const Navbar = () => {
   useEffect(() => {
     handleCloseMenu();
   }, [pathname]);
-
-  const getUserDetails = useUserDetails();
-  useEffect(() => {
-    const userDetails = getUserDetails();
-    if (userDetails.name) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [getUserDetails, userInfo]);
 
   return (
     <NavContainer>
