@@ -2,7 +2,7 @@ export const ME_previewItems = [
   {
     id: 1,
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729430506/INNO_events/Inno%20Club%20Posters/lpnxaifia1oeuhidclqr.png', //TBA
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620356/INNO_events/Inno%20Club%20Posters/bcoj4apqypqilp4ihmt0.png',
     PreviewDescription:
       '"Can you decode the future of business?" Join us for PSI PHI, our annual Business Hackathon, where mathematics meets strategy!...',
     Rulebook: 'https://drive.google.com/open?id=1Vgc_35f1NxMIdPp4uB4abJBd2-vV18Wh',
@@ -94,7 +94,7 @@ export const ME_previewItems = [
   {
     id: 13,
     ImageURL:
-      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179010/inno-2024/Event%20Posters/Sci%20Savior-Inspire%20Club/ofq0fs5l9vtzdbfu2p33.png',
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620354/INNO_events/Inno%20Club%20Posters/ea1cjufzsbciriyinvhe.png',
     PreviewDescription:
       'In this exciting team-based event, teams of 4 will tackle three thrilling challenges—Pictionary, Puzzle Pursuit, and Science Riddles—to rescue their imaginary friend...',
     Rulebook: 'https://drive.google.com/open?id=1YyUraTfqxDz-DzycaaiWLjIWPGgO9r5m',
@@ -375,7 +375,7 @@ export const ME_descriptionItems = [
     Description:
       '"Can you decode the future of business?" Join us for PSI PHI, our annual Business Hackathon, where mathematics meets strategy! With over 300 participants expected, this event challenges you to tackle core business and economic problems through a series of thought-provoking questions and case studies. Are you ready to sharpen your problem-solving skills and compete for innovative solutions? Don’t miss out!',
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729430506/INNO_events/Inno%20Club%20Posters/lpnxaifia1oeuhidclqr.png', // TBA
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620356/INNO_events/Inno%20Club%20Posters/bcoj4apqypqilp4ihmt0.png',
     Location: 'LA-104',
     Date: 'Day 1',
     Time: '4 PM',
@@ -515,7 +515,7 @@ export const ME_descriptionItems = [
     Description:
       'In this exciting team-based event, teams of 4 will tackle three thrilling challenges—Pictionary, Puzzle Pursuit, and Science Riddles—to rescue their imaginary friend. Teams will first identify their friends trapped scenario through drawings, then hunt for hidden weapons using coded clues, and finally solve science riddles to creatively apply the weapons and complete the rescue. Points are awarded for speed, accuracy, and creativity. Let the adventure begin!',
     ImageURL:
-      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179010/inno-2024/Event%20Posters/Sci%20Savior-Inspire%20Club/ofq0fs5l9vtzdbfu2p33.png',
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620354/INNO_events/Inno%20Club%20Posters/ea1cjufzsbciriyinvhe.png',
     Location: 'LA-214',
     Date: 'DAY 2',
     Time: '9 AM',

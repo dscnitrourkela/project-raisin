@@ -19,7 +19,7 @@ export const FE_previewItems = [
   {
     id: 3,
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729428502/INNO_events/Inno%20Club%20Posters/zpkcnqvep4f1opnxmjxv.png', // GTA (To be updated)
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729428502/INNO_events/Inno%20Club%20Posters/zpkcnqvep4f1opnxmjxv.png',
     PreviewDescription:
       'Embark on an immersive journey with Game Showcase, a virtual reality game and campus tour designed to transport you into a stunning digital landscape where exploration meets adventure. Explore the enormous campus of NIT Rourkela virtually through Oculus Virtual Reality headsets and experience your surroundings like never before.',
     Rulebook: 'https://drive.google.com/open?id=1Z9zLd0CdDhMqT12tnjsPbe2ZRxI0qUva',
@@ -27,7 +27,7 @@ export const FE_previewItems = [
   {
     id: 4,
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429077/INNO_events/Inno%20Club%20Posters/vgwmdwxxu7secw0nrvwl.jpg', // GENESYS To be updated
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429077/INNO_events/Inno%20Club%20Posters/vgwmdwxxu7secw0nrvwl.jpg',
     PreviewDescription:
       'Embark on a thrilling adventure through a maze built inside a tent! Along the way, solve questions at checkpoints to progress. Your goal? Find and conquer as many checkpoints as possible before time runs out. The participants with the most checkpoints and correct answers will claim victory. Test your problem-solving, strategy, and navigation in this exciting race against time!',
     Rulebook: 'https://drive.google.com/open?id=1Kxt1qVCS6xK2qcX_63SQmRj-XQJkMy7g',
@@ -35,7 +35,7 @@ export const FE_previewItems = [
   {
     id: 5,
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429312/INNO_events/Inno%20Club%20Posters/xyhs9csqwlox9i9jamw7.png', // AXIOM To be updated
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620360/INNO_events/Inno%20Club%20Posters/rsyalt6w45sjchesz9ge.png',
     PreviewDescription:
       'The Ultimate Treasure Hunt is a thrill ing adventure where logic, strategy, and math skills are your keys to success. Teams will embark on a campus-wide hunt, so ving puzzles and cracking codes that lead to hidden treasures. Each step tests problem-solving, creativity, and teamwork. The clues will challenge your mathematical limits while keeping the excitement high.',
     Rulebook: 'https://drive.google.com/open?id=1jy98okGN6yeKQJAuJlXvS59Qa1TpYWrh',
@@ -43,7 +43,7 @@ export const FE_previewItems = [
   {
     id: 6,
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429473/INNO_events/Inno%20Club%20Posters/vjw0omni0qbjzzasvu6e.png', // APS To be updated
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429473/INNO_events/Inno%20Club%20Posters/vjw0omni0qbjzzasvu6e.png',
     PreviewDescription:
       'The Algorithm and Programming Society of NITR is back with its flagship event of INNOVISION, Meteor Madness, an interact ive game involving a logrithmic problems and brainstorming quizzes that will enthral the participants in an adrenaline-filled atmosphere, testing their cognitive as well as coding skills. Presenting a cosmos of challenging problems at different levels, th is competition will be both exciting and unforgettable. Dont miss out!',
     Rulebook: 'https://drive.google.com/open?id=1RZcGSiwNF-0BOzjU67XngYXsNIRjVBp3',
@@ -113,7 +113,7 @@ export const FE_descriptionItems = [
     Description:
       'Get ready for Death Race, a two-day robotics competition where participants drive their robots through a track filled with obstacles and challenges. The fastest robot to navigate the course and score the most points wins. Brace yourself for an intense and thrilling showdown!',
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429312/INNO_events/Inno%20Club%20Posters/xyhs9csqwlox9i9jamw7.png', // AXIOM To be updated
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620360/INNO_events/Inno%20Club%20Posters/rsyalt6w45sjchesz9ge.png',
     Location: 'LA Lawns, LA 004, LA 009, Academic Area',
     Date: 'Day 2',
     Time: '3 PM',
