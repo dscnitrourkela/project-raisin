@@ -69,5 +69,5 @@ export const RegisterButton = styled(PrimaryButton)`
 `;
 
 export const ProfileButton = styled(SecondaryButton)`
-  ${tw`ml-12 h-14 w-14 flex items-center justify-center mt-2 `}
+  ${tw`ml-12 h-14 w-14 flex items-center justify-center bg-black/20 mt-2 max-[930px]:hidden`}
 `;
