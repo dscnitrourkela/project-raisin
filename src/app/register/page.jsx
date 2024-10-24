@@ -52,6 +52,8 @@ function Page() {
     const userDetails = getUserDetails();
     if (userDetails.name) {
       setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
     }
   }, [getUserDetails, userInfo]);
 

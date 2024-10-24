@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {
   HamburgerContainer,
   MainBar,
@@ -19,10 +19,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
+import { AuthContext } from '@/context/auth-context';
+import { useUserDetails } from '@/hooks/useUserDetails';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const { handleSignOut, userInfo } = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleToggle() {
     setIsOpen(!isOpen);
@@ -35,6 +39,16 @@ const Navbar = () => {
   useEffect(() => {
     handleCloseMenu();
   }, [pathname]);
+
+  const getUserDetails = useUserDetails();
+  useEffect(() => {
+    const userDetails = getUserDetails();
+    if (userDetails.name) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [getUserDetails, userInfo]);
 
   return (
     <NavContainer>
@@ -54,11 +68,15 @@ const Navbar = () => {
               </MainBarItems>
             ))}
           </MainBar>
-          <RegisterButton>
-            <Link href='/register' onClick={handleCloseMenu}>
-              {ButtonData.title}
-            </Link>
-          </RegisterButton>
+          {isLoggedIn ? (
+            <RegisterButton onClick={handleSignOut}>Logout</RegisterButton>
+          ) : (
+            <RegisterButton>
+              <Link href='/register' onClick={handleCloseMenu}>
+                {ButtonData.title}
+              </Link>
+            </RegisterButton>
+          )}
           <HamburgerContainer>
             <Hamburger toggled={isOpen} toggle={handleToggle} size={20} />
           </HamburgerContainer>
@@ -89,11 +107,15 @@ const Navbar = () => {
                   </ResItem>
                 ))}
 
-                <HamburgerRegisterButton>
-                  <Link href={ButtonData.link} onClick={handleCloseMenu}>
-                    {ButtonData.title}
-                  </Link>
-                </HamburgerRegisterButton>
+                {isLoggedIn ? (
+                  <HamburgerRegisterButton onClick={handleSignOut}>Logout</HamburgerRegisterButton>
+                ) : (
+                  <HamburgerRegisterButton>
+                    <Link href='/register' onClick={handleCloseMenu}>
+                      {ButtonData.title}
+                    </Link>
+                  </HamburgerRegisterButton>
+                )}
               </ResList>
             </ResMen>
           </motion.div>
