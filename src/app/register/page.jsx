@@ -23,7 +23,7 @@ import { useUserDetails } from '@/hooks/useUserDetails';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
-import { RegistrationModal } from './RegistrationModal';
+// import { RegistrationModal } from './RegistrationModal';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -179,8 +179,7 @@ function Page() {
     <RegisterContainer>
       <Moon />
 
-      {/* //---------------------commented out google auth part--------------------- */}
-      {/* {isLoggedIn ? (
+      {isLoggedIn ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
@@ -188,13 +187,9 @@ function Page() {
               return returnFormFields(field);
             })}
           </RegisterForm>
-          <UndertakingLink
-          href={undertakingContent.link}
-          target='_blank'
-          
-        >
-          {undertakingContent.text}
-        </UndertakingLink>
+          <UndertakingLink href={undertakingContent.link} target='_blank'>
+            {undertakingContent.text}
+          </UndertakingLink>
           <CampusAmbassador
             handleChange={handleChange}
             userReferral={userDetails.phone}
@@ -208,33 +203,7 @@ function Page() {
         <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading}>
           {authLoading ? 'Loading...' : 'Sign In with Google'}
         </PrimaryButton>
-      )} */}
-      {/* //---------------------commented out google auth part--------------------- */}
-
-      <RegisterInnerContainer>
-        <RegisterHeading>Register</RegisterHeading>
-        <RegisterForm>
-          {formFields.map((field) => {
-            return returnFormFields(field);
-          })}
-        </RegisterForm>
-        <UndertakingLink href={undertakingContent.link} target='_blank' className=''>
-          {undertakingContent.text}
-        </UndertakingLink>
-        <PaymentPolicyInfo>
-          <Link href='/refundPolicy'>Please review the Payment Policy before registering.</Link>
-        </PaymentPolicyInfo>
-
-        <CampusAmbassador
-          handleChange={handleChange}
-          userReferral={userDetails.phone}
-          isCampusAmbassador={userDetails.campusAmbassador}
-        />
-        <RegsiterButton onClick={handleSubmit} disabled={loading}>
-          Submit
-        </RegsiterButton>
-      </RegisterInnerContainer>
-      <RegistrationModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      )}
     </RegisterContainer>
   );
 }
