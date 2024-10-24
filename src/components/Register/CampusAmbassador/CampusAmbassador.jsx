@@ -38,7 +38,7 @@ function CampusAmbassador({ handleChange, userReferral, isCampusAmbassador }) {
         >
           Your referral code is <strong>{userReferral}</strong>
           <br />
-          <code className='text-lg'>Use this while referring to your peers.</code>
+          <p className='text-sm mt-2'>Use this while referring to your peers.</p>
         </Description>
       )}
     </Container>
