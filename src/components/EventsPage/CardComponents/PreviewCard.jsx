@@ -27,7 +27,7 @@ function PreviewCard({ ImageURL, PreviewDescription = '', link = '' }) {
             </Link>
           )}
         </PreviewMoreInfoButton2>
-        {link === '' || <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>}
+        <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>
   );
