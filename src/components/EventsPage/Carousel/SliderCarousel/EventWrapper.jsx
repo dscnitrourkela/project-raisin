@@ -44,7 +44,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
       swiperRef.current.swiper.slideNext();
-    }, 10000);
+    }, 15000);
   };
 
   const resetAutoSlide = () => {

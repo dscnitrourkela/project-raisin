@@ -1,6 +1,6 @@
 import { Link } from '@nextui-org/react';
 import { SubHeader } from '../Header.jsx/SubHeader';
-import { Button } from '../utils/Button';
+import { Button } from '../shared/Button';
 import { CardWrapper } from './CardWrapper';
 
 export const Body = () => {

@@ -3,9 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { EventCard } from '../eventCardComponents/EventCard';
+import { EventCard } from '../eventCardComponents/Card';
 import '../../EventsPage/Carousel/SliderCarousel/swiper.css';
-import { AllEvents } from '../utils/AllEvents';
+import { AllEvents } from '../shared/AllEvents';
 import { CardLabel } from '../eventCardComponents/Cardlabel';
 
 export const CardWrapper = () => {
