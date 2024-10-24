@@ -157,7 +157,7 @@ export const PaymentPolicyPageData = [
   {
     title: 'Refund Policy',
     description:
-      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy. Please note that refunds are only applicable in very limited circumstances. We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
+      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy.We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
   },
   {
     title: 'Your Registration Cancellation Rights',
