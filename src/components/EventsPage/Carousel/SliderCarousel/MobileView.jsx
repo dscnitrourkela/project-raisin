@@ -28,7 +28,11 @@ export const MobileView = ({
       >
         {previewItems.map((item, index) => (
           <SwiperSlide key={index}>
-            <PreviewCard PreviewDescription={item.PreviewDescription} ImageURL={item.ImageURL} />
+            <PreviewCard
+              PreviewDescription={item.PreviewDescription}
+              ImageURL={item.ImageURL}
+              link={item.Rulebook}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -25,7 +25,11 @@ export const LargeScreenView = ({ onSlideChange, swiperRef, currentIndex, previe
               key={index}
               className={`slide ${index === currentIndex ? 'active-slide' : ''}`}
             >
-              <PreviewCard PreviewDescription={item.PreviewDescription} ImageURL={item.ImageURL} />
+              <PreviewCard
+                PreviewDescription={item.PreviewDescription}
+                ImageURL={item.ImageURL}
+                link={item.Rulebook}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
