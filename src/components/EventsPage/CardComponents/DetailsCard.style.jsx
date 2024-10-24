@@ -9,7 +9,7 @@ export const DetailsCardcontainer = styled.div`
 `;
 
 export const DescriptionCardContainer = styled.div`
-  ${tw`w-full flex flex-col-reverse lg:flex-row justify-between items-start gap-10 bg-transparent p-5 xsm:pl-12 xsm:pr-12 ssm:pl-16 ssm:pr-16 sm:pl-24 sm:pr-24 `}
+  ${tw`w-full flex flex-col-reverse lg:flex-row justify-between items-start gap-10 bg-transparent p-3 xsm:pl-12 xsm:pr-12 ssm:pl-16 ssm:pr-16 sm:pl-24 sm:pr-24 `}
 `;
 
 export const DescriptionCardHeading = styled(Heading1)`

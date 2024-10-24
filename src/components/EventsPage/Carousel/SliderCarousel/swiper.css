@@ -66,6 +66,7 @@
 .mySwiper .swiper-slide-prev-prev,
 .mySwiper .swiper-slide-next-next {
   display: none;
+  opacity: 0.3;
 }
 
 .mySwiper3 .swiper-slide-active {

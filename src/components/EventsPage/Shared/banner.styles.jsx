@@ -18,7 +18,7 @@ export const TextBold = styled.div`
   ${tw`font-bold `};
 `;
 export const TextSemiBold = styled.div`
-  ${tw`font-semibold text-xs xsm:text-lg text-gray-500`}
+  ${tw`font-semibold text-xs xsm:text-lg text-white/[0.8]`}
 `;
 
 export const StyledImage = styled(Image)`
