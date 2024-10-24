@@ -5,7 +5,7 @@ import { useAnimate } from 'framer-motion';
 import { LeftArrowButton, RightArrowButton } from '../../Shared/ArrowButton';
 import { MobileView } from './MobileView';
 import { LargeScreenView } from './DesktopView';
-import { Wrapper } from './EventWrapper.styles';
+import { LargeScreenViewContainer, Wrapper } from './EventWrapper.styles';
 import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 
 export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
@@ -44,7 +44,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   const startAutoSlide = () => {
     autoSlideIntervalRef.current = setInterval(() => {
       swiperRef.current.swiper.slideNext();
-    }, 10000);
+    }, 15000);
   };
 
   const resetAutoSlide = () => {
@@ -80,7 +80,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
 
   return !isMobile ? (
     <Wrapper>
-      <div className='relative flex justify-center items-center h-auto'>
+      <LargeScreenViewContainer>
         <LeftArrowButton
           onClick={handlePrev}
           style={{
@@ -106,7 +106,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
             zIndex: 10,
           }}
         />
-      </div>
+      </LargeScreenViewContainer>
       <DescriptionCarousel descriptionItems={descriptionItems} currentIndex={currentIndex} />
     </Wrapper>
   ) : (

@@ -1,4 +1,4 @@
-import { AllEvents } from '@/components/EventsSection/utils/AllEvents';
+import { AllEvents } from '@/components/EventsSection/shared/AllEvents';
 import { GalleryCard } from './card';
 import { useEffect, useRef, useState } from 'react';
 import { GalleryData } from '@/config/content/EventsPage/GalleryData';
