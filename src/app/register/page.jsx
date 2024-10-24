@@ -1,5 +1,5 @@
 'use client';
-import { useState, useLayoutEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -46,7 +46,7 @@ function Page() {
   const [errors, setErrors] = useState({});
   const isLoggedIn = useIsLoggedIn();
 
-  const { handleGoogleSignIn, userInfo, authLoading } = useContext(AuthContext);
+  const { handleGoogleSignIn, authLoading } = useContext(AuthContext);
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;

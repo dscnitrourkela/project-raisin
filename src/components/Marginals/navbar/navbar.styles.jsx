@@ -1,7 +1,7 @@
 import { NavbarLink } from '@/components/shared/Typography/Links';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { PrimaryButton, SecondaryButton } from '@/components/shared/Typography/Buttons';
 
 export const NavContainer = styled.nav`
   ${tw`fixed top-0 w-full h-10 max-w-7xl p-3 mx-auto mt-0 sm:h-12 md:h-14 lg:h-16 sm:p-4 md:p-5 sm:mt-4 md:mt-6 left-[50%] z-[1000] translate-x-[-50%]`}
@@ -66,4 +66,8 @@ export const HamburgerRegisterButton = styled(PrimaryButton)`
 
 export const RegisterButton = styled(PrimaryButton)`
   ${tw`hover:border-[2px]  hover:border-slate-500  transition-all  duration-300 ml-10 h-12 mt-2 max-[930px]:hidden`}
+`;
+
+export const ProfileButton = styled(SecondaryButton)`
+  ${tw`ml-12 h-14 w-14 flex items-center justify-center mt-2 `}
 `;

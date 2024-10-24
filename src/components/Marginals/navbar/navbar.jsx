@@ -12,6 +12,7 @@ import {
   ResMen,
   HamburgerRegisterButton,
   RegisterButton,
+  ProfileButton,
 } from './navbar.styles';
 import Hamburger from 'hamburger-react';
 import { ButtonData, logos, navLinks } from '../../../config/content/NavbarData/NavData';
@@ -21,9 +22,14 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AuthContext } from '@/context/auth-context';
 import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
+import ProfileMenu from '@/components/ProfileMenu/ProfileMenu';
+import { SecondaryButton } from '@/components/shared/Typography/Buttons';
+import { User } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   const pathname = usePathname();
   const { handleSignOut } = useContext(AuthContext);
   const isLoggedIn = useIsLoggedIn();
@@ -34,6 +40,10 @@ const Navbar = () => {
 
   const handleCloseMenu = () => {
     setIsOpen(false);
+  };
+
+  const handleProfileToggle = () => {
+    setIsProfileOpen(!isProfileOpen);
   };
 
   useEffect(() => {
@@ -59,7 +69,9 @@ const Navbar = () => {
             ))}
           </MainBar>
           {isLoggedIn ? (
-            <RegisterButton onClick={handleSignOut}>Logout</RegisterButton>
+            <ProfileButton onClick={handleProfileToggle}>
+              <User size={30} />
+            </ProfileButton>
           ) : (
             <RegisterButton>
               <Link href='/register' onClick={handleCloseMenu}>
@@ -72,6 +84,10 @@ const Navbar = () => {
           </HamburgerContainer>
         </NavCover>
       </div>
+
+      <AnimatePresence mode='wait'>
+        {isProfileOpen && <ProfileMenu handleProfileToggle={handleProfileToggle} />}
+      </AnimatePresence>
 
       <AnimatePresence mode='wait'>
         {isOpen && (
