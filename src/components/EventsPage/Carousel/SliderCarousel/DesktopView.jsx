@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import PreviewCard from '../../CardComponents/PreviewCard/PreviewCard';
+import PreviewCard from '../../CardComponents/PreviewCard';
 import { Pagination } from 'swiper/modules';
 import DescriptionCarousel from '../DescriptionCarousel/DescriptionCarousel';
 import { SliderContainer } from './EventWrapper.styles';
@@ -15,7 +15,7 @@ export const LargeScreenView = ({ onSlideChange, swiperRef, currentIndex, previe
           slidesPerView={3}
           centeredSlides={true}
           loop={true}
-          spaceBetween={0} // No space between slides
+          spaceBetween={0}
           onSlideChange={onSlideChange}
           modules={[Pagination]}
           className='mySwiper'

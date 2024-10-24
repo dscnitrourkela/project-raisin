@@ -37,7 +37,7 @@ export const secondcol = [
   {
     id: 3,
     title: 'Sponsors',
-    url: '/',
+    url: '/#sponsors',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const secondcol = [
 export const thirdcol = [
   {
     id: 1,
-    title: 'Event Brochure',
+    title: 'Event Brouchere',
     url: 'https://drive.google.com/file/d/1jWXT8ShzBW5KTn50DrTsgSqLgmSJMwTO/view?usp=sharing',
   },
   {
@@ -157,7 +157,7 @@ export const PaymentPolicyPageData = [
   {
     title: 'Refund Policy',
     description:
-      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy. Please note that refunds are only applicable in very limited circumstances. We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
+      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy.We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
   },
   {
     title: 'Your Registration Cancellation Rights',

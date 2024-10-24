@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   ${tw`w-full min-h-screen h-auto flex flex-col `}
 `;
 
+export const LargeScreenViewContainer = styled.div`
+  ${tw`relative flex justify-center items-center h-auto`}
+`;
+
 export const SliderContainer = styled.div`
   ${tw`pb-5 overflow-x-hidden h-auto relative`}
 `;
