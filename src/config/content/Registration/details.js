@@ -155,6 +155,10 @@ export const formFields = [
         value: 'National Institute of Technology, Patna (NIT Patna)',
       },
       {
+        label: 'National Institute of Technology, Rourkela (NIT Rourkela)',
+        value: 'National Institute of Technology, Rourkela (NIT Rourkela)',
+      },
+      {
         label: 'National Institute of Technology, Andhra Pradesh (NIT Andhra Pradesh)',
         value: 'National Institute of Technology, Andhra Pradesh (NIT Andhra Pradesh)',
       },

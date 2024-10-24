@@ -84,6 +84,21 @@ function SelectField({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref]);
+
+  function returnSortedOptions(array) {
+    const sortedOptions = array.sort((a, b) => a.label.localeCompare(b.label));
+
+    const othersIndex = sortedOptions.findIndex((option) => option.value === 'others');
+    if (othersIndex !== -1) {
+      const [othersOption] = sortedOptions.splice(othersIndex, 1);
+      sortedOptions.push(othersOption);
+    }
+
+    return sortedOptions;
+  }
+
+  const sortedOptions = returnSortedOptions(options);
+
   return (
     <div ref={ref}>
       <SelectFieldParentContainer>
@@ -93,13 +108,14 @@ function SelectField({
           {label && <Label>{label}</Label>}
           <SelectFieldContainer $hasError={!!error} onClick={handleToggle}>
             <SelectFieldInput>
-              {selectedOption || placeholder || 'Select an option'}
+              {isOthers ? 'Others' : selectedOption || placeholder || 'Select an option'}
             </SelectFieldInput>
             <DropdownIcon size={20} />
           </SelectFieldContainer>
+
           {isOpen && (
             <DropdownList>
-              {options.map((option, index) => (
+              {sortedOptions.map((option, index) => (
                 <DropdownItem key={index} onClick={() => handleSelectChange(option.value)}>
                   {option.label}
                 </DropdownItem>
