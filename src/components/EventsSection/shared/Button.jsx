@@ -1,10 +1,13 @@
 import { RegisterButton } from '@/components/Marginals/navbar/navbar.styles';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import Link from 'next/link';
 
 export const Button = () => {
   return (
     <>
-      <PrimaryButton>Explore More</PrimaryButton>
+      <Link href='/events'>
+        <PrimaryButton>Explore More</PrimaryButton>
+      </Link>
     </>
   );
 };
