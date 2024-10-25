@@ -108,19 +108,9 @@ export const Footer = () => {
             <FooterBottomContent>
               {footerBottom.map((item) => (
                 <SmallList key={item.id} className='flex gap-[20px]'>
-                  {item.id === 2 ? (
-                    <button onClick={handleTermsAndConditionsModalOpen}>{item.title}</button>
-                  ) : item.id === 3 ? (
-                    <button onClick={handleCodeOfConductModalOpen}>{item.title}</button>
-                  ) : item.id === 4 ? (
-                    <a href={item.url} rel='noopener noreferrer'>
-                      {item.title}
-                    </a>
-                  ) : (
-                    <a href={item.url} target='_blank' rel='noopener noreferrer'>
-                      {item.title}
-                    </a>
-                  )}
+                  <a href={item.url} rel='noopener noreferrer'>
+                    {item.title}
+                  </a>
                 </SmallList>
               ))}
             </FooterBottomContent>
