@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export const Container = styled.div`
-  ${tw`h-[80dvh] grid place-items-center w-full`}
+  ${tw`lg:absolute lg:top-52 lg:left-72 sxl:left-96 w-full h-[80vh] lg:h-full  flex items-center justify-center z-50`}
 `;
 
 export const MenuCard = styled(motion.div)`
