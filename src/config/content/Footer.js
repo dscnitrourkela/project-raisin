@@ -164,12 +164,12 @@ export const PaymentPolicyPageData = [
   {
     title: 'No Refunds on Registrations and Payments',
     description:
-      'Once registration or payment is completed, refunds will not be issued under any circumstances. This applies to all ticket types, event passes, and additional purchases made through our website.',
+      'Once registration or payment is completed, refunds will not be issued under any circumstances. This applies to all ticket types, event passes, and additional purchases made through our website. This policy is in place to ensure the smooth planning and execution of the event.',
   },
   {
     title: 'Event Cancellation by Organizers',
     description:
-      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement.',
+      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement. However, in any other case, the registration fees are non-refundable. We highly recommend double-checking your availability before confirming your registration.',
   },
   {
     title: 'Force Majeure',
