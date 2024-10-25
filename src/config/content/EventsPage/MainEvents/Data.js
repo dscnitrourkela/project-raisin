@@ -1,8 +1,7 @@
 export const ME_previewItems = [
   {
     id: 1,
-    ImageURL:
-      'https://socialcry.com/wp-content/uploads/2024/10/innovision-psi-phi-poster.png',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/innovision-psi-phi-poster.png',
     PreviewDescription:
       '"Can you decode the future of business?" Join us for PSI PHI, our annual Business Hackathon, where mathematics meets strategy!...',
     Rulebook: 'https://drive.google.com/open?id=1Vgc_35f1NxMIdPp4uB4abJBd2-vV18Wh',
@@ -64,7 +63,8 @@ export const ME_previewItems = [
   },
   {
     id: 9,
-    ImageURL: 'https://res.cloudinary.com/duvkctvfr/image/upload/v1729778657/INNO_events/Inno%20Club%20Posters/wyxzwizt4ggy9id5tcyv.jpg', //tba
+    ImageURL:
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729778657/INNO_events/Inno%20Club%20Posters/wyxzwizt4ggy9id5tcyv.jpg', //tba
     PreviewDescription: 'TBA',
     Rulebook: '',
   },
@@ -132,9 +132,10 @@ export const ME_previewItems = [
   },
   {
     id: 18,
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/IMG-20241014-WA0015-Siva-Shankar-Reddy.jpg',
+    ImageURL:
+      'https://socialcry.com/wp-content/uploads/2024/10/IMG-20241014-WA0015-Siva-Shankar-Reddy.jpg',
     PreviewDescription:
-      'Join us for an engaging and hands-on workshop on Prompt Engineering, where you\'ll learn how to harness the capabilities of AI tools to create professional documents such as presentations, reports, letters, and much more...',
+      "Join us for an engaging and hands-on workshop on Prompt Engineering, where you'll learn how to harness the capabilities of AI tools to create professional documents such as presentations, reports, letters, and much more...",
     Rulebook: 'https://drive.google.com/file/d/1JwWnyOTtupxZAixDHwMruJ5m2Opo9_3H/view',
   },
   {
@@ -202,7 +203,8 @@ export const ME_previewItems = [
   },
   {
     id: 27,
-    ImageURL: 'https://res.cloudinary.com/duvkctvfr/image/upload/v1729709994/INNO_events/Inno%20Club%20Posters/e1hv7rq5lf9xrwu73msq.jpg', //Hustlemania TBA
+    ImageURL:
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729709994/INNO_events/Inno%20Club%20Posters/e1hv7rq5lf9xrwu73msq.jpg', //Hustlemania TBA
     PreviewDescription:
       '“There are shortcuts to happiness, and dancing is one of them.” Unleash your moves in The Hustlemania 3.0.This thrilling freestyle dance event features Solo and Duo categories...',
     Rulebook: '',
@@ -374,8 +376,7 @@ export const ME_descriptionItems = [
     Heading: 'PSI-PHI',
     Description:
       '"Can you decode the future of business?" Join us for PSI PHI, our annual Business Hackathon, where mathematics meets strategy! With over 300 participants expected, this event challenges you to tackle core business and economic problems through a series of thought-provoking questions and case studies. Are you ready to sharpen your problem-solving skills and compete for innovative solutions? Don’t miss out!',
-    ImageURL:
-      'https://socialcry.com/wp-content/uploads/2024/10/innovision-psi-phi-poster.png',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/innovision-psi-phi-poster.png',
     Location: 'LA-104',
     Date: 'Day 1',
     Time: '4 PM',
@@ -468,7 +469,8 @@ export const ME_descriptionItems = [
     id: 9,
     Heading: 'IMAGINE AI',
     Description: 'TBA',
-    ImageURL: 'https://res.cloudinary.com/duvkctvfr/image/upload/v1729778657/INNO_events/Inno%20Club%20Posters/wyxzwizt4ggy9id5tcyv.jpg', //TBA
+    ImageURL:
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729778657/INNO_events/Inno%20Club%20Posters/wyxzwizt4ggy9id5tcyv.jpg', //TBA
     Location: 'LA-214',
     Date: 'DAY 1',
     Time: '4 PM',
@@ -573,8 +575,9 @@ export const ME_descriptionItems = [
     id: 18,
     Heading: 'PROMPT QUEST 101',
     Description:
-      'Join us for an engaging and hands-on workshop on Prompt Engineering, where you\'ll learn how to harness the capabilities of AI tools to create professional documents such as presentations, reports, letters, and much more with efficiency and ease! This event will kick off with an insightful lecture introducing the fundamentals of prompt engineering. Participants will gain practical knowledge on communicating effectively with AI tools, and learning techniques to generate top-quality outputs such as polished PowerPoint slides, well-structured reports, and formal letters, all in minimal time. Following the lecture, we’ll dive into the exciting part—a Competition! Participants will be presented with a series of real-world problem statements, where they will put their skills to the test. Using AI tools, the challenge is to develop the most accurate and creative solutions. The participant who generates the best AI-assisted results will take home exciting prizes and goodies! Event Highlights: - Lecture Session: Learn the art of prompt engineering by a renowned guest. - Interactive Competition: Apply your skills to real-world scenarios and compete with others - Awards & Goodies: Exciting prizes for the best AI-powered solutions! Who Should Attend? This event is perfect for all the students, and anyone looking to enhance their productivity using AI tools. No prerequisites are required. Don\'t miss out on this opportunity to level up your productivity and showcase your prompt engineering skills. Register now and be part of the future of AI-powered content creation!',
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/IMG-20241014-WA0015-Siva-Shankar-Reddy.jpg', //TBA
+      "Join us for an engaging and hands-on workshop on Prompt Engineering, where you'll learn how to harness the capabilities of AI tools to create professional documents such as presentations, reports, letters, and much more with efficiency and ease! This event will kick off with an insightful lecture introducing the fundamentals of prompt engineering. Participants will gain practical knowledge on communicating effectively with AI tools, and learning techniques to generate top-quality outputs such as polished PowerPoint slides, well-structured reports, and formal letters, all in minimal time. Following the lecture, we’ll dive into the exciting part—a Competition! Participants will be presented with a series of real-world problem statements, where they will put their skills to the test. Using AI tools, the challenge is to develop the most accurate and creative solutions. The participant who generates the best AI-assisted results will take home exciting prizes and goodies! Event Highlights: - Lecture Session: Learn the art of prompt engineering by a renowned guest. - Interactive Competition: Apply your skills to real-world scenarios and compete with others - Awards & Goodies: Exciting prizes for the best AI-powered solutions! Who Should Attend? This event is perfect for all the students, and anyone looking to enhance their productivity using AI tools. No prerequisites are required. Don't miss out on this opportunity to level up your productivity and showcase your prompt engineering skills. Register now and be part of the future of AI-powered content creation!",
+    ImageURL:
+      'https://socialcry.com/wp-content/uploads/2024/10/IMG-20241014-WA0015-Siva-Shankar-Reddy.jpg', //TBA
     Location: 'TBA',
     Date: 'TBA',
     Time: 'TBA',
@@ -680,7 +683,8 @@ export const ME_descriptionItems = [
     Heading: 'Hustlemania 3.0',
     Description:
       "“There are shortcuts to happiness, and dancing is one of them.” Unleash your moves in The Hustlemania 3.0.This thrilling freestyle dance event features Solo and Duo categories, each with Prelims and Final rounds where participants bring their best in just 60 seconds. The intensity peaks in the final round with a head-to-head face-off on random music tracks. Whether you're dancing alone or with a partner, step up and show off your freestyle magic—because there’s no greater feeling than dancing to the rhythm and letting the world disappear!",
-    ImageURL: 'https://res.cloudinary.com/duvkctvfr/image/upload/v1729709994/INNO_events/Inno%20Club%20Posters/e1hv7rq5lf9xrwu73msq.jpg', //TBA
+    ImageURL:
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729709994/INNO_events/Inno%20Club%20Posters/e1hv7rq5lf9xrwu73msq.jpg', //TBA
     Location: 'LA lawns',
     Date: 'DAY 3',
     Time: '3:30 PM',

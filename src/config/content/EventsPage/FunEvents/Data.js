@@ -212,7 +212,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 9,
     Heading: 'NITR GOT LATENT',
-    Description: 'Contestants will have a limited time to perform their stand-up routine in front of a live audience and a panel of judges. Each performer will be judged on originality, delivery, stage presence, and of course, how hard they make the audience laugh. The winner will walk away with exciting prizes, and will earn the title of "LOL Champion!"',
+    Description:
+      'Contestants will have a limited time to perform their stand-up routine in front of a live audience and a panel of judges. Each performer will be judged on originality, delivery, stage presence, and of course, how hard they make the audience laugh. The winner will walk away with exciting prizes, and will earn the title of "LOL Champion!"',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798002/INNO%20Fun%20Event/Club%20Events/Poster/vjbasjosguxlk77acgj0.jpg',
     Location: 'TBA',
@@ -223,7 +224,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 10,
     Heading: 'DRIFTATHON',
-    Description: 'Drift-a-thon, a Slow Cycle Race, is basically a fun fundraising event in Innovision. The race aims to raise funds through minimal entry fees charged to the participating students. Participants will compete to maintain the slowest speed on their bicycles without touching the ground. 15 participants at a time will compete in the race of 50 meters.',
+    Description:
+      'Drift-a-thon, a Slow Cycle Race, is basically a fun fundraising event in Innovision. The race aims to raise funds through minimal entry fees charged to the participating students. Participants will compete to maintain the slowest speed on their bicycles without touching the ground. 15 participants at a time will compete in the race of 50 meters.',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798001/INNO%20Fun%20Event/Club%20Events/Poster/af35sfcdk1mqojxgxy8p.jpg',
     Location: 'TBA',
@@ -245,7 +247,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 12,
     Heading: 'THE AMAZING RACE',
-    Description: 'A college-style version of &quot;The Amazing Race&quot; where teams race around the campus completing tasks and challenges to reach the final destination.',
+    Description:
+      'A college-style version of &quot;The Amazing Race&quot; where teams race around the campus completing tasks and challenges to reach the final destination.',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798001/INNO%20Fun%20Event/Club%20Events/Poster/ohdspicrj5sspziwtdao.jpg',
     Location: 'TBA',
@@ -256,7 +259,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 13,
     Heading: 'BRAINY ESCAPE 3.0',
-    Description: 'Brainy escape basically revolves around a murder mystery case , where a person is mysteriously killed and we don’t know the killer and how he was killed.It has two round in the first round we will tell half part of the story to the participants and the other half will be explained to them in the second round , before this they have to solve some interesting puzzles whose answer will be the rooms, and the places around LA lawns if they correctly solve those questions then at the last they will get a code that will help them to enter the second round. In the second round participants had to guess the name of the killer and how he was killed. Here we also cater the theme of our club that is bioscience as the cause of death will be some biological phenomena whose clues will be given at the crime spot(Room of LA).',
+    Description:
+      'Brainy escape basically revolves around a murder mystery case , where a person is mysteriously killed and we don’t know the killer and how he was killed.It has two round in the first round we will tell half part of the story to the participants and the other half will be explained to them in the second round , before this they have to solve some interesting puzzles whose answer will be the rooms, and the places around LA lawns if they correctly solve those questions then at the last they will get a code that will help them to enter the second round. In the second round participants had to guess the name of the killer and how he was killed. Here we also cater the theme of our club that is bioscience as the cause of death will be some biological phenomena whose clues will be given at the crime spot(Room of LA).',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798001/INNO%20Fun%20Event/Club%20Events/Poster/sjqnv5yxlpo9kgsilxag.jpg',
     Location: 'TBA',
@@ -267,7 +271,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 14,
     Heading: 'FUN FUSION',
-    Description: 'It’s a new event we want to conduct this year, this will be a fun event as well as a quiz consisting of three rounds. Here teams of at max three people will be made. In the first round they will be given a spoon where they have to carry some balls which they have to transfer to another container within a certain time periods and those who do the work more efficiently and in less time (the minimum threshold will be set for the participants) the will go to the second round, priors to the second round there will a quiz of 3 question which will be in chits they will choose three chits and answer them , these will give them bonus points to them, then they will play another exciting game where they have to inflate the ballons inside a cup so that they can hold that cup and transfer that to another place , again those with more cups in less time will get more points in the 2nd round , again the selection criteria is same as the first round, then before going to the 3rd round they will again play the quiz of 5 questions with more difficulty level then they will go to the last round where one teammate will be blindfolded and other teammate has to instruct the other one to sit on a chair with ballon placed there and those who done these job perfectly will get more points , the participants with highest point will win this event. Quiz questions include all types of questions. After every rounds teams will be eliminated of low scores.',
+    Description:
+      'It’s a new event we want to conduct this year, this will be a fun event as well as a quiz consisting of three rounds. Here teams of at max three people will be made. In the first round they will be given a spoon where they have to carry some balls which they have to transfer to another container within a certain time periods and those who do the work more efficiently and in less time (the minimum threshold will be set for the participants) the will go to the second round, priors to the second round there will a quiz of 3 question which will be in chits they will choose three chits and answer them , these will give them bonus points to them, then they will play another exciting game where they have to inflate the ballons inside a cup so that they can hold that cup and transfer that to another place , again those with more cups in less time will get more points in the 2nd round , again the selection criteria is same as the first round, then before going to the 3rd round they will again play the quiz of 5 questions with more difficulty level then they will go to the last round where one teammate will be blindfolded and other teammate has to instruct the other one to sit on a chair with ballon placed there and those who done these job perfectly will get more points , the participants with highest point will win this event. Quiz questions include all types of questions. After every rounds teams will be eliminated of low scores.',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798000/INNO%20Fun%20Event/Club%20Events/Poster/kvrzykiukdbxmjbw0m2r.jpg',
     Location: 'TBA',
@@ -278,7 +283,8 @@ export const FunEvents_descriptionItems = [
   {
     id: 15,
     Heading: 'CYCLOTHON 3.0',
-    Description: 'Participants will pedal through two thrilling laps around the predetermined route while passing through 17 checkpoints based on 17 SDGs. The participant\'s progress will be recorded as they pass through each checkpoint.',
+    Description:
+      "Participants will pedal through two thrilling laps around the predetermined route while passing through 17 checkpoints based on 17 SDGs. The participant's progress will be recorded as they pass through each checkpoint.",
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798000/INNO%20Fun%20Event/Club%20Events/Poster/zcztvmxfwmw52uyd3txy.jpg',
     Location: 'TBA',
