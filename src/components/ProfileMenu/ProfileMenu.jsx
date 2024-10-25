@@ -26,6 +26,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const handleLogout = () => {
     handleSignOut();
     handleProfileToggle();
+    handleNavClose(false);
   };
 
   const handleCloseMenu = () => {
