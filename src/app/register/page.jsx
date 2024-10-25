@@ -52,16 +52,16 @@ function Page() {
     const { name, value, type, checked } = event.target;
     if (type === 'file') {
       try {
-        const imageUrl = await handleLoadingAndToast(
-          uploadToCloudinary(event.target.files[0]),
-          'Uploading Image...',
-          `${name.toUpperCase()} uploaded successfully`,
-          `${name.toUpperCase()} upload failed!`,
-          setLoading,
-        );
+        // const imageUrl = await handleLoadingAndToast(
+        //   uploadToCloudinary(event.target.files[0]),
+        //   'Uploading Image...',
+        //   `${name.toUpperCase()} uploaded successfully`,
+        //   `${name.toUpperCase()} upload failed!`,
+        //   setLoading,
+        // );
         setUserDetails((prev) => ({
           ...prev,
-          [name]: imageUrl,
+          [name]: 'imageUrl',
         }));
         setErrors((prev) => ({ ...prev, [name]: '' }));
       } catch (error) {
