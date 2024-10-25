@@ -164,7 +164,7 @@ export const PaymentPolicyPageData = [
   {
     title: 'Pricing',
     description:
-      'The registration fees for Innovision 2024 applies to all students from outside NIT Rourkela. This fee grants access to all events, workshops, and exhibitions during the fest. For students of NIT Rourkela, registration is completely free. Registration covers participation in most events, though some workshops may require additional fees for materials. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity.',
+      'The registration fees for Innovision 2024 applies to all students from outside NIT Rourkela. This fee grants access to all events, workshops, and exhibitions during the fest. For students of NIT Rourkela, registration is completely free. Registration covers participation in most events, though some workshops may require additional fees for materials. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity.',
   },
   {
     title: 'No Refunds on Registrations and Payments',
@@ -174,7 +174,7 @@ export const PaymentPolicyPageData = [
   {
     title: 'Event Cancellation by Organizers',
     description:
-      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement.',
+      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement. We highly recommend double-checking your availability before confirming your registration.',
   },
   {
     title: 'Force Majeure',
