@@ -157,6 +157,11 @@ export const PaymentPolicyPageData = [
       'At INNOVISION 2024, we are committed to providing an enriching experience for all participants. Please review our refund policy carefully:',
   },
   {
+    title: 'Pricing',
+    description:
+      'The registration fees for Innovision 2024 applies to all students from outside NIT Rourkela. This fee grants access to all events, workshops, and exhibitions during the fest. For students of NIT Rourkela, registration is completely free. Registration covers participation in most events, though some workshops may require additional fees for materials. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity.',
+  },
+  {
     title: 'No Refunds on Registrations and Payments',
     description:
       'Once registration or payment is completed, refunds will not be issued under any circumstances. This applies to all ticket types, event passes, and additional purchases made through our website.',
@@ -172,9 +177,9 @@ export const PaymentPolicyPageData = [
       'In the event of unforeseen circumstances such as natural disasters, government restrictions, or other events beyond our control, INNOVISION 2024 organizers will make every effort to reschedule. However, refunds will not be issued under these conditions. Refunds will only be processed if INNOVISION 2024 is officially cancelled by the organizers.',
   },
   {
-    title: 'Contact Us',
+    title: 'Contact for Help',
     description:
-      'For any questions regarding our refund policy, please reach out to our support team through the contact information provided on our website.',
+      'If you have any questions or need assistance with your registration, please feel free to reach out to our support team at innovision2024.nitr@gmail.com. We are here to help with any queries related to registration, event details, or technical issues. Our team will respond within 24-48 hours to ensure you have all the information you need to enjoy Innovision 2024 to the fullest.',
   },
 ];
 
