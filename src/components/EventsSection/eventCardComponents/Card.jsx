@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const EventCard = ({ label, isTranslatedUp }) => {
-  console.log(label);
   return (
     <>
       <Link href={'/events'}>

@@ -1,13 +1,17 @@
 import tw, { styled } from 'twin.macro';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
+import Image from 'next/image';
 export const Container = styled.div`
-  ${tw`lg:absolute lg:top-52 lg:left-72 sxl:left-96 w-full h-[80vh] lg:h-full  flex items-center justify-center z-50`}
+  ${tw`lg:absolute lg:top-60 lg:left-72 sxl:left-96 w-full h-[80vh] lg:h-full  flex items-center justify-center z-50`}
 `;
 
 export const MenuCard = styled(motion.div)`
   ${tw`min-w-[16rem] w-full max-w-[24rem] p-8 rounded-lg shadow-lg bg-black/30 border border-white/20`}
+`;
+
+export const ProfileImage = styled(Image)`
+  ${tw`w-20 h-20 rounded-full my-2`}
 `;
 
 export const CloseButton = styled.button`

@@ -14,7 +14,9 @@ import {
   LogoutButton,
   menuVariants,
   menuTransition,
+  ProfileImage,
 } from './ProfileMenu.styles';
+import Image from 'next/image';
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
@@ -42,6 +44,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
       >
         <MenuContent>
           <CloseButton onClick={handleCloseMenu}>X</CloseButton>
+          <ProfileImage src={user?.photoUrl} alt='User Profile' width={500} height={500} />
           <UserName>{user?.name}</UserName>
           <UserEmail>{user?.email}</UserEmail>
           <MenuLinks>
