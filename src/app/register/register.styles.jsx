@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Heading1 } from '@/components/shared/Typography/Headings';
+import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 
 export const RegisterHeading = styled(Heading1)`
   ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
+`;
+
+export const PaymentContainer = styled.div`
+  ${tw`w-auto h-auto p-5 border-[#00FFD1] border-2`}
+`;
+export const PaymentHeading = styled(Heading2)`
+  ${tw`text-left`}
 `;
 
 export const RegisterContainer = styled.div`

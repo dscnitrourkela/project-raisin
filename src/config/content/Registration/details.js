@@ -182,6 +182,7 @@ export const formFields = [
     id: 'institute',
     className: 'w-full',
   },
+
   {
     label: 'Name of the University (Full Name) ',
     type: 'text',
@@ -199,6 +200,7 @@ export const formFields = [
     type: 'file',
     id: 'idCard',
   },
+
   {
     label: 'Referral Code',
     type: 'text',
@@ -219,6 +221,23 @@ export const formFields = [
     ],
     id: 'gender',
     className: 'oneliner',
+  },
+  {
+    label: 'Click to Pay',
+    type: 'button',
+    id: 'qr',
+    className: 'w-full',
+  },
+  {
+    label: 'Upload Payment Screenshot',
+    type: 'file',
+    id: 'idCard',
+  },
+  {
+    label: 'Transaction ID',
+    type: 'text',
+    id: 'TranscId',
+    className: 'w-full',
   },
   {
     label: 'By proceeding, you agree to our terms and conditions.',
@@ -259,3 +278,6 @@ export const undertakingContent = {
   link: 'https://drive.google.com/file/d/1rHV-eF4Z5ihY1VwqYg97FAEiVAYQ3g8E/view?usp=sharing',
   text: 'Undertaking Form for Authorization/Permission Letter',
 };
+
+export const QrImgUrl =
+  'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729884328/85002429435_sbi_gt1in2.webp';
