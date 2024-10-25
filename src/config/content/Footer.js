@@ -1,3 +1,5 @@
+import { description } from '../SEO/config';
+
 export const socials = [
   {
     id: 'instagram',
@@ -67,12 +69,12 @@ export const footerBottom = [
   {
     id: 2,
     title: 'Terms & Conditions',
-    url: 'https://drive.google.com/file/d/15K3TloImWe4F7dTWdyGhLPnt1iz0xFfW/view?usp=sharing',
+    url: '/termsandconditions',
   },
   {
     id: 3,
     title: 'Code of Conduct',
-    url: 'https://drive.google.com/file/d/1z0teaCdXmarrQ-VwB2a1gKQw32m0bJLD/view?usp=sharing',
+    url: '/codeofconduct',
   },
   {
     id: 4,
@@ -139,7 +141,7 @@ export const TermsAndConditionsModalData = [
   {
     title: 'Licence',
     description:
-      'Unless otherwise stated, Innovision and/or its licensors own the intellectual property rights for all material on Innovision 2024. All intellectual property rights are reserved. You may access this from Innovision 2024 for your personal use subject to restrictions set in these terms and conditions.You must not: ● Copy or republish material from Innovision 2024 ● Sell, rent, or sub-license material from Innovision 2024 ● Reproduce, duplicate or copy material from Innovision 2024 ● Redistribute content from Innovision 2024.This Agreement shall begin on the date hereof.',
+      'Unless otherwise stated, Innovision and/or its licensors own the intellectual property rights for all material on Innovision 2024. All intellectual property rights are reserved. You may access this from Innovision 2024 for your personal use subject to restrictions set in these terms and conditions.You must not: • Copy or republish material from Innovision 2024 • Sell, rent, or sub-license material from Innovision 2024 • Reproduce, duplicate or copy material from Innovision 2024 • Redistribute content from Innovision 2024.This Agreement shall begin on the date hereof.',
   },
   {
     title: 'Disclaimer',
@@ -150,23 +152,31 @@ export const TermsAndConditionsModalData = [
 
 export const PaymentPolicyPageData = [
   {
-    title: 'Pricing',
+    title: 'INNOVISION 2024 Refund Policy',
     description:
-      'The registration fees for Innovision 2024 apply to all students from outside NIT Rourkela. This fee grants access to all events, workshops, and exhibitions during the fest. For students of NIT Rourkela, registration is completely free. Registration covers participation in most events, though some workshops may require additional fees for materials. We encourage all students to register early to secure their spot, as registrations may close once we reach capacity.',
+      'At INNOVISION 2024, we are committed to providing an enriching experience for all participants. Please review our refund policy carefully:',
   },
   {
-    title: 'Refund Policy',
+    title: 'No Refunds on Registrations and Payments',
     description:
-      'Thank you for registering at Innovision 2024. If, for any reason, you are not entirely satisfied with your registration or encounter any issues, we encourage you to review our refund and return policy.We strive to ensure all participants have a seamless experience, and any issues with registration should be addressed with the event support team as early as possible.',
+      'Once registration or payment is completed, refunds will not be issued under any circumstances. This applies to all ticket types, event passes, and additional purchases made through our website.',
   },
   {
-    title: 'Your Registration Cancellation Rights',
+    title: 'Event Cancellation by Organizers',
     description:
-      'There will be no refund of the registration fees under any circumstances unless the fest is cancelled by Team Innovision. This policy is in place to ensure the smooth planning and execution of the event. In case of fest cancellation by the organizing team, all registered participants will be eligible for a full refund. However, in any other case, the registration fees are non-refundable. We highly recommend double-checking your availability before confirming your registration.',
+      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement.',
   },
   {
-    title: 'Contact for Help',
+    title: 'Force Majeure',
     description:
-      'If you have any questions or need assistance with your registration, please feel free to reach out to our support team at innovision2024.nitr@gmail.com. We are here to help with any queries related to registration, event details, or technical issues. Our team will respond within 24-48 hours to ensure you have all the information you need to enjoy Innovision 2024 to the fullest.',
+      'In the event of unforeseen circumstances such as natural disasters, government restrictions, or other events beyond our control, INNOVISION 2024 organizers will make every effort to reschedule. However, refunds will not be issued under these conditions. Refunds will only be processed if INNOVISION 2024 is officially cancelled by the organizers.',
+  },
+  {
+    title: 'Contact Us',
+    description:
+      'For any questions regarding our refund policy, please reach out to our support team through the contact information provided on our website.',
   },
 ];
+
+export const abideByRefundPolicy =
+  'By registering for INNOVISION 2024, you agree to abide by our refund policy.';
