@@ -16,7 +16,7 @@ import {
   menuTransition,
 } from './ProfileMenu.styles';
 
-function ProfileMenu({ handleProfileToggle }) {
+function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
   const getUserDetails = useUserDetails();
   const user = getUserDetails();
@@ -24,6 +24,11 @@ function ProfileMenu({ handleProfileToggle }) {
   const handleLogout = () => {
     handleSignOut();
     handleProfileToggle();
+  };
+
+  const handleCloseMenu = () => {
+    handleProfileToggle();
+    handleNavClose(false);
   };
 
   return (
@@ -36,7 +41,7 @@ function ProfileMenu({ handleProfileToggle }) {
         key='profile-menu'
       >
         <MenuContent>
-          <CloseButton onClick={handleProfileToggle}>X</CloseButton>
+          <CloseButton onClick={handleCloseMenu}>X</CloseButton>
           <UserName>{user?.name}</UserName>
           <UserEmail>{user?.email}</UserEmail>
           <MenuLinks>

@@ -37,7 +37,9 @@ const Navbar = () => {
       </HamburgerContainer>
 
       <AnimatePresence mode='wait'>
-        {isProfileOpen && <ProfileMenu handleProfileToggle={handleProfileToggle} />}
+        {isProfileOpen && (
+          <ProfileMenu handleProfileToggle={handleProfileToggle} handleNavClose={setIsOpen} />
+        )}
       </AnimatePresence>
 
       <MobileMenu
