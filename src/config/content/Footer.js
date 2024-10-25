@@ -144,6 +144,11 @@ export const TermsAndConditionsModalData = [
       'Unless otherwise stated, Innovision and/or its licensors own the intellectual property rights for all material on Innovision 2024. All intellectual property rights are reserved. You may access this from Innovision 2024 for your personal use subject to restrictions set in these terms and conditions.You must not: • Copy or republish material from Innovision 2024 • Sell, rent, or sub-license material from Innovision 2024 • Reproduce, duplicate or copy material from Innovision 2024 • Redistribute content from Innovision 2024.This Agreement shall begin on the date hereof.',
   },
   {
+    title: 'Eligibility',
+    description:
+      'Students from recognized educational institutions across India are eligible to participate in Innovision 2024. However, students from blacklisted institutions (e.g. Siksha O Anusandhan (SOA) University, including all its affiliated colleges, and Institute of Technical Education and Research (ITER)) are strictly prohibited from registering or participating in the fest. Note: If a student from a banned institution registers, their registration will be canceled, and no refund will be provided.',
+  },
+  {
     title: 'Disclaimer',
     description:
       'To the maximum permitted visitors conduct, nothing in this disclaimer will: limit or exclude our or your liability for death or personal injury; limit or exclude our or your liability for fraud or fraudulent misrepresentation; limit any of our or your liabilities in any way that is not permitted under applicable law; or exclude any of our or your liabilities that may not be excluded under applicable law. The limitations and prohibitions of liability set in this section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including liabilities arising in contract, in tort, and for breach of statutory duty. As the website can be accessed by all verified visitors, we shall not uphold any liability for any damage.',
@@ -170,6 +175,16 @@ export const PaymentPolicyPageData = [
     title: 'Event Cancellation by Organizers',
     description:
       'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement. However, in any other case, the registration fees are non-refundable. We highly recommend double-checking your availability before confirming your registration.',
+  },
+  {
+    title: 'Force Majeure',
+    description:
+      'Once registration or payment is completed, refunds will not be issued under any circumstances. This applies to all ticket types, event passes, and additional purchases made through our website.',
+  },
+  {
+    title: 'Event Cancellation by Organizers',
+    description:
+      'Refunds will only be issued if INNOVISION 2024 is cancelled by the organizers. In such a case, all registered participants will receive a full refund through the original payment method, processed within 14 days of the cancellation announcement.',
   },
   {
     title: 'Force Majeure',
