@@ -29,36 +29,15 @@ export const secondcol = [
   {
     id: 1,
     title: 'About US',
-    url: 'https://drive.google.com/file/d/1z2lSdyugt6fLWitAviynK55juQxd0jkb/view?usp=sharing',
-  },
-  {
-    id: 2,
-    title: 'Prizes',
-    url: 'https://drive.google.com/file/d/1kwkj8uHLu1PDOtLjf1HdVVuxZz8DMl9m/view?usp=sharing',
+    url: '/#aboutus',
   },
   {
     id: 3,
     title: 'Sponsors',
     url: '/#sponsors',
   },
-  {
-    id: 4,
-    title: 'FAQs',
-    url: 'https://drive.google.com/file/d/1XF11Db5JgnlxZWXu5MUOR4r-oKCcO3Kd/view?usp=sharing',
-  },
 ];
-export const thirdcol = [
-  {
-    id: 1,
-    title: 'Event Brouchere',
-    url: 'https://drive.google.com/file/d/1jWXT8ShzBW5KTn50DrTsgSqLgmSJMwTO/view?usp=sharing',
-  },
-  {
-    id: 2,
-    title: 'Event Schedule',
-    url: 'https://drive.google.com/file/d/1dq7-cyXq_3VqDcx7liDbaRhOyFAXQzjf/view?usp=sharing',
-  },
-];
+export const thirdcol = [];
 
 export const footerBottom = [
   {
