@@ -201,7 +201,7 @@ function Page() {
           <PaymentPolicyInfo>
             <Link href='/refundPolicy'>Please review the Payment Policy before registering.</Link>
             <br />
-            (NOTE: Registration Fees + Convenience Fees + GST will be applied)
+            (NOTE: Registration Fees (₹899) + Convenience Fees + GST will be applied)
           </PaymentPolicyInfo>
           <CampusAmbassador
             handleChange={handleChange}
