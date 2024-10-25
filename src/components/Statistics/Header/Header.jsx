@@ -8,8 +8,8 @@ export const Header = () => {
         <div className='w-1/3  max-sm:hidden '>
           <JetImage />
         </div>
-        <BodyTitle className='flex justify-center items-center'>STATISTICS</BodyTitle>
-        <div className='w-1/3  sm:block hidden'></div>
+        <BodyTitle className='flex justify-center items-center'>STaTISTICS</BodyTitle>
+        <div className='w-1/3 sm:block hidden'></div>
       </div>
     </>
   );

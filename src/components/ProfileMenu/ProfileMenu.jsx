@@ -16,7 +16,6 @@ import {
   menuTransition,
   ProfileImage,
 } from './ProfileMenu.styles';
-import Image from 'next/image';
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
