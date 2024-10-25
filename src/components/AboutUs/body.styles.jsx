@@ -9,7 +9,7 @@ export const BodyWrapper = styled.div`
 `;
 
 export const BodyTitle = styled.h1`
-  ${tw`text-[25px] md:text-3xl lg:text-5xl font-bold font-spaceX  rounded-xl mx-10 text-center text-white  `}
+  ${tw`text-[25px] md:text-3xl lg:text-5xl font-bold font-spaceX md:py-0 py-10  rounded-xl mx-10 text-center text-white  `}
 `;
 export const BodyContent = styled.div`
   ${tw`flex gap-[50px] llg:gap-[60px] 2xl:gap-[140px] flex-col llg:flex-row px-[35px] llg:px-[80px] 2xl:px-[140px]  pb-16  `}
