@@ -14,11 +14,16 @@ export const AuthProvider = ({ children }) => {
     setAuthLoading(true);
     try {
       const user = await signInWithGoogle();
-
-      const token = await auth.currentUser.getIdToken();
-      console.log(`Bearer ${token}`);
+      const token = `Bearer ${user.accessToken}`;
+      console.log(`${token}`);
       if (user) {
-        const userData = { name: user.displayName, email: user.email, uid: user.uid, token: token };
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          uid: user.uid,
+          token,
+          photoUrl: user.photoURL,
+        };
         Cookies.set('userData', JSON.stringify(userData), {
           expires: 7,
           sameSite: 'strict',

@@ -1,9 +1,9 @@
-import { BodyTitle } from '../AboutUs/body.styles';
+import { SectionHeadings } from '../shared/Typography/Headings';
 
 export const Header = () => {
   return (
     <div className='bg-black bg-opacity-50'>
-      <BodyTitle style={{ marginBottom: '0px' }}> Sponsors</BodyTitle>
+      <SectionHeadings>Our Sponsors</SectionHeadings>
     </div>
   );
 };
