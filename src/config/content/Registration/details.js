@@ -261,12 +261,48 @@ export const formFields = [
     id: 'gender',
     className: 'oneliner',
   },
+
+  { type: 'head', content: 'PAY VIA QR' },
+
   {
-    label: 'Click to Pay',
-    type: 'button',
-    id: 'qr',
-    className: 'w-full',
+    label: 'Merchant Name',
+    type: 'title',
+    content: 'PLAN FUND NIT ROURKELA',
   },
+  {
+    label: 'UPI ID',
+    type: 'title',
+    content: '85002429435@sbi',
+  },
+  {
+    type: 'image',
+    QrUrl:
+      'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729940616/Pay_for_Registration_oqdgsq.png',
+  },
+  {
+    type: 'disclaimer',
+    content:
+      'Please ensure the amount is exactly INR 899, anything other than this amount will not be considered a valid registration and there will be no refund',
+  },
+
+  { type: 'head', content: 'PAY THROUGH BANK TRANSFER' },
+
+  {
+    label: 'Bank Account Name',
+    type: 'title',
+    content: 'STUDENT ACTIVITY CENTRE NIT - ROURKELA',
+  },
+  {
+    label: 'Bank Account Number',
+    type: 'title',
+    content: '_00000037377186107',
+  },
+  {
+    label: 'IFSC Code',
+    type: 'title',
+    content: 'SBIN0002109',
+  },
+
   {
     label: 'Upload Payment Screenshot',
     type: 'file',
@@ -305,7 +341,8 @@ export const beamImage =
 export const campusAbassadorPara = `To become a Campus Ambassador for Innovision 2024, use the referral code below to get 50+ registrations and earn a certificate along with exclusive goodies!!`;
 
 export const notAllowedInstitutes = [
-  "Siksha 'O' Anusandhan ",
+  'Siksha O Anusandhan',
+  "Siksha 'O' Anusandhan",
   'SOA',
   'ITER',
   'Institute of Technical Education and Research',

@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { v4 } from 'uuid';
 
+import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
+import { Qr } from '@/components/Register/PaymentComponents/Qr';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
@@ -33,6 +35,8 @@ import {
   RegisterInnerContainer,
   RegsiterButton,
   UndertakingLink,
+  PaymentHeading,
+  DisclaimerPara,
 } from './register.styles';
 
 function Page() {
@@ -160,6 +164,17 @@ function Page() {
           />
         );
 
+      case 'head':
+        return <PaymentHeading>{field.content}</PaymentHeading>;
+
+      case 'title':
+        return <MerchantInfo label={field.label} labelInfo={field.content} />;
+      case 'image':
+        return <Qr QrUrl={field.QrUrl} />;
+
+      case 'disclaimer':
+        return <DisclaimerPara>{field.content}</DisclaimerPara>;
+
       case 'checkbox':
         return (
           <CheckBox
@@ -268,7 +283,7 @@ function Page() {
           <PaymentPolicyInfo>
             <Link href='/refundPolicy'>Please review the Payment Policy before registering.</Link>
             <br />
-            (NOTE: Registration Fees (₹899) + Convenience Fees + GST will be applied)
+            NOTE: Registration Fees (₹899)
           </PaymentPolicyInfo>
           <CampusAmbassador
             handleChange={handleChange}
