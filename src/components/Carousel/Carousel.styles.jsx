@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   ${tw`w-full min-h-screen h-auto flex flex-col `}
 `;
 
-export const LargeScreenViewContainer = styled.div`
+export const ScreenViewContainer = styled.div`
   ${tw`relative flex justify-center items-center h-auto`}
 `;
 

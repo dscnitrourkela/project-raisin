@@ -245,7 +245,7 @@ export const formFields = [
     content: 'Please ensure the amount is exactly INR 899',
   },
 
-  { type: 'head', content: 'PAY THROUGH BANK' },
+  { type: 'head', content: 'PAY THROUGH BANK TRANSFER' },
 
   {
     label: 'Bank Account Name',

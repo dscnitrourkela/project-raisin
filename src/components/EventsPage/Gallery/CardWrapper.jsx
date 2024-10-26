@@ -61,7 +61,6 @@ export const GalleryWrapper = () => {
       loop={true}
       spaceBetween={30}
       modules={[Pagination, Autoplay]}
-      // pagination={{ clickable: true }}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       className='gallery-swiper'
     >
