@@ -281,7 +281,8 @@ export const formFields = [
   },
   {
     type: 'disclaimer',
-    content: 'Please ensure the amount is exactly INR 899',
+    content:
+      'Please ensure the amount is exactly INR 899, anything other than this amount will not be considered a valid registration and there will be no refund',
   },
 
   { type: 'head', content: 'PAY THROUGH BANK TRANSFER' },
@@ -307,7 +308,7 @@ export const formFields = [
     type: 'file',
     id: 'payment',
   },
-{
+  {
     label: 'Transaction ID',
     type: 'text',
     id: 'transactionID',

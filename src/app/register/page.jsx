@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { v4 } from 'uuid';
 
+import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
+import { Qr } from '@/components/Register/PaymentComponents/Qr';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
@@ -33,31 +35,9 @@ import {
   RegisterInnerContainer,
   RegsiterButton,
   UndertakingLink,
-
-  PaymentPolicyInfo,
   PaymentHeading,
   DisclaimerPara,
 } from './register.styles';
-import Link from 'next/link';
-import InputField from '@/components/Register/InputField/InputField';
-import SelectField from '@/components/Register/SelectField/SelectField';
-import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
-import FileInput from '@/components/Register/FileInput/FileInput';
-import { formFields, undertakingContent } from '@/config/content/Registration/details';
-import { uploadToCloudinary } from '../../utils/uploadToCloudinary';
-import handleLoadingAndToast from '../../utils/handleLoadingToast';
-import { userSchema } from '@/config/zodd/userDetailsSchema';
-import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
-import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
-import { PrimaryButton } from '@/components/shared/Typography/Buttons';
-import { AuthContext } from '@/context/auth-context';
-import { RegistrationModal } from './RegistrationModal';
-import toast from 'react-hot-toast';
-import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
-import { Qr } from '@/components/Register/PaymentComponents/Qr';
-
-} from './register.styles';
-
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -183,7 +163,6 @@ function Page() {
             error={errors[field.id]}
           />
         );
-
 
       case 'head':
         return <PaymentHeading>{field.content}</PaymentHeading>;

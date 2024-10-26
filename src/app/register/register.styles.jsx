@@ -26,7 +26,7 @@ export const MerchantLabelInfo = styled(Heading2)`
   ${tw`text-left text-gray-200 m-0 p-0 font-prompt`}
 `;
 export const DisclaimerPara = styled(SmallParagraph)`
-  ${tw`text-red-500 font-prompt`}
+  ${tw`text-red-500 font-prompt w-full md:max-w-[50%]`}
 `;
 
 export const RegisterContainer = styled.div`
