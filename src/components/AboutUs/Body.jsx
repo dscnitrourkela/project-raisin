@@ -12,6 +12,7 @@ import {
 } from './body.styles';
 
 import { easeIn, easeInOut, motion } from 'framer-motion';
+import { SectionHeadings } from '../shared/Typography/Headings';
 
 export const Body = () => {
   const [trimmedFirstCol, setTrimmedFirstCol] = useState(firstcol.text);
@@ -47,7 +48,8 @@ export const Body = () => {
     <>
       <MainContainer id='aboutus'>
         <BodyWrapper>
-          <BodyGradient /> <BodyTitle>aBOUT US</BodyTitle>
+          <BodyGradient />
+          <SectionHeadings>about Us</SectionHeadings>
           <BodyContent>
             <BodyContentColumn>
               <BodyColumnHeading>{firstcol.title}</BodyColumnHeading>
