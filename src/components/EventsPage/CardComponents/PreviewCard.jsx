@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 import {
   PreviewButtonContainer,
   PreviewCardContainer,
@@ -12,13 +14,18 @@ function PreviewCard({ ImageURL, PreviewDescription = '' }) {
   const truncatedDescription =
     words.length > 30 ? words.slice(0, 50).join(' ') + '...' : PreviewDescription;
 
+  function handleToast() {
+    toast('You can register after you are verified!', {
+      icon: '🚀',
+    });
+  }
   return (
     <PreviewCardContainer>
       <PreviewCardImage src={ImageURL} alt='image' width={500} height={500} />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
       <PreviewButtonContainer>
         <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
-        <PreviewMoreInfoButton>Register</PreviewMoreInfoButton>
+        <PreviewMoreInfoButton onClick={handleToast}>Register</PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>
   );
