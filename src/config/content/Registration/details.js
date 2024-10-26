@@ -223,45 +223,44 @@ export const formFields = [
     className: 'oneliner',
   },
 
-  { type: 'Head', content: 'pay via Qr' },
+  { type: 'head', content: 'PAY VIA QR' },
 
   {
     label: 'Merchant Name',
-    type: 'Title',
-    labelInfo: 'PLAN FUND NIT ROURKELA',
+    type: 'title',
+    content: 'PLAN FUND NIT ROURKELA',
   },
   {
     label: 'UPI ID',
-    type: 'Title',
-    labelInfo: '85002429435@sbi',
+    type: 'title',
+    content: '85002429435@sbi',
   },
   {
-    type: 'Image',
+    type: 'image',
     QrUrl:
       'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729940616/Pay_for_Registration_oqdgsq.png',
   },
   {
-    type: 'Disclaimer',
-    content: '{Please ensure the amount is exactly INR 899}',
+    type: 'disclaimer',
+    content: 'Please ensure the amount is exactly INR 899',
   },
-  { type: 'or', content: 'or' },
 
-  { type: 'Head', content: 'pay through bank' },
+  { type: 'head', content: 'PAY THROUGH BANK' },
 
   {
     label: 'Bank Account Name',
-    type: 'Title',
-    labelInfo: 'STUDENT ACTIVITY CENTRE NIT - ROURKELA',
+    type: 'title',
+    content: 'STUDENT ACTIVITY CENTRE NIT - ROURKELA',
   },
   {
     label: 'Bank Account Number',
-    type: 'Title',
-    labelInfo: '_00000037377186107',
+    type: 'title',
+    content: '_00000037377186107',
   },
   {
     label: 'IFSC Code',
-    type: 'Title',
-    labelInfo: 'SBIN0002109',
+    type: 'title',
+    content: 'SBIN0002109',
   },
 
   {
@@ -272,7 +271,7 @@ export const formFields = [
   {
     label: 'Transaction ID',
     type: 'text',
-    id: 'TranscId',
+    id: 'transactionId',
     className: 'w-full',
   },
   {

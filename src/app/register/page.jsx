@@ -169,23 +169,15 @@ function Page() {
           />
         );
 
-      case 'Head':
+      case 'head':
         return <PaymentHeading>{field.content}</PaymentHeading>;
 
-      case 'or':
-        return <Heading>{field.content}</Heading>;
-
-      case 'Title':
-        return (
-          <>
-            {/* <PaymentHeading>Payment Section </PaymentHeading> */}
-            <MerchantInfo label={field.label} labelInfo={field.labelInfo} />
-          </>
-        );
-      case 'Image':
+      case 'title':
+        return <MerchantInfo label={field.label} labelInfo={field.content} />;
+      case 'image':
         return <Qr QrUrl={field.QrUrl} />;
 
-      case 'Disclaimer':
+      case 'disclaimer':
         return <DisclaimerPara>{field.content}</DisclaimerPara>;
 
       case 'checkbox':

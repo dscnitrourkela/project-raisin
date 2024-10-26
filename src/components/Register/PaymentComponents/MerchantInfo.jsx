@@ -4,7 +4,7 @@ import { MerchantLabel, MerchantLabelInfo, PaymentHeading } from '@/app/register
 export const MerchantInfo = ({ label, labelInfo }) => {
   return (
     <>
-      <div className='flex gap-2'>
+      <div className='flex flex-col sm:flex-row gap-2 justify-start items-start w-full sm:w-auto'>
         <MerchantLabel>{label}:</MerchantLabel>
         <MerchantLabelInfo>{labelInfo}</MerchantLabelInfo>
       </div>

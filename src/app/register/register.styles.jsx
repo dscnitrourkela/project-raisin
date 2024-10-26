@@ -10,20 +10,20 @@ export const RegisterHeading = styled(Heading1)`
 `;
 
 export const PaymentHeading = styled(Heading2)`
-  ${tw`m-0 p-3 border-[#00FFD1] border-2 rounded-lg`}
+  ${tw`m-0 p-3 border-[#00FFD1] border-2 rounded-lg font-prompt`}
 `;
 
 export const Heading = styled(Heading3)`
-  ${tw`pb-0 mb-0`}
+  ${tw`pb-0 mb-0 font-prompt`}
 `;
 export const MerchantLabel = styled(Heading2)`
-  ${tw`text-left text-[#00FFD1] p-0 m-0`}
+  ${tw`text-left text-[#00FFD1] p-0 m-0 font-prompt`}
 `;
 export const MerchantLabelInfo = styled(Heading2)`
-  ${tw`text-left text-gray-200 m-0 p-0 `}
+  ${tw`text-left text-gray-200 m-0 p-0 font-prompt`}
 `;
 export const DisclaimerPara = styled(SmallParagraph)`
-  ${tw`text-red-500 `}
+  ${tw`text-red-500 font-prompt`}
 `;
 
 export const RegisterContainer = styled.div`
