@@ -1,16 +1,18 @@
-import CheckBox from '../InputCheckBox/CheckBox';
 import {
   beamImage,
-  campusAmbassadorInput,
   campusAbassadorPara,
+  campusAmbassadorInput,
 } from '@/config/content/Registration/details';
+
+import CheckBox from '../InputCheckBox/CheckBox';
 import {
-  Container,
   BeamImage,
-  Title,
-  Description,
   CheckBoxWrapper,
+  Container,
+  Description,
+  Title,
 } from './CampusAmbassador.styles';
+
 function CampusAmbassador({ handleChange, userReferral, isCampusAmbassador }) {
   function isUserRefferalCorrect(referralCode) {
     return referralCode.length === 10 && /^\d+$/.test(String(referralCode));
@@ -38,7 +40,7 @@ function CampusAmbassador({ handleChange, userReferral, isCampusAmbassador }) {
         >
           Your referral code is <strong>{userReferral}</strong>
           <br />
-          <p className='text-sm mt-2'>Use this while referring to your peers.</p>
+          <span className='text-sm mt-2'>Use this while referring to your peers.</span>
         </Description>
       )}
     </Container>

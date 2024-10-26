@@ -1,14 +1,16 @@
 import { createContext, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { signInWithGoogle, signOutUser } from '@/firebase/auth';
+
 import Cookies from 'js-cookie';
-import { auth } from '@/firebase/firebase';
+import { toast } from 'react-hot-toast';
+
+import { signInWithGoogle, signOutUser } from '@/firebase/auth';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState({});
   const [authLoading, setAuthLoading] = useState(false);
+  const [userMongoId, setUserMongoId] = useState('');
 
   const handleGoogleSignIn = async () => {
     setAuthLoading(true);
@@ -46,6 +48,7 @@ export const AuthProvider = ({ children }) => {
       await signOutUser();
       setUserInfo({});
       Cookies.remove('userData');
+      Cookies.remove('userDataDB');
       toast.success('Successfully signed out.');
     } catch (error) {
       console.error('Error signing out:', error);
@@ -55,7 +58,15 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ userInfo, setUserInfo, handleGoogleSignIn, handleSignOut, authLoading }}
+      value={{
+        userInfo,
+        setUserInfo,
+        handleGoogleSignIn,
+        handleSignOut,
+        authLoading,
+        userMongoId,
+        setUserMongoId,
+      }}
     >
       {children}
     </AuthContext.Provider>
