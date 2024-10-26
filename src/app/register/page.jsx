@@ -11,7 +11,6 @@ import {
   PaymentPolicyInfo,
   PaymentHeading,
   DisclaimerPara,
-  Heading,
 } from './register.styles';
 import Link from 'next/link';
 import InputField from '@/components/Register/InputField/InputField';
@@ -28,13 +27,8 @@ import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
 import { RegistrationModal } from './RegistrationModal';
 import toast from 'react-hot-toast';
-// import { QrButton } from '@/components/Register/PaymentComponents/QrButton';
 import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
 import { Qr } from '@/components/Register/PaymentComponents/Qr';
-import { Heading3 } from '../events/page.style';
-// import { Paragraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
-// import { Heading1 } from '@/components/shared/Typography/Headings';
-// import { Heading3 } from '../codeofconduct/page.styles';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
