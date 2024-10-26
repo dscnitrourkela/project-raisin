@@ -1,5 +1,5 @@
 'use client';
-import { useState, useLayoutEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import {
   RegisterContainer,
   RegisterForm,
@@ -22,7 +22,7 @@ import { formFields, undertakingContent } from '@/config/content/Registration/de
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary';
 import handleLoadingAndToast from '../../utils/handleLoadingToast';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
-import { useUserDetails } from '@/hooks/useUserDetails';
+import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
@@ -54,33 +54,24 @@ function Page() {
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const getUserDetails = useUserDetails();
-  const { handleGoogleSignIn, userInfo, authLoading } = useContext(AuthContext);
+  const isLoggedIn = useIsLoggedIn();
 
-  useLayoutEffect(() => {
-    const userDetails = getUserDetails();
-    if (userDetails.name) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [getUserDetails, userInfo]);
+  const { handleGoogleSignIn, authLoading } = useContext(AuthContext);
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
     if (type === 'file') {
       try {
-        const imageUrl = await handleLoadingAndToast(
-          uploadToCloudinary(event.target.files[0]),
-          'Uploading Image...',
-          `${name.toUpperCase()} uploaded successfully`,
-          `${name.toUpperCase()} upload failed!`,
-          setLoading,
-        );
+        // const imageUrl = await handleLoadingAndToast(
+        //   uploadToCloudinary(event.target.files[0]),
+        //   'Uploading Image...',
+        //   `${name.toUpperCase()} uploaded successfully`,
+        //   `${name.toUpperCase()} upload failed!`,
+        //   setLoading,
+        // );
         setUserDetails((prev) => ({
           ...prev,
-          [name]: imageUrl,
+          [name]: 'imageUrl',
         }));
         setErrors((prev) => ({ ...prev, [name]: '' }));
       } catch (error) {
