@@ -21,7 +21,13 @@ export const userSchema = z.object({
       message:
         "Students from this institute have been officially barred from participating in INNO'24",
     }),
-  university: z.string().min(1, 'University name is required'),
+  university: z
+    .string()
+    .min(1, 'University name is required')
+    .refine((val) => notAllowedInstitutes.indexOf(val.toUpperCase()) === -1, {
+      message:
+        "Students from this institute have been officially barred from participating in INNO'24",
+    }),
   rollNumber: z.string().min(1, 'Roll number is required'),
   referralCode: z
     .string()
@@ -39,4 +45,5 @@ export const userSchema = z.object({
     message: 'You must agree to the terms and conditions',
   }),
   campusAmbassador: z.boolean().optional(),
+  transactionID: z.string().min(1, 'Transaction ID is required'),
 });

@@ -52,6 +52,7 @@ function Page() {
     undertaking: false,
     campusAmbassador: false,
     payment: '',
+    transactionID: '',
   });
   const getUserDetails = useUserDetails();
   const [errors, setErrors] = useState({});
@@ -212,7 +213,7 @@ function Page() {
             referredBy: userDetails.referralCode,
             gender: userDetails.gender,
             receipt: userDetails.payment,
-            transactionID: 'demo',
+            transactionID: userDetails.transactionID,
             hasPaid: false,
           },
         },
@@ -229,7 +230,9 @@ function Page() {
           duration: 5000,
         },
       );
-      router.push('/');
+      setTimeout(() => {
+        router.push('/');
+      }, 1000);
     } catch (error) {
       console.error(error);
       toast.error('Registration failed! Please try again');

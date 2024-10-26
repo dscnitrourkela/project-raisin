@@ -275,7 +275,7 @@ export const formFields = [
   {
     label: 'Transaction ID',
     type: 'text',
-    id: 'TranscId',
+    id: 'transactionID',
     className: 'w-full',
   },
   {

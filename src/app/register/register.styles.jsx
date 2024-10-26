@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
+
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 
 export const RegisterHeading = styled(Heading1)`
   ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
@@ -57,7 +58,7 @@ export const Moon = styled.div`
 `;
 
 export const UndertakingLink = styled.a`
-  ${tw`text-base font-prompt font-semibold  hover:underline transition-all duration-200 ease-in-out`}
+  ${tw`text-base font-prompt font-semibold text-blue-400  hover:underline transition-all duration-200 ease-in-out`}
 `;
 
 export const PaymentPolicyInfo = styled.div`
