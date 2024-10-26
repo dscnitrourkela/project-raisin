@@ -1,6 +1,8 @@
-import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import Cookies from 'js-cookie';
+
+import { ApolloClient, from, HttpLink, InMemoryCache } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { onError } from '@apollo/client/link/error';
 
 const MAX_RETRIES = 3;
 const RETRY_TIMEOUT = 8000;
@@ -21,6 +23,7 @@ const reconnectFetch = async (uri, options, retries = 0) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
+    console.log('Connected to server successfully');
     return response;
   } catch (error) {
     clearTimeout(timeoutId);
@@ -63,7 +66,19 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors) {
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.error(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`),
+    );
+  }
+
+  if (networkError) {
+    console.error(`[Network error]: ${networkError}`);
+  }
+});
+
 export const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: from([errorLink, authLink.concat(httpLink)]),
   cache: new InMemoryCache(),
 });

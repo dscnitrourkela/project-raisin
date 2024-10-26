@@ -1,6 +1,9 @@
 'use client';
+import { useEffect, useRef, useState } from 'react';
+
+import { toast } from 'react-hot-toast';
+
 import { Label } from '../FileInput/FileInput.styles';
-import { useState, useEffect, useRef } from 'react';
 import InputField from '../InputField/InputField';
 import { ErrorMessage } from '../InputField/InputField.styles';
 import {
@@ -40,7 +43,13 @@ function SelectField({
 
   const handleToggle = () => setIsOpen(!isOpen);
 
-  const handleSelectChange = (option) => {
+  const handleSelectChange = (option, id) => {
+    if (id === 'notAllowed') {
+      toast.error(
+        "Students from this institute have been officially barred from participating in INNO'24",
+      );
+      return;
+    }
     setSelectedOption(option);
     setIsOpen(false);
     setErrors((prevState) => ({
@@ -53,6 +62,11 @@ function SelectField({
         [name]: otherInstituteName,
       }));
     } else {
+      handleSelect((prevState) => ({
+        ...prevState,
+        instituteId: id,
+      }));
+
       handleSelect((prevState) => ({
         ...prevState,
         [name]: option,
@@ -116,7 +130,10 @@ function SelectField({
           {isOpen && (
             <DropdownList>
               {sortedOptions.map((option, index) => (
-                <DropdownItem key={index} onClick={() => handleSelectChange(option.value)}>
+                <DropdownItem
+                  key={index}
+                  onClick={() => handleSelectChange(option.value, option.id)}
+                >
                   {option.label}
                 </DropdownItem>
               ))}

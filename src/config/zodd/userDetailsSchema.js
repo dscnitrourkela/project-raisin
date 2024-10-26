@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 import { notAllowedInstitutes } from '../content/Registration/details';
 
 export const userSchema = z.object({
@@ -6,7 +7,9 @@ export const userSchema = z.object({
     .string()
     .min(1, 'Name is required')
     .regex(/^[a-zA-Z\s]+$/, 'Name can only contain letters'),
-  email: z.string().min(1, 'Email is required').email('Invalid email format'),
+  email: z.string().regex(/^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/, {
+    message: 'Invalid email address. Please use your Gmail address',
+  }),
   phone: z
     .string()
     .length(10, 'Phone number must be exactly 10 digits')
@@ -29,7 +32,7 @@ export const userSchema = z.object({
   permission: z.boolean().refine((val) => val === true, {
     message: "You must have permission from your institute's authority",
   }),
-  gender: z.enum(['male', 'female'], {
+  gender: z.enum(['MALE', 'FEMALE'], {
     errorMap: () => ({ message: 'Gender selection is required and must be either male or female' }),
   }),
   undertaking: z.boolean().refine((val) => val === true, {
