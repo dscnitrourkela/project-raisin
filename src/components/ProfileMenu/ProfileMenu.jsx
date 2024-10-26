@@ -1,26 +1,40 @@
 'use client';
-import { useUserDetails } from '@/hooks/useUserDetails';
+import { useContext, useEffect, useState } from 'react';
+
+import Cookies from 'js-cookie';
+import { usePathname, useRouter } from 'next/navigation';
+import { toast } from 'react-hot-toast';
+
 import { AuthContext } from '@/context/auth-context';
-import { useContext } from 'react';
+import { useUserDetails } from '@/hooks/useUserDetails';
+
 import {
-  Container,
-  MenuCard,
   CloseButton,
-  UserName,
-  UserEmail,
+  Container,
+  LogoutButton,
+  MenuCard,
   MenuContent,
   MenuLinks,
-  StyledLink,
-  LogoutButton,
-  menuVariants,
   menuTransition,
+  menuVariants,
   ProfileImage,
+  StyledLink,
+  UserEmail,
+  UserName,
 } from './ProfileMenu.styles';
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
+  const [isRegistered, setIsRegistered] = useState(false);
   const getUserDetails = useUserDetails();
   const user = getUserDetails();
+  const router = useRouter();
+  const path = usePathname();
+
+  // const { data: userDataInDb } = useSuspenseQuery(
+  //   GET_USER_BY_UID,
+  //   user.uid ? { variables: { uid: user.uid } } : skipToken,
+  // );
 
   const handleLogout = () => {
     handleSignOut();
@@ -32,6 +46,24 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
     handleProfileToggle();
     handleNavClose(false);
   };
+
+  useEffect(() => {
+    const mongoId = Cookies.get('userDataDB');
+
+    console.log('mongoId:', mongoId);
+    // userDataInDb?.user.data.length > 0;
+    if (mongoId) {
+      if (path === '/register') {
+        toast.success('You are already registered!');
+        router.push('/');
+      }
+      setIsRegistered(true);
+    } else {
+      setIsRegistered(false);
+    }
+
+    // console.log('userDataInDb:', userDataInDb);
+  }, []);
 
   return (
     <Container>
@@ -48,9 +80,13 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
           <UserName>{user?.name}</UserName>
           <UserEmail>{user?.email}</UserEmail>
           <MenuLinks>
-            <StyledLink href='/register' onClick={handleProfileToggle}>
-              Complete Your Registration
-            </StyledLink>
+            {isRegistered ? (
+              <p>Your payment is being verified! You will be mailed shortly</p>
+            ) : (
+              <StyledLink href='/register' onClick={handleProfileToggle}>
+                Complete Your Registration
+              </StyledLink>
+            )}
             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
           </MenuLinks>
         </MenuContent>

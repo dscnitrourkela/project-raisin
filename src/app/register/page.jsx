@@ -1,13 +1,39 @@
 'use client';
-import { useState, useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+
+import Cookies from 'js-cookie';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { v4 } from 'uuid';
+
+import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
+import FileInput from '@/components/Register/FileInput/FileInput';
+import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
+import InputField from '@/components/Register/InputField/InputField';
+import SelectField from '@/components/Register/SelectField/SelectField';
+import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { formFields, undertakingContent } from '@/config/content/Registration/details';
+import { userSchema } from '@/config/zodd/userDetailsSchema';
+import { AuthContext } from '@/context/auth-context';
+import { REGISTER_ORG } from '@/graphql/mutations/organizationMutations';
+import { REGISTER_USER } from '@/graphql/mutations/userMutations';
+import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
+import { useUserDetails } from '@/hooks/useUserDetails';
+import handleLoadingAndToast from '@/utils/handleLoadingToast';
+import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
+import { useMutation } from '@apollo/client';
+
 import {
+  Moon,
+  PaymentPolicyInfo,
   RegisterContainer,
   RegisterForm,
   RegisterHeading,
-  RegsiterButton,
   RegisterInnerContainer,
-  Moon,
+  RegsiterButton,
   UndertakingLink,
+
   PaymentPolicyInfo,
   PaymentHeading,
   DisclaimerPara,
@@ -30,12 +56,16 @@ import toast from 'react-hot-toast';
 import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
 import { Qr } from '@/components/Register/PaymentComponents/Qr';
 
+} from './register.styles';
+
+
 function Page() {
   const [userDetails, setUserDetails] = useState({
     name: '',
     email: '',
     phone: '',
     institute: '',
+    instituteId: '',
     university: '',
     rollNumber: '',
     idCard: '',
@@ -45,27 +75,33 @@ function Page() {
     payment: '',
     undertaking: false,
     campusAmbassador: false,
+    payment: '',
+    transactionID: '',
   });
-  const [loading, setLoading] = useState(false);
+  const getUserDetails = useUserDetails();
   const [errors, setErrors] = useState({});
   const isLoggedIn = useIsLoggedIn();
-
+  const [loading, setLoading] = useState(false);
   const { handleGoogleSignIn, authLoading } = useContext(AuthContext);
+  const [registerUser] = useMutation(REGISTER_USER);
+  const [registerCollege] = useMutation(REGISTER_ORG);
+  const router = useRouter();
+  const storedUserId = getUserDetails().uid;
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
     if (type === 'file') {
       try {
-        // const imageUrl = await handleLoadingAndToast(
-        //   uploadToCloudinary(event.target.files[0]),
-        //   'Uploading Image...',
-        //   `${name.toUpperCase()} uploaded successfully`,
-        //   `${name.toUpperCase()} upload failed!`,
-        //   setLoading,
-        // );
+        const imageUrl = await handleLoadingAndToast(
+          uploadToCloudinary(event.target.files[0]),
+          'Uploading Image...',
+          `${name.toUpperCase()} uploaded successfully`,
+          `${name.toUpperCase()} upload failed!`,
+          setLoading,
+        );
         setUserDetails((prev) => ({
           ...prev,
-          [name]: 'imageUrl',
+          [name]: imageUrl,
         }));
         setErrors((prev) => ({ ...prev, [name]: '' }));
       } catch (error) {
@@ -83,12 +119,6 @@ function Page() {
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
-  }
-
-  function handleSubmit() {
-    const isFormValid = validateForm();
-    if (!isFormValid) return;
-    console.log(userDetails);
   }
 
   function validateForm() {
@@ -154,6 +184,7 @@ function Page() {
           />
         );
 
+
       case 'head':
         return <PaymentHeading>{field.content}</PaymentHeading>;
 
@@ -181,14 +212,79 @@ function Page() {
     }
   }
 
-  const [isModalOpen, setModalOpen] = useState(true);
-
-  function handleSubmit() {
+  async function handleSubmit() {
     const isFormValid = validateForm();
     if (!isFormValid) return;
-    setModalOpen(true);
-    console.log(userDetails);
+
+    setLoading(true);
+    try {
+      let collegeID;
+      if (!userDetails.instituteId) {
+        const newCollgeDetails = await registerCollege({
+          variables: {
+            orgs: [
+              {
+                logo: userDetails.institute + userDetails.email + v4().slice(0, 8),
+                name: userDetails.institute,
+                orgType: 'MESS',
+                registrations: 0,
+              },
+            ],
+          },
+        });
+
+        collegeID = newCollgeDetails.data.createMultipleOrgs[0].id;
+      }
+
+      const res = await registerUser({
+        variables: {
+          user: {
+            uid: storedUserId,
+            name: userDetails.name,
+            email: userDetails.email,
+            mobile: userDetails.phone,
+            college: userDetails.instituteId ? userDetails.instituteId : collegeID,
+            rollNumber: userDetails.rollNumber,
+            idCard: userDetails.idCard,
+            referredBy: userDetails.referralCode,
+            gender: userDetails.gender,
+            receipt: userDetails.payment,
+            transactionID: userDetails.transactionID,
+            hasPaid: false,
+          },
+        },
+      });
+      Cookies.set('userDataDB', res.data.createUser.id, {
+        expires: 7,
+        sameSite: 'strict',
+      });
+
+      console.log(res);
+      toast.success(
+        'Registration successful! You will recieve confirmation email within 4-5 days!',
+        {
+          duration: 5000,
+        },
+      );
+      setTimeout(() => {
+        router.push('/');
+      }, 1000);
+    } catch (error) {
+      console.error(error);
+      toast.error('Registration failed! Please try again');
+    } finally {
+      setLoading(false);
+    }
   }
+
+  useEffect(() => {
+    if (Cookies.get('userDataDB')) {
+      router.push('/');
+      toast.success('You have been already registered!', {
+        duration: 5000,
+      });
+    }
+  }, []);
 
   return (
     <RegisterContainer>
@@ -216,7 +312,7 @@ function Page() {
             isCampusAmbassador={userDetails.campusAmbassador}
           />
           <RegsiterButton onClick={handleSubmit} disabled={loading}>
-            Submit
+            {loading ? 'Loading...' : 'Register'}
           </RegsiterButton>
         </RegisterInnerContainer>
       ) : (
@@ -224,8 +320,6 @@ function Page() {
           {authLoading ? 'Loading...' : 'Sign In with Google'}
         </PrimaryButton>
       )}
-
-      <RegistrationModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </RegisterContainer>
   );
 }
