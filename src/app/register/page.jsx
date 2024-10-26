@@ -9,6 +9,7 @@ import {
   Moon,
   UndertakingLink,
   PaymentPolicyInfo,
+  PaymentHeading,
 } from './register.styles';
 import Link from 'next/link';
 import InputField from '@/components/Register/InputField/InputField';
@@ -25,6 +26,7 @@ import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
 import { RegistrationModal } from './RegistrationModal';
 import toast from 'react-hot-toast';
+import { QrButton } from '@/components/Register/Qrscanner/QrButton';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -158,6 +160,13 @@ function Page() {
             error={errors[field.id]}
           />
         );
+      case 'button':
+        return (
+          <>
+            <PaymentHeading>Payment Section </PaymentHeading>
+            <QrButton label={field.label} />
+          </>
+        );
       case 'checkbox':
         return (
           <CheckBox
@@ -187,7 +196,7 @@ function Page() {
     <RegisterContainer>
       <Moon />
 
-      {isLoggedIn ? (
+      {!isLoggedIn ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
