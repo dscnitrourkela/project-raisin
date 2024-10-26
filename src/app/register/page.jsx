@@ -10,8 +10,6 @@ import {
   UndertakingLink,
   PaymentPolicyInfo,
   PaymentHeading,
-  DisclaimerPara,
-  Heading,
 } from './register.styles';
 import Link from 'next/link';
 import InputField from '@/components/Register/InputField/InputField';
@@ -28,13 +26,7 @@ import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import { AuthContext } from '@/context/auth-context';
 import { RegistrationModal } from './RegistrationModal';
 import toast from 'react-hot-toast';
-// import { QrButton } from '@/components/Register/PaymentComponents/QrButton';
-import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
-import { Qr } from '@/components/Register/PaymentComponents/Qr';
-import { Heading3 } from '../events/page.style';
-// import { Paragraph, SmallParagraph } from '@/components/shared/Typography/Paragraphs';
-// import { Heading1 } from '@/components/shared/Typography/Headings';
-// import { Heading3 } from '../codeofconduct/page.styles';
+import { QrButton } from '@/components/Register/Qrscanner/QrButton';
 
 function Page() {
   const [userDetails, setUserDetails] = useState({
@@ -159,26 +151,13 @@ function Page() {
             error={errors[field.id]}
           />
         );
-
-      case 'Head':
-        return <PaymentHeading>{field.content}</PaymentHeading>;
-
-      case 'or':
-        return <Heading>{field.content}</Heading>;
-
-      case 'Title':
+      case 'button':
         return (
           <>
-            {/* <PaymentHeading>Payment Section </PaymentHeading> */}
-            <MerchantInfo label={field.label} labelInfo={field.labelInfo} />
+            <PaymentHeading>Payment Section </PaymentHeading>
+            <QrButton label={field.label} />
           </>
         );
-      case 'Image':
-        return <Qr QrUrl={field.QrUrl} />;
-
-      case 'Disclaimer':
-        return <DisclaimerPara>{field.content}</DisclaimerPara>;
-
       case 'checkbox':
         return (
           <CheckBox
@@ -208,7 +187,7 @@ function Page() {
     <RegisterContainer>
       <Moon />
 
-      {isLoggedIn ? (
+      {!isLoggedIn ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
