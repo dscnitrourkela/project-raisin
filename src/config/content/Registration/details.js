@@ -222,12 +222,48 @@ export const formFields = [
     id: 'gender',
     className: 'oneliner',
   },
+
+  { type: 'Head', content: 'pay via Qr' },
+
   {
-    label: 'Click to Pay',
-    type: 'button',
-    id: 'qr',
-    className: 'w-full',
+    label: 'Merchant Name',
+    type: 'Title',
+    labelInfo: 'PLAN FUND NIT ROURKELA',
   },
+  {
+    label: 'UPI ID',
+    type: 'Title',
+    labelInfo: '85002429435@sbi',
+  },
+  {
+    type: 'Image',
+    QrUrl:
+      'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729940616/Pay_for_Registration_oqdgsq.png',
+  },
+  {
+    type: 'Disclaimer',
+    content: '{Please ensure the amount is exactly INR 899}',
+  },
+  { type: 'or', content: 'or' },
+
+  { type: 'Head', content: 'pay through bank' },
+
+  {
+    label: 'Bank Account Name',
+    type: 'Title',
+    labelInfo: 'STUDENT ACTIVITY CENTRE NIT - ROURKELA',
+  },
+  {
+    label: 'Bank Account Number',
+    type: 'Title',
+    labelInfo: '_00000037377186107',
+  },
+  {
+    label: 'IFSC Code',
+    type: 'Title',
+    labelInfo: 'SBIN0002109',
+  },
+
   {
     label: 'Upload Payment Screenshot',
     type: 'file',

@@ -2,16 +2,28 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
+import { Heading3 } from '../events/page.style';
 
 export const RegisterHeading = styled(Heading1)`
   ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
 `;
 
-export const PaymentContainer = styled.div`
-  ${tw`w-auto h-auto p-5 border-[#00FFD1] border-2`}
-`;
 export const PaymentHeading = styled(Heading2)`
-  ${tw`text-left`}
+  ${tw`m-0 p-3 border-[#00FFD1] border-2 rounded-lg`}
+`;
+
+export const Heading = styled(Heading3)`
+  ${tw`pb-0 mb-0`}
+`;
+export const MerchantLabel = styled(Heading2)`
+  ${tw`text-left text-[#00FFD1] p-0 m-0`}
+`;
+export const MerchantLabelInfo = styled(Heading2)`
+  ${tw`text-left text-gray-200 m-0 p-0 `}
+`;
+export const DisclaimerPara = styled(SmallParagraph)`
+  ${tw`text-red-500 `}
 `;
 
 export const RegisterContainer = styled.div`
