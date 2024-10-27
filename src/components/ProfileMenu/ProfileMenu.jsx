@@ -30,11 +30,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const user = getUserDetails();
   const router = useRouter();
   const path = usePathname();
-
-  // const { data: userDataInDb } = useSuspenseQuery(
-  //   GET_USER_BY_UID,
-  //   user.uid ? { variables: { uid: user.uid } } : skipToken,
-  // );
+  const isNitr = getUserDetails()?.isNitR;
 
   const handleLogout = () => {
     handleSignOut();
@@ -49,9 +45,6 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
 
   useEffect(() => {
     const mongoId = Cookies.get('userDataDB');
-
-    console.log('mongoId:', mongoId);
-    // userDataInDb?.user.data.length > 0;
     if (mongoId) {
       if (path === '/register') {
         toast.success('You are already registered!');
@@ -61,8 +54,6 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
     } else {
       setIsRegistered(false);
     }
-
-    // console.log('userDataInDb:', userDataInDb);
   }, []);
 
   return (
@@ -81,7 +72,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
           <UserEmail>{user?.email}</UserEmail>
           <MenuLinks>
             {isRegistered ? (
-              <p>Your payment is being verified! You will be mailed shortly</p>
+              !isNitr && <p>Your payment is being verified! You will be mailed shortly</p>
             ) : (
               <StyledLink href='/register' onClick={handleProfileToggle}>
                 Complete Your Registration
