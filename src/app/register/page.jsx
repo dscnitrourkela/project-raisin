@@ -256,16 +256,8 @@ function Page() {
         },
       });
 
-      const newCookies = JSON.parse(Cookies.get('userData'));
-
-      Cookies.remove('userData');
-      Cookies.set('userData', JSON.stringify({ ...newCookies, isNitR }), {
-        expires: 1,
-        sameSite: 'strict',
-      });
-
       const user = res.data.createUser;
-      Cookies.set('userDataDB', JSON.stringify(user), {
+      Cookies.set('userDataDB', JSON.stringify({ ...user, isNitR }), {
         expires: 1,
         sameSite: 'strict',
       });
@@ -296,12 +288,14 @@ function Page() {
       console.error('User query error:', userErr);
       return;
     }
+
     const userCookie = Cookies.get('userDataDB');
     const hasUserData = userDataDB?.user?.data?.length > 0;
     const userData = hasUserData ? userDataDB.user.data[0] : null;
+    const isNitR = userData?.college === nitrID;
     if (userCookie || hasUserData) {
       if (!userCookie && userData) {
-        Cookies.set('userDataDB', JSON.stringify(userData), {
+        Cookies.set('userDataDB', JSON.stringify({ ...userData, isNitR }), {
           expires: 1,
           sameSite: 'strict',
         });

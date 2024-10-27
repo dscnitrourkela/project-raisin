@@ -4,10 +4,25 @@ import { motion } from 'framer-motion';
 import Cookies from 'js-cookie';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { HeroGreenPrimaryButton, HeroLogoText, HeroPrimaryButton } from './styles';
+import { useState, useEffect } from 'react';
 
 export const Hero = () => {
+  const [isRegistered, setIsRegistered] = useState(false);
+  useEffect(() => {
+    function hasRegistered() {
+      try {
+        const status = JSON.parse(Cookies.get('userDataDB')).id;
+        if (status) {
+          setIsRegistered(true);
+        }
+      } catch (error) {
+        console.log('User not registered');
+      }
+    }
+    hasRegistered();
+  }, []);
+
   const container = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
@@ -17,9 +32,6 @@ export const Hero = () => {
     hidden: { scale: 0.9, opacity: 0 },
     visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: 'easeOut' } },
   };
-
-  const isRegistered = Cookies.get('userDataDB');
-
   return (
     <div className='relative h-screen overflow-hidden md:h-[105vh] flex-col justify-center items-center'>
       <motion.div
@@ -93,16 +105,18 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 1 }}
         >
           {!isRegistered && (
-            <Link href='/register'>
-              <HeroPrimaryButton>Register</HeroPrimaryButton>
-            </Link>
+            <HeroPrimaryButton>
+              <Link href='/register'>Register</Link>
+            </HeroPrimaryButton>
           )}
-          <Link
-            href='https://drive.google.com/file/d/1jglpl2SzbmpRc73ML80zREhnpxxQF4qx/view?usp=sharing'
-            target='_blank'
-          >
-            <HeroGreenPrimaryButton>Brochure</HeroGreenPrimaryButton>
-          </Link>
+          <HeroGreenPrimaryButton>
+            <Link
+              href='https://drive.google.com/file/d/1jglpl2SzbmpRc73ML80zREhnpxxQF4qx/view?usp=sharing'
+              target='_blank'
+            >
+              Brochure
+            </Link>
+          </HeroGreenPrimaryButton>
         </motion.div>
       </motion.div>
     </div>

@@ -48,7 +48,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
           photoUrl: userProfile.photoUrl,
           id: userInDB.id,
           hasPaid: userInDB.hasPaid,
-          isNitR: userProfile.isNitR,
+          isNitR: userInDB.isNitR,
         });
       } catch (e) {
         console.error('Error fetching user data:', e);
