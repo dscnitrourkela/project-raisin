@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { v4 } from 'uuid';
 
+import Loader from '@/components/Loading/Loader';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
@@ -125,7 +126,6 @@ function Page() {
         acc[err.path[0]] = err.message;
         return acc;
       }, {});
-      console.log(fieldErrors);
       setErrors(fieldErrors);
       return false;
     }
@@ -256,7 +256,6 @@ function Page() {
         sameSite: 'strict',
       });
 
-      console.log(res);
       toast.success(
         'Registration successful! You will recieve confirmation email within 4-5 days!',
         {
@@ -268,7 +267,9 @@ function Page() {
       }, 1300);
     } catch (error) {
       console.error(error);
-      toast.error('Registration failed! Please try again');
+      toast.error('Registration failed! If the issue persists, try logging in again.', {
+        duration: 5000,
+      });
     } finally {
       setLoading(false);
     }
@@ -289,39 +290,45 @@ function Page() {
 
       {isLoggedIn ? (
         <RegisterInnerContainer>
-          <RegisterHeading>Register</RegisterHeading>
-          <RegisterForm>
-            {formFields.map((field) => {
-              if (isNitR && notNitrFields.includes(field.id)) {
-                return null;
-              }
-              return returnFormFields(field);
-            })}
-          </RegisterForm>
-
-          {!isNitR && (
+          {loading ? (
+            <Loader />
+          ) : (
             <>
-              <UndertakingLink href={undertakingContent.link} target='_blank'>
-                {undertakingContent.text}
-              </UndertakingLink>
-              <PaymentPolicyInfo>
-                <Link href='/refundPolicy'>
-                  Please review the Payment Policy before registering.
-                </Link>
-                <br />
-                NOTE: Registration Fees (₹899)
-              </PaymentPolicyInfo>
-              <CampusAmbassador
-                handleChange={handleChange}
-                userReferral={userDetails.phone}
-                isCampusAmbassador={userDetails.campusAmbassador}
-              />
+              <RegisterHeading>Register</RegisterHeading>
+              <RegisterForm>
+                {formFields.map((field) => {
+                  if (isNitR && notNitrFields.includes(field.id)) {
+                    return null;
+                  }
+                  return returnFormFields(field);
+                })}
+              </RegisterForm>
+
+              {!isNitR && (
+                <>
+                  <UndertakingLink href={undertakingContent.link} target='_blank'>
+                    {undertakingContent.text}
+                  </UndertakingLink>
+                  <PaymentPolicyInfo>
+                    <Link href='/refundPolicy'>
+                      Please review the Payment Policy before registering.
+                    </Link>
+                    <br />
+                    NOTE: Registration Fees (₹899)
+                  </PaymentPolicyInfo>
+                  <CampusAmbassador
+                    handleChange={handleChange}
+                    userReferral={userDetails.phone}
+                    isCampusAmbassador={userDetails.campusAmbassador}
+                  />
+                </>
+              )}
+
+              <RegsiterButton onClick={handleSubmit} disabled={loading}>
+                {loading ? 'Loading...' : 'Register'}
+              </RegsiterButton>
             </>
           )}
-
-          <RegsiterButton onClick={handleSubmit} disabled={loading}>
-            {loading ? 'Loading...' : 'Register'}
-          </RegsiterButton>
         </RegisterInnerContainer>
       ) : (
         <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading}>

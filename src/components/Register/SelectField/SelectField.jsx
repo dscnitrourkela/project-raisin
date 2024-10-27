@@ -62,9 +62,15 @@ function SelectField({
         [name]: otherInstituteName,
       }));
     } else {
+      if (name === 'institute') {
+        handleSelect((prevState) => ({
+          ...prevState,
+          instituteId: id,
+        }));
+      }
+
       handleSelect((prevState) => ({
         ...prevState,
-        instituteId: id,
         [name]: option,
       }));
     }

@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     try {
       const user = await signInWithGoogle();
       const token = `Bearer ${user.accessToken}`;
-      console.log(`${token}`);
+
       if (user) {
         const userData = {
           name: user.displayName,
