@@ -60,7 +60,6 @@ function Page() {
     payment: '',
     undertaking: false,
     campusAmbassador: false,
-    payment: '',
     transactionID: '',
   });
   const getUserDetails = useUserDetails();
@@ -108,16 +107,19 @@ function Page() {
   }
 
   function validateForm() {
+    let updatedUserDetails = userDetails;
     if (isNitR) {
-      setUserDetails({
-        ...userDetails,
+      updatedUserDetails = {
+        ...updatedUserDetails,
         university: 'NIT Rourkela',
         transactionID: 'NITR',
-        payment: 'NITR',
-      });
+        payment: 'https://www.nitrkl.ac.in/',
+        permission: true,
+        undertaking: true,
+      };
     }
 
-    const validationResult = userSchema.safeParse(userDetails);
+    const validationResult = userSchema.safeParse(updatedUserDetails);
     if (!validationResult.success) {
       const fieldErrors = validationResult.error.errors.reduce((acc, err) => {
         acc[err.path[0]] = err.message;
