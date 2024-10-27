@@ -6,6 +6,8 @@ export const GET_USER_BY_UID = gql`
       data {
         name
         id
+        hasPaid
+        college
       }
     }
   }
