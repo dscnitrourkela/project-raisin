@@ -64,7 +64,8 @@ export const ME_previewItems = [
   },
   {
     id: 9,
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //tba
+    ImageURL:
+      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1730032788/inno-2k24/Inno%20Club%20Posters/ML4E_ImagineAI/ogiyrid9ygc2eubw86vh.png',
     PreviewDescription: 'TBA',
     Rulebook: '',
   },
@@ -73,7 +74,7 @@ export const ME_previewItems = [
     ImageURL:
       'https://res.cloudinary.com/duvkctvfr/image/upload/v1729432800/INNO_events/Inno%20Club%20Posters/tqjvoypanukjacsqdhar.png', //tba
     PreviewDescription:
-      'Get ready for the ultimate challenge with OpenChase: a Hybrid Treasure Hunt, brought to you by OpenCode!...',
+      'Get ready for the ultimate challenge with OpenChase: a Hybrid Treasure Hunt, brought to you by OpenCode and GDSC NIT Rourekla!...',
     Rulebook: 'https://drive.google.com/open?id=1OWOfXrTX4h9uToToi0A9c2eC6nAMHQh6',
   },
   // {
@@ -468,7 +469,8 @@ export const ME_descriptionItems = [
     id: 9,
     Heading: 'IMAGINE AI',
     Description: 'TBA',
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
+    ImageURL:
+      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1730032788/inno-2k24/Inno%20Club%20Posters/ML4E_ImagineAI/ogiyrid9ygc2eubw86vh.png',
     Location: 'LA-214',
     Date: 'DAY 1',
     Time: '4 PM',
@@ -478,7 +480,7 @@ export const ME_descriptionItems = [
     id: 10,
     Heading: 'OPENCHASE: A TREASURE HUNT',
     Description:
-      'Get ready for the ultimate challenge with OpenChase: a Hybrid Treasure Hunt, brought to you by OpenCode! This virtual Capture the Flag event will have you hunting down hidden hints and flags buried deep within apps, media, and websites. Do you have the skills to crack the clues and come out on top?',
+      'Get ready for the ultimate challenge with OpenChase: a Hybrid Treasure Hunt, brought to you by OpenCode and GDSC, NITR! This virtual Capture the Flag event will have you hunting down hidden hints and flags buried deep within apps, media, and websites. Do you have the skills to crack the clues and come out on top?',
     ImageURL:
       'https://res.cloudinary.com/duvkctvfr/image/upload/v1729432800/INNO_events/Inno%20Club%20Posters/tqjvoypanukjacsqdhar.png', // TBA
     Location: 'LA-104',
