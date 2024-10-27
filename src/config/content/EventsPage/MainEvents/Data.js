@@ -64,7 +64,7 @@ export const ME_previewItems = [
   },
   {
     id: 9,
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //tba
+    ImageURL: 'https://res.cloudinary.com/dwfon2ikz/image/upload/v1730032788/inno-2k24/Inno%20Club%20Posters/ML4E_ImagineAI/ogiyrid9ygc2eubw86vh.png',
     PreviewDescription: 'TBA',
     Rulebook: '',
   },
@@ -468,7 +468,7 @@ export const ME_descriptionItems = [
     id: 9,
     Heading: 'IMAGINE AI',
     Description: 'TBA',
-    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/dummy-image-lorem-ipsum.png', //TBA
+    ImageURL: 'https://res.cloudinary.com/dwfon2ikz/image/upload/v1730032788/inno-2k24/Inno%20Club%20Posters/ML4E_ImagineAI/ogiyrid9ygc2eubw86vh.png',
     Location: 'LA-214',
     Date: 'DAY 1',
     Time: '4 PM',
