@@ -275,9 +275,15 @@ function Page() {
       }, 1300);
     } catch (error) {
       console.error(error);
-      toast.error('Registration failed! If the issue persists, try logging in again.', {
-        duration: 5000,
-      });
+      if (error.message.includes('Unique constraint failed')) {
+        toast.error('Registration failed! User already exists with the same credentials!', {
+          duration: 5000,
+        });
+      } else {
+        toast.error('Registration failed! If the issue persists, try logging in again.', {
+          duration: 5000,
+        });
+      }
     } finally {
       setLoading(false);
     }
