@@ -1,5 +1,5 @@
-import { motion, AnimatePresence, easeIn } from 'framer-motion';
-import DetailsCard from '../../CardComponents/DetailsCard';
+import { motion, AnimatePresence } from 'framer-motion';
+import DetailsCard from '../CardComponents/DetailsCard';
 import tw, { styled } from 'twin.macro';
 import { memo } from 'react';
 

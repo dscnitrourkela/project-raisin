@@ -1,4 +1,6 @@
-import { SliderEventsWrapper } from './Carousel/SliderCarousel/EventWrapper';
+// import { SliderEventsWrapper } from './Carousel/SliderCarousel/EventWrapper';
+
+import { SliderEventsWrapper } from './Carousel/PreviewCarousel';
 
 // import { SliderEventsWrapper } from './Carousel/PreviewCarousel/EventWrapper';
 const MainCarousel = ({ previewItems, descriptionItems }) => {

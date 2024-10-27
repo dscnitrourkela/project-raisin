@@ -1,8 +1,9 @@
 import { createContext, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { signInWithGoogle, signOutUser } from '@/firebase/auth';
+
 import Cookies from 'js-cookie';
-import { auth } from '@/firebase/firebase';
+import { toast } from 'react-hot-toast';
+
+import { signInWithGoogle, signOutUser } from '@/firebase/auth';
 
 export const AuthContext = createContext();
 
@@ -15,12 +16,16 @@ export const AuthProvider = ({ children }) => {
     try {
       const user = await signInWithGoogle();
 
-      const token = await auth.currentUser.getIdToken();
-      console.log(`Bearer ${token}`);
       if (user) {
-        const userData = { name: user.displayName, email: user.email, uid: user.uid, token: token };
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          uid: user.uid,
+          photoUrl: user.photoURL,
+          token: user.accessToken,
+        };
         Cookies.set('userData', JSON.stringify(userData), {
-          expires: 7,
+          expires: 1,
           sameSite: 'strict',
         });
         setUserInfo(userData);
@@ -41,6 +46,7 @@ export const AuthProvider = ({ children }) => {
       await signOutUser();
       setUserInfo({});
       Cookies.remove('userData');
+      Cookies.remove('userDataDB');
       toast.success('Successfully signed out.');
     } catch (error) {
       console.error('Error signing out:', error);
@@ -50,7 +56,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ userInfo, setUserInfo, handleGoogleSignIn, handleSignOut, authLoading }}
+      value={{
+        userInfo,
+        setUserInfo,
+        handleGoogleSignIn,
+        handleSignOut,
+        authLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>
