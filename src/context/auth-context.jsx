@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
           token: user.accessToken,
         };
         Cookies.set('userData', JSON.stringify(userData), {
-          expires: 7,
+          expires: 1,
           sameSite: 'strict',
         });
         setUserInfo(userData);

@@ -257,13 +257,16 @@ function Page() {
       });
 
       const newCookies = JSON.parse(Cookies.get('userData'));
+
+      Cookies.remove('userData');
       Cookies.set('userData', JSON.stringify({ ...newCookies, isNitR }), {
-        expires: 7,
+        expires: 1,
         sameSite: 'strict',
       });
 
-      Cookies.set('userDataDB', res.data.createUser.id, {
-        expires: 7,
+      const user = res.data.createUser;
+      Cookies.set('userDataDB', JSON.stringify(user), {
+        expires: 1,
         sameSite: 'strict',
       });
 
@@ -298,8 +301,8 @@ function Page() {
     const userData = hasUserData ? userDataDB.user.data[0] : null;
     if (userCookie || hasUserData) {
       if (!userCookie && userData) {
-        Cookies.set('userDataDB', userData.id, {
-          expires: 7,
+        Cookies.set('userDataDB', JSON.stringify(userData), {
+          expires: 1,
           sameSite: 'strict',
         });
       }
