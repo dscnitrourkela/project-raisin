@@ -1,5 +1,4 @@
-import Cookies from 'js-cookie';
-
+import generateToken from '@/utils/generateToken';
 import { ApolloClient, from, HttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
@@ -44,24 +43,12 @@ const httpLink = new HttpLink({
   fetch: reconnectFetch,
 });
 
-const authLink = setContext((_, { headers }) => {
-  let token;
-
-  if (typeof window !== 'undefined') {
-    try {
-      const userDataFromCookie = Cookies.get('userData');
-      const parsedUserData = JSON.parse(userDataFromCookie);
-      token = parsedUserData.token;
-    } catch (error) {
-      console.error(error);
-      throw new Error('Error parsing userData from cookie');
-    }
-  }
-
+const authLink = setContext(async (_, { headers }) => {
+  const token = await generateToken();
   return {
     headers: {
       ...headers,
-      Authorization: token || '',
+      Authorization: `Bearer ${token}` || '',
     },
   };
 });

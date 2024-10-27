@@ -1,9 +1,7 @@
 'use client';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 
 import Cookies from 'js-cookie';
-import { usePathname, useRouter } from 'next/navigation';
-import { toast } from 'react-hot-toast';
 
 import { AuthContext } from '@/context/auth-context';
 import { useUserDetails } from '@/hooks/useUserDetails';
@@ -25,17 +23,10 @@ import {
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
-  const [isRegistered, setIsRegistered] = useState(false);
   const getUserDetails = useUserDetails();
   const user = getUserDetails();
-  const router = useRouter();
-  const path = usePathname();
-
-  // const { data: userDataInDb } = useSuspenseQuery(
-  //   GET_USER_BY_UID,
-  //   user.uid ? { variables: { uid: user.uid } } : skipToken,
-  // );
-
+  const isNitr = getUserDetails()?.isNitR;
+  const isRegistered = Cookies.get('userDataDB');
   const handleLogout = () => {
     handleSignOut();
     handleProfileToggle();
@@ -46,24 +37,6 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
     handleProfileToggle();
     handleNavClose(false);
   };
-
-  useEffect(() => {
-    const mongoId = Cookies.get('userDataDB');
-
-    console.log('mongoId:', mongoId);
-    // userDataInDb?.user.data.length > 0;
-    if (mongoId) {
-      if (path === '/register') {
-        toast.success('You are already registered!');
-        router.push('/');
-      }
-      setIsRegistered(true);
-    } else {
-      setIsRegistered(false);
-    }
-
-    // console.log('userDataInDb:', userDataInDb);
-  }, []);
 
   return (
     <Container>
@@ -81,7 +54,7 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
           <UserEmail>{user?.email}</UserEmail>
           <MenuLinks>
             {isRegistered ? (
-              <p>Your payment is being verified! You will be mailed shortly</p>
+              !isNitr && <p>Your payment is being verified! You will be mailed shortly</p>
             ) : (
               <StyledLink href='/register' onClick={handleProfileToggle}>
                 Complete Your Registration

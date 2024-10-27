@@ -1,6 +1,6 @@
+import { ChevronDown } from 'lucide-react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { ChevronDown } from 'lucide-react';
 
 const SelectFieldParentContainer = styled.div`
   ${tw`flex flex-col items-start`}
@@ -34,7 +34,7 @@ const DropdownIcon = styled(ChevronDown)`
 `;
 
 const DropdownList = styled.ul`
-  ${tw`absolute w-auto md:w-[35rem] mt-1 bg-transparent backdrop-blur-sm rounded-md z-10 max-h-60 overflow-auto`}
+  ${tw`absolute w-auto md:w-[35rem] mt-1 bg-black/30 backdrop-blur-xl rounded-md z-10 max-h-60 overflow-auto`}
 `;
 
 const DropdownItem = styled.li`
@@ -50,13 +50,13 @@ const Label = styled.label`
 `;
 
 export {
-  SelectFieldParentContainer,
+  DropdownIcon,
+  DropdownItem,
+  DropdownList,
+  ErrorText,
+  Label,
   LabelAndInputContainer,
   SelectFieldContainer,
   SelectFieldInput,
-  DropdownIcon,
-  DropdownList,
-  DropdownItem,
-  ErrorText,
-  Label,
+  SelectFieldParentContainer,
 };

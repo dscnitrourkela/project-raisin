@@ -21,6 +21,8 @@ export const userSchema = z.object({
       message:
         "Students from this institute have been officially barred from participating in INNO'24",
     }),
+  idCard: z.string().url('ID Card is required'),
+  payment: z.string().url('Payment receipt is required'),
   university: z
     .string()
     .min(1, 'University name is required')
