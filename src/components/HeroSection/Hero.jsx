@@ -1,7 +1,10 @@
 import './Hero.css';
+
+import { motion } from 'framer-motion';
+import Cookies from 'js-cookie';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+
 import { HeroGreenPrimaryButton, HeroLogoText, HeroPrimaryButton } from './styles';
 
 export const Hero = () => {
@@ -15,12 +18,7 @@ export const Hero = () => {
     visible: { scale: 1, opacity: 1, transition: { duration: 1.2, ease: 'easeOut' } },
   };
 
-  const buttonVariants = {
-    hover: {
-      scale: 1.1,
-      transition: { yoyo: Infinity },
-    },
-  };
+  const isRegistered = Cookies.get('userDataDB');
 
   return (
     <div className='relative h-screen overflow-hidden md:h-[105vh] flex-col justify-center items-center'>
@@ -94,18 +92,16 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <Link href='/register'>
-            <motion.div variants={buttonVariants} whileHover='hover'>
+          {!isRegistered && (
+            <Link href='/register'>
               <HeroPrimaryButton>Register</HeroPrimaryButton>
-            </motion.div>
-          </Link>
+            </Link>
+          )}
           <Link
             href='https://drive.google.com/file/d/1jglpl2SzbmpRc73ML80zREhnpxxQF4qx/view?usp=sharing'
             target='_blank'
           >
-            <motion.div variants={buttonVariants} whileHover='hover'>
-              <HeroGreenPrimaryButton>Brochure</HeroGreenPrimaryButton>
-            </motion.div>
+            <HeroGreenPrimaryButton>Brochure</HeroGreenPrimaryButton>
           </Link>
         </motion.div>
       </motion.div>
