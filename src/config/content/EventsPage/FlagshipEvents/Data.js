@@ -34,8 +34,7 @@ export const FE_previewItems = [
   },
   {
     id: 5,
-    ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620360/INNO_events/Inno%20Club%20Posters/rsyalt6w45sjchesz9ge.png',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/innovision-omega-poster.png',
     PreviewDescription:
       'The Ultimate Treasure Hunt is a thrill ing adventure where logic, strategy, and math skills are your keys to success. Teams will embark on a campus-wide hunt, so ving puzzles and cracking codes that lead to hidden treasures. Each step tests problem-solving, creativity, and teamwork. The clues will challenge your mathematical limits while keeping the excitement high.',
     Rulebook: 'https://drive.google.com/open?id=1jy98okGN6yeKQJAuJlXvS59Qa1TpYWrh',
@@ -112,8 +111,7 @@ export const FE_descriptionItems = [
     Heading: 'OMEGA',
     Description:
       'Get ready for Death Race, a two-day robotics competition where participants drive their robots through a track filled with obstacles and challenges. The fastest robot to navigate the course and score the most points wins. Brace yourself for an intense and thrilling showdown!',
-    ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729620360/INNO_events/Inno%20Club%20Posters/rsyalt6w45sjchesz9ge.png',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/innovision-omega-poster.png',
     Location: 'LA Lawns, LA 004, LA 009, Academic Area',
     Date: 'Day 2',
     Time: '3 PM',

@@ -1,5 +1,4 @@
 import toast from 'react-hot-toast';
-
 import {
   PreviewButtonContainer,
   PreviewCardContainer,
@@ -9,7 +8,7 @@ import {
   PreviewMoreInfoButton2,
 } from './PreviewCard.style';
 
-function PreviewCard({ ImageURL, PreviewDescription = '' }) {
+function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEvent }) {
   const words = PreviewDescription?.split(' ') || [];
   const truncatedDescription =
     words.length > 30 ? words.slice(0, 50).join(' ') + '...' : PreviewDescription;
@@ -19,13 +18,18 @@ function PreviewCard({ ImageURL, PreviewDescription = '' }) {
       icon: '🚀',
     });
   }
+  // console.log(id)
+  function handleClick() {
+    handleRegisterEvent(id);
+  }
+
   return (
     <PreviewCardContainer>
       <PreviewCardImage src={ImageURL} alt='image' width={500} height={500} />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
       <PreviewButtonContainer>
         <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
-        <PreviewMoreInfoButton onClick={handleToast}>Register</PreviewMoreInfoButton>
+        <PreviewMoreInfoButton onClick={handleClick}>Register</PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>
   );
