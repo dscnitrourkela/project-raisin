@@ -1,9 +1,7 @@
 'use client';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 
 import Cookies from 'js-cookie';
-import { usePathname, useRouter } from 'next/navigation';
-import { toast } from 'react-hot-toast';
 
 import { AuthContext } from '@/context/auth-context';
 import { useUserDetails } from '@/hooks/useUserDetails';
@@ -25,13 +23,10 @@ import {
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
-  const [isRegistered, setIsRegistered] = useState(false);
   const getUserDetails = useUserDetails();
   const user = getUserDetails();
-  const router = useRouter();
-  const path = usePathname();
   const isNitr = getUserDetails()?.isNitR;
-
+  const isRegistered = Cookies.get('userDataDB');
   const handleLogout = () => {
     handleSignOut();
     handleProfileToggle();
@@ -42,19 +37,6 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
     handleProfileToggle();
     handleNavClose(false);
   };
-
-  useEffect(() => {
-    const mongoId = Cookies.get('userDataDB');
-    if (mongoId) {
-      if (path === '/register') {
-        toast.success('You are already registered!');
-        router.push('/');
-      }
-      setIsRegistered(true);
-    } else {
-      setIsRegistered(false);
-    }
-  }, []);
 
   return (
     <Container>

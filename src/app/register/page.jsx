@@ -1,5 +1,5 @@
 'use client';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useLayoutEffect, useState } from 'react';
 
 import Cookies from 'js-cookie';
 import Link from 'next/link';
@@ -283,7 +283,7 @@ function Page() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (Cookies.get('userDataDB')) {
       router.push('/');
       toast.success('You have been already registered!', {
