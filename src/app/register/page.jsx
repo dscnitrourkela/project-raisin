@@ -1,5 +1,5 @@
 'use client';
-import { useContext, useLayoutEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import Cookies from 'js-cookie';
 import Link from 'next/link';
@@ -29,7 +29,8 @@ import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation } from '@apollo/client';
+import { useMutation, useSuspenseQuery, skipToken } from '@apollo/client';
+import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
 
 import {
   DisclaimerPara,
@@ -72,6 +73,10 @@ function Page() {
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
   const isNitR = userDetails.instituteId === nitrID;
+  const { data: userDataDB, error: userErr } = useSuspenseQuery(
+    GET_USER_BY_UID,
+    storedUserId ? { variables: { uid: storedUserId } } : skipToken,
+  );
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -283,14 +288,27 @@ function Page() {
     }
   }
 
-  useLayoutEffect(() => {
-    if (Cookies.get('userDataDB')) {
+  useEffect(() => {
+    if (userErr) {
+      console.error('User query error:', userErr);
+      return;
+    }
+    const userCookie = Cookies.get('userDataDB');
+    const hasUserData = userDataDB?.user?.data?.length > 0;
+    const userData = hasUserData ? userDataDB.user.data[0] : null;
+    if (userCookie || hasUserData) {
+      if (!userCookie && userData) {
+        Cookies.set('userDataDB', userData.id, {
+          expires: 7,
+          sameSite: 'strict',
+        });
+      }
       router.push('/');
       toast.success('You have been already registered!', {
         duration: 5000,
       });
     }
-  }, []);
+  }, [userErr, userDataDB, router]);
 
   return (
     <RegisterContainer>

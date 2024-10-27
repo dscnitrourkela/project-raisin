@@ -22,6 +22,7 @@ export const AuthProvider = ({ children }) => {
           email: user.email,
           uid: user.uid,
           photoUrl: user.photoURL,
+          token: user.accessToken,
         };
         Cookies.set('userData', JSON.stringify(userData), {
           expires: 7,
