@@ -65,10 +65,6 @@ function SelectField({
       handleSelect((prevState) => ({
         ...prevState,
         instituteId: id,
-      }));
-
-      handleSelect((prevState) => ({
-        ...prevState,
         [name]: option,
       }));
     }

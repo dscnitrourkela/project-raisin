@@ -7,15 +7,20 @@ import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { v4 } from 'uuid';
 
-import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
-import { Qr } from '@/components/Register/PaymentComponents/Qr';
 import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import InputField from '@/components/Register/InputField/InputField';
+import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
+import { Qr } from '@/components/Register/PaymentComponents/Qr';
 import SelectField from '@/components/Register/SelectField/SelectField';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
-import { formFields, undertakingContent } from '@/config/content/Registration/details';
+import {
+  formFields,
+  nitrID,
+  notNitrFields,
+  undertakingContent,
+} from '@/config/content/Registration/details';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
 import { AuthContext } from '@/context/auth-context';
 import { REGISTER_ORG } from '@/graphql/mutations/organizationMutations';
@@ -27,7 +32,9 @@ import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
 import { useMutation } from '@apollo/client';
 
 import {
+  DisclaimerPara,
   Moon,
+  PaymentHeading,
   PaymentPolicyInfo,
   RegisterContainer,
   RegisterForm,
@@ -35,8 +42,6 @@ import {
   RegisterInnerContainer,
   RegsiterButton,
   UndertakingLink,
-  PaymentHeading,
-  DisclaimerPara,
 } from './register.styles';
 
 function Page() {
@@ -67,6 +72,7 @@ function Page() {
   const [registerCollege] = useMutation(REGISTER_ORG);
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
+  const isNitR = userDetails.instituteId === nitrID;
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -102,12 +108,22 @@ function Page() {
   }
 
   function validateForm() {
+    if (isNitR) {
+      setUserDetails({
+        ...userDetails,
+        university: 'NIT Rourkela',
+        transactionID: 'NITR',
+        payment: 'NITR',
+      });
+    }
+
     const validationResult = userSchema.safeParse(userDetails);
     if (!validationResult.success) {
       const fieldErrors = validationResult.error.errors.reduce((acc, err) => {
         acc[err.path[0]] = err.message;
         return acc;
       }, {});
+      console.log(fieldErrors);
       setErrors(fieldErrors);
       return false;
     }
@@ -165,15 +181,15 @@ function Page() {
         );
 
       case 'head':
-        return <PaymentHeading>{field.content}</PaymentHeading>;
+        return <PaymentHeading key={field.id}>{field.content}</PaymentHeading>;
 
       case 'title':
-        return <MerchantInfo label={field.label} labelInfo={field.content} />;
+        return <MerchantInfo label={field.label} labelInfo={field.content} key={field.id} />;
       case 'image':
-        return <Qr QrUrl={field.QrUrl} />;
+        return <Qr QrUrl={field.QrUrl} key={field.id} />;
 
       case 'disclaimer':
-        return <DisclaimerPara>{field.content}</DisclaimerPara>;
+        return <DisclaimerPara key={field.id}>{field.content}</DisclaimerPara>;
 
       case 'checkbox':
         return (
@@ -225,10 +241,10 @@ function Page() {
             college: userDetails.instituteId ? userDetails.instituteId : collegeID,
             rollNumber: userDetails.rollNumber,
             idCard: userDetails.idCard,
-            referredBy: userDetails.referralCode,
+            referredBy: isNitR ? null : userDetails.referralCode,
             gender: userDetails.gender,
-            receipt: userDetails.payment,
-            transactionID: userDetails.transactionID,
+            receipt: isNitR ? null : userDetails.payment,
+            transactionID: isNitR ? null : userDetails.transactionID,
             hasPaid: false,
           },
         },
@@ -247,7 +263,7 @@ function Page() {
       );
       setTimeout(() => {
         router.push('/');
-      }, 1000);
+      }, 1300);
     } catch (error) {
       console.error(error);
       toast.error('Registration failed! Please try again');
@@ -274,22 +290,33 @@ function Page() {
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
             {formFields.map((field) => {
+              if (isNitR && notNitrFields.includes(field.id)) {
+                return null;
+              }
               return returnFormFields(field);
             })}
           </RegisterForm>
-          <UndertakingLink href={undertakingContent.link} target='_blank'>
-            {undertakingContent.text}
-          </UndertakingLink>
-          <PaymentPolicyInfo>
-            <Link href='/refundPolicy'>Please review the Payment Policy before registering.</Link>
-            <br />
-            NOTE: Registration Fees (₹899)
-          </PaymentPolicyInfo>
-          <CampusAmbassador
-            handleChange={handleChange}
-            userReferral={userDetails.phone}
-            isCampusAmbassador={userDetails.campusAmbassador}
-          />
+
+          {!isNitR && (
+            <>
+              <UndertakingLink href={undertakingContent.link} target='_blank'>
+                {undertakingContent.text}
+              </UndertakingLink>
+              <PaymentPolicyInfo>
+                <Link href='/refundPolicy'>
+                  Please review the Payment Policy before registering.
+                </Link>
+                <br />
+                NOTE: Registration Fees (₹899)
+              </PaymentPolicyInfo>
+              <CampusAmbassador
+                handleChange={handleChange}
+                userReferral={userDetails.phone}
+                isCampusAmbassador={userDetails.campusAmbassador}
+              />
+            </>
+          )}
+
           <RegsiterButton onClick={handleSubmit} disabled={loading}>
             {loading ? 'Loading...' : 'Register'}
           </RegsiterButton>

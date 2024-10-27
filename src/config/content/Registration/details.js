@@ -262,45 +262,52 @@ export const formFields = [
     className: 'oneliner',
   },
 
-  { type: 'head', content: 'PAY VIA QR' },
+  { type: 'head', content: 'PAY VIA QR', id: 'paymentTitle' },
 
   {
     label: 'Merchant Name',
     type: 'title',
     content: 'PLAN FUND NIT ROURKELA',
+    id: 'merchantName',
   },
   {
     label: 'UPI ID',
     type: 'title',
     content: '85002429435@sbi',
+    id: 'upiID',
   },
   {
     type: 'image',
     QrUrl:
       'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729940616/Pay_for_Registration_oqdgsq.png',
+    id: 'qrImage',
   },
   {
     type: 'disclaimer',
     content:
       'Please ensure the amount is exactly INR 899, anything other than this amount will not be considered a valid registration and there will be no refund',
+    id: 'disclaimer',
   },
 
-  { type: 'head', content: 'PAY THROUGH BANK TRANSFER' },
+  { type: 'head', content: 'PAY THROUGH BANK TRANSFER', id: 'paymentTitle2' },
 
   {
     label: 'Bank Account Name',
     type: 'title',
     content: 'STUDENT ACTIVITY CENTRE NIT - ROURKELA',
+    id: 'bankAccountName',
   },
   {
     label: 'Bank Account Number',
     type: 'title',
     content: '_00000037377186107',
+    id: 'bankAccountNumber',
   },
   {
     label: 'IFSC Code',
     type: 'title',
     content: 'SBIN0002109',
+    id: 'ifscCode',
   },
 
   {
@@ -325,6 +332,26 @@ export const formFields = [
     type: 'checkbox',
     id: 'permission',
   },
+];
+
+export const nitrID = '671a5be76748c70b7f893ccb';
+
+export const notNitrFields = [
+  'university',
+  'referralCode',
+  'paymentTitle',
+  'paymentTitle2',
+  'merchantName',
+  'upiID',
+  'disclaimer',
+  'qrImage',
+  'transactionID',
+  'undertaking',
+  'permission',
+  'bankAccountName',
+  'bankAccountNumber',
+  'ifscCode',
+  'payment',
 ];
 
 export const campusAmbassadorInput = {
