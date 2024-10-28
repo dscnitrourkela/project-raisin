@@ -5,7 +5,12 @@ import { useState } from 'react';
 import { Wrapper } from '@/components/Carousel/Carousel.styles';
 import DescriptionCarousel from './DescriptionCarousel';
 
-export const SliderEventsWrapper = ({ previewItems, descriptionItems, handleRegisterEvent }) => {
+export const SliderEventsWrapper = ({
+  previewItems,
+  descriptionItems,
+  handleRegisterEvent,
+  loading,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderSlides = () =>
@@ -16,6 +21,7 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems, handleRegi
           PreviewDescription={item.PreviewDescription}
           ImageURL={item.ImageURL}
           handleRegisterEvent={handleRegisterEvent}
+          loading={loading}
         />
       </SwiperSlide>
     ));

@@ -7,8 +7,11 @@ import {
   PreviewMoreInfoButton,
   PreviewMoreInfoButton2,
 } from './PreviewCard.style';
+import { useState } from 'react';
 
-function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEvent }) {
+function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEvent, loading }) {
+  const [isRegistered, setIsRegistered] = useState(false);
+
   const words = PreviewDescription?.split(' ') || [];
   const truncatedDescription =
     words.length > 30 ? words.slice(0, 50).join(' ') + '...' : PreviewDescription;
@@ -18,7 +21,7 @@ function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEven
       icon: '🚀',
     });
   }
-  // console.log(id)
+
   function handleClick() {
     handleRegisterEvent(id);
   }
@@ -29,7 +32,9 @@ function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEven
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
       <PreviewButtonContainer>
         <PreviewMoreInfoButton2>Rulebook</PreviewMoreInfoButton2>
-        <PreviewMoreInfoButton onClick={handleClick}>Register</PreviewMoreInfoButton>
+        <PreviewMoreInfoButton onClick={handleClick} disabled={loading}>
+          {loading ? 'Registering...' : 'Register'}
+        </PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>
   );
