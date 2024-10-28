@@ -11,7 +11,14 @@ import {
 } from './PreviewCard.style';
 import { useState } from 'react';
 
-function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEvent, loading,link = '' }) {
+function PreviewCard({
+  ImageURL,
+  id,
+  PreviewDescription = '',
+  handleRegisterEvent,
+  loading,
+  link = '',
+}) {
   const [isRegistered, setIsRegistered] = useState(false);
   const words = PreviewDescription?.split(' ') || [];
   const truncatedDescription =
@@ -32,7 +39,6 @@ function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEven
       <PreviewCardImage src={ImageURL} alt='image' width={500} height={500} />
       <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
       <PreviewButtonContainer>
-
         <PreviewMoreInfoButton onClick={handleClick} disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </PreviewMoreInfoButton>
@@ -46,7 +52,7 @@ function PreviewCard({ ImageURL, id, PreviewDescription = '', handleRegisterEven
             </Link>
           )}
         </PreviewMoreInfoButton2>
-       <PreviewMoreInfoButton onClick={handleClick} disabled={loading}>
+        <PreviewMoreInfoButton onClick={handleClick} disabled={loading}>
           {loading ? 'Registering...' : 'Register'}
         </PreviewMoreInfoButton>
       </PreviewButtonContainer>
