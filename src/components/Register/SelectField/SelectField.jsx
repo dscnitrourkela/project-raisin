@@ -1,10 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-
 import { toast } from 'react-hot-toast';
-
 import { Label } from '../FileInput/FileInput.styles';
 import InputField from '../InputField/InputField';
+import SearchField from './SearchField/SearchField';
 import { ErrorMessage } from '../InputField/InputField.styles';
 import {
   DropdownIcon,
@@ -30,6 +29,7 @@ function SelectField({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(value || '');
   const [otherInstituteName, setOtherInstituteName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const ref = useRef(null);
   const isOneLine = className?.includes('oneliner');
 
@@ -41,7 +41,10 @@ function SelectField({
     setSelectedOption(value || '');
   }, [value]);
 
-  const handleToggle = () => setIsOpen(!isOpen);
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+    setSearchQuery('');
+  };
 
   const handleSelectChange = (option, id) => {
     if (id === 'notAllowed') {
@@ -52,6 +55,7 @@ function SelectField({
     }
     setSelectedOption(option);
     setIsOpen(false);
+    setSearchQuery('');
     setErrors((prevState) => ({
       ...prevState,
       [name]: '',
@@ -93,6 +97,7 @@ function SelectField({
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
         setIsOpen(false);
+        setSearchQuery('');
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -101,7 +106,7 @@ function SelectField({
     };
   }, [ref]);
 
-  function returnSortedOptions(array) {
+  function returnSortedAndFilteredOptions(array) {
     const sortedOptions = array.sort((a, b) => a.label.localeCompare(b.label));
 
     const othersIndex = sortedOptions.findIndex((option) => option.value === 'others');
@@ -110,10 +115,14 @@ function SelectField({
       sortedOptions.push(othersOption);
     }
 
-    return sortedOptions;
+    if (!searchQuery) return sortedOptions;
+
+    return sortedOptions.filter((option) =>
+      option.label.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
   }
 
-  const sortedOptions = returnSortedOptions(options);
+  const filteredOptions = returnSortedAndFilteredOptions(options);
 
   return (
     <div ref={ref}>
@@ -131,14 +140,29 @@ function SelectField({
 
           {isOpen && (
             <DropdownList>
-              {sortedOptions.map((option, index) => (
-                <DropdownItem
-                  key={index}
-                  onClick={() => handleSelectChange(option.value, option.id)}
-                >
-                  {option.label}
-                </DropdownItem>
-              ))}
+              <div className='sticky top-0 p-2'>
+                <SearchField
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  placeholder='Search options...'
+                  autoFocus
+                  showClearButton
+                  onClear={() => setSearchQuery('')}
+                />
+              </div>
+
+              {filteredOptions.length > 0 ? (
+                filteredOptions.map((option, index) => (
+                  <DropdownItem
+                    key={index}
+                    onClick={() => handleSelectChange(option.value, option.id)}
+                  >
+                    {option.label}
+                  </DropdownItem>
+                ))
+              ) : (
+                <div className='px-4 py-3 text-sm text-gray-500'>No options found</div>
+              )}
             </DropdownList>
           )}
         </LabelAndInputContainer>
