@@ -34,7 +34,7 @@ const DropdownIcon = styled(ChevronDown)`
 `;
 
 const DropdownList = styled.ul`
-  ${tw`absolute w-auto md:w-[35rem] mt-1 bg-black/30 backdrop-blur-xl rounded-md z-10 max-h-60 overflow-auto`}
+  ${tw`absolute w-auto xxxxs:w-[18rem] xxs:w-[19rem] 2xs:w-[22rem] ssm:w-[25rem] sm:w-[30rem] md:w-[35rem] mt-1 bg-black/30 backdrop-blur-xl rounded-md z-10 max-h-60 overflow-auto`}
 `;
 
 const DropdownItem = styled.li`

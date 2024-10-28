@@ -21,7 +21,9 @@ export const SearchFieldInput = styled.input`
     ease-in-out
     text-white
     font-prompt
-    bg-transparent
+    bg-black
+    border-2
+    border-gray-700
     focus:outline-none
   `}
 `;
