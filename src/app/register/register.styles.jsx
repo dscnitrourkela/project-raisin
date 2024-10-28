@@ -1,10 +1,32 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { Heading1 } from '@/components/shared/Typography/Headings';
+
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
+
+import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
+import { Heading3 } from '../events/page.style';
+
+import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
 
 export const RegisterHeading = styled(Heading1)`
   ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}
+`;
+
+export const PaymentHeading = styled(Heading2)`
+  ${tw`m-0 p-3 border-[#00FFD1] border-2 rounded-lg font-prompt`}
+`;
+
+export const Heading = styled(Heading3)`
+  ${tw`pb-0 mb-0 font-prompt`}
+`;
+export const MerchantLabel = styled(Heading2)`
+  ${tw`text-left text-[#00FFD1] p-0 m-0 font-prompt`}
+`;
+export const MerchantLabelInfo = styled(Heading2)`
+  ${tw`text-left text-gray-200 m-0 p-0 font-prompt`}
+`;
+export const DisclaimerPara = styled(SmallParagraph)`
+  ${tw`text-red-500 font-prompt w-full md:max-w-[50%]`}
 `;
 
 export const RegisterContainer = styled.div`
@@ -50,7 +72,7 @@ export const Moon = styled.div`
 `;
 
 export const UndertakingLink = styled.a`
-  ${tw`text-base font-prompt font-semibold  hover:underline transition-all duration-200 ease-in-out`}
+  ${tw`text-base font-prompt font-semibold text-blue-400  hover:underline transition-all duration-200 ease-in-out`}
 `;
 
 export const PaymentPolicyInfo = styled.div`

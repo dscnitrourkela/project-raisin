@@ -1,25 +1,34 @@
-import { createContext, useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { signInWithGoogle, signOutUser } from '@/firebase/auth';
+import { createContext, useState } from 'react';
+
 import Cookies from 'js-cookie';
+import { toast } from 'react-hot-toast';
+
+import { signInWithGoogle, signOutUser } from '@/firebase/auth';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [userInfo, setUserData] = useState({});
+  const [userInfo, setUserInfo] = useState({});
   const [authLoading, setAuthLoading] = useState(false);
 
   const handleGoogleSignIn = async () => {
     setAuthLoading(true);
     try {
       const user = await signInWithGoogle();
+
       if (user) {
-        const userData = { name: user.displayName, email: user.email, uid: user.uid };
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          uid: user.uid,
+          photoUrl: user.photoURL,
+          token: user.accessToken,
+        };
         Cookies.set('userData', JSON.stringify(userData), {
-          expires: 7,
+          expires: 1,
           sameSite: 'strict',
         });
-        setUserData(userData);
+        setUserInfo(userData);
         toast.success('Successfully signed in with Google.');
       } else {
         toast.error('Google sign-in failed. Please try again.');
@@ -35,8 +44,9 @@ export const AuthProvider = ({ children }) => {
   const handleSignOut = async () => {
     try {
       await signOutUser();
-      setUserData({});
+      setUserInfo({});
       Cookies.remove('userData');
+      Cookies.remove('userDataDB');
       toast.success('Successfully signed out.');
     } catch (error) {
       console.error('Error signing out:', error);
@@ -46,7 +56,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ userInfo, setUserData, handleGoogleSignIn, handleSignOut, authLoading }}
+      value={{
+        userInfo,
+        setUserInfo,
+        handleGoogleSignIn,
+        handleSignOut,
+        authLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

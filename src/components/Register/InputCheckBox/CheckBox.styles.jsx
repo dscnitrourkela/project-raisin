@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import tw from 'twin.macro';
 
+export const CheckBoxParentContainer = styled.div`
+  ${tw`flex flex-col gap-2 items-start`}
+`;
+
 export const CheckBoxContainer = styled.div`
   ${tw`flex items-center justify-between space-x-2 sm:space-x-3 md:space-x-4 w-full md:w-[35rem]`}
 `;

@@ -14,3 +14,7 @@ export const Heading3 = styled(Heading2)`
 export const Heading4 = styled(Heading2)`
   ${tw`text-white text-xl mb-12 xsm:mb-28 xsm:text-2xl md:text-3xl font-normal font-montserrat text-left`}
 `;
+
+export const Heading5 = styled(Heading2)`
+  ${tw`text-[#00FFD1] text-xl mb-12 xsm:mb-28 xsm:text-2xl md:text-3xl font-normal font-orbitron  text-center`}
+`;

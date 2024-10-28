@@ -1,11 +1,15 @@
-import { AllEvents } from '@/components/EventsSection/wrapperComponents/AllEvents';
+import { AllEvents } from '@/components/EventsSection/shared/AllEvents';
 import { GalleryCard } from './card';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GalleryData } from '@/config/content/EventsPage/GalleryData';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
 
-export const Gallerywrapper = () => {
+export const GalleryWrapper = () => {
   const [cardSizes, setCardSizes] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+  const swiperRef = useRef(null);
 
   const updateScreenSize = () => {
     setIsMobile(window.innerWidth < 820);
@@ -14,7 +18,6 @@ export const Gallerywrapper = () => {
   useEffect(() => {
     updateScreenSize();
     window.addEventListener('resize', updateScreenSize);
-
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
@@ -68,5 +71,24 @@ export const Gallerywrapper = () => {
         ))}
       </div>
     </div>
+  ) : (
+    <Swiper
+      ref={swiperRef}
+      slidesPerView={1}
+      centeredSlides={true}
+      loop={true}
+      spaceBetween={30}
+      modules={[Pagination, Autoplay]}
+      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      className='gallery-swiper'
+    >
+      {GalleryData.map((item, index) => (
+        <SwiperSlide key={index}>
+          <div className='rounded-lg overflow-hidden w-full h-[300px] xsm:h-[350px] sm:h-[450px] p-0 flex justify-center items-center  '>
+            <GalleryCard label={item} />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };

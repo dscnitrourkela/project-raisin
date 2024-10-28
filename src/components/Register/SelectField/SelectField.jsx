@@ -1,6 +1,9 @@
 'use client';
+import { useEffect, useRef, useState } from 'react';
+
+import { toast } from 'react-hot-toast';
+
 import { Label } from '../FileInput/FileInput.styles';
-import { useState, useEffect, useRef } from 'react';
 import InputField from '../InputField/InputField';
 import { ErrorMessage } from '../InputField/InputField.styles';
 import {
@@ -40,7 +43,13 @@ function SelectField({
 
   const handleToggle = () => setIsOpen(!isOpen);
 
-  const handleSelectChange = (option) => {
+  const handleSelectChange = (option, id) => {
+    if (id === 'notAllowed') {
+      toast.error(
+        "Students from this institute have been officially barred from participating in INNO'24",
+      );
+      return;
+    }
     setSelectedOption(option);
     setIsOpen(false);
     setErrors((prevState) => ({
@@ -53,6 +62,13 @@ function SelectField({
         [name]: otherInstituteName,
       }));
     } else {
+      if (name === 'institute') {
+        handleSelect((prevState) => ({
+          ...prevState,
+          instituteId: id,
+        }));
+      }
+
       handleSelect((prevState) => ({
         ...prevState,
         [name]: option,
@@ -84,6 +100,21 @@ function SelectField({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [ref]);
+
+  function returnSortedOptions(array) {
+    const sortedOptions = array.sort((a, b) => a.label.localeCompare(b.label));
+
+    const othersIndex = sortedOptions.findIndex((option) => option.value === 'others');
+    if (othersIndex !== -1) {
+      const [othersOption] = sortedOptions.splice(othersIndex, 1);
+      sortedOptions.push(othersOption);
+    }
+
+    return sortedOptions;
+  }
+
+  const sortedOptions = returnSortedOptions(options);
+
   return (
     <div ref={ref}>
       <SelectFieldParentContainer>
@@ -93,14 +124,18 @@ function SelectField({
           {label && <Label>{label}</Label>}
           <SelectFieldContainer $hasError={!!error} onClick={handleToggle}>
             <SelectFieldInput>
-              {selectedOption || placeholder || 'Select an option'}
+              {isOthers ? 'Others' : selectedOption || placeholder || 'Select an option'}
             </SelectFieldInput>
             <DropdownIcon size={20} />
           </SelectFieldContainer>
+
           {isOpen && (
             <DropdownList>
-              {options.map((option, index) => (
-                <DropdownItem key={index} onClick={() => handleSelectChange(option.value)}>
+              {sortedOptions.map((option, index) => (
+                <DropdownItem
+                  key={index}
+                  onClick={() => handleSelectChange(option.value, option.id)}
+                >
                   {option.label}
                 </DropdownItem>
               ))}

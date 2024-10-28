@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const Container = styled.div`
-  ${tw`flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100 font-orbitron`}
+  ${tw`flex flex-col items-center justify-center min-h-screen  text-gray-100 font-orbitron`}
 `;
 
 const Message = styled.p`
@@ -13,4 +13,4 @@ const Spinner = styled.span`
   ${tw`w-12 h-12 border-4 border-gray-100 border-t-transparent border-solid rounded-full animate-spin`}
 `;
 
-export { Container, Spinner, Message };
+export { Container, Message, Spinner };
