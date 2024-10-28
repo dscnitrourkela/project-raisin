@@ -35,12 +35,12 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
         const userProfileCookie = Cookies.get('userData');
         const userDBCookie = Cookies.get('userDataDB');
 
-        if (!userProfileCookie || !userDBCookie) {
+        if (!userProfileCookie) {
           throw new Error('User data not found in cookies');
         }
 
         const userProfile = JSON.parse(userProfileCookie);
-        const userInDB = JSON.parse(userDBCookie);
+        const userInDB = JSON.parse(userDBCookie || '{}');
 
         setUserDetails({
           name: userProfile.name,
