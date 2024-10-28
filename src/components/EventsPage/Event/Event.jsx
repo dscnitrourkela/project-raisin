@@ -83,6 +83,7 @@ export const Events = ({ previewItems, descriptionItems }) => {
         descriptionItems={descriptionItems}
         loading={loading}
         handleRegisterEvent={handleEventRegister}
+        registeredEvents={registeredEvents}
       />
       <RegisterModal
         event={selectedEvent}

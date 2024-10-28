@@ -9,7 +9,7 @@ import {
   PreviewMoreInfoButton,
   PreviewMoreInfoButton2,
 } from './PreviewCard.style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function PreviewCard({
   ImageURL,
@@ -18,17 +18,24 @@ function PreviewCard({
   handleRegisterEvent,
   loading,
   link = '',
+  registeredEvents,
 }) {
   const [isRegistered, setIsRegistered] = useState(false);
-  const words = PreviewDescription?.split(' ') || [];
   const truncatedDescription =
-    words.length > 30 ? words.slice(0, 50).join(' ') + '...' : PreviewDescription;
+    PreviewDescription.split(' ').length > 30
+      ? PreviewDescription.split(' ').slice(0, 50).join(' ') + '...'
+      : PreviewDescription;
 
   function handleToast() {
     toast('You can register after you are verified!', {
       icon: '🚀',
     });
   }
+
+  useEffect(() => {
+    const registered = registeredEvents.filter((items) => items.eventID === id);
+    if (registered) setIsRegistered(true);
+  });
 
   function handleClick() {
     handleRegisterEvent(id);
@@ -53,7 +60,7 @@ function PreviewCard({
           )}
         </PreviewMoreInfoButton2>
         <PreviewMoreInfoButton onClick={handleClick} disabled={loading}>
-          {loading ? 'Registering...' : 'Register'}
+          {loading ? 'Registering...' : isRegistered ? 'Registered' : 'Register'}
         </PreviewMoreInfoButton>
       </PreviewButtonContainer>
     </PreviewCardContainer>

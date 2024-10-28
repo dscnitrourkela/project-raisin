@@ -10,6 +10,7 @@ export const SliderEventsWrapper = ({
   descriptionItems,
   handleRegisterEvent,
   loading,
+  registeredEvents,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -35,6 +36,7 @@ export const SliderEventsWrapper = ({
         mobileViewClassName='mySwiper2'
         onIndexChange={setCurrentIndex}
         isEventSection={false}
+        registeredEvents={registeredEvents}
       />
       <DescriptionCarousel descriptionItems={descriptionItems} currentIndex={currentIndex} />
     </Wrapper>
