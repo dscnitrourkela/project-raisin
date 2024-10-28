@@ -128,7 +128,11 @@ function SelectField({
     <div ref={ref}>
       <SelectFieldParentContainer>
         <LabelAndInputContainer
-          className={isOneLine ? 'flex-col xxs:flex-row items-center' : 'flex-col items-start'}
+          className={
+            isOneLine
+              ? 'flex-col xxs:flex-row xxs:items-center items-start'
+              : 'flex-col items-start'
+          }
         >
           {label && <Label>{label}</Label>}
           <SelectFieldContainer $hasError={!!error} onClick={handleToggle}>
