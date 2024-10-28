@@ -73,10 +73,15 @@ function Page() {
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
   const isNitR = userDetails.instituteId === nitrID;
-  const { data: userDataDB, error: userErr } = useSuspenseQuery(
-    GET_USER_BY_UID,
-    storedUserId ? { variables: { uid: storedUserId } } : skipToken,
-  );
+
+  const { data: userDataDB, error: userErr } = useSuspenseQuery(GET_USER_BY_UID, {
+    variables: storedUserId ? { uid: storedUserId } : undefined,
+    skip: !storedUserId,
+    errorPolicy: 'all',
+    onError: (error) => {
+      console.error('User query error:', error);
+    },
+  });
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
