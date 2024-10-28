@@ -22,6 +22,7 @@ export const SliderEventsWrapper = ({
           ImageURL={item.ImageURL}
           handleRegisterEvent={handleRegisterEvent}
           loading={loading}
+          link={item.Rulebook}
         />
       </SwiperSlide>
     ));

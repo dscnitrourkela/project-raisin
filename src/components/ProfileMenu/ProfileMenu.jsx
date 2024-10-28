@@ -1,13 +1,7 @@
 'use client';
 import { useContext, useEffect, useState } from 'react';
-
 import Cookies from 'js-cookie';
-import { usePathname, useRouter } from 'next/navigation';
-import { toast } from 'react-hot-toast';
-
 import { AuthContext } from '@/context/auth-context';
-import { useUserDetails } from '@/hooks/useUserDetails';
-
 import {
   CloseButton,
   Container,
@@ -25,16 +19,45 @@ import {
 
 function ProfileMenu({ handleProfileToggle, handleNavClose }) {
   const { handleSignOut } = useContext(AuthContext);
-  const [isRegistered, setIsRegistered] = useState(false);
-  const getUserDetails = useUserDetails();
-  const user = getUserDetails();
-  const router = useRouter();
-  const path = usePathname();
+  const [userDetails, setUserDetails] = useState({
+    name: '',
+    email: '',
+    photoUrl: '',
+    id: '',
+    hasPaid: false,
+    isNitR: false,
+  });
+  const [error, setError] = useState(null);
 
-  // const { data: userDataInDb } = useSuspenseQuery(
-  //   GET_USER_BY_UID,
-  //   user.uid ? { variables: { uid: user.uid } } : skipToken,
-  // );
+  useEffect(() => {
+    const fetchUserData = () => {
+      try {
+        const userProfileCookie = Cookies.get('userData');
+        const userDBCookie = Cookies.get('userDataDB');
+
+        if (!userProfileCookie) {
+          throw new Error('User data not found in cookies');
+        }
+
+        const userProfile = JSON.parse(userProfileCookie);
+        const userInDB = JSON.parse(userDBCookie || '{}');
+
+        setUserDetails({
+          name: userProfile.name,
+          email: userProfile.email,
+          photoUrl: userProfile.photoUrl,
+          id: userInDB.id,
+          hasPaid: userInDB.hasPaid,
+          isNitR: userInDB.isNitR,
+        });
+      } catch (e) {
+        console.error('Error fetching user data:', e);
+        setError('Failed to load user data');
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleLogout = () => {
     handleSignOut();
@@ -47,23 +70,25 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
     handleNavClose(false);
   };
 
-  useEffect(() => {
-    const mongoId = Cookies.get('userDataDB');
-
-    console.log('mongoId:', mongoId);
-    // userDataInDb?.user.data.length > 0;
-    if (mongoId) {
-      if (path === '/register') {
-        toast.success('You are already registered!');
-        router.push('/');
-      }
-      setIsRegistered(true);
-    } else {
-      setIsRegistered(false);
-    }
-
-    // console.log('userDataInDb:', userDataInDb);
-  }, []);
+  if (error) {
+    return (
+      <Container>
+        <MenuCard
+          initial={menuVariants.initial}
+          animate={menuVariants.animate}
+          exit={menuVariants.exit}
+          transition={menuTransition}
+          key='profile-menu'
+        >
+          <MenuContent>
+            <CloseButton onClick={handleCloseMenu}>X</CloseButton>
+            <p className='text-red-500'>{error}</p>
+            <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+          </MenuContent>
+        </MenuCard>
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -76,12 +101,20 @@ function ProfileMenu({ handleProfileToggle, handleNavClose }) {
       >
         <MenuContent>
           <CloseButton onClick={handleCloseMenu}>X</CloseButton>
-          <ProfileImage src={user?.photoUrl} alt='User Profile' width={500} height={500} />
-          <UserName>{user?.name}</UserName>
-          <UserEmail>{user?.email}</UserEmail>
+          {userDetails.photoUrl && (
+            <ProfileImage src={userDetails.photoUrl} alt='User Profile' width={500} height={500} />
+          )}
+          {userDetails.name && <UserName>{userDetails.name}</UserName>}
+          {userDetails.email && <UserEmail>{userDetails.email}</UserEmail>}
           <MenuLinks>
-            {isRegistered ? (
-              <p>Your payment is being verified! You will be mailed shortly</p>
+            {userDetails.id ? (
+              !userDetails.isNitR && (
+                <p className='text-center'>
+                  {userDetails.hasPaid
+                    ? 'Congrats! you can now register for events!'
+                    : 'Your payment is being verified! You will be mailed shortly'}
+                </p>
+              )
             ) : (
               <StyledLink href='/register' onClick={handleProfileToggle}>
                 Complete Your Registration

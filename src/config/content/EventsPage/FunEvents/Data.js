@@ -1,6 +1,7 @@
 export const FunEvents_previewItems = [
   {
-    id: '1',
+
+    id: 1,
     ImageURL: 'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797486/Quick_Hand_aeeiun.jpg',
     PreviewDescription:
       'The Quick Hand Game is a thrilling test of speed and reflexes! Players dive into rapid-fire challenges grab in the blink of an eye. Whether for fun or focus, it’s guaranteed to keep you on your toes! Time: 9-5 ,Day : All three days',

@@ -10,24 +10,22 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState({});
   const [authLoading, setAuthLoading] = useState(false);
-  const [userMongoId, setUserMongoId] = useState('');
 
   const handleGoogleSignIn = async () => {
     setAuthLoading(true);
     try {
       const user = await signInWithGoogle();
-      const token = `Bearer ${user.accessToken}`;
-      console.log(`${token}`);
+
       if (user) {
         const userData = {
           name: user.displayName,
           email: user.email,
           uid: user.uid,
-          token,
           photoUrl: user.photoURL,
+          token: user.accessToken,
         };
         Cookies.set('userData', JSON.stringify(userData), {
-          expires: 7,
+          expires: 1,
           sameSite: 'strict',
         });
         setUserInfo(userData);
@@ -64,8 +62,6 @@ export const AuthProvider = ({ children }) => {
         handleGoogleSignIn,
         handleSignOut,
         authLoading,
-        userMongoId,
-        setUserMongoId,
       }}
     >
       {children}
