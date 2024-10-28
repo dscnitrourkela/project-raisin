@@ -37,11 +37,11 @@ export const GalleryWrapper = () => {
         padding: '1rem',
       }}
     >
-      <div className='flex flex-wrap gap-6 justify-start'>
+      <div className='flex flex-wrap justify-start gap-6'>
         {GalleryData.map((item, index) => (
           <div
             key={index}
-            className='rounded-lg overflow-hidden'
+            className='overflow-hidden rounded-lg'
             style={{
               width: `${cardSizes[index]?.width === 2 ? '32%' : '16%'}`,
               minHeight: '300px',

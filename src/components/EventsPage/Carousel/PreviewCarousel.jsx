@@ -11,7 +11,11 @@ export const SliderEventsWrapper = ({ previewItems, descriptionItems }) => {
   const renderSlides = () =>
     previewItems.map((item, index) => (
       <SwiperSlide key={index} className={`slide ${index === currentIndex ? 'active-slide' : ''}`}>
-        <PreviewCard PreviewDescription={item.PreviewDescription} ImageURL={item.ImageURL} />
+        <PreviewCard
+          PreviewDescription={item.PreviewDescription}
+          ImageURL={item.ImageURL}
+          link={item.Rulebook}
+        />
       </SwiperSlide>
     ));
 
