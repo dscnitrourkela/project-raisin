@@ -36,7 +36,7 @@ export const ME_previewItems = [
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179007/inno-2024/Event%20Posters/Bears%20and%20Bulls/gdmjrwrzmbnmvgpzzpqf.png',
     PreviewDescription:
-      'The Algorithm and Programming Society of NITR is back with its flagship event of INNOVISION, Meteor Madness, an interact ive game involving a logrithmic problems and brainstorming quizzes...',
+      'Join us for Beyond the Basics, an exciting quiz organized by the Bears and Bulls Club! This event is designed to test and expand your knowledge of trading and the stock market...',
     Rulebook: 'https://drive.google.com/open?id=1EvX1JSCzAJGXdt3pdGmuvouE6ZHr9TYL',
   },
   {
@@ -326,9 +326,9 @@ export const ME_descriptionItems = [
   },
   {
     id: 7,
-    Heading: 'BEYOND THE BASIC',
+    Heading: 'BEYOND THE BASICS',
     Description:
-      'The Algorithm and Programming Society of NITR is back with its flagship event of INNOVISION, Meteor Madness, an interact ive game involving a logrithmic problems and brainstorming quizzes that will enthral the participants in an adrenaline-filled atmosphere, testing their cognitive as well as coding skills. Presenting a cosmos of challenging problems at different levels, th is competition will be both exciting and unforgettable. Dont miss out!',
+      'Join us for Beyond the Basics, an exciting quiz organized by the Bears and Bulls Club! This event is designed to test and expand your knowledge of trading and the stock market, diving into concepts and strategies that go beyond the fundamentals. Whether you’re a beginner looking to learn more or an enthusiast wanting to challenge yourself, this quiz is a great opportunity to engage with the world of finance, gain insights, and compete with fellow students. Don’t miss out on the chance to showcase your market savvy and win some fantastic prizes!',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179007/inno-2024/Event%20Posters/Bears%20and%20Bulls/gdmjrwrzmbnmvgpzzpqf.png',
     Location: 'LA-117',
