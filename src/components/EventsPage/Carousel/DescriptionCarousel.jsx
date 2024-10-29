@@ -37,7 +37,7 @@ const DescriptionCarousel = ({ currentIndex, descriptionItems }) => {
 export default DescriptionCarousel;
 
 const DescriptionContainer = styled.div`
-  ${tw`w-full mt-8 mb-20 h-auto relative p-5`};
+  ${tw`w-full mt-8 mb-20 h-auto relative p-1`};
 `;
 
 const DescriptionSlide = styled(motion.div)`

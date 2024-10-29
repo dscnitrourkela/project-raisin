@@ -1,10 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-
 import { toast } from 'react-hot-toast';
-
 import { Label } from '../FileInput/FileInput.styles';
 import InputField from '../InputField/InputField';
+import SearchField from './SearchField/SearchField';
 import { ErrorMessage } from '../InputField/InputField.styles';
 import {
   DropdownIcon,
@@ -30,18 +29,19 @@ function SelectField({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(value || '');
   const [otherInstituteName, setOtherInstituteName] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const ref = useRef(null);
   const isOneLine = className?.includes('oneliner');
-
-  const isOthers =
-    (!options.some((option) => option.value === selectedOption) && selectedOption !== '') ||
-    selectedOption === 'others';
+  const [isOthers, setIsOthers] = useState(false);
 
   useEffect(() => {
     setSelectedOption(value || '');
   }, [value]);
 
-  const handleToggle = () => setIsOpen(!isOpen);
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+    setSearchQuery('');
+  };
 
   const handleSelectChange = (option, id) => {
     if (id === 'notAllowed') {
@@ -50,30 +50,28 @@ function SelectField({
       );
       return;
     }
+
     setSelectedOption(option);
     setIsOpen(false);
-    setErrors((prevState) => ({
-      ...prevState,
-      [name]: '',
-    }));
-    if (option === '') {
-      handleSelect((prevState) => ({
-        ...prevState,
-        [name]: otherInstituteName,
-      }));
-    } else {
-      if (name === 'institute') {
-        handleSelect((prevState) => ({
-          ...prevState,
-          instituteId: id,
-        }));
-      }
+    setSearchQuery('');
+    setErrors((prev) => ({ ...prev, [name]: '' }));
 
-      handleSelect((prevState) => ({
-        ...prevState,
-        [name]: option,
-      }));
+    if (option === '') {
+      handleSelect((prev) => ({ ...prev, [name]: otherInstituteName }));
+      return;
     }
+
+    if (name === 'institute') {
+      setIsOthers(!id);
+      handleSelect((prev) => ({
+        ...prev,
+        instituteId: id || null,
+        institute: option,
+      }));
+      return;
+    }
+
+    handleSelect((prev) => ({ ...prev, [name]: option }));
   };
 
   useEffect(() => {
@@ -87,12 +85,13 @@ function SelectField({
         [name]: otherInstituteName,
       }));
     }
-  }, [otherInstituteName]);
+  }, [otherInstituteName, handleSelect, isOthers, name, setErrors]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
         setIsOpen(false);
+        setSearchQuery('');
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -101,7 +100,7 @@ function SelectField({
     };
   }, [ref]);
 
-  function returnSortedOptions(array) {
+  function returnSortedAndFilteredOptions(array) {
     const sortedOptions = array.sort((a, b) => a.label.localeCompare(b.label));
 
     const othersIndex = sortedOptions.findIndex((option) => option.value === 'others');
@@ -110,16 +109,24 @@ function SelectField({
       sortedOptions.push(othersOption);
     }
 
-    return sortedOptions;
+    if (!searchQuery) return sortedOptions;
+
+    return sortedOptions.filter((option) =>
+      option.label.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
   }
 
-  const sortedOptions = returnSortedOptions(options);
+  const filteredOptions = returnSortedAndFilteredOptions(options);
 
   return (
     <div ref={ref}>
       <SelectFieldParentContainer>
         <LabelAndInputContainer
-          className={isOneLine ? 'flex-col xxs:flex-row items-center' : 'flex-col items-start'}
+          className={
+            isOneLine
+              ? 'flex-col xxs:flex-row xxs:items-center items-start'
+              : 'flex-col items-start'
+          }
         >
           {label && <Label>{label}</Label>}
           <SelectFieldContainer $hasError={!!error} onClick={handleToggle}>
@@ -131,14 +138,29 @@ function SelectField({
 
           {isOpen && (
             <DropdownList>
-              {sortedOptions.map((option, index) => (
-                <DropdownItem
-                  key={index}
-                  onClick={() => handleSelectChange(option.value, option.id)}
-                >
-                  {option.label}
-                </DropdownItem>
-              ))}
+              <div className='sticky top-0 p-2'>
+                <SearchField
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  placeholder='Search options...'
+                  autoFocus
+                  showClearButton
+                  onClear={() => setSearchQuery('')}
+                />
+              </div>
+
+              {filteredOptions.length > 0 ? (
+                filteredOptions.map((option, index) => (
+                  <DropdownItem
+                    key={index}
+                    onClick={() => handleSelectChange(option.value, option.id)}
+                  >
+                    {option.label}
+                  </DropdownItem>
+                ))
+              ) : (
+                <div className='px-4 py-3 text-sm text-gray-500'>No options found</div>
+              )}
             </DropdownList>
           )}
         </LabelAndInputContainer>

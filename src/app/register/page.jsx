@@ -1,5 +1,5 @@
 'use client';
-import { useContext, useLayoutEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import Cookies from 'js-cookie';
 import Link from 'next/link';
@@ -29,7 +29,8 @@ import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation } from '@apollo/client';
+import { useMutation, useSuspenseQuery } from '@apollo/client';
+import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
 
 import {
   DisclaimerPara,
@@ -72,6 +73,15 @@ function Page() {
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
   const isNitR = userDetails.instituteId === nitrID;
+
+  const { data: userDataDB, error: userErr } = useSuspenseQuery(GET_USER_BY_UID, {
+    variables: storedUserId ? { uid: storedUserId } : undefined,
+    skip: !storedUserId,
+    errorPolicy: 'all',
+    onError: (error) => {
+      console.error('User query error:', error);
+    },
+  });
 
   async function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -251,14 +261,9 @@ function Page() {
         },
       });
 
-      const newCookies = JSON.parse(Cookies.get('userData'));
-      Cookies.set('userData', JSON.stringify({ ...newCookies, isNitR }), {
-        expires: 7,
-        sameSite: 'strict',
-      });
-
-      Cookies.set('userDataDB', res.data.createUser.id, {
-        expires: 7,
+      const user = res.data.createUser;
+      Cookies.set('userDataDB', JSON.stringify({ ...user, isNitR }), {
+        expires: 1,
         sameSite: 'strict',
       });
 
@@ -275,22 +280,43 @@ function Page() {
       }, 1300);
     } catch (error) {
       console.error(error);
-      toast.error('Registration failed! If the issue persists, try logging in again.', {
-        duration: 5000,
-      });
+      if (error.message.includes('Unique constraint failed')) {
+        toast.error('Registration failed! User already exists with the same credentials!', {
+          duration: 5000,
+        });
+      } else {
+        toast.error('Registration failed! If the issue persists, try logging in again.', {
+          duration: 5000,
+        });
+      }
     } finally {
       setLoading(false);
     }
   }
 
-  useLayoutEffect(() => {
-    if (Cookies.get('userDataDB')) {
+  useEffect(() => {
+    if (userErr) {
+      console.error('User query error:', userErr);
+      return;
+    }
+
+    const userCookie = Cookies.get('userDataDB');
+    const hasUserData = userDataDB?.user?.data?.length > 0;
+    const userData = hasUserData ? userDataDB.user.data[0] : null;
+    const isNitR = userData?.college === nitrID;
+    if (userCookie || hasUserData) {
+      if (!userCookie && userData) {
+        Cookies.set('userDataDB', JSON.stringify({ ...userData, isNitR }), {
+          expires: 1,
+          sameSite: 'strict',
+        });
+      }
       router.push('/');
       toast.success('You have been already registered!', {
         duration: 5000,
       });
     }
-  }, []);
+  }, [userErr, userDataDB, router]);
 
   return (
     <RegisterContainer>

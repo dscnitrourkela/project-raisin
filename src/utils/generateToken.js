@@ -1,5 +1,5 @@
 import { getAuth } from 'firebase/auth';
-
+import Cookies from 'js-cookie';
 const generateToken = async () => {
   try {
     const auth = getAuth();
@@ -7,11 +7,11 @@ const generateToken = async () => {
 
     if (user) {
       const token = await user.getIdToken();
-      console.log('Generated Token:', token);
       return token;
     } else {
-      console.error('No user is signed in.');
-      return null;
+      const storedToken = JSON.parse(Cookies.get('userData')).token;
+      console.warn('Returning stored token..');
+      return storedToken;
     }
   } catch (error) {
     console.error('Error generating token:', error);
