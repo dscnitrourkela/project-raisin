@@ -300,7 +300,7 @@ export const formFields = [
   {
     label: 'Bank Account Number',
     type: 'title',
-    content: '_00000037377186107',
+    content: '37377186107',
     id: 'bankAccountNumber',
   },
   {

@@ -32,10 +32,7 @@ function SelectField({
   const [searchQuery, setSearchQuery] = useState('');
   const ref = useRef(null);
   const isOneLine = className?.includes('oneliner');
-
-  const isOthers =
-    (!options.some((option) => option.value === selectedOption) && selectedOption !== '') ||
-    selectedOption === 'others';
+  const [isOthers, setIsOthers] = useState(false);
 
   useEffect(() => {
     setSelectedOption(value || '');
@@ -53,32 +50,28 @@ function SelectField({
       );
       return;
     }
+
     setSelectedOption(option);
     setIsOpen(false);
     setSearchQuery('');
-    setErrors((prevState) => ({
-      ...prevState,
-      [name]: '',
-    }));
-    if (option === '') {
-      handleSelect((prevState) => ({
-        ...prevState,
-        [name]: otherInstituteName,
-      }));
-    } else {
-      if (name === 'institute') {
-        handleSelect((prevState) => ({
-          ...prevState,
-          instituteId: id,
-        }));
-        return;
-      }
+    setErrors((prev) => ({ ...prev, [name]: '' }));
 
-      handleSelect((prevState) => ({
-        ...prevState,
-        [name]: option,
-      }));
+    if (option === '') {
+      handleSelect((prev) => ({ ...prev, [name]: otherInstituteName }));
+      return;
     }
+
+    if (name === 'institute') {
+      setIsOthers(!id);
+      handleSelect((prev) => ({
+        ...prev,
+        instituteId: id || null,
+        institute: option,
+      }));
+      return;
+    }
+
+    handleSelect((prev) => ({ ...prev, [name]: option }));
   };
 
   useEffect(() => {
