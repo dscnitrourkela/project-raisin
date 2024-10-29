@@ -22,7 +22,7 @@ export const userSchema = z.object({
     .regex(/^\d{10}$/, 'Invalid phone number'),
   institute: z
     .string()
-    .min(1, 'University name is required')
+    .min(1, 'Institute name is required')
     .transform((val) => {
       return val
         .replace(/['"`-]/g, '')
