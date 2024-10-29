@@ -91,7 +91,7 @@ function SelectField({
         [name]: otherInstituteName,
       }));
     }
-  }, [otherInstituteName]);
+  }, [otherInstituteName, handleSelect, isOthers, name, setErrors]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

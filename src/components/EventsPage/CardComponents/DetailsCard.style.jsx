@@ -5,7 +5,7 @@ import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
 import Image from 'next/image';
 
 export const DetailsCardcontainer = styled.div`
-  ${tw`flex flex-col  gap-5`}
+  ${tw`flex flex-col gap-5`}
 `;
 
 export const DescriptionCardContainer = styled.div`

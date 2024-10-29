@@ -1,3 +1,4 @@
+import { memo, useEffect, useMemo, useState, useCallback } from 'react';
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import {
@@ -8,37 +9,90 @@ import {
   PreviewMoreInfoButton,
   PreviewMoreInfoButton2,
 } from './PreviewCard.style';
+import { blurData } from '@/config/content/EventsPage/BannerData';
 
-function PreviewCard({ ImageURL, PreviewDescription = '', link = '' }) {
-  const words = PreviewDescription?.split(' ') || [];
-  const truncatedDescription =
-    words.length > 30 ? words.slice(0, 50).join(' ') + '...' : PreviewDescription;
+const MAX_WORDS = 50;
+const TOAST_MESSAGE = 'You have registered for this event!';
 
-  function handleToast() {
-    toast('You can register after you are verified!', {
-      icon: '🚀',
-    });
-  }
-  return (
-    <PreviewCardContainer>
-      <PreviewCardImage src={ImageURL} alt='image' width={500} height={500} />
-      <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
-      <PreviewButtonContainer>
-        <PreviewMoreInfoButton2>
-          {link === '' ? (
-            'Coming soon'
-          ) : (
-            <Link href={link} target='_blank' rel='noopener noreferrer'>
-              Rulebook
-            </Link>
-          )}
-        </PreviewMoreInfoButton2>
-        {link ? (
-          <PreviewMoreInfoButton onClick={handleToast}>Register</PreviewMoreInfoButton>
-        ) : null}
-      </PreviewButtonContainer>
-    </PreviewCardContainer>
-  );
-}
+const PreviewCard = memo(
+  ({
+    ImageURL,
+    id,
+    PreviewDescription = '',
+    handleRegisterEvent,
+    loading = false,
+    link = '',
+    registeredEvents = [],
+    isCurrent,
+  }) => {
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    const truncatedDescription = useMemo(() => {
+      const words = PreviewDescription.split(' ');
+      return words.length > 30 ? `${words.slice(0, MAX_WORDS).join(' ')}...` : PreviewDescription;
+    }, [PreviewDescription]);
+
+    useEffect(() => {
+      const checkRegistration = () => {
+        const registered = registeredEvents.some((item) => item.eventID === id);
+        setIsRegistered(registered);
+      };
+      checkRegistration();
+    }, [registeredEvents, id]);
+
+    const handleToast = useCallback(() => {
+      toast(TOAST_MESSAGE, {
+        icon: '🚀',
+        duration: 3000,
+      });
+    }, []);
+
+    const handleClick = useCallback(() => {
+      if (!loading && !isRegistered) {
+        handleRegisterEvent(id);
+      }
+    }, [handleRegisterEvent, id, loading, isRegistered]);
+
+    const renderRulebook = useMemo(() => {
+      if (!link) return 'Coming soon';
+
+      return (
+        <Link href={link} target='_blank' rel='noopener noreferrer' aria-label='View rulebook'>
+          Rulebook
+        </Link>
+      );
+    }, [link]);
+
+    const buttonText =
+      loading && isCurrent ? 'Registering...' : isRegistered ? 'Registered' : 'Register';
+
+    return (
+      <PreviewCardContainer>
+        <PreviewCardImage
+          src={ImageURL}
+          alt='Event preview image'
+          width={500}
+          height={500}
+          loading='lazy'
+          placeholder='blur'
+          blurDataURL={blurData}
+        />
+        <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
+        <PreviewButtonContainer>
+          <PreviewMoreInfoButton2>{renderRulebook}</PreviewMoreInfoButton2>
+          <PreviewMoreInfoButton
+            onClick={isRegistered ? handleToast : handleClick}
+            disabled={loading}
+            aria-label={buttonText}
+          >
+            {buttonText}
+          </PreviewMoreInfoButton>
+        </PreviewButtonContainer>
+      </PreviewCardContainer>
+    );
+  },
+);
+
+PreviewCard.displayName = 'PreviewCard';
 
 export default PreviewCard;

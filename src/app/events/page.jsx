@@ -2,45 +2,33 @@
 
 import { EventsContainer, Heading3 } from './page.style';
 import MainCarousel from '@/components/EventsPage/index';
-import {
-  FE_descriptionItems,
-  FE_previewItems,
-} from '@/config/content/EventsPage/FlagshipEvents/Data';
-import {
-  Exhibition_descriptionItems,
-  Exhibition_previewItems,
-} from '@/config/content/EventsPage/Exhibition/Data';
+import { FlagshipData } from '@/config/content/EventsPage/FlagshipEvents/Data';
+import { ExhibitionData } from '@/config/content/EventsPage/Exhibition/Data';
 import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
 
-import {
-  FunEvents_previewItems,
-  FunEvents_descriptionItems,
-} from '@/config/content/EventsPage/FunEvents/Data';
+import { FunData } from '@/config/content/EventsPage/FunEvents/Data';
 import { ComingSoon } from '@/components/EventsPage/ComingSoon';
 import { GalleryWrapper } from '@/components/EventsPage/Gallery/CardWrapper';
+import { DtsData, dtsData } from '@/config/content/EventsPage/DTS_Shows/Data';
+import { GlData } from '@/config/content/EventsPage/GuestLecture/Data';
 
 export default function Page() {
   return (
     <div className='overflow-hidden'>
       <EventsContainer>
         <Heading3>FLAGSHIP EVENTS</Heading3>
-        <MainCarousel previewItems={FE_previewItems} descriptionItems={FE_descriptionItems} />
+        <MainCarousel EventItem={FlagshipData} />
         <Heading3>MAIN EVENTS</Heading3>
-        <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} />
+        {/* <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} /> */}
+        <ComingSoon />
         <Heading3>FUN EVENTS</Heading3>
-        <MainCarousel
-          previewItems={FunEvents_previewItems}
-          descriptionItems={FunEvents_descriptionItems}
-        />
+        <MainCarousel EventItem={FunData} />
         <Heading3>EXHIBITION</Heading3>
-        <MainCarousel
-          previewItems={Exhibition_previewItems}
-          descriptionItems={Exhibition_descriptionItems}
-        />
+        <MainCarousel EventItem={ExhibitionData} />
         <Heading3>SHOWS AT DTS</Heading3>
-        <ComingSoon />
+        <MainCarousel EventItem={DtsData} />
         <Heading3>GUEST LECTURES</Heading3>
-        <ComingSoon />
+        <MainCarousel EventItem={GlData} />
         <Heading3>GALLERY</Heading3>
         <GalleryWrapper />
       </EventsContainer>
