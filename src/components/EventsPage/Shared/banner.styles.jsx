@@ -22,5 +22,8 @@ export const TextSemiBold = styled.div`
 `;
 
 export const StyledImage = styled(Image)`
-  ${tw``}
+  width: 100%; /* Set width to 100% to make it responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 60px; /* Optional: Set a max-width for the image */
+  object-fit: cover ${tw``};
 `;

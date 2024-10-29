@@ -19,6 +19,7 @@ const initialState = {
   uid: null,
   registered: false,
   hasPaid: false,
+  isCurrentSlideId: 0,
 };
 
 export const Events = ({ EventItem }) => {
@@ -91,6 +92,11 @@ export const Events = ({ EventItem }) => {
 
   const handleEventRegister = useCallback(
     async (eventId) => {
+      setState((prev) => ({
+        ...prev,
+        isCurrentSlideId: eventId,
+      }));
+
       if (!state.uid) {
         toast.error('Please login or complete your registration to register for events');
         return;
@@ -153,6 +159,7 @@ export const Events = ({ EventItem }) => {
         loading={state.loading}
         handleRegisterEvent={handleEventRegister}
         registeredEvents={state.registeredEvents}
+        isCurrentSlideId={state.isCurrentSlideId}
       />
       <RegisterModal
         event={state.selectedEvent}

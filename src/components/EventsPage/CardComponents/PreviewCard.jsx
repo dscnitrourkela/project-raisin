@@ -12,7 +12,7 @@ import {
 import { blurData } from '@/config/content/EventsPage/BannerData';
 
 const MAX_WORDS = 50;
-const TOAST_MESSAGE = 'You have registered for this event!';
+const TOAST_MESSAGE = 'You have been already registered for this event!';
 
 const PreviewCard = memo(
   ({
@@ -23,7 +23,7 @@ const PreviewCard = memo(
     loading = false,
     link = '',
     registeredEvents = [],
-    isCurrent,
+    isCurrentId,
   }) => {
     const [isRegistered, setIsRegistered] = useState(false);
 
@@ -64,7 +64,7 @@ const PreviewCard = memo(
     }, [link]);
 
     const buttonText =
-      loading && isCurrent ? 'Registering...' : isRegistered ? 'Registered' : 'Register';
+      loading && isCurrentId == id ? 'Registering...' : isRegistered ? 'Registered' : 'Register';
 
     return (
       <PreviewCardContainer>
