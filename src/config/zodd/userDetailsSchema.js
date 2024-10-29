@@ -12,7 +12,7 @@ const MESSAGES = {
   REQUIRED: (field) => `${field} is required`,
   INVALID: (field) => `Invalid ${field.toLowerCase()}`,
   INSTITUTE_BANNED:
-    "Students from this institute have been officially barred from participating in INNO'24",
+    "Students from this institute/university have been officially barred from participating in INNO'24",
   PERMISSION_REQUIRED: "You must have permission from your institute's authority",
   TERMS_REQUIRED: 'You must agree to the terms and conditions',
   GENDER_REQUIRED: 'Gender selection is required and must be either male or female',
