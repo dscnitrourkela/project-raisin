@@ -29,7 +29,7 @@ import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation, useSuspenseQuery, skipToken } from '@apollo/client';
+import { useMutation, useSuspenseQuery } from '@apollo/client';
 import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
 
 import {
