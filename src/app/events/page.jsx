@@ -4,12 +4,11 @@ import { EventsContainer, Heading3 } from './page.style';
 import MainCarousel from '@/components/EventsPage/index';
 import { FlagshipData } from '@/config/content/EventsPage/FlagshipEvents/Data';
 import { ExhibitionData } from '@/config/content/EventsPage/Exhibition/Data';
-import { ME_descriptionItems, ME_previewItems } from '@/config/content/EventsPage/MainEvents/Data';
+import { MainEventData } from '@/config/content/EventsPage/MainEvents/Data';
 
 import { FunData } from '@/config/content/EventsPage/FunEvents/Data';
-import { ComingSoon } from '@/components/EventsPage/ComingSoon';
 import { GalleryWrapper } from '@/components/EventsPage/Gallery/CardWrapper';
-import { DtsData, dtsData } from '@/config/content/EventsPage/DTS_Shows/Data';
+import { DtsData } from '@/config/content/EventsPage/DTS_Shows/Data';
 import { GlData } from '@/config/content/EventsPage/GuestLecture/Data';
 
 export default function Page() {
@@ -19,8 +18,7 @@ export default function Page() {
         <Heading3>FLAGSHIP EVENTS</Heading3>
         <MainCarousel EventItem={FlagshipData} />
         <Heading3>MAIN EVENTS</Heading3>
-        {/* <MainCarousel previewItems={ME_previewItems} descriptionItems={ME_descriptionItems} /> */}
-        <ComingSoon />
+        <MainCarousel EventItem={MainEventData} />
         <Heading3>FUN EVENTS</Heading3>
         <MainCarousel EventItem={FunData} />
         <Heading3>EXHIBITION</Heading3>

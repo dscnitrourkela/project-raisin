@@ -6,6 +6,7 @@ export const FlagshipData = [
       ' "In the race of innovation, speed is not just an advantage"; it’s the only option. Get ready for Death Race, a two-day robotics competition where participants drive their robots through a track filled with obstacles and challenges. The fastest robot to navigate the course and score the most points wins. Brace yourself for an intense and thrilling showdown!',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179008/inno-2024/Event%20Posters/Cyborg/DeathRace/ljimi3k8z9jb1ee75jgr.jpg',
+    Rulebook: 'https://drive.google.com/open?id=12RIvja14ve3uInA9wwwztDACrvi3X_Ci',
     Location: 'SAC (In front of SAC stairs)',
     Date: 'Day 2, Day 3',
     Time: '9 AM',
@@ -19,6 +20,8 @@ export const FlagshipData = [
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179013/inno-2024/Event%20Posters/UDAAN/v4yhrdzyfrok0vnweijv.png',
     Location: 'STS Ground',
+    Rulebook:
+      'https://drive.google.com/file/d/1MLd5jP5KfvUjQsQkiAmo6EPU0KfQ7vF8/view?usp=drive_link',
     Date: 'Day 2',
     Time: '2 PM',
     Prizes: '₹15000',
@@ -31,6 +34,7 @@ export const FlagshipData = [
     ImageURL:
       'https://res.cloudinary.com/duvkctvfr/image/upload/v1729428502/INNO_events/Inno%20Club%20Posters/zpkcnqvep4f1opnxmjxv.png',
     Location: 'LA-204',
+    Rulebook: 'https://drive.google.com/open?id=1Z9zLd0CdDhMqT12tnjsPbe2ZRxI0qUva',
     Date: 'DAY 2 & 3',
     Time: 'ALL DAY',
     Prizes: '₹6000',
@@ -43,6 +47,7 @@ export const FlagshipData = [
     ImageURL:
       'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429077/INNO_events/Inno%20Club%20Posters/vgwmdwxxu7secw0nrvwl.jpg',
     Location: 'LA-1 Cycle Parking',
+    Rulebook: 'https://drive.google.com/open?id=1Kxt1qVCS6xK2qcX_63SQmRj-XQJkMy7g',
     Date: 'DAY 2 & 3',
     Time: 'ALL DAY',
     Prizes: '₹8000',
@@ -55,6 +60,7 @@ export const FlagshipData = [
     ImageURL: 'https://socialcry.com/wp-content/uploads/2024/10/innovision-omega-poster.png',
     Location: 'LA Lawns, LA 004, LA 009, Academic Area',
     Date: 'Day 2',
+    Rulebook: 'https://drive.google.com/open?id=1jy98okGN6yeKQJAuJlXvS59Qa1TpYWrh',
     Time: '3 PM',
     Prizes: '₹8000',
   },
@@ -66,6 +72,7 @@ export const FlagshipData = [
     ImageURL:
       'https://res.cloudinary.com/duvkctvfr/image/upload/v1729429473/INNO_events/Inno%20Club%20Posters/vjw0omni0qbjzzasvu6e.png',
     Location: 'LA-204',
+    Rulebook: 'https://drive.google.com/open?id=1RZcGSiwNF-0BOzjU67XngYXsNIRjVBp3',
     Date: 'Day 2',
     Time: '2 PM',
     Prizes: '₹8000',
@@ -78,6 +85,7 @@ export const FlagshipData = [
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729179001/inno-2024/Event%20Posters/Astro_NITR/clqps60ndso26fmw101a.png',
     Location: 'TBA',
+    Rulebook: '',
     Date: 'DAY 1 & 2',
     Time: '10 PM - 2 AM',
     Prizes: '',

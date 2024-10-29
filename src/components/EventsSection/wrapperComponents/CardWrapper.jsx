@@ -4,8 +4,10 @@ import '../../EventsPage/Carousel/swiper.css';
 import { AllEvents } from '../shared/AllEvents';
 import { CardLabel } from '../eventCardComponents/Cardlabel';
 import { SwiperCarousel } from '@/components/Carousel/Carousel';
+import { useState } from 'react';
 
 export const CardWrapper = () => {
+  const [isEventSection] = useState(true);
   const renderSlides = () =>
     AllEvents.map((item, index) => (
       <SwiperSlide key={index}>
@@ -22,7 +24,7 @@ export const CardWrapper = () => {
       onIndexChange={null}
       desktopViewClassname='mySwiper3'
       mobileViewClassName='mySwiper4'
-      isEventSection
+      isEventSection={isEventSection}
     />
   );
 };

@@ -1,6 +1,7 @@
 export const FunData = [
   {
     eventID: '671bd4eaaacbd171687071f3',
+    Heading: 'QUICK HANDS',
     ImageURL: 'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797486/Quick_Hand_aeeiun.jpg',
     Description:
       'The Quick Hand Game is a thrilling test of speed and reflexes! Players dive into rapid-fire challenges grab in the blink of an eye. Whether for fun or focus, it’s guaranteed to keep you on your toes! Time: 9-5 ,Day : All three days',
@@ -11,6 +12,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f4',
+    Heading: 'GUESS THE CHARACTER',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797484/Guess_The_Character_hnrfn5.jpg',
     Description:
@@ -22,6 +24,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f7',
+    Heading: 'GEL-BLASTER COMBACT',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797482/Gel_Blaster_bdckk8.png',
     Description:
@@ -33,6 +36,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f2',
+    Heading: 'BOX CRICKET',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797483/Box_Cricket_t2tvi5.jpg',
     Description:
@@ -44,6 +48,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f0',
+    Heading: 'SOFT ARCHERY',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797486/Soft_Archery_zmfbve.jpg',
     Description:
@@ -55,6 +60,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f1',
+    Heading: 'BALLOON SHOOTING',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797484/Balloon_Shooting_qlpxxp.jpg',
     Description:
@@ -66,6 +72,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f5',
+    Heading: 'CUP TIC-TAC-TOE',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797484/Cup_Tic_Tac_Toe_vfa3l1.jpg',
     Description:
@@ -77,6 +84,7 @@ export const FunData = [
   },
   {
     eventID: '671bd4eaaacbd171687071f6',
+    Heading: 'BODY ZORBING',
     ImageURL:
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729797485/Body_Zorbing_podoll.jpg',
     Description:
@@ -86,26 +94,26 @@ export const FunData = [
     Time: 'TBA',
     Prizes: 'TBA',
   },
-  {
-    eventID: '671bd4eaaacbd171687071f8',
-    ImageURL:
-      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798002/INNO%20Fun%20Event/Club%20Events/Poster/vjbasjosguxlk77acgj0.jpg',
-    Description:
-      'Contestants will have a limited time to perform their stand-up routine in front of a live audience and a panel of judges. Each performer will be judged on originality, delivery, stage presence, and of course, how hard they make the audience laugh. The winner will walk away with exciting prizes, and will earn the title of "LOL Champion!"',
-    Location: 'TBA',
-    Date: 'TBA',
-    Time: 'TBA',
-    Prizes: 'TBA',
-  },
-  {
-    eventID: '671bd4eaaacbd171687071f9',
-    ImageURL:
-      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798001/INNO%20Fun%20Event/Club%20Events/Poster/af35sfcdk1mqojxgxy8p.jpg',
-    Description:
-      'Drift-a-thon, a Slow Cycle Race, is basically a fun fundraising event in Innovision. The race aims to raise funds through minimal entry fees charged to the participating students. Participants will compete to maintain the slowest speed on their bicycles without touching the ground.',
-    Location: 'TBA',
-    Date: 'TBA',
-    Time: 'TBA',
-    Prizes: 'TBA',
-  },
+  //   {
+  //     eventID: '671bd4eaaacbd171687071f8',
+  //     ImageURL:
+  //       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798002/INNO%20Fun%20Event/Club%20Events/Poster/vjbasjosguxlk77acgj0.jpg',
+  //     Description:
+  //       'Contestants will have a limited time to perform their stand-up routine in front of a live audience and a panel of judges. Each performer will be judged on originality, delivery, stage presence, and of course, how hard they make the audience laugh. The winner will walk away with exciting prizes, and will earn the title of "LOL Champion!"',
+  //     Location: 'TBA',
+  //     Date: 'TBA',
+  //     Time: 'TBA',
+  //     Prizes: 'TBA',
+  //   },
+  //   {
+  //     eventID: '671bd4eaaacbd171687071f9',
+  //     ImageURL:
+  //       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729798001/INNO%20Fun%20Event/Club%20Events/Poster/af35sfcdk1mqojxgxy8p.jpg',
+  //     Description:
+  //       'Drift-a-thon, a Slow Cycle Race, is basically a fun fundraising event in Innovision. The race aims to raise funds through minimal entry fees charged to the participating students. Participants will compete to maintain the slowest speed on their bicycles without touching the ground.',
+  //     Location: 'TBA',
+  //     Date: 'TBA',
+  //     Time: 'TBA',
+  //     Prizes: 'TBA',
+  //   },
 ];
