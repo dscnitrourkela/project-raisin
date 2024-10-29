@@ -146,7 +146,7 @@ export const ME_previewItems = [
       'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729178999/inno-2024/Event%20Posters/jv2umrted9dx0jcgfrvb.png',
     PreviewDescription:
       'Step into the Era of Estates with the Finance Club for an epic journey through history! Travel from the late 19th century all the way to 2024, as major global events shake up commodities and sectors in ways you’ve never imagined...',
-    Rulebook: 'https://drive.google.com/open?id=1fghwONp1Pe7AyuX3O48r8sNsn1xY58Nl',
+    Rulebook: '',
   },
   {
     id: 23,
@@ -508,7 +508,7 @@ export const ME_descriptionItems = [
     Description:
       '"The ocean stirs the heart, inspires the imagination, and brings eternal joy to the soul." Dive into the exciting world of robotics with Fish-Eye, hosted by Team TIBURON! Join us to explore the stages of building an Autonomous Underwater Vehicle (AUV), from initial design to final operation. Gain hands-on experience and valuable insights into the technology that powers these remarkable machines.',
     ImageURL:
-      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729433504/INNO_events/Inno%20Club%20Posters/ln2ll3mwzq9swbdsi6mq.png', //TBA
+      'https://res.cloudinary.com/duvkctvfr/image/upload/v1729433504/INNO_events/Inno%20Club%20Posters/ln2ll3mwzq9swbdsi6mq.png',
     Location: 'LA-214',
     Date: 'Day 2',
     Time: '10 AM',
