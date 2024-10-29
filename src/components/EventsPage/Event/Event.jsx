@@ -96,10 +96,12 @@ export const Events = ({ EventItem }) => {
         ...prev,
         isCurrentSlideId: eventId,
       }));
+
       if (!state.uid) {
         toast.error('Please login or complete your registration to register for events');
         return;
       }
+
       const event = EventItem.find((item) => item.eventID === eventId);
       if (!event) {
         toast.error('Event not found');

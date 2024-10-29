@@ -11,6 +11,7 @@ export const SliderEventsWrapper = ({
   loading,
   registeredEvents,
   isCurrentSlideId,
+
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const renderSlides = () =>
