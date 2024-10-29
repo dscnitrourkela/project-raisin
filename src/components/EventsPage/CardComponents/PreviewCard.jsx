@@ -12,7 +12,7 @@ import {
 import { blurData } from '@/config/content/EventsPage/BannerData';
 
 const MAX_WORDS = 50;
-const TOAST_MESSAGE = 'You have registered for this event!';
+const TOAST_MESSAGE = 'You have been already registered for this event!';
 
 const PreviewCard = memo(
   ({
