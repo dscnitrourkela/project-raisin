@@ -203,8 +203,8 @@ export const formFields = [
         id: '671a5be86748c70b7f893ccc',
       },
       {
-        label: 'Institute of Technical Education and Research SOA',
-        value: 'Institute of Technical Education and Research SOA',
+        label: 'Institute of Technical Education and Research (ITER) SOA',
+        value: 'Institute of Technical Education and Research (ITER) SOA',
         id: 'notAllowed',
       },
       {
@@ -370,11 +370,51 @@ export const campusAbassadorPara = `To become a Campus Ambassador for Innovision
 export const notAllowedInstitutes = [
   'Siksha O Anusandhan',
   "Siksha 'O' Anusandhan",
+  'Siksha "O" Anusandhan',
+  'Siksha-O-Anusandhan',
+  'Siksha o Anusandhan',
+  'Siksha 0 Anusandhan',
+
+  'Siksha O Anusandhan (SOA)',
+  'Siksha O Anusandhan - SOA',
+  "Siksha 'O' Anusandhan SOA",
+  'Siksha 0 Anusandhan SOA',
+  'Siksha O Anushandhan SOA',
+  'Siksha-O-Anusandhan SOA',
+
+  'Siksha O Anusandhan Institute of Technical Education and Research',
+  "Siksha 'O' Anusandhan Institute of Technical Education and Research",
+  'Siksha 0 Anusandhan Institute of Technical Education and Research',
+  'Siksha-O-Anusandhan Institute of Technical Education and Research',
+
   'SOA',
+  'S.O.A',
+  'S.O.A.',
+  'SoA',
+
   'ITER',
+  'I.T.E.R',
+  'I.T.E.R.',
+
   'Institute of Technical Education and Research',
+  'Institute of Technical Education & Research',
+  'Institute of Technical Education And Research',
+
   'Institute of Technical Education and Research SOA',
+  'Institute of Technical Education & Research SOA',
+  'Institute of Technical Education and Research (SOA)',
   'ITER SOA',
+  'ITER-SOA',
+  'ITER - SOA',
+
+  'Siksha O Anusandhan',
+  'Siksha O Anusandhaan',
+  'Sikha O Anusandhan',
+  'Siksha O Anushandan',
+
+  'siksha o anusandhan',
+  'soa',
+  'iter',
 ];
 
 export const undertakingContent = {

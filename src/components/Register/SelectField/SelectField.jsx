@@ -106,6 +106,10 @@ function SelectField({
     };
   }, [ref]);
 
+  useEffect(() => {
+    console.log(isOthers);
+  }, [isOthers]);
+
   function returnSortedAndFilteredOptions(array) {
     const sortedOptions = array.sort((a, b) => a.label.localeCompare(b.label));
 

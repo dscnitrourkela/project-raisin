@@ -2,6 +2,12 @@ import { z } from 'zod';
 
 import { notAllowedInstitutes } from '../content/Registration/details';
 
+const normalizeInstituteName = (name) => {
+  return name.toLowerCase().replace(/['"`]/g, '').replace(/\s+/g, ' ').trim();
+};
+
+const normalizedBlockedInstitutes = notAllowedInstitutes.map(normalizeInstituteName);
+
 export const userSchema = z.object({
   name: z
     .string()
@@ -16,20 +22,44 @@ export const userSchema = z.object({
     .regex(/^\d{10}$/, 'Invalid phone number'),
   institute: z
     .string()
-    .min(1, 'Institute name is required')
-    .refine((val) => notAllowedInstitutes.indexOf(val.toUpperCase()) === -1, {
-      message:
-        "Students from this institute have been officially barred from participating in INNO'24",
-    }),
+    .min(1, 'University name is required')
+    .transform((val) => {
+      return val
+        .replace(/['"`-]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    })
+    .refine(
+      (val) => {
+        const normalized = normalizeInstituteName(val);
+        return !normalizedBlockedInstitutes.includes(normalized);
+      },
+      {
+        message:
+          "Students from this institute have been officially barred from participating in INNO'24",
+      },
+    ),
   idCard: z.string().url('ID Card is required'),
   payment: z.string().url('Payment receipt is required'),
   university: z
     .string()
     .min(1, 'University name is required')
-    .refine((val) => notAllowedInstitutes.indexOf(val.toUpperCase()) === -1, {
-      message:
-        "Students from this institute have been officially barred from participating in INNO'24",
-    }),
+    .transform((val) => {
+      return val
+        .replace(/['"`-]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    })
+    .refine(
+      (val) => {
+        const normalized = normalizeInstituteName(val);
+        return !normalizedBlockedInstitutes.includes(normalized);
+      },
+      {
+        message:
+          "Students from this institute have been officially barred from participating in INNO'24",
+      },
+    ),
   rollNumber: z.string().min(1, 'Roll number is required'),
   referralCode: z
     .string()
