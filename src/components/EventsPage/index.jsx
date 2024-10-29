@@ -1,9 +1,9 @@
 import { Events } from './Event/Event';
 
-const MainCarousel = ({ previewItems, descriptionItems }) => {
+const MainCarousel = ({ EventItem }) => {
   return (
     <>
-      <Events previewItems={previewItems} descriptionItems={descriptionItems} />
+      <Events EventItem={EventItem} />
     </>
   );
 };

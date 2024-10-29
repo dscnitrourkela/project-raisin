@@ -23,7 +23,7 @@ export const PreviewCardContent = styled.div`
 `;
 
 export const PreviewMoreInfoButton = styled(HeroPrimaryButton)`
-  ${tw`flex justify-center items-center w-auto h-auto pl-4 pr-4 pt-2 pb-2`}
+  ${tw`flex justify-center items-center w-24 md:w-32 md:h-16 `}
 
   box-shadow: 0 0 5px #ff3d7f, 0 0 3px #ff3d7f, 0 0 5px #ff3d7f;
 
@@ -37,7 +37,7 @@ export const PreviewMoreInfoButton = styled(HeroPrimaryButton)`
 `;
 
 export const PreviewMoreInfoButton2 = styled(HeroGreenPrimaryButton)`
-  ${tw`flex justify-center items-center w-auto h-auto p-3 `}
+  ${tw`flex justify-center items-center w-24 md:w-32 md:h-16`}
 
   box-shadow: 0 0 5px #ffffff0d, 0 0 3px #ffffff0d, 0 0 5px #ffffff0d;
 

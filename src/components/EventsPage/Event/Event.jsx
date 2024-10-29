@@ -1,93 +1,162 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
+import { useMutation, useLazyQuery } from '@apollo/client';
+import toast from 'react-hot-toast';
+import Cookies from 'js-cookie';
+
 import { SliderEventsWrapper } from '../Carousel/PreviewCarousel';
 import { RegisterModal } from './RegisterModal';
-import { useMutation, useSuspenseQuery } from '@apollo/client';
 import { REGISTER_EVENT } from '@/graphql/mutations/eventMutations';
-import toast from 'react-hot-toast';
-import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { GET_USER_REGISTERED_EVENT_IDS } from '@/graphql/queries/eventQueries';
+import handleLoadingAndToast from '@/utils/handleLoadingToast';
 
-export const Events = ({ previewItems, descriptionItems }) => {
-  const [registerModalOpen, setRegisterModalOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [registeredEvents, setRegisteredEvents] = useState([]);
+const initialState = {
+  registerModalOpen: false,
+  selectedEvent: null,
+  loading: false,
+  registeredEvents: [],
+  uid: null,
+  registered: false,
+  hasPaid: false,
+};
 
-  const { data: allRegisteredEvents } = useSuspenseQuery(GET_USER_REGISTERED_EVENT_IDS, {
-    variables: { userId: '671e0cedcf42c86749354bc3' },
+export const Events = ({ EventItem }) => {
+  const [state, setState] = useState(initialState);
+
+  const [getRegisteredEvents, { data: registeredEventsData }] = useLazyQuery(
+    GET_USER_REGISTERED_EVENT_IDS,
+    {
+      errorPolicy: 'all',
+      onError: (error) => {
+        console.error('Failed to fetch registered events:', error);
+        toast.error('Failed to load your registered events');
+      },
+    },
+  );
+
+  const [registerForEvent] = useMutation(REGISTER_EVENT, {
+    onError: (error) => {
+      console.error('Registration mutation error:', error);
+      toast.error('Failed to register for the event');
+    },
   });
 
   useEffect(() => {
-    if (allRegisteredEvents) {
-      getAllRegisteredEvents(allRegisteredEvents?.eventRegistration);
+    const initializeUser = () => {
+      try {
+        const userData = Cookies.get('userDataDB');
+
+        if (userData) {
+          const { id, hasPaid } = JSON.parse(userData);
+
+          setState((prev) => ({ ...prev, uid: id, hasPaid }));
+        }
+      } catch (error) {
+        console.error('Error parsing user data cookie:', error);
+        toast.error('Error loading user data');
+      }
+    };
+
+    initializeUser();
+  }, []);
+
+  useEffect(() => {
+    if (state.uid) {
+      getRegisteredEvents({
+        variables: { userId: state.uid },
+        fetchPolicy: 'network-only',
+      });
     }
-  }, [allRegisteredEvents]);
+  }, [state.uid, getRegisteredEvents]);
 
-  function getAllRegisteredEvents(prop) {
-    try {
-      const filteredEvents = prop.filter((event) => event.EventID === id);
-      if (filteredEvents.length > 0) {
-        setRegisteredEvents(filteredEvents);
-      } else setRegisteredEvents([]);
-    } catch (error) {
-      console.error('Error fetching events:', error);
-      toast.error('Something went wrong!');
+  useEffect(() => {
+    if (registeredEventsData?.eventRegistration) {
+      setState((prev) => ({
+        ...prev,
+        registeredEvents: registeredEventsData.eventRegistration,
+      }));
     }
-  }
+  }, [registeredEventsData]);
 
-  const [eventRegistration] = useMutation(REGISTER_EVENT);
-  // const userID = '671e0cedcf42c86749354bc3';
-  // const eventID = '671bbe15aacbd171687071d6';
+  useEffect(() => {
+    if (state.registered) {
+      getRegisteredEvents({
+        variables: { userId: state.uid },
+        fetchPolicy: 'network-only',
+      });
+      setState((prev) => ({ ...prev, registered: false }));
+    }
+  }, [state.registered, state.uid, getRegisteredEvents]);
 
-  async function handleEventRegister(id) {
-    const event = previewItems.find((item) => item.id === id);
+  const handleEventRegister = useCallback(
+    async (eventId) => {
+      if (!state.uid) {
+        toast.error('Please login or complete your registration to register for events');
+        return;
+      }
 
-    if (event) {
-      // setEventID("671bbe15aacbd171687071d6");
-      setSelectedEvent(event);
-      setRegisterModalOpen(false);
+      const event = EventItem.find((item) => item.eventID === eventId);
+      if (!event) {
+        toast.error('Event not found');
+        return;
+      }
+
+      setState((prev) => ({
+        ...prev,
+        selectedEvent: event,
+        registerModalOpen: false,
+      }));
 
       try {
-        const response = await handleLoadingAndToast(
-          eventRegistration({
-            variables: {
-              eventRegistration: {
-                eventID: '671bbe15aacbd171687071d6',
-                userID: '671e0cedcf42c86749354bc3',
+        if (state.hasPaid) {
+          const response = await handleLoadingAndToast(
+            registerForEvent({
+              variables: {
+                eventRegistration: {
+                  eventID: eventId,
+                  userID: state.uid,
+                },
               },
-            },
-          }),
-          'Registering...',
-          `Registered sucessfully`,
-          `Registering failed`,
-          setLoading,
-        );
-        console.log('respose', response);
-        toast.success('registration succesfull');
-      } catch (error) {
-        console.error('Error registering for event:', error);
-      }
-    }
-  }
+            }),
+            'Registering...',
+            'Registered successfully!',
+            'Registration failed',
+            (loading) => setState((prev) => ({ ...prev, loading })),
+          );
 
-  function handleCloseRegisterModal() {
-    setRegisterModalOpen(false);
-  }
+          if (response?.data) {
+            setState((prev) => ({
+              ...prev,
+              registeredEvents: [...prev.registeredEvents, eventId],
+              registered: true,
+            }));
+          }
+        } else {
+          toast.error('Registration not available until payment is completed.');
+        }
+      } catch (error) {
+        console.error('Registration error:', error);
+      }
+    },
+    [state.uid, state.hasPaid, EventItem, registerForEvent],
+  );
+
+  const handleCloseRegisterModal = useCallback(() => {
+    setState((prev) => ({ ...prev, registerModalOpen: false }));
+  }, []);
 
   return (
     <>
       <SliderEventsWrapper
-        previewItems={previewItems}
-        descriptionItems={descriptionItems}
-        loading={loading}
+        EventItem={EventItem}
+        loading={state.loading}
         handleRegisterEvent={handleEventRegister}
-        registeredEvents={registeredEvents}
+        registeredEvents={state.registeredEvents}
       />
       <RegisterModal
-        event={selectedEvent}
-        isOpen={registerModalOpen}
+        event={state.selectedEvent}
+        isOpen={state.registerModalOpen}
         onClose={handleCloseRegisterModal}
       />
     </>

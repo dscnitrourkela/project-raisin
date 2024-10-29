@@ -6,24 +6,24 @@ import { Wrapper } from '@/components/Carousel/Carousel.styles';
 import DescriptionCarousel from './DescriptionCarousel';
 
 export const SliderEventsWrapper = ({
-  previewItems,
-  descriptionItems,
+  EventItem,
   handleRegisterEvent,
   loading,
   registeredEvents,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const renderSlides = () =>
-    previewItems.map((item, index) => (
+    EventItem.map((item, index) => (
       <SwiperSlide key={index} className={`slide ${index === currentIndex ? 'active-slide' : ''}`}>
         <PreviewCard
-          id={item.id}
-          PreviewDescription={item.PreviewDescription}
+          id={item.eventID}
+          PreviewDescription={item.Description}
           ImageURL={item.ImageURL}
           handleRegisterEvent={handleRegisterEvent}
           loading={loading}
           link={item.Rulebook}
+          registeredEvents={registeredEvents}
+          isCurrent={isCurrent}
         />
       </SwiperSlide>
     ));
@@ -38,7 +38,7 @@ export const SliderEventsWrapper = ({
         isEventSection={false}
         registeredEvents={registeredEvents}
       />
-      <DescriptionCarousel descriptionItems={descriptionItems} currentIndex={currentIndex} />
+      <DescriptionCarousel descriptionItems={EventItem} currentIndex={currentIndex} />
     </Wrapper>
   );
 };
