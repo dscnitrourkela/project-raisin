@@ -55,8 +55,8 @@
     "swiper": "^11.1.14",
     "three": "^0.168.0",
     "twin.macro": "^3.4.1",
-    "yarn": "^1.22.22",
     "uuidv4": "^6.2.13",
+    "yarn": "^1.22.22",
     "zod": "^3.23.8"
   },
   "devDependencies": {
