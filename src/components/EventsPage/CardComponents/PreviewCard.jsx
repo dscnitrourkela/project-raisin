@@ -23,7 +23,7 @@ const PreviewCard = memo(
     loading = false,
     link = '',
     registeredEvents = [],
-    isCurrent,
+    isCurrentId,
   }) => {
     const [isRegistered, setIsRegistered] = useState(false);
 
@@ -64,7 +64,7 @@ const PreviewCard = memo(
     }, [link]);
 
     const buttonText =
-      loading && isCurrent ? 'Registering...' : isRegistered ? 'Registered' : 'Register';
+      loading && isCurrentId == id ? 'Registering...' : isRegistered ? 'Registered' : 'Register';
 
     return (
       <PreviewCardContainer>

@@ -10,6 +10,7 @@ export const SliderEventsWrapper = ({
   handleRegisterEvent,
   loading,
   registeredEvents,
+  isCurrentSlideId,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const renderSlides = () =>
@@ -23,7 +24,7 @@ export const SliderEventsWrapper = ({
           loading={loading}
           link={item.Rulebook}
           registeredEvents={registeredEvents}
-          isCurrent={isCurrent}
+          isCurrentId={isCurrentSlideId}
         />
       </SwiperSlide>
     ));
