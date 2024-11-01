@@ -1,12 +1,10 @@
 'use client';
-
 import { useState, useEffect, useRef } from 'react';
 import { useAnimate } from 'framer-motion';
 import { Swiper } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import { ScreenViewContainer, SliderContainer } from './Carousel.styles';
+import { ScreenViewContainer, SliderContainer, Wrapper } from './Carousel.styles';
 import { LeftArrowButton, RightArrowButton } from '../EventsPage/Shared/ArrowButton';
-import DescriptionCarousel from '../EventsPage/Carousel/DescriptionCarousel';
 import '../EventsPage/Carousel/swiper.css';
 
 export const SwiperCarousel = ({
@@ -23,22 +21,14 @@ export const SwiperCarousel = ({
   const slideWidth = 456.74;
 
   useEffect(() => {
-    const updateScreenSize = () => {
-      setIsMobile(typeof window !== 'undefined' && window.innerWidth < 900);
-    };
-
+    const updateScreenSize = () => setIsMobile(window.innerWidth < 900);
     updateScreenSize();
     window.addEventListener('resize', updateScreenSize);
     return () => window.removeEventListener('resize', updateScreenSize);
   }, []);
 
-  const handleNext = () => {
-    swiperRef.current?.swiper.slideNext();
-  };
-
-  const handlePrev = () => {
-    swiperRef.current?.swiper.slidePrev();
-  };
+  const handleNext = () => swiperRef.current?.swiper.slideNext();
+  const handlePrev = () => swiperRef.current?.swiper.slidePrev();
 
   const onSlideChange = (swiper) => {
     const newIndex = swiper.realIndex;
@@ -54,40 +44,38 @@ export const SwiperCarousel = ({
       animate(
         scope.current,
         { x: xOffset },
-        {
-          duration: 7,
-          ease: [0.42, 0, 0.58, 1],
-          type: 'tween',
-        },
+        { duration: 7, ease: [0.42, 0, 0.58, 1], type: 'tween' },
       );
     }
   }, [currentIndex, animate, scope]);
 
   return (
-    <ScreenViewContainer>
-      <LeftArrowButton
-        onClick={handlePrev}
-        style={{ position: 'absolute', left: '10px', top: '50%', zIndex: 10 }}
-      />
-      <SliderContainer>
-        <Swiper
-          ref={swiperRef}
-          slidesPerView={isMobile ? 1 : 3}
-          centeredSlides
-          loop
-          spaceBetween={isMobile ? 30 : 0}
-          onSlideChange={onSlideChange}
-          modules={[Pagination, Autoplay]}
-          autoplay={{ delay: isEventSection ? 3000 : 15000, disableOnInteraction: false }}
-          className={isMobile ? mobileViewClassName : desktopViewClassname}
-        >
-          {mapFunction()}
-        </Swiper>
-      </SliderContainer>
-      <RightArrowButton
-        onClick={handleNext}
-        style={{ position: 'absolute', right: '10px', top: '50%', zIndex: 10 }}
-      />
-    </ScreenViewContainer>
+    <Wrapper>
+      <ScreenViewContainer>
+        <LeftArrowButton
+          onClick={handlePrev}
+          style={{ position: 'absolute', left: '10px', top: '50%', zIndex: 10 }}
+        />
+        <SliderContainer>
+          <Swiper
+            ref={swiperRef}
+            slidesPerView={isMobile ? 1 : 3}
+            centeredSlides
+            loop
+            spaceBetween={isMobile ? 30 : 0}
+            onSlideChange={onSlideChange}
+            modules={[Pagination, Autoplay]}
+            autoplay={{ delay: isEventSection ? 3000 : 15000, disableOnInteraction: false }}
+            className={isMobile ? mobileViewClassName : desktopViewClassname}
+          >
+            {mapFunction()}
+          </Swiper>
+        </SliderContainer>
+        <RightArrowButton
+          onClick={handleNext}
+          style={{ position: 'absolute', right: '10px', top: '50%', zIndex: 10 }}
+        />
+      </ScreenViewContainer>
+    </Wrapper>
   );
 };

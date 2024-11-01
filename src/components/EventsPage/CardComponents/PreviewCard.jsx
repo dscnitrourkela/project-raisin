@@ -80,13 +80,18 @@ const PreviewCard = memo(
         <PreviewCardContent>{truncatedDescription}</PreviewCardContent>
         <PreviewButtonContainer>
           <PreviewMoreInfoButton2>{renderRulebook}</PreviewMoreInfoButton2>
-          <PreviewMoreInfoButton
-            onClick={isRegistered ? handleToast : handleClick}
-            disabled={loading}
-            aria-label={buttonText}
-          >
-            {buttonText}
-          </PreviewMoreInfoButton>
+
+          {link ? (
+            <PreviewMoreInfoButton
+              onClick={isRegistered ? handleToast : handleClick}
+              disabled={loading}
+              aria-label={buttonText}
+            >
+              {buttonText}
+            </PreviewMoreInfoButton>
+          ) : (
+            ''
+          )}
         </PreviewButtonContainer>
       </PreviewCardContainer>
     );
