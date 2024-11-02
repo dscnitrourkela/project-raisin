@@ -19,7 +19,7 @@ const initialState = {
   uid: null,
   registered: false,
   hasPaid: false,
-  isNitr: false,
+  isNitR: false,
   isCurrentSlideId: 0,
 };
 
@@ -50,9 +50,9 @@ export const Events = ({ EventItem }) => {
         const userData = Cookies.get('userDataDB');
 
         if (userData) {
-          const { id, hasPaid, isNitr } = JSON.parse(userData);
+          const { id, hasPaid, isNitR } = JSON.parse(userData);
 
-          setState((prev) => ({ ...prev, uid: id, hasPaid, isNitr }));
+          setState((prev) => ({ ...prev, uid: id, hasPaid, isNitR }));
         }
       } catch (error) {
         console.error('Error parsing user data cookie:', error);
@@ -116,7 +116,7 @@ export const Events = ({ EventItem }) => {
       }));
 
       try {
-        if (state.hasPaid || state.isNitr) {
+        if (state.hasPaid || state.isNitR) {
           const response = await handleLoadingAndToast(
             registerForEvent({
               variables: {
