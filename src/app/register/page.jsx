@@ -25,12 +25,12 @@ import { userSchema } from '@/config/zodd/userDetailsSchema';
 import { AuthContext } from '@/context/auth-context';
 import { REGISTER_ORG } from '@/graphql/mutations/organizationMutations';
 import { REGISTER_USER } from '@/graphql/mutations/userMutations';
+import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
 import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
 import { useMutation, useSuspenseQuery } from '@apollo/client';
-import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
 
 import {
   DisclaimerPara,
@@ -301,6 +301,16 @@ function Page() {
     }
 
     const userCookie = Cookies.get('userDataDB');
+    const userGoogleData = Cookies.get('userData');
+
+    if (userGoogleData) {
+      const googleData = JSON.parse(userGoogleData);
+      setUserDetails((prev) => ({
+        ...prev,
+        name: googleData.name.toUpperCase(),
+        email: googleData.email,
+      }));
+    }
     const hasUserData = userDataDB?.user?.data?.length > 0;
     const userData = hasUserData ? userDataDB.user.data[0] : null;
     const isNitR = userData?.college === nitrID;
