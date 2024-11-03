@@ -12,3 +12,14 @@ export const GET_USER_BY_UID = gql`
     }
   }
 `;
+
+export const GET_USERS = gql`
+  query Query($orgId: ID) {
+    user(orgID: $orgId) {
+      data {
+        college
+        gender
+      }
+    }
+  }
+`;
