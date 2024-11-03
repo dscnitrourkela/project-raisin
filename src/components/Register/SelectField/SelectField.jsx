@@ -75,8 +75,10 @@ function SelectField({
     }
 
     if (name === 'gender') {
-      if (genderStats[option] === 0) {
-        toast.error("We're sorry, but we have reached the maximum number of participants");
+      if (genderStats[option] <= 0) {
+        toast.error(
+          `We're sorry, but we have reached the maximum number of ${option} participants`,
+        );
         setSelectedOption('');
         handleSelect((prev) => ({ ...prev, [name]: '' }));
         return;

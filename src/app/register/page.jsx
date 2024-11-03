@@ -32,7 +32,7 @@ import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import {
   DisclaimerPara,
@@ -70,14 +70,13 @@ function Page() {
   const isLoggedIn = useIsLoggedIn();
   const [loading, setLoading] = useState(false);
   const [queryLoading, setQueryLoading] = useState(false);
-  const { handleGoogleSignIn, authLoading } = useContext(AuthContext);
+  const { handleGoogleSignIn, authLoading, handleSignOut } = useContext(AuthContext);
   const [registerUser] = useMutation(REGISTER_USER);
   const [registerCollege] = useMutation(REGISTER_ORG);
   const [genderStats, setGenderStats] = useState(null);
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
   const isNitR = userDetails.instituteId === nitrID;
-  const { handleSignOut } = useContext(AuthContext);
 
   const { data: totalRegistrations, loading: totalRegistrationsLoading } = useQuery(GET_USERS, {
     variables: storedUserId ? { orgId: innoOrgID } : undefined,
