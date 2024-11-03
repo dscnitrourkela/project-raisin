@@ -5,39 +5,35 @@ import { PayContainer } from './payment.styles';
 import Cookies from 'js-cookie';
 
 const PaymentPage = () => {
-  const [isClient, setIsClient] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
+  const [userEmail, setUserEmail] = useState(null);
 
   useEffect(() => {
-    setIsClient(true);
     const userData = Cookies.get('userData');
     const email = (userData && JSON.parse(userData).email) || '';
     setUserEmail(email);
   }, []);
 
-  const validEmails = [
+  const validMails = [
     'innovision2024.nitr@gmail.com',
     'srishtymangutte@gmail.com',
     'jaiswal2nikhil@gmail.com',
   ];
 
-  if (!isClient) {
-    return null;
+  if (userEmail === null) {
+    return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <PayContainer>
-        {validEmails.includes(userEmail) ? (
-          <>
-            <h1>Payment Page</h1>
-            <PayButton />
-          </>
-        ) : (
-          <h1>404 page not found</h1>
-        )}
-      </PayContainer>
-    </div>
+    <PayContainer>
+      {validMails.includes(userEmail) ? (
+        <div>
+          <h1>Payment Page</h1>
+          <PayButton />
+        </div>
+      ) : (
+        <h1>404 page not found</h1>
+      )}
+    </PayContainer>
   );
 };
 

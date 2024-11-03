@@ -10,7 +10,7 @@ const PayButton = () => {
       body: JSON.stringify({
         amount: 100,
         orderId: 'unique_order_id_12345',
-        callbackUrl: `${window.location.origin}/callback`,
+        callbackUrl: `${window.location.origin}`,
       }),
     });
 
