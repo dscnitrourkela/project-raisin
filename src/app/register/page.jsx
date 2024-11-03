@@ -32,7 +32,7 @@ import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 
 import {
   DisclaimerPara,
