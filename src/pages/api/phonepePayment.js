@@ -6,10 +6,14 @@ export default async function handler(req, res) {
 
     const payload = {
       merchantId: process.env.NEXT_PUBLIC_PHONEPE_MERCHANT_ID,
-      transactionId: orderId,
       amount: amount,
       merchantTransactionId: orderId,
       redirectUrl: callbackUrl,
+      redirectMode: 'REDIRECT',
+      callbackUrl: callbackUrl,
+      paymentInstrument: {
+        type: 'PAY_PAGE',
+      },
     };
 
     const payloadString = JSON.stringify(payload);
@@ -33,7 +37,7 @@ export default async function handler(req, res) {
       const data = await response.json();
       res.status(200).json(data);
     } catch (error) {
-      console.error(error);
+      console.error('Payment initiation failed:', error);
       res.status(500).json({ error: 'Payment initiation failed' });
     }
   } else {
