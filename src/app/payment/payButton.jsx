@@ -3,6 +3,7 @@
 import crypto from 'crypto';
 import { useState } from 'react';
 import { SecondaryButton } from '@/components/shared/Typography/Buttons';
+import { PayButtonWrap } from './payment.styles';
 
 const PayButton = () => {
   const handlePayment = async () => {
@@ -48,7 +49,7 @@ const PayButton = () => {
   // const x_veri = `${checksum}###${process.env.NEXT_PUBLIC_PHONEPE_API_KEY_INDEX}`;
   // console.log(x_veri);
 
-  return <button onClick={handlePayment}>Pay with PhonePe</button>;
+  return <PayButtonWrap onClick={handlePayment}>Pay with PhonePe</PayButtonWrap>;
 };
 
 export default PayButton;
