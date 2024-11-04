@@ -4,7 +4,7 @@ export const socials = [
   {
     id: 'instagram',
     img: 'https://res.cloudinary.com/dpmlrxlzr/image/upload/v1728758002/ic_baseline-discord_hdmbcy.svg',
-    url: 'https://www.instagram.com/inno.nitr_official?igsh=dWZ2cHlwM3N1ZHl2',
+    url: 'https://www.instagram.com/inno.nitr_official',
   },
   {
     id: 'whatsapp',
