@@ -1,10 +1,12 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+
 import { toast } from 'react-hot-toast';
+
 import { Label } from '../FileInput/FileInput.styles';
 import InputField from '../InputField/InputField';
-import SearchField from './SearchField/SearchField';
 import { ErrorMessage } from '../InputField/InputField.styles';
+import SearchField from './SearchField/SearchField';
 import {
   DropdownIcon,
   DropdownItem,
@@ -25,6 +27,7 @@ function SelectField({
   label,
   error,
   setErrors,
+  genderStats,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(value || '');
@@ -71,7 +74,18 @@ function SelectField({
       return;
     }
 
-    handleSelect((prev) => ({ ...prev, [name]: option }));
+    if (name === 'gender') {
+      if (genderStats[option] <= 0) {
+        toast.error(
+          `We're sorry, but we have reached the maximum number of ${option} participants`,
+        );
+        setSelectedOption('');
+        handleSelect((prev) => ({ ...prev, [name]: '' }));
+        return;
+      } else {
+        handleSelect((prev) => ({ ...prev, [name]: option }));
+      }
+    }
   };
 
   useEffect(() => {

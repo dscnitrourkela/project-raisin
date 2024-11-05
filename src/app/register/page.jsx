@@ -17,6 +17,8 @@ import SelectField from '@/components/Register/SelectField/SelectField';
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
 import {
   formFields,
+  innoOrgID,
+  maxRegistrations,
   nitrID,
   notNitrFields,
   undertakingContent,
@@ -25,12 +27,12 @@ import { userSchema } from '@/config/zodd/userDetailsSchema';
 import { AuthContext } from '@/context/auth-context';
 import { REGISTER_ORG } from '@/graphql/mutations/organizationMutations';
 import { REGISTER_USER } from '@/graphql/mutations/userMutations';
-import { GET_USER_BY_UID } from '@/graphql/queries/userQueries';
+import { GET_USER_BY_UID, GET_USERS } from '@/graphql/queries/userQueries';
 import { useIsLoggedIn } from '@/hooks/useIsLoggedIn';
 import { useUserDetails } from '@/hooks/useUserDetails';
 import handleLoadingAndToast from '@/utils/handleLoadingToast';
 import { uploadToCloudinary } from '@/utils/uploadToCloudinary';
-import { useMutation, useSuspenseQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import {
   DisclaimerPara,
@@ -67,14 +69,27 @@ function Page() {
   const [errors, setErrors] = useState({});
   const isLoggedIn = useIsLoggedIn();
   const [loading, setLoading] = useState(false);
-  const { handleGoogleSignIn, authLoading } = useContext(AuthContext);
+  const [queryLoading, setQueryLoading] = useState(false);
+  const { handleGoogleSignIn, authLoading, handleSignOut } = useContext(AuthContext);
   const [registerUser] = useMutation(REGISTER_USER);
   const [registerCollege] = useMutation(REGISTER_ORG);
+  const [genderStats, setGenderStats] = useState(null);
   const router = useRouter();
   const storedUserId = getUserDetails().uid;
   const isNitR = userDetails.instituteId === nitrID;
 
-  const { data: userDataDB, error: userErr } = useSuspenseQuery(GET_USER_BY_UID, {
+  const { data: totalRegistrations, loading: totalRegistrationsLoading } = useQuery(GET_USERS, {
+    variables: storedUserId ? { orgId: innoOrgID } : undefined,
+    skip: !storedUserId,
+    errorPolicy: 'all',
+    onError: (error) => {
+      toast.error('Login failed! try logging in again.');
+      handleSignOut(false);
+      console.error('Total registrations query error:', error);
+    },
+  });
+
+  const { data: userDataDB, error: userErr } = useQuery(GET_USER_BY_UID, {
     variables: storedUserId ? { uid: storedUserId } : undefined,
     skip: !storedUserId,
     errorPolicy: 'all',
@@ -177,6 +192,7 @@ function Page() {
             error={errors[field.id]}
             setErrors={setErrors}
             allowedRegistrations={0}
+            genderStats={genderStats}
           />
         );
       case 'file':
@@ -300,6 +316,18 @@ function Page() {
       return;
     }
 
+    if (totalRegistrationsLoading) {
+      setQueryLoading(true);
+    } else {
+      setQueryLoading(false);
+    }
+
+    if (totalRegistrations?.user?.data?.length > 0) {
+      const registrationArray = totalRegistrations.user.data;
+      const genderStatistics = getTotalGenderRegistrations(registrationArray);
+      setGenderStats(genderStatistics);
+    }
+
     const userCookie = Cookies.get('userDataDB');
     const userGoogleData = Cookies.get('userData');
 
@@ -326,13 +354,31 @@ function Page() {
         duration: 5000,
       });
     }
-  }, [userErr, userDataDB, router]);
+  }, [userErr, userDataDB, router, totalRegistrationsLoading, totalRegistrations]);
+
+  function getTotalGenderRegistrations(array) {
+    let maleCount = 0;
+    let femaleCount = 0;
+    array.forEach((registration) => {
+      if (registration.gender === 'MALE') {
+        maleCount++;
+      } else {
+        femaleCount++;
+      }
+    });
+    const allowedRegistrations = {
+      MALE: maxRegistrations.MALE - maleCount,
+      FEMALE: maxRegistrations.FEMALE - femaleCount,
+    };
+
+    return allowedRegistrations;
+  }
 
   return (
     <RegisterContainer>
       <Moon />
 
-      {isLoggedIn ? (
+      {isLoggedIn && !queryLoading ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
           <RegisterForm>
@@ -369,8 +415,8 @@ function Page() {
           </RegsiterButton>
         </RegisterInnerContainer>
       ) : (
-        <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading}>
-          {authLoading ? 'Loading...' : 'Sign In with Google'}
+        <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading || queryLoading}>
+          {authLoading || queryLoading ? 'Loading...' : 'Sign In with Google'}
         </PrimaryButton>
       )}
     </RegisterContainer>

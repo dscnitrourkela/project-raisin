@@ -41,13 +41,15 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const handleSignOut = async () => {
+  const handleSignOut = async (showToast = true) => {
     try {
       await signOutUser();
       setUserInfo({});
       Cookies.remove('userData');
       Cookies.remove('userDataDB');
-      toast.success('Successfully signed out.');
+      if (showToast) {
+        toast.success('Successfully signed out.');
+      }
     } catch (error) {
       console.error('Error signing out:', error);
       toast.error('Error signing out. Please try again.');
