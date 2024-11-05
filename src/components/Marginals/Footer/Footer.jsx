@@ -87,7 +87,7 @@ export const Footer = () => {
                 <SocialList>
                   {socials.map((item) => (
                     <li key={item.id}>
-                      <Link href={item.url}>
+                      <Link href={item.url} target='_blank'>
                         <SocialImageContainer>
                           <Image
                             src={item.img}
