@@ -19,19 +19,24 @@ export default async function handler(req, res) {
     const payloadString = JSON.stringify(payload);
     const base64Payload = Buffer.from(payloadString).toString('base64');
 
-    const checksum = crypto
-      .createHmac('sha256', process.env.NEXT_PUBLIC_PHONEPE_API_KEY)
-      .update(base64Payload + '/pg/v1/pay' + process.env.NEXT_PUBLIC_PHONEPE_API_KEY)
-      .digest('base64');
+    const stringToHash = `${base64Payload}/pg/v1/pay/${process.env.NEXT_PUBLIC_PHONEPE_API_KEY}`;
+
+    const checksum = crypto.createHash('sha256').update(stringToHash).digest('hex');
+
+    const xVerify = `${checksum}###${process.env.NEXT_PUBLIC_PHONEPE_API_KEY_INDEX}`;
+
+    const raw = JSON.stringify({
+      request: base64Payload,
+    });
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_PHONEPE_API_URL}/pg/v1/pay`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-VERIFY': `${checksum}###${process.env.NEXT_PUBLIC_PHONEPE_API_KEY_INDEX}`,
+          'X-VERIFY': xVerify,
         },
-        body: payloadString,
+        body: raw,
       });
 
       const data = await response.json();
