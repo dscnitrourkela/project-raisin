@@ -38,7 +38,7 @@ export default async function handler(req, res) {
       res.status(200).json(data);
     } catch (error) {
       console.error('Payment initiation failed:', error);
-      res.status(500).json({ error: 'Payment initiation failed' });
+      res.status(500).json({ error });
     }
   } else {
     res.status(405).json({ error: 'Method not allowed' });

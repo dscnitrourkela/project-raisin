@@ -7,5 +7,5 @@ export const PayContainer = styled.div`
 `;
 
 export const PayButtonWrap = styled.div`
-  ${tw`w-full bg-teal-600 px-4 py-3 rounded mx-3 hover:cursor-pointer my-5 flex flex-col items-center justify-center`}
+  ${tw`w-full bg-teal-600 px-4 py-3 rounded mx-3 hover:cursor-pointer hover:bg-teal-700 my-5 flex flex-col items-center justify-center`}
 `;

@@ -23,6 +23,7 @@ const PayButton = () => {
       window.location.href = data.paymentUrl;
     } else {
       alert('Payment failed. Please try again.');
+      console.log(data);
     }
   };
 
