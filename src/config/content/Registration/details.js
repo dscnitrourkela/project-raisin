@@ -424,3 +424,9 @@ export const undertakingContent = {
 
 export const QrImgUrl =
   'https://res.cloudinary.com/dfe8sdlkc/image/upload/v1729884328/85002429435_sbi_gt1in2.webp';
+
+export const innoOrgID = '671bb67e578281c65287a545';
+export const maxRegistrations = {
+  MALE: 748,
+  FEMALE: 248,
+};
