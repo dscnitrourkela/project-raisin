@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import generateToken from '@/utils/generateToken';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -28,11 +29,13 @@ export default async function handler(req, res) {
     const raw = JSON.stringify({
       request: base64Payload,
     });
+    const authToken = generateToken();
 
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_PHONEPE_API_URL}/pg/v1/pay`, {
         method: 'POST',
         headers: {
+          Authorization: `Bearer ${authToken}`,
           'Content-Type': 'application/json',
           'X-VERIFY': xVerify,
         },
