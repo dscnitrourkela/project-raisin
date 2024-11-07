@@ -2,11 +2,14 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 import { PrimaryButton } from '@/components/shared/Typography/Buttons';
-
+import { Heading1, Heading2, SectionHeadings } from '@/components/shared/Typography/Headings';
 import { SmallParagraph } from '@/components/shared/Typography/Paragraphs';
+
 import { Heading3 } from '../events/page.style';
 
-import { Heading1, Heading2 } from '@/components/shared/Typography/Headings';
+export const RegistraionsClosed = styled(SectionHeadings)`
+  ${tw`font-montserrat font-medium text-base md:text-lg lg:text-xl`}
+`;
 
 export const RegisterHeading = styled(Heading1)`
   ${tw`text-center text-2xl xxs:text-3xl ssm:text-4xl md:text-5xl lg:text-6xl my-0 py-0 font-spaceX text-white`}

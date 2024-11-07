@@ -1,11 +1,13 @@
 import './Hero.css';
 
+import { useEffect, useState } from 'react';
+
 import { motion } from 'framer-motion';
 import Cookies from 'js-cookie';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeroGreenPrimaryButton, HeroLogoText, HeroPrimaryButton } from './styles';
-import { useState, useEffect } from 'react';
+
+import { HeroGreenPrimaryButton, HeroLogoText } from './styles';
 
 export const Hero = () => {
   const [isRegistered, setIsRegistered] = useState(false);
@@ -104,11 +106,16 @@ export const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          {!isRegistered && (
+          {/* commented to close registeration */}
+
+          {/* {!isRegistered && (
             <HeroPrimaryButton>
               <Link href='/register'>Register</Link>
             </HeroPrimaryButton>
-          )}
+          )} */}
+
+          {/* commented to close registeration */}
+
           <HeroGreenPrimaryButton>
             <Link
               href='https://drive.google.com/file/d/1jglpl2SzbmpRc73ML80zREhnpxxQF4qx/view?usp=sharing'
