@@ -40,4 +40,13 @@ export const DtsData = [
     Date: 'TBA',
     Time: 'TBA',
   },
+  {
+    eventID: '671bd29eaacbd171687071zz',
+    Heading: 'The Heartsbeat Concert',
+    Description: '',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/11/HB-INNO.png',
+    Location: 'DTS Stage',
+    Date: 'TBA',
+    Time: 'TBA',
+  },
 ];
