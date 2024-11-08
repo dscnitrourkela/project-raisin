@@ -2,27 +2,17 @@
 import { useContext, useEffect, useState } from 'react';
 
 import Cookies from 'js-cookie';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { v4 } from 'uuid';
 
-import CampusAmbassador from '@/components/Register/CampusAmbassador/CampusAmbassador';
 import FileInput from '@/components/Register/FileInput/FileInput';
 import CheckBox from '@/components/Register/InputCheckBox/CheckBox';
 import InputField from '@/components/Register/InputField/InputField';
 import { MerchantInfo } from '@/components/Register/PaymentComponents/MerchantInfo';
 import { Qr } from '@/components/Register/PaymentComponents/Qr';
 import SelectField from '@/components/Register/SelectField/SelectField';
-import { PrimaryButton } from '@/components/shared/Typography/Buttons';
-import {
-  formFields,
-  innoOrgID,
-  maxRegistrations,
-  nitrID,
-  notNitrFields,
-  undertakingContent,
-} from '@/config/content/Registration/details';
+import { innoOrgID, maxRegistrations, nitrID } from '@/config/content/Registration/details';
 import { userSchema } from '@/config/zodd/userDetailsSchema';
 import { AuthContext } from '@/context/auth-context';
 import { REGISTER_ORG } from '@/graphql/mutations/organizationMutations';
@@ -38,13 +28,8 @@ import {
   DisclaimerPara,
   Moon,
   PaymentHeading,
-  PaymentPolicyInfo,
   RegisterContainer,
-  RegisterForm,
-  RegisterHeading,
-  RegisterInnerContainer,
-  RegsiterButton,
-  UndertakingLink,
+  RegistraionsClosed,
 } from './register.styles';
 
 function Page() {
@@ -378,6 +363,11 @@ function Page() {
     <RegisterContainer>
       <Moon />
 
+      <RegistraionsClosed>
+        Registrations are now closed! Looking forward to seeing you next year!
+      </RegistraionsClosed>
+      {/* commented to close registeration */}
+      {/*     
       {isLoggedIn && !queryLoading ? (
         <RegisterInnerContainer>
           <RegisterHeading>Register</RegisterHeading>
@@ -418,7 +408,8 @@ function Page() {
         <PrimaryButton onClick={handleGoogleSignIn} disabled={authLoading || queryLoading}>
           {authLoading || queryLoading ? 'Loading...' : 'Sign In with Google'}
         </PrimaryButton>
-      )}
+      )} */}
+      {/* commented to close registeration*/}
     </RegisterContainer>
   );
 }

@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+
 import {
+  HamburgerRegisterButton,
   ResItem,
   ResList,
   ResMen,
-  HamburgerRegisterButton,
 } from '@/components/Marginals/navbar/navbar.styles';
-import { ButtonData, navLinks } from '@/config/content/NavbarData/NavData';
+import { navLinks } from '@/config/content/NavbarData/NavData';
 
 function MobileMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) {
   return (
@@ -34,7 +35,13 @@ function MobileMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) {
                 </ResItem>
               ))}
 
-              {isLoggedIn ? (
+              {isLoggedIn && (
+                <HamburgerRegisterButton onClick={handleProfileToggle}>
+                  Profile
+                </HamburgerRegisterButton>
+              )}
+              {/* commented to close registeration */}
+              {/* {isLoggedIn ? (
                 <HamburgerRegisterButton onClick={handleProfileToggle}>
                   Profile
                 </HamburgerRegisterButton>
@@ -44,7 +51,8 @@ function MobileMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) {
                     {ButtonData.title}
                   </Link>
                 </HamburgerRegisterButton>
-              )}
+              )} */}
+              {/* commented to close registeration */}
             </ResList>
           </ResMen>
         </motion.div>

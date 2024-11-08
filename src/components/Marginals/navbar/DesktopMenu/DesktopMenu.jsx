@@ -1,18 +1,17 @@
 import React from 'react';
+
+import { User } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import {
-  HamburgerContainer,
   MainBar,
   MainBarItems,
   MenuLogoItem,
   NavCover,
-  RegisterButton,
   ProfileButton,
 } from '@/components/Marginals/navbar/navbar.styles';
-import Hamburger from 'hamburger-react';
-import { ButtonData, logos, navLinks } from '@/config/content/NavbarData/NavData';
-import Image from 'next/image';
-import Link from 'next/link';
-import { User } from 'lucide-react';
+import { logos, navLinks } from '@/config/content/NavbarData/NavData';
 
 function DesktopMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) {
   return (
@@ -30,7 +29,15 @@ function DesktopMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) 
             </MainBarItems>
           ))}
         </MainBar>
-        {isLoggedIn ? (
+        {isLoggedIn && (
+          <ProfileButton onClick={handleProfileToggle}>
+            <User size={30} />
+          </ProfileButton>
+        )}
+
+        {/* commented to close registeration */}
+
+        {/* {isLoggedIn ? (
           <ProfileButton onClick={handleProfileToggle}>
             <User size={30} />
           </ProfileButton>
@@ -38,7 +45,8 @@ function DesktopMenu({ isOpen, handleToggle, handleProfileToggle, isLoggedIn }) 
           <RegisterButton>
             <Link href='/register'>{ButtonData.title}</Link>
           </RegisterButton>
-        )}
+        )} */}
+        {/* commented to close registeration */}
       </NavCover>
     </div>
   );
