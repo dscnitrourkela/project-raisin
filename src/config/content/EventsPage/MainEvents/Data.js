@@ -236,8 +236,7 @@ export const MainEventData = [
     Heading: 'Era of Estates',
     Description:
       'Step into the Era of Estates with the Finance Club for an epic journey through history! Travel from the late 19th century all the way to 2024, as major global events shake up commodities and sectors in ways you’ve never imagined. Each round brings new challenges with prices rising and falling, and it’s up to you to adapt and make the smartest moves. With every twist and turn, the competition heats up—will you have what it takes to outwit the market and claim victory?',
-    ImageURL:
-      'https://res.cloudinary.com/dwfon2ikz/image/upload/v1729178999/inno-2024/Event%20Posters/jv2umrted9dx0jcgfrvb.png',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/11/era-of-estates.png',
     Location: 'LA-214',
     Date: 'DAY 2',
     Time: '1 PM',
@@ -447,5 +446,16 @@ export const MainEventData = [
     Date: 'DAY 2',
     Time: '3pm',
     Rulebook: 'https://drive.google.com/open?id=1xMGGvGsyHUW90euvg18FIs3FD31CbdOb',
+  },
+  {
+    eventID: '671cab4fd56a192715bda6xz',
+    Heading: "NITR's got Latent",
+    Description:
+      'Contestants will have a limited time to perform their stand-up routine in front of a live audience and a panel of judges. Each performer will be judged on originality, delivery, stage presence, and of course, how hard they make the audience laugh. The winner will walk away with exciting prizes, and will earn the title of "LOL Champion!"',
+    ImageURL: 'https://socialcry.com/wp-content/uploads/2024/11/open-mic-club.jpg',
+    Location: 'LA 201',
+    Date: 'Day 2',
+    Time: '',
+    Rulebook: 'https://drive.google.com/open?id=1rECAC7D2mbG7FVYHT8L1sWesK4yFa3eK',
   },
 ];
